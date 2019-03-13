@@ -20,10 +20,12 @@ const Head = ({
     <html lang="en" />
 
     <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-    <meta
-      content="width=device-width,initial-scale=1.0,user-scalable=yes"
-      name="viewport"
-    />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <meta content={siteTitle} name="apple-mobile-web-app-title" />
     <meta content={pageTitleFull} property="og:title" />

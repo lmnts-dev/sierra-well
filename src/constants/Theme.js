@@ -27,6 +27,7 @@ export const Theme = {
     Logo: Settings.Logo,
     LogoLight: Settings.LogoLight,
     LogoDark: Settings.LogoDark,
+    OpenGraphImg: Settings.OpenGraphImg,
     Social: {
       Twitter: Settings.Social.Twitter,
       Facebook: Settings.Social.Facebook,
