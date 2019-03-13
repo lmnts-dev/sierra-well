@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { Location } from '@reach/router';
-import SchemaGenerator from 'helpers/SchemaGenerator';
+import schemaGenerator from 'helpers/schemaGenerator';
 
 const Head = ({
   siteTitle,
@@ -151,7 +151,7 @@ const Head = ({
 
     <script type="application/ld+json">
       {JSON.stringify(
-        SchemaGenerator({
+        schemaGenerator({
           location,
           canonical,
           siteUrl,
