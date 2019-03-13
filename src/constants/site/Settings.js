@@ -14,7 +14,6 @@ export const Settings = {
   SiteBaseKeywords: Config.siteBaseKeywords,
   SiteUrl: Config.siteUrl,
   PathPrefix: Config.pathPrefix,
-  OpenGraphImg: ,
   Logo: Config.logo,
   LogoLight: Config.logoLight,
   LogoDark: Config.logoDark,
