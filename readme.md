@@ -12,6 +12,7 @@
 <h1>
 Sierra Well Web Platform
 </h1>
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8b417ab1-6345-4465-98e3-f478de7a947d/deploy-status)](https://app.netlify.com/sites/reverent-noyce-352111/deploys)
 
 <p align="center">
