@@ -9,8 +9,13 @@
   </a>
 </p>
 
+<h1>
+Sierra Well Web Platform
+</h1>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8b417ab1-6345-4465-98e3-f478de7a947d/deploy-status)](https://app.netlify.com/sites/reverent-noyce-352111/deploys)
+
 <p align="center">
-  A Gatsby v2 starter using the <code>lmnts</code> methodology of building websites. Includes React Context, styled-components, page transitions, scroll events with <code>IntersectionObserver</code> and a focus on accessibility and SEO. Made for state-of-the-art marketing sites. 
+  The Sierra Well web platform. Based off of the LMNTS-Gatsby v2 starter using the <code>lmnts</code> methodology of building websites. Includes React Context, styled-components, page transitions, scroll events with <code>IntersectionObserver</code> and a focus on accessibility and SEO. Made for state-of-the-art marketing sites. 
 </p>
 
 ***
