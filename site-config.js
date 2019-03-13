@@ -8,14 +8,14 @@
 const path = require('path');
 
 module.exports = {
-  siteTitle: `L&M Gatsby Starter`,
-  siteTitleShort: `lmnts-gatsby-starter`,
-  siteDescription: `Making the web more scalable, accessible, and flexible. Since 2014.`,
-  siteBaseKeywords: `design, graphic design`,
+  siteTitle: `Sierra Well | Patient Friendly. Knowledgeable. Discreet.`,
+  siteTitleShort: `Sierra Well`,
+  siteDescription: `Dedicated to making medical and recreational marijuana approachable. Our dispensary locations in Northern Nevada provide exceptional service and quality medicinal cannabis to the Reno, Sparks, and Carson City areas.`,
+  siteBaseKeywords: `medical, cannabis, marijuana, dispensary, reno, sparks, carson city, gardnerville, tahoe, service, quality, recreational, pot, weed`,
   siteUrl: `https://laxaltandmciver.co`,
-  themeColor: `#DB8DBA`,
-  secondaryColor: `#3C3049`,
-  backgroundColor: `#fff`,
+  themeColor: `#40DA33`,
+  secondaryColor: `#5D6376`,
+  backgroundColor: `#F2F3F3`,
   pathPrefix: '/',
   logo: path.resolve(__dirname, 'src/assets/images/icon.png'),
   logoLight: path.resolve(__dirname, 'src/assets/images/icon.png'),
