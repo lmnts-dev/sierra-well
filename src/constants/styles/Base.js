@@ -1,26 +1,40 @@
 /* eslint-disable */
 
 // Base.js:
-// This is the sitewide base number variables.
+// Core measurements throughout the app.
 
 export const Base = {
-  Size: 60, // px
-  Radius: 10, // px
-  SiteWidth: 1680, // px
-  FontSize: 14, // px
-  Transition: 0.25, // seconds
-  Ease: [1,.01,.49,1],
-  PageTransition: 2000, // milliseconds. try to not go lower than 350ms or it gets buggy. TODO.
+  // Core Base Measurement
+  Size: {
+    Lg: 60,
+    Md: 60,
+    Sm: 60
+  },
+  
+  // Root Element Measurement
+  REM: {
+    Lg: 14, // px
+    Md: 14, // px
+    Sm: 14 // px
+  },
 
   // Responsive Breakpoints
   Media: {
-    Lg: 992, // px
-    Md: 768, // px
-    Sm: 376, // px
+    Width: {
+      Lg: 992, // px
+      Md: 768, // px
+      Sm: 376, // px
+    },
+    Height: {
+      Lg: 828, // px
+      Md: 640, // px
+      Sm: 568, // px
+    },
   },
 
   // Site Grid
   Grid: {
+    SiteWidth: 1680, // px
     Nav: {
       Orientation: `top`,
       Fixed: true,
@@ -31,11 +45,54 @@ export const Base = {
         Sm: 40, // px
       },
     },
+
+    // Universal padding from the edge of the browser
+    // Read more: https://read.compassofdesign.com/guides-gutters-and-grids-2ce6092fc3de
     Gutter: {
-      Top: 0, // px
-      Bottom: 0, // px
-      Right: 20, // px
-      Left: 20, // px
+      Lg: {
+        Top: 0, // px
+        Bottom: 0, // px
+        Right: 20, // px
+        Left: 20, // px
+      },
+      Md: {
+        Top: 0, // px
+        Bottom: 0, // px
+        Right: 20, // px
+        Left: 20, // px
+      },
+      Sm: {
+        Top: 0, // px
+        Bottom: 0, // px
+        Right: 20, // px
+        Left: 20, // px
+      },
     },
   },
+
+  // Buttons
+  Button: {
+    Lg: 44, // px
+    Md: 35, // px
+    Sm: 35, // px
+  },
+
+  // Inputs
+  Input: {
+    Lg: 44, // px
+    Md: 35, // px
+    Sm: 35, // px
+  },
+
+  // Transitions
+  Transition: {
+    Duration: 0.25, // seconds
+    Ease: [1,.01,.49,1], // Cubic Bezier Ease
+    Page: 2000, // milliseconds. Try to not go lower than 350ms or it gets buggy. TODO.
+  },
+
+  // Geometry
+  Geometry: {
+    Radius: 10, // px
+  }
 };

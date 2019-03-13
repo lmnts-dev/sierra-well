@@ -444,6 +444,4 @@ html {
   * { 
     box-sizing: border-box;
   }
-
-
 `;

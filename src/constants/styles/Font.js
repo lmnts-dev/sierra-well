@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 // Font.js:
-// This is the sitewide typography reference.
+// This is the sitewide font reference.
 
 export const Font = {
   Header: `-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
