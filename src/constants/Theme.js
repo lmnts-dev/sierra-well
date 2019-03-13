@@ -86,12 +86,28 @@ export const Theme = {
     },
   },
   Color: {
+    // Core Colors
     Primary: Color.Primary,
     Secondary: Color.Secondary,
     Background: Color.Background,
-    White: Color.White,
+
+    // Grayscale Palette
     Black: Color.Black,
+    Nightsky: Color.Nightsky,
+    Gunmetal: Color.Gunmetal,
+    Slate: Color.Slate,
     Gray: Color.Gray,
+    Snow: Color.Snow,
+    White: Color.White,
+
+    // Main Palette
+    Leaf: Color.Leaf,
+    Tahoe: Color.Tahoe,
+    Sunset: Color.Sunset,
+    Dank: Color.Dank,
+    Flower: Color.Flower,
+
+    // Feedback Palette
     Warning: Color.Warning,
     Success: Color.Success,
   },

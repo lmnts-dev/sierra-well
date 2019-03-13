@@ -23,6 +23,7 @@ export const Color = {
   Tahoe: '#2984FD',
   Sunset: '#FC6376',
   Dank: '#F8E71C',
+  Flower: '#E17E00',
 
   // Feedback Palette
   Warning: `#FC6376`,
