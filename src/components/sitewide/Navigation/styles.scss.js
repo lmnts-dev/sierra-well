@@ -36,7 +36,7 @@ const NavigationStyle = styled.nav`
 `;
 
 NavigationStyle.Inner = styled(InnerStyle)`
-  background-color: ${Theme.Color.Primary};
+  background-color: ${Theme.Color.Background};
   height: ${Theme.Base.Grid.Nav.Size.Lg};
   color: ${Theme.Color.Black};
 `;
