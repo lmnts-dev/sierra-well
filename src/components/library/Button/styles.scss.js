@@ -5,6 +5,7 @@
 
 // Core
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -12,7 +13,7 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-const ButtonStyle = styled.a`
+const ButtonStyle = styled(Link)`
   background-color: ${Theme.Color.Nightsky};
   height: ${Root.Button.Size};
   display: inline-flex;

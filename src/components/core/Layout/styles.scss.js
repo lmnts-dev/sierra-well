@@ -32,12 +32,6 @@ SiteGrid.Inner = styled(InnerStyle)`
   flex-direction: column;
   flex: 1;
   background-color: ${Theme.Color.White};
-
-  /* Gutters */
-  padding-top: ${Theme.Base.Grid.Nav.Fixed
-    ? Root.Grid.Gutter.Top + Root.Grid.Gutter.Top + 'px'
-    : Root.Grid.Gutter.Top};
-  padding-bottom: ${Root.Grid.Gutter.Bottom};
 `;
 
 export default SiteGrid;

@@ -32,7 +32,7 @@ NavigationStyle.BrandingBlock = styled.div`
   width: auto;
   flex-direction: row;
   padding: 0 ${Root.Grid.Gutter.Right} 0 ${Root.Grid.Gutter.Left};
-  
+
   a {
     height: ${Root.Nav.Size};
     display: flex;
@@ -107,7 +107,6 @@ NavigationStyle.TabListWrapper = styled.div`
     }
   }
 `;
-
 // The Container around the Communication Tools,
 // like Intercom and the Get in Touch Button
 NavigationStyle.CommunicationBlock = styled.div`
@@ -117,6 +116,11 @@ NavigationStyle.CommunicationBlock = styled.div`
   padding: ${Root.Grid.Gutter.Top} ${Root.Grid.Gutter.Right}
     ${Root.Grid.Gutter.Bottom} ${Root.Grid.Gutter.Left};
 `;
+
+export const ActiveTab = {
+  color: Theme.Color.Nightsky,
+  borderBottom: Theme.Color.Nightsky + '2px solid',
+};
 
 export default NavigationStyle;
 

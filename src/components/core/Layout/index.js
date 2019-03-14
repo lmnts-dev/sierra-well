@@ -6,6 +6,7 @@
 
 // Core
 import React from 'react';
+import { createGlobalStyle } from 'styled-components';
 
 // Vendor
 import { StaticQuery, graphql } from 'gatsby';
@@ -16,11 +17,19 @@ import Head from 'components/core/Head';
 // Styles
 import { GlobalStyle } from 'constants/styles/Global';
 import SiteGrid from 'components/core/Layout/styles.scss';
+import { Theme } from '../../../constants/Theme';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Layout = ({ data, children }) => (
+const PageBackground = createGlobalStyle`
+body {
+  background-color: ${props =>
+    props.PageColor ? props.PageColor : Theme.Color.Background};
+}
+`;
+
+const Layout = ({ data, children, PageColor }) => (
   <SiteGrid>
     <GlobalStyle />
     <Head />

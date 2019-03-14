@@ -12,9 +12,11 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 // import Img from 'gatsby-image';
 
 // Styles
-import NavigationStyle from 'components/sitewide/Navigation/styles.scss';
+import NavigationStyle, {
+  ActiveTab,
+} from 'components/sitewide/Navigation/styles.scss';
 
-// Components 
+// Components
 import Button from 'components/library/Button/';
 
 // Constants
@@ -58,7 +60,9 @@ const LinkList = () => (
         <ul>
           {MainNavigation[0].map((link, index) => (
             <li key={index}>
-              <Link to={link.slug}>{link.label}</Link>
+              <Link to={link.slug} activeStyle={ActiveTab}>
+                {link.label}
+              </Link>
             </li>
           ))}
         </ul>

@@ -20,11 +20,11 @@ const FooterStyle = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute; 
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: ${ Root.Nav.Size };
+  height: ${Root.Nav.Size};
 `;
 
 FooterStyle.Section = styled(SectionStyle)`
@@ -37,7 +37,6 @@ FooterStyle.Section = styled(SectionStyle)`
 
 FooterStyle.Inner = styled(InnerStyle)`
   padding-top: ${Base.Size / 2 + 'px'};
-  padding-bottom: ${Base.Size + 'px'};
   color: ${Theme.Color.Black};
   display: flex;
   flex: 1;

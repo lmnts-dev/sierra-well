@@ -21,22 +21,9 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Index = ({ data }) => (
-  <Layout>
-    <Section
-      FlexDir="column"
-      Background={Theme.Color.Snow}
-      PaddingTop={Theme.Base.Size}
-      PaddingBottom={Theme.Base.Size}
-      MinHeight="100vh"
-      JustifyContent="center"
-      TextColor={Theme.Color.Nightsky}
-    >
-      <h1>{Theme.Site.Title}</h1>
-      <p>{Theme.Site.Description}</p>
-    </Section>
-  </Layout>
-);
+const PageColor = Theme.Color.Snow;
+
+const Index = ({ data }) => <Layout PageColor={PageColor} />;
 
 export default Index;
 
