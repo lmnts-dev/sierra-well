@@ -14,6 +14,9 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 // Styles
 import NavigationStyle from 'components/sitewide/Navigation/styles.scss';
 
+// Components 
+import Button from 'components/library/Button/';
+
 // Constants
 import { Theme } from 'constants/Theme';
 import logo from '../../../assets/images/icon.png';
@@ -66,21 +69,25 @@ const LinkList = () => (
 
 const Navigation = () => (
   <NavigationStyle>
-    <NavigationStyle.Inner>
-      <NavigationStyle.Section
-        AlignItems="center"
-        JustifyContent="space-between"
-      >
-        <NavigationStyle.Block>
-          <Link to="/">
-            <img src={logo} alt={Theme.Site.Title} height="30px" />
-          </Link>
-        </NavigationStyle.Block>
-        <NavigationStyle.Block>
-          <LinkList />
-        </NavigationStyle.Block>
-      </NavigationStyle.Section>
-    </NavigationStyle.Inner>
+    <NavigationStyle.BrandingBlock>
+      <Link to="/">
+        <img src={logo} alt={Theme.Site.Title} height="30px" />
+      </Link>
+    </NavigationStyle.BrandingBlock>
+
+    <NavigationStyle.LinkListBlock>
+      <NavigationStyle.TopLinkListWrapper>
+        <LinkList />
+      </NavigationStyle.TopLinkListWrapper>
+
+      <NavigationStyle.TabListWrapper>
+        <LinkList />
+      </NavigationStyle.TabListWrapper>
+    </NavigationStyle.LinkListBlock>
+
+    <NavigationStyle.CommunicationBlock>
+      <Button label="Get in Touch" to="/contact" color="nightsky" />
+    </NavigationStyle.CommunicationBlock>
   </NavigationStyle>
 );
 

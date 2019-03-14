@@ -7,8 +7,8 @@ export const Base = {
   // Core Base Measurement
   Size: {
     Lg: 60,
-    Md: 60,
-    Sm: 60
+    Md: 40,
+    Sm: 20
   },
   
   // Root Element Measurement
@@ -50,20 +50,20 @@ export const Base = {
     // Read more: https://read.compassofdesign.com/guides-gutters-and-grids-2ce6092fc3de
     Gutter: {
       Lg: {
-        Top: 0, // px
-        Bottom: 0, // px
+        Top: 20, // px
+        Bottom: 20, // px
         Right: 20, // px
         Left: 20, // px
       },
       Md: {
-        Top: 0, // px
-        Bottom: 0, // px
+        Top: 20, // px
+        Bottom: 20, // px
         Right: 20, // px
         Left: 20, // px
       },
       Sm: {
-        Top: 0, // px
-        Bottom: 0, // px
+        Top: 20, // px
+        Bottom: 20, // px
         Right: 20, // px
         Left: 20, // px
       },

@@ -25,12 +25,12 @@ const Index = ({ data }) => (
   <Layout>
     <Section
       FlexDir="column"
-      Background="url('https://source.unsplash.com/1600x900/?color')"
+      Background={Theme.Color.Snow}
       PaddingTop={Theme.Base.Size}
       PaddingBottom={Theme.Base.Size}
       MinHeight="100vh"
       JustifyContent="center"
-      TextColor={Theme.Color.White}
+      TextColor={Theme.Color.Nightsky}
     >
       <h1>{Theme.Site.Title}</h1>
       <p>{Theme.Site.Description}</p>

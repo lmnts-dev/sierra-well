@@ -54,7 +54,6 @@ class ScrollWrapper extends React.Component {
 
   render() {
     const { children } = this.props;
-    console.log(this.handleScroll);
     return <ScrollArea onScroll={this.handleScroll}>{children}</ScrollArea>;
   }
 }

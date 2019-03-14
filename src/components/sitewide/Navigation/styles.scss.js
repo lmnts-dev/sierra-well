@@ -10,54 +10,113 @@ import styled from 'styled-components';
 import { Theme, Root } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
 
-// Blocks
-import InnerStyle from 'elements/Inner/styles.scss';
-import BlockStyle from 'elements/Block/styles.scss';
-import Section from 'elements/Section';
-
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
+// The Navigation Container
 const NavigationStyle = styled.nav`
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  ${Theme.Base.Grid.Nav.Fixed
-    ? `
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 800;
-  `
-    : `
-  position: relative;
-  `};
 `;
 
-NavigationStyle.Inner = styled(InnerStyle)`
-  background-color: ${Theme.Color.Background};
-  height: ${Root.Nav.Size};
-  color: ${Theme.Color.Black};
-`;
-
-NavigationStyle.Block = styled(BlockStyle)`
-  align-items: center;
-  ul {
+// The Container around the Logo
+NavigationStyle.BrandingBlock = styled.div`
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  padding: 0 ${Root.Grid.Gutter.Right} 0 ${Root.Grid.Gutter.Left};
+  
+  a {
+    height: ${Root.Nav.Size};
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+  }
+`;
+
+// The Container around the LinkLists
+NavigationStyle.LinkListBlock = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0;
+`;
+
+// The Small Link List Container
+NavigationStyle.TopLinkListWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: ${Root.Nav.Size};
+  opacity: 0;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+
     li {
-      padding: 0 ${Base.Size.Lg / 4 + 'px'};
-      &:last-child {
-        padding: 0 0 0 ${Base.Size.Lg / 4 + 'px'};
+      padding-right: ${Root.Grid.Gutter.Right};
+
+      a {
+        color: ${Theme.Color.Slate};
+        text-decoration: none;
+        transition: all 0.25s ease;
+
+        &:hover {
+          color: ${Theme.Color.Nightsky};
+          text-decoration: none;
+        }
       }
-    }
-    a {
-      color: ${Theme.Color.Black};
     }
   }
 `;
 
-NavigationStyle.Section = Section;
+// The Large Link List Container
+NavigationStyle.TabListWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: ${Root.Nav.Size};
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    font-size: 3vw;
+
+    li {
+      padding-right: ${Root.Grid.Gutter.Right};
+
+      a {
+        color: ${Theme.Color.Slate};
+        text-decoration: none;
+        transition: all 0.25s ease;
+
+        &:hover {
+          color: ${Theme.Color.Nightsky};
+          text-decoration: none;
+        }
+      }
+    }
+  }
+`;
+
+// The Container around the Communication Tools,
+// like Intercom and the Get in Touch Button
+NavigationStyle.CommunicationBlock = styled.div`
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  padding: ${Root.Grid.Gutter.Top} ${Root.Grid.Gutter.Right}
+    ${Root.Grid.Gutter.Bottom} ${Root.Grid.Gutter.Left};
+`;
 
 export default NavigationStyle;
 

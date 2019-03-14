@@ -24,7 +24,7 @@ class Transition extends PureComponent {
       enter: {
         x: 0,
         opacity: 1,
-        delay: 1000,
+        delay: 0,
         beforeChildren: true,
         transition: {
           ease: Theme.Base.Transition.Ease,
@@ -32,7 +32,7 @@ class Transition extends PureComponent {
       },
       exit: {
         opacity: 0,
-        x: -50,
+        x: 0,
         transition: {
           ease: Theme.Base.Transition.Ease,
         },

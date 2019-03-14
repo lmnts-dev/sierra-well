@@ -33,7 +33,6 @@ const Index = ({ data }) => (
       TextColor={Theme.Color.Black}
     >
       <h1>Work</h1>
-      <p>{Theme.Site.Description}</p>
     </Section>
   </Layout>
 );

@@ -25,15 +25,14 @@ const Index = ({ data }) => (
   <Layout>
     <Section
       FlexDir="column"
-      Background={Theme.Color.Success}
+      Background={Theme.Color.Nightsky}
       PaddingTop={Theme.Base.Size}
       PaddingBottom={Theme.Base.Size}
-      MinHeight="40vh"
+      MinHeight="100vh"
       JustifyContent="center"
-      TextColor={Theme.Color.Black}
+      TextColor={Theme.Color.White}
     >
       <h1>Contact</h1>
-      <p>{Theme.Site.Description}</p>
     </Section>
   </Layout>
 );

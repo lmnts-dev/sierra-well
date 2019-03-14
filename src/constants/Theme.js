@@ -151,7 +151,9 @@ export const Root = {
   },
 
   // Buttons
-  Button: 'var(--ButtonSize)',
+  Button: {
+    Size: 'var(--ButtonSize)',
+  },
 
   // Inputs
   Input: 'var(--InputSize)',
