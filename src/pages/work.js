@@ -28,7 +28,7 @@ const Index = ({ data }) => (
       Background={Theme.Color.Gray}
       PaddingTop={Theme.Base.Size}
       PaddingBottom={Theme.Base.Size}
-      MinHeight="1000vh"
+      MinHeight="100vh"
       JustifyContent="center"
       TextColor={Theme.Color.Black}
     >

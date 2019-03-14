@@ -28,6 +28,7 @@ export const SectionStyle = styled.section`
 
   /* Backgrounds */
   background: ${props => (props.Background ? props.Background : 'none')};
+  background-size: cover;
 
   /* Text Color */
   color: ${props => (props.TextColor ? props.TextColor : 'inherit')};

@@ -7,16 +7,17 @@
 
 import React from 'react';
 import Transition from 'components/core/Transition';
+import ScrollWrapper from 'components/core/ScrollWrapper';
 import Navigation from 'components/sitewide/Navigation';
 import Footer from 'components/sitewide/Footer';
 
 const wrapPageElement = ({ element, props }) => {
   return (
-    <>
+    <ScrollWrapper>
       <Navigation />
       <Transition {...props}>{element}</Transition>
       <Footer />
-    </>
+    </ScrollWrapper>
   );
 };
 

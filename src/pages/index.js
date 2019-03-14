@@ -28,7 +28,7 @@ const Index = ({ data }) => (
       Background="url('https://source.unsplash.com/1600x900/?color')"
       PaddingTop={Theme.Base.Size}
       PaddingBottom={Theme.Base.Size}
-      MinHeight="600vh"
+      MinHeight="100vh"
       JustifyContent="center"
       TextColor={Theme.Color.White}
     >

@@ -8,11 +8,11 @@
 import * as Config from '../../../site-config';
 
 export const Settings = {
-  SiteTitle: Config.siteTitle,
-  SiteTitleShort: Config.siteTitleShort,
-  SiteDescription: Config.siteDescription,
-  SiteBaseKeywords: Config.siteBaseKeywords,
-  SiteUrl: Config.siteUrl,
+  Title: Config.siteTitle,
+  TitleShort: Config.siteTitleShort,
+  Description: Config.siteDescription,
+  BaseKeywords: Config.siteBaseKeywords,
+  Url: Config.siteUrl,
   PathPrefix: Config.pathPrefix,
   Logo: Config.logo,
   LogoLight: Config.logoLight,

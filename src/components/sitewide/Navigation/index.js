@@ -55,9 +55,7 @@ const LinkList = () => (
         <ul>
           {MainNavigation[0].map((link, index) => (
             <li key={index}>
-              <Link to={link.slug}>
-                {link.label}
-              </Link>
+              <Link to={link.slug}>{link.label}</Link>
             </li>
           ))}
         </ul>

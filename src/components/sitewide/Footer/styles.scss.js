@@ -18,12 +18,16 @@ import SectionStyle from 'elements/Section/styles.scss';
 
 const FooterStyle = styled.footer`
   width: 100%;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
 `;
 
 FooterStyle.Section = styled(SectionStyle)`
   background: ${Theme.Color.White};
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 `;
 
 FooterStyle.Inner = styled(InnerStyle)`
@@ -32,6 +36,9 @@ FooterStyle.Inner = styled(InnerStyle)`
   padding-bottom: ${Base.Size + 'px'};
   color: ${Theme.Color.Black};
   display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
   flex-direction: column;
 `;
 
