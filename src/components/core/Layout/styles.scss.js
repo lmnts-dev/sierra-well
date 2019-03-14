@@ -7,7 +7,7 @@
 import styled from 'styled-components';
 
 // Constants
-import { Theme } from 'constants/Theme';
+import { Theme, Root } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
 
 // Blocks
@@ -36,9 +36,9 @@ SiteGrid.Inner = styled(InnerStyle)`
 
   /* Gutters */
   padding-top: ${Theme.Base.Grid.Nav.Fixed
-    ? Base.Grid.Nav.Size.Lg + Base.Grid.Gutter.Top + 'px'
-    : Theme.Base.Grid.Gutter.Lg.Top};
-  padding-bottom: ${Theme.Base.Grid.Gutter.Lg.Bottom};
+    ? Root.Grid.Gutter.Top + Root.Grid.Gutter.Top + 'px'
+    : Root.Grid.Gutter.Top};
+  padding-bottom: ${Root.Grid.Gutter.Bottom};
 `;
 
 export default SiteGrid;

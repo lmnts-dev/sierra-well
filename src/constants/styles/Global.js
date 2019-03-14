@@ -1,7 +1,23 @@
+// Global Styles Component:
+// This is the global styles throughout the app.
+
+// Imports
+//////////////////////////////////////////////////////////////////////
+
+// Core
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+
+// Styles
+import { Typography } from './Font';
+import { Palette } from './Color';
+import { RootVariables } from './Root';
 import { Theme } from 'constants/Theme';
 
-export default createGlobalStyle`
+// Begin Component
+//////////////////////////////////////////////////////////////////////
+
+const Reset = createGlobalStyle`
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -367,16 +383,9 @@ html {
     padding-inline-start: 0px;
   }
 
-  html {
-    font-size: ${Theme.Base.FontSize};
-  }
-
   body {
-    font-family: ${Theme.Font.Body};
     line-height: 1;
     font-size: 1rem;
-    color: ${Theme.Color.Black};
-    background-color: ${Theme.Color.Background};
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -433,15 +442,16 @@ html {
     margin: 0;
   }
 
-  p {
-    font-family: ${Theme.Font.Body};
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: ${Theme.Font.Header};
-  }
-
   * { 
     box-sizing: border-box;
   }
 `;
+
+export const GlobalStyle = () => (
+  <>
+    <RootVariables />
+    <Reset />
+    <Typography />
+    <Palette />
+  </>
+);

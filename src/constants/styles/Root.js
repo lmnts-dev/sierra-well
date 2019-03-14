@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import { Theme, Root } from 'constants/Theme';
+import { Theme } from 'constants/Theme';
 
 // Responsive Measurements:
 // We use these to avoid media queries all
 // over the place where possible.
 
-export default createGlobalStyle`
+export const RootVariables = createGlobalStyle`
   :root {
     /* ----------------------------------- Large Width Viewports */
 
@@ -15,7 +15,7 @@ export default createGlobalStyle`
     --Size: ${Theme.Base.Size.Lg};
 
     /* -------- Root Element Measurement */
-    --REM: ${Theme.Base.REM.Lg};
+    --REM: ${Theme.Base.Rem.Lg};
 
     /* --------- Site Grid */
     --SiteWidth: ${Theme.Base.Grid.SiteWidth};
@@ -44,7 +44,7 @@ export default createGlobalStyle`
         --Size: ${Theme.Base.Size.Md};
 
         /* -------- Root Element Measurement */
-        --REM: ${Theme.Base.REM.Md};
+        --REM: ${Theme.Base.Rem.Md};
 
         /* --------- Site Grid */
         --SiteWidth: ${Theme.Base.Grid.SiteWidth};
@@ -74,7 +74,7 @@ export default createGlobalStyle`
         --Size: ${Theme.Base.Size.Sm};
 
         /* -------- Root Element Measurement */
-        --REM: ${Theme.Base.REM.Sm};
+        --Rem: ${Theme.Base.Rem.Sm};
 
         /* --------- Site Grid */
         --SiteWidth: ${Theme.Base.Grid.SiteWidth};
@@ -95,9 +95,5 @@ export default createGlobalStyle`
         /* --------- Geometry */
         --Radius: ${Theme.Base.Geometry.Radius};
     }
-  }
-
-  html {
-    font-size: ${Root.Base.REM};
   }
 `;

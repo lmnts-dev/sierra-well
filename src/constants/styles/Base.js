@@ -12,7 +12,7 @@ export const Base = {
   },
   
   // Root Element Measurement
-  REM: {
+  Rem: {
     Lg: 14, // px
     Md: 14, // px
     Sm: 14 // px

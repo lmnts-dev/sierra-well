@@ -12,7 +12,7 @@
 // 2. Use it in your SC: 'color: ${Theme.Color.Primary}; or simply refer to the object and key when used in functions.'
 
 import { Settings } from './site/Settings';
-import { Font } from './styles/Font';
+import { Font, Typography } from './styles/Font';
 import { Base } from './styles/Base';
 import { Color } from './styles/Color';
 
@@ -33,10 +33,10 @@ export const Theme = {
     },
 
     // Root Element Measurement
-    REM: {
-      Lg: Base.REM.Lg + 'px', // px
-      Md: Base.REM.Md + 'px', // px
-      Sm: Base.REM.Sm + 'px', // px
+    Rem: {
+      Lg: Base.Rem.Lg + 'px', // px
+      Md: Base.Rem.Md + 'px', // px
+      Sm: Base.Rem.Sm + 'px', // px
     },
 
     // Responsive Breakpoints
@@ -122,37 +122,43 @@ export const Theme = {
   Color: Color,
 };
 
+
+// Assign CSS Variables for automatic Media Queries.
 export const Root = {
   // Core measurements throughout the app.
-  Base: {
-    // Core Base Measurement
-    Size: 'var(--Size)',
+  // Core Base Measurement
+  Size: 'var(--Size)',
 
-    // Root Element Measurement
-    REM: 'var(--REM)',
+  // Root Element Measurement
+  Rem: 'var(--Rem)',
 
-    // Site Grid
-    SiteWidth: 'var(--SiteWidth)',
-    NavSize: 'var(--NavSize)',
+  // Site Grid
+  SiteWidth: 'var(--SiteWidth)',
+  NavSize: 'var(--NavSize)',
 
-    Grid: {
-      // Universal padding from the edge of the browser
-      // Read more: https://read.compassofdesign.com/guides-gutters-and-grids-2ce6092fc3de
-      Gutter: {
-        Top: 'var(--GutterTop)',
-        Right: 'var(--GutterRight)',
-        Bottom: 'var(--GutterBottom)',
-        Left: 'var(--GutterLeft)',
-      },
+  Grid: {
+    // Universal padding from the edge of the browser
+    // Read more: https://read.compassofdesign.com/guides-gutters-and-grids-2ce6092fc3de
+    Gutter: {
+      Top: 'var(--GutterTop)',
+      Right: 'var(--GutterRight)',
+      Bottom: 'var(--GutterBottom)',
+      Left: 'var(--GutterLeft)',
     },
-
-    // Buttons
-    Button: 'var(--ButtonSize)',
-
-    // Inputs
-    Input: 'var(--InputSize)',
-
-    // Geometry
-    Radius: 'var(--Radius)',
   },
+
+  // Buttons
+  Button: 'var(--ButtonSize)',
+
+  // Inputs
+  Input: 'var(--InputSize)',
+
+  // Geometry
+  Radius: 'var(--Radius)',
 };
+
+// Naming & Exporting 
+Theme.Typography = Typography;
+Theme.Root = Root;
+
+export default Theme;

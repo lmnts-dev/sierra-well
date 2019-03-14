@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { createGlobalStyle } from 'styled-components';
 
 // Color.js:
 // This is the sitewide palette.
@@ -29,3 +30,10 @@ export const Color = {
   Warning: `#FC6376`,
   Success: `#40DA33`,
 };
+
+export const Palette = createGlobalStyle`
+  body {
+    color: ${Color.Black};
+    background-color: ${Color.Background};
+  }
+`
