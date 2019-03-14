@@ -40,7 +40,7 @@ module.exports = {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `sierrawell`,
-        accessToken: `${process.env.API_KEY}`,
+        accessToken: `MC5YSW02TGhFQUFNQ2phVFdl.ElB277-9KO-_ve-_ve-_vTZu77-9X--_ve-_vS0e77-9Zu-_ve-_ve-_ve-_ve-_vSYs77-9Rw4wUh4o`,
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
