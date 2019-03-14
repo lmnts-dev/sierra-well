@@ -18,31 +18,10 @@ import { Color } from './styles/Color';
 
 export const Theme = {
   // General Site Information & Keywords
-  Site: {
-    Title: Settings.SiteTitle,
-    ShortTitle: Settings.SiteTitleShort,
-    Description: Settings.SiteDescription,
-    Keywords: Settings.SiteBaseKeywords,
-    Url: Settings.SiteUrl,
-    BaseUrl: Settings.PathPrefix,
-    Logo: Settings.Logo,
-    LogoLight: Settings.LogoLight,
-    LogoDark: Settings.LogoDark,
-    OpenGraphImg: Settings.OpenGraphImg,
-    Social: {
-      Twitter: Settings.Social.Twitter,
-      Facebook: Settings.Social.Facebook,
-      Instagram: Settings.Social.Instagram,
-      FbAppId: Settings.Social.FbAppId,
-    },
-  },
+  Site: Settings,
 
   // Fonts throughout the app.
-  Font: {
-    Header: Font.Header,
-    Body: Font.Body,
-    Code: Font.Code,
-  },
+  Font: Font,
 
   // Core measurements throughout the app.
   Base: {
@@ -140,30 +119,40 @@ export const Theme = {
   },
 
   // Core Palette & Colors
-  Color: {
-    // Core Colors
-    Primary: Color.Primary,
-    Secondary: Color.Secondary,
-    Background: Color.Background,
+  Color: Color,
+};
 
-    // Grayscale Palette
-    Black: Color.Black,
-    Nightsky: Color.Nightsky,
-    Gunmetal: Color.Gunmetal,
-    Slate: Color.Slate,
-    Gray: Color.Gray,
-    Snow: Color.Snow,
-    White: Color.White,
+export const Root = {
+  // Core measurements throughout the app.
+  Base: {
+    // Core Base Measurement
+    Size: 'var(--Size)',
 
-    // Main Palette
-    Leaf: Color.Leaf,
-    Tahoe: Color.Tahoe,
-    Sunset: Color.Sunset,
-    Dank: Color.Dank,
-    Flower: Color.Flower,
+    // Root Element Measurement
+    REM: 'var(--REM)',
 
-    // Feedback Palette
-    Warning: Color.Warning,
-    Success: Color.Success,
+    // Site Grid
+    SiteWidth: 'var(--SiteWidth)',
+    NavSize: 'var(--NavSize)',
+
+    Grid: {
+      // Universal padding from the edge of the browser
+      // Read more: https://read.compassofdesign.com/guides-gutters-and-grids-2ce6092fc3de
+      Gutter: {
+        Top: 'var(--GutterTop)',
+        Right: 'var(--GutterRight)',
+        Bottom: 'var(--GutterBottom)',
+        Left: 'var(--GutterLeft)',
+      },
+    },
+
+    // Buttons
+    Button: 'var(--ButtonSize)',
+
+    // Inputs
+    Input: 'var(--InputSize)',
+
+    // Geometry
+    Radius: 'var(--Radius)',
   },
 };
