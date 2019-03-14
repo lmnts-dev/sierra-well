@@ -7,7 +7,7 @@
 import styled from 'styled-components';
 
 // Constants
-import { Theme } from 'constants/Theme';
+import { Theme, Root } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
 
 // Blocks
@@ -37,7 +37,7 @@ const NavigationStyle = styled.nav`
 
 NavigationStyle.Inner = styled(InnerStyle)`
   background-color: ${Theme.Color.Background};
-  height: ${Theme.Base.Grid.Nav.Size.Lg};
+  height: ${Root.Nav.Size};
   color: ${Theme.Color.Black};
 `;
 
@@ -46,9 +46,9 @@ NavigationStyle.Block = styled(BlockStyle)`
   ul {
     display: flex;
     li {
-      padding: 0 ${Base.Size / 4 + 'px'};
+      padding: 0 ${Base.Size.Lg / 4 + 'px'};
       &:last-child {
-        padding: 0 0 0 ${Base.Size / 4 + 'px'};
+        padding: 0 0 0 ${Base.Size.Lg / 4 + 'px'};
       }
     }
     a {

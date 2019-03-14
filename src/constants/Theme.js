@@ -122,7 +122,6 @@ export const Theme = {
   Color: Color,
 };
 
-
 // Assign CSS Variables for automatic Media Queries.
 export const Root = {
   // Core measurements throughout the app.
@@ -133,8 +132,12 @@ export const Root = {
   Rem: 'var(--Rem)',
 
   // Site Grid
-  SiteWidth: 'var(--SiteWidth)',
-  NavSize: 'var(--NavSize)',
+  Site: {
+    Width: 'var(--SiteWidth)',
+  },
+  Nav: {
+    Size: 'var(--NavSize)',
+  },
 
   Grid: {
     // Universal padding from the edge of the browser
@@ -157,7 +160,7 @@ export const Root = {
   Radius: 'var(--Radius)',
 };
 
-// Naming & Exporting 
+// Naming & Exporting
 Theme.Typography = Typography;
 Theme.Root = Root;
 

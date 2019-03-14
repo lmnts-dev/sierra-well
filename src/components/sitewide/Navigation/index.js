@@ -6,7 +6,7 @@
 
 // Core
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 
 // Vendor
 // import Img from 'gatsby-image';
@@ -16,9 +16,55 @@ import NavigationStyle from 'components/sitewide/Navigation/styles.scss';
 
 // Constants
 import { Theme } from 'constants/Theme';
+import logo from '../../../assets/images/icon.png';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
+
+const LinkList = () => (
+  <StaticQuery
+    query={graphql`
+      query NavigationQuery {
+        allPrismicNavigation {
+          edges {
+            node {
+              id
+              data {
+                module_name
+                main {
+                  label
+                  slug
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      // Pull all Navigation Lists from Prismic
+      const AllNavigation = data.allPrismicNavigation.edges;
+
+      // Pull only the Main Navigation list.
+      const MainNavigation = AllNavigation.map(
+        (linklist, index) => linklist.node.data.main
+      );
+
+      // Convert these to usable elements
+      return (
+        <ul>
+          {MainNavigation[0].map((link, index) => (
+            <li key={index}>
+              <Link to={link.slug}>
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      );
+    }}
+  />
+);
 
 const Navigation = () => (
   <NavigationStyle>
@@ -28,26 +74,12 @@ const Navigation = () => (
         JustifyContent="space-between"
       >
         <NavigationStyle.Block>
-          <Link to={Theme.Site.BaseUrl}>
-            <img
-              src="https://cdn.dribbble.com/users/1826170/avatars/normal/56c47446d104c3768bbd90d907b1f238.jpg?1518642823"
-              alt={Theme.Site.Title}
-              height="30px"
-            />
+          <Link to="/">
+            <img src={logo} alt={Theme.Site.Title} height="30px" />
           </Link>
         </NavigationStyle.Block>
         <NavigationStyle.Block>
-          <ul>
-            <Link to="/work">
-              <li>Work</li>
-            </Link>
-            <Link to="/about">
-              <li>About</li>
-            </Link>
-            <Link to="/contact">
-              <li>Contact</li>
-            </Link>
-          </ul>
+          <LinkList />
         </NavigationStyle.Block>
       </NavigationStyle.Section>
     </NavigationStyle.Inner>

@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
-import { Base } from 'constants/styles/Base';
 
 // Blocks
 import InnerStyle from 'elements/Inner/styles.scss';

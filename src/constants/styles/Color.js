@@ -1,8 +1,13 @@
-/* eslint-disable */
-import { createGlobalStyle } from 'styled-components';
-
 // Color.js:
 // This is the sitewide palette.
+
+// Imports
+//////////////////////////////////////////////////////////////////////
+
+import { createGlobalStyle } from 'styled-components';
+
+// Begin Component
+//////////////////////////////////////////////////////////////////////
 
 export const Color = {
   // Core Colors
@@ -11,13 +16,13 @@ export const Color = {
   Background: '#F2F3F3',
 
   // Grayscale Palette
-  Black: `#000000`,
-  Nightsky: `#262222`,
+  Black: '#000000',
+  Nightsky: '#262222',
   Gunmetal: '#5D6376',
   Slate: '#AEB9C4',
-  Gray: `#CCD0D6`,
-  Snow: `#F2F3F3`,
-  White: `#ffffff`,
+  Gray: '#CCD0D6',
+  Snow: '#F2F3F3',
+  White: '#ffffff',
 
   // Main Palette
   Leaf: '#40DA33',
@@ -27,8 +32,8 @@ export const Color = {
   Flower: '#E17E00',
 
   // Feedback Palette
-  Warning: `#FC6376`,
-  Success: `#40DA33`,
+  Warning: '#FC6376',
+  Success: '#40DA33',
 };
 
 export const Palette = createGlobalStyle`
@@ -36,4 +41,4 @@ export const Palette = createGlobalStyle`
     color: ${Color.Black};
     background-color: ${Color.Background};
   }
-`
+`;

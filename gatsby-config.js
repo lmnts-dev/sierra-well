@@ -1,4 +1,16 @@
+// gatsby-config.js:
+// This is the core settings to Gatsby.
+
+// Our Sitewide variables
 const siteConfig = require('./site-config');
+
+// This is for Prismic.io
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+// Begin Component
+//////////////////////////////////////////////////////////////////////
 
 module.exports = {
   siteMetadata: {
@@ -20,6 +32,16 @@ module.exports = {
         rule: {
           include: `/assets/images/`,
         },
+      },
+    },
+
+    // Set up Prismic.io
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `sierrawell`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
 
