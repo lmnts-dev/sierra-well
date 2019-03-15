@@ -9,12 +9,9 @@ import React from 'react';
 
 // Components
 import Layout from 'components/core/Layout';
-import HorizontalContent from 'components/core/HorizontalContent';
 
 // Blocks
 import Section from 'elements/Section';
-// import Inner from 'elements/Inner';
-// import Block from 'elements/Block';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -22,11 +19,19 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = Theme.Color.Snow;
+const PageColor = Theme.Color.Gray;
 
 const Index = ({ data }) => (
   <Layout PageColor={PageColor}>
-    <HorizontalContent>Content</HorizontalContent>
+    <Section
+      FlexDir="column"
+      Background={PageColor}
+      PaddingTop={Theme.Base.Size}
+      PaddingBottom={Theme.Base.Size}
+      MinHeight="100vh"
+      JustifyContent="center"
+      TextColor={Theme.Color.Black}
+    />
   </Layout>
 );
 

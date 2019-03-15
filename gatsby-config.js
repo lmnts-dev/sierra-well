@@ -44,6 +44,7 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
+    
 
     // // Load files from /content/ folder
     // {

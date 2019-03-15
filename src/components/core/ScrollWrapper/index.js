@@ -16,6 +16,9 @@ import styled, { createGlobalStyle } from 'styled-components';
 const ScrollArea = styled.main`
   height: 100vh;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100vw;
   overflow-x: hidden;
   overflow-y: scroll;

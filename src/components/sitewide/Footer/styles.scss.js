@@ -31,16 +31,16 @@ FooterStyle.Section = styled(SectionStyle)`
   background: none;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   flex: 1;
 `;
 
 FooterStyle.Inner = styled(InnerStyle)`
-  padding-top: ${Base.Size / 2 + 'px'};
   color: ${Theme.Color.Black};
   display: flex;
   flex: 1;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   flex-direction: row;
 `;

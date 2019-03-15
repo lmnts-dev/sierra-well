@@ -89,10 +89,10 @@ NavigationStyle.TabListWrapper = styled.div`
   ul {
     list-style-type: none;
     display: flex;
-    font-size: 3vw;
+    font-size: 2vw;
 
     li {
-      padding-right: ${Root.Grid.Gutter.Right};
+      padding-right: ${Root.Size};
 
       a {
         color: ${Theme.Color.Slate};
