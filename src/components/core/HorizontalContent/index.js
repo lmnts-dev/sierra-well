@@ -26,20 +26,46 @@ const Slide = styled.div`
 
 class SimpleSlider extends React.Component {
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 1.04,
       slidesToScroll: 1,
     };
+
+    const Scroll = e => {
+      e.preventDefault();
+
+      if (e.originalEvent.deltaY < 0) {
+        $(this).slick('slickPrev');
+      } else {
+        $(this).slick('slickNext');
+      }
+    };
+
     return (
       <>
         <Helmet>
           <link rel="stylesheet" type="text/css" href="/vendor/slick.min.css" />
-          <link rel="stylesheet" type="text/css" href="/vendor/slick-theme.min.css" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="/vendor/slick-theme.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="/vendor/slick.horizontal.js"
+          />
         </Helmet>
-        <Slider {...settings}>{this.props.children}</Slider>
+        <Slider
+          onWheel={e => this.Scroll(e)}
+          className="side-scroll"
+          {...settings}
+        >
+          {this.props.children}
+        </Slider>
       </>
     );
   }
@@ -49,36 +75,24 @@ const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
     <HorizontalContentStyle.Inner>
       <SimpleSlider>
-        <div>
-          <Slide>
-            <h3>1</h3>
-          </Slide>
-        </div>
-        <div>
-          <Slide>
-            <h3>2</h3>
-          </Slide>
-        </div>
-        <div>
-          <Slide>
-            <h3>3</h3>
-          </Slide>
-        </div>
-        <div>
-          <Slide>
-            <h3>4</h3>
-          </Slide>
-        </div>
-        <div>
-          <Slide>
-            <h3>5</h3>
-          </Slide>
-        </div>
-        <div>
-          <Slide>
-            <h3>6</h3>
-          </Slide>
-        </div>
+        <Slide>
+          <h3>1</h3>
+        </Slide>
+        <Slide>
+          <h3>2</h3>
+        </Slide>
+        <Slide>
+          <h3>3</h3>
+        </Slide>
+        <Slide>
+          <h3>4</h3>
+        </Slide>
+        <Slide>
+          <h3>5</h3>
+        </Slide>
+        <Slide>
+          <h3>6</h3>
+        </Slide>
       </SimpleSlider>
     </HorizontalContentStyle.Inner>
   </HorizontalContentStyle>
