@@ -8,14 +8,14 @@ export const Base = {
   Size: {
     Lg: 60,
     Md: 40,
-    Sm: 20
+    Sm: 20,
   },
-  
+
   // Root Element Measurement
   Rem: {
     Lg: 14, // px
     Md: 14, // px
-    Sm: 14 // px
+    Sm: 14, // px
   },
 
   // Responsive Breakpoints
@@ -87,12 +87,12 @@ export const Base = {
   // Transitions
   Transition: {
     Duration: 0.25, // seconds
-    Ease: [1,.01,.49,1], // Cubic Bezier Ease
+    Ease: [1, 0.01, 0.49, 1], // Cubic Bezier Ease
     Page: 2000, // milliseconds. Try to not go lower than 350ms or it gets buggy. TODO.
   },
 
   // Geometry
   Geometry: {
     Radius: 10, // px
-  }
+  },
 };

@@ -35,6 +35,9 @@ module.exports = {
       },
     },
 
+    // For Slick Slider
+    `gatsby-plugin-sass`,
+
     // Set up Prismic.io
     {
       resolve: `gatsby-source-prismic`,
@@ -44,7 +47,6 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
-    
 
     // // Load files from /content/ folder
     // {

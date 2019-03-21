@@ -85,6 +85,7 @@ NavigationStyle.TabListWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   height: ${Root.Nav.Size};
+  opacity: 1;
 
   ul {
     list-style-type: none;
