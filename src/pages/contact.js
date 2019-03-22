@@ -22,10 +22,10 @@ import { Theme } from 'constants/Theme';
 const PageColor = Theme.Color.Sunset;
 
 const Index = ({ data }) => (
-  <Layout PageColor={PageColor}>
+  <Layout BgColor={PageColor}>
     <Section
       FlexDir="column"
-      Background={PageColor}
+      Background="none"
       PaddingTop={Theme.Base.Size}
       PaddingBottom={Theme.Base.Size}
       MinHeight="100vh"

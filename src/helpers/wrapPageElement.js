@@ -14,7 +14,7 @@ import Footer from 'components/sitewide/Footer';
 const wrapPageElement = ({ element, props }) => {
   return (
     <ScrollWrapper>
-      <Navigation />
+      <Navigation {...props} />
       <Transition {...props}>{element}</Transition>
       <Footer />
     </ScrollWrapper>

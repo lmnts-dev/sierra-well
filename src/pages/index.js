@@ -17,8 +17,10 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
+const PageColor = Theme.Color.Background;
+
 const Index = ({ data }) => (
-  <Layout BgColor={Theme.Color.Background}>
+  <Layout BgColor={PageColor}>
     <HorizontalContent>Content</HorizontalContent>
   </Layout>
 );

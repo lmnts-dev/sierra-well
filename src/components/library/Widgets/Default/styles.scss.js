@@ -43,7 +43,7 @@ WidgetStyle.Inner = styled.div`
     align-items: center;
     color: white;
     transform: scale(1);
-    transition: transform .75s ease;
+    transition: transform 0.75s ease;
 
     &:hover {
       text-decoration: none;

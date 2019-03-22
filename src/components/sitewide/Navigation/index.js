@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////
 
 // Core
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 // Vendor
@@ -26,6 +26,7 @@ import logo from '../../../assets/images/brandmark.png';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
+// The LinkList loop.
 const LinkList = () => (
   <StaticQuery
     query={graphql`
@@ -71,32 +72,37 @@ const LinkList = () => (
   />
 );
 
-const Navigation = () => (
-  <NavigationStyle>
-    <NavigationStyle.Top>
-      <NavigationStyle.Top.BrandingBlock>
-        <Link to="/">
-          <img src={logo} alt={Theme.Site.Title} height="30px" />
-        </Link>
-      </NavigationStyle.Top.BrandingBlock>
+// The Navigation Component itself.
+class Navigation extends PureComponent {
+  render() {
+    return (
+      <NavigationStyle>
+        <NavigationStyle.Top>
+          <NavigationStyle.Top.BrandingBlock>
+            <Link to="/">
+              <img src={logo} alt={Theme.Site.Title} height="30px" />
+            </Link>
+          </NavigationStyle.Top.BrandingBlock>
 
-      <NavigationStyle.Top.LinkListBlock>
-        <NavigationStyle.Top.TopLinkListWrapper>
-          <LinkList />
-        </NavigationStyle.Top.TopLinkListWrapper>
-      </NavigationStyle.Top.LinkListBlock>
+          <NavigationStyle.Top.LinkListBlock>
+            <NavigationStyle.Top.TopLinkListWrapper>
+              <LinkList />
+            </NavigationStyle.Top.TopLinkListWrapper>
+          </NavigationStyle.Top.LinkListBlock>
 
-      <NavigationStyle.Top.CommunicationBlock>
-        <Button label="Get in Touch" to="/contact" color="nightsky" />
-      </NavigationStyle.Top.CommunicationBlock>
-    </NavigationStyle.Top>
-    <NavigationStyle.Bottom>
-      <NavigationStyle.Bottom.LinkListWrapper>
-        <LinkList />
-      </NavigationStyle.Bottom.LinkListWrapper>
-    </NavigationStyle.Bottom>
-  </NavigationStyle>
-);
+          <NavigationStyle.Top.CommunicationBlock>
+            <Button label="Get in Touch" to="/contact" color="nightsky" />
+          </NavigationStyle.Top.CommunicationBlock>
+        </NavigationStyle.Top>
+        <NavigationStyle.Bottom>
+          <NavigationStyle.Bottom.LinkListWrapper>
+            <LinkList />
+          </NavigationStyle.Bottom.LinkListWrapper>
+        </NavigationStyle.Bottom>
+      </NavigationStyle>
+    );
+  }
+}
 
 export default Navigation;
 

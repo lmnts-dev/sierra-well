@@ -20,13 +20,11 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = Theme.Color.Tahoe;
+const PageColor = Theme.Color.Black;
 
 const Index = ({ data }) => (
-  <Layout PageColor={PageColor}>
-    <Layout PageColor={PageColor}>
-      <HorizontalContent>Content</HorizontalContent>
-    </Layout>
+  <Layout BgColor={PageColor}>
+    <HorizontalContent>Content</HorizontalContent>
   </Layout>
 );
 

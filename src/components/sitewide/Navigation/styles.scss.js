@@ -125,12 +125,12 @@ NavigationStyle.Bottom.LinkListWrapper = styled.div`
       padding-right: ${Root.Size};
 
       a {
-        color: ${Theme.Color.Slate};
+        color: rgba(0, 0, 0, 0.2);
         text-decoration: none;
         transition: all 0.25s ease;
 
         &:hover {
-          color: ${Theme.Color.Nightsky};
+          color: rgba(0, 0, 0, 1);
           text-decoration: none;
         }
       }
@@ -139,8 +139,7 @@ NavigationStyle.Bottom.LinkListWrapper = styled.div`
 `;
 
 export const ActiveTab = {
-  color: Theme.Color.Nightsky,
-  borderBottom: Theme.Color.Nightsky + '2px solid',
+  color: 'rgba(0,0,0, 1)',
 };
 
 export default NavigationStyle;

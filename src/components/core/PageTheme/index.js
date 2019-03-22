@@ -18,7 +18,8 @@ import { Theme } from 'constants/Theme';
 
 export const PageThemeStyle = createGlobalStyle`
   body {
-    background-color: ${props => (props.BgColor ? props.BgColor : Theme.Color.Background)};
+    background-color: ${props =>
+      props.BgColor ? props.BgColor : Theme.Color.Background};
     transition: background-color 1s ease;
   }
 `;
