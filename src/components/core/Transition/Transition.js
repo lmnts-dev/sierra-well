@@ -24,11 +24,10 @@ class Transition extends PureComponent {
       enter: {
         y: 0,
         opacity: 1,
-        delay: 800,
         beforeChildren: true,
         transition: {
-          duration: 700,
-          ease: Theme.Base.Transition.Ease,
+          opacity: { ease: 'easeIn', delay: 700, duration: 400 },
+          y: { duration: 700, delay: 800, ease: Theme.Base.Transition.Ease },
         },
       },
       exit: {

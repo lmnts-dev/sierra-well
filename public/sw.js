@@ -29,14 +29,14 @@ self.__precacheManifest = [
     "url": "webpack-runtime-a1454d54d033475a1f5f.js"
   },
   {
-    "url": "app-95ca814cf2fc44fe563c.js"
+    "url": "app-70739bd4994dcd7b6a15.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-e6408181f2178cc072d3.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "e27cd9f3c5e3c43fc522baeb1d1761cf"
+    "revision": "54e4b505b05a7d5bbf079099e36cdbb3"
   },
   {
     "url": "0-cc5852babd18bb978dde.js"
