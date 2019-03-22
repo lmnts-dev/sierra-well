@@ -1,31 +1,37 @@
-/* eslint-disable */
+// TopLevelRoutes Component:
+// This is the list of routes we are excluding from the
+// Sub Level Nav styles.
 
-// Settings.js:
-// This is the sitewide information that is used throughout the entire
-// build of the site. This goes from SEO to headings and also into the
-// core Gatsby config files as well.
+var TopLevelRoutes = [
+  '/',
+  '/menu',
+  '/locations',
+  '/company',
+  '/culture',
+  '/outreach',
+];
 
-import * as Config from '../../../site-config';
+// const AllTopLevelRoutes = ({ data }) => data.allPrismicNavigation.edges;
+// const AllTopLevelRoutesLinkLists = AllTopLevelRoutes.map(
+//   (linklist, index) => linklist.node.data.main
+// );
 
-export const Settings = {
-  Title: Config.siteTitle,
-  TitleShort: Config.siteTitleShort,
-  Description: Config.siteDescription,
-  BaseKeywords: Config.siteBaseKeywords,
-  Url: Config.siteUrl,
-  PathPrefix: Config.pathPrefix,
-  Logo: Config.logo,
-  LogoLight: Config.logoLight,
-  LogoDark: Config.logoDark,
-  Social: {
-    Twitter: Config.twitter,
-    Facebook: Config.facebook,
-    Instagram: Config.instagram,
-    FbAppId: Config.fbAppId,
-  },
+// const query = graphql`
+//   query TopLevelRouteQuery {
+//     allPrismicNavigation {
+//       edges {
+//         node {
+//           id
+//           data {
+//             module_name
+//             main {
+//               slugs
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
-  // I hate that these are here. Future fix possible.
-  ThemeColor: Config.themeColor,
-  SecondaryColor: Config.secondaryColor,
-  BackgroundColor: Config.backgroundColor,
-};
+export default TopLevelRoutes;

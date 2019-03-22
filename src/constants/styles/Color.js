@@ -42,3 +42,6 @@ export const Palette = createGlobalStyle`
     background-color: ${Color.Background};
   }
 `;
+
+//////////////////////////////////////////////////////////////////////
+// End Component

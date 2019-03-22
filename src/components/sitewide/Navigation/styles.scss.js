@@ -7,8 +7,8 @@
 import styled from 'styled-components';
 
 // Constants
+import TopLevelRoutes from 'constants/site/TopLevelRoutes';
 import { Theme, Root } from 'constants/Theme';
-import { easeIn } from '@popmotion/easing';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -63,7 +63,7 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   height: ${Root.Nav.Size};
-  opacity: ${props => (props.location != '/subpage' ? '0' : '1')};
+  opacity: ${props => (TopLevelRoutes.includes(props.location) ? '0' : '1')};
   transition: opacity 0.5s ease;
 
   ul {
@@ -107,12 +107,11 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
 //// Bottom Level Navigation
 
 // The Large Link List Container
-
 NavigationStyle.Bottom = styled.div`
   width: 100%;
   padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Grid.Gutter.Left};
-  opacity: ${props => (props.location == '/subpage' ? '0' : '1')};
-  transition: opacity .5s ease;
+  opacity: ${props => (TopLevelRoutes.includes(props.location) ? '1' : '0')};
+  transition: opacity 0.5s ease;
 `;
 
 NavigationStyle.Bottom.LinkListWrapper = styled.div`
@@ -149,4 +148,4 @@ export const ActiveTab = {
 export default NavigationStyle;
 
 //////////////////////////////////////////////////////////////////////
-// End Styles
+// End Component
