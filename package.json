@@ -6,6 +6,7 @@
     "start": "npm run develop",
     "clean": "rimraf .cache public",
     "develop": "npm run clean && gatsby develop",
+    "push": "npm run build && git add . && gitmoji -c && git push",
     "serve": "gatsby serve",
     "ssr": "npm run build && npm run serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
