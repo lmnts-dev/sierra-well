@@ -73,21 +73,28 @@ const LinkList = () => (
 
 const Navigation = () => (
   <NavigationStyle>
-    <NavigationStyle.BrandingBlock>
-      <Link to="/">
-        <img src={logo} alt={Theme.Site.Title} height="30px" />
-      </Link>
-    </NavigationStyle.BrandingBlock>
+    <NavigationStyle.Top>
+      <NavigationStyle.Top.BrandingBlock>
+        <Link to="/">
+          <img src={logo} alt={Theme.Site.Title} height="30px" />
+        </Link>
+      </NavigationStyle.Top.BrandingBlock>
 
-    <NavigationStyle.LinkListBlock>
-      <NavigationStyle.TopLinkListWrapper>
+      <NavigationStyle.Top.LinkListBlock>
+        <NavigationStyle.Top.TopLinkListWrapper>
+          <LinkList />
+        </NavigationStyle.Top.TopLinkListWrapper>
+      </NavigationStyle.Top.LinkListBlock>
+
+      <NavigationStyle.Top.CommunicationBlock>
+        <Button label="Get in Touch" to="/contact" color="nightsky" />
+      </NavigationStyle.Top.CommunicationBlock>
+    </NavigationStyle.Top>
+    <NavigationStyle.Bottom>
+      <NavigationStyle.Bottom.LinkListWrapper>
         <LinkList />
-      </NavigationStyle.TopLinkListWrapper>
-    </NavigationStyle.LinkListBlock>
-
-    <NavigationStyle.CommunicationBlock>
-      <Button label="Get in Touch" to="/contact" color="nightsky" />
-    </NavigationStyle.CommunicationBlock>
+      </NavigationStyle.Bottom.LinkListWrapper>
+    </NavigationStyle.Bottom>
   </NavigationStyle>
 );
 

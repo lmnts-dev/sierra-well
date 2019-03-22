@@ -32,7 +32,7 @@ class Transition extends PureComponent {
       },
       exit: {
         opacity: 0,
-        y: "2%",
+        y: '2%',
         transition: {
           duration: 500,
           ease: Theme.Base.Transition.Ease,

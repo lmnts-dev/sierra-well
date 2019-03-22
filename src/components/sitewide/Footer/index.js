@@ -20,8 +20,14 @@ const Footer = () => (
   <FooterStyle>
     <FooterStyle.Section>
       <FooterStyle.Inner>
-        <strong>{Theme.Site.Title}</strong>
-        <span>© {new Date().getFullYear()}</span>
+        <span>© {new Date().getFullYear()} Sierra Well</span>
+        <span>
+          Made with{' '}
+          <span role="img" aria-label="Heart">
+            ️❤️️
+          </span>{' '}
+          in Nevada
+        </span>
       </FooterStyle.Inner>
     </FooterStyle.Section>
   </FooterStyle>

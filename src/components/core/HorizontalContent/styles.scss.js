@@ -21,7 +21,6 @@ const HorizontalContentStyle = styled.div`
   padding-left: 0;
   padding-right: 0;
   overflow: visible;
-  background-color: ${Theme.Color.Background};
 
   .slick-list {
     overflow: visible;
@@ -42,9 +41,19 @@ HorizontalContentStyle.Inner = styled.div`
       &:focus {
         outline: 0;
       }
+      .col {
+        &:first-child {
+          padding-left: ${Theme.Base.Size.Sm};
+        }
+      }
     }
     &:first-child {
       padding: 0 0 0 ${Theme.Base.Size.Sm};
+      .col {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
     }
   }
 `;
@@ -54,7 +63,7 @@ HorizontalContentStyle.Slide = styled.div`
   width: 100%;
   padding: 0;
   overflow: visible;
-  height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size}));
+  height: calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}));
 `;
 
 // The Individual Slide Inner
@@ -65,13 +74,13 @@ HorizontalContentStyle.Slide.Inner = styled.div`
   flex-wrap: nowrap;
   overflow: visible;
   padding-bottom: ${Theme.Base.Size.Sm};
-  height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size}));
+  height: calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}));
 `;
 
 // The Column Wrapper
 HorizontalContentStyle.Column = styled.div`
   padding: ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm} 0;
-  height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size}));
+  height: calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}));
   display: flex;
   flex-direction: column;
   flex: ${props => (props.Divider ? 'unset' : '1')};

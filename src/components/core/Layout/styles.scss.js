@@ -31,7 +31,7 @@ SiteGrid.Inner = styled(InnerStyle)`
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  background-color: ${Theme.Color.White};
+  background-color: ${Theme.Color.Background};
 `;
 
 export default SiteGrid;

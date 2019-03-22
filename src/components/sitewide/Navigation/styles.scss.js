@@ -14,6 +14,12 @@ import { Theme, Root } from 'constants/Theme';
 
 // The Navigation Container
 const NavigationStyle = styled.nav`
+  position: relative;
+`;
+
+//// Top Level Navigation
+
+NavigationStyle.Top = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -24,7 +30,7 @@ const NavigationStyle = styled.nav`
 `;
 
 // The Container around the Logo
-NavigationStyle.BrandingBlock = styled.div`
+NavigationStyle.Top.BrandingBlock = styled.div`
   display: flex;
   width: ${Root.Grid.Gutter.Left};
   flex-direction: row;
@@ -44,19 +50,19 @@ NavigationStyle.BrandingBlock = styled.div`
 `;
 
 // The Container around the LinkLists
-NavigationStyle.LinkListBlock = styled.div`
+NavigationStyle.Top.LinkListBlock = styled.div`
   display: flex;
   flex: 1;
   padding: 0;
 `;
 
 // The Small Link List Container
-NavigationStyle.TopLinkListWrapper = styled.div`
+NavigationStyle.Top.TopLinkListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   height: ${Root.Nav.Size};
-  opacity: 1;
+  opacity: 0;
 
   ul {
     list-style-type: none;
@@ -87,43 +93,49 @@ NavigationStyle.TopLinkListWrapper = styled.div`
   }
 `;
 
-// The Large Link List Container
-// NavigationStyle.TabListWrapper = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   height: ${Root.Nav.Size};
-//   opacity: 1;ss
-
-//   ul {
-//     list-style-type: none;
-//     display: flex;
-//     font-size: 2vw;
-
-//     li {
-//       padding-right: ${Root.Size};
-
-//       a {
-//         color: ${Theme.Color.Slate};
-//         text-decoration: none;
-//         transition: all 0.25s ease;
-
-//         &:hover {
-//           color: ${Theme.Color.Nightsky};
-//           text-decoration: none;
-//         }
-//       }
-//     }
-//   }
-// `;
-
 // The Container around the Communication Tools,
 // like Intercom and the Get in Touch Button
-NavigationStyle.CommunicationBlock = styled.div`
+NavigationStyle.Top.CommunicationBlock = styled.div`
   display: flex;
   width: auto;
   flex-direction: row;
   padding: ${Theme.Base.Size.Sm};
+`;
+
+//// Bottom Level Navigation
+
+// The Large Link List Container
+
+NavigationStyle.Bottom = styled.div`
+  width: 100%;
+  padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Grid.Gutter.Left};
+`;
+
+NavigationStyle.Bottom.LinkListWrapper = styled.div`
+  height: ${Root.Nav.Size};
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 2vw;
+
+    li {
+      padding-right: ${Root.Size};
+
+      a {
+        color: ${Theme.Color.Slate};
+        text-decoration: none;
+        transition: all 0.25s ease;
+
+        &:hover {
+          color: ${Theme.Color.Nightsky};
+          text-decoration: none;
+        }
+      }
+    }
+  }
 `;
 
 export const ActiveTab = {

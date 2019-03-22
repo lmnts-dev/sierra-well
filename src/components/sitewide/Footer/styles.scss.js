@@ -22,6 +22,7 @@ const FooterStyle = styled.footer`
   justify-content: center;
   height: ${Root.Footer.Size};
   padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
+  z-index: 400;
 `;
 
 FooterStyle.Section = styled.div`
