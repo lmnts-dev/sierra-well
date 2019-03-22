@@ -8,7 +8,7 @@ export const Base = {
   Size: {
     Lg: 60,
     Md: 40,
-    Sm: 20,
+    Sm: 14,
   },
 
   // Root Element Measurement
@@ -40,9 +40,9 @@ export const Base = {
       Fixed: true,
       LogoPosition: null,
       Size: {
-        Lg: 55, // px
-        Md: 55, // px
-        Sm: 40, // px
+        Lg: 81, // px
+        Md: 81, // px
+        Sm: 81, // px
       },
     },
 

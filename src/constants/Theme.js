@@ -122,7 +122,7 @@ export const Theme = {
 
     // Geometry
     Geometry: {
-      Radius: Base.Transition.Page + 's', // px
+      Radius: Base.Geometry.Radius + 'px', // px
     },
   },
 

@@ -12,10 +12,9 @@ import Slider from 'react-slick'; // For Slick Slider
 import { Helmet } from 'react-helmet'; // For Slick Styles
 
 // Styles
-import styled from 'styled-components';
-import './slider.scss';
 import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
+import Widget from 'components/library/Widgets/Default';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -55,7 +54,7 @@ class SimpleSlider extends React.Component {
       speed: 1500,
       arrows: false,
       slidesToShow: 1.05,
-      infinite: false
+      infinite: false,
     };
 
     return (
@@ -79,28 +78,74 @@ class SimpleSlider extends React.Component {
   }
 }
 
+const SlideColumns = () => (
+  <>
+    <HorizontalContentStyle.Column ColWidth="25%">
+      <HorizontalContentStyle.Column.Inner>
+        <Widget>Widget</Widget>
+        <Widget>Widget</Widget>
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column ColWidth="25%">
+      <HorizontalContentStyle.Column.Inner>
+        <Widget>Widget</Widget>
+        <Widget>Widget</Widget>
+        <Widget>Widget</Widget>
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column ColWidth="25%">
+      <HorizontalContentStyle.Column.Inner>
+        <Widget>Widget</Widget>
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column ColWidth="25%">
+      <HorizontalContentStyle.Column.Inner>
+        <Widget>Widget</Widget>
+        <Widget>Widget</Widget>
+        <Widget>Widget</Widget>
+        <Widget>Widget</Widget>
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+  </>
+);
+
 // The Content Itself
 const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
     <HorizontalContentStyle.Inner>
       <SimpleSlider>
-        <HorizontalContentStyle.Slide bg="pink">
-          <h3>1</h3>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
         </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide bg="palevioletred">
-          <h3>2</h3>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
         </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide bg="red">
-          <h3>3</h3>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
         </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide bg="maroon">
-          <h3>4</h3>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
         </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide bg="black">
-          <h3>5</h3>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
         </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide bg="lightblue">
-          <h3>6</h3>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
         </HorizontalContentStyle.Slide>
       </SimpleSlider>
     </HorizontalContentStyle.Inner>
