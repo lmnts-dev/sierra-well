@@ -9,7 +9,7 @@ import React from 'react';
 
 // Components
 import Layout from 'components/core/Layout';
-import HorizontalContent from 'components/core/HorizontalContent';
+import SubLevelPage from 'components/core/SubLevelPage';
 
 // Blocks
 import Section from 'elements/Section';
@@ -24,7 +24,11 @@ const PageColor = Theme.Color.Gray;
 
 const Index = ({ data }) => (
   <Layout PageColor={PageColor}>
-    <HorizontalContent>Content</HorizontalContent>
+    <SubLevelPage BgColor="black">
+      <div className="content-stretch">
+        <h1>Hello</h1>
+      </div>
+    </SubLevelPage>
   </Layout>
 );
 

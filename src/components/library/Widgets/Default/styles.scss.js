@@ -24,6 +24,7 @@ const WidgetStyle = styled.div`
 WidgetStyle.Inner = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: ${props =>
@@ -34,7 +35,23 @@ WidgetStyle.Inner = styled.div`
   cursor: pointer;
   color: ${Theme.Color.White};
 
+  a {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    color: white;
+    transform: scale(1);
+    transition: transform .75s ease;
+
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.4);
+    }
+  }
   &:hover {
+    background-color: ${Theme.Color.Nightsky};
     box-shadow: 0 20px 30px 0 rgba(6, 10, 92, 0.21);
   }
 `;

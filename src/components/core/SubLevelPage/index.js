@@ -1,4 +1,4 @@
-// Default Widget.js:
+// SubLevelPage.js:
 // This is prevent page jumping of page transitions.
 // The concept is to replicate a 'body' tag so it's scroll
 // position isn't reset for a simple and smooth page
@@ -8,20 +8,21 @@
 
 // Core
 import React from 'react';
-import { Link } from 'gatsby';
+
+// Constants
+import { Theme } from 'constants/Theme';
 
 // Styles
-import WidgetStyle from './styles.scss';
+import SubLevelPageStyle from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Widget = ({ children, BgColor }) => (
-  <WidgetStyle className="widget">
-    <WidgetStyle.Inner BgColor={BgColor}>
-      <Link to="/subpage">{children}</Link>
-    </WidgetStyle.Inner>
-  </WidgetStyle>
+// The SubLevel Page Itself
+const SubLevelPage = ({ children, BgColor }) => (
+  <SubLevelPageStyle BgColor={BgColor}>
+    <SubLevelPageStyle.Inner>{children}</SubLevelPageStyle.Inner>
+  </SubLevelPageStyle>
 );
 
-export default Widget;
+export default SubLevelPage;

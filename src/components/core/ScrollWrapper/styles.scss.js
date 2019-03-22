@@ -14,6 +14,7 @@ const ScrollArea = styled.main`
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   position: relative;
+  height: 100vh;
 `;
 
 export default ScrollArea;

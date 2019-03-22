@@ -15,7 +15,7 @@ import InnerStyle from 'elements/Inner/styles.scss';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-const SiteGrid = styled.main`
+const SiteGrid = styled.div`
   width: 100%;
   background-color: ${Theme.Color.Background};
   display: flex;
