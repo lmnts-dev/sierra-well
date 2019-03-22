@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{186:function(n,e,a){"use strict";a.r(e);var t=a(0),o=a.n(t),r=a(191),c=a(198),l=a(2).b.Color.Snow;e.default=function(n){n.data;return o.a.createElement(r.a,{PageColor:l},o.a.createElement(c.a,null,"Content"))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-80234e714d18ffc125eb.js.map

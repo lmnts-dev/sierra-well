@@ -26,15 +26,15 @@ WidgetStyle.Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${Theme.Color.White};
+  background-color: ${Theme.Color.Slate};
   border-radius: ${Root.Radius};
-  box-shadow: 0 10px 17px 0 rgba(0,215,75,0.11);
+  box-shadow: 0 10px 17px 0 rgba(0, 215, 75, 0.11);
   transition: all 0.5s ease;
   cursor: pointer;
-  color: ${Theme.Color.Slate};
+  color: ${Theme.Color.White};
 
   &:hover {
-    box-shadow: 0 20px 30px 0 rgba(0,215,75,0.21);
+    box-shadow: 0 20px 30px 0 rgba(0, 215, 75, 0.21);
   }
 `;
 

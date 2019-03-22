@@ -95,7 +95,7 @@ export const Base = {
   // Transitions
   Transition: {
     Duration: 0.25, // seconds
-    Ease: [1, 0.01, 0.49, 1], // Cubic Bezier Ease
+    Ease: [.29,.77,.57,.85], // Cubic Bezier Ease
     Page: 2000, // milliseconds. Try to not go lower than 350ms or it gets buggy. TODO.
   },
 

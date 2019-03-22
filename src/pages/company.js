@@ -9,6 +9,7 @@ import React from 'react';
 
 // Components
 import Layout from 'components/core/Layout';
+import HorizontalContent from 'components/core/HorizontalContent';
 
 // Blocks
 import Section from 'elements/Section';
@@ -23,15 +24,7 @@ const PageColor = Theme.Color.Gray;
 
 const Index = ({ data }) => (
   <Layout PageColor={PageColor}>
-    <Section
-      FlexDir="column"
-      Background={PageColor}
-      PaddingTop={Theme.Base.Size}
-      PaddingBottom={Theme.Base.Size}
-      MinHeight="100vh"
-      JustifyContent="center"
-      TextColor={Theme.Color.Black}
-    />
+    <HorizontalContent>Content</HorizontalContent>
   </Layout>
 );
 

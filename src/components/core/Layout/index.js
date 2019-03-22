@@ -22,14 +22,7 @@ import { Theme } from '../../../constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageBackground = createGlobalStyle`
-body {
-  background-color: ${props =>
-    props.PageColor ? props.PageColor : Theme.Color.Background};
-}
-`;
-
-const Layout = ({ data, children, PageColor }) => (
+const Layout = ({ data, children }) => (
   <SiteGrid>
     <GlobalStyle />
     <Head />
