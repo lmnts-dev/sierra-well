@@ -26,15 +26,15 @@ class Transition extends PureComponent {
         opacity: 1,
         beforeChildren: true,
         transition: {
-          opacity: { ease: 'easeIn', delay: 700, duration: 400 },
-          y: { duration: 700, delay: 800, ease: Theme.Base.Transition.Ease },
+          opacity: { ease: 'easeIn', delay: 500, duration: 400 },
+          y: { duration: 500, delay: 500, ease: Theme.Base.Transition.Ease },
         },
       },
       exit: {
         opacity: 0,
-        y: 50,
+        y: "2%",
         transition: {
-          duration: 700,
+          duration: 500,
           ease: Theme.Base.Transition.Ease,
         },
       },

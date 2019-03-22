@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Blocks
 
@@ -73,18 +74,41 @@ HorizontalContentStyle.Column = styled.div`
   height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size}));
   display: flex;
   flex-direction: column;
-  width: ${props => (props.ColWidth ? props.ColWidth : 'auto')};
+  flex: ${props => (props.Divider ? 'unset' : '1')};
+  width: ${props =>
+    props.ColWidth
+      ? props.ColWidth
+      : props.Divider
+      ? Theme.Base.Size.Md
+      : 'auto'};
 `;
 
 HorizontalContentStyle.Column.Inner = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
   .widget {
     &:first-child {
       padding-top: 0;
     }
   }
+
+  ${props => {
+    if (props.Divider)
+      return `
+        width: ${Theme.Base.Size.Md};
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: calc(50% - ${Base.Size.Sm / 2 + 'px'});
+          width: 1px;
+          background-color: rgba(6, 10, 92, 0.05);
+        }
+    `;
+  }}
 `;
 
 export default HorizontalContentStyle;

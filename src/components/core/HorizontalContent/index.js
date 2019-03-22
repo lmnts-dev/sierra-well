@@ -18,6 +18,7 @@ import { Theme } from 'constants/Theme';
 import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
 import Widget from 'components/library/Widgets/Default';
+import posed, { PoseGroup } from 'react-pose'
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -28,6 +29,12 @@ const WrapperLock = createGlobalStyle`
     overflow: hidden;
   }
 `;
+
+// Pose Animation
+const WidgetItem = posed(Widget)({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+})
 
 // The Slider Itself
 class SimpleSlider extends React.Component {
@@ -83,14 +90,33 @@ class SimpleSlider extends React.Component {
 
 const SlideColumns = () => (
   <>
-    <HorizontalContentStyle.Column ColWidth="25%">
+    <HorizontalContentStyle.Column>
       <HorizontalContentStyle.Column.Inner>
         <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
         <Widget BgColor={Theme.Color.Slate}>Widget</Widget>
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
-    <HorizontalContentStyle.Column ColWidth="25%">
+    <HorizontalContentStyle.Column>
+      <HorizontalContentStyle.Column.Inner>
+        <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Primary}>Widget</Widget>
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column Divider>
+      <HorizontalContentStyle.Column.Inner Divider />
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column>
+      <HorizontalContentStyle.Column.Inner>
+        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column>
       <HorizontalContentStyle.Column.Inner>
         <Widget BgColor={Theme.Color.Primary}>Widget</Widget>
         <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
@@ -98,13 +124,11 @@ const SlideColumns = () => (
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
-    <HorizontalContentStyle.Column ColWidth="25%">
-      <HorizontalContentStyle.Column.Inner>
-        <Widget BgColor={Theme.Color.Tahoe}>Widget</Widget>
-      </HorizontalContentStyle.Column.Inner>
+    <HorizontalContentStyle.Column Divider>
+      <HorizontalContentStyle.Column.Inner Divider />
     </HorizontalContentStyle.Column>
 
-    <HorizontalContentStyle.Column ColWidth="25%">
+    <HorizontalContentStyle.Column>
       <HorizontalContentStyle.Column.Inner>
         <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
         <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
