@@ -21,14 +21,14 @@ const HorizontalContent = styled.div`
   flex-direction: column;
   padding-top: ${Base.Grid.Nav.Size.Lg * 2 + 'px'};
   padding-bottom: ${Root.Nav.Size};
+  padding-left: 0;
+  padding-right: 0;
 `;
 
 HorizontalContent.Inner = styled.div`
   width: 100vw;
   flex: 1;
-  background-color: lightgreen;
-  padding: ${Root.Grid.Gutter.Top} ${Root.Grid.Gutter.Right}
-    ${Root.Grid.Gutter.Bottom} ${Root.Grid.Gutter.Left};
+  padding: 0;
 `;
 
 export default HorizontalContent;
