@@ -23,13 +23,10 @@ import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scs
 const Slide = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: ${props => (props.bg)}
+  background-color: ${props => props.bg};
 `;
 
-const BodyLock = createGlobalStyle`
-  body {
-    overflow: hidden;
-  }
+const WrapperLock = createGlobalStyle`
   .wrapper {
     overflow: hidden;
   }
@@ -44,12 +41,7 @@ class SimpleSlider extends React.Component {
   }
 
   handleWheel(e) {
-    console.info('x' + e.deltaX);
-    console.info('y' + e.deltaY);
-    console.info('z' + e.deltaZ);
-    console.info('mode' + e.deltaMode);
-
-    // Disable default
+    // Disable defaultss
     e.preventDefault();
 
     // Previous / Next Slide based on mouse scroll
@@ -71,7 +63,7 @@ class SimpleSlider extends React.Component {
 
     return (
       <>
-        <BodyLock />
+        <WrapperLock />
         <Helmet>
           <link rel="stylesheet" type="text/css" href="/vendor/slick.min.css" />
           <link
@@ -94,22 +86,22 @@ const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
     <HorizontalContentStyle.Inner>
       <SimpleSlider>
-        <Slide bg='pink'>
+        <Slide bg="pink">
           <h3>1</h3>
         </Slide>
-        <Slide bg='palevioletred'>
+        <Slide bg="palevioletred">
           <h3>2</h3>
         </Slide>
-        <Slide bg='red'>
+        <Slide bg="red">
           <h3>3</h3>
         </Slide>
-        <Slide bg='maroon'>
+        <Slide bg="maroon">
           <h3>4</h3>
         </Slide>
-        <Slide bg='black'>
+        <Slide bg="black">
           <h3>5</h3>
         </Slide>
-        <Slide bg='lightblue'>
+        <Slide bg="lightblue">
           <h3>6</h3>
         </Slide>
       </SimpleSlider>
