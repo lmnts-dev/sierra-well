@@ -11,11 +11,6 @@ import React from 'react';
 import Layout from 'components/core/Layout';
 import HorizontalContent from 'components/core/HorizontalContent';
 
-// Blocks
-import Section from 'elements/Section';
-// import Inner from 'elements/Inner';
-// import Block from 'elements/Block';
-
 // Constants
 import { Theme } from 'constants/Theme';
 

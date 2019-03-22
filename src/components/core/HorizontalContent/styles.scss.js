@@ -15,23 +15,24 @@ import { Base } from 'constants/styles/Base';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-const HorizontalContent = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding-top: ${Base.Grid.Nav.Size.Lg * 2 + 'px'};
-  padding-bottom: ${Root.Nav.Size};
+const HorizontalContentStyle = styled.div`
+  width: 100%;
   padding-left: 0;
   padding-right: 0;
 `;
 
-HorizontalContent.Inner = styled.div`
-  width: 100vw;
-  flex: 1;
+HorizontalContentStyle.Inner = styled.div`
+  width: 100%;
   padding: 0;
 `;
 
-export default HorizontalContent;
+HorizontalContentStyle.Slide = styled.div`
+  width: 100%;
+  height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size}));
+  background-color: ${props => props.bg};
+`;
+
+export default HorizontalContentStyle;
 
 //////////////////////////////////////////////////////////////////////
 // End Styles

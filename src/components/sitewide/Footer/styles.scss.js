@@ -20,14 +20,11 @@ const FooterStyle = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: ${Root.Nav.Size};
+  height: ${Root.Footer.Size};
+  padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
 `;
 
-FooterStyle.Section = styled(SectionStyle)`
+FooterStyle.Section = styled.div`
   background: none;
   display: flex;
   flex-direction: row;
@@ -36,7 +33,7 @@ FooterStyle.Section = styled(SectionStyle)`
   flex: 1;
 `;
 
-FooterStyle.Inner = styled(InnerStyle)`
+FooterStyle.Inner = styled.div`
   color: ${Theme.Color.Black};
   display: flex;
   flex: 1;

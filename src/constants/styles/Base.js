@@ -41,8 +41,16 @@ export const Base = {
       LogoPosition: null,
       Size: {
         Lg: 55, // px
-        Md: 150, // px
+        Md: 55, // px
         Sm: 40, // px
+      },
+    },
+
+    Footer: {
+      Size: {
+        Lg: 35, // px
+        Md: 35, // px
+        Sm: 35, // px
       },
     },
 
@@ -53,19 +61,19 @@ export const Base = {
         Top: 20, // px
         Bottom: 20, // px
         Right: 20, // px
-        Left: 20, // px
+        Left: 150, // px
       },
       Md: {
         Top: 20, // px
         Bottom: 20, // px
         Right: 20, // px
-        Left: 20, // px
+        Left: 150, // px
       },
       Sm: {
         Top: 20, // px
         Bottom: 20, // px
         Right: 20, // px
-        Left: 20, // px
+        Left: 150, // px
       },
     },
   },

@@ -83,10 +83,6 @@ const Navigation = () => (
       <NavigationStyle.TopLinkListWrapper>
         <LinkList />
       </NavigationStyle.TopLinkListWrapper>
-
-      <NavigationStyle.TabListWrapper>
-        <LinkList />
-      </NavigationStyle.TabListWrapper>
     </NavigationStyle.LinkListBlock>
 
     <NavigationStyle.CommunicationBlock>

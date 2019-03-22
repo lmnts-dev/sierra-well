@@ -17,27 +17,28 @@ const NavigationStyle = styled.nav`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  justify-content: space-between;
+  align-items: center;
   z-index: 800;
+  height: ${Root.Nav.Size};
 `;
 
 // The Container around the Logo
 NavigationStyle.BrandingBlock = styled.div`
   display: flex;
-  width: auto;
+  width: ${Root.Grid.Gutter.Left};
   flex-direction: row;
-  padding: 0 ${Root.Grid.Gutter.Right} 0 ${Root.Grid.Gutter.Left};
-
+  padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
   a {
     height: ${Root.Nav.Size};
     display: flex;
     flex-direction: column;
     justify-content: center;
     line-height: 0;
+    width: 100%;
+    img {
+      width: 100%;
+    }
   }
 `;
 
@@ -45,7 +46,6 @@ NavigationStyle.BrandingBlock = styled.div`
 NavigationStyle.LinkListBlock = styled.div`
   display: flex;
   flex: 1;
-  flex-direction: column;
   padding: 0;
 `;
 
@@ -55,19 +55,27 @@ NavigationStyle.TopLinkListWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   height: ${Root.Nav.Size};
-  opacity: 0;
+  opacity: 1;
 
   ul {
     list-style-type: none;
     display: flex;
+    align-items: center;
+    height: 100%;
 
     li {
+      display: flex;
+      align-items: center;
+      height: 100%;
       padding-right: ${Root.Grid.Gutter.Right};
 
       a {
         color: ${Theme.Color.Slate};
         text-decoration: none;
         transition: all 0.25s ease;
+        display: flex;
+        align-items: center;
+        height: 100%;
 
         &:hover {
           color: ${Theme.Color.Nightsky};
@@ -79,42 +87,42 @@ NavigationStyle.TopLinkListWrapper = styled.div`
 `;
 
 // The Large Link List Container
-NavigationStyle.TabListWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: ${Root.Nav.Size};
-  opacity: 1;
+// NavigationStyle.TabListWrapper = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   height: ${Root.Nav.Size};
+//   opacity: 1;ss
 
-  ul {
-    list-style-type: none;
-    display: flex;
-    font-size: 2vw;
+//   ul {
+//     list-style-type: none;
+//     display: flex;
+//     font-size: 2vw;
 
-    li {
-      padding-right: ${Root.Size};
+//     li {
+//       padding-right: ${Root.Size};
 
-      a {
-        color: ${Theme.Color.Slate};
-        text-decoration: none;
-        transition: all 0.25s ease;
+//       a {
+//         color: ${Theme.Color.Slate};
+//         text-decoration: none;
+//         transition: all 0.25s ease;
 
-        &:hover {
-          color: ${Theme.Color.Nightsky};
-          text-decoration: none;
-        }
-      }
-    }
-  }
-`;
+//         &:hover {
+//           color: ${Theme.Color.Nightsky};
+//           text-decoration: none;
+//         }
+//       }
+//     }
+//   }
+// `;
+
 // The Container around the Communication Tools,
 // like Intercom and the Get in Touch Button
 NavigationStyle.CommunicationBlock = styled.div`
   display: flex;
   width: auto;
   flex-direction: row;
-  padding: ${Root.Grid.Gutter.Top} ${Root.Grid.Gutter.Right}
-    ${Root.Grid.Gutter.Bottom} ${Root.Grid.Gutter.Left};
+  padding: ${Theme.Base.Size.Sm};
 `;
 
 export const ActiveTab = {

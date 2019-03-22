@@ -67,6 +67,14 @@ export const Theme = {
         },
       },
 
+      Footer: {
+        Size: {
+          Lg: Base.Grid.Footer.Size.Lg + 'px',
+          Md: Base.Grid.Footer.Size.Md + 'px',
+          Sm: Base.Grid.Footer.Size.Sm + 'px',
+        },
+      },
+
       // Universal padding from the edge of the browser
       // Read more: https://read.compassofdesign.com/guides-gutters-and-grids-2ce6092fc3de
       Gutter: {
@@ -137,6 +145,9 @@ export const Root = {
   },
   Nav: {
     Size: 'var(--NavSize)',
+  },
+  Footer: {
+    Size: 'var(--FooterSize)',
   },
 
   Grid: {

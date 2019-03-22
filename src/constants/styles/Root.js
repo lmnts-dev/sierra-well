@@ -20,6 +20,7 @@ export const RootVariables = createGlobalStyle`
     /* --------- Site Grid */
     --SiteWidth: ${Theme.Base.Grid.SiteWidth};
     --NavSize: ${Theme.Base.Grid.Nav.Size.Lg};
+    --FooterSize: ${Theme.Base.Grid.Footer.Size.Lg};
 
     /* --- Gutters */
     --GutterTop: ${Theme.Base.Grid.Gutter.Lg.Top};
@@ -49,6 +50,7 @@ export const RootVariables = createGlobalStyle`
         /* --------- Site Grid */
         --SiteWidth: ${Theme.Base.Grid.SiteWidth};
         --NavSize: ${Theme.Base.Grid.Nav.Size.Md};
+        --FooterSize: ${Theme.Base.Grid.Footer.Size.Md};
 
         /* --- Gutters */
         --GutterTop: ${Theme.Base.Grid.Gutter.Md.Top};
@@ -79,6 +81,7 @@ export const RootVariables = createGlobalStyle`
         /* --------- Site Grid */
         --SiteWidth: ${Theme.Base.Grid.SiteWidth};
         --NavSize: ${Theme.Base.Grid.Nav.Size.Sm};
+        --FooterSize: ${Theme.Base.Grid.Footer.Size.Sm};
 
         /* --- Gutters */
         --GutterTop: ${Theme.Base.Grid.Gutter.Sm.Top};

@@ -10,22 +10,15 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
+// Styles
+import ScrollArea from './styles.scss';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const ScrollArea = styled.main`
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-`;
-
+// Lock Body Scroll
+// Why? : Because it jumps on page transitions. Emulating the <body> tag using
+// a scroll wrapper gives us much more flexibility in our content and transitions.
 const BodyLock = createGlobalStyle`
   body {
     height: 100vh;
@@ -34,6 +27,7 @@ const BodyLock = createGlobalStyle`
   }
 `;
 
+// Scroll Wrapper Itself
 class ScrollWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -42,6 +36,7 @@ class ScrollWrapper extends React.Component {
     };
   }
 
+  // Handle Navigation Scroll for Sticky Nav
   handleScroll = e => {
     const top = e.target.scrollTop > 36;
     if (top) {
@@ -55,6 +50,7 @@ class ScrollWrapper extends React.Component {
     }
   };
 
+  // Render component.
   render() {
     const { children } = this.props;
     return (

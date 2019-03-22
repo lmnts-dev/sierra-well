@@ -12,7 +12,16 @@ export const Font = {
 
 export const Typography = createGlobalStyle`
   body {
+    line-height: 1;
+    font-size: 1rem;
     font-family: ${Font.Body};
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+    -webkit-font-feature-settings: "pnum";
+    font-feature-settings: "pnum";
+    font-variant-numeric: proportional-nums;
   }
 
   p {

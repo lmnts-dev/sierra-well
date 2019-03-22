@@ -12,7 +12,6 @@ import { createGlobalStyle } from 'styled-components';
 import { Typography } from './Font';
 import { Palette } from './Color';
 import { RootVariables } from './Root';
-import { Theme } from 'constants/Theme';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -31,6 +30,8 @@ const Reset = createGlobalStyle`
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    margin: 0;
+    padding: 0;
   }
   
   /* Sections
@@ -42,6 +43,7 @@ html {
   
   body {
     margin: 0;
+    padding: 0;
   }
   
   /**
@@ -383,18 +385,6 @@ html {
     padding-inline-start: 0px;
   }
 
-  body {
-    line-height: 1;
-    font-size: 1rem;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    -webkit-font-feature-settings: "pnum";
-    font-feature-settings: "pnum";
-    font-variant-numeric: proportional-nums;
-  }
-
   ol, ul {
     list-style: none;
   }
@@ -429,9 +419,7 @@ html {
     font-size: 85%;
     line-height: 1.45;
     border-radius: 5px;
-    color: ${Theme.Color.Primary};
     border: 1px solid #ddd;
-    font-family: ${Theme.Font.Code};
   }
 
   video {

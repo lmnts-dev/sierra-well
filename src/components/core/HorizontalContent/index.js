@@ -20,18 +20,14 @@ import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scs
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Slide = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: ${props => props.bg};
-`;
-
+// Lock Wrapper Scrollssss
 const WrapperLock = createGlobalStyle`
   .wrapper {
     overflow: hidden;
   }
 `;
 
+// The Slider Itself
 class SimpleSlider extends React.Component {
   constructor(props) {
     super(props);
@@ -58,7 +54,8 @@ class SimpleSlider extends React.Component {
       dots: false,
       speed: 1500,
       arrows: false,
-      slidesToShow: 1.04,
+      slidesToShow: 1.05,
+      infinite: false
     };
 
     return (
@@ -82,28 +79,29 @@ class SimpleSlider extends React.Component {
   }
 }
 
+// The Content Itself
 const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
     <HorizontalContentStyle.Inner>
       <SimpleSlider>
-        <Slide bg="pink">
+        <HorizontalContentStyle.Slide bg="pink">
           <h3>1</h3>
-        </Slide>
-        <Slide bg="palevioletred">
+        </HorizontalContentStyle.Slide>
+        <HorizontalContentStyle.Slide bg="palevioletred">
           <h3>2</h3>
-        </Slide>
-        <Slide bg="red">
+        </HorizontalContentStyle.Slide>
+        <HorizontalContentStyle.Slide bg="red">
           <h3>3</h3>
-        </Slide>
-        <Slide bg="maroon">
+        </HorizontalContentStyle.Slide>
+        <HorizontalContentStyle.Slide bg="maroon">
           <h3>4</h3>
-        </Slide>
-        <Slide bg="black">
+        </HorizontalContentStyle.Slide>
+        <HorizontalContentStyle.Slide bg="black">
           <h3>5</h3>
-        </Slide>
-        <Slide bg="lightblue">
+        </HorizontalContentStyle.Slide>
+        <HorizontalContentStyle.Slide bg="lightblue">
           <h3>6</h3>
-        </Slide>
+        </HorizontalContentStyle.Slide>
       </SimpleSlider>
     </HorizontalContentStyle.Inner>
   </HorizontalContentStyle>
