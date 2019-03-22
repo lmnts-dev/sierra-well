@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { easeIn } from '@popmotion/easing';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -62,7 +63,8 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   height: ${Root.Nav.Size};
-  opacity: 0;
+  opacity: ${props => (props.location != '/subpage' ? '0' : '1')};
+  transition: opacity 0.5s ease;
 
   ul {
     list-style-type: none;
@@ -109,6 +111,8 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
 NavigationStyle.Bottom = styled.div`
   width: 100%;
   padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Grid.Gutter.Left};
+  opacity: ${props => (props.location == '/subpage' ? '0' : '1')};
+  transition: opacity .5s ease;
 `;
 
 NavigationStyle.Bottom.LinkListWrapper = styled.div`

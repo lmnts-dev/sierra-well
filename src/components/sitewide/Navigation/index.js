@@ -75,6 +75,10 @@ const LinkList = () => (
 // The Navigation Component itself.
 class Navigation extends PureComponent {
   render() {
+    const { children, location } = this.props;
+
+    console.log(location.pathname)
+
     return (
       <NavigationStyle>
         <NavigationStyle.Top>
@@ -85,7 +89,7 @@ class Navigation extends PureComponent {
           </NavigationStyle.Top.BrandingBlock>
 
           <NavigationStyle.Top.LinkListBlock>
-            <NavigationStyle.Top.TopLinkListWrapper>
+            <NavigationStyle.Top.TopLinkListWrapper location={location.pathname}>
               <LinkList />
             </NavigationStyle.Top.TopLinkListWrapper>
           </NavigationStyle.Top.LinkListBlock>
@@ -94,7 +98,7 @@ class Navigation extends PureComponent {
             <Button label="Get in Touch" to="/contact" color="nightsky" />
           </NavigationStyle.Top.CommunicationBlock>
         </NavigationStyle.Top>
-        <NavigationStyle.Bottom>
+        <NavigationStyle.Bottom location={location.pathname}>
           <NavigationStyle.Bottom.LinkListWrapper>
             <LinkList />
           </NavigationStyle.Bottom.LinkListWrapper>

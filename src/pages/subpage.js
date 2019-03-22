@@ -20,7 +20,7 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = Theme.Color.Black;
+const PageColor = Theme.Color.Nightsky;
 
 const Index = ({ data }) => (
   <Layout BgColor={PageColor}>
