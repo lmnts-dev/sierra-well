@@ -64,6 +64,8 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
   align-items: center;
   height: ${Root.Nav.Size};
   opacity: ${props => (TopLevelRoutes.includes(props.location) ? '0' : '1')};
+  pointer-events: ${props =>
+    TopLevelRoutes.includes(props.location) ? 'none' : 'auto'};
   transition: opacity 0.5s ease;
 
   ul {
@@ -111,6 +113,8 @@ NavigationStyle.Bottom = styled.div`
   width: 100%;
   padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Grid.Gutter.Left};
   opacity: ${props => (TopLevelRoutes.includes(props.location) ? '1' : '0')};
+  pointer-events: ${props =>
+    TopLevelRoutes.includes(props.location) ? 'auto' : 'none'};
   transition: opacity 0.5s ease;
 `;
 
