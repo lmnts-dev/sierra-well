@@ -17,7 +17,6 @@ import InnerStyle from 'elements/Inner/styles.scss';
 
 const SiteGrid = styled.div`
   width: 100%;
-  background-color: ${Theme.Color.Background};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +30,6 @@ SiteGrid.Inner = styled(InnerStyle)`
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  background-color: ${Theme.Color.Background};
 `;
 
 export default SiteGrid;

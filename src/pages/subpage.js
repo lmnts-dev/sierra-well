@@ -20,11 +20,11 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = Theme.Color.Gray;
+const PageColor = Theme.Color.Black;
 
 const Index = ({ data }) => (
-  <Layout PageColor={PageColor}>
-    <SubLevelPage BgColor="black">
+  <Layout BgColor={PageColor}>
+    <SubLevelPage>
       <div className="content-stretch">
         <h1>Hello</h1>
       </div>

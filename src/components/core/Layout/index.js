@@ -13,6 +13,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 //  Components
 import Head from 'components/core/Head';
+import PageTheme from 'components/core/PageTheme';
 
 // Styles
 import { GlobalStyle } from 'constants/styles/Global';
@@ -22,9 +23,10 @@ import { Theme } from '../../../constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Layout = ({ data, children }) => (
+const Layout = ({ data, children, BgColor }) => (
   <SiteGrid>
     <GlobalStyle />
+    <PageTheme BgColor={BgColor} />
     <Head />
     <SiteGrid.Inner>{children}</SiteGrid.Inner>
   </SiteGrid>

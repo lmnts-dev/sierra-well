@@ -19,8 +19,8 @@ import SubLevelPageStyle from './styles.scss';
 //////////////////////////////////////////////////////////////////////
 
 // The SubLevel Page Itself
-const SubLevelPage = ({ children, BgColor }) => (
-  <SubLevelPageStyle BgColor={BgColor}>
+const SubLevelPage = ({ children }) => (
+  <SubLevelPageStyle>
     <SubLevelPageStyle.Inner>{children}</SubLevelPageStyle.Inner>
   </SubLevelPageStyle>
 );

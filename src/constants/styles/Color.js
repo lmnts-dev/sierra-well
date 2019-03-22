@@ -40,6 +40,5 @@ export const Palette = createGlobalStyle`
   body {
     color: ${Color.Black};
     background-color: ${Color.Background};
-    transition: background-color .25s ease;
   }
 `;

@@ -20,7 +20,6 @@ const SubLevelPageStyle = styled.div`
   width: 100%;
   padding-left: ${Root.Grid.Gutter.Left};
   padding-right: ${Root.Grid.Gutter.Right};
-  background-color: ${props => (props.BgColor ? props.BgColor : 'none')};
   min-height: 100vh;
 `;
 
@@ -28,10 +27,10 @@ SubLevelPageStyle.Inner = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-left: dotted 1px pink;
   .content-stretch {
     height: 200vh;
     color: white;
-    background: ${Theme.Color.Nightsky};
     padding: ${Root.Grid.Gutter.Right} ${Root.Grid.Gutter.Right}
       ${Root.Grid.Gutter.Right} 0;
   }
