@@ -15,9 +15,9 @@ import WidgetStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Widget = ({ children }) => (
+const Widget = ({ children, BgColor }) => (
   <WidgetStyle className="widget">
-    <WidgetStyle.Inner>{children}</WidgetStyle.Inner>
+    <WidgetStyle.Inner BgColor={BgColor}>{children}</WidgetStyle.Inner>
   </WidgetStyle>
 );
 

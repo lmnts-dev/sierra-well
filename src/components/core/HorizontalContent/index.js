@@ -11,6 +11,9 @@ import React from 'react';
 import Slider from 'react-slick'; // For Slick Slider
 import { Helmet } from 'react-helmet'; // For Slick Styles
 
+// Constants
+import { Theme } from 'constants/Theme';
+
 // Styles
 import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
@@ -82,31 +85,31 @@ const SlideColumns = () => (
   <>
     <HorizontalContentStyle.Column ColWidth="25%">
       <HorizontalContentStyle.Column.Inner>
-        <Widget>Widget</Widget>
-        <Widget>Widget</Widget>
+        <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Slate}>Widget</Widget>
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
     <HorizontalContentStyle.Column ColWidth="25%">
       <HorizontalContentStyle.Column.Inner>
-        <Widget>Widget</Widget>
-        <Widget>Widget</Widget>
-        <Widget>Widget</Widget>
+        <Widget BgColor={Theme.Color.Primary}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
     <HorizontalContentStyle.Column ColWidth="25%">
       <HorizontalContentStyle.Column.Inner>
-        <Widget>Widget</Widget>
+        <Widget BgColor={Theme.Color.Tahoe}>Widget</Widget>
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
     <HorizontalContentStyle.Column ColWidth="25%">
       <HorizontalContentStyle.Column.Inner>
-        <Widget>Widget</Widget>
-        <Widget>Widget</Widget>
-        <Widget>Widget</Widget>
-        <Widget>Widget</Widget>
+        <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
+        <Widget BgColor={Theme.Color.Primary}>Widget</Widget>
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
   </>
