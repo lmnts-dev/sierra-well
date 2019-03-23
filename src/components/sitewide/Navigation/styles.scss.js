@@ -7,11 +7,12 @@
 import styled from 'styled-components';
 
 // Constants
-import TopLevelRoutes from 'constants/site/TopLevelRoutes';
 import { Theme, Root } from 'constants/Theme';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
+
+// Pull the routes from TopLevelRoutes
 
 // The Navigation Container
 const NavigationStyle = styled.nav`
@@ -63,9 +64,9 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   height: ${Root.Nav.Size};
-  opacity: ${props => (TopLevelRoutes.includes(props.location) ? '0' : '1')};
+  opacity: ${props => (props.routes.includes(props.location) ? '0' : '1')};
   pointer-events: ${props =>
-    TopLevelRoutes.includes(props.location) ? 'none' : 'auto'};
+    props.routes.includes(props.location) ? 'none' : 'auto'};
   transition: opacity 0.5s ease;
 
   ul {
@@ -112,9 +113,9 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
 NavigationStyle.Bottom = styled.div`
   width: 100%;
   padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Grid.Gutter.Left};
-  opacity: ${props => (TopLevelRoutes.includes(props.location) ? '1' : '0')};
+  opacity: ${props => (props.routes.includes(props.location) ? '1' : '0')};
   pointer-events: ${props =>
-    TopLevelRoutes.includes(props.location) ? 'auto' : 'none'};
+    props.routes.includes(props.location) ? 'auto' : 'none'};
   transition: opacity 0.5s ease;
 `;
 
