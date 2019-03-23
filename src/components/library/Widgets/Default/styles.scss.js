@@ -51,7 +51,7 @@ WidgetStyle.Inner = styled.div`
     }
   }
   &:hover {
-    background-color: ${Theme.Color.Nightsky};
+    background-color: ${Theme.Color.Black};
     box-shadow: 0 20px 30px 0 rgba(6, 10, 92, 0.21);
   }
 `;
