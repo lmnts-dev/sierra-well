@@ -28,9 +28,9 @@ SubLevelPageStyle.Inner = styled.div`
   display: flex;
   flex-direction: column;
   border-left: dotted 1px pink;
+  
   .content-stretch {
     height: 200vh;
-    color: white;
     padding: ${Root.Grid.Gutter.Right} ${Root.Grid.Gutter.Right}
       ${Root.Grid.Gutter.Right} 0;
   }

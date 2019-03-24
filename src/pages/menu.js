@@ -23,7 +23,12 @@ import { Theme } from 'constants/Theme';
 const PageColor = Theme.Color.Nightsky;
 
 const Index = ({ data }) => (
-  <Layout BgColor={PageColor}>
+  <Layout
+    BgColor={PageColor}
+    PrimaryColor={Theme.Color.Nightsky}
+    SecondaryColor={Theme.Color.White}
+    TertiaryColor={Theme.Color.Nightsky}
+  >
     <HorizontalContent>Content</HorizontalContent>
   </Layout>
 );

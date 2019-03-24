@@ -20,11 +20,131 @@ export const PageThemeStyle = createGlobalStyle`
   body {
     background-color: ${props =>
       props.BgColor ? props.BgColor : Theme.Color.Background};
-    transition: background-color ${Theme.Base.Transition.Duration} ${Theme.Base.Transition.CssEase};
+    transition: background-color ${Theme.Base.Transition.Duration} ${
+  Theme.Base.Transition.CssEase
+};
+  /* Color */
+  ${props => (props.SecondaryColor ? 'color: ' + props.SecondaryColor : null)};
+};
+
+/* Navigation */
+nav {
+
+  /* Top Navigation */
+  .nav-top {
+
+    /* Linklist */
+    .linklist {
+      li {
+        /* Update Link Colors */
+        a {
+          /* Color */
+          ${props =>
+            props.SecondaryColor ? 'color: ' + props.SecondaryColor : null};
+
+          /* Opacity */
+          ${props => (props.SecondaryColor ? 'opacity: .5' : null)};
+          
+          /* Hover */
+          &:hover {
+            ${props => (props.SecondaryColor ? 'opacity: 1' : null)};
+          }
+
+          /* Active */
+          &.active {
+          opacity: 1;
+          }
+        }
+      }
+    }
+
+    /* Communication / Focus Block */
+    .btn {
+      ${props =>
+        /* Background */
+        props.SecondaryColor
+          ? 'background-color: ' + props.SecondaryColor
+          : null};
+
+      /* Color */
+      ${props =>
+        props.TertiaryColor ? 'color: ' + props.TertiaryColor : null};
+            
+      /* Hover */
+      &:hover {
+              ${props =>
+                props.SecondaryColor
+                  ? 'background-color: ' + props.SecondaryColor
+                  : null};
+            }
+    }
+  }
+
+  /* Bottom Navigation */
+  .nav-bottom {
+    /* Linklist */
+    .linklist {
+      li {
+        /* Update Link Colors */
+        a {
+          /* Color */
+          ${props =>
+            props.SecondaryColor ? 'color: ' + props.SecondaryColor : null};
+
+          /* Opacity */
+          ${props => (props.SecondaryColor ? 'opacity: .5' : null)};
+          
+          /* Hover */
+          &:hover {
+            ${props => (props.SecondaryColor ? 'opacity: 1' : null)};
+          }
+
+          /* Active */
+          &.active {
+          opacity: 1;
+          }
+        }
+      }
+    }
+  }
+};
+
+/* Footer */
+footer {
+    span {
+      /* Color */
+      ${props =>
+        props.SecondaryColor
+          ? 'color: ' + props.SecondaryColor + ' !important'
+          : null};
+    }
+  }
+
+  /* Sublevel Page */
+  .sub {
+    /* Color */
+    ${props =>
+      props.SecondaryColor
+        ? 'color: ' + props.SecondaryColor + ' !important'
+        : null};
+  }
+
   }
 `;
 
-const PageTheme = ({ BgColor }) => <PageThemeStyle BgColor={BgColor} />;
+const PageTheme = ({
+  BgColor,
+  PrimaryColor,
+  SecondaryColor,
+  TertiaryColor,
+}) => (
+  <PageThemeStyle
+    BgColor={BgColor}
+    PrimaryColor={PrimaryColor}
+    SecondaryColor={SecondaryColor}
+    TertiaryColor={TertiaryColor}
+  />
+);
 
 export default PageTheme;
 

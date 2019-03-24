@@ -12,9 +12,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 // import Img from 'gatsby-image';
 
 // Styles
-import NavigationStyle, {
-  ActiveTab,
-} from 'components/sitewide/Navigation/styles.scss';
+import NavigationStyle from 'components/sitewide/Navigation/styles.scss';
 
 // Components
 import Button from 'components/library/Button/';
@@ -66,7 +64,7 @@ class Navigation extends PureComponent {
           // to the styled components below.
           return (
             <NavigationStyle>
-              <NavigationStyle.Top>
+              <NavigationStyle.Top className="nav-top">
                 <NavigationStyle.Top.BrandingBlock>
                   <Link to="/">
                     <img src={logo} alt={Theme.Site.Title} height="30px" />
@@ -78,24 +76,29 @@ class Navigation extends PureComponent {
                     location={location.pathname}
                     routes={TopLevelRoutes}
                   >
-                    <LinkList ActiveStyle={ActiveTab} />
+                    <LinkList ActiveClass='active' />
                   </NavigationStyle.Top.TopLinkListWrapper>
                 </NavigationStyle.Top.LinkListBlock>
 
                 <NavigationStyle.Top.CommunicationBlock>
-                  <Button label="Get in Touch" to="/contact" color="nightsky" />
+                  <Button
+                    label="Get in Touch"
+                    to="/contact"
+                    color="nightsky"
+                  />
                 </NavigationStyle.Top.CommunicationBlock>
               </NavigationStyle.Top>
 
               <NavigationStyle.Bottom
                 location={location.pathname}
                 routes={TopLevelRoutes}
+                className="nav-bottom"
               >
                 <NavigationStyle.Bottom.LinkListWrapper
                   location={location.pathname}
                   routes={TopLevelRoutes}
                 >
-                  <LinkList ActiveStyle={ActiveTab} />
+                  <LinkList ActiveClass='active' />
                 </NavigationStyle.Bottom.LinkListWrapper>
               </NavigationStyle.Bottom>
             </NavigationStyle>

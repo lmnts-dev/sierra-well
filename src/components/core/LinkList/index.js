@@ -12,7 +12,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 //////////////////////////////////////////////////////////////////////
 
 // The LinkList loop.
-const LinkList = ({ ActiveStyle }) => (
+const LinkList = ({ ActiveClass }) => (
   <StaticQuery
     query={graphql`
       query NavigationQuery {
@@ -43,10 +43,10 @@ const LinkList = ({ ActiveStyle }) => (
 
       // Convert these to usable elements
       return (
-        <ul>
+        <ul className="linklist">
           {MainNavigation[0].map((link, index) => (
             <li key={index}>
-              <Link to={link.slug} activeStyle={ActiveStyle}>
+              <Link to={link.slug} activeClassName={ActiveClass}>
                 {link.label}
               </Link>
             </li>

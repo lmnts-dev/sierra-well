@@ -23,6 +23,7 @@ const FooterStyle = styled.footer`
   height: ${Root.Footer.Size};
   padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
   z-index: 400;
+  font-size: 0.8rem;
 `;
 
 FooterStyle.Section = styled.div`
@@ -41,6 +42,10 @@ FooterStyle.Inner = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  span {
+    transition: all ${Theme.Base.Transition.Duration}
+      ${Theme.Base.Transition.CssEase};
+  }
 `;
 
 export default FooterStyle;

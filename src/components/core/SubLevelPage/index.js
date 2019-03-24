@@ -20,7 +20,7 @@ import SubLevelPageStyle from './styles.scss';
 
 // The SubLevel Page Itself
 const SubLevelPage = ({ children }) => (
-  <SubLevelPageStyle>
+  <SubLevelPageStyle className="sub">
     <SubLevelPageStyle.Inner>{children}</SubLevelPageStyle.Inner>
   </SubLevelPageStyle>
 );

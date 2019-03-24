@@ -23,10 +23,22 @@ import { Theme } from '../../../constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Layout = ({ data, children, BgColor }) => (
+const Layout = ({
+  data,
+  children,
+  BgColor,
+  PrimaryColor,
+  SecondaryColor,
+  TertiaryColor,
+}) => (
   <SiteGrid>
     <GlobalStyle />
-    <PageTheme BgColor={BgColor} />
+    <PageTheme
+      BgColor={BgColor}
+      PrimaryColor={PrimaryColor}
+      SecondaryColor={SecondaryColor}
+      TertiaryColor={TertiaryColor}
+    />
     <Head />
     <SiteGrid.Inner>{children}</SiteGrid.Inner>
   </SiteGrid>

@@ -17,7 +17,7 @@ import ButtonStyle from 'components/library/Button/styles.scss';
 //////////////////////////////////////////////////////////////////////
 
 const Button = ({ label, to, color }) => (
-  <ButtonStyle to={to} color={color}>
+  <ButtonStyle className="btn" to={to} color={color}>
     {label}
   </ButtonStyle>
 );

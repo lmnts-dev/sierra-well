@@ -33,7 +33,8 @@ WidgetStyle.Inner = styled.div`
   box-shadow: 0 10px 17px 0 rgba(6, 10, 92, 0.12);
   position: relative;
   overflow: hidden;
-  transition: all ${Theme.Base.Transition.Duration} ${Theme.Base.Transition.CssEase};
+  transition: all ${Theme.Base.Transition.Duration}
+    ${Theme.Base.Transition.CssEase};
   cursor: pointer;
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
 
