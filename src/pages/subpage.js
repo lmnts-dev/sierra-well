@@ -17,7 +17,7 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = Theme.Color.Dank;
+const PageColor = 'Tomato';
 
 const Index = ({ data }) => (
   <Layout
@@ -26,9 +26,16 @@ const Index = ({ data }) => (
     SecondaryColor={Theme.Color.Tahoe}
     TertiaryColor={Theme.Color.White}
   >
-    <SubLevelPage>
+    <SubLevelPage
+      BgColor={PageColor}
+      PrimaryColor={Theme.Color.Dank}
+      SecondaryColor={Theme.Color.Tahoe}
+      TertiaryColor={Theme.Color.White}
+    >
       <div className="content-stretch">
-        <h1>Hello</h1>
+        <h1>
+          Reno’s first Cannabis dispensary — located in the heart of downtown.
+        </h1>
       </div>
     </SubLevelPage>
   </Layout>

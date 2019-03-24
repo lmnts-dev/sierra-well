@@ -20,7 +20,7 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = 'DodgerBlue';
+const PageColor = 'LightSkyBlue';
 
 const Index = ({ data }) => (
   <Layout

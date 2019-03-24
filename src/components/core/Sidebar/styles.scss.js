@@ -1,4 +1,4 @@
-// SubLevelPage Component Styles:
+// Sidebar Component Styles
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -17,17 +17,19 @@ import { Base } from 'constants/styles/Base';
 
 // The Content Wrapper
 const SidebarStyle = styled.div`
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: sticky;
+  top: ${Root.Nav.Size};
   height: calc(100vh - ${Root.Nav.Size});
   display: flex;
+  z-index: 555;
 `;
 
 SidebarStyle.Inner = styled.div`
-  background-color: blue;
   flex: 1;
-  padding: ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm} ${Root.Footer.Size} ${Theme.Base.Size.Sm};
   width: ${Root.Grid.Gutter.Left};
 `;
 

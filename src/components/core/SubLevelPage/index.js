@@ -22,9 +22,20 @@ import SubLevelPageStyle from './styles.scss';
 //////////////////////////////////////////////////////////////////////
 
 // The SubLevel Page Itself
-const SubLevelPage = ({ children }) => (
+const SubLevelPage = ({
+  children,
+  BgColor,
+  PrimaryColor,
+  SecondaryColor,
+  TertiaryColor,
+}) => (
   <SubLevelPageStyle className="sub">
-    <Sidebar />
+    <Sidebar
+      BgColor={BgColor}
+      PrimaryColor={PrimaryColor}
+      SecondaryColor={SecondaryColor}
+      TertiaryColor={TertiaryColor}
+    />
     <SubLevelPageStyle.Inner>{children}</SubLevelPageStyle.Inner>
   </SubLevelPageStyle>
 );

@@ -12,6 +12,9 @@ import React from 'react';
 // Constants
 import { Theme } from 'constants/Theme';
 
+// Components
+import SidebarWidget from 'components/library/Widgets/Sidebar/Default';
+
 // Styles
 import SidebarStyle from './styles.scss';
 
@@ -19,10 +22,45 @@ import SidebarStyle from './styles.scss';
 //////////////////////////////////////////////////////////////////////
 
 // The SubLevel Page Itself
-const Sidebar = ({ children }) => (
+const Sidebar = ({
+  children,
+  BgColor,
+  PrimaryColor,
+  SecondaryColor,
+  TertiaryColor,
+}) => (
   <SidebarStyle>
     <SidebarStyle.Inner>
-      Hi
+      <SidebarWidget
+        BgColor={SecondaryColor}
+        BgImage="none"
+        Subhead="Subhead"
+        Headline="Headline"
+        TextColor={TertiaryColor}
+        IconColor={TertiaryColor}
+        IconName="rocket"
+        Destination="/subpage"
+      />
+      <SidebarWidget
+        BgColor={SecondaryColor}
+        BgImage="none"
+        Subhead="Subhead"
+        Headline="Headline"
+        TextColor={TertiaryColor}
+        IconColor={TertiaryColor}
+        IconName="rocket"
+        Destination="/subpage"
+      />
+      <SidebarWidget
+        BgColor={SecondaryColor}
+        BgImage="none"
+        Subhead="Subhead"
+        Headline="Headline"
+        TextColor={TertiaryColor}
+        IconColor={TertiaryColor}
+        IconName="rocket"
+        Destination="/subpage"
+      />
     </SidebarStyle.Inner>
   </SidebarStyle>
 );

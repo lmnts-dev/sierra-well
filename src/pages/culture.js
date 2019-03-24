@@ -26,7 +26,7 @@ const Index = ({ data }) => (
   <Layout
     BgColor={PageColor}
     PrimaryColor={Theme.Color.Nightsky}
-    SecondaryColor={Theme.Color.White}
+    SecondaryColor="Cyan"
     TertiaryColor={PageColor}
   >
     <HorizontalContent>Content</HorizontalContent>

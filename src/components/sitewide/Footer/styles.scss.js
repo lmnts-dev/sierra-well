@@ -59,6 +59,8 @@ FooterStyle.Inner = styled.div`
       padding-left: ${Theme.Base.Size.Sm};
       position: ${props =>
         props.routes.includes(props.location) ? 'unset' : 'fixed'};
+      opacity: ${props =>
+        props.routes.includes(props.location) ? '1' : '.6'};
       left: 0;
       bottom: 0;
       height: ${Root.Footer.Size};

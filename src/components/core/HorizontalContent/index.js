@@ -10,6 +10,7 @@
 import React from 'react';
 import Slider from 'react-slick'; // For Slick Slider
 import { Helmet } from 'react-helmet'; // For Slick Styles
+import posed, { PoseGroup } from 'react-pose';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -17,8 +18,9 @@ import { Theme } from 'constants/Theme';
 // Styles
 import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
+
+// Components
 import Widget from 'components/library/Widgets/Default';
-import posed, { PoseGroup } from 'react-pose';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
