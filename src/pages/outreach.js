@@ -20,13 +20,13 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = 'MediumSpringGreen';
+const PageColor = 'OrangeRed';
 
 const Index = ({ data }) => (
   <Layout
     BgColor={PageColor}
     PrimaryColor={Theme.Color.Nightsky}
-    SecondaryColor='Indigo'
+    SecondaryColor={Theme.Color.Dank}
     TertiaryColor={PageColor}
   >
     <HorizontalContent>Content</HorizontalContent>

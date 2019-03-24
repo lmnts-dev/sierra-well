@@ -30,6 +30,7 @@ export const Color = {
   Sunset: '#FC6376',
   Dank: '#F8E71C',
   Flower: '#E17E00',
+  Indigo: '#060A5C',
 
   // Feedback Palette
   Warning: '#FC6376',

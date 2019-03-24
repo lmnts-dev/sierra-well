@@ -162,7 +162,7 @@ const SlideColumns = () => (
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
-    <HorizontalContentStyle.Column Divider>
+    <HorizontalContentStyle.Column Divider className="divider">
       <HorizontalContentStyle.Column.Inner Divider />
     </HorizontalContentStyle.Column>
 
@@ -218,7 +218,7 @@ const SlideColumns = () => (
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
-    <HorizontalContentStyle.Column Divider>
+    <HorizontalContentStyle.Column Divider className="divider">
       <HorizontalContentStyle.Column.Inner Divider />
     </HorizontalContentStyle.Column>
 

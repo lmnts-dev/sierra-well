@@ -114,7 +114,8 @@ HorizontalContentStyle.Column.Inner = styled.div`
           bottom: 0;
           left: calc(50% - ${Base.Size.Sm / 2 + 'px'});
           width: 1px;
-          background-color: rgba(6, 10, 92, 0.05);
+          opacity: .05;
+          background-color: { Theme.Color.Indigo };
         }
     `;
   }}

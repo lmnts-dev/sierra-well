@@ -129,6 +129,20 @@ footer {
         : null};
   }
 
+  /* Slide Dividers */
+  .divider {
+    div {
+      &:before {
+
+        /* Divider Color */
+        ${props =>
+          props.SecondaryColor
+            ? 'background-color: ' + props.SecondaryColor + ' !important'
+            : null};
+      }
+    }
+  }
+
   }
 `;
 
