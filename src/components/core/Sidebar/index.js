@@ -12,21 +12,19 @@ import React from 'react';
 // Constants
 import { Theme } from 'constants/Theme';
 
-// Components
-import Sidebar from 'components/core/Sidebar/';
-
 // Styles
-import SubLevelPageStyle from './styles.scss';
+import SidebarStyle from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
 // The SubLevel Page Itself
-const SubLevelPage = ({ children }) => (
-  <SubLevelPageStyle className="sub">
-    <Sidebar />
-    <SubLevelPageStyle.Inner>{children}</SubLevelPageStyle.Inner>
-  </SubLevelPageStyle>
+const Sidebar = ({ children }) => (
+  <SidebarStyle>
+    <SidebarStyle.Inner>
+      Hi
+    </SidebarStyle.Inner>
+  </SidebarStyle>
 );
 
-export default SubLevelPage;
+export default Sidebar;

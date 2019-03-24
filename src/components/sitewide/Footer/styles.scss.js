@@ -27,7 +27,7 @@ const FooterStyle = styled.footer`
   left: 0;
   bottom: 0;
   right: 0;
-  ${props => (props.routes.includes(props.location) ? FadeIn : FadeOut)};
+  ${props => (props.routes.includes(props.location) ? FadeIn : FadeIn)};
 `;
 
 FooterStyle.Section = styled.div`
@@ -36,7 +36,7 @@ FooterStyle.Section = styled.div`
   flex-direction: row;
   align-items: center;
   height: ${Root.Footer.Size};
-  padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
+  padding: 0 ${Theme.Base.Size.Sm} 0 0;
   justify-content: space-between;
   flex: 1;
 `;
@@ -47,10 +47,24 @@ FooterStyle.Inner = styled.div`
   flex: 1;
   align-items: center;
   justify-content: space-between;
+  justify-content: ${props =>
+        props.routes.includes(props.location) ? 'space-between' : 'flex-end'};
   flex-direction: row;
   span {
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
+
+      /* Lock in Copyright text with Sidebar component */
+    &.copyright {
+      padding-left: ${Theme.Base.Size.Sm};
+      position: ${props =>
+        props.routes.includes(props.location) ? 'unset' : 'fixed'};
+      left: 0;
+      bottom: 0;
+      height: ${Root.Footer.Size};
+      display: flex;
+      align-items: center;
+    }
   }
 `;
 

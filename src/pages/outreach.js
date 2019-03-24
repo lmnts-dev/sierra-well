@@ -20,10 +20,15 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = Theme.Color.Background;
+const PageColor = 'MediumSpringGreen';
 
 const Index = ({ data }) => (
-  <Layout BgColor={PageColor}>
+  <Layout
+    BgColor={PageColor}
+    PrimaryColor={Theme.Color.Nightsky}
+    SecondaryColor='Indigo'
+    TertiaryColor={PageColor}
+  >
     <HorizontalContent>Content</HorizontalContent>
   </Layout>
 );
