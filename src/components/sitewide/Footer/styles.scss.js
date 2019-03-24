@@ -8,11 +8,9 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
-import { Base } from 'constants/styles/Base';
 
-// Blocks
-import InnerStyle from 'elements/Inner/styles.scss';
-import SectionStyle from 'elements/Section/styles.scss';
+// Keyframes
+import { FadeIn, FadeOut } from 'components/core/Transition/Keyframes';
 
 // Begin Styles
 
@@ -20,10 +18,16 @@ const FooterStyle = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
-  height: ${Root.Footer.Size};
-  padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
   z-index: 400;
   font-size: 0.8rem;
+  flex: 1;
+  flex-shrink: 0;
+  position: ${props =>
+    props.routes.includes(props.location) ? 'absolute' : 'relative'};
+  left: 0;
+  bottom: 0;
+  right: 0;
+  ${props => (props.routes.includes(props.location) ? FadeIn : FadeOut)};
 `;
 
 FooterStyle.Section = styled.div`
@@ -31,6 +35,8 @@ FooterStyle.Section = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: ${Root.Footer.Size};
+  padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
   justify-content: space-between;
   flex: 1;
 `;

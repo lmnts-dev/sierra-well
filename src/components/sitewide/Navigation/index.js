@@ -76,16 +76,12 @@ class Navigation extends PureComponent {
                     location={location.pathname}
                     routes={TopLevelRoutes}
                   >
-                    <LinkList ActiveClass='active' />
+                    <LinkList ActiveClass="active" />
                   </NavigationStyle.Top.TopLinkListWrapper>
                 </NavigationStyle.Top.LinkListBlock>
 
                 <NavigationStyle.Top.CommunicationBlock>
-                  <Button
-                    label="Get in Touch"
-                    to="/contact"
-                    color="nightsky"
-                  />
+                  <Button label="Get in Touch" to="/contact" color="nightsky" />
                 </NavigationStyle.Top.CommunicationBlock>
               </NavigationStyle.Top>
 
@@ -98,7 +94,7 @@ class Navigation extends PureComponent {
                   location={location.pathname}
                   routes={TopLevelRoutes}
                 >
-                  <LinkList ActiveClass='active' />
+                  <LinkList ActiveClass="active" />
                 </NavigationStyle.Bottom.LinkListWrapper>
               </NavigationStyle.Bottom>
             </NavigationStyle>

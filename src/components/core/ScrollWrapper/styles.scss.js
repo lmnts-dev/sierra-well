@@ -1,5 +1,8 @@
 // Core
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
+
+// Constants
+import { Theme, Root } from 'constants/Theme';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -15,6 +18,7 @@ const ScrollArea = styled.main`
   -webkit-overflow-scrolling: touch;
   position: relative;
   height: 100vh;
+  padding-bottom: ${Root.Footer.Size};
 `;
 
 export default ScrollArea;

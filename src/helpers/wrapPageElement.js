@@ -16,7 +16,7 @@ const wrapPageElement = ({ element, props }) => {
     <ScrollWrapper>
       <Navigation {...props} />
       <Transition {...props}>{element}</Transition>
-      <Footer />
+      <Footer {...props} />
     </ScrollWrapper>
   );
 };

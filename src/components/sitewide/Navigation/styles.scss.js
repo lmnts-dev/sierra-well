@@ -12,8 +12,6 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-// Pull the routes from TopLevelRoutes
-
 // The Navigation Container
 const NavigationStyle = styled.nav`
   position: relative;
@@ -98,7 +96,7 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
         height: 100%;
 
         &.active {
-          color: rgba(0,0,0, 1);
+          color: rgba(0, 0, 0, 1);
         }
 
         &:hover {
@@ -162,7 +160,7 @@ NavigationStyle.Bottom.LinkListWrapper = styled.div`
           ${Theme.Base.Transition.CssEase};
 
         &.active {
-          color: rgba(0,0,0, 1);
+          color: rgba(0, 0, 0, 1);
         }
 
         &:hover {

@@ -11,9 +11,6 @@ import React from 'react';
 import Layout from 'components/core/Layout';
 import SubLevelPage from 'components/core/SubLevelPage';
 
-// Blocks
-import Section from 'elements/Section';
-
 // Constants
 import { Theme } from 'constants/Theme';
 
