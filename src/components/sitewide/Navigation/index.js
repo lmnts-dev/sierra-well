@@ -91,7 +91,10 @@ class Navigation extends PureComponent {
                 location={location.pathname}
                 routes={TopLevelRoutes}
               >
-                <NavigationStyle.Bottom.LinkListWrapper>
+                <NavigationStyle.Bottom.LinkListWrapper
+                  location={location.pathname}
+                  routes={TopLevelRoutes}
+                >
                   <LinkList ActiveStyle={ActiveTab} />
                 </NavigationStyle.Bottom.LinkListWrapper>
               </NavigationStyle.Bottom>

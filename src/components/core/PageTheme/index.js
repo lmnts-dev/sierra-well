@@ -20,7 +20,7 @@ export const PageThemeStyle = createGlobalStyle`
   body {
     background-color: ${props =>
       props.BgColor ? props.BgColor : Theme.Color.Background};
-    transition: background-color 1s ease;
+    transition: background-color ${Theme.Base.Transition.Duration} ${Theme.Base.Transition.CssEase};
   }
 `;
 

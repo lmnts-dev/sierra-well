@@ -38,6 +38,15 @@ module.exports = {
     // For Slick Slider
     `gatsby-plugin-sass`,
 
+    // For Intercom 
+
+    {
+      resolve: `gatsby-plugin-intercom`,
+      options: {
+        appId: 'd5dbftk9',
+      },
+    },
+
     // Set up Prismic.io
     {
       resolve: `gatsby-source-prismic`,

@@ -33,8 +33,7 @@ WidgetStyle.Inner = styled.div`
   box-shadow: 0 10px 17px 0 rgba(6, 10, 92, 0.12);
   position: relative;
   overflow: hidden;
-  transition: all ${Theme.Base.Transition.Duration}
-    ${Theme.Base.Transition.CssEase};
+  transition: all ${Theme.Base.Transition.Duration} ${Theme.Base.Transition.CssEase};
   cursor: pointer;
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
 
@@ -101,6 +100,7 @@ WidgetStyle.Inner = styled.div`
     position: absolute;
     right: ${Root.ViewWidthPadding};
     top: ${Root.ViewWidthPadding};
+    transform: translateX(0%);
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
   }
@@ -118,12 +118,14 @@ WidgetStyle.Inner = styled.div`
 
     /* The Carat Icon */
     svg {
+      transform: translateX(50%);
       fill: ${Theme.Color.White};
     }
 
     /* The Widget Icon */
     .fas {
       color: ${Theme.Color.White};
+      transform: scale(1.3);
     }
 
     /* Tint */
@@ -154,6 +156,7 @@ WidgetStyle.Icon = styled.i`
   right: ${Root.ViewWidthPadding};
   bottom: ${Root.ViewWidthPadding};
   font-size: ${Root.IconSize};
+  transform: scale(1.000000001);
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
   color: ${props => (props.Color ? props.Color : Theme.Color.Black)};

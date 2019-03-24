@@ -29,7 +29,7 @@ const Widget = ({
   IconColor,
   Destination,
   TintColor,
-  TintOpacity
+  TintOpacity,
 }) => (
   <WidgetStyle className="widget">
     <WidgetStyle.Inner
@@ -42,7 +42,7 @@ const Widget = ({
       <Link to={Destination}>
         <WidgetStyle.Subhead>{Subhead}</WidgetStyle.Subhead>
         <WidgetStyle.Headline>{Headline}</WidgetStyle.Headline>
-        <Icon className='svg-carat' Name="Carat" Color={IconColor} />
+        <Icon className="svg-carat" Name="Carat" Color={IconColor} />
 
         {/* Pass Icon value using FontAwesome */}
         {/* Read more: https://fontawesome.com/how-to-use/on-the-web/setup/getting-started */}

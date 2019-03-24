@@ -104,7 +104,7 @@ const SlideColumns = () => (
         />
         <Widget
           BgColor={Theme.Color.Dank}
-          BgImage="https://source.unsplash.com/1600x1200/?teacher"
+          BgImage="https://source.unsplash.com/1600x1200/?cannabis"
           TintColor={Theme.Color.Black}
           TintOpacity=".5"
           Subhead="Subhead"
@@ -185,7 +185,7 @@ const SlideColumns = () => (
       <HorizontalContentStyle.Column.Inner>
         <Widget
           BgColor={Theme.Color.Nightsky}
-          BgImage="https://source.unsplash.com/1600x1200/?teacher"
+          BgImage="https://source.unsplash.com/1600x1200/?marijuana"
           TintColor={Theme.Color.Black}
           TintOpacity=".5"
           Subhead="Subhead"
