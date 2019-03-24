@@ -99,6 +99,15 @@ export const Theme = {
       },
     },
 
+    // View Width (vw) Based Measurements
+    ViewWidth: {
+      Padding: {
+        Sm: Base.ViewWidth.Padding.Sm + 'vw',
+        Md: Base.ViewWidth.Padding.Md + 'vw',
+        Lg: Base.ViewWidth.Padding.Lg + 'vw',
+      },
+    },
+
     // Buttons
     Button: {
       Lg: Base.Button.Lg + 'px',
@@ -117,6 +126,16 @@ export const Theme = {
     Transition: {
       Duration: Base.Transition.Duration + 's', // seconds
       Ease: Base.Transition.Ease, // Cubic Bezier Ease
+      CssEase:
+        'cubic-bezier(' +
+        Base.Transition.Ease[0] +
+        ', ' +
+        Base.Transition.Ease[1] +
+        ', ' +
+        Base.Transition.Ease[2] +
+        ', ' +
+        Base.Transition.Ease[3] +
+        ')', // Cubic Bezier Ease (CSS String)
       Page: Base.Transition.Page + 's', // milliseconds. Try to not go lower than 350ms or it gets buggy. TODO.
     },
 
@@ -133,11 +152,18 @@ export const Theme = {
 // Assign CSS Variables for automatic Media Queries.
 export const Root = {
   // Core measurements throughout the app.
+
   // Core Base Measurement
   Size: 'var(--Size)',
 
+  ViewWidthFontSize: 'var(--ViewWidthFontSize)',
+  IconSize: 'var(--IconSize)',
+
   // Root Element Measurement
   Rem: 'var(--Rem)',
+
+  // View Width (vw) Based Measurements
+  ViewWidthPadding: 'var(--ViewWidthPadding)',
 
   // Site Grid
   Site: {

@@ -151,6 +151,20 @@ const Head = ({
       type="image/png"
     />
 
+    {/* // TODO: Bundle FontAwesome */}
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"
+      integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css"
+      integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq"
+      crossorigin="anonymous"
+    />
+
     <script type="application/ld+json">
       {JSON.stringify(
         schemaGenerator({

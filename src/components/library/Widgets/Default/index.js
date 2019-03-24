@@ -13,13 +13,41 @@ import { Link } from 'gatsby';
 // Styles
 import WidgetStyle from './styles.scss';
 
+// Components
+import Icon from 'elements/Icons';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Widget = ({ children, BgColor }) => (
+const Widget = ({
+  BgColor,
+  BgImage,
+  Subhead,
+  Headline,
+  TextColor,
+  IconName,
+  IconColor,
+  Destination,
+  TintColor,
+  TintOpacity
+}) => (
   <WidgetStyle className="widget">
-    <WidgetStyle.Inner BgColor={BgColor}>
-      <Link to="/subpage">{children}</Link>
+    <WidgetStyle.Inner
+      BgColor={BgColor}
+      BgImage={BgImage}
+      TextColor={TextColor}
+      TintColor={TintColor}
+      TintOpacity={TintOpacity}
+    >
+      <Link to={Destination}>
+        <WidgetStyle.Subhead>{Subhead}</WidgetStyle.Subhead>
+        <WidgetStyle.Headline>{Headline}</WidgetStyle.Headline>
+        <Icon className='svg-carat' Name="Carat" Color={IconColor} />
+
+        {/* Pass Icon value using FontAwesome */}
+        {/* Read more: https://fontawesome.com/how-to-use/on-the-web/setup/getting-started */}
+        <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
+      </Link>
     </WidgetStyle.Inner>
   </WidgetStyle>
 );

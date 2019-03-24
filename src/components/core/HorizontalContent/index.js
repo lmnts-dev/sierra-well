@@ -92,17 +92,73 @@ const SlideColumns = () => (
   <>
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner>
-        <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Slate}>Widget</Widget>
+        <Widget
+          BgColor={Theme.Color.Gunmetal}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="rocket"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Dank}
+          BgImage="https://source.unsplash.com/1600x1200/?teacher"
+          TintColor={Theme.Color.Black}
+          TintOpacity=".5"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="graduation-cap"
+          Destination="/subpage"
+        />
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner>
-        <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Primary}>Widget</Widget>
+        <Widget
+          BgColor={Theme.Color.Tahoe}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.Snow}
+          IconColor={Theme.Color.Snow}
+          IconName="guitar"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.White}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.Black}
+          IconColor={Theme.Color.Black}
+          IconName="eye"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Sunset}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="smile"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Flower}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="fire"
+          Destination="/subpage"
+        />
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
@@ -112,15 +168,53 @@ const SlideColumns = () => (
 
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner>
-        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
+        <Widget
+          BgColor={Theme.Color.Slate}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.Black}
+          IconColor={Theme.Color.Black}
+          IconName="clock"
+          Destination="/subpage"
+        />
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner>
-        <Widget BgColor={Theme.Color.Primary}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
+        <Widget
+          BgColor={Theme.Color.Nightsky}
+          BgImage="https://source.unsplash.com/1600x1200/?teacher"
+          TintColor={Theme.Color.Black}
+          TintOpacity=".5"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="moon"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Leaf}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="sun"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Dank}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.Black}
+          IconColor={Theme.Color.Black}
+          IconName="cloud"
+          Destination="/subpage"
+        />
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
@@ -130,10 +224,46 @@ const SlideColumns = () => (
 
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner>
-        <Widget BgColor={Theme.Color.Gunmetal}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Dank}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Sunset}>Widget</Widget>
-        <Widget BgColor={Theme.Color.Primary}>Widget</Widget>
+        <Widget
+          BgColor={Theme.Color.Black}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="rocket"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Sunset}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.Black}
+          IconColor={Theme.Color.Black}
+          IconName="rocket"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Tahoe}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.White}
+          IconColor={Theme.Color.White}
+          IconName="rocket"
+          Destination="/subpage"
+        />
+        <Widget
+          BgColor={Theme.Color.Dank}
+          BgImage="none"
+          Subhead="Subhead"
+          Headline="Headline"
+          TextColor={Theme.Color.Black}
+          IconColor={Theme.Color.Black}
+          IconName="rocket"
+          Destination="/subpage"
+        />
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
   </>

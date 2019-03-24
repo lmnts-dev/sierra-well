@@ -31,29 +31,132 @@ WidgetStyle.Inner = styled.div`
     props.BgColor ? props.BgColor : Theme.Color.White};
   border-radius: ${Root.Radius};
   box-shadow: 0 10px 17px 0 rgba(6, 10, 92, 0.12);
-  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  transition: all ${Theme.Base.Transition.Duration}
+    ${Theme.Base.Transition.CssEase};
   cursor: pointer;
-  color: ${Theme.Color.White};
+  color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
 
+  /* Background Images */
+
+  ${props => {
+    if (props.BgImage)
+      return (
+        `
+        background-image: url(` +
+        props.BgImage +
+        `);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        `
+      );
+  }};
+
+  /* Tint */
+
+  ${props => {
+    if (props.TintColor || props.TintOpacity)
+      return (
+        `
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          background-color:` +
+        props.TintColor +
+        `;
+          opacity:` +
+        props.TintOpacity +
+        `;
+          transition: all ${Theme.Base.Transition.Duration}
+      ${Theme.Base.Transition.CssEase};
+        }
+    `
+      );
+  }};
+
+  /* Links */
   a {
     display: flex;
+    flex-direction: column;
     flex: 1;
-    justify-content: center;
     width: 100%;
-    align-items: center;
     color: white;
-    transform: scale(1);
-    transition: transform 0.75s ease;
-
-    &:hover {
-      text-decoration: none;
-      transform: scale(1.4);
-    }
+    transform: scale(1.000000001);
+    position: relative;
+    padding: ${Root.ViewWidthPadding};
+    color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+    text-decoration: none;
+    transition: all ${Theme.Base.Transition.Duration}
+      ${Theme.Base.Transition.CssEase};
   }
+
+  /* The Carat Icon */
+  svg {
+    position: absolute;
+    right: ${Root.ViewWidthPadding};
+    top: ${Root.ViewWidthPadding};
+    transition: all ${Theme.Base.Transition.Duration}
+      ${Theme.Base.Transition.CssEase};
+  }
+
+  /* Hover Styles */
   &:hover {
     background-color: ${Theme.Color.Black};
+    color: ${Theme.Color.White};
     box-shadow: 0 20px 30px 0 rgba(6, 10, 92, 0.21);
+
+    a {
+      text-decoration: none;
+      color: ${Theme.Color.White};
+    }
+
+    /* The Carat Icon */
+    svg {
+      fill: ${Theme.Color.White};
+    }
+
+    /* The Widget Icon */
+    .fas {
+      color: ${Theme.Color.White};
+    }
+
+    /* Tint */
+    ${props => {
+      if (props.TintColor || props.TintOpacity)
+        return `
+        &:before {
+          opacity: 1
+        }
+    `;
+    }};
   }
+`;
+
+WidgetStyle.Subhead = styled.div`
+  font-size: ${Root.ViewWidthFontSize};
+  line-height: 1.2;
+`;
+
+WidgetStyle.Headline = styled.div`
+  font-size: ${Root.ViewWidthFontSize};
+  line-height: 1.2;
+  font-weight: bold;
+`;
+
+WidgetStyle.Icon = styled.i`
+  position: absolute;
+  right: ${Root.ViewWidthPadding};
+  bottom: ${Root.ViewWidthPadding};
+  font-size: ${Root.IconSize};
+  transition: all ${Theme.Base.Transition.Duration}
+    ${Theme.Base.Transition.CssEase};
+  color: ${props => (props.Color ? props.Color : Theme.Color.Black)};
 `;
 
 export default WidgetStyle;

@@ -14,9 +14,16 @@ export const RootVariables = createGlobalStyle`
     /* -------- Base Measurement */
     --Size: ${Theme.Base.Size.Lg};
 
+    /* -------- Font Sizes (Viewport) */
+    --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Lg};
+    --IconSize: ${Theme.Font.Icon.Size.Lg};
+
     /* -------- Root Element Measurement */
     --REM: ${Theme.Base.Rem.Lg};
 
+    /* -------- View Width (vw) Based Measurements */
+    --ViewWidthPadding: ${Theme.Base.ViewWidth.Padding.Sm};
+    
     /* --------- Site Grid */
     --SiteWidth: ${Theme.Base.Grid.SiteWidth};
     --NavSize: ${Theme.Base.Grid.Nav.Size.Lg};
@@ -44,8 +51,15 @@ export const RootVariables = createGlobalStyle`
         /* -------- Base Measurement */
         --Size: ${Theme.Base.Size.Md};
 
+        /* -------- Font Sizes (Viewport) */
+        --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Md};
+        --IconSize: ${Theme.Font.Icon.Size.Md};
+
         /* -------- Root Element Measurement */
         --REM: ${Theme.Base.Rem.Md};
+
+        /* -------- View Width (vw) Based Measurements */
+        --ViewWidthPadding: ${Theme.Base.ViewWidth.Padding.Md};
 
         /* --------- Site Grid */
         --SiteWidth: ${Theme.Base.Grid.SiteWidth};
@@ -75,8 +89,15 @@ export const RootVariables = createGlobalStyle`
         /* -------- Base Measurement */
         --Size: ${Theme.Base.Size.Sm};
 
+        /* -------- Font Sizes (Viewport) */
+        --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Sm};
+        --IconSize: ${Theme.Font.Icon.Size.Sm};
+
         /* -------- Root Element Measurement */
         --Rem: ${Theme.Base.Rem.Sm};
+
+        /* -------- View Width (vw) Based Measurements */
+        --ViewWidthPadding: ${Theme.Base.ViewWidth.Padding.Sm};
 
         /* --------- Site Grid */
         --SiteWidth: ${Theme.Base.Grid.SiteWidth};

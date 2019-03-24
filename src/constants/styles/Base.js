@@ -78,6 +78,15 @@ export const Base = {
     },
   },
 
+  // View Width (vw) Based Measurements
+  ViewWidth: {
+    Padding: {
+      Sm: '1.5', // vw
+      Md: '1.5', // vw
+      Lg: '1.5', // vw
+    },
+  },
+
   // Buttons
   Button: {
     Lg: 44, // px
@@ -94,8 +103,8 @@ export const Base = {
 
   // Transitions
   Transition: {
-    Duration: 0.25, // seconds
-    Ease: [.29,.77,.57,.85], // Cubic Bezier Ease
+    Duration: 0.8, // seconds
+    Ease: [0.29, 0.77, 0.57, 0.85], // Cubic Bezier Ease
     Page: 2000, // milliseconds. Try to not go lower than 350ms or it gets buggy. TODO.
   },
 
