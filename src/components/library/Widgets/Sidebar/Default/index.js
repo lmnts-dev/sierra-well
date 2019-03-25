@@ -22,7 +22,6 @@ import Icon from 'elements/Icons';
 const SidebarWidget = ({
   BgColor,
   BgImage,
-  Subhead,
   Headline,
   TextColor,
   IconName,
@@ -40,13 +39,15 @@ const SidebarWidget = ({
       TintOpacity={TintOpacity}
     >
       <Link to={Destination}>
-        <SidebarWidgetStyle.Subhead>{Subhead}</SidebarWidgetStyle.Subhead>
         <SidebarWidgetStyle.Headline>{Headline}</SidebarWidgetStyle.Headline>
         <Icon className="svg-carat" Name="Carat" Color={IconColor} />
 
         {/* Pass Icon value using FontAwesome */}
         {/* Read more: https://fontawesome.com/how-to-use/on-the-web/setup/getting-started */}
-        <SidebarWidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
+        <SidebarWidgetStyle.Icon
+          className={'fas fa-' + IconName}
+          Color={IconColor}
+        />
       </Link>
     </SidebarWidgetStyle.Inner>
   </SidebarWidgetStyle>

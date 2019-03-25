@@ -106,6 +106,10 @@ export const Base = {
     Duration: 0.8, // seconds
     Ease: [0.29, 0.77, 0.57, 0.85], // Cubic Bezier Ease
     Page: 2000, // milliseconds. Try to not go lower than 350ms or it gets buggy. TODO.
+    Cascade: {
+      Exponent: 0.6, // unit.
+      Increment: 0.7, // unit.
+    },
   },
 
   // Geometry

@@ -21,7 +21,9 @@ const SidebarWidgetStyle = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  opacity: 0;
   margin-top: ${Theme.Base.Size.Sm};
+  animation-fill-mode: forwards;
   ${FadeIn};
 `;
 
@@ -31,7 +33,6 @@ SidebarWidgetStyle.Inner = styled.div`
   right: 0;
   top: 0;
   bottom: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;

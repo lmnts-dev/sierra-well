@@ -22,7 +22,12 @@ import { Theme } from 'constants/Theme';
 const PageColor = Theme.Color.Sunset;
 
 const Index = ({ data }) => (
-  <Layout BgColor={PageColor}>
+  <Layout
+    BgColor={PageColor}
+    PrimaryColor={Theme.Color.Nightsky}
+    SecondaryColor={Theme.Color.Nightsky}
+    TertiaryColor={PageColor}
+  >
     <Section
       FlexDir="column"
       Background="none"

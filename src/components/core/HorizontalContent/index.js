@@ -18,6 +18,7 @@ import { Theme } from 'constants/Theme';
 // Styles
 import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
+import Fade from 'react-reveal/Fade';
 
 // Components
 import Widget from 'components/library/Widgets/Default';
@@ -93,7 +94,7 @@ class SimpleSlider extends React.Component {
 const SlideColumns = () => (
   <>
     <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner>
+      <HorizontalContentStyle.Column.Inner className="col-inner">
         <Widget
           BgColor={Theme.Color.Gunmetal}
           BgImage="none"

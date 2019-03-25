@@ -57,8 +57,13 @@ class Footer extends PureComponent {
           return (
             <FooterStyle location={location.pathname} routes={TopLevelRoutes}>
               <FooterStyle.Section>
-                <FooterStyle.Inner location={location.pathname} routes={TopLevelRoutes}>
-                  <span className="copyright">© {new Date().getFullYear()} Sierra Well</span>
+                <FooterStyle.Inner
+                  location={location.pathname}
+                  routes={TopLevelRoutes}
+                >
+                  <span className="copyright">
+                    © {new Date().getFullYear()} Sierra Well
+                  </span>
                   <span>
                     Made with{' '}
                     <span role="img" aria-label="Heart">

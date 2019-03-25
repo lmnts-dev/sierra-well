@@ -20,7 +20,12 @@ import { Theme } from 'constants/Theme';
 const PageColor = Theme.Color.Background;
 
 const Index = ({ data }) => (
-  <Layout BgColor={PageColor}>
+  <Layout
+    BgColor={PageColor}
+    PrimaryColor={Theme.Color.Nightsky}
+    SecondaryColor={Theme.Color.Nightsky}
+    TertiaryColor={PageColor}
+  >
     <HorizontalContent>Content</HorizontalContent>
   </Layout>
 );

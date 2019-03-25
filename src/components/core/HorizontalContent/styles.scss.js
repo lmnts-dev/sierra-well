@@ -10,7 +10,8 @@ import styled from 'styled-components';
 import { Theme, Root } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
 
-// Blocks
+// Keyframe
+import { FadeIn } from 'components/core/Transition/Keyframes';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -55,6 +56,11 @@ HorizontalContentStyle.Inner = styled.div`
         }
       }
     }
+  }
+
+  .widget {
+    opacity: 0;
+    ${FadeIn};
   }
 `;
 

@@ -34,32 +34,29 @@ const Sidebar = ({
       <SidebarWidget
         BgColor={SecondaryColor}
         BgImage="none"
-        Subhead="Subhead"
-        Headline="Headline"
+        Headline="Locations"
         TextColor={TertiaryColor}
         IconColor={TertiaryColor}
         IconName="rocket"
-        Destination="/subpage"
+        Destination="/"
       />
       <SidebarWidget
         BgColor={SecondaryColor}
         BgImage="none"
-        Subhead="Subhead"
-        Headline="Headline"
+        Headline="Culture"
         TextColor={TertiaryColor}
         IconColor={TertiaryColor}
         IconName="rocket"
-        Destination="/subpage"
+        Destination="/culture"
       />
       <SidebarWidget
         BgColor={SecondaryColor}
         BgImage="none"
-        Subhead="Subhead"
-        Headline="Headline"
+        Headline="Contact"
         TextColor={TertiaryColor}
         IconColor={TertiaryColor}
         IconName="rocket"
-        Destination="/subpage"
+        Destination="/contact"
       />
     </SidebarStyle.Inner>
   </SidebarStyle>

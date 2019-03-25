@@ -19,6 +19,7 @@ const SubLevelPageStyle = styled.div`
   min-height: 100vh;
   display: flex;
   flex-wrap: nowrap;
+  color: ${Theme.Color.Background};
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
 `;

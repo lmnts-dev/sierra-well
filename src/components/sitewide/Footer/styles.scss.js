@@ -48,19 +48,18 @@ FooterStyle.Inner = styled.div`
   align-items: center;
   justify-content: space-between;
   justify-content: ${props =>
-        props.routes.includes(props.location) ? 'space-between' : 'flex-end'};
+    props.routes.includes(props.location) ? 'space-between' : 'flex-end'};
   flex-direction: row;
   span {
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
 
-      /* Lock in Copyright text with Sidebar component */
+    /* Lock in Copyright text with Sidebar component */
     &.copyright {
       padding-left: ${Theme.Base.Size.Sm};
       position: ${props =>
         props.routes.includes(props.location) ? 'unset' : 'fixed'};
-      opacity: ${props =>
-        props.routes.includes(props.location) ? '1' : '.6'};
+      opacity: ${props => (props.routes.includes(props.location) ? '1' : '.6')};
       left: 0;
       bottom: 0;
       height: ${Root.Footer.Size};
