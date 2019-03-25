@@ -9,6 +9,9 @@ import styled from 'styled-components';
 // Constants
 import { Theme, Root } from 'constants/Theme';
 
+// Keyframe
+import { FadeIn } from 'components/core/Transition/Keyframes';
+
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
@@ -85,6 +88,7 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
       align-items: center;
       height: 100%;
       padding-right: ${Root.Grid.Gutter.Right};
+      ${FadeIn};
 
       a {
         color: ${Theme.Color.Slate};
@@ -152,6 +156,7 @@ NavigationStyle.Bottom.LinkListWrapper = styled.div`
 
     li {
       padding-right: ${Root.Size};
+      ${FadeIn};
 
       a {
         color: rgba(0, 0, 0, 0.2);

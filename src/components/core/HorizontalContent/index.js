@@ -35,55 +35,37 @@ const WidgetContent = [
     Subhead: 'Subhead',
     Headline: 'Headline',
     TextColor: Theme.Color.White,
-    IconName: Theme.Color.White,
-    IconColor: 'rocket',
+    IconColor: Theme.Color.White, // FontAwesome Icon Name
+    IconName: 'rocket',
     Destination: '/subpage',
     TintColor: '',
     TintOpacity: '',
   },
   {
-    BgColor: Theme.Color.Tahoe,
+    BgColor: Theme.Color.Dank,
     BgImage: 'none',
     Subhead: 'Subhead',
     Headline: 'Headline',
-    TextColor: Theme.Color.White,
-    IconName: Theme.Color.White,
-    IconColor: 'rocket',
+    TextColor: Theme.Color.Black,
+    IconColor: Theme.Color.Black,
+    IconName: 'rocket',
     Destination: '/subpage',
     TintColor: '',
     TintOpacity: '',
   },
   {
-    BgColor: Theme.Color.Tahoe,
+    BgColor: Theme.Color.Nightsky,
     BgImage: 'none',
     Subhead: 'Subhead',
     Headline: 'Headline',
     TextColor: Theme.Color.White,
-    IconName: Theme.Color.White,
-    IconColor: 'rocket',
+    IconColor: Theme.Color.White,
+    IconName: 'rocket',
     Destination: '/subpage',
     TintColor: '',
     TintOpacity: '',
   },
 ];
-
-// BgImage="none"
-//           Subhead="Subhead"
-//           Headline="Headline"
-//           TextColor={Theme.Color.White}
-//           IconColor={Theme.Color.White}
-//           IconName="rocket"
-//           Destination="/subpage"
-
-// BgImage="https://source.unsplash.com/1600x1200/?cannabis"
-// TintColor={Theme.Color.Black}
-// TintOpacity=".5"
-// Subhead="Subhead"
-// Headline="Headline"
-// TextColor={Theme.Color.White}
-// IconColor={Theme.Color.White}
-// IconName="graduation-cap"
-// Destination="/subpage"
 
 // Lock Wrapper Scrollssss
 const WrapperLock = createGlobalStyle`
@@ -161,7 +143,6 @@ const SlideColumns = () => (
 
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner>
-        <Widget WidgetContent={WidgetContent} />
         <Widget WidgetContent={WidgetContent} />
         <Widget WidgetContent={WidgetContent} />
         <Widget WidgetContent={WidgetContent} />

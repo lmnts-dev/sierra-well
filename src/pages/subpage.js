@@ -17,19 +17,19 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = 'Tomato';
+const PageColor = Theme.Color.Dank;
 
 const Index = ({ data }) => (
   <Layout
     BgColor={PageColor}
     PrimaryColor={Theme.Color.Dank}
-    SecondaryColor={Theme.Color.Tahoe}
+    SecondaryColor={Theme.Color.Black}
     TertiaryColor={Theme.Color.White}
   >
     <SubLevelPage
       BgColor={PageColor}
       PrimaryColor={Theme.Color.Dank}
-      SecondaryColor={Theme.Color.Tahoe}
+      SecondaryColor={Theme.Color.Black}
       TertiaryColor={Theme.Color.White}
     >
       <div className="content-stretch">

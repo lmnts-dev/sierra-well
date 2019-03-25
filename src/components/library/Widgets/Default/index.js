@@ -51,31 +51,51 @@ import Icon from 'elements/Icons';
 // {/* Pass Icon value using FontAwesome */}
 //         {/* Read more: https://fontawesome.com/how-to-use/on-the-web/setup/getting-started */}
 
+const WidgetIndex = 1;
+
+const WidgetInner = ({
+  BgColor,
+  BgImage,
+  TextColor,
+  TintColor,
+  TintOpacity,
+  Destination,
+  Subhead,
+  Headline,
+  IconColor,
+  IconName,
+}) => (
+  <WidgetStyle.Inner
+    BgColor={BgColor}
+    BgImage={BgImage}
+    TextColor={TextColor}
+    TintColor={TintColor}
+    TintOpacity={TintOpacity}
+  >
+    <Link to={Destination}>
+      <WidgetStyle.Subhead>{Subhead}</WidgetStyle.Subhead>
+      <WidgetStyle.Headline>{Headline}</WidgetStyle.Headline>
+      <Icon className="svg-carat" Name="Carat" Color={IconColor} />
+      <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
+    </Link>
+  </WidgetStyle.Inner>
+);
+
+// Widget Itself
 const Widget = ({ WidgetContent }) => (
   <WidgetStyle className="widget">
-    {console.log(WidgetContent[0])}
-    <WidgetStyle.Inner
-      BgColor={WidgetContent[0].BgColor}
-      BgImage={WidgetContent[0].BgImage}
-      TextColor={WidgetContent[0].TextColor}
-      TintColor={WidgetContent[0].TintColor}
-      TintOpacity={WidgetContent[0].TintOpacity}
-    >
-      <Link to={WidgetContent[0].Destination}>
-        <WidgetStyle.Subhead>{WidgetContent[0].Subhead}</WidgetStyle.Subhead>
-        <WidgetStyle.Headline>{WidgetContent[0].Headline}</WidgetStyle.Headline>
-        <Icon
-          className="svg-carat"
-          Name="Carat"
-          Color={WidgetContent[0].IconColor}
-        />
-
-        <WidgetStyle.Icon
-          className={'fas fa-' + WidgetContent[0].IconName}
-          Color={WidgetContent[0].IconColor}
-        />
-      </Link>
-    </WidgetStyle.Inner>
+    <WidgetInner
+      BgColor={WidgetContent[WidgetIndex].BgColor}
+      BgImage={WidgetContent[WidgetIndex].BgImage}
+      TextColor={WidgetContent[WidgetIndex].TextColor}
+      TintColor={WidgetContent[WidgetIndex].TintColor}
+      TintOpacity={WidgetContent[WidgetIndex].TintOpacity}
+      Destination={WidgetContent[WidgetIndex].Destination}
+      Subhead={WidgetContent[WidgetIndex].Subhead}
+      Headline={WidgetContent[WidgetIndex].Headline}
+      IconName={WidgetContent[WidgetIndex].IconName}
+      IconColor={WidgetContent[WidgetIndex].IconColor}
+    />
   </WidgetStyle>
 );
 

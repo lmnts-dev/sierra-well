@@ -59,7 +59,6 @@ HorizontalContentStyle.Inner = styled.div`
   }
 
   .widget {
-    opacity: 0;
     ${FadeIn};
   }
 `;

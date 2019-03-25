@@ -37,18 +37,39 @@ function Cascade(Keyframes, Duration, DelayBase, Increment) {
 }
 
 export const FadeIn = css`
+  opacity: 0;
   ${Cascade(FadeInKeyFrames, 1, 1, 1)}
   &:first-child {
+    opacity: 0;
     ${Cascade(FadeInKeyFrames, 1, 1, 1.3)}
   }
   &:nth-child(2) {
+    opacity: 0;
     ${Cascade(FadeInKeyFrames, 1, 1, 1.4)}
   }
   &:nth-child(3) {
+    opacity: 0;
     ${Cascade(FadeInKeyFrames, 1, 1, 1.5)}
   }
   &:nth-child(4) {
+    opacity: 0;
     ${Cascade(FadeInKeyFrames, 1, 1, 1.6)}
+  }
+  &:nth-child(5) {
+    opacity: 0;
+    ${Cascade(FadeInKeyFrames, 1, 1, 1.7)}
+  }
+  &:nth-child(6) {
+    opacity: 0;
+    ${Cascade(FadeInKeyFrames, 1, 1, 1.8)}
+  }
+  &:nth-child(7) {
+    opacity: 0;
+    ${Cascade(FadeInKeyFrames, 1, 1, 1.9)}
+  }
+  &:nth-child(8) {
+    opacity: 0;
+    ${Cascade(FadeInKeyFrames, 1, 1, 2)}
   }
 `;
 
