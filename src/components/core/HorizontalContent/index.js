@@ -31,15 +31,15 @@ import Widget from 'components/library/Widgets/Default';
 const WidgetContent = [
   {
     BgColor: Theme.Color.Tahoe,
-    BgImage: 'none',
+    BgImage: 'https://source.unsplash.com/1600x1200/?cannabis',
     Subhead: 'Subhead',
     Headline: 'Headline',
     TextColor: Theme.Color.White,
     IconColor: Theme.Color.White, // FontAwesome Icon Name
     IconName: 'rocket',
     Destination: '/subpage',
-    TintColor: '',
-    TintOpacity: '',
+    TintColor: '#000000',
+    TintOpacity: '.4',
   },
   {
     BgColor: Theme.Color.Dank,

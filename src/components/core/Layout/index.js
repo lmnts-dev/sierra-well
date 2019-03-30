@@ -18,7 +18,6 @@ import PageTheme from 'components/core/PageTheme';
 // Styles
 import { GlobalStyle } from 'constants/styles/Global';
 import SiteGrid from 'components/core/Layout/styles.scss';
-import { Theme } from '../../../constants/Theme';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

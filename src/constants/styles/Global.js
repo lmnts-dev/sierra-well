@@ -424,6 +424,17 @@ html {
   * { 
     box-sizing: border-box;
   }
+
+  /* Intercom */
+  .intercom-namespace {
+    .intercom-launcher-frame {
+      bottom: unset !important;
+      top: 18px !important;
+      right: 139px !important;
+    }
+  }
+  
+  
 `;
 
 export const GlobalStyle = () => (
