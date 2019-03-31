@@ -48,6 +48,12 @@ import { createGlobalStyle } from 'styled-components';
 const MobileMenuTransform = createGlobalStyle`
   .nav-mobile {
     transform: translateY(calc(0px - ${MenuContainerHeight}));
+
+    li {
+      a {
+        padding: 10px !important;
+      }
+    }
   }
 `;
 
