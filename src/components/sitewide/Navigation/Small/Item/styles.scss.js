@@ -50,6 +50,11 @@ const ItemStyle = styled.li`
       padding-top: 20px;
     }
 
+    i {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
     span {
       font-size: 0.7rem;
     }
