@@ -21,6 +21,7 @@ const HorizontalContentStyle = styled.div`
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: ${Root.Footer.Size};
   overflow: visible;
 
   .slick-list {
