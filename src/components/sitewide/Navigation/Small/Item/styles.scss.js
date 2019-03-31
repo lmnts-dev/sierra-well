@@ -40,13 +40,13 @@ const ItemStyle = styled.li`
 
     /* iphone XS */
     @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-      padding-bottom: 35px;
+      padding-bottom: 28px;
       padding-top: 20px;
     }
 
     /* iphone XS Max */
     @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
-      padding-bottom: 35px;
+      padding-bottom: 28px;
       padding-top: 20px;
     }
 
