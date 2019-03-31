@@ -21,7 +21,6 @@ export const BottomNavigationStyle = styled.nav`
   bottom: 0;
   left: 0;
   right: 0;
-  height: ${Root.Nav.Size};
   background-color: ${Theme.Color.White};
   overflow: hidden;
   border-radius: ${Root.Radius} ${Root.Radius} 0 0;
@@ -36,6 +35,7 @@ BottomNavigationStyle.Inner = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: ${Root.Nav.Size};
 `;
 
 BottomNavigationStyle.List = styled.ul`

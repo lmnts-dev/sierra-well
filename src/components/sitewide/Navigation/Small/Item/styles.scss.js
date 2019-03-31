@@ -36,6 +36,12 @@ const ItemStyle = styled.li`
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
 
+    /* iPhone X Bump  */
+
+    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+      padding-bottom: 20px;
+    }
+
     span {
       font-size: 0.7rem;
     }
