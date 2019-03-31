@@ -40,12 +40,12 @@ module.exports = {
 
     // For Intercom 
 
-    {
-      resolve: `gatsby-plugin-intercom`,
-      options: {
-        appId: 'd5dbftk9',
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-intercom`,
+    //   options: {
+    //     appId: 'd5dbftk9',
+    //   },
+    // },
 
     // Set up Prismic.io
     {
