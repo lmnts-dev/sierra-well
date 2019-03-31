@@ -6,13 +6,15 @@
 
 // Core
 import React, { PureComponent } from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
+import Media from 'react-media';
 
 // Constants
-import { Theme } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
-// Styles
-import FooterStyle from 'components/sitewide/Footer/styles.scss';
+// Components
+import FooterLarge from './Large';
+import FooterSmall from './Small';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -22,8 +24,8 @@ class Footer extends PureComponent {
     const { location } = this.props;
 
     return (
-      // Query our Navigation data so we can adjust our Navigation styles
-      // based on Top Level Pages vs Sub Level Pages
+      // Query our Navigation data so we can adjust our Footer styles
+      // based on Top Level Pages vs Sub Level Pages.
       <StaticQuery
         query={graphql`
           query FooterRoutesQuery {
@@ -55,25 +57,26 @@ class Footer extends PureComponent {
           // Render our Footer Bar and pass our Navigation state data down
           // to the styled components below.
           return (
-            <FooterStyle location={location.pathname} routes={TopLevelRoutes}>
-              <FooterStyle.Section>
-                <FooterStyle.Inner
-                  location={location.pathname}
-                  routes={TopLevelRoutes}
-                >
-                  <span className="copyright">
-                    © {new Date().getFullYear()} Sierra Well
-                  </span>
-                  <span>
-                    Made with{' '}
-                    <span role="img" aria-label="Heart">
-                      ️❤️️
-                    </span>{' '}
-                    in Nevada
-                  </span>
-                </FooterStyle.Inner>
-              </FooterStyle.Section>
-            </FooterStyle>
+            <>
+              {/* Render our Footer baased on Device Size*/}
+              <Media query={{ maxWidth: Base.Media.Width.Md }}>
+                {matches =>
+                  matches ? (
+                    // Render Mobile Footer
+                    <FooterSmall
+                      Location={location.pathname}
+                      Routes={TopLevelRoutes}
+                    />
+                  ) : (
+                    // Render Desktop Footer
+                    <FooterLarge
+                      Location={location.pathname}
+                      Routes={TopLevelRoutes}
+                    />
+                  )
+                }
+              </Media>
+            </>
           );
         }}
       />
