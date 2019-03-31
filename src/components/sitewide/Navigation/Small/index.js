@@ -12,11 +12,10 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 // import Img from 'gatsby-image';
 
 // Styles
-import NavigationStyle from './styles.scss';
+import NavigationSmallStyle from './styles.scss';
 
 // Components
-import Button from 'components/library/Button/';
-import LinkList from 'components/core/LinkList/';
+import Item from './Item';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -31,9 +30,17 @@ class NavigationSmall extends PureComponent {
     const { location } = this.props;
 
     return (
-      <div>
-        Small Nav
-      </div>
+      <NavigationSmallStyle>
+        <NavigationSmallStyle.Inner>
+          <NavigationSmallStyle.List>
+            <Item Label="Menu" Class="focus" Destination="/menu" Icon="plus" />
+            <Item Label="Locations" Class="i active" Destination="/locations" Icon="map-marker-alt" />
+            <Item Label="Specials" Class="i" Destination="/specials" Icon="star" />
+            <Item Label="Culture" Class="i" Destination="/culture" Icon="theater-masks" />
+            <Item Label="Outreach" Class="i" Destination="/outreach" Icon="heart" />
+          </NavigationSmallStyle.List>
+        </NavigationSmallStyle.Inner>
+      </NavigationSmallStyle>
     );
   }
 }

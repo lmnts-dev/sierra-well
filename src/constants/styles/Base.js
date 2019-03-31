@@ -41,8 +41,8 @@ export const Base = {
       LogoPosition: null,
       Size: {
         Lg: 81, // px
-        Md: 81, // px
-        Sm: 81, // px
+        Md: 55, // px
+        Sm: 55, // px
       },
     },
 
