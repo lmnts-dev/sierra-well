@@ -12,7 +12,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 // import Img from 'gatsby-image';
 
 // Styles
-import NavigationSmallStyle from './styles.scss';
+import { BottomNavigationStyle, TopNavigationStyle } from './styles.scss';
 
 // Components
 import Item from './Item';
@@ -30,17 +30,73 @@ class NavigationSmall extends PureComponent {
     const { location } = this.props;
 
     return (
-      <NavigationSmallStyle>
-        <NavigationSmallStyle.Inner>
-          <NavigationSmallStyle.List>
-            <Item Label="Menu" Class="focus" Destination="/menu" Icon="plus" />
-            <Item Label="Locations" Class="i active" Destination="/locations" Icon="map-marker-alt" />
-            <Item Label="Specials" Class="i" Destination="/specials" Icon="star" />
-            <Item Label="Culture" Class="i" Destination="/culture" Icon="theater-masks" />
-            <Item Label="Outreach" Class="i" Destination="/outreach" Icon="heart" />
-          </NavigationSmallStyle.List>
-        </NavigationSmallStyle.Inner>
-      </NavigationSmallStyle>
+      <>
+        <TopNavigationStyle>
+          <TopNavigationStyle.Inner>
+            <TopNavigationStyle.Branding>
+              <Link to="/">
+                <img src={logo} alt={Theme.Site.Title} />
+              </Link>
+            </TopNavigationStyle.Branding>
+            <TopNavigationStyle.Tools>
+              <ul>
+                <li>
+                  <span>
+                    <i className="fas fa-comment-alt" />
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <i className="fas fa-phone" />
+                  </span>
+                </li>
+                <li className="menu">
+                  <span>
+                    <figure />
+                  </span>
+                </li>
+              </ul>
+            </TopNavigationStyle.Tools>
+          </TopNavigationStyle.Inner>
+        </TopNavigationStyle>
+
+        <BottomNavigationStyle>
+          <BottomNavigationStyle.Inner>
+            <BottomNavigationStyle.List>
+              <Item
+                Label="Menu"
+                Class="focus"
+                Destination="/menu"
+                Icon="plus"
+              />
+              <Item
+                Label="Locations"
+                Class="i active"
+                Destination="/locations"
+                Icon="map-marker-alt"
+              />
+              <Item
+                Label="Specials"
+                Class="i"
+                Destination="/specials"
+                Icon="star"
+              />
+              <Item
+                Label="Culture"
+                Class="i"
+                Destination="/culture"
+                Icon="theater-masks"
+              />
+              <Item
+                Label="Outreach"
+                Class="i"
+                Destination="/outreach"
+                Icon="heart"
+              />
+            </BottomNavigationStyle.List>
+          </BottomNavigationStyle.Inner>
+        </BottomNavigationStyle>
+      </>
     );
   }
 }

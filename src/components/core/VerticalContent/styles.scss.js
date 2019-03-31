@@ -21,6 +21,8 @@ const VerticalContentStyle = styled.div`
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  padding-top: calc(${Root.Nav.Size} + ${Theme.Base.Size.Sm});
+  padding-bottom: calc(${Root.Nav.Size} + ${Theme.Base.Size.Sm});
 `;
 
 // The Content Inner

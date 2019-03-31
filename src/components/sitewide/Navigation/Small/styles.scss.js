@@ -16,7 +16,7 @@ import { FadeIn } from 'components/core/Transition/Keyframes';
 //////////////////////////////////////////////////////////////////////
 
 // The Navigation Container
-const NavigationSmallStyle = styled.nav`
+export const BottomNavigationStyle = styled.nav`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -31,14 +31,14 @@ const NavigationSmallStyle = styled.nav`
   z-index: 700;
 `;
 
-NavigationSmallStyle.Inner = styled.div`
+BottomNavigationStyle.Inner = styled.div`
   width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
 `;
 
-NavigationSmallStyle.List = styled.ul`
+BottomNavigationStyle.List = styled.ul`
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -55,7 +55,113 @@ NavigationSmallStyle.List = styled.ul`
   /* Individual Item styles in ./Item/styles.scss */
 `;
 
-export default NavigationSmallStyle;
+// Top Navigation
+
+export const TopNavigationStyle = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: visible;
+  z-index: 700;
+  display: flex;
+  flex-direction: column;
+`;
+
+TopNavigationStyle.Inner = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+`;
+
+TopNavigationStyle.Tools = styled.div`
+  height: ${Root.Nav.Size};
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  ul {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      cursor: pointer;
+
+      span {
+        width: ${Theme.Base.Size.Md};
+        height: ${Theme.Base.Size.Md};
+        background: ${Theme.Color.Black};
+        color: ${Theme.Color.White};
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.menu {
+        span {
+          background: rgba(0, 0, 0, 0);
+          transition: all ${Theme.Base.Transition.Duration}
+            ${Theme.Base.Transition.CssEase};
+
+          figure {
+            padding: 0;
+            margin: 0;
+            position: relative;
+
+            &:before {
+              content: '';
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: 5px;
+              height: 1px;
+              width: 30px;
+              background: ${Theme.Color.Gunmetal};
+            }
+
+            &:after {
+              content: '';
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -5px;
+              height: 1px;
+              width: 30px;
+              background: ${Theme.Color.Gunmetal};
+            }
+          }
+        }
+
+        &:hover {
+          span {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+`;
+
+TopNavigationStyle.Branding = styled.div`
+  padding: 10px;
+  height: ${Root.Nav.Size};
+  /* flex: 1; */
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+`;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

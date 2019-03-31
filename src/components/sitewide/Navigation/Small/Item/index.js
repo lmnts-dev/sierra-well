@@ -20,7 +20,7 @@ import ItemStyle from './styles.scss';
 
 const Item = ({ Destination, Label, Class, Icon }) => (
   <ItemStyle className={Class}>
-    <Link to={Destination}>
+    <Link to={Destination} activeClassName="active">
       <i className={'fas fa-' + Icon} />
       <span>{Label}</span>
     </Link>
