@@ -20,9 +20,14 @@ import { MenuContainerStyle } from './styles.scss';
 
 const MenuContainer = () => (
   <MenuContainerStyle>
-    <div>
-      Menu
-    </div>
+    <MenuContainerStyle.Inner>
+      <iframe
+        class="dutchie-iframe"
+        frameborder="0"
+        title="menu"
+        src="https://www.dutchie.com/embedded-menu/sierra-well-reno/menu?"
+      />
+    </MenuContainerStyle.Inner>
   </MenuContainerStyle>
 );
 
