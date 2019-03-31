@@ -6,30 +6,53 @@
 
 // Core
 import React from 'react';
+import Media from 'react-media';
 
 // Components
 import Layout from 'components/core/Layout';
 import HorizontalContent from 'components/core/HorizontalContent';
-
-// Blocks
-import Section from 'elements/Section';
+import VerticalContent from 'components/core/VerticalContent';
 
 // Constants
 import { Theme } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = 'indigo';
+// Page Theme
+const PageTheme = {
+  Color: {
+    Background: 'Indigo',
+    Primary: 'Indigo',
+    Secondary: 'Cyan',
+    Tertiary: 'Indigo',
+  },
+};
 
+// Large Device Content
+const LargeContent = () => <HorizontalContent />;
+
+// Small Device Content
+const SmallContent = () => <VerticalContent />;
+
+// Render Page
 const Index = ({ data }) => (
   <Layout
-    BgColor={PageColor}
-    PrimaryColor={Theme.Color.Nightsky}
-    SecondaryColor="Cyan"
-    TertiaryColor={PageColor}
+    BgColor={PageTheme.Color.Background}
+    PrimaryColor={PageTheme.Color.Primary}
+    SecondaryColor={PageTheme.Color.Secondary}
+    TertiaryColor={PageTheme.Color.Tertiary}
   >
-    <HorizontalContent>Content</HorizontalContent>
+    <Media
+      query={{ minWidth: Base.Media.Width.Md }}
+      render={() => <LargeContent />}
+    />
+
+    <Media
+      query={{ maxWidth: Base.Media.Width.Md }}
+      render={() => <SmallContent />}
+    />
   </Layout>
 );
 

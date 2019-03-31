@@ -17,20 +17,28 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const PageColor = Theme.Color.Dank;
+// Page Theme
+const PageTheme = {
+  Color: {
+    Background: Theme.Color.Dank,
+    Primary: Theme.Color.Dank,
+    Secondary: Theme.Color.Black,
+    Tertiary: Theme.Color.Dank,
+  },
+};
 
 const Index = ({ data }) => (
   <Layout
-    BgColor={PageColor}
-    PrimaryColor={Theme.Color.Dank}
-    SecondaryColor={Theme.Color.Black}
-    TertiaryColor={Theme.Color.White}
+    BgColor={PageTheme.Color.Background}
+    PrimaryColor={PageTheme.Color.Primary}
+    SecondaryColor={PageTheme.Color.Secondary}
+    TertiaryColor={PageTheme.Color.Tertiary}
   >
     <SubLevelPage
-      BgColor={PageColor}
-      PrimaryColor={Theme.Color.Dank}
-      SecondaryColor={Theme.Color.Black}
-      TertiaryColor={Theme.Color.White}
+      BgColor={PageTheme.Color.Background}
+      PrimaryColor={PageTheme.Color.Primary}
+      SecondaryColor={PageTheme.Color.Secondary}
+      TertiaryColor={PageTheme.Color.Tertiary}
     >
       <div className="content-stretch">
         <h1>
