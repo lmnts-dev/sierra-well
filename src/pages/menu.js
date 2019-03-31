@@ -12,6 +12,7 @@ import Media from 'react-media';
 import Layout from 'components/core/Layout';
 import HorizontalContent from 'components/core/HorizontalContent';
 import VerticalContent from 'components/core/VerticalContent';
+import { MenuContainerHeight } from 'components/sitewide/Navigation/Small/MenuContainer/styles.scss';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -24,7 +25,7 @@ import { Base } from 'constants/styles/Base';
 const PageTheme = {
   Color: {
     Background: Theme.Color.Nightsky,
-    Primary: Theme.Color.Nightsky,
+    Primary: Theme.Color.Nightskys,
     Secondary: Theme.Color.White,
     Tertiary: Theme.Color.Nightsky,
   },
@@ -34,7 +35,21 @@ const PageTheme = {
 const LargeContent = () => <HorizontalContent />;
 
 // Small Device Content
-const SmallContent = () => <VerticalContent />;
+const SmallContent = () => (
+  <>
+    <MobileMenuTransform />
+    <VerticalContent />
+  </>
+);
+
+// Mobile Menu
+import { createGlobalStyle } from 'styled-components';
+
+const MobileMenuTransform = createGlobalStyle`
+  .nav-mobile {
+    transform: translateY(calc(0px - ${MenuContainerHeight}));
+  }
+`;
 
 // Render Page
 const Index = ({ data }) => (

@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { MenuContainerHeight } from 'components/sitewide/Navigation/Small/MenuContainer/styles.scss';
 
 // Keyframe
 import { FadeIn } from 'components/core/Transition/Keyframes';
@@ -22,12 +23,14 @@ export const BottomNavigationStyle = styled.nav`
   left: 0;
   right: 0;
   background-color: ${Theme.Color.White};
-  overflow: hidden;
   border-radius: ${Root.Radius} ${Root.Radius} 0 0;
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   z-index: 700;
+  transform: translateY(0);
+  transition: all ${Theme.Base.Transition.Duration}
+    ease;
 `;
 
 BottomNavigationStyle.Inner = styled.div`
@@ -36,6 +39,7 @@ BottomNavigationStyle.Inner = styled.div`
   display: flex;
   flex-direction: column;
   min-height: ${Root.Nav.Size};
+  position: relative;
 `;
 
 BottomNavigationStyle.List = styled.ul`

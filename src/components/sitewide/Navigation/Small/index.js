@@ -16,6 +16,7 @@ import { BottomNavigationStyle, TopNavigationStyle } from './styles.scss';
 
 // Components
 import Item from './Item';
+import MenuContainer from './MenuContainer';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -31,6 +32,8 @@ class NavigationSmall extends PureComponent {
 
     return (
       <>
+
+      {/* Top Navigation */}
         <TopNavigationStyle>
           <TopNavigationStyle.Inner>
             <TopNavigationStyle.Branding>
@@ -60,7 +63,8 @@ class NavigationSmall extends PureComponent {
           </TopNavigationStyle.Inner>
         </TopNavigationStyle>
 
-        <BottomNavigationStyle>
+      {/* Bottom Navigation */}
+        <BottomNavigationStyle className="nav-mobile">
           <BottomNavigationStyle.Inner>
             <BottomNavigationStyle.List>
               <Item
@@ -94,6 +98,7 @@ class NavigationSmall extends PureComponent {
                 Icon="heart"
               />
             </BottomNavigationStyle.List>
+            <MenuContainer />
           </BottomNavigationStyle.Inner>
         </BottomNavigationStyle>
       </>
