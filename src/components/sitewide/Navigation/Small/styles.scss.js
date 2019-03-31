@@ -29,8 +29,7 @@ export const BottomNavigationStyle = styled.nav`
   flex-direction: column;
   z-index: 700;
   transform: translateY(0);
-  transition: all ${Theme.Base.Transition.Duration}
-    ease;
+  transition: all ${Theme.Base.Transition.Duration} ease;
 `;
 
 BottomNavigationStyle.Inner = styled.div`

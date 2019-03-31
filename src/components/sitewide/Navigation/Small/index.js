@@ -32,8 +32,7 @@ class NavigationSmall extends PureComponent {
 
     return (
       <>
-
-      {/* Top Navigation */}
+        {/* Top Navigation */}
         <TopNavigationStyle>
           <TopNavigationStyle.Inner>
             <TopNavigationStyle.Branding>
@@ -63,7 +62,7 @@ class NavigationSmall extends PureComponent {
           </TopNavigationStyle.Inner>
         </TopNavigationStyle>
 
-      {/* Bottom Navigation */}
+        {/* Bottom Navigation */}
         <BottomNavigationStyle className="nav-mobile">
           <BottomNavigationStyle.Inner>
             <BottomNavigationStyle.List>

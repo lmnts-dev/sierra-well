@@ -18,10 +18,6 @@ import { Theme } from 'constants/Theme';
 // Styles
 import { createGlobalStyle } from 'styled-components';
 import VerticalContentStyle from 'components/core/VerticalContent/styles.scss';
-import Fade from 'react-reveal/Fade';
-
-// Components
-import Widget from 'components/library/Widgets/Default';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

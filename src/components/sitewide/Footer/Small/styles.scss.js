@@ -18,6 +18,5 @@ const FooterSmallStyle = styled.footer`
   ${props => (props.routes.includes(props.location) ? FadeIn : FadeIn)};
 `;
 
-
 export default FooterSmallStyle;
 //////////////////////////////////////////////////////////////////////

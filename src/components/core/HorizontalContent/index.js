@@ -18,10 +18,9 @@ import { Theme } from 'constants/Theme';
 // Styles
 import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
-import Fade from 'react-reveal/Fade';
 
 // Components
-import Widget from 'components/library/Widgets/Default';
+import WidgetContainer from 'components/library/Widgets/Container';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -40,6 +39,7 @@ const WidgetContent = [
     Destination: '/subpage',
     TintColor: '#000000',
     TintOpacity: '.4',
+    WidgetStyle: 'default',
   },
   {
     BgColor: Theme.Color.Dank,
@@ -52,6 +52,7 @@ const WidgetContent = [
     Destination: '/subpage',
     TintColor: '',
     TintOpacity: '',
+    WidgetStyle: 'default',
   },
   {
     BgColor: Theme.Color.Nightsky,
@@ -64,6 +65,7 @@ const WidgetContent = [
     Destination: '/subpage',
     TintColor: '',
     TintOpacity: '',
+    WidgetStyle: 'default',
   },
 ];
 
@@ -74,11 +76,11 @@ const WrapperLock = createGlobalStyle`
   }
 `;
 
-// Pose Animation
-const WidgetItem = posed(Widget)({
-  enter: { opacity: 1 },
-  exit: { opacity: 0 },
-});
+//  Pose Animation
+// const WidgetItem = posed(Widget)({
+//   enter: { opacity: 1 },
+//   exit: { opacity: 0 },
+// });
 
 // The Slider Itself
 class SimpleSlider extends React.Component {
@@ -136,48 +138,12 @@ const SlideColumns = () => (
   <>
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner className="col-inner">
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner>
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
+        <WidgetContainer WidgetContent={WidgetContent} />
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
     <HorizontalContentStyle.Column Divider className="divider">
       <HorizontalContentStyle.Column.Inner Divider />
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner>
-        <Widget WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner>
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column Divider className="divider">
-      <HorizontalContentStyle.Column.Inner Divider />
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner>
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
-        <Widget WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
   </>
 );
@@ -187,31 +153,6 @@ const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
     <HorizontalContentStyle.Inner>
       <SimpleSlider>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
         <HorizontalContentStyle.Slide>
           <HorizontalContentStyle.Slide.Inner>
             <SlideColumns />

@@ -22,8 +22,8 @@ const MenuContainer = () => (
   <MenuContainerStyle>
     <MenuContainerStyle.Inner>
       <iframe
-        class="dutchie-iframe"
-        frameborder="0"
+        className="dutchie-iframe"
+        frameBorder="0"
         title="menu"
         src="https://www.dutchie.com/embedded-menu/sierra-well-reno/menu?"
       />
