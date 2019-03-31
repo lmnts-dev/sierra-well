@@ -445,7 +445,10 @@ html {
     }
   }
   
-  
+  .intercom-container {
+    display: none !important;
+  }
+
 `;
 
 export const GlobalStyle = () => (
