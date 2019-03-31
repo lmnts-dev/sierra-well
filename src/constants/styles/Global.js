@@ -32,7 +32,10 @@ html {
     -webkit-text-size-adjust: 100%; /* 2 */
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
+
+  
   
   /* Sections
      ========================================================================== */
@@ -44,6 +47,7 @@ html {
   body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
   
   /**
@@ -429,6 +433,7 @@ html {
 
   * { 
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* for remove highlight */
   }
 
   /* Intercom */
