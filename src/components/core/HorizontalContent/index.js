@@ -30,7 +30,7 @@ import WidgetContainer from 'components/library/Widgets/Container';
 const WidgetContent = [
   {
     BgColor: Theme.Color.Tahoe,
-    BgImage: 'https://source.unsplash.com/1600x1200/?cannabis',
+    BgImage: 'https://source.unsplash.com/1600x1200/?flowers',
     Subhead: 'Subhead',
     Headline: 'Headline',
     TextColor: Theme.Color.White,
@@ -69,6 +69,22 @@ const WidgetContent = [
   },
 ];
 
+const WidgetContent2 = [
+  {
+    BgColor: 'OrangeRed',
+    BgImage: 'none',
+    Subhead: 'Subhead',
+    Headline: 'Headline',
+    TextColor: Theme.Color.Black,
+    IconColor: Theme.Color.Black, // FontAwesome Icon Name
+    IconName: 'rocket',
+    Destination: '/subpage',
+    TintColor: '',
+    TintOpacity: '',
+    WidgetStyle: 'default',
+  }
+];
+
 // Lock Wrapper Scrollssss
 const WrapperLock = createGlobalStyle`
   .wrapper {
@@ -85,6 +101,7 @@ const WrapperLock = createGlobalStyle`
 // The Slider Itself
 class SimpleSlider extends React.Component {
   constructor(props) {
+    // Make our props accessible through this.props
     super(props);
 
     // This binding is necessary to make `this` work in the callback
@@ -139,11 +156,41 @@ const SlideColumns = () => (
     <HorizontalContentStyle.Column className="col">
       <HorizontalContentStyle.Column.Inner className="col-inner">
         <WidgetContainer WidgetContent={WidgetContent} />
+        <WidgetContainer WidgetContent={WidgetContent2} />
+        <WidgetContainer WidgetContent={WidgetContent} />
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column className="col">
+      <HorizontalContentStyle.Column.Inner className="col-inner">
+        <WidgetContainer WidgetContent={WidgetContent2} />
+        <WidgetContainer WidgetContent={WidgetContent} />
       </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
 
     <HorizontalContentStyle.Column Divider className="divider">
       <HorizontalContentStyle.Column.Inner Divider />
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column className="col">
+      <HorizontalContentStyle.Column.Inner className="col-inner">
+        <WidgetContainer WidgetContent={WidgetContent} />
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column className="col">
+      <HorizontalContentStyle.Column.Inner className="col-inner">
+        <WidgetContainer WidgetContent={WidgetContent} />
+        <WidgetContainer WidgetContent={WidgetContent2} />
+      </HorizontalContentStyle.Column.Inner>
+    </HorizontalContentStyle.Column>
+
+    <HorizontalContentStyle.Column className="col">
+      <HorizontalContentStyle.Column.Inner className="col-inner">
+        <WidgetContainer WidgetContent={WidgetContent} />
+        <WidgetContainer WidgetContent={WidgetContent2} />
+        <WidgetContainer WidgetContent={WidgetContent} />
+      </HorizontalContentStyle.Column.Inner>
     </HorizontalContentStyle.Column>
   </>
 );

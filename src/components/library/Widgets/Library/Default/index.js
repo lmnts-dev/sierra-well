@@ -45,6 +45,7 @@ const Widget = ({
     TextColor={TextColor}
     TintColor={TintColor}
     TintOpacity={TintOpacity}
+    className="widget-content"
   >
     <Link to={Destination}>
       <WidgetStyle.Subhead>{Subhead}</WidgetStyle.Subhead>

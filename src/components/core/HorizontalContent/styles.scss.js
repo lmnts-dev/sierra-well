@@ -103,6 +103,8 @@ HorizontalContentStyle.Column.Inner = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
+  max-width: 100%;
   .widget {
     &:first-child {
       padding-top: 0;
@@ -118,7 +120,8 @@ HorizontalContentStyle.Column.Inner = styled.div`
           position: absolute;
           top: 0;
           bottom: 0;
-          left: calc(50% - ${Base.Size.Sm / 2 + 'px'});
+          // left: calc(50% - ${Base.Size.Sm / 2 + 'px'});
+          left: 50%;
           width: 1px;
           opacity: .05;
           background-color: { Theme.Color.Indigo };
