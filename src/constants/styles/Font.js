@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { createGlobalStyle } from 'styled-components';
+import { Base } from './Base';
 
 // Font.js:
 // This is the sitewide font reference.
@@ -52,5 +53,10 @@ export const Typography = createGlobalStyle`
 
   h1, .h1 {
     font-size: 6rem;
+    
+    @media (max-width: ${Base.Media.Width.Sm + 'px'}) {
+      padding-top: 100px;
+      font-size: 3rem;
+    }
   }
 `;

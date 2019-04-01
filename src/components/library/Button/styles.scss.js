@@ -38,9 +38,11 @@ const ButtonStyle = styled(Link)`
   }
 
   .ico {
-    margin-left: ${Theme.Base.Size.Sm};
+    margin-left: 5px;
     line-height: 0;
     flex: 1;
+    height: ${Theme.Base.Size.Sm};
+    width: ${Theme.Base.Size.Sm};
     display: flex;
 
     i {
@@ -55,6 +57,11 @@ const ButtonStyle = styled(Link)`
     svg {
       fill: ${Theme.Color.White};
       border: ${Theme.Color.White};
+
+      @media (max-width: ${Theme.Base.Media.Width.Sm}) {
+        transform: scale(0.5);
+        transform-origin: center center;
+      }
     }
   }
 `;
