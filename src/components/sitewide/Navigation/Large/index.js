@@ -45,7 +45,7 @@ const NavigationLarge = ({ Location, Routes }) => (
       </NavigationStyle.Top.LinkListBlock>
 
       <NavigationStyle.Top.CommunicationBlock>
-        <Button label="Get in Touch" to="/contact" color="nightsky" />
+        <Button Label="Get in Touch" To="/contact" Color="nightsky" />
       </NavigationStyle.Top.CommunicationBlock>
     </NavigationStyle.Top>
 

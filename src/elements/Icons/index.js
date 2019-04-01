@@ -23,16 +23,16 @@ const Error = () => {
 
 const Icon = props => {
   switch (props.Name) {
-    case 'Carat':
+    case 'carat':
       return (
-        <IconStyle Color={props.Color}>
+        <IconStyle className="ico">
           <Carat />
         </IconStyle>
       );
     default:
       return (
-        <IconStyle Color={props.Color}>
-          <Error />
+        <IconStyle className="ico">
+          <i className={'fas fa-' + props.Name} />
         </IconStyle>
       );
   }

@@ -7,6 +7,9 @@
 // Core
 import React from 'react';
 
+// Components
+import Icon from 'elements/Icons';
+
 // Vendor
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -16,11 +19,22 @@ import ButtonStyle from 'components/library/Button/styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Button = ({ label, to, color }) => (
-  <ButtonStyle className="btn" to={to} color={color}>
-    {label}
-  </ButtonStyle>
-);
+const Button = ({ Label, To, IconClass, Color }) => {
+  if (IconClass) {
+    return (
+      <ButtonStyle className="btn" To={To} Color={Color}>
+        <span>{Label}</span>
+        <Icon Name={IconClass} />
+      </ButtonStyle>
+    );
+  } else {
+    return (
+      <ButtonStyle className="btn" To={To} Color={Color}>
+        {Label}
+      </ButtonStyle>
+    );
+  }
+};
 
 export default Button;
 

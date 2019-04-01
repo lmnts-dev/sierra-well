@@ -13,15 +13,15 @@ export const Font = {
     Md: '1rem',
     Lg: '1rem',
     ViewWidth: {
-      Sm: '1.2vw',
-      Md: '1.2vw',
+      Sm: '5.8vw',
+      Md: '5.2vw',
       Lg: '1.2vw',
     },
   },
   Icon: {
     Size: {
-      Sm: '1.5vw',
-      Md: '1.5vw',
+      Sm: '8.5vw',
+      Md: '8.5vw',
       Lg: '1.7vw',
     },
   },

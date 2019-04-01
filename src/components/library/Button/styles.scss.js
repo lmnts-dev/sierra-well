@@ -36,6 +36,27 @@ const ButtonStyle = styled(Link)`
   &:hover {
     text-decoration: none;
   }
+
+  .ico {
+    margin-left: ${Theme.Base.Size.Sm};
+    line-height: 0;
+    flex: 1;
+    display: flex;
+
+    i {
+      color: ${Theme.Color.White};
+      font-size: 1rem;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      fill: ${Theme.Color.White};
+      border: ${Theme.Color.White};
+    }
+  }
 `;
 
 export default ButtonStyle;

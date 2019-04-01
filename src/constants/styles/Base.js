@@ -81,8 +81,8 @@ export const Base = {
   // View Width (vw) Based Measurements
   ViewWidth: {
     Padding: {
-      Sm: '1.5', // vw
-      Md: '1.5', // vw
+      Sm: '4.5', // vw
+      Md: '4.5', // vw
       Lg: '1.5', // vw
     },
   },

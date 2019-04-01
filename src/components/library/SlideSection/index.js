@@ -4,9 +4,11 @@
 import React from 'react';
 import Slider from 'react-slick'; // For Slick Slider
 import { Helmet } from 'react-helmet'; // For Slick Styles
+import { Link } from 'gatsby';
 
 // Components
 import SectionWidgetContainer from 'components/library/Widgets/Container/SectionWidget';
+import Button from 'components/library/Button';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -30,11 +32,11 @@ class SectionSlider extends React.Component {
     // Slick Settings
     const settings = {
       dots: true,
-      speed: 1500,
+      speed: 550,
       arrows: false,
       autoplaySpeed: 4000,
       slidesToShow: 1.1,
-      autoplay: true,
+      // autoplay: true,
       infinite: false,
     };
 
@@ -61,9 +63,12 @@ const SlideSection = ({ Widgets, SectionSize }) => (
   <SlideSectionStyle>
     <SlideSectionStyle.Inner>
       <SlideSectionStyle.SectionHeader>
-        <SlideSectionStyle.Headline>Header</SlideSectionStyle.Headline>
+        <SlideSectionStyle.Headline>
+          <i className="fas fa-ghost" />
+          <span>Header</span>
+        </SlideSectionStyle.Headline>
         <SlideSectionStyle.CallToAction>
-          View All
+          <Button To="/" Color="inherit" Label="View All" IconClass="carat" />
         </SlideSectionStyle.CallToAction>
       </SlideSectionStyle.SectionHeader>
 
