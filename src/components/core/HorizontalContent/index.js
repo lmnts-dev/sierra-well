@@ -30,7 +30,7 @@ import WidgetContainer from 'components/library/Widgets/Container';
 const WidgetContent = [
   {
     BgColor: Theme.Color.Tahoe,
-    BgImage: 'https://source.unsplash.com/1600x1200/?flowers',
+    BgImage: 'https://source.unsplash.com/300x300/?flowers',
     Subhead: 'Subhead',
     Headline: 'Headline',
     TextColor: Theme.Color.White,
@@ -55,7 +55,7 @@ const WidgetContent = [
     WidgetStyle: 'default',
   },
   {
-    BgColor: Theme.Color.Nightsky,
+    BgColor: Theme.Color.Tahoe,
     BgImage: 'none',
     Subhead: 'Subhead',
     Headline: 'Headline',
@@ -71,7 +71,7 @@ const WidgetContent = [
 
 const WidgetContent2 = [
   {
-    BgColor: 'OrangeRed',
+    BgColor: 'Pink',
     BgImage: 'none',
     Subhead: 'Subhead',
     Headline: 'Headline',
@@ -82,13 +82,17 @@ const WidgetContent2 = [
     TintColor: '',
     TintOpacity: '',
     WidgetStyle: 'default',
-  }
+  },
 ];
 
 // Lock Wrapper Scrollssss
 const WrapperLock = createGlobalStyle`
   .wrapper {
     overflow: hidden;
+  }
+
+  .slick-slider {
+    touch-action: none !important;
   }
 `;
 
@@ -109,8 +113,8 @@ class SimpleSlider extends React.Component {
   }
 
   handleWheel(e) {
-    // Disable defaultss
-    e.preventDefault();
+    // Disable defaults:
+    // e.preventDefault();
 
     // Previous / Next Slide based on mouse scroll
     if (e.deltaY < 0) {
@@ -200,6 +204,16 @@ const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
     <HorizontalContentStyle.Inner>
       <SimpleSlider>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
+        </HorizontalContentStyle.Slide>
+        <HorizontalContentStyle.Slide>
+          <HorizontalContentStyle.Slide.Inner>
+            <SlideColumns />
+          </HorizontalContentStyle.Slide.Inner>
+        </HorizontalContentStyle.Slide>
         <HorizontalContentStyle.Slide>
           <HorizontalContentStyle.Slide.Inner>
             <SlideColumns />
