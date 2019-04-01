@@ -59,23 +59,25 @@ class Footer extends PureComponent {
           return (
             <>
               {/* Render our Footer baased on Device Size*/}
-              <Media query={{ maxWidth: Base.Media.Width.Md }}>
-                {matches =>
-                  matches ? (
-                    // Render Mobile Footer
-                    <FooterSmall
-                      Location={location.pathname}
-                      Routes={TopLevelRoutes}
-                    />
-                  ) : (
-                    // Render Desktop Footer
-                    <FooterLarge
-                      Location={location.pathname}
-                      Routes={TopLevelRoutes}
-                    />
-                  )
-                }
-              </Media>
+              <Media
+                query={{ maxWidth: Base.Media.Width.Md + 1 }}
+                render={() => (
+                  <FooterSmall
+                    Location={location.pathname}
+                    Routes={TopLevelRoutes}
+                  />
+                )}
+              />
+
+              <Media
+                query={{ minWidth: Base.Media.Width.Md }}
+                render={() => (
+                  <FooterLarge
+                    Location={location.pathname}
+                    Routes={TopLevelRoutes}
+                  />
+                )}
+              />
             </>
           );
         }}

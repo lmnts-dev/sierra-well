@@ -45,7 +45,7 @@ const Index = ({ data }) => (
     TertiaryColor={PageTheme.Color.Tertiary}
   >
     <Media
-      query={{ maxWidth: Base.Media.Width.Md }}
+      query={{ maxWidth: Base.Media.Width.Md + 1 }}
       render={() => <SmallContent />}
     />
 

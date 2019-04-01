@@ -59,23 +59,26 @@ class Navigation extends PureComponent {
           return (
             <>
               {/* Render our Navigation baased on Device Size*/}
-              <Media query={{ maxWidth: Base.Media.Width.Md }}>
-                {matches =>
-                  matches ? (
-                    // Render Mobile Navigation
-                    <NavigationSmall
-                      Location={location.pathname}
-                      Routes={TopLevelRoutes}
-                    />
-                  ) : (
-                    // Render Desktop Navigation
-                    <NavigationLarge
-                      Location={location.pathname}
-                      Routes={TopLevelRoutes}
-                    />
-                  )
-                }
-              </Media>
+
+              <Media
+                query={{ maxWidth: Base.Media.Width.Md + 1 }}
+                render={() => (
+                  <NavigationSmall
+                    Location={location.pathname}
+                    Routes={TopLevelRoutes}
+                  />
+                )}
+              />
+
+              <Media
+                query={{ minWidth: Base.Media.Width.Md }}
+                render={() => (
+                  <NavigationLarge
+                    Location={location.pathname}
+                    Routes={TopLevelRoutes}
+                  />
+                )}
+              />
             </>
           );
         }}
