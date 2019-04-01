@@ -22,7 +22,7 @@ export const RootVariables = createGlobalStyle`
     --REM: ${Theme.Base.Rem.Lg};
 
     /* -------- View Width (vw) Based Measurements */
-    --ViewWidthPadding: ${Theme.Base.ViewWidth.Padding.Sm};
+    --ViewWidthPadding: ${Theme.Base.ViewWidth.Padding.Lg};
     
     /* --------- Site Grid */
     --SiteWidth: ${Theme.Base.Grid.SiteWidth};

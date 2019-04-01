@@ -45,13 +45,13 @@ const Index = ({ data }) => (
     TertiaryColor={PageTheme.Color.Tertiary}
   >
     <Media
-      query={{ minWidth: Base.Media.Width.Md }}
-      render={() => <LargeContent />}
+      query={{ maxWidth: Base.Media.Width.Md }}
+      render={() => <SmallContent />}
     />
 
     <Media
-      query={{ maxWidth: Base.Media.Width.Md }}
-      render={() => <SmallContent />}
+      query={{ minWidth: Base.Media.Width.Md }}
+      render={() => <LargeContent />}
     />
   </Layout>
 );
