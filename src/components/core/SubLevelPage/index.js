@@ -13,7 +13,7 @@ import React from 'react';
 import { Theme } from 'constants/Theme';
 
 // Components
-import Sidebar from 'components/core/Sidebar/';
+import Sidebar from 'components/Library/Sidebar/';
 
 // Styles
 import SubLevelPageStyle from './styles.scss';

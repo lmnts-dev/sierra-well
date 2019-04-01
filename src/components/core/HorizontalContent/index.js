@@ -20,7 +20,10 @@ import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
 
 // Components
-import WidgetContainer from 'components/library/Widgets/Container';
+import WidgetContainer from 'components/library/Widgets/Container/';
+
+// Images
+import BgPlaceholder from '../../../assets/images/placeholder_bg.jpg';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -30,11 +33,11 @@ import WidgetContainer from 'components/library/Widgets/Container';
 const WidgetContent = [
   {
     BgColor: Theme.Color.White,
-    BgImage: 'https://source.unsplash.com/300x300/?flowers',
+    BgImage: BgPlaceholder,
     Subhead: 'Subhead',
     Headline: 'Headline',
     TextColor: Theme.Color.White,
-    IconColor: Theme.Color.White, 
+    IconColor: Theme.Color.White,
     IconName: 'rocket', // FontAwesome Icon Name
     Destination: '/subpage',
     TintColor: '#000000',

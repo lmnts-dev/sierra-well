@@ -15,12 +15,60 @@ import posed, { PoseGroup } from 'react-pose';
 // Constants
 import { Theme } from 'constants/Theme';
 
+// Components
+import SlideSection from 'components/library/SlideSection';
+
 // Styles
 import { createGlobalStyle } from 'styled-components';
 import VerticalContentStyle from 'components/core/VerticalContent/styles.scss';
 
+// Assets
+import BgPlaceholder from '../../../assets/images/placeholder_bg.jpg';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
+
+const Widgets = [
+  {
+    BgColor: Theme.Color.White,
+    BgImage: BgPlaceholder,
+    Subhead: 'Subhead',
+    Headline: 'Headline',
+    TextColor: Theme.Color.White,
+    IconColor: Theme.Color.White,
+    IconName: 'rocket', // FontAwesome Icon Name
+    Destination: '/subpage',
+    TintColor: '#000000',
+    TintOpacity: '.4',
+    WidgetStyle: 'default',
+  },
+  {
+    BgColor: Theme.Color.Dank,
+    BgImage: 'none',
+    Subhead: 'Subhead',
+    Headline: 'Headline',
+    TextColor: Theme.Color.Black,
+    IconColor: Theme.Color.Black,
+    IconName: 'rocket',
+    Destination: '/subpage',
+    TintColor: '',
+    TintOpacity: '',
+    WidgetStyle: 'default',
+  },
+  {
+    BgColor: Theme.Color.Tahoe,
+    BgImage: 'none',
+    Subhead: 'Subhead',
+    Headline: 'Headline',
+    TextColor: Theme.Color.White,
+    IconColor: Theme.Color.White,
+    IconName: 'rocket',
+    Destination: '/subpage',
+    TintColor: '',
+    TintOpacity: '',
+    WidgetStyle: 'default',
+  },
+];
 
 // Lock Wrapper Scrolls
 const WrapperLock = createGlobalStyle`
@@ -32,7 +80,11 @@ const WrapperLock = createGlobalStyle`
 // The Content Itself
 const VerticalContent = ({ children }) => (
   <VerticalContentStyle>
-    <VerticalContentStyle.Inner>Vertical Content</VerticalContentStyle.Inner>
+    <VerticalContentStyle.Inner>
+      <SlideSection Widgets={Widgets} SectionSize="Large" />
+      <SlideSection Widgets={Widgets} SectionSize="Medium" />
+      <SlideSection Widgets={Widgets} SectionSize="Small" />
+    </VerticalContentStyle.Inner>
   </VerticalContentStyle>
 );
 

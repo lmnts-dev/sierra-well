@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet'; // For Slick Styles
 import WidgetContainerStyle from './styles.scss';
 
 // Components
-import Widget from './../Library/Default/';
+import DefaultWidget from '../Library/Default';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -61,7 +61,7 @@ const WidgetContainer = ({ WidgetContent }) => (
     <WidgetContainerStyle.Inner>
       <WidgetSlider>
         {WidgetContent.map((Content, index) => (
-          <Widget
+          <DefaultWidget
             BgColor={Content.BgColor}
             BgImage={Content.BgImage}
             TextColor={Content.TextColor}

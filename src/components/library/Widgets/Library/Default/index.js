@@ -27,7 +27,7 @@ import Icon from 'elements/Icons';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Widget = ({
+const DefaultWidget = ({
   BgColor,
   BgImage,
   TextColor,
@@ -56,4 +56,4 @@ const Widget = ({
   </WidgetStyle>
 );
 
-export default Widget;
+export default DefaultWidget;

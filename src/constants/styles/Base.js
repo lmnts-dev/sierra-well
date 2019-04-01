@@ -66,14 +66,14 @@ export const Base = {
       Md: {
         Top: 20, // px
         Bottom: 20, // px
-        Right: 20, // px
-        Left: 150, // px
+        Right: 15, // px
+        Left: 15, // px
       },
       Sm: {
         Top: 20, // px
         Bottom: 20, // px
-        Right: 20, // px
-        Left: 150, // px
+        Right: 15, // px
+        Left: 15, // px
       },
     },
   },
