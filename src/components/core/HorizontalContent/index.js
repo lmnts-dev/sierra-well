@@ -29,13 +29,13 @@ import WidgetContainer from 'components/library/Widgets/Container';
 
 const WidgetContent = [
   {
-    BgColor: Theme.Color.Tahoe,
+    BgColor: Theme.Color.White,
     BgImage: 'https://source.unsplash.com/300x300/?flowers',
     Subhead: 'Subhead',
     Headline: 'Headline',
     TextColor: Theme.Color.White,
-    IconColor: Theme.Color.White, // FontAwesome Icon Name
-    IconName: 'rocket',
+    IconColor: Theme.Color.White, 
+    IconName: 'rocket', // FontAwesome Icon Name
     Destination: '/subpage',
     TintColor: '#000000',
     TintOpacity: '.4',

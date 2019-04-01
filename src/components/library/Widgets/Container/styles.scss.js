@@ -42,6 +42,43 @@ WidgetContainerStyle.Inner = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
+
+    .slick-dots {
+      bottom: ${Theme.Base.Size.Sm};
+      left: ${Theme.Base.Size.Sm};
+      width: auto;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 0;
+        padding: 0;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+
+        button {
+          margin: 0;
+          padding: 0;
+          position: relative;
+          width: 10px;
+          height: 10px;
+          margin-right: 5px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 7px;
+            height: 7px;
+            border: 1px solid ${Theme.Color.Black};
+            border-radius: 50%;
+          }
+        }
+      }
+    }
   }
 
   .slick-slider,
@@ -55,6 +92,7 @@ WidgetContainerStyle.Inner = styled.div`
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    margin: 0;
   }
 
   .slick-slide {
