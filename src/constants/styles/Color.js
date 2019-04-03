@@ -33,6 +33,14 @@ export const Color = {
   Indigo: '#060A5C',
 
   // Feedback Palette
+
+
+
+
+
+
+
+  
   Warning: '#FC6376',
   Success: '#40DA33',
 };
