@@ -7,15 +7,27 @@
 // Core
 import React from 'react';
 import Device from './../components/core/DeviceQuery';
-
-// Components
 import Layout from 'components/core/Layout';
-import HorizontalContent from 'components/core/HorizontalContent';
+
+// Mobile Components
 import VerticalContent from 'components/core/VerticalContent';
+
+// Desktop Components
+import {
+  HorizontalContent,
+  SlideGroup,
+  Slide,
+  SlideColumn,
+  SlideDivider,
+} from 'components/core/HorizontalContent';
+import WidgetContainer from 'components/library/Widgets/Container/';
 
 // Constants
 import { Theme } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
+
+// Data
+import { WidgetContent } from 'data';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -31,7 +43,25 @@ const PageTheme = {
 };
 
 // Large Device Content
-const LargeContent = () => <HorizontalContent />;
+const LargeContent = () => (
+  <HorizontalContent>
+    <SlideGroup class="home-slider">
+      <Slide>
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent} />
+          <WidgetContainer WidgetContent={WidgetContent} />
+          <WidgetContainer WidgetContent={WidgetContent} />
+        </SlideColumn>
+
+        <SlideDivider />
+
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent} />
+        </SlideColumn>
+      </Slide>
+    </SlideGroup>
+  </HorizontalContent>
+);
 
 // Small Device Content
 const SmallContent = () => <VerticalContent />;

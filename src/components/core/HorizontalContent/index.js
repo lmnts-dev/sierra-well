@@ -20,76 +20,10 @@ import { Base } from 'constants/styles/Base';
 import { createGlobalStyle } from 'styled-components';
 import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
 
-// Components
-import WidgetContainer from 'components/library/Widgets/Container/';
-
-// Images
-import BgPlaceholder from '../../../assets/images/placeholder_bg.jpg';
-
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Widget Content
-
-const WidgetContent = [
-  {
-    BgColor: Theme.Color.White,
-    BgImage: BgPlaceholder,
-    Subhead: 'Subhead',
-    Headline: 'Headline',
-    TextColor: Theme.Color.White,
-    IconColor: Theme.Color.White,
-    IconName: 'rocket', // FontAwesome Icon Name
-    Destination: '/subpage',
-    TintColor: '#000000',
-    TintOpacity: '.4',
-    WidgetStyle: 'default',
-  },
-  {
-    BgColor: Theme.Color.Dank,
-    BgImage: 'none',
-    Subhead: 'Subhead',
-    Headline: 'Headline',
-    TextColor: Theme.Color.Black,
-    IconColor: Theme.Color.Black,
-    IconName: 'rocket',
-    Destination: '/subpage',
-    TintColor: '',
-    TintOpacity: '',
-    WidgetStyle: 'default',
-  },
-  {
-    BgColor: Theme.Color.Tahoe,
-    BgImage: 'none',
-    Subhead: 'Subhead',
-    Headline: 'Headline',
-    TextColor: Theme.Color.White,
-    IconColor: Theme.Color.White,
-    IconName: 'rocket',
-    Destination: '/subpage',
-    TintColor: '',
-    TintOpacity: '',
-    WidgetStyle: 'default',
-  },
-];
-
-const WidgetContent2 = [
-  {
-    BgColor: 'Pink',
-    BgImage: 'none',
-    Subhead: 'Subhead',
-    Headline: 'Headline',
-    TextColor: Theme.Color.Black,
-    IconColor: Theme.Color.Black, // FontAwesome Icon Name
-    IconName: 'rocket',
-    Destination: '/subpage',
-    TintColor: '',
-    TintOpacity: '',
-    WidgetStyle: 'default',
-  },
-];
-
-// Lock Wrapper Scrollssss
+// Lock Wrapper Scroll
 const WrapperLock = createGlobalStyle`
   .wrapper {
     @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
@@ -106,14 +40,8 @@ const WrapperLock = createGlobalStyle`
   }
 `;
 
-//  Pose Animation
-// const WidgetItem = posed(Widget)({
-//   enter: { opacity: 1 },
-//   exit: { opacity: 0 },
-// });
-
-// The Slider Itself
-class SimpleSlider extends React.Component {
+// The SlideGroup Itself
+export class SlideGroup extends React.Component {
   constructor(props) {
     // Make our props accessible through this.props
     super(props);
@@ -165,73 +93,35 @@ class SimpleSlider extends React.Component {
   }
 }
 
-const SlideColumns = () => (
-  <>
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner className="col-inner">
-        <WidgetContainer WidgetContent={WidgetContent} />
-        <WidgetContainer WidgetContent={WidgetContent2} />
-        <WidgetContainer WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner className="col-inner">
-        <WidgetContainer WidgetContent={WidgetContent2} />
-        <WidgetContainer WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column Divider className="divider">
-      <HorizontalContentStyle.Column.Inner Divider />
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner className="col-inner">
-        <WidgetContainer WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner className="col-inner">
-        <WidgetContainer WidgetContent={WidgetContent} />
-        <WidgetContainer WidgetContent={WidgetContent2} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-
-    <HorizontalContentStyle.Column className="col">
-      <HorizontalContentStyle.Column.Inner className="col-inner">
-        <WidgetContainer WidgetContent={WidgetContent} />
-        <WidgetContainer WidgetContent={WidgetContent2} />
-        <WidgetContainer WidgetContent={WidgetContent} />
-      </HorizontalContentStyle.Column.Inner>
-    </HorizontalContentStyle.Column>
-  </>
+export const SlideDivider = () => (
+  <HorizontalContentStyle.Column Divider className="divider">
+    <HorizontalContentStyle.Column.Inner Divider />
+  </HorizontalContentStyle.Column>
 );
 
-// The Content Itself
-const HorizontalContent = ({ children }) => (
+// The SlideColumn Itself
+export const SlideColumn = ({ children }) => (
+  <HorizontalContentStyle.Column className="col">
+    <HorizontalContentStyle.Column.Inner className="col-inner">
+      {children}
+    </HorizontalContentStyle.Column.Inner>
+  </HorizontalContentStyle.Column>
+);
+
+// The Slide Itself
+export const Slide = ({ children }) => (
+  <HorizontalContentStyle.Slide>
+    <HorizontalContentStyle.Slide.Inner>
+      {children}
+    </HorizontalContentStyle.Slide.Inner>
+  </HorizontalContentStyle.Slide>
+);
+
+// The Horizontal Content Itself
+export const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
-    <HorizontalContentStyle.Inner>
-      <SimpleSlider>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
-        <HorizontalContentStyle.Slide>
-          <HorizontalContentStyle.Slide.Inner>
-            <SlideColumns />
-          </HorizontalContentStyle.Slide.Inner>
-        </HorizontalContentStyle.Slide>
-      </SimpleSlider>
-    </HorizontalContentStyle.Inner>
+    <HorizontalContentStyle.Inner>{children}</HorizontalContentStyle.Inner>
   </HorizontalContentStyle>
 );
 
-export default HorizontalContent;
+export default HorizontalContent

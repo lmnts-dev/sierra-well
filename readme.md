@@ -87,6 +87,9 @@ npm run format
 
 # To generate favicons (included in `build`)
 npm run build:favicons
+
+# To do all of the above and commit to both repositories and reboot your server:
+npm run build && git add . && gitmoji -c && git push origin master && git push public master && npm run develop 
 ```
 
 ## Configuration
