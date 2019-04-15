@@ -22,17 +22,14 @@ class Transition extends PureComponent {
 
     const RoutesContainer = posed.div({
       enter: {
-        y: 0,
         opacity: 1,
         beforeChildren: true,
         transition: {
-          opacity: { ease: 'easeIn', delay: 600, duration: 400 },
-          y: { duration: 500, delay: 600, ease: Theme.Base.Transition.Ease },
+          opacity: { ease: 'easeIn', delay: 400, duration: 400 },
         },
       },
       exit: {
         opacity: 0,
-        y: '2%',
         transition: {
           duration: 500,
           ease: Theme.Base.Transition.Ease,

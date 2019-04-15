@@ -7,7 +7,7 @@
 // Core
 import React, { PureComponent } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Media from 'react-media';
+import Device from './../../core/DeviceQuery';
 
 // Constants
 import { Base } from 'constants/styles/Base';
@@ -58,26 +58,20 @@ class Footer extends PureComponent {
           // to the styled components below.
           return (
             <>
-              {/* Render our Footer baased on Device Size*/}
-              <Media
-                query={{ maxWidth: Base.Media.Width.Md + 1 }}
-                render={() => (
-                  <FooterSmall
-                    Location={location.pathname}
-                    Routes={TopLevelRoutes}
-                  />
-                )}
-              />
+              {/* Render our Footer based on Device Size*/}
+              <Device Query="Mobile">
+                <FooterSmall
+                  Location={location.pathname}
+                  Routes={TopLevelRoutes}
+                />
+              </Device>
 
-              <Media
-                query={{ minWidth: Base.Media.Width.Md }}
-                render={() => (
-                  <FooterLarge
-                    Location={location.pathname}
-                    Routes={TopLevelRoutes}
-                  />
-                )}
-              />
+              <Device Query="Desktop">
+                <FooterLarge
+                  Location={location.pathname}
+                  Routes={TopLevelRoutes}
+                />
+              </Device>
             </>
           );
         }}

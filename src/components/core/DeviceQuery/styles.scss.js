@@ -16,25 +16,32 @@ import { Base } from 'constants/styles/Base';
 //////////////////////////////////////////////////////////////////////
 
 // The Content Wrapper
-const SidebarStyle = styled.div`
-  position: sticky;
-  top: ${Root.Nav.Size};
-  height: calc(100vh - ${Root.Nav.Size});
-  display: flex;
-  z-index: 555;
+const DeviceQuery = styled.div`
+  position: relative;
+  appearance: none;
+  padding: 0;
+  margin: 0;
 `;
 
-SidebarStyle.Inner = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm} ${Root.Footer.Size}
-    ${Theme.Base.Size.Sm};
-  width: ${Root.Grid.Gutter.Left};
-`;
+DeviceQuery.Mobile = styled(DeviceQuery)`
+  @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
+    display: none;
+  }
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: block;
+  }
+`
 
-export default SidebarStyle;
+DeviceQuery.Desktop = styled(DeviceQuery)`
+  @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
+    display: block;
+  }
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: none;
+  }
+`
+
+export default DeviceQuery;
 
 //////////////////////////////////////////////////////////////////////
 // End Styles

@@ -6,7 +6,7 @@
 
 // Core
 import React from 'react';
-import Media from 'react-media';
+import Device from './../components/core/DeviceQuery';
 
 // Components
 import Layout from 'components/core/Layout';
@@ -44,15 +44,13 @@ const Index = ({ data }) => (
     SecondaryColor={PageTheme.Color.Secondary}
     TertiaryColor={PageTheme.Color.Tertiary}
   >
-    <Media
-      query={{ maxWidth: Base.Media.Width.Md + 1 }}
-      render={() => <SmallContent />}
-    />
+    <Device Query="Desktop">
+      <LargeContent />
+    </Device>
 
-    <Media
-      query={{ minWidth: Base.Media.Width.Md }}
-      render={() => <LargeContent />}
-    />
+    <Device Query="Mobile">
+      <SmallContent />
+    </Device>
   </Layout>
 );
 

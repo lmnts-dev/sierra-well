@@ -1,43 +1,32 @@
 // DeviceQuery.js:
 // For switching between Media contexts and screen
 // widths. For example, Mobile vs Desktop content.
-// Learn more: https://github.com/contra/react-responsive
+// We're using Pure CSS for this method.
 
 // Core
 import React from 'react';
-import Media from 'react-media';
 
-// Constants
-import { Base } from 'constants/styles/Base';
+// Styles
+import DeviceQuery from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-class DeviceQuery extends React.Component {
+class Device extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const Large = this.props.Large;
-    const Small = this.props.Small;
+    const Query = this.props.Query;
 
-    console.log(this.props);
+    if (Query == 'Mobile') {
+      return <DeviceQuery.Mobile>{this.props.children}</DeviceQuery.Mobile>;
+    }
 
-    return (
-      <div>
-        <Media
-          query={{ maxWidth: Base.Media.Width.Md }}
-          render={() => <Small />}
-        />
-
-        <Media
-          query={{ minWidth: Base.Media.Width.Md }}
-          render={() => <Large />}
-        />
-      </div>
-    );
+    if (Query == 'Desktop') {
+      return <DeviceQuery.Desktop>{this.props.children}</DeviceQuery.Desktop>;
+    }
   }
 }
-
-export default DeviceQuery;
+export default Device;

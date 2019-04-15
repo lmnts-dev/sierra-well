@@ -7,7 +7,7 @@
 // Core
 import React, { PureComponent } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Media from 'react-media';
+import Device from './../../core/DeviceQuery';
 
 import NavigationLarge from './Large';
 import NavigationSmall from './Small';
@@ -60,25 +60,19 @@ class Navigation extends PureComponent {
             <>
               {/* Render our Navigation baased on Device Size*/}
 
-              <Media
-                query={{ maxWidth: Base.Media.Width.Md + 1 }}
-                render={() => (
-                  <NavigationSmall
-                    Location={location.pathname}
-                    Routes={TopLevelRoutes}
-                  />
-                )}
-              />
+              <Device Query="Mobile">
+                <NavigationSmall
+                  Location={location.pathname}
+                  Routes={TopLevelRoutes}
+                />
+              </Device>
 
-              <Media
-                query={{ minWidth: Base.Media.Width.Md }}
-                render={() => (
-                  <NavigationLarge
-                    Location={location.pathname}
-                    Routes={TopLevelRoutes}
-                  />
-                )}
-              />
+              <Device Query="Desktop">
+                <NavigationLarge
+                  Location={location.pathname}
+                  Routes={TopLevelRoutes}
+                />
+              </Device>
             </>
           );
         }}
