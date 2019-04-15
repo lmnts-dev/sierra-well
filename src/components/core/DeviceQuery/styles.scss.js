@@ -30,7 +30,7 @@ DeviceQuery.Mobile = styled(DeviceQuery)`
   @media (max-width: ${Base.Media.Width.Md + 'px'}) {
     display: block;
   }
-`
+`;
 
 DeviceQuery.Desktop = styled(DeviceQuery)`
   @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
@@ -39,7 +39,7 @@ DeviceQuery.Desktop = styled(DeviceQuery)`
   @media (max-width: ${Base.Media.Width.Md + 'px'}) {
     display: none;
   }
-`
+`;
 
 export default DeviceQuery;
 

@@ -1,10 +1,26 @@
-// ScrollWrapper.js:
-// This is prevent page jumping of page transitions.
-// The concept is to replicate a 'body' tag so it's scroll
-// position isn't reset for a simple and smooth page
-// transition without jumping to the top of the page.
+// HorizontalContent.js:
+// These are the components for building out
+// Horizontally focused pages, like top-level
+// navigation pages.
 
-// It's used in the wrapPageElement component.
+// Example Usage:
+// <HorizontalContent>
+// <SlideGroup class="home-slider">
+// <Slide>
+//  <SlideColumn>
+//    <WidgetContainer WidgetContent={WidgetContent} />
+//    <WidgetContainer WidgetContent={WidgetContent} />
+//    <WidgetContainer WidgetContent={WidgetContent} />
+//  </SlideColumn>
+//
+//  <SlideDivider />
+//
+//  <SlideColumn>
+//    <WidgetContainer WidgetContent={WidgetContent} />
+//  </SlideColumn>
+// </Slide>
+// </SlideGroup>
+// </HorizontalContent>
 
 // Core
 import React from 'react';
@@ -93,6 +109,16 @@ export class SlideGroup extends React.Component {
   }
 }
 
+// The Slide Itself
+export const Slide = ({ children }) => (
+  <HorizontalContentStyle.Slide>
+    <HorizontalContentStyle.Slide.Inner>
+      {children}
+    </HorizontalContentStyle.Slide.Inner>
+  </HorizontalContentStyle.Slide>
+);
+
+// The Slide Divider
 export const SlideDivider = () => (
   <HorizontalContentStyle.Column Divider className="divider">
     <HorizontalContentStyle.Column.Inner Divider />
@@ -108,15 +134,6 @@ export const SlideColumn = ({ children }) => (
   </HorizontalContentStyle.Column>
 );
 
-// The Slide Itself
-export const Slide = ({ children }) => (
-  <HorizontalContentStyle.Slide>
-    <HorizontalContentStyle.Slide.Inner>
-      {children}
-    </HorizontalContentStyle.Slide.Inner>
-  </HorizontalContentStyle.Slide>
-);
-
 // The Horizontal Content Itself
 export const HorizontalContent = ({ children }) => (
   <HorizontalContentStyle>
@@ -124,4 +141,4 @@ export const HorizontalContent = ({ children }) => (
   </HorizontalContentStyle>
 );
 
-export default HorizontalContent
+export default HorizontalContent;

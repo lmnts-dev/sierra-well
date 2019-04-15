@@ -16,7 +16,7 @@ import { Theme, Root } from 'constants/Theme';
 const WidgetContainerStyle = styled.div`
   padding-top: ${Theme.Base.Size.Sm};
   width: 100%;
-  flex: 1;
+  flex: ${props => (props.Flex ? props.Flex : '1')};
   display: flex;
   flex-direction: column;
 `;

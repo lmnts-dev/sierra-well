@@ -56,8 +56,8 @@ class WidgetSlider extends React.Component {
 }
 
 // Widget Itself
-const WidgetContainer = ({ WidgetContent }) => (
-  <WidgetContainerStyle className="widget">
+const WidgetContainer = ({ WidgetContent, Flex }) => (
+  <WidgetContainerStyle className="widget" Flex={Flex}>
     <WidgetContainerStyle.Inner>
       <WidgetSlider>
         {WidgetContent.map((Content, index) => (

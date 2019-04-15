@@ -6,7 +6,7 @@
 
 // Core
 import React from 'react';
-import Device from './../components/core/DeviceQuery'
+import Device from './../components/core/DeviceQuery';
 
 // Components
 import Layout from 'components/core/Layout';

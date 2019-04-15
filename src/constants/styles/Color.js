@@ -34,13 +34,6 @@ export const Color = {
 
   // Feedback Palette
 
-
-
-
-
-
-
-  
   Warning: '#FC6376',
   Success: '#40DA33',
 };

@@ -49,14 +49,13 @@ const LargeContent = () => (
       <Slide>
         <SlideColumn>
           <WidgetContainer WidgetContent={WidgetContent} />
-          <WidgetContainer WidgetContent={WidgetContent} />
-          <WidgetContainer WidgetContent={WidgetContent} />
         </SlideColumn>
 
         <SlideDivider />
 
         <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent} />
+          <WidgetContainer WidgetContent={WidgetContent} Flex={1} />
+          <WidgetContainer WidgetContent={WidgetContent} Flex={2} />
         </SlideColumn>
       </Slide>
     </SlideGroup>
