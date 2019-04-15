@@ -14,6 +14,7 @@ import posed, { PoseGroup } from 'react-pose';
 
 // Constants
 import { Theme } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Styles
 import { createGlobalStyle } from 'styled-components';
@@ -91,7 +92,13 @@ const WidgetContent2 = [
 // Lock Wrapper Scrollssss
 const WrapperLock = createGlobalStyle`
   .wrapper {
-    overflow: hidden;
+    @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
+      overflow: hidden;
+    }
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      overflow-y: scroll; /* has to be scroll, not auto */
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   .slick-slider {

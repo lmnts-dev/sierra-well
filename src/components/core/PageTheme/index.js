@@ -18,6 +18,8 @@ import { Theme } from 'constants/Theme';
 
 export const PageThemeStyle = createGlobalStyle`
   body {
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
     background-color: ${props =>
       props.BgColor ? props.BgColor : Theme.Color.Background};
     transition: background-color ${Theme.Base.Transition.Duration} ${

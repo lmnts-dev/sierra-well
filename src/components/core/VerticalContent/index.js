@@ -14,6 +14,7 @@ import posed, { PoseGroup } from 'react-pose';
 
 // Constants
 import { Theme } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Components
 import SlideSection from 'components/library/SlideSection';
@@ -71,21 +72,30 @@ const Widgets = [
 ];
 
 // Lock Wrapper Scrolls
-const WrapperLock = createGlobalStyle`
+const WrapperRelease = createGlobalStyle`
   .wrapper {
-    overflow-y: auto;
+    @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
+      overflow: hidden;
+    }
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      overflow-y: scroll !important; /* has to be scroll, not auto */
+      -webkit-overflow-scrolling: touch;
+    }
   }
 `;
 
 // The Content Itself
 const VerticalContent = ({ children }) => (
-  <VerticalContentStyle>
-    <VerticalContentStyle.Inner>
-      <SlideSection Widgets={Widgets} SectionSize="Large" />
-      <SlideSection Widgets={Widgets} SectionSize="Medium" />
-      <SlideSection Widgets={Widgets} SectionSize="Small" />
-    </VerticalContentStyle.Inner>
-  </VerticalContentStyle>
+  <>
+    <WrapperRelease />
+    <VerticalContentStyle>
+      <VerticalContentStyle.Inner>
+        <SlideSection Widgets={Widgets} SectionSize="Large" />
+        <SlideSection Widgets={Widgets} SectionSize="Medium" />
+        <SlideSection Widgets={Widgets} SectionSize="Small" />
+      </VerticalContentStyle.Inner>
+    </VerticalContentStyle>
+  </>
 );
 
 export default VerticalContent;
