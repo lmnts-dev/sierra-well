@@ -17,10 +17,6 @@ import Carat from './SVG/Carat';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-const Error = () => {
-  <i className="fas fa-exclamation-circle" />;
-};
-
 const Icon = props => {
   switch (props.Name) {
     case 'carat':

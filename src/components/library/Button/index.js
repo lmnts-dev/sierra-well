@@ -10,9 +10,6 @@ import React from 'react';
 // Components
 import Icon from 'elements/Icons';
 
-// Vendor
-import { StaticQuery, graphql } from 'gatsby';
-
 // Styles
 import ButtonStyle from 'components/library/Button/styles.scss';
 
