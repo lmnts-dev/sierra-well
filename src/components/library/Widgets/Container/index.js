@@ -12,6 +12,8 @@ import WidgetContainerStyle from './styles.scss';
 
 // Components
 import DefaultWidget from '../Library/Default';
+import ArticleWidget from '../Library/Article';
+import SideHeaderWidget from '../Library/SideHeader';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -65,9 +67,6 @@ class WidgetType extends React.Component {
   // Render
   render() {
     const WidgetContent = this.props.WidgetContent;
-
-    console.log(WidgetContent[1].Meta.Generic);
-
     return (
       <WidgetSlider>
         {WidgetContent.map((Content, index) => {
@@ -80,7 +79,7 @@ class WidgetType extends React.Component {
                   TextColor={Content.Meta.Generic.TextColor}
                   TintColor={Content.Meta.Generic.TintColor}
                   TintOpacity={Content.Meta.Generic.TintOpacity}
-                  Destination={Content.Meta.Generic.Destination}
+                  Destination={Content.Destination}
                   Subhead={Content.Meta.Generic.Subhead}
                   Headline={Content.Meta.Generic.Headline}
                   IconName={Content.Meta.Generic.IconName}
@@ -96,7 +95,7 @@ class WidgetType extends React.Component {
                   TextColor={Content.Meta.Generic.TextColor}
                   TintColor={Content.Meta.Generic.TintColor}
                   TintOpacity={Content.Meta.Generic.TintOpacity}
-                  Destination={Content.Meta.Generic.Destination}
+                  Destination={Content.Destination}
                   Subhead={Content.Meta.Generic.Subhead}
                   Headline={Content.Meta.Generic.Headline}
                   IconName={Content.Meta.Generic.IconName}

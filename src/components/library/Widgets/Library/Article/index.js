@@ -1,4 +1,4 @@
-// Default Widget.js:
+// ArticleWidget.js:
 
 // Example Usage:
 // <Widget
@@ -27,7 +27,7 @@ import Icon from 'elements/Icons';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const DefaultWidget = ({
+const ArticleWidget = ({
   BgColor,
   BgImage,
   TextColor,
@@ -56,4 +56,4 @@ const DefaultWidget = ({
   </WidgetStyle>
 );
 
-export default DefaultWidget;
+export default ArticleWidget;

@@ -11,29 +11,29 @@ import React from 'react';
 import Icon from 'elements/Icons';
 
 // Styles
-import ButtonStyle from 'components/library/Button/styles.scss';
+import BtnStyle from 'components/library/Btn/styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Button = ({ Label, To, IconClass, Color }) => {
+const Btn = ({ Label, Destination, IconClass, BgColor }) => {
   if (IconClass) {
     return (
-      <ButtonStyle className="btn" To={To} Color={Color}>
+      <BtnStyle className="btn" to={Destination}>
         <span>{Label}</span>
         <Icon Name={IconClass} />
-      </ButtonStyle>
+      </BtnStyle>
     );
   } else {
     return (
-      <ButtonStyle className="btn" To={To} Color={Color}>
+      <BtnStyle className="btn" to={Destination}>
         {Label}
-      </ButtonStyle>
+      </BtnStyle>
     );
   }
 };
 
-export default Button;
+export default Btn;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

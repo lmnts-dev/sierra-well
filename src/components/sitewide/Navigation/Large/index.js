@@ -15,7 +15,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 import NavigationStyle from './styles.scss';
 
 // Components
-import Button from 'components/library/Button/';
+import Btn from 'components/library/Btn/';
 import LinkList from 'components/core/LinkList/';
 
 // Constants
@@ -45,7 +45,7 @@ const NavigationLarge = ({ Location, Routes }) => (
       </NavigationStyle.Top.LinkListBlock>
 
       <NavigationStyle.Top.CommunicationBlock>
-        <Button Label="Get in Touch" To="/contact" Color="nightsky" />
+        <Btn Label="Get in Touch" Destination="/contact" BgColor="nightsky" />
       </NavigationStyle.Top.CommunicationBlock>
     </NavigationStyle.Top>
 

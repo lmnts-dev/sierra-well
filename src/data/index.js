@@ -68,13 +68,13 @@ export const WidgetContent = {
       Style: 'Article',
       Meta: {
         Generic: {
-          BgColor: "blue",
-          BgImage: BgPlaceholder,
+          BgColor: 'blue',
+          BgImage: '',
           Subhead: 'Subhead',
-          Headline: 'Mission',
+          Headline: 'Article',
           TextColor: Theme.Color.White,
           IconColor: Theme.Color.White,
-          IconName: 'rocket', // FontAwesome Icon Name
+          IconName: 'robot', // FontAwesome Icon Name
           TintColor: '#000000',
           TintOpacity: '.4',
           IconSize: '',
@@ -87,14 +87,14 @@ export const WidgetContent = {
       Meta: {
         Generic: {
           BgColor: Theme.Color.Dank,
-          BgImage: BgPlaceholder,
+          BgImage: '',
           Subhead: 'Subhead',
-          Headline: 'Mission',
-          TextColor: Theme.Color.White,
-          IconColor: Theme.Color.White,
-          IconName: 'rocket', // FontAwesome Icon Name
-          TintColor: '#000000',
-          TintOpacity: '.4',
+          Headline: 'Generic 1',
+          TextColor: Theme.Color.Black,
+          IconColor: Theme.Color.Black,
+          IconName: 'tree', // FontAwesome Icon Name
+          TintColor: '',
+          TintOpacity: '',
           IconSize: '',
         },
       },
@@ -107,7 +107,7 @@ export const WidgetContent = {
           BgColor: Theme.Color.Black,
           BgImage: BgPlaceholder,
           Subhead: 'Subhead',
-          Headline: 'Mission',
+          Headline: 'Generic 2',
           TextColor: Theme.Color.White,
           IconColor: Theme.Color.White,
           IconName: 'rocket', // FontAwesome Icon Name
@@ -117,63 +117,5 @@ export const WidgetContent = {
         },
       },
     },
-  ],
-  Double: [
-    {
-      Destination: '/subpage',
-      Style: 'Generic',
-      Meta: {
-        Generic: {
-          BgColor: Theme.Color.Black,
-          BgImage: BgPlaceholder,
-          Subhead: 'Subhead',
-          Headline: 'Mission',
-          TextColor: Theme.Color.White,
-          IconColor: Theme.Color.White,
-          IconName: 'rocket', // FontAwesome Icon Name
-          TintColor: '#000000',
-          TintOpacity: '.4',
-          IconSize: '',
-        },
-      },
-    },
-    {
-      Destination: '/subpage',
-      Style: 'Generic',
-      Meta: {
-        Generic: {
-          BgColor: Theme.Color.Black,
-          BgImage: BgPlaceholder,
-          Subhead: 'Subhead',
-          Headline: 'Mission',
-          TextColor: Theme.Color.White,
-          IconColor: Theme.Color.White,
-          IconName: 'rocket', // FontAwesome Icon Name
-          TintColor: '#000000',
-          TintOpacity: '.4',
-          IconSize: '',
-        },
-      },
-    },
-  ],
-  Single: [
-    {
-      Destination: '/subpage',
-      Style: 'Generic',
-      Meta: {
-        Generic: {
-          BgColor: Theme.Color.Black,
-          BgImage: BgPlaceholder,
-          Subhead: 'Subhead',
-          Headline: 'Mission',
-          TextColor: Theme.Color.White,
-          IconColor: Theme.Color.White,
-          IconName: 'rocket', // FontAwesome Icon Name
-          TintColor: '#000000',
-          TintOpacity: '.4',
-          IconSize: '',
-        },
-      },
-    },
-  ],
+  ]
 };

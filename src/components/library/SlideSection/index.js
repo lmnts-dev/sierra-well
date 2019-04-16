@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 
 // Components
 import SectionWidgetContainer from 'components/library/Widgets/Container/SectionWidget';
-import Button from 'components/library/Button';
+import Btn from 'components/library/Btn';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -68,7 +68,12 @@ const SlideSection = ({ Widgets, SectionSize }) => (
           <span>Header</span>
         </SlideSectionStyle.Headline>
         <SlideSectionStyle.CallToAction>
-          <Button To="/" Color="inherit" Label="View All" IconClass="carat" />
+          <Btn
+            Destination="/"
+            BgColor="inherit"
+            Label="View All"
+            IconClass="carat"
+          />
         </SlideSectionStyle.CallToAction>
       </SlideSectionStyle.SectionHeader>
 

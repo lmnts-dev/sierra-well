@@ -13,7 +13,7 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-const ButtonStyle = styled(Link)`
+const BtnStyle = styled(Link)`
   background-color: ${Theme.Color.Nightsky};
   height: ${Root.Button.Size};
   display: inline-flex;
@@ -66,7 +66,7 @@ const ButtonStyle = styled(Link)`
   }
 `;
 
-export default ButtonStyle;
+export default BtnStyle;
 
 //////////////////////////////////////////////////////////////////////
 // End Styles
