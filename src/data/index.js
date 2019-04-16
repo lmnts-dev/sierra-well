@@ -65,10 +65,10 @@ export const WidgetContent = {
   Triple: [
     {
       Destination: '/subpage',
-      Style: 'Generic',
+      Style: 'Article',
       Meta: {
         Generic: {
-          BgColor: Theme.Color.Tahoe,
+          BgColor: "blue",
           BgImage: BgPlaceholder,
           Subhead: 'Subhead',
           Headline: 'Mission',
@@ -120,45 +120,60 @@ export const WidgetContent = {
   ],
   Double: [
     {
-      BgColor: Theme.Color.Dank,
-      BgImage: 'none',
-      Subhead: 'Subhead',
-      Headline: 'Headline',
-      TextColor: Theme.Color.Black,
-      IconColor: Theme.Color.Black,
-      IconName: 'rocket',
       Destination: '/subpage',
-      TintColor: '',
-      TintOpacity: '',
-      WidgetStyle: 'default',
+      Style: 'Generic',
+      Meta: {
+        Generic: {
+          BgColor: Theme.Color.Black,
+          BgImage: BgPlaceholder,
+          Subhead: 'Subhead',
+          Headline: 'Mission',
+          TextColor: Theme.Color.White,
+          IconColor: Theme.Color.White,
+          IconName: 'rocket', // FontAwesome Icon Name
+          TintColor: '#000000',
+          TintOpacity: '.4',
+          IconSize: '',
+        },
+      },
     },
     {
-      BgColor: Theme.Color.Tahoe,
-      BgImage: 'none',
-      Subhead: 'Subhead',
-      Headline: 'Headline',
-      TextColor: Theme.Color.White,
-      IconColor: Theme.Color.White,
-      IconName: 'rocket',
       Destination: '/subpage',
-      TintColor: '',
-      TintOpacity: '',
-      WidgetStyle: 'default',
+      Style: 'Generic',
+      Meta: {
+        Generic: {
+          BgColor: Theme.Color.Black,
+          BgImage: BgPlaceholder,
+          Subhead: 'Subhead',
+          Headline: 'Mission',
+          TextColor: Theme.Color.White,
+          IconColor: Theme.Color.White,
+          IconName: 'rocket', // FontAwesome Icon Name
+          TintColor: '#000000',
+          TintOpacity: '.4',
+          IconSize: '',
+        },
+      },
     },
   ],
   Single: [
     {
-      BgColor: Theme.Color.Black,
-      BgImage: 'none',
-      Subhead: 'Subhead',
-      Headline: 'Headline',
-      TextColor: Theme.Color.White,
-      IconColor: Theme.Color.White,
-      IconName: 'rocket',
       Destination: '/subpage',
-      TintColor: '',
-      TintOpacity: '',
-      WidgetStyle: 'default',
+      Style: 'Generic',
+      Meta: {
+        Generic: {
+          BgColor: Theme.Color.Black,
+          BgImage: BgPlaceholder,
+          Subhead: 'Subhead',
+          Headline: 'Mission',
+          TextColor: Theme.Color.White,
+          IconColor: Theme.Color.White,
+          IconName: 'rocket', // FontAwesome Icon Name
+          TintColor: '#000000',
+          TintOpacity: '.4',
+          IconSize: '',
+        },
+      },
     },
   ],
 };

@@ -50,7 +50,7 @@ const LargeContent = () => (
           <WidgetContainer WidgetContent={WidgetContent.Triple} />
         </SlideColumn>
 
-        <SlideColumn Divider />
+        {/* <SlideColumn Divider />
 
         <SlideColumn>
           <WidgetContainer WidgetContent={WidgetContent.Double} />
@@ -68,10 +68,10 @@ const LargeContent = () => (
           <WidgetContainer WidgetContent={WidgetContent.Double} />
           <WidgetContainer WidgetContent={WidgetContent.Single} />
           <WidgetContainer WidgetContent={WidgetContent.Single} />
-        </SlideColumn>
+        </SlideColumn> */}
       </Slide>
 
-      <Slide>
+      {/* <Slide>
         <SlideColumn>
           <WidgetContainer WidgetContent={WidgetContent.Single} Flex={1} />
           <WidgetContainer WidgetContent={WidgetContent.Single} Flex={2} />
@@ -98,7 +98,7 @@ const LargeContent = () => (
         <SlideColumn>
           <WidgetContainer WidgetContent={WidgetContent.Single} />
         </SlideColumn>
-      </Slide>
+      </Slide> */}
     </SlideGroup>
   </HorizontalContent>
 );

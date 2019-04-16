@@ -38,6 +38,7 @@ const DefaultWidget = ({
   Headline,
   IconColor,
   IconName,
+  Meta,
 }) => (
   <WidgetStyle
     BgColor={BgColor}

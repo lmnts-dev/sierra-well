@@ -55,27 +55,66 @@ class WidgetSlider extends React.Component {
   }
 }
 
-// Widget Itself
+// WidgetType
+class WidgetType extends React.Component {
+  constructor(props) {
+    // Make our props accessible through this.props
+    super(props);
+  }
+
+  // Render
+  render() {
+    const WidgetContent = this.props.WidgetContent;
+
+    console.log(WidgetContent[1].Meta.Generic);
+
+    return (
+      <WidgetSlider>
+        {WidgetContent.map((Content, index) => {
+          switch (Content.Style) {
+            case 'Article':
+              return (
+                <DefaultWidget
+                  BgColor={Content.Meta.Generic.BgColor}
+                  BgImage={Content.Meta.Generic.BgImage}
+                  TextColor={Content.Meta.Generic.TextColor}
+                  TintColor={Content.Meta.Generic.TintColor}
+                  TintOpacity={Content.Meta.Generic.TintOpacity}
+                  Destination={Content.Meta.Generic.Destination}
+                  Subhead={Content.Meta.Generic.Subhead}
+                  Headline={Content.Meta.Generic.Headline}
+                  IconName={Content.Meta.Generic.IconName}
+                  IconColor={Content.Meta.Generic.IconColor}
+                  key={index}
+                />
+              );
+            case 'Generic':
+              return (
+                <DefaultWidget
+                  BgColor={Content.Meta.Generic.BgColor}
+                  BgImage={Content.Meta.Generic.BgImage}
+                  TextColor={Content.Meta.Generic.TextColor}
+                  TintColor={Content.Meta.Generic.TintColor}
+                  TintOpacity={Content.Meta.Generic.TintOpacity}
+                  Destination={Content.Meta.Generic.Destination}
+                  Subhead={Content.Meta.Generic.Subhead}
+                  Headline={Content.Meta.Generic.Headline}
+                  IconName={Content.Meta.Generic.IconName}
+                  IconColor={Content.Meta.Generic.IconColor}
+                  key={index}
+                />
+              );
+          }
+        })}
+      </WidgetSlider>
+    );
+  }
+}
+
 const WidgetContainer = ({ WidgetContent, Flex }) => (
   <WidgetContainerStyle className="widget" Flex={Flex}>
     <WidgetContainerStyle.Inner>
-      <WidgetSlider>
-        {WidgetContent.map((Content, index) => (
-          <DefaultWidget
-            BgColor={Content.BgColor}
-            BgImage={Content.BgImage}
-            TextColor={Content.TextColor}
-            TintColor={Content.TintColor}
-            TintOpacity={Content.TintOpacity}
-            Destination={Content.Destination}
-            Subhead={Content.Subhead}
-            Headline={Content.Headline}
-            IconName={Content.IconName}
-            IconColor={Content.IconColor}
-            key={index}
-          />
-        ))}
-      </WidgetSlider>
+      <WidgetType WidgetContent={WidgetContent} />
     </WidgetContainerStyle.Inner>
   </WidgetContainerStyle>
 );
