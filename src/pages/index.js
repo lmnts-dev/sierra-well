@@ -13,20 +13,16 @@ import Layout from 'components/core/Layout';
 import VerticalContent from 'components/core/VerticalContent';
 
 // Desktop Components
-import {
-  HorizontalContent,
-  SlideGroup,
-  Slide,
-  SlideColumn,
-} from 'components/core/HorizontalContent';
-import WidgetContainer from 'components/library/Widgets/Container/';
+import { HorizontalContent } from 'components/core/HorizontalContent';
+
+import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
 
 // Constants
 import { Theme } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
 
 // Data
-import { WidgetContent } from 'data';
+import { IndexData } from 'data';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -44,62 +40,12 @@ const PageTheme = {
 // Large Device Content
 const LargeContent = () => (
   <HorizontalContent>
-    <SlideGroup class="home-slider">
-      <Slide>
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Triple} />
-        </SlideColumn>
-
-        {/* <SlideColumn Divider />
-
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Double} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-        </SlideColumn>
-
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-          <WidgetContainer WidgetContent={WidgetContent.Double} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-        </SlideColumn>
-
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Double} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-        </SlideColumn> */}
-      </Slide>
-
-      {/* <Slide>
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Single} Flex={1} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} Flex={2} />
-        </SlideColumn>
-
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Double} Flex={1} />
-          <WidgetContainer WidgetContent={WidgetContent.Triple} Flex={2} />
-        </SlideColumn>
-
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Triple} />
-        </SlideColumn>
-
-        <SlideColumn Divider />
-
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-        </SlideColumn>
-
-        <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent.Single} />
-        </SlideColumn>
-      </Slide> */}
-    </SlideGroup>
+    {console.log('From pages/index.js: ')}
+    {console.log(IndexData)}
+    <SlideGroup
+      className={IndexData.SlideGroup.Name}
+      SlidesData={IndexData.SlideGroup.Slides}
+    />
   </HorizontalContent>
 );
 
@@ -109,10 +55,10 @@ const SmallContent = () => <VerticalContent />;
 // Render Page
 const Index = ({ data }) => (
   <Layout
-    BgColor={PageTheme.Color.Background}
-    PrimaryColor={PageTheme.Color.Primary}
-    SecondaryColor={PageTheme.Color.Secondary}
-    TertiaryColor={PageTheme.Color.Tertiary}
+    BgColor={IndexData.PageTheme.Color.Background}
+    PrimaryColor={IndexData.PageTheme.Color.Primary}
+    SecondaryColor={IndexData.PageTheme.Color.Secondary}
+    TertiaryColor={IndexData.PageTheme.Color.Tertiary}
   >
     <Device Query="Desktop">
       <LargeContent />
