@@ -118,21 +118,39 @@ export const Slide = ({ children }) => (
   </HorizontalContentStyle.Slide>
 );
 
-// The Slide Divider
-export const SlideDivider = () => (
-  <HorizontalContentStyle.Column Divider className="divider">
-    <HorizontalContentStyle.Column.Inner Divider />
-  </HorizontalContentStyle.Column>
-);
-
 // The SlideColumn Itself
-export const SlideColumn = ({ children }) => (
-  <HorizontalContentStyle.Column className="col">
-    <HorizontalContentStyle.Column.Inner className="col-inner">
-      {children}
-    </HorizontalContentStyle.Column.Inner>
-  </HorizontalContentStyle.Column>
-);
+// <SlideColumn Divider /> returns a Divider
+export class SlideColumn extends React.Component {
+  constructor(props) {
+    // Get our this.props
+    super(props);
+  }
+
+  render() {
+    const Divider = this.props.Divider;
+    const children = this.props.children;
+
+    // If it's a divider:
+    if (Divider == true) {
+      return (
+        <HorizontalContentStyle.Column Divider className="divider">
+          <HorizontalContentStyle.Column.Inner Divider />
+        </HorizontalContentStyle.Column>
+      );
+    }
+
+    // If it's not:
+    else {
+      return (
+        <HorizontalContentStyle.Column className="col">
+          <HorizontalContentStyle.Column.Inner className="col-inner">
+            {children}
+          </HorizontalContentStyle.Column.Inner>
+        </HorizontalContentStyle.Column>
+      );
+    }
+  }
+}
 
 // The Horizontal Content Itself
 export const HorizontalContent = ({ children }) => (

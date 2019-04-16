@@ -18,7 +18,6 @@ import {
   SlideGroup,
   Slide,
   SlideColumn,
-  SlideDivider,
 } from 'components/core/HorizontalContent';
 import WidgetContainer from 'components/library/Widgets/Container/';
 
@@ -48,14 +47,56 @@ const LargeContent = () => (
     <SlideGroup class="home-slider">
       <Slide>
         <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent} />
+          <WidgetContainer WidgetContent={WidgetContent.Triple} />
         </SlideColumn>
 
-        <SlideDivider />
+        <SlideColumn Divider />
 
         <SlideColumn>
-          <WidgetContainer WidgetContent={WidgetContent} Flex={1} />
-          <WidgetContainer WidgetContent={WidgetContent} Flex={2} />
+          <WidgetContainer WidgetContent={WidgetContent.Double} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+        </SlideColumn>
+
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+          <WidgetContainer WidgetContent={WidgetContent.Double} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+        </SlideColumn>
+
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent.Double} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+        </SlideColumn>
+      </Slide>
+
+      <Slide>
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent.Single} Flex={1} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} Flex={2} />
+        </SlideColumn>
+
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent.Double} Flex={1} />
+          <WidgetContainer WidgetContent={WidgetContent.Triple} Flex={2} />
+        </SlideColumn>
+
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent.Triple} />
+        </SlideColumn>
+
+        <SlideColumn Divider />
+
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
+        </SlideColumn>
+
+        <SlideColumn>
+          <WidgetContainer WidgetContent={WidgetContent.Single} />
         </SlideColumn>
       </Slide>
     </SlideGroup>
