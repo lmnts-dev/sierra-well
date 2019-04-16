@@ -84,7 +84,7 @@ export class SlideGroup extends React.Component {
       dots: false,
       speed: 1500,
       arrows: false,
-      slidesToShow: 1.05,
+      slidesToShow: 1.15,
       infinite: false,
     };
 
