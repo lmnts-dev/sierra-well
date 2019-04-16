@@ -75,13 +75,8 @@ export class SlideGroup extends React.Component {
         {/* Initiate our Previous / Next Slide based on mouses scroll */}
         <div onWheel={e => this.handleWheel(e)}>
           <Slider ref={c => (this.slider = c)} {...settings}>
-
             {/* Loop through our Slide Data */}
             {SlidesData.map((Slide, index) => {
-              console.log('From SlideGroup.js: ');
-              console.log('Slide Name: ' + Slide.Name);
-              console.log(Slide.Columns);
-
               // Pass our Slide Columns data to the Slide
               return <SlideContainer Columns={Slide.Columns} key={index} />;
             })}

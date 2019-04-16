@@ -29,6 +29,7 @@ export const Base = {
       Lg: 828, // px
       Md: 640, // px
       Sm: 568, // px
+      Slide: 'calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}))', // Slide Height
     },
   },
 

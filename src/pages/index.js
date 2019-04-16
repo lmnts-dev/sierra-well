@@ -27,21 +27,9 @@ import { IndexData } from 'data';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Page Theme
-const PageTheme = {
-  Color: {
-    Background: Theme.Color.Background,
-    Primary: Theme.Color.Nightsky,
-    Secondary: Theme.Color.Nightsky,
-    Tertiary: Theme.Color.Background,
-  },
-};
-
 // Large Device Content
 const LargeContent = () => (
   <HorizontalContent>
-    {console.log('From pages/index.js: ')}
-    {console.log(IndexData)}
     <SlideGroup
       className={IndexData.SlideGroup.Name}
       SlidesData={IndexData.SlideGroup.Slides}

@@ -6,13 +6,13 @@ import BgPlaceholder from '../assets/images/placeholder_bg.jpg';
 // Constants
 import { Theme } from 'constants/Theme';
 
-export const IndexData = {
+export const LocationsData = {
   PageTheme: {
     Color: {
-      Background: Theme.Color.Background,
+      Background: 'LightSkyBlue',
       Primary: Theme.Color.Nightsky,
-      Secondary: Theme.Color.Nightsky,
-      Tertiary: Theme.Color.Background,
+      Secondary: Theme.Color.White,
+      Tertiary: 'LightSkyBlue',
     },
   },
   SlideGroup: {
@@ -36,8 +36,8 @@ export const IndexData = {
                     Style: 'Article',
                     Meta: {
                       Generic: {
-                        BgColor: 'black',
-                        BgImage: BgPlaceholder,
+                        BgColor: 'blue',
+                        BgImage: '',
                         Subhead: 'Subhead',
                         Headline: 'Article',
                         TextColor: Theme.Color.White,

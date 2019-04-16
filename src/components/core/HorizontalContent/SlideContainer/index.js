@@ -16,12 +16,8 @@ import SlideColumn from '../SlideColumn';
 const SlideContainer = ({ Columns }) => (
   <HorizontalContentStyle.Slide>
     <HorizontalContentStyle.Slide.Inner>
-      {console.log('From SlideContainer.js:')}
-      {console.log(Columns)}
-
       {/* Map our Columns data. */}
       {Columns.map((Column, index) => {
-
         // If our Column isn't a Divider
         if (Column.Type != 'divider') {
           // Pass our Widgets data to our Columns

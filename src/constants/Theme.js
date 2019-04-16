@@ -50,6 +50,7 @@ export const Theme = {
         Lg: Base.Media.Height.Lg + 'px',
         Md: Base.Media.Height.Md + 'px',
         Sm: Base.Media.Height.Sm + 'px',
+        Slide: Base.Media.Height.Slide,
       },
     },
 

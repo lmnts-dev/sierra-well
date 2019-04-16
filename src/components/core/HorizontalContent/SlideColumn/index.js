@@ -39,9 +39,6 @@ class SlideColumn extends React.Component {
       return (
         <HorizontalContentStyle.Column className="col">
           <HorizontalContentStyle.Column.Inner className="col-inner">
-            {console.log('From SlideColumn.js: ')}
-            {console.log(Widgets)}
-
             {/* Map our Widgets data. */}
             {Widgets.map((Widget, index) => {
               // Pass our Widgets data to our WidgetContainers
