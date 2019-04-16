@@ -145,6 +145,9 @@ export const IndexData = {
               // End Widgets
             ],
           },
+          {
+            Type: 'divider',
+          },
           // End Columns
         ],
       },
@@ -373,7 +376,7 @@ export const IndexData = {
                   },
                   {
                     Destination: '/subpage',
-                    Style: 'Generic',
+                    Style: 'Article',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Dank,

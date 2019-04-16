@@ -1,5 +1,5 @@
 // SlideContainer.js:
-// For displaying and looping through data for 
+// For displaying and looping through data for
 // SlideColumns.
 
 // Core
@@ -18,12 +18,17 @@ const SlideContainer = ({ Columns }) => (
     <HorizontalContentStyle.Slide.Inner>
       {console.log('From SlideContainer.js:')}
       {console.log(Columns)}
-      
+
       {/* Map our Columns data. */}
       {Columns.map((Column, index) => {
 
-        // Pass our Widgets data to our Columns
-        return <SlideColumn key={index} Widgets={Column.Widgets} />;
+        if (Column.Type != 'divider') {
+          // Pass our Widgets data to our Columns
+          return <SlideColumn key={index} Widgets={Column.Widgets} />;
+        }
+        else {
+          return <SlideColumn key={index} Divider />;
+        }
       })}
     </HorizontalContentStyle.Slide.Inner>
   </HorizontalContentStyle.Slide>
