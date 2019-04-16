@@ -14,15 +14,10 @@ import VerticalContent from 'components/core/VerticalContent';
 
 // Desktop Components
 import { HorizontalContent } from 'components/core/HorizontalContent';
-
 import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
 
-// Constants
-import { Theme } from 'constants/Theme';
-import { Base } from 'constants/styles/Base';
-
 // Data
-import { IndexData } from 'data';
+import { IndexData } from 'data/index';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

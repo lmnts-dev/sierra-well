@@ -10,6 +10,7 @@ import { createGlobalStyle } from 'styled-components';
 //////////////////////////////////////////////////////////////////////
 
 export const Color = {
+  
   // Core Colors
   Primary: '#40DA33',
   Secondary: '#5D6376',
@@ -26,14 +27,14 @@ export const Color = {
 
   // Main Palette
   Leaf: '#40DA33',
+  Mint: '#9DF096',
   Tahoe: '#2984FD',
   Sunset: '#FC6376',
   Dank: '#F8E71C',
   Flower: '#E17E00',
-  Indigo: '#060A5C',
+  Indigo: '#351868',
 
   // Feedback Palette
-
   Warning: '#FC6376',
   Success: '#40DA33',
 };

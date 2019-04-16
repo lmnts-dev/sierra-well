@@ -8,7 +8,7 @@ import BgPlaceholder3 from '../assets/images/placeholder_bg_3.jpg';
 // Constants
 import { Theme } from 'constants/Theme';
 
-export const IndexData = {
+export const SpecialsData = {
   PageTheme: {
     Color: {
       Background: Theme.Color.Background,
@@ -31,6 +31,31 @@ export const IndexData = {
               // Begin Widgets
               {
                 // Begin WidgetContent
+                Flex: 2,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Article',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Mint,
+                        BgImage: '',
+                        Subhead: 'Specials',
+                        Headline: '100% Free Delivery',
+                        TextColor: Theme.Color.Nightsky,
+                        IconColor: Theme.Color.Nightsky,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
                 Flex: 1,
                 WidgetContent: [
                   {
@@ -38,51 +63,15 @@ export const IndexData = {
                     Style: 'Article',
                     Meta: {
                       Generic: {
-                        BgColor: 'black',
-                        BgImage: BgPlaceholder,
-                        Subhead: 'Subhead',
-                        Headline: 'Article',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                  {
-                    Destination: '/subpage',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Dank,
-                        BgImage: '',
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 1',
-                        TextColor: Theme.Color.Black,
-                        IconColor: Theme.Color.Black,
-                        IconName: 'tree', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                  {
-                    Destination: '/subpage',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
                         BgColor: Theme.Color.Black,
                         BgImage: BgPlaceholder,
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 2',
+                        Subhead: 'Specials',
+                        Headline: 'Spring Clearance',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
-                        IconName: 'rocket', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
+                        IconName: 'leaf', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
                         IconSize: '',
                       },
                     },
@@ -91,6 +80,62 @@ export const IndexData = {
                 // End WidgetContent
               },
               // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Article',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.White,
+                        BgImage: '',
+                        Subhead: 'Specials',
+                        Headline: 'Silver State Trading Blowout Sale',
+                        TextColor: Theme.Color.Nightsky,
+                        IconColor: Theme.Color.Nightsky,
+                        IconName: 'bomb', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '.4',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 2,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Article',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Gunmetal,
+                        BgImage: '',
+                        Subhead: 'Exclusive Deals',
+                        Headline:
+                          'Text START to 855-814-5354 to join our text deals program.',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
             ],
           },
           {
@@ -99,24 +144,23 @@ export const IndexData = {
           {
             Type: 'default',
             Widgets: [
-              // Begin Widgets
               {
                 // Begin WidgetContent
                 Flex: 1,
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Cross',
+                    Style: 'Article',
                     Meta: {
                       Generic: {
-                        BgColor: 'blue',
+                        BgColor: Theme.Color.Flower,
                         BgImage: '',
-                        Subhead: 'Subhead',
-                        Headline: 'Sierra Well Grid',
+                        Subhead: 'Specials',
+                        Headline: 'Silver State Trading Blowout Sale',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
-                        IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
+                        IconName: 'bomb', // FontAwesome Icon Name
+                        TintColor: '',
                         TintOpacity: '.4',
                         IconSize: '',
                       },
@@ -125,9 +169,61 @@ export const IndexData = {
                 ],
                 // End WidgetContent
               },
-              // End Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Article',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Gunmetal,
+                        BgImage: '',
+                        Subhead: 'Exclusive Deals',
+                        Headline:
+                          'Text START to 855-814-5354 to join our text deals program.',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Article',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Exclusive Deals',
+                        Headline:
+                          'Text START to 855-814-5354 to join our text deals program.',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
             ],
           },
+
           // End Columns
         ],
       },
@@ -142,67 +238,6 @@ export const IndexData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
-                WidgetContent: [
-                  {
-                    Destination: '/subpage',
-                    Style: 'Article',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder2,
-                        Subhead: 'Subhead',
-                        Headline: 'Article',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                  {
-                    Destination: '/subpage',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder,
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 1',
-                        TextColor: Theme.Color.Black,
-                        IconColor: Theme.Color.Black,
-                        IconName: 'tree', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                  {
-                    Destination: '/subpage',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder2,
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 2',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'rocket', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                ],
-                // End WidgetContent
-              },
-              {
-                // Begin WidgetContent
-                Flex: 2,
                 WidgetContent: [
                   {
                     Destination: '/subpage',

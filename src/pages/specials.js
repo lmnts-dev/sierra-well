@@ -7,42 +7,41 @@
 // Core
 import React from 'react';
 import Device from './../components/core/DeviceQuery';
-
-// Components
 import Layout from 'components/core/Layout';
-import HorizontalContent from 'components/core/HorizontalContent';
+
+// Mobile Components
 import VerticalContent from 'components/core/VerticalContent';
 
-// Constants
-import { Theme } from 'constants/Theme';
-import { Base } from 'constants/styles/Base';
+// Desktop Components
+import { HorizontalContent } from 'components/core/HorizontalContent';
+import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
+
+// Data
+import { SpecialsData } from 'data/specials';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Page Theme
-const PageTheme = {
-  Color: {
-    Background: Theme.Color.Primary,
-    Primary: Theme.Color.Nightsky,
-    Secondary: Theme.Color.White,
-    Tertiary: Theme.Color.White,
-  },
-};
-
 // Large Device Content
-const LargeContent = () => <HorizontalContent />;
+const LargeContent = () => (
+  <HorizontalContent>
+    <SlideGroup
+      className={SpecialsData.SlideGroup.Name}
+      SlidesData={SpecialsData.SlideGroup.Slides}
+    />
+  </HorizontalContent>
+);
 
 // Small Device Content
 const SmallContent = () => <VerticalContent />;
 
 // Render Page
-const Index = ({ data }) => (
+const Specials = ({ data }) => (
   <Layout
-    BgColor={PageTheme.Color.Background}
-    PrimaryColor={PageTheme.Color.Primary}
-    SecondaryColor={PageTheme.Color.Secondary}
-    TertiaryColor={PageTheme.Color.Tertiary}
+    BgColor={SpecialsData.PageTheme.Color.Background}
+    PrimaryColor={SpecialsData.PageTheme.Color.Primary}
+    SecondaryColor={SpecialsData.PageTheme.Color.Secondary}
+    TertiaryColor={SpecialsData.PageTheme.Color.Tertiary}
   >
     <Device Query="Desktop">
       <LargeContent />
@@ -54,7 +53,4 @@ const Index = ({ data }) => (
   </Layout>
 );
 
-export default Index;
-
-//////////////////////////////////////////////////////////////////////
-// End Component
+export default Specials;

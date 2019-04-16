@@ -9,10 +9,10 @@ import { Theme } from 'constants/Theme';
 export const LocationsData = {
   PageTheme: {
     Color: {
-      Background: 'LightSkyBlue',
+      Background: Theme.Color.Background,
       Primary: Theme.Color.Nightsky,
-      Secondary: Theme.Color.White,
-      Tertiary: 'LightSkyBlue',
+      Secondary: Theme.Color.Nightsky,
+      Tertiary: Theme.Color.Background,
     },
   },
   SlideGroup: {

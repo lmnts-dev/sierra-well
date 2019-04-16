@@ -58,7 +58,7 @@ const MobileMenuTransform = createGlobalStyle`
 `;
 
 // Render Page
-const Index = ({ data }) => (
+const Menu = ({ data }) => (
   <Layout
     BgColor={PageTheme.Color.Background}
     PrimaryColor={PageTheme.Color.Primary}
@@ -75,7 +75,7 @@ const Index = ({ data }) => (
   </Layout>
 );
 
-export default Index;
+export default Menu;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

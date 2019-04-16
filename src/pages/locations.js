@@ -14,7 +14,6 @@ import VerticalContent from 'components/core/VerticalContent';
 
 // Desktop Components
 import { HorizontalContent } from 'components/core/HorizontalContent';
-
 import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
 
 // Data
@@ -37,7 +36,7 @@ const LargeContent = () => (
 const SmallContent = () => <VerticalContent />;
 
 // Render Page
-const Index = ({ data }) => (
+const Locationss = ({ data }) => (
   <Layout
     BgColor={LocationsData.PageTheme.Color.Background}
     PrimaryColor={LocationsData.PageTheme.Color.Primary}
@@ -54,7 +53,7 @@ const Index = ({ data }) => (
   </Layout>
 );
 
-export default Index;
+export default Locationss;
 
 //////////////////////////////////////////////////////////////////////
 // End Component
