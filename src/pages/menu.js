@@ -32,7 +32,7 @@ const PageTheme = {
 };
 
 // Large Device Content
-const LargeContent = () => <HorizontalContent />;
+const LargeContent = () => 'Scroller';
 
 // Small Device Content
 const SmallContent = () => (
