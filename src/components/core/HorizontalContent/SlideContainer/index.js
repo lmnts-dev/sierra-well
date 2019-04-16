@@ -22,10 +22,13 @@ const SlideContainer = ({ Columns }) => (
       {/* Map our Columns data. */}
       {Columns.map((Column, index) => {
 
+        // If our Column isn't a Divider
         if (Column.Type != 'divider') {
           // Pass our Widgets data to our Columns
           return <SlideColumn key={index} Widgets={Column.Widgets} />;
         }
+
+        // If our Column is a Divider
         else {
           return <SlideColumn key={index} Divider />;
         }
