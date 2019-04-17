@@ -142,7 +142,7 @@ SideWidgetStyle.Header = styled.h1`
   transform: rotate(90deg) translateY(-100%);
   display: flex;
   font-weight: light;
-  font-size: calc(${Root.ViewWidthFontSize} * 4);
+  font-size: calc(${Root.ViewHeightFontSize} * 4);
   justify-content: flex-end;
   transform-origin: top left;
   white-space: nowrap;

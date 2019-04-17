@@ -16,6 +16,7 @@ export const RootVariables = createGlobalStyle`
 
     /* -------- Font Sizes (Viewport) */
     --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Lg};
+    --ViewHeightFontSize: ${Theme.Font.Size.ViewHeight.Lg};
     --IconSize: ${Theme.Font.Icon.Size.Lg};
 
     /* -------- Root Element Measurement */
@@ -53,6 +54,7 @@ export const RootVariables = createGlobalStyle`
 
         /* -------- Font Sizes (Viewport) */
         --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Md};
+        --ViewHeightFontSize: ${Theme.Font.Size.ViewHeight.Md};
         --IconSize: ${Theme.Font.Icon.Size.Md};
 
         /* -------- Root Element Measurement */
@@ -91,6 +93,7 @@ export const RootVariables = createGlobalStyle`
 
         /* -------- Font Sizes (Viewport) */
         --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Sm};
+        --ViewHeightFontSize: ${Theme.Font.Size.ViewHeight.Sm};
         --IconSize: ${Theme.Font.Icon.Size.Sm};
 
         /* -------- Root Element Measurement */

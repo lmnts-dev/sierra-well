@@ -158,6 +158,7 @@ export const Root = {
   Size: 'var(--Size)',
 
   ViewWidthFontSize: 'var(--ViewWidthFontSize)',
+  ViewHeightFontSize: 'var(--ViewHeightFontSize)',
   IconSize: 'var(--IconSize)',
 
   // Root Element Measurement

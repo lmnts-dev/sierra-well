@@ -18,6 +18,11 @@ export const Font = {
       Md: '5.2vw',
       Lg: '1.2vw',
     },
+    ViewHeight: {
+      Sm: '6.8vh',
+      Md: '5.2vh',
+      Lg: '2vh',
+    },
   },
   Icon: {
     Size: {

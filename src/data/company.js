@@ -36,16 +36,12 @@ export const CompanyData = {
                     Style: 'SideHeader',
                     Meta: {
                       SideHeader: {
-                        BgColor: 'white',
-                        BgImage: '',
                         Header: 'Company',
                         IntroCopy:
                           'Sierra Well is dedicated to making medical and recreational marijuana approachable.',
                         BodyCopy:
                           'quality medicinal and recreational cannabis, wellness services, and educational resources to our patients and community.',
                         TextColor: Theme.Color.Nightsky,
-                        TintColor: '',
-                        TintOpacity: '',
                       },
                     },
                   },

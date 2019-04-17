@@ -36,16 +36,12 @@ export const LocationsData = {
                     Style: 'SideHeader',
                     Meta: {
                       SideHeader: {
-                        BgColor: 'white',
-                        BgImage: '',
-                        Header: 'Company',
+                        Header: 'Come in',
                         IntroCopy:
-                          'Sierra Well is dedicated to making medical and recreational marijuana approachable.',
+                          'Conveniently located and discreet.',
                         BodyCopy:
-                          'quality medicinal and recreational cannabis, wellness services, and educational resources to our patients and community.',
+                          'Providing exceptional service and quality medicinal and recreational cannabis in Nevada to Reno, Sparks, Carson City, Lake Tahoe, and surrounding areas.',
                         TextColor: Theme.Color.Nightsky,
-                        TintColor: '',
-                        TintOpacity: '',
                       },
                     },
                   },
@@ -71,12 +67,12 @@ export const LocationsData = {
                     Style: 'SideWidget',
                     Meta: {
                       SideWidget: {
-                        BgColor: Theme.Color.Mint,
+                        BgColor: Theme.Color.Slate,
                         BgImage: '',
-                        Header: 'Vision',
-                        Subhead: 'Try it out.',
-                        TextColor: Theme.Color.Nightsky,
-                        IconColor: Theme.Color.Nightsky,
+                        Header: 'Reno',
+                        Subhead: 'The OG.',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
                         IconName: 'rocket', // FontAwesome Icon Name
                         IconSize: '',
                         TintColor: '',
@@ -100,12 +96,122 @@ export const LocationsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.White,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'View Menu',
+                        TextColor: Theme.Color.Black,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
                     Style: 'SideWidget',
                     Meta: {
                       SideWidget: {
-                        BgColor: Theme.Color.Primary,
+                        BgColor: Theme.Color.Gunmetal,
                         BgImage: '',
-                        Header: 'Mission',
+                        Header: 'Carson City',
                         Subhead: 'Try it out.',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
@@ -132,19 +238,94 @@ export const LocationsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'SideWidget',
+                    Style: 'Generic',
                     Meta: {
-                      SideWidget: {
-                        BgColor: Theme.Color.Nightsky,
+                      Generic: {
+                        BgColor: Theme.Color.White,
                         BgImage: '',
-                        Header: 'Values',
-                        Subhead: 'Try it out.',
-                        TextColor: Theme.Color.White,
+                        Subhead: '',
+                        Headline: 'View Menu',
+                        TextColor: Theme.Color.Black,
                         IconColor: Theme.Color.Primary,
-                        IconName: 'rocket', // FontAwesome Icon Name
-                        IconSize: '',
+                        IconName: 'plus', // FontAwesome Icon Name
                         TintColor: '',
                         TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
                       },
                     },
                   },
@@ -153,6 +334,9 @@ export const LocationsData = {
               },
               // End Widgets
             ],
+          },
+          {
+            Type: 'divider',
           },
           // End Columns
         ],
