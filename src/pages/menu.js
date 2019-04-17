@@ -10,9 +10,9 @@ import Device from './../components/core/DeviceQuery';
 
 // Components
 import Layout from 'components/core/Layout';
-import HorizontalContent from 'components/core/HorizontalContent';
 import VerticalContent from 'components/core/VerticalContent';
 import { MenuContainerHeight } from 'components/sitewide/Navigation/Small/MenuContainer/styles.scss';
+import SubLevelPage from 'components/core/SubLevelPage';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -32,7 +32,20 @@ const PageTheme = {
 };
 
 // Large Device Content
-const LargeContent = () => 'Scroller';
+const LargeContent = () => (
+  <SubLevelPage
+    BgColor={PageTheme.Color.Background}
+    PrimaryColor={PageTheme.Color.Primary}
+    SecondaryColor={PageTheme.Color.Secondary}
+    TertiaryColor={PageTheme.Color.Tertiary}
+  >
+    <div className="content-stretch">
+      <h1>
+        Reno’s first Cannabis dispensary — located in the heart of downtown.
+      </h1>
+    </div>
+  </SubLevelPage>
+);
 
 // Small Device Content
 const SmallContent = () => (

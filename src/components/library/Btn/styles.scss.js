@@ -19,7 +19,7 @@ const BtnStyle = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 ${Theme.Base.Size.Sm};
+  padding: 0 ${Theme.Base.Size.Md};
   border-radius: 999px;
   cursor: pointer;
   font-size: 1rem;

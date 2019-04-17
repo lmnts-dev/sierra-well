@@ -14,149 +14,77 @@ import { Theme, Root } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 /* Widget Content */
-const WidgetStyle = styled.div`
+const SideHeaderWidgetStyle = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${props =>
-    props.BgColor ? props.BgColor : Theme.Color.White};
+  background-color: none;
   position: relative;
   overflow: hidden;
+  cursor: crosshair;
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
-  cursor: pointer;
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
-
-  /* Background Images */
-
-  ${props => {
-    if (props.BgImage)
-      return (
-        `
-        background-image: url(` +
-        props.BgImage +
-        `);
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        `
-      );
-  }};
-
-  /* Tint */
-
-  ${props => {
-    if (props.TintColor || props.TintOpacity)
-      return (
-        `
-        &:before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          right: 0;
-          background-color:` +
-        props.TintColor +
-        `;
-          opacity:` +
-        props.TintOpacity +
-        `;
-          transition: all ${Theme.Base.Transition.Duration}
-      ${Theme.Base.Transition.CssEase};
-        }
-    `
-      );
-  }};
-
-  /* Links */
-  a {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: 100%;
-    color: white;
-    transform: scale(1.000000001);
-    position: relative;
-    padding: ${Root.ViewWidthPadding};
-    color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
-    text-decoration: none;
-    transition: all ${Theme.Base.Transition.Duration}
-      ${Theme.Base.Transition.CssEase};
-  }
-
-  /* The Carat Icon */
-  svg {
-    position: absolute;
-    right: ${Root.ViewWidthPadding};
-    top: ${Root.ViewWidthPadding};
-    transform: translateX(0%);
-    transition: all ${Theme.Base.Transition.Duration}
-      ${Theme.Base.Transition.CssEase};
-  }
-
-  /* Hover Styles */
-  @media (min-width: ${Theme.Base.Media.Width.Md}) {
-    &:hover {
-      background-color: ${Theme.Color.Black};
-      color: ${Theme.Color.White};
-      box-shadow: 0 20px 30px 0 rgba(6, 10, 92, 0.21);
-
-      a {
-        text-decoration: none;
-        color: ${Theme.Color.White};
-      }
-
-      /* The Carat Icon */
-      svg {
-        transform: translateX(50%);
-        fill: ${Theme.Color.White};
-      }
-
-      /* The Widget Icon */
-      .fas {
-        color: ${Theme.Color.White};
-        transform: scale(1.3);
-      }
-
-      /* Tint */
-      ${props => {
-        if (props.TintColor || props.TintOpacity)
-          return `
-        &:before {
-          opacity: 1
-        }
-    `;
-      }};
-    }
-  }
 `;
 
-WidgetStyle.Subhead = styled.div`
-  font-size: ${Root.ViewWidthFontSize};
-  line-height: 1.2;
+SideHeaderWidgetStyle.Inner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: ${Root.ViewWidthPadding};
+  flex: 1;
+  width: 100%;
+  position: relative;
 `;
 
-WidgetStyle.Headline = styled.div`
-  font-size: ${Root.ViewWidthFontSize};
-  line-height: 1.2;
-  font-weight: bold;
-`;
-
-WidgetStyle.Icon = styled.i`
+SideHeaderWidgetStyle.Header = styled.h1`
   position: absolute;
-  right: ${Root.ViewWidthPadding};
-  bottom: ${Root.ViewWidthPadding};
-  font-size: ${Root.IconSize};
-  transform: scale(1.000000001);
-  transition: all ${Theme.Base.Transition.Duration}
-    ${Theme.Base.Transition.CssEase};
-  color: ${props => (props.Color ? props.Color : Theme.Color.Black)};
+  top: ${Root.ViewWidthPadding};
+  left: ${Root.ViewWidthPadding};
+  transform: rotate(90deg) translateY(-100%);
+  display: flex;
+  font-weight: light;
+  font-size: calc(${Root.ViewWidthFontSize} * 4);
+  justify-content: flex-end;
+  transform-origin: top left;
+  opacity: 0.3;
+  white-space: nowrap;
+  word-break: none;
+  pointer-events: none;
+  width: auto;
 `;
 
-export default WidgetStyle;
+SideHeaderWidgetStyle.Body = styled.div``;
+
+SideHeaderWidgetStyle.IntroCopy = styled.p`
+  font-size: calc(${Root.ViewWidthFontSize} * 1.3);
+  padding-bottom: ${Root.ViewWidthPadding};
+  line-height: 1.2;
+  font-weight: light;
+`;
+
+SideHeaderWidgetStyle.BodyCopy = styled.p`
+  font-size: ${Root.ViewWidthFontSize};
+  padding-top: ${Root.ViewWidthPadding};
+  line-height: 1.2;
+  font-weight: regular;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(${Root.ViewWidthFontSize} * 1.5);
+    height: 1px;
+    background-color: ${props =>
+      props.TextColor ? props.TextColor : Theme.Color.Black};
+  }
+`;
+
+export default SideHeaderWidgetStyle;
 
 //////////////////////////////////////////////////////////////////////
 // End Styles

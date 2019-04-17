@@ -15,6 +15,7 @@ import ArticleWidget from '../Library/Article';
 import CrossWidget from '../Library/Cross';
 import DefaultWidget from '../Library/Default';
 import SideHeaderWidget from '../Library/SideHeader';
+import SideWidget from '../Library/SideWidget';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -77,10 +78,10 @@ class WidgetType extends React.Component {
         //
         // We're only accepting the following Widgets for this section:
         // Article
+        // SideWidget
         // Default
         <WidgetContainerStyle.Inner>
           <WidgetSlider>
-            {console.log(WidgetContent.length)}
             {WidgetContent.map((Content, index) => {
               switch (Content.Style) {
                 case 'Article':
@@ -96,6 +97,22 @@ class WidgetType extends React.Component {
                       Headline={Content.Meta.Generic.Headline}
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
+                      key={index}
+                    />
+                  );
+                case 'SideWidget':
+                  return (
+                    <SideWidget
+                      BgColor={Content.Meta.SideWidget.BgColor}
+                      BgImage={Content.Meta.SideWidget.BgImage}
+                      TextColor={Content.Meta.SideWidget.TextColor}
+                      TintColor={Content.Meta.SideWidget.TintColor}
+                      TintOpacity={Content.Meta.SideWidget.TintOpacity}
+                      Destination={Content.Destination}
+                      Subhead={Content.Meta.SideWidget.Subhead}
+                      Header={Content.Meta.SideWidget.Header}
+                      IconName={Content.Meta.SideWidget.IconName}
+                      IconColor={Content.Meta.SideWidget.IconColor}
                       key={index}
                     />
                   );
@@ -128,20 +145,21 @@ class WidgetType extends React.Component {
         // In this case we wrap the INDIVIDUAL elements in the
         // WidgetContainerStyle.Inner tag for the shadow and border-radii
         // if needed, allowing for more customized Widget Components.
-        // 
+        //
         // We're only accepting the following Widgets for this section:
         // Article
         // Cross
         // SideHeader
+        // SideWidget
         // Default
         <>
           {WidgetContent.map((Content, index) => {
             switch (Content.Style) {
               case 'Cross':
-                return <CrossWidget />;
+                return <CrossWidget key={index} />;
               case 'Article':
                 return (
-                  <WidgetContainerStyle.Inner>
+                  <WidgetContainerStyle.Inner key={index}>
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
@@ -153,13 +171,12 @@ class WidgetType extends React.Component {
                       Headline={Content.Meta.Generic.Headline}
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
-                      key={index}
                     />
                   </WidgetContainerStyle.Inner>
                 );
               case 'Generic':
                 return (
-                  <WidgetContainerStyle.Inner>
+                  <WidgetContainerStyle.Inner key={index}>
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
@@ -171,9 +188,35 @@ class WidgetType extends React.Component {
                       Headline={Content.Meta.Generic.Headline}
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
-                      key={index}
                     />
                   </WidgetContainerStyle.Inner>
+                );
+              case 'SideWidget':
+                return (
+                  <WidgetContainerStyle.Inner key={index}>
+                    <SideWidget
+                      BgColor={Content.Meta.SideWidget.BgColor}
+                      BgImage={Content.Meta.SideWidget.BgImage}
+                      TextColor={Content.Meta.SideWidget.TextColor}
+                      TintColor={Content.Meta.SideWidget.TintColor}
+                      TintOpacity={Content.Meta.SideWidget.TintOpacity}
+                      Destination={Content.Destination}
+                      Subhead={Content.Meta.SideWidget.Subhead}
+                      Header={Content.Meta.SideWidget.Header}
+                      IconName={Content.Meta.SideWidget.IconName}
+                      IconColor={Content.Meta.SideWidget.IconColor}
+                    />
+                  </WidgetContainerStyle.Inner>
+                );
+              case 'SideHeader':
+                return (
+                  <SideHeaderWidget
+                    Header={Content.Meta.SideHeader.Header}
+                    IntroCopy={Content.Meta.SideHeader.IntroCopy}
+                    BodyCopy={Content.Meta.SideHeader.BodyCopy}
+                    TextColor={Content.Meta.SideHeader.TextColor}
+                    key={index}
+                  />
                 );
             }
           })}

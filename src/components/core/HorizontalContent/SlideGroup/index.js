@@ -37,7 +37,7 @@ export class SlideGroup extends React.Component {
     // e.preventDefault();
 
     // Previous / Next Slide based on mouse scroll
-    if (e.deltaY < 0) {
+    if (e.deltaY < 0 || e.deltaX < 0 || e.deltaX > 0) {
       this.slider.slickPrev();
     } else {
       this.slider.slickNext();

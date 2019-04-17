@@ -32,56 +32,20 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
-                    Style: 'Article',
+                    Destination: null,
+                    Style: 'SideHeader',
                     Meta: {
-                      Generic: {
-                        BgColor: 'blue',
+                      SideHeader: {
+                        BgColor: 'white',
                         BgImage: '',
-                        Subhead: 'Subhead',
-                        Headline: 'Article',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                  {
-                    Destination: '/subpage',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Dank,
-                        BgImage: '',
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 1',
-                        TextColor: Theme.Color.Black,
-                        IconColor: Theme.Color.Black,
-                        IconName: 'tree', // FontAwesome Icon Name
+                        Header: 'Company',
+                        IntroCopy:
+                          'Sierra Well is dedicated to making medical and recreational marijuana approachable.',
+                        BodyCopy:
+                          'quality medicinal and recreational cannabis, wellness services, and educational resources to our patients and community.',
+                        TextColor: Theme.Color.Nightsky,
                         TintColor: '',
                         TintOpacity: '',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                  {
-                    Destination: '/subpage',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder,
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 2',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'rocket', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
-                        IconSize: '',
                       },
                     },
                   },
@@ -104,19 +68,83 @@ export const LocationsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Cross',
+                    Style: 'SideWidget',
                     Meta: {
-                      Generic: {
-                        BgColor: 'blue',
+                      SideWidget: {
+                        BgColor: Theme.Color.Mint,
                         BgImage: '',
-                        Subhead: 'Subhead',
-                        Headline: 'Sierra Well Grid',
+                        Header: 'Vision',
+                        Subhead: 'Try it out.',
+                        TextColor: Theme.Color.Nightsky,
+                        IconColor: Theme.Color.Nightsky,
+                        IconName: 'rocket', // FontAwesome Icon Name
+                        IconSize: '',
+                        TintColor: '',
+                        TintOpacity: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'SideWidget',
+                    Meta: {
+                      SideWidget: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Header: 'Mission',
+                        Subhead: 'Try it out.',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
-                        IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
+                        IconName: 'rocket', // FontAwesome Icon Name
                         IconSize: '',
+                        TintColor: '',
+                        TintOpacity: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'SideWidget',
+                    Meta: {
+                      SideWidget: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Header: 'Values',
+                        Subhead: 'Try it out.',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'rocket', // FontAwesome Icon Name
+                        IconSize: '',
+                        TintColor: '',
+                        TintOpacity: '',
                       },
                     },
                   },

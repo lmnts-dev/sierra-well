@@ -10,7 +10,6 @@ import { createGlobalStyle } from 'styled-components';
 //////////////////////////////////////////////////////////////////////
 
 export const Color = {
-  
   // Core Colors
   Primary: '#40DA33',
   Secondary: '#5D6376',

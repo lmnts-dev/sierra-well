@@ -20,10 +20,10 @@ import { Theme } from 'constants/Theme';
 // Page Theme
 const PageTheme = {
   Color: {
-    Background: Theme.Color.Dank,
+    Background: Theme.Color.Flower,
     Primary: Theme.Color.Dank,
-    Secondary: Theme.Color.Black,
-    Tertiary: Theme.Color.Dank,
+    Secondary: Theme.Color.White,
+    Tertiary: Theme.Color.Black,
   },
 };
 

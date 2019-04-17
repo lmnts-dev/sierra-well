@@ -1,1 +1,1 @@
-{"data":{"allPrismicNavigation":{"edges":[{"node":{"id":"Prismic__Navigation__XIm2-REAAGCeaSd9","data":{"module_name":"Sitewide Navigation","main":[{"label":"Home","slug":"/"},{"label":"Locations","slug":"/locations"},{"label":"Specials","slug":"/specials"}]}}}]}}}
+{"data":{"allPrismicNavigation":{"edges":[{"node":{"id":"Prismic__Navigation__XIm2-REAAGCeaSd9","data":{"module_name":"Sitewide Navigation","main":[{"label":"Home","slug":"/"},{"label":"Locations","slug":"/locations"},{"label":"Specials","slug":"/specials"},{"label":"Company","slug":"/company"}]}}}]}}}
