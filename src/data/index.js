@@ -107,17 +107,113 @@ export const IndexData = {
                   {
                     Destination: '/subpage',
                     Style: 'Cross',
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
-                        BgColor: 'blue',
+                        BgColor: Theme.Color.White,
                         BgImage: '',
-                        Subhead: 'Subhead',
-                        Headline: 'Sierra Well Grid',
+                        Subhead: '',
+                        Headline: 'View Menu',
+                        TextColor: Theme.Color.Black,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
-                        IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
                         IconSize: '',
                       },
                     },

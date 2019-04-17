@@ -15,6 +15,7 @@ import ArticleWidget from '../Library/Article';
 import CrossWidget from '../Library/Cross';
 import DefaultWidget from '../Library/Default';
 import SideHeaderWidget from '../Library/SideHeader';
+import SideForecast from '../Library/SideForecast';
 import SideWidget from '../Library/SideWidget';
 
 // Begin Component
@@ -78,6 +79,7 @@ class WidgetType extends React.Component {
         //
         // We're only accepting the following Widgets for this section:
         // Article
+        // SideForecast
         // SideWidget
         // Default
         <WidgetContainerStyle.Inner>
@@ -116,6 +118,19 @@ class WidgetType extends React.Component {
                       key={index}
                     />
                   );
+                case 'SideForecast':
+                  return (
+                    <SideForecast
+                      BgColor={Content.Meta.SideForecast.BgColor}
+                      BgImage={Content.Meta.SideForecast.BgImage}
+                      TextColor={Content.Meta.SideForecast.TextColor}
+                      TintColor={Content.Meta.SideForecast.TintColor}
+                      TintOpacity={Content.Meta.SideForecast.TintOpacity}
+                      Destination={Content.Destination}
+                      Location={Content.Meta.SideForecast.Location}
+                      key={index}
+                    />
+                  );
                 case 'Generic':
                   return (
                     <DefaultWidget
@@ -150,6 +165,7 @@ class WidgetType extends React.Component {
         // Article
         // Cross
         // SideHeader
+        // SideForecast
         // SideWidget
         // Default
         <>
@@ -205,6 +221,21 @@ class WidgetType extends React.Component {
                       Header={Content.Meta.SideWidget.Header}
                       IconName={Content.Meta.SideWidget.IconName}
                       IconColor={Content.Meta.SideWidget.IconColor}
+                    />
+                  </WidgetContainerStyle.Inner>
+                );
+              case 'SideForecast':
+                return (
+                  <WidgetContainerStyle.Inner key={index}>
+                    <SideForecast
+                      BgColor={Content.Meta.SideForecast.BgColor}
+                      BgImage={Content.Meta.SideForecast.BgImage}
+                      TextColor={Content.Meta.SideForecast.TextColor}
+                      TintColor={Content.Meta.SideForecast.TintColor}
+                      TintOpacity={Content.Meta.SideForecast.TintOpacity}
+                      Destination={Content.Destination}
+                      Location={Content.Meta.SideForecast.Location}
+                      key={index}
                     />
                   </WidgetContainerStyle.Inner>
                 );

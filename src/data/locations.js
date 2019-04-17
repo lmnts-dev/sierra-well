@@ -37,8 +37,7 @@ export const LocationsData = {
                     Meta: {
                       SideHeader: {
                         Header: 'Come in',
-                        IntroCopy:
-                          'Conveniently located and discreet.',
+                        IntroCopy: 'Conveniently located and discreet.',
                         BodyCopy:
                           'Providing exceptional service and quality medicinal and recreational cannabis in Nevada to Reno, Sparks, Carson City, Lake Tahoe, and surrounding areas.',
                         TextColor: Theme.Color.Nightsky,
@@ -64,17 +63,13 @@ export const LocationsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'SideWidget',
+                    Style: 'SideForecast',
                     Meta: {
-                      SideWidget: {
+                      SideForecast: {
                         BgColor: Theme.Color.Slate,
                         BgImage: '',
-                        Header: 'Reno',
-                        Subhead: 'The OG.',
+                        Location: 'Reno',
                         TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'rocket', // FontAwesome Icon Name
-                        IconSize: '',
                         TintColor: '',
                         TintOpacity: '',
                       },
@@ -95,7 +90,7 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
+                    Destination: '/menu',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
@@ -145,7 +140,7 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
+                    Destination: '/menu',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
@@ -206,17 +201,13 @@ export const LocationsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'SideWidget',
+                    Style: 'SideForecast',
                     Meta: {
-                      SideWidget: {
+                      SideForecast: {
                         BgColor: Theme.Color.Gunmetal,
                         BgImage: '',
-                        Header: 'Carson City',
-                        Subhead: 'Try it out.',
+                        Location: 'Carson City',
                         TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'rocket', // FontAwesome Icon Name
-                        IconSize: '',
                         TintColor: '',
                         TintOpacity: '',
                       },
@@ -237,7 +228,7 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
+                    Destination: '/menu',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
@@ -287,7 +278,7 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
+                    Destination: '/menu',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
@@ -312,7 +303,7 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
+                    Destination: '/menu',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
