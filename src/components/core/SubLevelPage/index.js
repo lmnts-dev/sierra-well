@@ -38,7 +38,9 @@ const SubLevelPage = ({
       SecondaryColor={SecondaryColor}
       TertiaryColor={TertiaryColor}
     />
-    <SubLevelPageStyle.Inner>{children}</SubLevelPageStyle.Inner>
+    <SubLevelPageStyle.Inner className="sublevel-inner">
+      {children}
+    </SubLevelPageStyle.Inner>
   </SubLevelPageStyle>
 );
 

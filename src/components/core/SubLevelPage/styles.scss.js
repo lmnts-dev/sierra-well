@@ -27,8 +27,8 @@ SubLevelPageStyle.Inner = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   padding-right: ${Root.Grid.Gutter.Right};
-  height: 300vh;
 `;
 
 export default SubLevelPageStyle;

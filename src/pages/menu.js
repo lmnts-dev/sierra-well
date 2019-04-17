@@ -8,6 +8,10 @@
 import React from 'react';
 import Device from './../components/core/DeviceQuery';
 import Layout from 'components/core/Layout';
+import { createGlobalStyle } from 'styled-components';
+
+// Constants
+import { Theme, Root } from 'constants/Theme';
 
 // Mobile Components
 import VerticalContent from 'components/core/VerticalContent';
@@ -15,12 +19,20 @@ import VerticalContent from 'components/core/VerticalContent';
 // Desktop Components
 import { MenuContainerHeight } from 'components/sitewide/Navigation/Small/MenuContainer/styles.scss';
 import SubLevelPage from 'components/core/SubLevelPage';
+import MenuHero from './../components/library/Hero/MenuHero';
 
 // Data
 import { MenuData } from 'data/menu';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
+
+const SublevelInnerLock = createGlobalStyle`
+.sublevel-inner {
+  min-height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size})) !important;
+  height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size})) !important;
+}
+`;
 
 // Large Device Content
 const LargeContent = () => (
@@ -30,17 +42,14 @@ const LargeContent = () => (
     SecondaryColor={MenuData.PageTheme.Color.Secondary}
     TertiaryColor={MenuData.PageTheme.Color.Tertiary}
   >
-    <h1>
-      Reno’s first Cannabis dispensary — located in the heart of downtown.
-    </h1>
+    <SublevelInnerLock />
+    <MenuHero />
   </SubLevelPage>
 );
 
 // Small Device Options
 
 //// Mobile Menu
-import { createGlobalStyle } from 'styled-components';
-
 const MobileMenuTransform = createGlobalStyle`
   .nav-mobile {
     transform: translateY(calc(0px - ${MenuContainerHeight}));
