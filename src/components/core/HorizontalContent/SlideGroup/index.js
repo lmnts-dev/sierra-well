@@ -7,17 +7,12 @@ import Slider from 'react-slick'; // For Slick Slider
 import { Helmet } from 'react-helmet'; // For Slick Styles
 
 // Constants
-import { Theme } from 'constants/Theme';
-import { Base } from 'constants/styles/Base';
+// import { Theme } from 'constants/Theme';
+// import { Base } from 'constants/styles/Base';
 
 // Components
-import WidgetContainer from 'components/library/Widgets/Container/';
 import SlideContainer from './../SlideContainer';
-import WrapperLock from './../WrapperLock';
-
-// Styles
-import { createGlobalStyle } from 'styled-components';
-import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
+import { WrapperLock } from './../../WrapperControl';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

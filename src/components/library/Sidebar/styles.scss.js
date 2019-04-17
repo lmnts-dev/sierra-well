@@ -17,8 +17,9 @@ import { Base } from 'constants/styles/Base';
 
 // The Content Wrapper
 const SidebarStyle = styled.div`
-  position: sticky;
+  position: fixed;
   top: ${Root.Nav.Size};
+  bottom: 0;
   height: calc(100vh - ${Root.Nav.Size});
   display: flex;
   z-index: 555;

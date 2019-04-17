@@ -16,7 +16,6 @@ import { Base } from 'constants/styles/Base';
 // The Content Wrapper
 const SubLevelPageStyle = styled.div`
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-wrap: nowrap;
   color: ${Theme.Color.Background};
@@ -29,11 +28,7 @@ SubLevelPageStyle.Inner = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: ${Root.Grid.Gutter.Right};
-
-  .content-stretch {
-    height: 200vh;
-    padding: ${Root.Size};
-  }
+  height: 300vh;
 `;
 
 export default SubLevelPageStyle;

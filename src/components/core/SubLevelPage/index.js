@@ -14,6 +14,7 @@ import { Theme } from 'constants/Theme';
 
 // Components
 import Sidebar from 'components/Library/Sidebar/';
+import { WrapperRelease } from './../../core/WrapperControl';
 
 // Styles
 import SubLevelPageStyle from './styles.scss';
@@ -30,6 +31,7 @@ const SubLevelPage = ({
   TertiaryColor,
 }) => (
   <SubLevelPageStyle className="sub">
+    <WrapperRelease />
     <Sidebar
       BgColor={BgColor}
       PrimaryColor={PrimaryColor}

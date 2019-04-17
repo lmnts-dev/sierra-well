@@ -1,5 +1,5 @@
-// Index.js:
-// This is the home page of the website.
+// menu.js:
+// The desktop menu.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -7,55 +7,38 @@
 // Core
 import React from 'react';
 import Device from './../components/core/DeviceQuery';
-
-// Components
 import Layout from 'components/core/Layout';
+
+// Mobile Components
 import VerticalContent from 'components/core/VerticalContent';
+
+// Desktop Components
 import { MenuContainerHeight } from 'components/sitewide/Navigation/Small/MenuContainer/styles.scss';
 import SubLevelPage from 'components/core/SubLevelPage';
 
-// Constants
-import { Theme } from 'constants/Theme';
-import { Base } from 'constants/styles/Base';
+// Data
+import { MenuData } from 'data/menu';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Page Theme
-const PageTheme = {
-  Color: {
-    Background: Theme.Color.Nightsky,
-    Primary: Theme.Color.Nightskys,
-    Secondary: Theme.Color.White,
-    Tertiary: Theme.Color.Nightsky,
-  },
-};
-
 // Large Device Content
 const LargeContent = () => (
   <SubLevelPage
-    BgColor={PageTheme.Color.Background}
-    PrimaryColor={PageTheme.Color.Primary}
-    SecondaryColor={PageTheme.Color.Secondary}
-    TertiaryColor={PageTheme.Color.Tertiary}
+    BgColor={MenuData.PageTheme.Color.Background}
+    PrimaryColor={MenuData.PageTheme.Color.Primary}
+    SecondaryColor={MenuData.PageTheme.Color.Secondary}
+    TertiaryColor={MenuData.PageTheme.Color.Tertiary}
   >
-    <div className="content-stretch">
-      <h1>
-        Reno’s first Cannabis dispensary — located in the heart of downtown.
-      </h1>
-    </div>
+    <h1>
+      Reno’s first Cannabis dispensary — located in the heart of downtown.
+    </h1>
   </SubLevelPage>
 );
 
-// Small Device Content
-const SmallContent = () => (
-  <>
-    <MobileMenuTransform />
-    <VerticalContent />
-  </>
-);
+// Small Device Options
 
-// Mobile Menu
+//// Mobile Menu
 import { createGlobalStyle } from 'styled-components';
 
 const MobileMenuTransform = createGlobalStyle`
@@ -70,13 +53,21 @@ const MobileMenuTransform = createGlobalStyle`
   }
 `;
 
+//// Small Device Content
+const SmallContent = () => (
+  <>
+    <MobileMenuTransform />
+    <VerticalContent />
+  </>
+);
+
 // Render Page
 const Menu = ({ data }) => (
   <Layout
-    BgColor={PageTheme.Color.Background}
-    PrimaryColor={PageTheme.Color.Primary}
-    SecondaryColor={PageTheme.Color.Secondary}
-    TertiaryColor={PageTheme.Color.Tertiary}
+    BgColor={MenuData.PageTheme.Color.Background}
+    PrimaryColor={MenuData.PageTheme.Color.Primary}
+    SecondaryColor={MenuData.PageTheme.Color.Secondary}
+    TertiaryColor={MenuData.PageTheme.Color.Tertiary}
   >
     <Device Query="Desktop">
       <LargeContent />
