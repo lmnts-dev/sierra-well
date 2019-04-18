@@ -17,6 +17,9 @@ import {
   SidebarLocationStyle,
 } from './styles.scss';
 
+// Components
+import MenuHeroPromotions from './MenuHeroPromotions';
+
 // Constants
 import { Theme, Root } from 'constants/Theme';
 
@@ -147,9 +150,11 @@ class MenuHero extends React.Component {
               onKeyPress={this.collapseHero.bind(this)}
               role="button"
               tabIndex="0"
+              className="collapse-button"
             >
               <CollapseButton collapsedState={this.state.collapsed} />
             </div>
+            <MenuHeroPromotions />
           </MenuHeroStyle.ToolsInner>
         </MenuHeroStyle.Tools>
       </MenuHeroStyle>

@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 // Extended Styles
 import { HeroInnerStyle } from './../../Hero/styles.scss';
-
 // Constants
 import { Theme, Root } from 'constants/Theme';
 
@@ -56,12 +55,14 @@ MenuHeroStyle.Tools = styled.div`
 MenuHeroStyle.ToolsInner = styled.div`
   height: calc(${Root.Nav.Size} * 0.65);
   display: flex;
+  flex-wrap: nowrap;
   align-items: stretch;
+  justify-content: flex-start;
   background: ${Theme.Color.Primary};
   border-radius: ${Root.Radius} 0 0 0;
   overflow: hidden;
 
-  div {
+  .collapse-button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -136,8 +137,9 @@ export const SidebarLocationStyle = styled.div`
     padding-right: calc(${Theme.Base.Size.Sm} * 2.25);
     cursor: pointer;
     position: relative;
-    
-    &:before, &:after {
+
+    &:before,
+    &:after {
       content: '';
       position: absolute;
       top: 50%;
@@ -154,7 +156,8 @@ export const SidebarLocationStyle = styled.div`
       transition: all 0.25s ease;
     }
 
-    &.active, &:hover {
+    &.active,
+    &:hover {
       color: ${Theme.Color.Primary};
       text-decoration: none;
 
