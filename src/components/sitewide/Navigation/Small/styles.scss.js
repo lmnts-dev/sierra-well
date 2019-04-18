@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
-import { MenuContainerHeight } from 'components/sitewide/Navigation/Small/MenuContainer/styles.scss';
+import { MenuContainerMobileHeight } from 'components/library/OrderMenu/styles.scss';
 
 // Keyframe
 import { FadeIn } from 'components/core/Transition/Keyframes';

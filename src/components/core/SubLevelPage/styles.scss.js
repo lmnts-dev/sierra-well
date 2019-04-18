@@ -21,14 +21,15 @@ const SubLevelPageStyle = styled.div`
   color: ${Theme.Color.Background};
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
+  height: calc(100vh - ${Root.NavSize});
 `;
 
 SubLevelPageStyle.Inner = styled.div`
   width: 100%;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  min-height: 100vh;
-  padding-right: ${Root.Grid.Gutter.Right};
+  height: calc(100vh - ${Root.NavSize});
 `;
 
 export default SubLevelPageStyle;

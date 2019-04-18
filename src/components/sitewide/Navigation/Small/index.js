@@ -16,7 +16,7 @@ import { BottomNavigationStyle, TopNavigationStyle } from './styles.scss';
 
 // Components
 import Item from './Item';
-import MenuContainer from './MenuContainer';
+import { OrderMenuMobile } from './../../../library/OrderMenu';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -97,7 +97,7 @@ class NavigationSmall extends PureComponent {
                 Icon="heart"
               />
             </BottomNavigationStyle.List>
-            <MenuContainer />
+            <OrderMenuMobile />
           </BottomNavigationStyle.Inner>
         </BottomNavigationStyle>
       </>

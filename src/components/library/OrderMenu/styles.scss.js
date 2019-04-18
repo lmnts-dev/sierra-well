@@ -1,0 +1,88 @@
+// Button Component Styles:
+
+// Imports
+//////////////////////////////////////////////////////////////////////
+
+// Core
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+
+// Extended Styles
+import { SubLevelInnerStyle } from './../../core/SubLevelPage/Helpers/styles.scss';
+
+// Constants
+import { Theme, Root } from 'constants/Theme';
+
+// Begin Mobile Styles
+//////////////////////////////////////////////////////////////////////
+
+export const MenuContainerMobileHeight =
+  '(100vh - ((' + Root.Nav.Size + ' * 2) + 6px))';
+
+export const MenuContainerMobileStyle = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ${Theme.Color.White};
+  height: calc(${MenuContainerMobileHeight});
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+`;
+
+MenuContainerMobileStyle.Inner = styled.div`
+  position: relative;
+  flex: 1;
+  width: 100%;
+
+  iframe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+// Begin Desktop Styles
+//////////////////////////////////////////////////////////////////////
+
+export const MenuContainerDesktopStyle = styled.div`
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+MenuContainerDesktopStyle.Wrap = styled.div`
+  position: relative;
+  flex: 1;
+  width: 100%;
+
+  iframe {
+    position: absolute;
+    background-color: ${Theme.Color.White};
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+MenuContainerDesktopStyle.Inner = styled(SubLevelInnerStyle)`
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+//////////////////////////////////////////////////////////////////////
+// End Styles

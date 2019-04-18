@@ -1,5 +1,8 @@
-// Layout Component:
-// This is the sitewide wrapper of all the content on the site.
+// Forecast Component:
+// This is the component to display a
+// Forecast from a specific location.
+
+// TODO: Fix CORS Console Error
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -30,7 +33,7 @@ class Forecast extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://api.darksky.net/forecast/20fcdf5192dab046a8b9303c6f6d2667/37.8267,-122.4233`
+        'https://api.darksky.net/forecast/20fcdf5192dab046a8b9303c6f6d2667/37.8267,-122.4233'
       )
       .then(res => {
         const forecast = res.data;
@@ -52,7 +55,6 @@ class Forecast extends React.Component {
 
     return (
       <ForecastStyle>
-        {console.log(this.state.forecast)}
         <ForecastStyle.Top>
           <span>64</span>
         </ForecastStyle.Top>

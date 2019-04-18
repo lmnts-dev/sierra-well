@@ -16,7 +16,7 @@ import { FadeIn, FadeOut } from 'components/core/Transition/Keyframes';
 
 const FooterLargeStyle = styled.footer`
   width: 100%;
-  display: flex;
+  display: ${props => (props.location == '/menu' ? 'none' : 'flex')};
   justify-content: center;
   z-index: 400;
   font-size: 0.8rem;

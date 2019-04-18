@@ -17,9 +17,10 @@ import { Theme, Root } from 'constants/Theme';
 import VerticalContent from 'components/core/VerticalContent';
 
 // Desktop Components
-import { MenuContainerHeight } from 'components/sitewide/Navigation/Small/MenuContainer/styles.scss';
+import { MenuContainerMobileHeight } from './../components/library/OrderMenu/styles.scss';
 import SubLevelPage from 'components/core/SubLevelPage';
 import MenuHero from './../components/library/Hero/MenuHero';
+import { OrderMenuDesktop } from './../components/library/OrderMenu/';
 
 // Data
 import { MenuData } from 'data/menu';
@@ -29,8 +30,8 @@ import { MenuData } from 'data/menu';
 
 const SublevelInnerLock = createGlobalStyle`
 .sublevel-inner {
-  min-height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size})) !important;
-  height: calc(100vh - (${Root.Nav.Size} + ${Root.Footer.Size})) !important;
+  min-height: calc(100vh - (${Root.Nav.Size})) !important;
+  height: calc(100vh - (${Root.Nav.Size})) !important;
 }
 `;
 
@@ -44,6 +45,7 @@ const LargeContent = () => (
   >
     <SublevelInnerLock />
     <MenuHero />
+    <OrderMenuDesktop />
   </SubLevelPage>
 );
 
@@ -52,7 +54,7 @@ const LargeContent = () => (
 //// Mobile Menu
 const MobileMenuTransform = createGlobalStyle`
   .nav-mobile {
-    transform: translateY(calc(0px - ${MenuContainerHeight}));
+    transform: translateY(calc(0px - ${MenuContainerMobileHeight}));
 
     li {
       a {

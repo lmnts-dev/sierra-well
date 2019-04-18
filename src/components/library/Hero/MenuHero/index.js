@@ -12,14 +12,14 @@ import { Link } from 'gatsby';
 import MenuHeroStyle from './styles.scss';
 
 // Components
-// import Icon from 'elements/Icons';
+import { HeroInner } from './../../Hero';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
 const MenuHero = ({}) => (
   <MenuHeroStyle>
-    <MenuHeroStyle.Inner>
+    <HeroInner>
       <MenuHeroStyle.LocationSwitch>
         <span>Show me</span>
 
@@ -32,7 +32,7 @@ const MenuHero = ({}) => (
         </Link>
       </MenuHeroStyle.LocationSwitch>
       <h1>Order Cannabis Online near Reno, Nevada.</h1>
-    </MenuHeroStyle.Inner>
+    </HeroInner>
   </MenuHeroStyle>
 );
 
