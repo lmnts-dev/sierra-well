@@ -1,10 +1,5 @@
-// SubLevelPage.js:
-// This is prevent page jumping of page transitions.
-// The concept is to replicate a 'body' tag so it's scroll
-// position isn't reset for a simple and smooth page
-// transition without jumping to the top of the page.
-
-// It's used in the wrapPageElement component.
+// Sidebar.js:
+// This is the sitewide sidebar component.
 
 // Core
 import React from 'react';
@@ -32,30 +27,39 @@ const Sidebar = ({
   <SidebarStyle>
     <SidebarStyle.Inner>
       <SidebarWidget
-        BgColor={SecondaryColor}
+        BgColor={Theme.Color.Primary}
         BgImage="none"
-        Headline="Locations"
-        TextColor={TertiaryColor}
-        IconColor={TertiaryColor}
-        IconName="rocket"
+        Headline="Delivery"
+        TextColor={Theme.Color.White}
+        IconColor={Theme.Color.White}
+        IconName="car"
         Destination="/"
       />
       <SidebarWidget
         BgColor={SecondaryColor}
         BgImage="none"
-        Headline="Culture"
+        Headline="Visit"
         TextColor={TertiaryColor}
         IconColor={TertiaryColor}
-        IconName="rocket"
+        IconName="map-marker-alt"
+        Destination="/"
+      />
+      <SidebarWidget
+        BgColor={SecondaryColor}
+        BgImage="none"
+        Headline="Chat"
+        TextColor={TertiaryColor}
+        IconColor={TertiaryColor}
+        IconName="comment-alt"
         Destination="/culture"
       />
       <SidebarWidget
         BgColor={SecondaryColor}
         BgImage="none"
-        Headline="Contact"
+        Headline="Phone"
         TextColor={TertiaryColor}
         IconColor={TertiaryColor}
-        IconName="rocket"
+        IconName="phone"
         Destination="/contact"
       />
     </SidebarStyle.Inner>

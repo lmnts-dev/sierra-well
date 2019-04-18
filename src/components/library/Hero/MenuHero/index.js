@@ -10,10 +10,12 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 // Styles
-import MenuHeroStyle from './styles.scss';
-
-// Components
-import { HeroInnerStyle } from './../../Hero/styles.scss';
+import {
+  MenuHeroStyle,
+  CollapseButtonStyle,
+  HeroInnerTransition,
+  SidebarLocationStyle,
+} from './styles.scss';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -21,47 +23,25 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Base transition styles for collapsing MenuHero
-const HeroInnerTransition = styled(HeroInnerStyle)`
-  padding-bottom: ${props =>
-    props.paddingBottom ? props.paddingBottom : 'calc(' + Root.Size + '* 2)'};
-  padding-top: ${props =>
-    props.paddingTop ? props.paddingTop : 'calc(' + Root.Size + '* 2)'};
-  max-height: ${props => (props.maxHeight ? props.maxHeight : '100vh')};
-  opacity: ${props => (props.opacity ? props.opacity : '1')};
-  overflow: hidden;
-  transition: all 0.25s ease;
-`;
+// Our list of locations
+const LocationList = ({}) => (
+  <>
+    <Link activeClassName="active" to="/menu">
+      Reno
+    </Link>
 
-// The styles for our button to collapse the hero
-// to show a larger menu.
-const CollapseButtonStyle = styled.button`
-  border: 0;
-  outline: 0;
-  background: ${Theme.Color.White};
-  align-self: stretch;
-  color: ${Theme.Color.Primary};
-  font-weight: bold;
-  width: calc(${Root.Size} * 3.5);
-  cursor: pointer;
-  font-size: 1.2rem;
-  text-align: center;
+    <Link activeClassName="active" to="/menu/carson">
+      Carson City
+    </Link>
+  </>
+);
 
-  span {
-    margin-left: 10px;
-  }
-  i {
-    transform: scale(1);
-    transform-origin: center center;
-    transition: all 0.25s ease;
-  }
-
-  &:hover {
-    i {
-      transform: scale(1.1);
-    }
-  }
-`;
+// Sidebar location switching
+const SidebarLocation = ({ collapsedState }) => (
+  <SidebarLocationStyle collapsedState={collapsedState}>
+    <LocationList />
+  </SidebarLocationStyle>
+);
 
 // Our button to collapse the hero to show a larger menu.
 class CollapseButton extends React.Component {
@@ -144,6 +124,7 @@ class MenuHero extends React.Component {
   render() {
     return (
       <MenuHeroStyle>
+        <SidebarLocation collapsedState={this.state.collapsed} />
         <HeroInnerTransition
           height={this.state.height}
           paddingTop={this.state.paddingTop}
@@ -154,13 +135,7 @@ class MenuHero extends React.Component {
           <MenuHeroStyle.LocationSwitch>
             <span>Show me</span>
 
-            <Link activeClassName="active" to="/menu">
-              Reno
-            </Link>
-
-            <Link activeClassName="active" to="/menu/carson">
-              Carson
-            </Link>
+            <LocationList />
           </MenuHeroStyle.LocationSwitch>
           <h1>Order Cannabis Online near Reno, Nevada.</h1>
         </HeroInnerTransition>

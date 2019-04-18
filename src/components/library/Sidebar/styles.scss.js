@@ -30,8 +30,7 @@ SidebarStyle.Inner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm} ${Root.Footer.Size}
-    ${Theme.Base.Size.Sm};
+  padding: ${Theme.Base.Size.Sm};
   width: ${Root.Grid.Gutter.Left};
 `;
 
