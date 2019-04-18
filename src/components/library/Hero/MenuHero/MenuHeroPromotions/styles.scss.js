@@ -116,6 +116,9 @@ PromotionSliderStyle.Slide = styled.div`
   .promo-button {
     display: flex;
     justify-content: flex-end;
+    width: auto;
+    overflow: visible;
+    font-weight: bold;
 
     a {
       display: inline-block;
@@ -125,6 +128,7 @@ PromotionSliderStyle.Slide = styled.div`
       color: ${Theme.Color.White};
       position: relative;
       z-index: 400;
+      white-space: nowrap;
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.09);
