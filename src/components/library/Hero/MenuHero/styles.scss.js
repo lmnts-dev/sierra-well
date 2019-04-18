@@ -45,12 +45,18 @@ MenuHeroStyle.Tools = styled.div`
 `;
 
 MenuHeroStyle.ToolsInner = styled.div`
-  height: calc(${Root.Nav.Size} * .75);
+  height: calc(${Root.Nav.Size} * 0.65);
   display: flex;
-  align-items: center;
-  background: pink;
+  align-items: stretch;
+  background: ${Theme.Color.Primary};
   border-radius: ${Root.Radius} 0 0 0;
   overflow: hidden;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 
 export default MenuHeroStyle;

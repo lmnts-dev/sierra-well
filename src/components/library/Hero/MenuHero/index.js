@@ -33,6 +33,67 @@ const HeroInnerTransition = styled(HeroInnerStyle)`
   transition: all 0.25s ease;
 `;
 
+// The styles for our button to collapse the hero
+// to show a larger menu.
+const CollapseButtonStyle = styled.button`
+  border: 0;
+  outline: 0;
+  background: ${Theme.Color.White};
+  align-self: stretch;
+  color: ${Theme.Color.Primary};
+  font-weight: bold;
+  width: calc(${Root.Size} * 3.5);
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+
+  span {
+    margin-left: 10px;
+  }
+  i {
+    transform: scale(1);
+    transform-origin: center center;
+    transition: all 0.25s ease;
+  }
+
+  &:hover {
+    i {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+// Our button to collapse the hero to show a larger menu.
+class CollapseButton extends React.Component {
+  constructor(props) {
+    // Make our props accessible through this.props
+    super(props);
+  }
+
+  render() {
+    // If the menu isn't collapsed...
+    if (this.props.collapsedState == false) {
+      return (
+        <CollapseButtonStyle>
+          <i className="fas fa-expand" />
+          <span>Fullscreen Menu</span>
+        </CollapseButtonStyle>
+      );
+    }
+
+    // If the menu is collapsed...
+    else {
+      return (
+        <CollapseButtonStyle>
+          <i className="fas fa-compress" />
+          <span>Collapse Menu</span>
+        </CollapseButtonStyle>
+      );
+    }
+  }
+}
+
+// MenuHero Component & Logic
 class MenuHero extends React.Component {
   constructor(props) {
     // Make our props accessible through this.props
@@ -45,7 +106,6 @@ class MenuHero extends React.Component {
       paddingTop: 'calc(' + Root.Size + '* 2)',
       paddingBottom: 'calc(' + Root.Size + '* 2)',
       opacity: '1',
-      collapseLabel: 'Collapse',
       collapsed: false,
     };
 
@@ -64,7 +124,6 @@ class MenuHero extends React.Component {
         paddingTop: '0',
         paddingBottom: '0',
         opacity: '0',
-        collapseLabel: 'Expand',
         collapsed: true,
       });
     }
@@ -76,7 +135,6 @@ class MenuHero extends React.Component {
         paddingTop: 'calc(' + Root.Size + '* 2)',
         paddingBottom: 'calc(' + Root.Size + '* 2)',
         opacity: '1',
-        collapseLabel: 'Collapse',
         collapsed: false,
       });
     }
@@ -108,9 +166,15 @@ class MenuHero extends React.Component {
         </HeroInnerTransition>
         <MenuHeroStyle.Tools>
           <MenuHeroStyle.ToolsInner>
-            <button onClick={this.collapseHero.bind(this)}>
-              {this.state.collapseLabel}
-            </button>
+            <div
+              onClick={this.collapseHero.bind(this)}
+              // These are eslint errors for accessibility below.
+              onKeyPress={this.collapseHero.bind(this)}
+              role="button"
+              tabIndex="0"
+            >
+              <CollapseButton collapsedState={this.state.collapsed} />
+            </div>
           </MenuHeroStyle.ToolsInner>
         </MenuHeroStyle.Tools>
       </MenuHeroStyle>
