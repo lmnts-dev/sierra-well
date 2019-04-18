@@ -42,17 +42,6 @@ class Forecast extends React.Component {
   }
 
   render() {
-    // Slick Settings
-    const settings = {
-      dots: true,
-      speed: 1500,
-      arrows: false,
-      autoplaySpeed: 4000,
-      slidesToShow: 1,
-      autoplay: true,
-      infinite: true,
-    };
-
     return (
       <ForecastStyle>
         <ForecastStyle.Top>

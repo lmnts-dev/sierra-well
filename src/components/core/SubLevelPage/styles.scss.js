@@ -21,7 +21,6 @@ const SubLevelPageStyle = styled.div`
   color: ${Theme.Color.Background};
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
-  height: calc(100vh - ${Root.NavSize});
 `;
 
 SubLevelPageStyle.Inner = styled.div`
@@ -29,7 +28,6 @@ SubLevelPageStyle.Inner = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: calc(100vh - ${Root.NavSize});
 `;
 
 export default SubLevelPageStyle;

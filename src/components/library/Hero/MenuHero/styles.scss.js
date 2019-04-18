@@ -17,13 +17,6 @@ const MenuHeroStyle = styled.div`
   margin: 0;
 `;
 
-MenuHeroStyle.Inner = styled.div`
-  margin: 0;
-  padding-left: calc(${Root.Grid.Gutter.Left} + ${Root.Size});
-  padding-right: ${Root.Size};
-  padding-top: calc(${Root.Size} * 2);
-`;
-
 MenuHeroStyle.LocationSwitch = styled.div`
   font-size: 2rem;
   span,
@@ -44,6 +37,20 @@ MenuHeroStyle.LocationSwitch = styled.div`
       color: ${Theme.Color.Primary};
     }
   }
+`;
+
+MenuHeroStyle.Tools = styled.div`
+  width: 100%;
+  padding-left: calc(${Root.Grid.Gutter.Left});
+`;
+
+MenuHeroStyle.ToolsInner = styled.div`
+  height: calc(${Root.Nav.Size} * .75);
+  display: flex;
+  align-items: center;
+  background: pink;
+  border-radius: ${Root.Radius} 0 0 0;
+  overflow: hidden;
 `;
 
 export default MenuHeroStyle;

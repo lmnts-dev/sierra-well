@@ -59,10 +59,19 @@ export const MenuContainerDesktopStyle = styled.div`
   flex-direction: column;
 `;
 
+MenuContainerDesktopStyle.Inner = styled(SubLevelInnerStyle)`
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
 MenuContainerDesktopStyle.Wrap = styled.div`
   position: relative;
   flex: 1;
   width: 100%;
+  overflow: hidden;
 
   iframe {
     position: absolute;
@@ -74,14 +83,6 @@ MenuContainerDesktopStyle.Wrap = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
-
-MenuContainerDesktopStyle.Inner = styled(SubLevelInnerStyle)`
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
 `;
 
 //////////////////////////////////////////////////////////////////////
