@@ -45,6 +45,7 @@ class MenuHero extends React.Component {
       paddingTop: 'calc(' + Root.Size + '* 2)',
       paddingBottom: 'calc(' + Root.Size + '* 2)',
       opacity: '1',
+      collapseLabel: 'Collapse',
       collapsed: false,
     };
 
@@ -53,26 +54,35 @@ class MenuHero extends React.Component {
     this.collapseHero = this.collapseHero.bind(this);
   }
 
+  // Base functions to change transition state for
+  // collapsing menu hero.
   collapseHero() {
+    // If currently expanded...
     if (this.state.collapsed == false) {
       this.setState({
         maxHeight: '0vh',
         paddingTop: '0',
         paddingBottom: '0',
         opacity: '0',
+        collapseLabel: 'Expand',
         collapsed: true,
       });
-    } else {
+    }
+
+    // If currently collapsed...
+    else {
       this.setState({
         maxHeight: '100vh',
         paddingTop: 'calc(' + Root.Size + '* 2)',
         paddingBottom: 'calc(' + Root.Size + '* 2)',
         opacity: '1',
+        collapseLabel: 'Collapse',
         collapsed: false,
       });
     }
   }
 
+  // Render element.
   render() {
     return (
       <MenuHeroStyle>
@@ -98,7 +108,9 @@ class MenuHero extends React.Component {
         </HeroInnerTransition>
         <MenuHeroStyle.Tools>
           <MenuHeroStyle.ToolsInner>
-            <button onClick={this.collapseHero.bind(this)}>Expand</button>
+            <button onClick={this.collapseHero.bind(this)}>
+              {this.state.collapseLabel}
+            </button>
           </MenuHeroStyle.ToolsInner>
         </MenuHeroStyle.Tools>
       </MenuHeroStyle>
