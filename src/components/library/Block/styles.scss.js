@@ -25,7 +25,12 @@ export const BlockStyle = styled.div`
       margin: 0 auto;
 
       p,
-      h2 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         text-align: center;
         width: 100%;
       }

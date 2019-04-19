@@ -22,11 +22,9 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const SimpleHero = ({}) => (
-  <SimpleHeroStyle>
-    <HeroInner>
-      <h1>100% Free Delivery</h1>
-    </HeroInner>
+const SimpleHero = ({ Background, TextColor, Size, children }) => (
+  <SimpleHeroStyle Background={Background} TextColor={TextColor}>
+    <HeroInner Size={Size}>{children}</HeroInner>
   </SimpleHeroStyle>
 );
 

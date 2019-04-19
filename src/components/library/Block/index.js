@@ -16,7 +16,7 @@ import BlockStyle from './styles.scss';
 const Block = ({ children, Style, Width, Top, Bottom }) => (
   <BlockStyle
     className="block"
-    Width={Width}
+    Width={Width}s
     Style={Style}
     Top={Top}
     Bottom={Bottom}

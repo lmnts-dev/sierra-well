@@ -27,6 +27,10 @@ const FooterLargeStyle = styled.footer`
   left: 0;
   bottom: 0;
   right: 0;
+  margin-top: ${props =>
+    props.routes.includes(props.location)
+      ? '0'
+      : 'calc(-1 * ' + Root.Footer.Size + ')'};
   ${props => (props.routes.includes(props.location) ? FadeIn : FadeIn)};
 `;
 

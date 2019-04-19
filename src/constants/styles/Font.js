@@ -55,6 +55,7 @@ export const Typography = createGlobalStyle`
     font-family: ${Font.Body};
     line-height: 1.2;
     font-size: 1rem;
+    letter-spacing: -0.2px;
 
     &.p-sm {
       line-height: 1.2;
@@ -62,8 +63,8 @@ export const Typography = createGlobalStyle`
     }
 
     &.p-md {
-      line-height: 1.2;
-      font-size: 1.2rem;
+      line-height: 1.3;
+      font-size: 1.3rem;
     }
 
     &.p-lg {
@@ -78,6 +79,7 @@ export const Typography = createGlobalStyle`
     line-height: 1.2;
     padding: 0;
     margin: 0;
+    letter-spacing: -0.2px;
   }
 
   h1, .h1 {
@@ -102,6 +104,6 @@ export const Typography = createGlobalStyle`
 
   /* Block Content Styles */
   .block {
-    h2 { padding-bottom: calc(var(--Size) / 3); }
+    h1, h2, h3, h4, h5, h6 { padding-bottom: calc(var(--Size) / 3.5); }
   }
 `;

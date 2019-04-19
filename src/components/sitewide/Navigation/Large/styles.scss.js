@@ -98,6 +98,22 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
         display: flex;
         align-items: center;
         height: 100%;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-50%, 0%);
+          width: 5px;
+          height: 5px;
+          background: ${Theme.Color.Black};
+          border-radius: 50%;
+          opacity: 0;
+          transition: all .25s
+            ${Theme.Base.Transition.CssEase};
+        }
 
         &.active {
           color: rgba(0, 0, 0, 1);
@@ -106,6 +122,10 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
         &:hover {
           color: ${Theme.Color.Nightsky};
           text-decoration: none;
+          &:before {
+            opacity: 1;
+            transform: translate(-50%, -300%);
+          }
         }
       }
     }

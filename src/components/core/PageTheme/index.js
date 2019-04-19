@@ -45,8 +45,18 @@ nav {
             props.SecondaryColor ? 'color: ' + props.SecondaryColor : null};
 
           /* Opacity */
-          ${props => (props.SecondaryColor ? 'opacity: .5' : null)};
+          ${props => (props.SecondaryColor ? 'opacity: 1' : null)};
           
+          /* Pseudo Elements */ 
+
+
+          &:before {
+            ${props =>
+              props.SecondaryColor
+                ? 'background: ' + props.SecondaryColor
+                : null};
+          }
+
           /* Hover */
           &:hover {
             ${props => (props.SecondaryColor ? 'opacity: 1' : null)};
