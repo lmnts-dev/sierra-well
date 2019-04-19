@@ -35,6 +35,8 @@ export const Font = {
 
 // Global Type Styles
 export const Typography = createGlobalStyle`
+
+  /* Base Text Styles */
   body {
     line-height: 1;
     font-size: 1rem;
@@ -48,11 +50,29 @@ export const Typography = createGlobalStyle`
     font-variant-numeric: proportional-nums;
   }
 
+  /* Paragraph Styles */
   p {
     font-family: ${Font.Body};
     line-height: 1.2;
+    font-size: 1rem;
+
+    &.p-sm {
+      line-height: 1.2;
+      font-size: 1rem;
+    }
+
+    &.p-md {
+      line-height: 1.2;
+      font-size: 1.2rem;
+    }
+
+    &.p-lg {
+      line-height: 1.2;
+      font-size: 1.5rem;
+    }
   }
 
+  /* Header Styles */
   h1, h2, h3, h4, h5, h6 {
     font-family: ${Font.Header};
     line-height: 1.2;

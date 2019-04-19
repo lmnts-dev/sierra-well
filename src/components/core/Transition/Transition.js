@@ -42,7 +42,14 @@ class Transition extends PureComponent {
     // use the prop `animateOnMount={true}` on `PoseGroup`.
     return (
       <PoseGroup animateOnMount={true}>
-        <RoutesContainer key={location.pathname}>{children}</RoutesContainer>
+        <RoutesContainer
+          // For our .wrapper's flex behavior.
+          style={{ flex: 1 }}
+          className="transition-wrapper"
+          key={location.pathname}
+        >
+          {children}
+        </RoutesContainer>
       </PoseGroup>
     );
   }

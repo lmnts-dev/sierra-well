@@ -18,7 +18,10 @@ import VerticalContent from 'components/core/VerticalContent';
 
 // Desktop Components
 import { MenuContainerMobileHeight } from './../components/library/OrderMenu/styles.scss';
-import SubLevelPage from 'components/core/SubLevelPage';
+import {
+  SubLevelPageContent,
+  SubLevelPage,
+} from 'components/core/SubLevelPage';
 import MenuHero from './../components/library/Hero/MenuHero';
 import { OrderMenuDesktop } from './../components/library/OrderMenu/';
 

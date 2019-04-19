@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 // Extended Styles
 import { HeroInnerStyle } from './../../Hero/styles.scss';
+
 // Constants
 import { Theme, Root } from 'constants/Theme';
 

@@ -1,4 +1,5 @@
 // MenuHero Styles:
+// These are nearly identical to the Section base styles.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -19,6 +20,14 @@ export const HeroInnerStyle = styled.div`
   padding-right: ${Root.Size};
   padding-top: calc(${Root.Size} * 2);
   padding-bottom: calc(${Root.Size} * 2);
+`;
+
+export const HeroContentStyle = styled.div`
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  max-width: ${props => (props.FullWidth ? '100%' : Theme.Base.Grid.SiteWidth)};
 `;
 
 //////////////////////////////////////////////////////////////////////

@@ -23,7 +23,7 @@ import SubLevelPageStyle from './styles.scss';
 //////////////////////////////////////////////////////////////////////
 
 // The SubLevel Page Itself
-const SubLevelPage = ({
+export const SubLevelPage = ({
   children,
   BgColor,
   PrimaryColor,
@@ -44,4 +44,9 @@ const SubLevelPage = ({
   </SubLevelPageStyle>
 );
 
-export default SubLevelPage;
+// The SubLevel Page Content
+export const SubLevelPageContent = ({ BgColor, TextColor, children }) => (
+  <SubLevelPageStyle.Content TextColor={TextColor} BgColor={BgColor}>
+    {children}
+  </SubLevelPageStyle.Content>
+);

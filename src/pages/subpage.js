@@ -9,7 +9,15 @@ import React from 'react';
 
 // Components
 import Layout from 'components/core/Layout';
-import SubLevelPage from 'components/core/SubLevelPage';
+import {
+  SubLevelPageContent,
+  SubLevelPage,
+} from 'components/core/SubLevelPage';
+import SimpleHero from 'components/library/Hero/SimpleHero';
+import SimpleSection from 'components/library/Section/SimpleSection';
+
+// Elements
+import Block from './../components/library/Block';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -20,10 +28,10 @@ import { Theme } from 'constants/Theme';
 // Page Theme
 const PageTheme = {
   Color: {
-    Background: Theme.Color.Flower,
+    Background: Theme.Color.White,
     Primary: Theme.Color.Dank,
-    Secondary: Theme.Color.White,
-    Tertiary: Theme.Color.Black,
+    Secondary: Theme.Color.Black,
+    Tertiary: Theme.Color.White,
   },
 };
 
@@ -40,11 +48,24 @@ const Index = ({ data }) => (
       SecondaryColor={PageTheme.Color.Secondary}
       TertiaryColor={PageTheme.Color.Tertiary}
     >
-      <div className="content-stretch">
-        <h1>
-          Reno’s first Cannabis dispensary — located in the heart of downtown.
-        </h1>
-      </div>
+      <SimpleHero BgColor={Theme.Color.Dank} TextColor={Theme.Color.Nightsky} />
+      <SubLevelPageContent
+        BgColor={Theme.Color.Background}
+        TextColor={Theme.Color.White}
+      >
+        <SimpleSection
+          BgColor={Theme.Color.White}
+          TextColor={Theme.Color.Nightsky}
+        >
+          <Block>
+            <h2>Discretion is our first priority — so why not make it free?</h2>
+            <p className="p-md">
+              Free delivery available within 15 miles of our Reno and Carson
+              City stores, Nevada addresses only.
+            </p>
+          </Block>
+        </SimpleSection>
+      </SubLevelPageContent>
     </SubLevelPage>
   </Layout>
 );
