@@ -68,7 +68,7 @@ const Index = ({ data }) => (
           TextColor={Theme.Color.Nightsky}
           Style="centered"
         >
-          <Block Style="centered" Top={1} Bottom={1} Width={0.4}>
+          <Block Style="centered" Top={1} Bottom={1} Width={0.5}>
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson
@@ -84,7 +84,7 @@ const Index = ({ data }) => (
           TextColor={Theme.Color.White}
           Style="centered"
         >
-          <Block Style="centered" Top={3} Bottom={3} Width={0.4}>
+          <Block Style="centered" Top={3} Bottom={3} Width={0.5}>
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson

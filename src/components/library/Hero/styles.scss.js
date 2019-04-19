@@ -20,11 +20,24 @@ export const HeroInnerStyle = styled.div`
   padding-right: ${Root.Size};
   padding-top: calc(${Root.Size} * 2);
   padding-bottom: calc(${Root.Size} * 2);
+  position: relative;
+  ${props => (props.Size ? props.Size : null)};
+
+  .hero-img {
+    ${props =>
+      props.imgRight || props.imgLeft || props.imgTop || props.imgBottom
+        ? 'position: absolute'
+        : null};
+    ${props => (props.imgRight ? 'right: ' + props.imgRight : null)};
+    ${props => (props.imgLeft ? 'left: ' + props.imgLeft : null)};
+    ${props => (props.imgBottom ? 'bottom: ' + props.imgBottom : null)};
+    ${props => (props.imgTop ? 'top: ' + props.imgTop : null)};
+    ${props => (props.imgWidth ? 'width: ' + props.imgWidth : null)};
+  }
 `;
 
 export const HeroContentStyle = styled.div`
   width: 100%;
-  position: relative;
   margin: 0 auto;
   display: flex;
   max-width: ${props => (props.FullWidth ? '100%' : Theme.Base.Grid.SiteWidth)};

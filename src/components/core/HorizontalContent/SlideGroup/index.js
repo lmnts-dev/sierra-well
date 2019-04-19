@@ -51,18 +51,18 @@ export class SlideGroup extends React.Component {
         {
           breakpoint: 1280,
           settings: {
-            slidesToShow: .8,
+            slidesToShow: 0.8,
             slidesToScroll: 1.1,
-          }
+          },
         },
         {
           breakpoint: 1025,
           settings: {
-            slidesToShow: .5,
+            slidesToShow: 0.5,
             slidesToScroll: 1.5,
-          }
+          },
         },
-      ]
+      ],
     };
 
     // Slides Data

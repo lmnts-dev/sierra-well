@@ -3,6 +3,7 @@
 
 // Our Sitewide variables
 const siteConfig = require('./site-config');
+const path = require(`path`);
 
 // This is for Prismic.io
 require('dotenv').config({
@@ -38,7 +39,7 @@ module.exports = {
     // For Slick Slider
     `gatsby-plugin-sass`,
 
-    // For Intercom 
+    // For Intercom
 
     // {
     //   resolve: `gatsby-plugin-intercom`,
@@ -46,6 +47,18 @@ module.exports = {
     //     appId: 'd5dbftk9',
     //   },
     // },
+
+    // gatsby-source-filesystem
+    // So we can load hard coded images with
+    // gatsby-image
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `assets`, `images`),
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
 
     // Set up Prismic.io
     {

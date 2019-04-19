@@ -13,10 +13,10 @@ import BlockStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const Block = ({ children, Style, Width, Top, Bottom }) => (
+const Block = ({ children, className, Style, Width, Top, Bottom }) => (
   <BlockStyle
-    className="block"
-    Width={Width}s
+    className={className ? className + ' block' : 'block'}
+    Width={Width}
     Style={Style}
     Top={Top}
     Bottom={Bottom}

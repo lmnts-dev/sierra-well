@@ -15,8 +15,23 @@ import { HeroInnerStyle, HeroContentStyle } from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-export const HeroInner = ({ children }) => (
-  <HeroInnerStyle>
+export const HeroInner = ({
+  imgRight,
+  imgLeft,
+  imgBottom,
+  imgTop,
+  imgWidth,
+  Size,
+  children,
+}) => (
+  <HeroInnerStyle
+    Size={Size ? Size : false}
+    imgRight={imgRight ? imgRight : false}
+    imgLeft={imgLeft ? imgLeft : false}
+    imgBottom={imgBottom ? imgBottom : false}
+    imgTop={imgTop ? imgTop : false}
+    imgWidth={imgWidth ? imgWidth : false}
+  >
     <HeroContentStyle>{children}</HeroContentStyle>
   </HeroInnerStyle>
 );

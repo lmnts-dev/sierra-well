@@ -21,13 +21,11 @@ import SimpleSectionStyle from './styles.scss';
 //////////////////////////////////////////////////////////////////////
 
 const SimpleSection = ({ BgColor, Style, TextColor, children }) => (
-  <SimpleSectionStyle
-    Style={Style}
-    BgColor={BgColor}
-    TextColor={TextColor}
-  >
+  <SimpleSectionStyle Style={Style} BgColor={BgColor} TextColor={TextColor}>
     <SimpleSectionStyle.Inner>
-      <SimpleSectionStyle.Content className="simple-section">{children}</SimpleSectionStyle.Content>
+      <SimpleSectionStyle.Content className="simple-section">
+        {children}
+      </SimpleSectionStyle.Content>
     </SimpleSectionStyle.Inner>
   </SimpleSectionStyle>
 );

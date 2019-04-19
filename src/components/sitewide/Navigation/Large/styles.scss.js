@@ -111,8 +111,7 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
           background: ${Theme.Color.Black};
           border-radius: 50%;
           opacity: 0;
-          transition: all .25s
-            ${Theme.Base.Transition.CssEase};
+          transition: all 0.25s ${Theme.Base.Transition.CssEase};
         }
 
         &.active {

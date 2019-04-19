@@ -35,7 +35,6 @@ SimpleSectionStyle.Inner = styled(SectionInnerStyle)`
   div {
     flex: 1;
   }
-
 `;
 
 SimpleSectionStyle.Content = styled(SectionContentStyle)`
