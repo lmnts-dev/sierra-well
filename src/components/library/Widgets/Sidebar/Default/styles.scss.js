@@ -93,6 +93,7 @@ SidebarWidgetStyle.Inner = styled.div`
   a {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     flex: 1;
     width: 100%;
     color: white;
@@ -110,6 +111,7 @@ SidebarWidgetStyle.Inner = styled.div`
     position: absolute;
     right: ${Theme.Base.Size.Sm};
     top: ${Theme.Base.Size.Sm};
+    fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     transform: translateX(0%);
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
@@ -137,7 +139,6 @@ SidebarWidgetStyle.Inner = styled.div`
     /* The Widget Icon */
     .fas {
       color: ${Theme.Color.White};
-      transform: scale(1.3);
     }
 
     /* Tint */
@@ -158,7 +159,7 @@ SidebarWidgetStyle.Subhead = styled.div`
 `;
 
 SidebarWidgetStyle.Headline = styled.div`
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.2;
   font-weight: bold;
 `;
@@ -166,9 +167,10 @@ SidebarWidgetStyle.Headline = styled.div`
 SidebarWidgetStyle.Icon = styled.i`
   position: absolute;
   right: ${Theme.Base.Size.Sm};
-  bottom: ${Theme.Base.Size.Sm};
+  top: ${Theme.Base.Size.Sm};
   font-size: 1.2rem;
-  transform: scale(1.000000001);
+  transform: scale(1.4);
+  transform-origin: top right;
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
   color: ${props => (props.Color ? props.Color : Theme.Color.Black)};

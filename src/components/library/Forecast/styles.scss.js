@@ -24,6 +24,7 @@ ForecastStyle.Top = styled.div`
   font-family: 'Roboto', 'Helvetica', sans-serif;
   font-weight: 100;
   padding-right: calc(${Root.ViewWidthPadding} * 1.2);
+  margin-left: -5px;
   position: relative;
 
   &:before,

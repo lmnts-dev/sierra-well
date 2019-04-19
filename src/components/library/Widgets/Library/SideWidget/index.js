@@ -35,6 +35,7 @@ const SideWidget = ({
   >
     <Link to={Destination}>
       <SideWidgetStyle.Header>{Header}</SideWidgetStyle.Header>
+      <Icon className="svg-carat" Name="carat" Color={IconColor} />
       <SideWidgetStyle.Body>
         <SideWidgetStyle.Subhead>{Subhead}</SideWidgetStyle.Subhead>
       </SideWidgetStyle.Body>

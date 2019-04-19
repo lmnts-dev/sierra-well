@@ -18,10 +18,10 @@ export const HeroInnerStyle = styled.div`
   margin: 0;
   padding-left: calc(${Root.Grid.Gutter.Left} + ${Root.Size});
   padding-right: ${Root.Size};
-  padding-top: calc(${Root.Size} * 2);
-  padding-bottom: calc(${Root.Size} * 2);
+  padding-top: calc(${Root.Size} * ${props => (props.Size ? props.Size : '2')});
+  padding-bottom: calc(${Root.Size} * ${props => (props.Size ? props.Size : '2')});
   position: relative;
-  ${props => (props.Size ? props.Size : null)};
+  
 
   .hero-img {
     ${props =>

@@ -94,6 +94,7 @@ const SideForecastStyle = styled.div`
     right: ${Root.ViewWidthPadding};
     top: ${Root.ViewWidthPadding};
     transform: translateX(0%);
+    fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
   }
@@ -149,6 +150,7 @@ SideForecastStyle.Header = styled.h1`
   word-break: none;
   pointer-events: none;
   width: auto;
+  line-height: .8;
 `;
 
 SideForecastStyle.Body = styled.div``;

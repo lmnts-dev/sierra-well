@@ -96,6 +96,7 @@ const SideWidgetStyle = styled.div`
     transform: translateX(0%);
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
+    fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
   }
 
   /* Hover Styles */
@@ -149,6 +150,7 @@ SideWidgetStyle.Header = styled.h1`
   word-break: none;
   pointer-events: none;
   width: auto;
+  line-height: .8;
 `;
 
 SideWidgetStyle.Body = styled.div``;

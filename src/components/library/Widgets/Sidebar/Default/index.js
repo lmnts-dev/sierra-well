@@ -40,7 +40,6 @@ const SidebarWidget = ({
     >
       <Link to={Destination}>
         <SidebarWidgetStyle.Headline>{Headline}</SidebarWidgetStyle.Headline>
-        <Icon className="svg-carat" Name="Carat" Color={IconColor} />
 
         {/* Pass Icon value using FontAwesome */}
         {/* Read more: https://fontawesome.com/how-to-use/on-the-web/setup/getting-started */}

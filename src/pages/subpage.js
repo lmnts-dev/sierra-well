@@ -16,6 +16,7 @@ import {
 } from 'components/core/SubLevelPage';
 import SimpleHero from 'components/library/Hero/SimpleHero';
 import SimpleSection from 'components/library/Section/SimpleSection';
+import Breadcrumb from './../components/library/Breadcrumb';
 
 import ImgQuery from 'components/core/ImgQuery';
 
@@ -57,11 +58,16 @@ const Index = props => (
         imgRight="0"
         imgBottom="0"
         imgWidth="50%"
-        Size="0"
+        Size="2"
         Background="none"
         TextColor={Theme.Color.Nightsky}
       >
-        <Block>
+        <Block Width={0.5}>
+          <Breadcrumb
+            to="/learn"
+            Label="Learn"
+            Color={PageTheme.Color.Secondary}
+          />
           <h1>100% Free Delivery</h1>
           <p className="p-md">Any size order, no minimum required.</p>
         </Block>
@@ -81,11 +87,11 @@ const Index = props => (
         {/* ///////////// */}
 
         <SimpleSection
-          BgColor={Theme.Color.White}
+          BgColor={Theme.Color.Snow}
           TextColor={Theme.Color.Nightsky}
           Style="centered"
         >
-          <Block Style="centered" Top={1} Bottom={1} Width={0.5}>
+          <Block Style="centered" Top={1} Bottom={1} maxWidth={0.5}>
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson
@@ -101,7 +107,7 @@ const Index = props => (
           TextColor={Theme.Color.White}
           Style="centered"
         >
-          <Block Style="centered" Top={3} Bottom={3} Width={0.5}>
+          <Block Style="centered" Top={3} Bottom={3} maxWidth={0.5}>
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson

@@ -54,6 +54,7 @@ SideHeaderWidgetStyle.Header = styled.h1`
   word-break: none;
   pointer-events: none;
   width: auto;
+  line-height: .8;
 `;
 
 SideHeaderWidgetStyle.Body = styled.div``;

@@ -11,7 +11,7 @@ import React from 'react';
 import Icon from 'elements/Icons';
 
 // Styles
-import BtnStyle from 'components/library/Btn/styles.scss';
+import BtnStyle from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

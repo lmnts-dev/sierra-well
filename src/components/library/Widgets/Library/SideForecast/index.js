@@ -9,6 +9,7 @@ import SideForecastStyle from './styles.scss';
 
 // Components
 import Forecast from '../../../Forecast';
+import Icon from 'elements/Icons';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -34,6 +35,7 @@ const SideForecast = ({
     className="widget-content"
   >
     <Link to={Destination}>
+      <Icon className="svg-carat" Name="carat" Color={IconColor} />
       <SideForecastStyle.Header>{Location}</SideForecastStyle.Header>
       <SideForecastStyle.Body>
         <Forecast Location={Location} />

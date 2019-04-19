@@ -50,7 +50,7 @@ const ArticleWidget = ({
     <Link to={Destination}>
       <WidgetStyle.Subhead>{Subhead}</WidgetStyle.Subhead>
       <WidgetStyle.Headline>{Headline}</WidgetStyle.Headline>
-      <Icon className="svg-carat" Name="Carat" Color={IconColor} />
+      <Icon className="svg-carat" Name="carat" Color={IconColor} />
       <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
     </Link>
   </WidgetStyle>

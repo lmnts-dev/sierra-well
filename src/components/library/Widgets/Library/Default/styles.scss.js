@@ -93,6 +93,7 @@ const WidgetStyle = styled.div`
     right: ${Root.ViewWidthPadding};
     top: ${Root.ViewWidthPadding};
     transform: translateX(0%);
+    fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
   }
@@ -137,12 +138,14 @@ const WidgetStyle = styled.div`
 WidgetStyle.Subhead = styled.div`
   font-size: ${Root.ViewWidthFontSize};
   line-height: 1.2;
+  padding-right: 20px;
 `;
 
 WidgetStyle.Headline = styled.div`
   font-size: ${Root.ViewWidthFontSize};
   line-height: 1.2;
   font-weight: bold;
+  padding-right: 20px;
 `;
 
 WidgetStyle.Icon = styled.i`

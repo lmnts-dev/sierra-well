@@ -14,7 +14,6 @@ import { Theme, Root } from 'constants/Theme';
 export const BlockStyle = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
 
   /* Centered Style */
   ${props =>
@@ -37,10 +36,10 @@ export const BlockStyle = styled.div`
     `}
 
   /* Width Multiple */
-    width: 100%;
+    flex: ${props => (props.Width ? props.Width : '1')};
   max-width: ${props =>
-    props.Width
-      ? 'calc(' + Theme.Base.Grid.SiteWidth + ' * ' + props.Width + ')'
+    props.maxWidth
+      ? 'calc(' + Theme.Base.Grid.SiteWidth + ' * ' + props.maxWidth + ')'
       : Theme.Base.Grid.SiteWidth};
 
   /* Top/Bottom Padding */
