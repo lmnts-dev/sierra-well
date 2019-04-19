@@ -35,10 +35,13 @@ SimpleSectionStyle.Inner = styled(SectionInnerStyle)`
   div {
     flex: 1;
   }
+
 `;
 
 SimpleSectionStyle.Content = styled(SectionContentStyle)`
   margin: 0 auto;
+  justify-content: space-between;
+  align-items: stretch;
 `;
 
 export default SimpleSectionStyle;

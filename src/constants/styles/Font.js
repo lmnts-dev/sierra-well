@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { createGlobalStyle } from 'styled-components';
-import { Base } from './Base';
+import { Root } from './../Theme';
 
 // Font.js:
 // This is the sitewide font reference.
@@ -98,5 +98,10 @@ export const Typography = createGlobalStyle`
   }
   h6, .h6 {
     font-size: 1.5rem;
+  }
+
+  /* Block Content Styles */
+  .block {
+    h2 { padding-bottom: calc(var(--Size) / 3); }
   }
 `;

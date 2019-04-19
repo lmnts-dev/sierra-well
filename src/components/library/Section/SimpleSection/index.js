@@ -20,10 +20,14 @@ import SimpleSectionStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const SimpleSection = ({ BgColor, TextColor, children }) => (
-  <SimpleSectionStyle BgColor={BgColor} TextColor={TextColor}>
+const SimpleSection = ({ BgColor, Style, TextColor, children }) => (
+  <SimpleSectionStyle
+    Style={Style}
+    BgColor={BgColor}
+    TextColor={TextColor}
+  >
     <SimpleSectionStyle.Inner>
-      <SimpleSectionStyle.Content>{children}</SimpleSectionStyle.Content>
+      <SimpleSectionStyle.Content className="simple-section">{children}</SimpleSectionStyle.Content>
     </SimpleSectionStyle.Inner>
   </SimpleSectionStyle>
 );
