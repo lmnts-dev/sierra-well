@@ -31,6 +31,36 @@ export const SpecialsData = {
               // Begin Widgets
               {
                 // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: null,
+                    Style: 'SideHeader',
+                    Meta: {
+                      SideHeader: {
+                        Header: 'Specials',
+                        IntroCopy: 'Our philosophy has been patient-first since day one.',
+                        BodyCopy:
+                          'We have ongoing Specials and rewards programs for all customers.',
+                        TextColor: Theme.Color.Nightsky,
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
                 Flex: 2,
                 WidgetContent: [
                   {

@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'; // For Slick Styles
 
 // Constants
 // import { Theme } from 'constants/Theme';
-// import { Base } from 'constants/styles/Base';
+import { Base } from 'constants/styles/Base';
 
 // Components
 import SlideContainer from './../SlideContainer';
@@ -47,6 +47,22 @@ export class SlideGroup extends React.Component {
       arrows: false,
       slidesToShow: 1.15,
       infinite: false,
+      responsive: [
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: .8,
+            slidesToScroll: 1.1,
+          }
+        },
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: .5,
+            slidesToScroll: 1.5,
+          }
+        },
+      ]
     };
 
     // Slides Data
