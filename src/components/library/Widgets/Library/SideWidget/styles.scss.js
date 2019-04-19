@@ -156,6 +156,7 @@ SideWidgetStyle.Body = styled.div``;
 SideWidgetStyle.Subhead = styled.div`
   font-size: ${Root.ViewWidthFontSize};
   line-height: 1.2;
+  padding-right: calc(${Root.Size} / 1.5);
 `;
 
 SideWidgetStyle.Icon = styled.i`

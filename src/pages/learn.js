@@ -17,7 +17,7 @@ import { HorizontalContent } from 'components/core/HorizontalContent';
 import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
 
 // Data
-import { LocationsData } from 'data/locations';
+import { LearnData } from 'data/learn';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -26,8 +26,8 @@ import { LocationsData } from 'data/locations';
 const LargeContent = () => (
   <HorizontalContent>
     <SlideGroup
-      className={LocationsData.SlideGroup.Name}
-      SlidesData={LocationsData.SlideGroup.Slides}
+      className={LearnData.SlideGroup.Name}
+      SlidesData={LearnData.SlideGroup.Slides}
     />
   </HorizontalContent>
 );
@@ -38,10 +38,10 @@ const SmallContent = () => <VerticalContent />;
 // Render Page
 const Locationss = ({ data }) => (
   <Layout
-    BgColor={LocationsData.PageTheme.Color.Background}
-    PrimaryColor={LocationsData.PageTheme.Color.Primary}
-    SecondaryColor={LocationsData.PageTheme.Color.Secondary}
-    TertiaryColor={LocationsData.PageTheme.Color.Tertiary}
+    BgColor={LearnData.PageTheme.Color.Background}
+    PrimaryColor={LearnData.PageTheme.Color.Primary}
+    SecondaryColor={LearnData.PageTheme.Color.Secondary}
+    TertiaryColor={LearnData.PageTheme.Color.Tertiary}
   >
     <Device Query="Desktop">
       <LargeContent />
