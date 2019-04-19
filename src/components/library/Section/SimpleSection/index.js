@@ -12,6 +12,7 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { SectionContent } from './../../Section';
 
 // Styles
 import SimpleSectionStyle from './styles.scss';
@@ -22,7 +23,7 @@ import SimpleSectionStyle from './styles.scss';
 const SimpleSection = ({ BgColor, TextColor, children }) => (
   <SimpleSectionStyle BgColor={BgColor} TextColor={TextColor}>
     <SimpleSectionStyle.Inner>
-      {children}
+      <SimpleSectionStyle.Content>{children}</SimpleSectionStyle.Content>
     </SimpleSectionStyle.Inner>
   </SimpleSectionStyle>
 );

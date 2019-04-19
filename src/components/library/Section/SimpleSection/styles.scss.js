@@ -7,7 +7,10 @@
 import styled from 'styled-components';
 
 // Helpers
-import { SectionInnerStyle } from './../../Section/styles.scss';
+import {
+  SectionInnerStyle,
+  SectionContentStyle,
+} from './../../Section/styles.scss';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -28,10 +31,14 @@ SimpleSectionStyle.Inner = styled(SectionInnerStyle)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
+
   div {
     flex: 1;
   }
+`;
+
+SimpleSectionStyle.Content = styled(SectionContentStyle)`
+  margin: 0 auto;
 `;
 
 export default SimpleSectionStyle;
