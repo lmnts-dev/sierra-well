@@ -17,6 +17,7 @@ import {
 import SimpleHero from 'components/library/Hero/SimpleHero';
 import SimpleSection from 'components/library/Section/SimpleSection';
 import Breadcrumb from './../components/library/Breadcrumb';
+import HeroStrip from './../components/library/HeroStrip';
 
 import ImgQuery from 'components/core/ImgQuery';
 
@@ -78,6 +79,39 @@ const Index = props => (
           />
         </Block>
       </SimpleHero>
+
+      {/* ///////////// */}
+
+      <HeroStrip
+        BgColor={Theme.Color.White}
+        TextColor={Theme.Color.NightSky}
+        Items={[
+          {
+            Caption: 'Seniors',
+            Label: '5% off',
+          },
+          {
+            Caption: 'Senior Veterans',
+            Label: '15% off',
+          },
+          {
+            Caption: 'Veterans',
+            Label: '10% off',
+          },
+          {
+            Caption: 'Industry',
+            Label: '15% off',
+          },
+          {
+            Caption: 'More details',
+            Label: 'View all',
+            Destination: '/specials',
+          },
+        ]}
+      />
+
+      {/* ///////////// */}
+
       {/* Begin page content. */}
       {/* ///////////// */}
       <SubLevelPageContent
