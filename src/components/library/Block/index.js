@@ -20,20 +20,34 @@ const Block = ({
   Style,
   maxWidth,
   Width,
-  Top,
-  Bottom,
+  Padding,
   AlignItems,
+  BgQuery,
+  BgAlt,
+  BgTint,
+  BgColor,
+  TextColor
 }) => (
   <BlockStyle
     className={className ? className + ' block' : 'block'}
     Width={Width}
     maxWidth={maxWidth}
     Style={Style}
-    Top={Top}
-    Bottom={Bottom}
+    Padding={Padding}
     AlignItems={AlignItems ? AlignItems : false}
+    BgTint={BgTint}
+    BgColor={BgColor}
+    TextColor={TextColor}
   >
-    {children}
+    {/* Block Content */}
+    <div class="block-content">{children}</div>
+
+    {/* For Background Images */}
+    {BgQuery ? (
+      <div class="block-img">
+        <ImgQuery query={BgQuery} alt={BgAlt} />
+      </div>
+    ) : null}
   </BlockStyle>
 );
 

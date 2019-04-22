@@ -133,8 +133,48 @@ const Index = props => (
           BgColor={Theme.Color.Snow}
           TextColor={Theme.Color.Nightsky}
           Style="centered"
+          Gutter={[ 0, 0, 0, 1 ]}
         >
-          <Block Style="centered" Top={1} Bottom={1} maxWidth={0.5}>
+          <Block
+            Style="centered"
+            Padding={[1, 1, 1, 1]}
+            BgColor={Theme.Color.Black}
+            BgTint={.2}
+            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgAlt="Our Awesome Alt Tag"
+            Width={0.5}
+            TextColor={Theme.Color.White}
+          >
+            <h2>Discretion is our first priority — so why not make it free?</h2>
+            <p className="p-md">
+              Free delivery available within 15 miles of our Reno and Carson
+              City stores, Nevada addresses only.
+            </p>
+          </Block>
+
+          <Block
+            Style="centered"
+            BgColor={Theme.Color.Snow}
+            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgAlt="Our Awesome Alt Tag"
+            Width={0.5}
+          />
+        </SimpleSection>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
+        <SimpleSection
+          BgColor={Theme.Color.Snow}
+          TextColor={Theme.Color.Nightsky}
+          Style="centered"
+        >
+          <Block
+            Style="centered"
+            Padding={[1, 0, 1, 0]}
+            maxWidth={0.5}
+          >
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson
@@ -155,7 +195,11 @@ const Index = props => (
           TextColor={Theme.Color.White}
           Style="centered"
         >
-          <Block Style="centered" Top={1} Bottom={1} maxWidth={0.5}>
+          <Block
+            Style="centered"
+            Padding={[1, 0, 1, 0]}
+            maxWidth={0.5}
+          >
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson
@@ -191,6 +235,7 @@ const Index = props => (
           BgQuery={props.data.imageTwo.childImageSharp.fluid}
           BgAlt="Our Awesome Alt Tag"
           FluidHeight={true}
+          Gutter={[ 0, 0, 0, 0 ]}
         />
 
         {/* ///////////// */}

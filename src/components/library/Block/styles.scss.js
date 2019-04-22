@@ -14,6 +14,10 @@ import { Theme, Root } from 'constants/Theme';
 export const BlockStyle = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+  flex-shrink: 1;
+  ${props => (props.BgColor ? 'background: ' + props.BgColor + ';' : null)}
+  ${props => (props.TextColor ? 'color: ' + props.TextColor + ';' : null)}
   
   /* Item Alignment. We are aligning items */
   /* 'stretch' by default. */
@@ -40,18 +44,52 @@ export const BlockStyle = styled.div`
       }
     `}
 
+  /* The block content. */
+  .block-content {
+    z-index: 2;
+  }
+
+  /* Background images with Gatsby-Img */
+  .block-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    ${props => (props.BgTint ? 'opacity: ' + props.BgTint + ';' : null)}
+
+    .img {
+      flex: 1;
+    }
+  }
+
   /* Width Multiple */
-    flex: ${props => (props.Width ? props.Width : '1')};
+    ${props =>
+      props.Width ? 'width: ' + props.Width * 100 + '%;' : 'flex: 1;'}
   max-width: ${props =>
     props.maxWidth
       ? 'calc(' + Theme.Base.Grid.SiteWidth + ' * ' + props.maxWidth + ')'
       : Theme.Base.Grid.SiteWidth};
 
-  /* Top/Bottom Padding */
-  padding-top: ${props =>
-    props.Top ? 'calc(' + Root.Size + ' * ' + props.Top + ')' : '0'};
-  padding-bottom: ${props =>
-    props.Bottom ? 'calc(' + Root.Size + ' * ' + props.Bottom + ')' : '0'};
+  /* Array-based Padding utilizing Css Variable Multiples. */
+  ${props =>
+    props.Padding
+      ? 'padding-top: calc(' + Root.Size + ' * ' + props.Padding[0] + ')'
+      : null};
+  ${props =>
+    props.Padding
+      ? 'padding-right: calc(' + Root.Size + ' * ' + props.Padding[1] + ')'
+      : null};
+  ${props =>
+    props.Padding
+      ? 'padding-bottom: calc(' + Root.Size + ' * ' + props.Padding[2] + ')'
+      : null};
+  ${props =>
+    props.Padding
+      ? 'padding-left: calc(' + Root.Size + ' * ' + props.Padding[3] + ')'
+      : null};
 `;
 
 export default BlockStyle;

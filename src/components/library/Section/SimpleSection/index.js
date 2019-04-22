@@ -29,14 +29,16 @@ const SimpleSection = ({
   BgAlt,
   BgTint,
   PaddingY,
-  children,
   FluidHeight,
+  Gutter,
+  children,
 }) => (
   <SimpleSectionStyle Style={Style} BgColor={BgColor} TextColor={TextColor}>
     <SimpleSectionStyle.Inner
       Size={PaddingY}
       BgTint={BgTint}
       FluidHeight={FluidHeight}
+      Gutter={Gutter}
     >
       <SimpleSectionStyle.Content
         FluidHeight={FluidHeight}
@@ -45,7 +47,7 @@ const SimpleSection = ({
         {children}
       </SimpleSectionStyle.Content>
       {BgQuery ? (
-        <div class="section-bg">
+        <div class="section-img">
           <ImgQuery query={BgQuery} alt={BgAlt} />
         </div>
       ) : null}

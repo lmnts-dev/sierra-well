@@ -1,4 +1,4 @@
-// SimpleHero Styles:
+// SimpleSection Styles:
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -26,17 +26,40 @@ const SimpleSectionStyle = styled.div`
 `;
 
 SimpleSectionStyle.Inner = styled(SectionInnerStyle)`
-  padding-top: ${props =>
-    props.Size ? 'calc(' + Root.Size + ' * ' + props.Size + ')' : Root.Size};
-  padding-bottom: ${props =>
-    props.Size ? 'calc(' + Root.Size + ' * ' + props.Size + ')' : Root.Size};
-  padding: ${props => (props.FluidHeight ? '0 !important' : null)};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   position: relative;
 
-  .section-bg {
+  /* Array-based gutters utilizing root variable multiple. */
+  ${props =>
+    props.Gutter
+      ? 'padding-top: calc(' + Root.Size + ' * ' + props.Gutter[0] + ')'
+      : 'padding-top: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-right: calc(' +
+        Root.Grid.Gutter.Right +
+        ' * ' +
+        props.Gutter[1] +
+        ')'
+      : null};
+  ${props =>
+    props.Gutter
+      ? 'padding-bottom: calc(' + Root.Size + ' * ' + props.Gutter[2] + ')'
+      : 'padding-bottom: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-left: calc(' +
+        Root.Grid.Gutter.Left +
+        ' * ' +
+        props.Gutter[3] +
+        ')'
+      : null};
+
+
+  /* Gatsby-image based background images. */
+  .section-img {
     position: ${props => (props.FluidHeight ? 'relative' : 'absolute')};
     width: ${props => (props.FluidHeight ? '100%' : 'auto')};
     left: 0;
@@ -53,6 +76,7 @@ SimpleSectionStyle.Content = styled(SectionContentStyle)`
   justify-content: space-between;
   align-items: stretch;
   z-index: 2;
+  width: 100%;
 
   /* Hide this section for fluid height of image. */
   display: ${props => (props.FluidHeight ? 'none' : 'flex')};
