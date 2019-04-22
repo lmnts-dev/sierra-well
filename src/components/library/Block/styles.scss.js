@@ -59,6 +59,7 @@ export const BlockStyle = styled.div`
   .block-content {
     z-index: 2;
     margin: 0 auto;
+    width: 100%;
 
     p {
       max-width: 80%;
