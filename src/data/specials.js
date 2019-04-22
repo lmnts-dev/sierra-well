@@ -65,7 +65,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Mint,
@@ -90,7 +90,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Black,
@@ -121,7 +121,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.White,
@@ -146,7 +146,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Gunmetal,
@@ -180,7 +180,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Flower,
@@ -205,7 +205,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Gunmetal,
@@ -231,7 +231,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Primary,
@@ -249,7 +249,7 @@ export const SpecialsData = {
                     },
                   },
                 ],
-                // End WidgetContent
+              // End WidgetContent
               },
             ],
           },
@@ -271,7 +271,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.White,
@@ -303,7 +303,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Primary,
@@ -367,7 +367,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Gunmetal,
@@ -400,7 +400,7 @@ export const SpecialsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Black,

@@ -16,10 +16,12 @@ import BreadCrumbStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const BreadCrumb = ({ to, Label, Color }) => (
-  <BreadCrumbStyle Color={Color} to={to}>
-    <Icon className="svg-carat" Name="carat" Color={Color} />
-    <span>{Label}</span>
+const BreadCrumb = ({ to, Label, TextColor }) => (
+  <BreadCrumbStyle to={to}>
+    <BreadCrumbStyle.Label TextColor={TextColor}>
+      <Icon className="svg-carat" Name="carat" TextColor={TextColor} />
+      {Label}
+    </BreadCrumbStyle.Label>
   </BreadCrumbStyle>
 );
 

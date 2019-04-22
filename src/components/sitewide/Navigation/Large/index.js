@@ -45,7 +45,12 @@ const NavigationLarge = ({ Location, Routes }) => (
       </NavigationStyle.Top.LinkListBlock>
 
       <NavigationStyle.Top.CommunicationBlock>
-        <Btn Label="View Menu" Destination="/menu" BgColor="nightsky" />
+        <Btn
+          Label="View Menu"
+          Destination="/menu"
+          BgColor={Theme.Color.Primary}
+          TextColor={Theme.Color.White}
+        />
       </NavigationStyle.Top.CommunicationBlock>
     </NavigationStyle.Top>
 

@@ -21,6 +21,7 @@ const Block = ({
   Width,
   Top,
   Bottom,
+  AlignItems,
 }) => (
   <BlockStyle
     className={className ? className + ' block' : 'block'}
@@ -29,6 +30,7 @@ const Block = ({
     Style={Style}
     Top={Top}
     Bottom={Bottom}
+    AlignItems={AlignItems ? AlignItems : false}
   >
     {children}
   </BlockStyle>

@@ -18,7 +18,6 @@ export const BreadCrumb = styled(Link)`
   width: auto;
   align-items: center;
   transform: translateX(calc(1rem * -1.5));
-  color: ${props => (props.Color ? props.Color : Theme.Color.Black)};
   text-decoration: none;
 
   svg {
@@ -26,16 +25,26 @@ export const BreadCrumb = styled(Link)`
     transform-origin: center center;
     width: 1rem;
     height: 1rem;
-    fill: ${props => (props.Color ? props.Color : Theme.Color.Black)};
-    transition: all .25s ease;
+    fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+    transition: all 0.25s ease;
   }
 
   &:hover {
-    color: ${props => (props.Color ? props.Color : Theme.Color.Black)};
+    color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     text-decoration: none;
     svg {
       transform: rotate(180deg) translateX(50%);
     }
+  }
+`;
+
+BreadCrumb.Label = styled.span`
+  color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  svg {
+    fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
   }
 `;
 

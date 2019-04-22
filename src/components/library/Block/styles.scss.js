@@ -14,6 +14,11 @@ import { Theme, Root } from 'constants/Theme';
 export const BlockStyle = styled.div`
   display: flex;
   flex-direction: column;
+  
+  /* Item Alignment. We are aligning items */
+  /* 'stretch' by default. */
+  ${props =>
+    props.AlignItems ? 'align-items: ' + props.AlignItems + ';' : null}
 
   /* Centered Style */
   ${props =>

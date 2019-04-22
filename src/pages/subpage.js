@@ -7,19 +7,20 @@
 // Core
 import React from 'react';
 import { graphql } from 'gatsby';
+import Layout from 'components/core/Layout';
+import ImgQuery from 'components/core/ImgQuery';
 
 // Components
-import Layout from 'components/core/Layout';
 import {
   SubLevelPageContent,
   SubLevelPage,
 } from 'components/core/SubLevelPage';
 import SimpleHero from 'components/library/Hero/SimpleHero';
 import SimpleSection from 'components/library/Section/SimpleSection';
+import WidgetSection from 'components/library/Section/WidgetSection';
 import Breadcrumb from './../components/library/Breadcrumb';
 import HeroStrip from './../components/library/HeroStrip';
-
-import ImgQuery from 'components/core/ImgQuery';
+import Btn from 'components/library/Btn/';
 
 // Elements
 import Block from './../components/library/Block';
@@ -33,10 +34,10 @@ import { Theme } from 'constants/Theme';
 // Page Theme
 const PageTheme = {
   Color: {
-    Background: Theme.Color.Mint,
+    Background: Theme.Color.Tahoe,
     Primary: Theme.Color.Dank,
-    Secondary: Theme.Color.Nightsky,
-    Tertiary: Theme.Color.White,
+    Secondary: Theme.Color.White,
+    Tertiary: Theme.Color.Black,
   },
 };
 
@@ -61,16 +62,18 @@ const Index = props => (
         imgWidth="50%"
         Size="2"
         Background="none"
-        TextColor={Theme.Color.Nightsky}
+        TextColor={Theme.Color.White}
       >
-        <Block Width={0.5}>
-          <Breadcrumb
-            to="/learn"
-            Label="Learn"
-            Color={PageTheme.Color.Secondary}
-          />
+        <Block AlignItems="flex-start" Width={0.5}>
+          <Breadcrumb to="/learn" Label="Learn" TextColor={Theme.Color.White} />
           <h1>100% Free Delivery</h1>
           <p className="p-md">Any size order, no minimum required.</p>
+          <Btn
+            Label="View Menu"
+            Destination="/menu"
+            BgColor={Theme.Color.Nightsky}
+            TextColor={Theme.Color.White}
+          />
         </Block>
         <Block className="hero-img">
           <ImgQuery
@@ -149,6 +152,114 @@ const Index = props => (
             </p>
           </Block>
         </SimpleSection>
+
+        {/* ///////////// */}
+
+        <WidgetSection
+          BgColor={Theme.Color.White}
+          Widgets={[
+            {
+              // Begin WidgetContent
+              Flex: 1,
+              WidgetContent: [
+                {
+                  Destination: '/menu',
+                  Style: 'Generic',
+                  Meta: {
+                    Generic: {
+                      BgColor: Theme.Color.Nightsky,
+                      BgImage: '',
+                      Subhead: '',
+                      Headline: 'Menu',
+                      TextColor: Theme.Color.White,
+                      IconColor: Theme.Color.Primary,
+                      IconName: 'plus', // FontAwesome Icon Name
+                      TintColor: '',
+                      TintOpacity: '',
+                      IconSize: '',
+                    },
+                  },
+                },
+              ],
+              // End WidgetContent
+            },
+            {
+              // Begin WidgetContent
+              Flex: 1,
+              WidgetContent: [
+                {
+                  Destination: '/locations',
+                  Style: 'Generic',
+                  Meta: {
+                    Generic: {
+                      BgColor: Theme.Color.Tahoe,
+                      BgImage: '',
+                      Subhead: '',
+                      Headline: 'Locations',
+                      TextColor: Theme.Color.White,
+                      IconColor: Theme.Color.White,
+                      IconName: 'map-marker-alt', // FontAwesome Icon Name
+                      TintColor: '',
+                      TintOpacity: '',
+                      IconSize: '',
+                    },
+                  },
+                },
+              ],
+              // End WidgetContent
+            },
+            {
+              // Begin WidgetContent
+              Flex: 1,
+              WidgetContent: [
+                {
+                  Destination: '/learn',
+                  Style: 'Generic',
+                  Meta: {
+                    Generic: {
+                      BgColor: Theme.Color.Mint,
+                      BgImage: '',
+                      Subhead: '',
+                      Headline: 'Q&A',
+                      TextColor: Theme.Color.Nightsky,
+                      IconColor: Theme.Color.Nightsky,
+                      IconName: 'book-open', // FontAwesome Icon Name
+                      TintColor: '',
+                      TintOpacity: '',
+                      IconSize: '',
+                    },
+                  },
+                },
+              ],
+              // End WidgetContent
+            },
+            {
+              // Begin WidgetContent
+              Flex: 1,
+              WidgetContent: [
+                {
+                  Destination: '/specials',
+                  Style: 'Generic',
+                  Meta: {
+                    Generic: {
+                      BgColor: Theme.Color.Primary,
+                      BgImage: '',
+                      Subhead: '',
+                      Headline: 'Specials',
+                      TextColor: Theme.Color.White,
+                      IconColor: Theme.Color.White,
+                      IconName: 'star', // FontAwesome Icon Name
+                      TintColor: '',
+                      TintOpacity: '',
+                      IconSize: '',
+                    },
+                  },
+                },
+              ],
+              // End WidgetContent
+            },
+          ]}
+        />
 
         {/* ///////////// */}
       </SubLevelPageContent>

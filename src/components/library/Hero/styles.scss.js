@@ -19,11 +19,13 @@ export const HeroInnerStyle = styled.div`
   padding-left: calc(${Root.Grid.Gutter.Left} + ${Root.Size});
   padding-right: ${Root.Size};
   padding-top: calc(${Root.Size} * ${props => (props.Size ? props.Size : '2')});
-  padding-bottom: calc(${Root.Size} * ${props => (props.Size ? props.Size : '2')});
+  padding-bottom: calc(
+    ${Root.Size} * ${props => (props.Size ? props.Size : '2')}
+  );
   position: relative;
-  
 
   .hero-img {
+    pointer-events: none;
     ${props =>
       props.imgRight || props.imgLeft || props.imgTop || props.imgBottom
         ? 'position: absolute'
@@ -33,6 +35,10 @@ export const HeroInnerStyle = styled.div`
     ${props => (props.imgBottom ? 'bottom: ' + props.imgBottom : null)};
     ${props => (props.imgTop ? 'top: ' + props.imgTop : null)};
     ${props => (props.imgWidth ? 'width: ' + props.imgWidth : null)};
+  }
+
+  .btn {
+    margin-top: calc(${Root.Size} / 2.5);
   }
 `;
 

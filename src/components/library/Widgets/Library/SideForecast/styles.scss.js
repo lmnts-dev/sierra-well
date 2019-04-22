@@ -150,7 +150,7 @@ SideForecastStyle.Header = styled.h1`
   word-break: none;
   pointer-events: none;
   width: auto;
-  line-height: .8;
+  line-height: 0.8;
 `;
 
 SideForecastStyle.Body = styled.div``;
