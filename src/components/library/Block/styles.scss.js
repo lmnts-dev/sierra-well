@@ -42,11 +42,27 @@ export const BlockStyle = styled.div`
         text-align: center;
         width: 100%;
       }
+
+      .btn {
+        margin: 0 auto;
+      }
+
+      .block-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
     `}
 
   /* The block content. */
   .block-content {
     z-index: 2;
+    margin: 0 auto;
+
+    p {
+      max-width: 80%;
+    }
   }
 
   /* Background images with Gatsby-Img */

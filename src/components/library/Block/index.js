@@ -26,7 +26,7 @@ const Block = ({
   BgAlt,
   BgTint,
   BgColor,
-  TextColor
+  TextColor,
 }) => (
   <BlockStyle
     className={className ? className + ' block' : 'block'}
@@ -40,12 +40,14 @@ const Block = ({
     TextColor={TextColor}
   >
     {/* Block Content */}
-    <div class="block-content">{children}</div>
+    {children ? <div class="block-content">{children}</div> : null}
 
     {/* For Background Images */}
     {BgQuery ? (
-      <div class="block-img">
-        <ImgQuery query={BgQuery} alt={BgAlt} />
+      <div class="block-img-wrap">
+        <div class="block-img">
+          <ImgQuery query={BgQuery} alt={BgAlt} />
+        </div>
       </div>
     ) : null}
   </BlockStyle>

@@ -22,6 +22,7 @@ import HeroStrip from './../components/library/HeroStrip';
 //// Section Components
 import SimpleSection from 'components/library/Section/SimpleSection';
 import WidgetSection from 'components/library/Section/WidgetSection';
+import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
 import Breadcrumb from './../components/library/Breadcrumb';
@@ -129,21 +130,75 @@ const Index = props => (
       >
         {/* ///////////// */}
 
-        <SimpleSection
-          BgColor={Theme.Color.Snow}
-          TextColor={Theme.Color.Nightsky}
-          Style="centered"
-          Gutter={[ 0, 0, 0, 1 ]}
-        >
+        <SplitSection Flex="row-reverse">
+          <Block
+            Padding={[1, 1, 1, 1]}
+            Width={0.5}
+            BgColor={Theme.Color.White}
+            TextColor={Theme.Color.Nightsky}
+          >
+            <h2>Discretion is our first priority — so why not make it free?</h2>
+            <p className="p-md">
+              Free delivery available within 15 miles of our Reno and Carson
+              City stores, Nevada addresses only.
+            </p>
+            <Btn
+              Label="View Menu"
+              Destination="/menu"
+              BgColor={Theme.Color.Primary}
+              TextColor={Theme.Color.White}
+            />
+          </Block>
+
           <Block
             Style="centered"
-            Padding={[1, 1, 1, 1]}
-            BgColor={Theme.Color.Black}
-            BgTint={.2}
+            BgColor={Theme.Color.White}
             BgQuery={props.data.imageTwo.childImageSharp.fluid}
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
-            TextColor={Theme.Color.White}
+          />
+        </SplitSection>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
+        <SplitSection>
+          <Block
+            Padding={[1, 1, 1, 0]}
+            Width={0.5}
+            BgColor={Theme.Color.White}
+            TextColor={Theme.Color.Nightsky}
+          >
+            <h2>Discretion is our first priority — so why not make it free?</h2>
+            <p className="p-md">
+              Free delivery available within 15 miles of our Reno and Carson
+              City stores, Nevada addresses only.
+            </p>
+          </Block>
+
+          <Block
+            Style="centered"
+            BgColor={Theme.Color.White}
+            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgAlt="Our Awesome Alt Tag"
+            Width={0.5}
+          />
+        </SplitSection>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
+        <SimpleSection
+          BgColor={Theme.Color.Snow}
+          TextColor={Theme.Color.Nightsky}
+          Gutter={[1, 0, 1, 1]}
+        >
+          <Block
+            Padding={[1, 1, 1, 0]}
+            Width={0.5}
+            TextColor={Theme.Color.Nightsky}
           >
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
@@ -168,13 +223,45 @@ const Index = props => (
         <SimpleSection
           BgColor={Theme.Color.Snow}
           TextColor={Theme.Color.Nightsky}
-          Style="centered"
+          Gutter={[1, 0, 1, 1]}
         >
           <Block
             Style="centered"
-            Padding={[1, 0, 1, 0]}
-            maxWidth={0.5}
+            BgColor={Theme.Color.Snow}
+            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgAlt="Our Awesome Alt Tag"
+            Width={0.5}
+          />
+
+          <Block
+            Padding={[1, 1, 1, 1]}
+            Width={0.5}
+            TextColor={Theme.Color.Nightsky}
           >
+            <h2>Discretion is our first priority — so why not make it free?</h2>
+            <p className="p-md">
+              Free delivery available within 15 miles of our Reno and Carson
+              City stores, Nevada addresses only.
+            </p>
+            <Btn
+              Label="View Menu"
+              Destination="/menu"
+              BgColor={Theme.Color.Primary}
+              TextColor={Theme.Color.White}
+            />
+          </Block>
+        </SimpleSection>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
+        <SimpleSection
+          BgColor={Theme.Color.White}
+          TextColor={Theme.Color.Nightsky}
+          Style="centered"
+        >
+          <Block Style="centered" Padding={[1, 0, 1, 0]} maxWidth={0.5}>
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson
@@ -195,16 +282,18 @@ const Index = props => (
           TextColor={Theme.Color.White}
           Style="centered"
         >
-          <Block
-            Style="centered"
-            Padding={[1, 0, 1, 0]}
-            maxWidth={0.5}
-          >
+          <Block Style="centered" Padding={[1, 0, 1, 0]} maxWidth={0.5}>
             <h2>Discretion is our first priority — so why not make it free?</h2>
             <p className="p-md">
               Free delivery available within 15 miles of our Reno and Carson
               City stores, Nevada addresses only.
             </p>
+            <Btn
+              Label="View Menu"
+              Destination="/menu"
+              BgColor={Theme.Color.Primary}
+              TextColor={Theme.Color.White}
+            />
           </Block>
         </SimpleSection>
 
@@ -225,18 +314,6 @@ const Index = props => (
             </p>
           </Block>
         </SimpleSection>
-
-        {/* ///////////// */}
-
-        {/* ///////////// */}
-
-        <SimpleSection
-          BgColor={Theme.Color.Snow}
-          BgQuery={props.data.imageTwo.childImageSharp.fluid}
-          BgAlt="Our Awesome Alt Tag"
-          FluidHeight={true}
-          Gutter={[ 0, 0, 0, 0 ]}
-        />
 
         {/* ///////////// */}
 
@@ -349,6 +426,19 @@ const Index = props => (
         />
 
         {/* ///////////// */}
+
+        {/* ///////////// */}
+
+        <SimpleSection
+          BgColor={Theme.Color.Snow}
+          BgQuery={props.data.imageTwo.childImageSharp.fluid}
+          BgAlt="Our Awesome Alt Tag"
+          FluidHeight={true}
+          Gutter={[0, 0, 0, 0]}
+        />
+
+        {/* ///////////// */}
+
       </SubLevelPageContent>
       {/* End page content. */}
       {/* ///////////// */}

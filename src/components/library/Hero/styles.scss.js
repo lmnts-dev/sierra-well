@@ -36,10 +36,6 @@ export const HeroInnerStyle = styled.div`
     ${props => (props.imgTop ? 'top: ' + props.imgTop : null)};
     ${props => (props.imgWidth ? 'width: ' + props.imgWidth : null)};
   }
-
-  .btn {
-    margin-top: calc(${Root.Size} / 2.5);
-  }
 `;
 
 export const HeroContentStyle = styled.div`

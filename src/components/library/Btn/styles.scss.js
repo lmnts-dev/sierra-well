@@ -34,14 +34,14 @@ const BtnStyle = styled(Link)`
   outline: 0;
   text-transform: capitalize;
   ${props =>
-    props.BgColor ? 'box-shadow: 0px 0px 0px 6px rgba(0,0,0, 0.00)' : null};
+    props.BgColor ? 'box-shadow: 0px 0px 0px 6px rgba(93,99,118, 0.00)' : null};
 
   &:hover {
     text-decoration: none;
     background-color: ${props =>
       props.BgColor ? props.BgColor : 'rgba(0,0,0,.05)'};
     ${props =>
-      props.BgColor ? 'box-shadow: 0px 0px 0px 6px rgba(0,0,0, 0.07)' : null};
+      props.BgColor ? 'box-shadow: 0px 0px 0px 6px rgba(93,99,118, 0.2)' : null};
   }
 
   .ico {
