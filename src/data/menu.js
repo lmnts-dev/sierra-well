@@ -63,9 +63,9 @@ export const MenuData = {
           Region: [],
           PageTheme: {
             Color: {
-              Background: Theme.Color.Nightsky,
+              Background: Theme.Color.Tahoe,
               Primary: Theme.Color.Nightsky,
-              Secondary: Theme.Color.White,
+              Secondary: Theme.Color.Dank,
               Tertiary: Theme.Color.Nightsky,
             },
           },
