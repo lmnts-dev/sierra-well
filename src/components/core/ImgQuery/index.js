@@ -22,6 +22,7 @@ const ImgQuery = ({
     objectPosition={objectPosition ? objectPosition : '50% 50%'}
     alt={alt}
     className={imgClass ? imgClass : 'img'}
+    fadeIn={true}
   />
 );
 

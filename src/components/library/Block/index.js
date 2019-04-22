@@ -1,11 +1,12 @@
 // <Block> Component:
-// This is the sitewide column style of the website.
+// This is the sitewide block style of the website.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
 
 // Core
 import React from 'react';
+import ImgQuery from 'components/core/ImgQuery';
 
 // Styles
 import BlockStyle from './styles.scss';

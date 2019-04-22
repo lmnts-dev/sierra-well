@@ -8,19 +8,25 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/core/Layout';
-import ImgQuery from 'components/core/ImgQuery';
 
 // Components
 import {
   SubLevelPageContent,
   SubLevelPage,
 } from 'components/core/SubLevelPage';
+
+// Hero Components
 import SimpleHero from 'components/library/Hero/SimpleHero';
+import HeroStrip from './../components/library/HeroStrip';
+
+//// Section Components
 import SimpleSection from 'components/library/Section/SimpleSection';
 import WidgetSection from 'components/library/Section/WidgetSection';
+
+//// Misc. Components
 import Breadcrumb from './../components/library/Breadcrumb';
-import HeroStrip from './../components/library/HeroStrip';
 import Btn from 'components/library/Btn/';
+import ImgQuery from 'components/core/ImgQuery';
 
 // Elements
 import Block from './../components/library/Block';
@@ -139,6 +145,29 @@ const Index = props => (
 
         {/* ///////////// */}
 
+        {/* ///////////// */}
+
+        <SimpleSection
+          BgColor={Theme.Color.Black}
+          BgQuery={props.data.imageTwo.childImageSharp.fluid}
+          BgTint={0.3}
+          BgAlt="Our Awesome Alt Tag"
+          TextColor={Theme.Color.White}
+          Style="centered"
+        >
+          <Block Style="centered" Top={1} Bottom={1} maxWidth={0.5}>
+            <h2>Discretion is our first priority — so why not make it free?</h2>
+            <p className="p-md">
+              Free delivery available within 15 miles of our Reno and Carson
+              City stores, Nevada addresses only.
+            </p>
+          </Block>
+        </SimpleSection>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
         <SimpleSection
           BgColor={Theme.Color.Black}
           TextColor={Theme.Color.White}
@@ -152,6 +181,19 @@ const Index = props => (
             </p>
           </Block>
         </SimpleSection>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
+        <SimpleSection
+          BgColor={Theme.Color.Snow}
+          BgQuery={props.data.imageTwo.childImageSharp.fluid}
+          BgAlt="Our Awesome Alt Tag"
+          FluidHeight={true}
+        />
+
+        {/* ///////////// */}
 
         {/* ///////////// */}
 
@@ -278,6 +320,14 @@ export const query = graphql`
     imageOne: file(relativePath: { eq: "hero-phone.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    imageTwo: file(relativePath: { eq: "placeholder_bg_4.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid
         }
       }
