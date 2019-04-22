@@ -26,23 +26,50 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Our list of locations
-const LocationList = ({}) => (
-  <>
-    <Link activeClassName="active" to="/menu">
-      Reno
-    </Link>
+// Our list of locations in relation to the State.
+class LocationList extends React.Component {
+  constructor(props) {
+    // Make our props accessible through this.props
+    super(props);
+  }
 
-    <Link activeClassName="active" to="/menu/carson">
-      Carson City
-    </Link>
-  </>
-);
+  // Render
+  render() {
+    const Cities = this.props.State.City;
+    const State = this.props.State;
+
+    return (
+      <>
+        {Cities.map((City, index) => (
+          <Link
+            activeClassName="active"
+            to={'/menu/' + State.Slug + '/' + City.Slug}
+            key={index}
+          >
+            {City.Name}
+          </Link>
+        ))}
+      </>
+    );
+  }
+}
+
+// // Our list of locations in relation to the State.
+// const LocationList = ({ State }) => (
+//   <>
+//     <Link activeClassName="active" to="/">
+//       Hello
+//     </Link>
+//     <Link activeClassName="active" to="/">
+//       Hey {console.log(State)}
+//     </Link>
+//   </>
+// );
 
 // Sidebar location switching
-const SidebarLocation = ({ collapsedState }) => (
+const SidebarLocation = ({ collapsedState, State }) => (
   <SidebarLocationStyle collapsedState={collapsedState}>
-    <LocationList />
+    <LocationList State={State} />
   </SidebarLocationStyle>
 );
 
@@ -125,9 +152,12 @@ class MenuHero extends React.Component {
 
   // Render element.
   render() {
+    const City = this.props.City;
+    const State = this.props.State;
+
     return (
       <MenuHeroStyle>
-        <SidebarLocation collapsedState={this.state.collapsed} />
+        <SidebarLocation State={State} collapsedState={this.state.collapsed} />
         <HeroInnerTransition
           height={this.state.height}
           paddingTop={this.state.paddingTop}
@@ -138,9 +168,11 @@ class MenuHero extends React.Component {
           <MenuHeroStyle.LocationSwitch>
             <span>Show me</span>
 
-            <LocationList />
+            <LocationList State={State} />
           </MenuHeroStyle.LocationSwitch>
-          <h1>Order Cannabis Online near Reno, Nevada.</h1>
+          <h1>
+            Order Cannabis Online near {City.Name}, {City.State}.
+          </h1>
         </HeroInnerTransition>
         <MenuHeroStyle.Tools>
           <MenuHeroStyle.ToolsInner>

@@ -17,22 +17,22 @@ import {
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-export const OrderMenuDesktop = ({}) => (
+export const OrderMenuDesktop = ({ City }) => (
   <MenuContainerDesktopStyle>
     <MenuContainerDesktopStyle.Inner GutterCancel="right">
       <MenuContainerDesktopStyle.Wrap>
         <iframe
           className="dutchie-iframe-desktop"
           frameBorder="0"
-          title="menu"
-          src="https://www.dutchie.com/embedded-menu/sierra-well-reno/menu?"
+          title={'menu-' + City.Slug}
+          src={City.Menu.iFrame}
         />
       </MenuContainerDesktopStyle.Wrap>
     </MenuContainerDesktopStyle.Inner>
   </MenuContainerDesktopStyle>
 );
 
-export const OrderMenuMobile = ({}) => (
+export const OrderMenuMobile = ({ City }) => (
   <MenuContainerMobileStyle>
     <MenuContainerMobileStyle.Inner>
       <iframe

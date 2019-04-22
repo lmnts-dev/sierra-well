@@ -57,7 +57,6 @@ SimpleSectionStyle.Inner = styled(SectionInnerStyle)`
         ')'
       : null};
 
-
   /* Gatsby-image based background images. */
   .section-img {
     position: ${props => (props.FluidHeight ? 'relative' : 'absolute')};

@@ -10,10 +10,7 @@ import { graphql } from 'gatsby';
 import Layout from 'components/core/Layout';
 
 // Components
-import {
-  SubLevelPageContent,
-  SubLevelPage,
-} from 'components/core/SubLevelPage';
+import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
 
 // Hero Components
 import SimpleHero from 'components/library/Hero/SimpleHero';
@@ -41,7 +38,7 @@ import { Theme } from 'constants/Theme';
 // Page Theme
 const PageTheme = {
   Color: {
-    Background: Theme.Color.Tahoe,
+    Background: Theme.Color.PurpleHaze,
     Primary: Theme.Color.Dank,
     Secondary: Theme.Color.White,
     Tertiary: Theme.Color.Black,
@@ -78,7 +75,7 @@ const Index = props => (
           <Btn
             Label="View Menu"
             Destination="/menu"
-            BgColor={Theme.Color.Nightsky}
+            BgColor={Theme.Color.Primary}
             TextColor={Theme.Color.White}
           />
         </Block>
@@ -438,7 +435,6 @@ const Index = props => (
         />
 
         {/* ///////////// */}
-
       </SubLevelPageContent>
       {/* End page content. */}
       {/* ///////////// */}

@@ -22,6 +22,9 @@ import { OrderMenuMobile } from './../../../library/OrderMenu';
 import { Theme } from 'constants/Theme';
 import logo from '../../../../assets/images/brandmark.png';
 
+// Data
+import { MenuData } from 'data/menu';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 

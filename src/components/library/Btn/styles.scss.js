@@ -41,7 +41,9 @@ const BtnStyle = styled(Link)`
     background-color: ${props =>
       props.BgColor ? props.BgColor : 'rgba(0,0,0,.05)'};
     ${props =>
-      props.BgColor ? 'box-shadow: 0px 0px 0px 6px rgba(93,99,118, 0.2)' : null};
+      props.BgColor
+        ? 'box-shadow: 0px 0px 0px 6px rgba(93,99,118, 0.2)'
+        : null};
   }
 
   .ico {

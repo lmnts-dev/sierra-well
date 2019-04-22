@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 // Extended Styles
-import { SubLevelInnerStyle } from './../../core/SubLevelPage/Helpers/styles.scss';
+import { SubLevelInnerStyle } from './../../../templates/SubLevelPage/Helpers/styles.scss';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';

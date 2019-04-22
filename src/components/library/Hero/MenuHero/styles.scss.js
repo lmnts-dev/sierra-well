@@ -22,6 +22,10 @@ export const MenuHeroStyle = styled.div`
 
 MenuHeroStyle.LocationSwitch = styled.div`
   font-size: 2rem;
+  span {
+    opacity: .3;
+  }
+
   span,
   a {
     margin-right: calc(${Root.Size} / 2);

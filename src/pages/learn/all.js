@@ -9,10 +9,7 @@ import React from 'react';
 
 // Components
 import Layout from 'components/core/Layout';
-import {
-  SubLevelPageContent,
-  SubLevelPage,
-} from 'components/core/SubLevelPage';
+import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
 import SimpleHero from 'components/library/Hero/SimpleHero';
 import SimpleSection from 'components/library/Section/SimpleSection';
 

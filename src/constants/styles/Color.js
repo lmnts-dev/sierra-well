@@ -32,6 +32,7 @@ export const Color = {
   Dank: '#F8E71C',
   Flower: '#E17E00',
   Indigo: '#351868',
+  PurpleHaze: '#0D1632',
 
   // Feedback Palette
   Warning: '#FC6376',
