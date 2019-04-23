@@ -63,9 +63,28 @@ export const MenuData = {
           Region: [],
           PageTheme: {
             Color: {
-              Background: Theme.Color.Tahoe,
+              Background: Theme.Color.PurpleHaze,
               Primary: Theme.Color.Nightsky,
-              Secondary: Theme.Color.Dank,
+              Secondary: Theme.Color.White,
+              Tertiary: Theme.Color.Nightsky,
+            },
+          },
+        },
+        {
+          Name: 'Elko',
+          Slug: 'elko',
+          State: 'Nevada',
+          Menu: {
+            iFrame:
+              'https://www.dutchie.com/embedded-menu/sierra-well-carson-city/menu?',
+          },
+          Location: [],
+          Region: [],
+          PageTheme: {
+            Color: {
+              Background: Theme.Color.PurpleHaze,
+              Primary: Theme.Color.Nightsky,
+              Secondary: Theme.Color.White,
               Tertiary: Theme.Color.Nightsky,
             },
           },

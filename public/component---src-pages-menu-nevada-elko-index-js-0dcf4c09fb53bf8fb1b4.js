@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[17],{194:function(t,a,e){"use strict";e.r(a);var n=e(0),i=e.n(n),c=e(222),o=e(107);a.default=function(t){t.data;return i.a.createElement(c.a,{State:o.a.State[0],City:o.a.State[0].City[3]})}}}]);
+//# sourceMappingURL=component---src-pages-menu-nevada-elko-index-js-0dcf4c09fb53bf8fb1b4.js.map

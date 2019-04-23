@@ -36,6 +36,11 @@ module.exports = {
       },
     },
 
+    // For v1 Site Launch to transform .json data into
+    // GraphQL nodes so we can run createPages() in
+    // gatsby-node.js
+    `gatsby-transformer-json`,
+
     // For Slick Slider
     `gatsby-plugin-sass`,
 
