@@ -21,7 +21,7 @@ import WidgetSectionStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const WidgetSection = ({ BgColor, Widgets }) => (
+const WidgetSection = ({ BgColor, Widgets, Slider }) => (
   <WidgetSectionStyle BgColor={BgColor}>
     <WidgetSectionStyle.Inner>
       <WidgetSectionStyle.Content className="widget-section">
@@ -32,7 +32,7 @@ const WidgetSection = ({ BgColor, Widgets }) => (
             <WidgetContainer
               key={index}
               WidgetContent={Widget.WidgetContent}
-              Flex={Widget.Flex}
+              Flex={Widget.Flex ? Widget.Flex : null}
             />
           );
         })}

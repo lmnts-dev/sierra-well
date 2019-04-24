@@ -1,5 +1,5 @@
-// Widgets/Container.js
-// This is the holder / wrapper around Widget Content.
+// SectionWidget.js
+// For individual sliding Widgets used in SlideSection.
 
 // Core
 import React from 'react';

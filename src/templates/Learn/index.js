@@ -13,6 +13,7 @@ import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
 import SimpleHero from 'components/library/Hero/SimpleHero';
 import WidgetSection from 'components/library/Section/WidgetSection';
 import SimpleSection from 'components/library/Section/SimpleSection';
+import SlideSection from 'components/library/Section/SlideSection';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
@@ -36,6 +37,209 @@ const PageTheme = {
     Tertiary: Theme.Color.Black,
   },
 };
+
+const Widgets = [
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Out of State',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Growing',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Purchase',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Nevada',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Out of State',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Growing',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Purchase',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+  {
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Nevada',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
+  },
+];
 
 const LearnTemplate = ({ data }) => (
   <Layout
@@ -66,110 +270,20 @@ const LearnTemplate = ({ data }) => (
       >
         {/* ///////////// */}
 
-        <WidgetSection
-          BgColor={Theme.Color.Snow}
-          Widgets={[
-            {
-              // Begin WidgetContent
-              Flex: 1,
-              WidgetContent: [
-                {
-                  Destination: '/learn/medical/',
-                  Style: 'Generic',
-                  Meta: {
-                    Generic: {
-                      BgColor: Theme.Color.Tahoe,
-                      BgImage: '',
-                      Subhead: '',
-                      Headline: 'Medical Cards',
-                      TextColor: Theme.Color.White,
-                      IconColor: Theme.Color.White,
-                      IconName: 'plus', // FontAwesome Icon Name
-                      TintColor: '',
-                      TintOpacity: '',
-                      IconSize: '',
-                    },
-                  },
-                },
-              ],
-              // End WidgetContent
-            },
-            {
-              // Begin WidgetContent
-              Flex: 1,
-              WidgetContent: [
-                {
-                  Destination: '/learn/medical/',
-                  Style: 'Generic',
-                  Meta: {
-                    Generic: {
-                      BgColor: Theme.Color.Tahoe,
-                      BgImage: '',
-                      Subhead: '',
-                      Headline: 'Purchasing',
-                      TextColor: Theme.Color.White,
-                      IconColor: Theme.Color.White,
-                      IconName: 'plus', // FontAwesome Icon Name
-                      TintColor: '',
-                      TintOpacity: '',
-                      IconSize: '',
-                    },
-                  },
-                },
-              ],
-              // End WidgetContent
-            },
-            {
-              // Begin WidgetContent
-              Flex: 1,
-              WidgetContent: [
-                {
-                  Destination: '/learn/medical/',
-                  Style: 'Generic',
-                  Meta: {
-                    Generic: {
-                      BgColor: Theme.Color.Tahoe,
-                      BgImage: '',
-                      Subhead: '',
-                      Headline: 'Growing',
-                      TextColor: Theme.Color.White,
-                      IconColor: Theme.Color.White,
-                      IconName: 'plus', // FontAwesome Icon Name
-                      TintColor: '',
-                      TintOpacity: '',
-                      IconSize: '',
-                    },
-                  },
-                },
-              ],
-              // End WidgetContent
-            },
-            {
-              // Begin WidgetContent
-              Flex: 1,
-              WidgetContent: [
-                {
-                  Destination: '/learn/medical/',
-                  Style: 'Generic',
-                  Meta: {
-                    Generic: {
-                      BgColor: Theme.Color.Tahoe,
-                      BgImage: '',
-                      Subhead: '',
-                      Headline: 'Caregivers',
-                      TextColor: Theme.Color.White,
-                      IconColor: Theme.Color.White,
-                      IconName: 'plus', // FontAwesome Icon Name
-                      TintColor: '',
-                      TintOpacity: '',
-                      IconSize: '',
-                    },
-                  },
-                },
-              ],
-              // End WidgetContent
-            },
-          ]}
+        <SlideSection
+          Widgets={Widgets}
+          SectionSize={3}
+          Header="Headline"
+          Theme={{
+            TextColor: Theme.Color.Black,
+            BgColor: 'none',
+          }}
+          SliderSettings={{
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            autoplay: false,
+            arrows: true,
+          }}
         />
 
         {/* ///////////// */}
@@ -344,7 +458,7 @@ const LearnTemplate = ({ data }) => (
               Flex: 1,
               WidgetContent: [
                 {
-                  Destination: '//learn/safety/',
+                  Destination: '/learn/safety/',
                   Style: 'Generic',
                   Meta: {
                     Generic: {

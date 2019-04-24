@@ -14,10 +14,6 @@ import { Theme, Root } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 const SectionWidgetContainerStyle = styled.div`
-  padding-top: ${Theme.Base.Size.Sm};
-  padding-bottom: ${Theme.Base.Size.Sm};
-  padding-left: ${Root.Grid.Gutter.Left};
-  padding-right: ${Root.Grid.Gutter.Right};
   width: 100%;
   flex: 1;
   display: flex;

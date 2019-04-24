@@ -13,9 +13,14 @@ import LearnTemplate from 'templates/Learn';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const LearnPage = ({ data }) => <LearnTemplate />;
+const LearnPageIndustry = ({ data }) => (
+  <LearnTemplate
+    Headline="What would you like to know about the Cannabis Industry?"
+    Icon="user"
+  />
+);
 
-export default LearnPage;
+export default LearnPageIndustry;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

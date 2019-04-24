@@ -13,7 +13,12 @@ import LearnTemplate from 'templates/Learn';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const LearnPage = ({ data }) => <LearnTemplate />;
+const LearnPage = ({ data }) => (
+  <LearnTemplate
+    Headline="You've got questions. We have answers."
+    Icon="question"
+  />
+);
 
 export default LearnPage;
 

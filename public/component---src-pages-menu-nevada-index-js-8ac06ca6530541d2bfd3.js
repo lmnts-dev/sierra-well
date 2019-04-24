@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{199:function(t,a,e){"use strict";e.r(a);var n=e(0),i=e.n(n),c=e(238),o=e(109);a.default=function(t){t.data;return i.a.createElement(c.a,{State:o.a.State[0],City:o.a.State[0].City[0]})}}}]);
-//# sourceMappingURL=component---src-pages-menu-nevada-index-js-8ac06ca6530541d2bfd3.js.map

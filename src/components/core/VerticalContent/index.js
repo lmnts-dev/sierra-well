@@ -1,11 +1,3 @@
-// ScrollWrapper.js:
-// This is prevent page jumping of page transitions.
-// The concept is to replicate a 'body' tag so it's scroll
-// position isn't reset for a simple and smooth page
-// transition without jumping to the top of the page.
-
-// It's used in the wrapPageElement component.
-
 // Core
 import React from 'react';
 import Slider from 'react-slick'; // For Slick Slider
@@ -17,7 +9,7 @@ import { Theme } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
 
 // Components
-import SlideSection from 'components/library/SlideSection';
+import SlideSection from 'components/library/Section/SlideSection';
 
 // Styles
 import { createGlobalStyle } from 'styled-components';
@@ -31,43 +23,79 @@ import BgPlaceholder from '../../../assets/images/placeholder_bg.jpg';
 
 const Widgets = [
   {
-    BgColor: Theme.Color.White,
-    BgImage: BgPlaceholder,
-    Subhead: 'Subhead',
-    Headline: 'Headline',
-    TextColor: Theme.Color.White,
-    IconColor: Theme.Color.White,
-    IconName: 'rocket', // FontAwesome Icon Name
-    Destination: '/subpage',
-    TintColor: '#000000',
-    TintOpacity: '.4',
-    WidgetStyle: 'default',
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Out of State',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
   },
   {
-    BgColor: Theme.Color.Dank,
-    BgImage: 'none',
-    Subhead: 'Subhead',
-    Headline: 'Headline',
-    TextColor: Theme.Color.Black,
-    IconColor: Theme.Color.Black,
-    IconName: 'rocket',
-    Destination: '/subpage',
-    TintColor: '',
-    TintOpacity: '',
-    WidgetStyle: 'default',
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Growing',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
   },
   {
-    BgColor: Theme.Color.Tahoe,
-    BgImage: 'none',
-    Subhead: 'Subhead',
-    Headline: 'Headline',
-    TextColor: Theme.Color.White,
-    IconColor: Theme.Color.White,
-    IconName: 'rocket',
-    Destination: '/subpage',
-    TintColor: '',
-    TintOpacity: '',
-    WidgetStyle: 'default',
+    // Begin WidgetContent
+    Flex: 1,
+    WidgetContent: [
+      {
+        Destination: '/learn/recreational/',
+        Style: 'Generic',
+        Meta: {
+          Generic: {
+            BgColor: Theme.Color.Mint,
+            BgImage: '',
+            Subhead: '',
+            Headline: 'Purchase',
+            TextColor: Theme.Color.Black,
+            IconColor: Theme.Color.Black,
+            IconName: 'leaf', // FontAwesome Icon Name
+            TintColor: '',
+            TintOpacity: '',
+            IconSize: '',
+          },
+        },
+      },
+    ],
+    // End WidgetContent
   },
 ];
 
@@ -90,9 +118,66 @@ const VerticalContent = ({ children }) => (
     <WrapperRelease />
     <VerticalContentStyle>
       <VerticalContentStyle.Inner>
-        <SlideSection Widgets={Widgets} SectionSize="Large" />
-        <SlideSection Widgets={Widgets} SectionSize="Medium" />
-        <SlideSection Widgets={Widgets} SectionSize="Small" />
+        <SlideSection
+          Widgets={Widgets}
+          SectionSize={7}
+          Header="Headline"
+          Theme={{
+            TextColor: Theme.Color.Black,
+            BgColor: 'none',
+          }}
+          SliderSettings={{
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+          }}
+        />
+        <SlideSection
+          Widgets={Widgets}
+          SectionSize={7}
+          Header="Headline"
+          Theme={{
+            TextColor: Theme.Color.Black,
+            BgColor: 'none',
+          }}
+          SliderSettings={{
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+          }}
+        />
+        <SlideSection
+          Widgets={Widgets}
+          SectionSize={7}
+          Header="Headline"
+          Theme={{
+            TextColor: Theme.Color.Black,
+            BgColor: 'none',
+          }}
+          SliderSettings={{
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+          }}
+        />
+        <SlideSection
+          Widgets={Widgets}
+          SectionSize={7}
+          Header="Headline"
+          Theme={{
+            TextColor: Theme.Color.Black,
+            BgColor: 'none',
+          }}
+          SliderSettings={{
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+          }}
+        />
       </VerticalContentStyle.Inner>
     </VerticalContentStyle>
   </>
