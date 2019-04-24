@@ -65,7 +65,7 @@ const SlideSectionStyle = styled.div`
       &.slick-disabled {
         opacity: 0.4;
         .ico {
-          opacity: .5;
+          opacity: 0.5;
         }
         &:hover {
           background: rgba(0, 0, 0, 0);
@@ -133,7 +133,7 @@ const SlideSectionStyle = styled.div`
 SlideSectionStyle.Inner = styled(SectionInnerStyle)`
   width: 100%;
   padding-top: ${Root.Size};
-  padding-bottom: ${Root.Size};
+  padding-bottom: 0;
 `;
 
 SlideSectionStyle.Content = styled(SectionContentStyle)`

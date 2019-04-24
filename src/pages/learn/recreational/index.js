@@ -10,17 +10,17 @@ import React from 'react';
 // Templates
 import LearnTemplate from 'templates/Learn';
 
+// Data
+import { QuestionsData } from 'data/questions';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const LearnPageRecreational = ({ data }) => (
-  <LearnTemplate
-    Headline="What would you like to know about Recreational Cannabis?"
-    Icon="cannabis"
-  />
+const LearnPage = ({ data }) => (
+  <LearnTemplate Filter="all" Data={QuestionsData} />
 );
 
-export default LearnPageRecreational;
+export default LearnPage;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

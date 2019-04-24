@@ -10,14 +10,14 @@ import React from 'react';
 // Templates
 import LearnTemplate from 'templates/Learn';
 
+// Data
+import { QuestionsData } from 'data/questions';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
 const LearnPage = ({ data }) => (
-  <LearnTemplate
-    Headline="You've got questions. We have answers."
-    Icon="question"
-  />
+  <LearnTemplate Filter="all" Data={QuestionsData} />
 );
 
 export default LearnPage;
