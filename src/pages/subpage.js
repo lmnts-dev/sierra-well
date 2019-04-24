@@ -69,7 +69,7 @@ const Index = props => (
         TextColor={Theme.Color.White}
       >
         <Block AlignItems="flex-start" Width={0.5}>
-          <Breadcrumb to="/learn" Label="Learn" TextColor={Theme.Color.White} />
+          <Breadcrumb to="/specials" Label="Specials" TextColor={Theme.Color.White} />
           <h1>100% Free Delivery</h1>
           <p className="p-md">Any size order, no minimum required.</p>
           <Btn
