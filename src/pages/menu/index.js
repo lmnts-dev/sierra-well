@@ -7,7 +7,7 @@
 // Core
 import React from 'react';
 
-// Constants
+// Templates
 import MenuTemplate from 'templates/Menu';
 
 // Data

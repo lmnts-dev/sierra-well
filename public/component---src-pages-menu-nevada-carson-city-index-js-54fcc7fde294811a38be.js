@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{193:function(t,a,e){"use strict";e.r(a);var n=e(0),i=e.n(n),c=e(222),o=e(107);a.default=function(t){t.data;return i.a.createElement(c.a,{State:o.a.State[0],City:o.a.State[0].City[1]})}}}]);
-//# sourceMappingURL=component---src-pages-menu-nevada-carson-city-index-js-54fcc7fde294811a38be.js.map
