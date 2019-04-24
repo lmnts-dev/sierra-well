@@ -1,0 +1,37 @@
+[
+  {
+    "id": "learn",
+    "categories": [
+      {
+        "id": "medical"
+      },
+      {
+        "id": "recreational"
+      },
+      {
+        "id": "safety"
+      },
+      {
+        "id": "industry"
+      }
+    ],
+    "tags": {
+      "bongsmoking": { 
+        "slug": "bongsmoking",
+        "icon": "bong"
+      }
+    },
+    "questions": [
+      {
+        "question": "What is love?",
+        "answer": "It's a mystery",
+        "category": "medical",
+        "slug": "",
+        "tags": [
+          "medical",
+          "beer"
+        ]
+      }
+    ]
+  }
+]

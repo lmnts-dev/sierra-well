@@ -65,6 +65,17 @@ module.exports = {
       },
     },
 
+    // So we can load our JSON data via 
+    // GraphQL nodes so we can run createPages() in
+    // gatsby-node.js
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: path.join(__dirname, `src`, `data`, `json`),
+      },
+    },
+
     // Set up Prismic.io
     {
       resolve: `gatsby-source-prismic`,

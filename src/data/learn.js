@@ -18,7 +18,7 @@ export const LearnData = {
     },
   },
   SlideGroup: {
-    Name: 'learn-slidesr',
+    Name: 'learn-slides',
     Slides: [
       // Begin Slides
       {

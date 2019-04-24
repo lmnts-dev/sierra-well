@@ -60,37 +60,10 @@ const Index = ({ data }) => (
       >
         {/* ///////////// */}
 
-        <SimpleSection
-          BgColor={Theme.Color.White}
-          TextColor={Theme.Color.Nightsky}
-          Style="centered"
-        >
-          <Block Style="centered" Top={1} Bottom={1} maxWidth={0.5}>
-            <h2>Discretion is our first priority — so why not make it free?</h2>
-            <p className="p-md">
-              Free delivery available within 15 miles of our Reno and Carson
-              City stores, Nevada addresses only.
-            </p>
-          </Block>
-        </SimpleSection>
+        
 
         {/* ///////////// */}
 
-        <SimpleSection
-          BgColor={Theme.Color.Black}
-          TextColor={Theme.Color.White}
-          Style="centered"
-        >
-          <Block Style="centered" Top={3} Bottom={3} maxWidth={0.5}>
-            <h2>Discretion is our first priority — so why not make it free?</h2>
-            <p className="p-md">
-              Free delivery available within 15 miles of our Reno and Carson
-              City stores, Nevada addresses only.
-            </p>
-          </Block>
-        </SimpleSection>
-
-        {/* ///////////// */}
       </SubLevelPageContent>
       {/* End page content. */}
       {/* ///////////// */}

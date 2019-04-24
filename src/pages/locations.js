@@ -36,7 +36,7 @@ const LargeContent = () => (
 const SmallContent = () => <VerticalContent />;
 
 // Render Page
-const Locationss = ({ data }) => (
+const Locations = ({ data }) => (
   <Layout
     BgColor={LocationsData.PageTheme.Color.Background}
     PrimaryColor={LocationsData.PageTheme.Color.Primary}
@@ -53,7 +53,7 @@ const Locationss = ({ data }) => (
   </Layout>
 );
 
-export default Locationss;
+export default Locations;
 
 //////////////////////////////////////////////////////////////////////
 // End Component
