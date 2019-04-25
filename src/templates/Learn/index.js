@@ -40,7 +40,6 @@ class SlideSectionWithData extends React.Component {
   render() {
     // Get Root Directory Name
     const BaseUrl = this.props.BaseUrl;
-    console.log(BaseUrl);
 
     // Get our Category's themeing.
     const BgColor = this.props.Data.PageTheme.Color.Background;
@@ -102,60 +101,60 @@ class SlideSectionWithData extends React.Component {
   }
 }
 
-// class SlideSectionWithData = ({ CategoryData }) => (
+// This component is to differentiate page content / SlideSections
+// depending on what 'Filter' is supplied.
+const LearnSection = ({ Category, Data }) => {
+  return (
+    <Block maxWidth="100%" Padding={[0, 0, 2, 0]}>
+      {/* If the Category is `all', then display all the SlideSections for */}
+      {/* all categories that exist. */}
+      {Category == 'all' ? (
+        <>
+          {Data.Categories.map((CategoryItem, index) => {
+            return (
+              <SlideSectionWithData
+                key={index}
+                BaseUrl={Data.Slug}
+                Data={CategoryItem}
+              />
+            );
+          }, this)}
+        </>
+      ) : (
+        // If it isn't 'all', let's check to see if it matches and of our
+        // categories slugs. If so, let's display the category and it's
+        // respective posts.
+        <SlideSectionWithData BaseUrl={Data.Slug} Data={Category} />
+      )}
+    </Block>
+  );
+};
 
-//   {
-//     // Begin WidgetContent
-//     Flex: 1,
-//     WidgetContent: [
-//       {
-//         Destination: '/learn/recreational/',
-//         Style: 'Generic',
-//         Meta: {
-//           Generic: {
-//             BgColor: CategoryData.PageTheme.Color.Primary,
-//             BgImage: '',
-//             Subhead: '',
-//             Headline: CategoryData.,
-//             TextColor: CategoryData.PageTheme.Color.Secondary,
-//             IconColor: CategoryData.PageTheme.Color.Secondary,
-//             IconName: 'leaf', // FontAwesome Icon Name
-//             TintColor: '',
-//             TintOpacity: '',
-//             IconSize: '',
-//           },
-//         },
-//       },
-//     ],
-//     // End WidgetContent
-//   },
-
-// );
-
-const LearnTemplate = ({ Filter, Data }) => {
+// PageWrapper component for page theming.
+const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
   return (
     <Layout
-      BgColor={Data.PageTheme.Color.Background}
-      PrimaryColor={Data.PageTheme.Color.Primary}
-      SecondaryColor={Data.PageTheme.Color.Secondary}
-      TertiaryColor={Data.PageTheme.Color.Tertiary}
+      BgColor={CategoryTheme.Color.Background}
+      PrimaryColor={CategoryTheme.Color.Primary}
+      SecondaryColor={CategoryTheme.Color.Secondary}
+      TertiaryColor={CategoryTheme.Color.Tertiary}
     >
       <SubLevelPage
-        BgColor={Data.PageTheme.Color.Background}
-        PrimaryColor={Data.PageTheme.Color.Primary}
-        SecondaryColor={Data.PageTheme.Color.Secondary}
-        TertiaryColor={Data.PageTheme.Color.Tertiary}
+        BgColor={CategoryTheme.Color.Background}
+        PrimaryColor={CategoryTheme.Color.Primary}
+        SecondaryColor={CategoryTheme.Color.Secondary}
+        TertiaryColor={CategoryTheme.Color.Tertiary}
       >
         {/* ///////////// */}
 
-        <SimpleHero TextColor={Data.PageTheme.Color.Secondary}>
+        <SimpleHero TextColor={CategoryTheme.Color.Secondary}>
           <Block maxWidth={0.5}>
             <Breadcrumb
-              to={Data.Breadcrumb.Destination}
-              Label={Data.Breadcrumb.Label}
-              TextColor={Data.PageTheme.Color.Secondary}
+              to={Category.Breadcrumb.Destination}
+              Label={Category.Breadcrumb.Label}
+              TextColor={CategoryTheme.Color.Secondary}
             />
-            <h1 className="h2">{Data.Headline}</h1>
+            <h1 className="h2">{Category.Headline}</h1>
           </Block>
         </SimpleHero>
         {/* Begin page content. */}
@@ -166,18 +165,7 @@ const LearnTemplate = ({ Filter, Data }) => {
         >
           {/* ///////////// */}
 
-          {/* Loop through our categories and display SlideSections */}
-          <Block maxWidth="100%" Padding={[0, 0, 2, 0]}>
-            {Data.Categories.map((Category, index) => {
-              return (
-                <SlideSectionWithData
-                  key={index}
-                  BaseUrl={Data.Slug}
-                  Data={Category}
-                />
-              );
-            }, this)}
-          </Block>
+          {children}
 
           {/* ///////////// */}
 
@@ -201,6 +189,61 @@ const LearnTemplate = ({ Filter, Data }) => {
         {/* ///////////// */}
       </SubLevelPage>
     </Layout>
+  );
+};
+
+// TemplateLayout Component to pass data where it needs to go for
+// the theming of the hero as well as the LearnSection and what
+// to display in those cards.
+const TemplateLayout = ({ Category, Data }) => {
+  return (
+    <>
+      {/* If the Filter is `all', then display the /all/ page's theme and page content */}
+      {Category == 'all' ? (
+        <PageWrapper Data={Data} CategoryTheme={Data.PageTheme} Category={Data}>
+          <LearnSection Data={Data} Category={Category} />
+        </PageWrapper>
+      ) : (
+        // If it isn't 'all', let's check to see if it matches and of our
+        // categories slugs. If so, let's display the category and it's
+        // respective theme & posts.
+        <PageWrapper Data={Data} CategoryTheme={Category.PageTheme} Category={Category}>
+          <LearnSection Data={Data} Category={Category} />
+        </PageWrapper>
+      )}
+    </>
+  );
+};
+
+// const TemplateLayout = ({ Category, Data }) => {
+//   return (
+//     <PageWrapper Data={Data} Category={Category}>
+//       <LearnSection Data={Data} Category={Category} />
+//     </PageWrapper>
+//   );
+// };
+
+// The Template itself. Where it all begins.
+const LearnTemplate = ({ Filter, Data }) => {
+  return (
+    <>
+      {/* If the Filter is `all', then display the /all/ page and pass */}
+      {/* the appropriate data down for that page. */}
+      {Filter == 'all' ? (
+        <TemplateLayout Data={Data} Category="all" />
+      ) : (
+        // If it isn't 'all', let's check to see if it matches and of our
+        // categories slugs. If so, let's display the category and it's
+        // respective posts.
+        Data.Categories.map((Category, index) => {
+          if (Category.Slug == Filter) {
+            return (
+              <TemplateLayout key={index} Data={Data} Category={Category} />
+            );
+          }
+        })
+      )}
+    </>
   );
 };
 

@@ -155,8 +155,7 @@ SlideSectionStyle.SectionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: calc(${Root.Size} / 2);
-  padding-bottom: calc(${Root.Size} / 4);
+  padding-top: calc(${Root.Size} / 6);
 `;
 
 SlideSectionStyle.Headline = styled.div`

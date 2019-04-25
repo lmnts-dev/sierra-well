@@ -40,12 +40,12 @@ const Block = ({
     TextColor={TextColor}
   >
     {/* Block Content */}
-    {children ? <div class="block-content">{children}</div> : null}
+    {children ? <div className="block-content">{children}</div> : null}
 
     {/* For Background Images */}
     {BgQuery ? (
-      <div class="block-img-wrap">
-        <div class="block-img">
+      <div className="block-img-wrap">
+        <div className="block-img">
           <ImgQuery query={BgQuery} alt={BgAlt} />
         </div>
       </div>

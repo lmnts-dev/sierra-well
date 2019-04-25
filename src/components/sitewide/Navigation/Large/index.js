@@ -40,7 +40,7 @@ const NavigationLarge = ({ Location, Routes }) => (
           location={Location}
           routes={Routes}
         >
-          <LinkList ActiveClass="active" />
+          <LinkList ActiveclassName="active" />
         </NavigationStyle.Top.TopLinkListWrapper>
       </NavigationStyle.Top.LinkListBlock>
 
@@ -63,7 +63,7 @@ const NavigationLarge = ({ Location, Routes }) => (
         location={Location}
         routes={Routes}
       >
-        <LinkList ActiveClass="active" />
+        <LinkList ActiveclassName="active" />
       </NavigationStyle.Bottom.LinkListWrapper>
     </NavigationStyle.Bottom>
   </NavigationStyle>

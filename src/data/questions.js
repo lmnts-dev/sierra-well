@@ -22,6 +22,7 @@ export const QuestionsData = {
     {
       Name: 'Medical',
       Icon: 'briefcase-medical',
+      Headline: "What would you like to know about Medical Cannabis?",
       Slug: 'medical',
       Breadcrumb: {
         Destination: '/learn',
@@ -81,6 +82,7 @@ export const QuestionsData = {
     {
       Name: 'Recreational',
       Icon: 'cannabis',
+      Headline: "What would you like to know about Recreational Cannabis?",
       Slug: 'recreational',
       Breadcrumb: {
         Destination: '/learn',
@@ -102,19 +104,45 @@ export const QuestionsData = {
         },
         {
           Name: 'Growing',
+          Icon: 'seedling',
+          Slug: 'growing',
+        },
+        {
+          Name: 'Purchase',
           Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Slug: 'purchase',
+        },
+        {
+          Name: 'Nevada',
+          Icon: 'user',
+          Slug: 'nevada',
+        },
+        {
+          Name: 'Out of State',
+          Icon: 'briefcase-medical',
+          Slug: 'out-of-state',
         },
         {
           Name: 'Growing',
+          Icon: 'seedling',
+          Slug: 'growing',
+        },
+        {
+          Name: 'Purchase',
           Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Slug: 'purchase',
+        },
+        {
+          Name: 'Nevada',
+          Icon: 'user',
+          Slug: 'nevada',
         },
       ],
     },
     {
       Name: 'Safety',
       Icon: 'lock',
+      Headline: "What would you like to know about Cannabis Safety?",
       Slug: 'safety',
       Breadcrumb: {
         Destination: '/learn',
@@ -130,55 +158,56 @@ export const QuestionsData = {
       },
       Tags: [
         {
-          Name: 'Medical Cards',
+          Name: 'Dosage',
           Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Slug: 'dosage',
         },
         {
-          Name: 'Purchasing',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Name: 'Child Proofing',
+          Icon: 'baby',
+          Slug: 'child-proofing',
         },
         {
-          Name: 'Growing',
+          Name: 'Legal Consumption',
           Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Slug: 'legal-consumption',
+        },
+        {
+          Name: 'Caregivers',
+          Icon: 'heart',
+          Slug: 'caregivers',
+        },
+        {
+          Name: 'Dosage',
+          Icon: 'briefcase-medical',
+          Slug: 'dosage',
+        },
+        {
+          Name: 'Child Proofing',
+          Icon: 'briefcase-medical',
+          Slug: 'child-proofing',
+        },
+        {
+          Name: 'Legal Consumption',
+          Icon: 'briefcase-medical',
+          Slug: 'legal-consumption',
         },
         {
           Name: 'Caregivers',
           Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
-        },
-        {
-          Name: 'Medical Cards',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
-        },
-        {
-          Name: 'Purchasing',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
-        },
-        {
-          Name: 'Growing',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
-        },
-        {
-          Name: 'Caregivers',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Slug: 'caregivers',
         },
       ],
     },
     {
       Name: 'Industry',
       Icon: 'lock',
-      Slug: 'safety',
+      Slug: 'industry',
       Breadcrumb: {
         Destination: '/learn',
         Label: 'Learn',
       },
+      Headline: "What would you like to know about the Cannabis Industry?",
       PageTheme: {
         Color: {
           Background: Theme.Color.Sunset,
@@ -189,44 +218,44 @@ export const QuestionsData = {
       },
       Tags: [
         {
-          Name: 'Medical Cards',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Name: 'Job Opportunities',
+          Icon: 'user',
+          Slug: 'job-opportunities',
         },
         {
-          Name: 'Purchasing',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Name: 'Accomodation',
+          Icon: 'lock',
+          Slug: 'accomodation',
         },
         {
-          Name: 'Growing',
+          Name: 'Nevada',
           Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Slug: 'nevada',
         },
         {
-          Name: 'Caregivers',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Name: 'Growers',
+          Icon: 'cannabis',
+          Slug: 'growers',
         },
         {
-          Name: 'Medical Cards',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Name: 'Job Opportunities',
+          Icon: 'user',
+          Slug: 'job-opportunities',
         },
         {
-          Name: 'Purchasing',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Name: 'Accomodation',
+          Icon: 'lock',
+          Slug: 'accomodation',
         },
         {
-          Name: 'Growing',
+          Name: 'Nevada',
           Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Slug: 'nevada',
         },
         {
-          Name: 'Caregivers',
-          Icon: 'briefcase-medical',
-          Slug: 'medical-cards',
+          Name: 'Growers',
+          Icon: 'cannabis',
+          Slug: 'growers',
         },
       ],
     },

@@ -153,7 +153,7 @@ const SlideSection = ({
                 Destination={ViewAll[0]}
                 BgColor="inherit"
                 Label={ViewAll[1]}
-                IconClass="carat"
+                IconclassName="carat"
               />
             </SlideSectionStyle.CallToAction>
           ) : null}

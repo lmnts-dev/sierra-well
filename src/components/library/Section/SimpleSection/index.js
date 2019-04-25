@@ -47,7 +47,7 @@ const SimpleSection = ({
         {children}
       </SimpleSectionStyle.Content>
       {BgQuery ? (
-        <div class="section-img">
+        <div className="section-img">
           <ImgQuery query={BgQuery} alt={BgAlt} />
         </div>
       ) : null}
