@@ -6,7 +6,7 @@
     "Slug": "medical",
     "Breadcrumb": {
       "Destination": "/learn/all/",
-      "Label": "Learn"
+      "Label": "All Questions"
     },
     "PageTheme": {
       "Color": {
@@ -66,14 +66,14 @@
     "Slug": "recreational",
     "Breadcrumb": {
       "Destination": "/learn/all/",
-      "Label": "Learn"
+      "Label": "All Questions"
     },
     "PageTheme": {
       "Color": {
         "Background": "#9df096",
-        "Primary": "#ffffff",
+        "Primary": "#262222",
         "Secondary": "#262222",
-        "Tertiary": "#000000"
+        "Tertiary": "#ffffff"
       }
     },
     "Tags": [
@@ -98,24 +98,24 @@
         "Slug": "nevada"
       },
       {
-        "Name": "Out of State",
+        "Name": "Doctors",
         "Icon": "briefcase-medical",
-        "Slug": "out-of-state"
+        "Slug": "doctors"
       },
       {
-        "Name": "Growing",
+        "Name": "Patients",
+        "Icon": "money-bill-wave",
+        "Slug": "patients"
+      },
+      {
+        "Name": "Treatment",
         "Icon": "seedling",
-        "Slug": "growing"
+        "Slug": "treatment"
       },
       {
-        "Name": "Purchase",
-        "Icon": "briefcase-medical",
-        "Slug": "purchase"
-      },
-      {
-        "Name": "Nevada",
-        "Icon": "user",
-        "Slug": "nevada"
+        "Name": "Studies",
+        "Icon": "heart",
+        "Slug": "studies"
       }
     ]
   },
@@ -126,14 +126,14 @@
     "Slug": "safety",
     "Breadcrumb": {
       "Destination": "/learn/all/",
-      "Label": "Learn"
+      "Label": "All Questions"
     },
     "PageTheme": {
       "Color": {
         "Background": "#f8e71c",
-        "Primary": "#ffffff",
+        "Primary": "#262222",
         "Secondary": "#262222",
-        "Tertiary": "#000000"
+        "Tertiary": "#ffffff"
       }
     },
     "Tags": [
@@ -158,24 +158,24 @@
         "Slug": "caregivers"
       },
       {
-        "Name": "Dosage",
+        "Name": "Doctors",
         "Icon": "briefcase-medical",
-        "Slug": "dosage"
+        "Slug": "doctors"
       },
       {
-        "Name": "Child Proofing",
-        "Icon": "briefcase-medical",
-        "Slug": "child-proofing"
+        "Name": "Patients",
+        "Icon": "money-bill-wave",
+        "Slug": "patients"
       },
       {
-        "Name": "Legal Consumption",
-        "Icon": "briefcase-medical",
-        "Slug": "legal-consumption"
+        "Name": "Treatment",
+        "Icon": "seedling",
+        "Slug": "treatment"
       },
       {
-        "Name": "Caregivers",
-        "Icon": "briefcase-medical",
-        "Slug": "caregivers"
+        "Name": "Studies",
+        "Icon": "heart",
+        "Slug": "studies"
       }
     ]
   },
@@ -185,7 +185,7 @@
     "Slug": "industry",
     "Breadcrumb": {
       "Destination": "/learn/all/",
-      "Label": "Learn"
+      "Label": "All Questions"
     },
     "Headline": "What would you like to know about the Cannabis Industry?",
     "PageTheme": {
@@ -218,24 +218,24 @@
         "Slug": "growers"
       },
       {
-        "Name": "Job Opportunities",
-        "Icon": "user",
-        "Slug": "job-opportunities"
-      },
-      {
-        "Name": "Accomodation",
-        "Icon": "lock",
-        "Slug": "accomodation"
-      },
-      {
-        "Name": "Nevada",
+        "Name": "Doctors",
         "Icon": "briefcase-medical",
-        "Slug": "nevada"
+        "Slug": "doctors"
       },
       {
-        "Name": "Growers",
-        "Icon": "cannabis",
-        "Slug": "growers"
+        "Name": "Patients",
+        "Icon": "money-bill-wave",
+        "Slug": "patients"
+      },
+      {
+        "Name": "Treatment",
+        "Icon": "seedling",
+        "Slug": "treatment"
+      },
+      {
+        "Name": "Studies",
+        "Icon": "heart",
+        "Slug": "studies"
       }
     ]
   },
@@ -245,7 +245,7 @@
     "Slug": "california",
     "Breadcrumb": {
       "Destination": "/learn/all/",
-      "Label": "Learn"
+      "Label": "All Questions"
     },
     "Headline": "What would you like to know about the Cannabis Industry in California?",
     "PageTheme": {
@@ -278,24 +278,24 @@
         "Slug": "growers"
       },
       {
-        "Name": "Job Opportunities",
-        "Icon": "user",
-        "Slug": "job-opportunities"
-      },
-      {
-        "Name": "Accomodation",
-        "Icon": "lock",
-        "Slug": "accomodation"
-      },
-      {
-        "Name": "Nevada",
+        "Name": "Doctors",
         "Icon": "briefcase-medical",
-        "Slug": "nevada"
+        "Slug": "doctors"
       },
       {
-        "Name": "Growers",
-        "Icon": "cannabis",
-        "Slug": "growers"
+        "Name": "Patients",
+        "Icon": "money-bill-wave",
+        "Slug": "patients"
+      },
+      {
+        "Name": "Treatment",
+        "Icon": "seedling",
+        "Slug": "treatment"
+      },
+      {
+        "Name": "Studies",
+        "Icon": "heart",
+        "Slug": "studies"
       }
     ]
   }

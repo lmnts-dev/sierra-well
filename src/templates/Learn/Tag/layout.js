@@ -145,7 +145,7 @@ const PageWrapper = ({
               Label={Category.Name}
               TextColor={CategoryTheme.Color.Secondary}
             />
-            <h1 className="h2">Learn about {TagData.Name}. </h1>
+            <h1 className="h2">Learn about Cannabis & {TagData.Name}. </h1>
           </Block>
         </SimpleHero>
         {/* Begin page content. */}
