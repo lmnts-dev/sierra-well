@@ -114,7 +114,7 @@ const LearnSection = ({ Categories }) => {
         return (
           <SlideSectionWithData
             key={index}
-            BaseUrl="/learn"
+            BaseUrl="learn"
             Data={Category.node}
           />
         );

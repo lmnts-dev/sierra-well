@@ -46,6 +46,9 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               Slug
+              Tags {
+                Slug
+              }
             }
           }
         }
@@ -56,26 +59,46 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors;
     }
 
-    // Create image post pages.
-    const postTemplate = path.resolve(`src/templates/Learn/index.js`);
-    // We want to create a detailed page for each
-    // Instagram post. Since the scraped Instagram data
-    // already includes an ID field, we just use that for
-    // each page's path.
+    // Learn category page template.
+    const categoryTemplate = path.resolve(`src/templates/Learn/Category/index.js`);
+
+    // Learn tag page template.
+    const tagTemplate = path.resolve(`src/templates/Learn/Tag/index.js`);
+
+    // Create Category Pages
     _.each(result.data.allQuestionCategoriesJson.edges, edge => {
       // Gatsby uses Redux to manage its internal state.
       // Plugins and sites can use functions like "createPage"
-      // to interact with Gatsby.
+      // to interact with Gatsby. 
+      // We are using 'lodash' above for the _.each function. Read more:
+      // https://lodash.com/docs/4.17.11#forEach
+
+      // Use Gatsby's createPage() function. Read more:
+      // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
       createPage({
         // Each page is required to have a `path` as well
         // as a template component. The `context` is
         // optional but is often necessary so the template
         // can query data specific to each page.
         path: `/learn/${edge.node.Slug}/`,
-        component: slash(postTemplate),
+        component: slash(categoryTemplate),
         context: {
           Slug: edge.node.Slug,
         },
+      });
+
+      // Create Tag Pages
+      const CategorySlug = edge.node.Slug;
+
+      _.each(edge.node.Tags, tag => {
+        createPage({
+          path: `/learn/${CategorySlug}/${tag.Slug}/`,
+          component: slash(tagTemplate),
+          context: {
+            TagSlug: tag.Slug,
+            CategorySlug: CategorySlug
+          },
+        });
       });
     });
   });

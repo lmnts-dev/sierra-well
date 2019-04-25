@@ -38,24 +38,24 @@
         "Slug": "caregivers"
       },
       {
-        "Name": "Medical Cards",
+        "Name": "Doctors",
         "Icon": "briefcase-medical",
-        "Slug": "medical-cards"
+        "Slug": "doctors"
       },
       {
-        "Name": "Purchasing",
+        "Name": "Patients",
         "Icon": "money-bill-wave",
-        "Slug": "purchasing"
+        "Slug": "patients"
       },
       {
-        "Name": "Growing",
+        "Name": "Treatment",
         "Icon": "seedling",
-        "Slug": "growing"
+        "Slug": "treatment"
       },
       {
-        "Name": "Caregivers",
+        "Name": "Studies",
         "Icon": "heart",
-        "Slug": "caregivers"
+        "Slug": "studies"
       }
     ]
   },
