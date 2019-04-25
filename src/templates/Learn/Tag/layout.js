@@ -88,7 +88,7 @@ class SlideSectionWithData extends React.Component {
       <SlideSection
         Widgets={Widgets}
         SectionSize={3}
-        Header={this.props.Data.Name}
+        Header={"More from " + this.props.Data.Name}
         Theme={{
           TextColor: Theme.Color.Black,
           BgColor: 'none',
