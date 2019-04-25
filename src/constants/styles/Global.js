@@ -32,7 +32,9 @@ html {
     -webkit-text-size-adjust: 100%; /* 2 */
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    height: 100%;
+    overflow: auto;
+    /* overflow: hidden; */
     cursor: crosshair !important;
   }
 
@@ -46,9 +48,10 @@ html {
    */
   
   body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   
   /**

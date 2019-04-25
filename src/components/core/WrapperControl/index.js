@@ -15,6 +15,11 @@ import { createGlobalStyle } from 'styled-components';
 
 // Lock Wrapper Scroll
 export const WrapperLock = createGlobalStyle`
+
+  html, body {
+    overflow: hidden;
+  }
+
   .wrapper {
     @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
       overflow: hidden;
@@ -32,9 +37,14 @@ export const WrapperLock = createGlobalStyle`
 
 // Release Wrapper Scroll
 export const WrapperRelease = createGlobalStyle`
+  html, body {
+      overflow: unset;
+  }
+
   .wrapper {
     @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
-      overflow-y: scroll;
+      overflow-y: unset;
+      height: auto;
     }
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
       overflow-y: scroll; /* has to be scroll, not auto */

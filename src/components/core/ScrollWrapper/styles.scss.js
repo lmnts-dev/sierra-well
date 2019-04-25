@@ -14,10 +14,10 @@ const ScrollArea = styled.main`
   justify-content: space-between;
   width: 100vw;
   overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  /* overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; */
   position: relative;
-  height: 100vh;
+  height: auto;
   transition: all 0s linear !important;
 `;
 

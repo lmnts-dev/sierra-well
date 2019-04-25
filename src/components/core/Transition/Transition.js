@@ -24,7 +24,7 @@ class Transition extends PureComponent {
       enter: {
         opacity: 1,
         transition: {
-          opacity: { ease: 'easeIn', delay: 0, duration: 250 },
+          opacity: { ease: 'easeIn', delay: 500, duration: 250 },
         },
       },
       exit: {
