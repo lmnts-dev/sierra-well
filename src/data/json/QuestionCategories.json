@@ -5,7 +5,7 @@
     "Headline": "What would you like to know about Medical Cannabis?",
     "Slug": "medical",
     "Breadcrumb": {
-      "Destination": "/learn",
+      "Destination": "/learn/all/",
       "Label": "Learn"
     },
     "PageTheme": {
@@ -65,13 +65,13 @@
     "Headline": "What would you like to know about Recreational Cannabis?",
     "Slug": "recreational",
     "Breadcrumb": {
-      "Destination": "/learn",
+      "Destination": "/learn/all/",
       "Label": "Learn"
     },
     "PageTheme": {
       "Color": {
         "Background": "#9df096",
-        "Primary": "#262222",
+        "Primary": "#ffffff",
         "Secondary": "#262222",
         "Tertiary": "#000000"
       }
@@ -125,13 +125,13 @@
     "Headline": "What would you like to know about Cannabis Safety?",
     "Slug": "safety",
     "Breadcrumb": {
-      "Destination": "/learn",
+      "Destination": "/learn/all/",
       "Label": "Learn"
     },
     "PageTheme": {
       "Color": {
         "Background": "#f8e71c",
-        "Primary": "#262222",
+        "Primary": "#ffffff",
         "Secondary": "#262222",
         "Tertiary": "#000000"
       }
@@ -184,13 +184,73 @@
     "Icon": "lock",
     "Slug": "industry",
     "Breadcrumb": {
-      "Destination": "/learn",
+      "Destination": "/learn/all/",
       "Label": "Learn"
     },
     "Headline": "What would you like to know about the Cannabis Industry?",
     "PageTheme": {
       "Color": {
         "Background": "#fc6376",
+        "Primary": "#ffffff",
+        "Secondary": "#ffffff",
+        "Tertiary": "#000000"
+      }
+    },
+    "Tags": [
+      {
+        "Name": "Job Opportunities",
+        "Icon": "user",
+        "Slug": "job-opportunities"
+      },
+      {
+        "Name": "Accomodation",
+        "Icon": "lock",
+        "Slug": "accomodation"
+      },
+      {
+        "Name": "Nevada",
+        "Icon": "briefcase-medical",
+        "Slug": "nevada"
+      },
+      {
+        "Name": "Growers",
+        "Icon": "cannabis",
+        "Slug": "growers"
+      },
+      {
+        "Name": "Job Opportunities",
+        "Icon": "user",
+        "Slug": "job-opportunities"
+      },
+      {
+        "Name": "Accomodation",
+        "Icon": "lock",
+        "Slug": "accomodation"
+      },
+      {
+        "Name": "Nevada",
+        "Icon": "briefcase-medical",
+        "Slug": "nevada"
+      },
+      {
+        "Name": "Growers",
+        "Icon": "cannabis",
+        "Slug": "growers"
+      }
+    ]
+  },
+  {
+    "Name": "California",
+    "Icon": "lock",
+    "Slug": "california",
+    "Breadcrumb": {
+      "Destination": "/learn/all/",
+      "Label": "Learn"
+    },
+    "Headline": "What would you like to know about the Cannabis Industry in California?",
+    "PageTheme": {
+      "Color": {
+        "Background": "#0D1632",
         "Primary": "#ffffff",
         "Secondary": "#ffffff",
         "Tertiary": "#000000"

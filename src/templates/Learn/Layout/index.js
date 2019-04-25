@@ -48,6 +48,9 @@ class SlideSectionWithData extends React.Component {
     // Isolate Our Tags
     const Tags = this.props.Data.Tags;
 
+    // Get our Category's Slug
+    const CategorySlug = this.props.Data.Slug;
+
     // Create empty Widgets array for us to loop through
     // later on.
     const Widgets = [];
@@ -60,7 +63,7 @@ class SlideSectionWithData extends React.Component {
         Flex: 1,
         WidgetContent: [
           {
-            Destination: '/' + BaseUrl + '/' + Tag.Slug,
+            Destination: '/' + BaseUrl + '/' + CategorySlug + '/' + Tag.Slug,
             Style: 'Generic',
             Meta: {
               Generic: {
