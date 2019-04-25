@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Templates
-import LearnTemplate from 'templates/Learn';
+import LearnTemplate from 'templates/Learn/Layout';
 
 // Data
 import { graphql } from 'gatsby';
@@ -18,15 +18,7 @@ import { QuestionsData } from 'data/questions';
 //////////////////////////////////////////////////////////////////////
 
 const LearnPage = ({ data }) => (
-  <>
-    {data.allLearnJson.edges.map((Content, index) => {
-      return (
-        <LearnTemplate key={index} Filter="all" Data={Content.node}>
-          {console.log(Content.node)}
-        </LearnTemplate>
-      );
-    })}
-  </>
+  <LearnTemplate Data={data.allQuestionCategoriesJson.edges} />
 );
 
 export default LearnPage;
@@ -35,12 +27,19 @@ export default LearnPage;
 /////////////////////////////////////////////////////////////////////
 export const query = graphql`
   query {
-    allLearnJson {
+    allQuestionCategoriesJson(filter: { Slug: { eq: "medical" } }) {
       edges {
         node {
           id
-          Slug
+          Name
+          Icon
           Headline
+          Slug
+          Tags {
+            Name
+            Icon
+            Slug
+          }
           Breadcrumb {
             Destination
             Label
@@ -48,32 +47,9 @@ export const query = graphql`
           PageTheme {
             Color {
               Background
-              Secondary
               Primary
+              Secondary
               Tertiary
-            }
-          }
-          Categories {
-            Name
-            Icon
-            Headline
-            Slug
-            Breadcrumb {
-              Destination
-              Label
-            }
-            PageTheme {
-              Color {
-                Background
-                Primary
-                Secondary
-                Tertiary
-              }
-            }
-            Tags {
-              Name
-              Icon
-              Slug
             }
           }
         }
@@ -81,6 +57,5 @@ export const query = graphql`
     }
   }
 `;
-
 //////////////////////////////////////////////////////////////////////
 // End Component

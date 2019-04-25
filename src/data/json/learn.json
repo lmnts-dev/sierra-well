@@ -16,6 +16,16 @@
     },
     "Categories": [
       {
+        "Name": "All",
+        "Icon": "plus",
+        "Headline": "You've got questions. We have answers.",
+        "Slug": "all",
+        "Breadcrumb": {
+          "Destination": "/learn",
+          "Label": "Learn"
+        }
+      },
+      {
         "Name": "Medical",
         "Icon": "briefcase-medical",
         "Headline": "What would you like to know about Medical Cannabis?",

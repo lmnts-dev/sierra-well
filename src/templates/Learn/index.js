@@ -1,5 +1,5 @@
-// templates/Learn.js:
-// This is the template for Learn pages.
+// learn/all.js:
+// This is the overview of all Learn items.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -7,244 +7,62 @@
 // Core
 import React from 'react';
 
-// Components
-import Layout from 'components/core/Layout';
-import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
-import SimpleHero from 'components/library/Hero/SimpleHero';
-import WidgetSection from 'components/library/Section/WidgetSection';
-import SimpleSection from 'components/library/Section/SimpleSection';
-import SlideSection from 'components/library/Section/SlideSection';
+// Templates
+import LearnTemplate from 'templates/Learn/Layout';
 
-//// Misc. Components
-import Breadcrumb from 'components/library/Breadcrumb';
-import Btn from 'components/library/Btn/';
-
-// Elements
-import Block from 'components/library/Block';
-
-// Constants
-import { Theme } from 'constants/Theme';
+// Data
+import { graphql } from 'gatsby';
+import { QuestionsData } from 'data/questions';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// This component is to transform the
-// questions.js data into usable stuff for our
-// Widget components and SlideSections.
-class SlideSectionWithData extends React.Component {
-  constructor(props) {
-    // Make our props accessible through this.props
-    super(props);
-  }
+const LearnPage = ({ data }) => (
+  <LearnTemplate Data={data.allQuestionCategoriesJson.edges} />
+);
 
-  render() {
-    // Get Root Directory Name
-    const BaseUrl = this.props.BaseUrl;
+export default LearnPage;
 
-    // Get our Category's themeing.
-    const BgColor = this.props.Data.PageTheme.Color.Background;
-    const TextColor = this.props.Data.PageTheme.Color.Secondary;
+// GraphQL Queries
+/////////////////////////////////////////////////////////////////////
 
-    // Isolate Our Tags
-    const Tags = this.props.Data.Tags;
-
-    // Create empty Widgets array for us to loop through
-    // later on.
-    const Widgets = [];
-
-    // Map our tags and create a new Widget object for
-    // each tag for us to loop and display a Widget for in
-    // the data structure that WidgetContainer likes.
-    Tags.map((Tag, index) => {
-      Widgets[index] = {
-        Flex: 1,
-        WidgetContent: [
-          {
-            Destination: '/' + BaseUrl + '/' + Tag.Slug,
-            Style: 'Generic',
-            Meta: {
-              Generic: {
-                BgColor: BgColor,
-                BgImage: '',
-                Subhead: '',
-                Headline: Tag.Name,
-                TextColor: TextColor,
-                IconColor: TextColor,
-                IconName: Tag.Icon, // FontAwesome Icon Name
-                TintColor: '',
-                TintOpacity: '',
-                IconSize: '',
-              },
-            },
-          },
-        ],
-      };
-    });
-
-    return (
-      <SlideSection
-        Widgets={Widgets}
-        SectionSize={3}
-        Header={this.props.Data.Name}
-        Theme={{
-          TextColor: Theme.Color.Black,
-          BgColor: 'none',
-        }}
-        SliderSettings={{
-          slidesToShow: 4,
-          slidesToScroll: 2,
-          autoplay: false,
-          arrows: true,
-        }}
-      />
-    );
-  }
-}
-
-// This component is to differentiate page content / SlideSections
-// depending on what 'Filter' is supplied.
-const LearnSection = ({ Category, Data }) => {
-  return (
-    <Block maxWidth="100%" Padding={[0, 0, 2, 0]}>
-      {/* If the Category is `all', then display all the SlideSections for */}
-      {/* all categories that exist. */}
-      {Category == 'all' ? (
-        <>
-          {Data.Categories.map((CategoryItem, index) => {
-            return (
-              <SlideSectionWithData
-                key={index}
-                BaseUrl={Data.Slug}
-                Data={CategoryItem}
-              />
-            );
-          }, this)}
-        </>
-      ) : (
-        // If it isn't 'all', let's check to see if it matches and of our
-        // categories slugs. If so, let's display the category and it's
-        // respective posts.
-        <SlideSectionWithData BaseUrl={Data.Slug} Data={Category} />
-      )}
-    </Block>
-  );
-};
-
-// PageWrapper component for page theming.
-const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
-  return (
-    <Layout
-      BgColor={CategoryTheme.Color.Background}
-      PrimaryColor={CategoryTheme.Color.Primary}
-      SecondaryColor={CategoryTheme.Color.Secondary}
-      TertiaryColor={CategoryTheme.Color.Tertiary}
-    >
-      <SubLevelPage
-        BgColor={CategoryTheme.Color.Background}
-        PrimaryColor={CategoryTheme.Color.Primary}
-        SecondaryColor={CategoryTheme.Color.Secondary}
-        TertiaryColor={CategoryTheme.Color.Tertiary}
-      >
-        {/* ///////////// */}
-
-        <SimpleHero TextColor={CategoryTheme.Color.Secondary}>
-          <Block maxWidth={0.5}>
-            <Breadcrumb
-              to={Category.Breadcrumb.Destination}
-              Label={Category.Breadcrumb.Label}
-              TextColor={CategoryTheme.Color.Secondary}
-            />
-            <h1 className="h2">{Category.Headline}</h1>
-          </Block>
-        </SimpleHero>
-        {/* Begin page content. */}
-        {/* ///////////// */}
-        <SubLevelPageContent
-          BgColor={Theme.Color.Background}
-          TextColor={Theme.Color.White}
-        >
-          {/* ///////////// */}
-
-          {children}
-
-          {/* ///////////// */}
-
-          {/* ///////////// */}
-
-          <SimpleSection
-            BgColor={Theme.Color.White}
-            TextColor={Theme.Color.Nightsky}
-            Style="centered"
-          >
-            <Block Style="centered" Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-              <h2>Not seeing your question?</h2>
-              <p className="p-md">
-                Chat with an expert now or sumbit your own question
-              </p>
-            </Block>
-          </SimpleSection>
-          {/* ///////////// */}
-        </SubLevelPageContent>
-        {/* End page content. */}
-        {/* ///////////// */}
-      </SubLevelPage>
-    </Layout>
-  );
-};
-
-// TemplateLayout Component to pass data where it needs to go for
-// the theming of the hero as well as the LearnSection and what
-// to display in those cards.
-const TemplateLayout = ({ Category, Data }) => {
-  return (
-    <>
-      {/* If the Filter is `all', then display the /all/ page's theme and page content */}
-      {Category == 'all' ? (
-        <PageWrapper Data={Data} CategoryTheme={Data.PageTheme} Category={Data}>
-          <LearnSection Data={Data} Category={Category} />
-        </PageWrapper>
-      ) : (
-        // If it isn't 'all', let's check to see if it matches and of our
-        // categories slugs. If so, let's display the category and it's
-        // respective theme & posts.
-        <PageWrapper Data={Data} CategoryTheme={Category.PageTheme} Category={Category}>
-          <LearnSection Data={Data} Category={Category} />
-        </PageWrapper>
-      )}
-    </>
-  );
-};
-
-// const TemplateLayout = ({ Category, Data }) => {
-//   return (
-//     <PageWrapper Data={Data} Category={Category}>
-//       <LearnSection Data={Data} Category={Category} />
-//     </PageWrapper>
-//   );
-// };
-
-// The Template itself. Where it all begins.
-const LearnTemplate = ({ Filter, Data }) => {
-  return (
-    <>
-      {/* If the Filter is `all', then display the /all/ page and pass */}
-      {/* the appropriate data down for that page. */}
-      {Filter == 'all' ? (
-        <TemplateLayout Data={Data} Category="all" />
-      ) : (
-        // If it isn't 'all', let's check to see if it matches and of our
-        // categories slugs. If so, let's display the category and it's
-        // respective posts.
-        Data.Categories.map((Category, index) => {
-          if (Category.Slug == Filter) {
-            return (
-              <TemplateLayout key={index} Data={Data} Category={Category} />
-            );
+// The post template's GraphQL query. Notice the slug
+// variable which is passed in. We set this on the page
+// context in gatsby-node.js.
+//
+// All GraphQL queries in Gatsby are run at build-time and
+// loaded as plain JSON files so have minimal client cost.
+export const query = graphql`
+  query($Slug: String!) {
+    allQuestionCategoriesJson(filter: { Slug: { eq: $Slug } }) {
+      edges {
+        node {
+          id
+          Name
+          Icon
+          Headline
+          Slug
+          Tags {
+            Name
+            Icon
+            Slug
           }
-        })
-      )}
-    </>
-  );
-};
-
-export default LearnTemplate;
+          Breadcrumb {
+            Destination
+            Label
+          }
+          PageTheme {
+            Color {
+              Background
+              Primary
+              Secondary
+              Tertiary
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+//////////////////////////////////////////////////////////////////////
+// End Component
