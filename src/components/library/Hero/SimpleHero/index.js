@@ -30,10 +30,11 @@ const SimpleHero = ({
   imgTop,
   imgWidth,
   TextColor,
+  Tint,
   Size,
   children,
 }) => (
-  <SimpleHeroStyle Background={Background} TextColor={TextColor}>
+  <SimpleHeroStyle Background={Background} TextColor={TextColor} Tint={Tint} className={Tint ? "tint" : null}>
     <HeroInner
       Size={Size ? Size : false}
       imgRight={imgRight ? imgRight : false}
@@ -41,6 +42,7 @@ const SimpleHero = ({
       imgBottom={imgBottom ? imgBottom : false}
       imgTop={imgTop ? imgTop : false}
       imgWidth={imgWidth ? imgWidth : false}
+      className="inner"
     >
       {children}
     </HeroInner>

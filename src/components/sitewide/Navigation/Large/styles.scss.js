@@ -18,6 +18,13 @@ import { FadeIn } from 'components/core/Transition/Keyframes';
 // The Navigation Container
 const NavigationStyle = styled.nav`
   position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 `;
 
 //// Top Level Navigation
@@ -25,13 +32,34 @@ const NavigationStyle = styled.nav`
 // Top Navigation Wrapper
 // className: `nav-top`
 NavigationStyle.Top = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 800;
+  z-index: 999;
   height: ${Root.Nav.Size};
+  position: relative;
+
+  &.scroll {
+    background-color: ${Theme.Color.White};
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.09);
+    --NavSize: 60px;
+
+    &.nav-top {
+      ul {
+        li {
+          a {
+            color: ${Theme.Color.Nightsky};
+          }
+        }
+      }
+
+      .btn {
+        background-color: ${Theme.Color.Nightsky};
+        color: ${Theme.Color.White};
+      }
+    }
+  }
 `;
 
 // The Container around the Logo

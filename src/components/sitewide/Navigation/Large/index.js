@@ -26,48 +26,60 @@ import logo from '../../../../assets/images/brandmark.png';
 //////////////////////////////////////////////////////////////////////
 
 // The Large Device Navigation
-const NavigationLarge = ({ Location, Routes }) => (
-  <NavigationStyle>
-    <NavigationStyle.Top className="nav-top">
-      <NavigationStyle.Top.BrandingBlock>
-        <Link to="/">
-          <img src={logo} alt={Theme.Site.Title} height="30px" />
-        </Link>
-      </NavigationStyle.Top.BrandingBlock>
+class NavigationLarge extends React.Component {
+  constructor(props) {
+    // Make our props accessible through this.props
+    super(props);
+  }
 
-      <NavigationStyle.Top.LinkListBlock>
-        <NavigationStyle.Top.TopLinkListWrapper
+  render() {
+    const Location = this.props.Location;
+    const Routes = this.props.Routes;
+
+    return (
+      <NavigationStyle>
+        <NavigationStyle.Top className="nav-top scroll">
+          <NavigationStyle.Top.BrandingBlock>
+            <Link to="/">
+              <img src={logo} alt={Theme.Site.Title} height="30px" />
+            </Link>
+          </NavigationStyle.Top.BrandingBlock>
+
+          <NavigationStyle.Top.LinkListBlock>
+            <NavigationStyle.Top.TopLinkListWrapper
+              location={Location}
+              routes={Routes}
+            >
+              <LinkList ActiveclassName="active" />
+            </NavigationStyle.Top.TopLinkListWrapper>
+          </NavigationStyle.Top.LinkListBlock>
+
+          <NavigationStyle.Top.CommunicationBlock>
+            <Btn
+              Label="View Menu"
+              Destination="/menu"
+              BgColor={Theme.Color.Primary}
+              TextColor={Theme.Color.White}
+            />
+          </NavigationStyle.Top.CommunicationBlock>
+        </NavigationStyle.Top>
+
+        <NavigationStyle.Bottom
           location={Location}
           routes={Routes}
+          className="nav-bottom"
         >
-          <LinkList ActiveclassName="active" />
-        </NavigationStyle.Top.TopLinkListWrapper>
-      </NavigationStyle.Top.LinkListBlock>
-
-      <NavigationStyle.Top.CommunicationBlock>
-        <Btn
-          Label="View Menu"
-          Destination="/menu"
-          BgColor={Theme.Color.Primary}
-          TextColor={Theme.Color.White}
-        />
-      </NavigationStyle.Top.CommunicationBlock>
-    </NavigationStyle.Top>
-
-    <NavigationStyle.Bottom
-      location={Location}
-      routes={Routes}
-      className="nav-bottom"
-    >
-      <NavigationStyle.Bottom.LinkListWrapper
-        location={Location}
-        routes={Routes}
-      >
-        <LinkList ActiveclassName="active" />
-      </NavigationStyle.Bottom.LinkListWrapper>
-    </NavigationStyle.Bottom>
-  </NavigationStyle>
-);
+          <NavigationStyle.Bottom.LinkListWrapper
+            location={Location}
+            routes={Routes}
+          >
+            <LinkList ActiveclassName="active" />
+          </NavigationStyle.Bottom.LinkListWrapper>
+        </NavigationStyle.Bottom>
+      </NavigationStyle>
+    );
+  }
+}
 
 export default NavigationLarge;
 

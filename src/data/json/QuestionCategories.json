@@ -298,5 +298,66 @@
         "Slug": "studies"
       }
     ]
+  },
+  {
+    "Name": "Joe",
+    "Icon": "lock",
+    "Slug": "joe",
+    "Breadcrumb": {
+      "Destination": "/learn/all/",
+      "Label": "All Questions"
+    },
+    "Headline": "What would you like to know about the Cannabis Industry in Joe's Basement?",
+    "PageTheme": {
+      "Color": {
+        "Background": "#0D1632",
+        "Primary": "#ffffff",
+        "Secondary": "#ffffff",
+        "Tertiary": "#000000"
+      }
+    },
+    "Tags": [
+      {
+        "Name": "Job Opportunities",
+        "Icon": "user",
+        "Slug": "job-opportunities"
+      },
+      {
+        "Name": "Accomodation",
+        "Icon": "lock",
+        "Slug": "accomodation"
+      },
+      {
+        "Name": "Nevada",
+        "Icon": "briefcase-medical",
+        "Slug": "nevada"
+      },
+      {
+        "Name": "Growers",
+        "Icon": "cannabis",
+        "Slug": "growers"
+      },
+      {
+        "Name": "Doctors",
+        "Icon": "briefcase-medical",
+        "Slug": "doctors"
+      },
+      {
+        "Name": "Patients",
+        "Icon": "money-bill-wave",
+        "Slug": "patients"
+      },
+      {
+        "Name": "Treatment",
+        "Icon": "seedling",
+        "Slug": "treatment"
+      },
+      {
+        "Name": "Studies",
+        "Icon": "heart",
+        "Slug": "studies"
+      }
+    ]
   }
+  
 ]

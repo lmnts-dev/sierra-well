@@ -88,7 +88,7 @@ class SlideSectionWithData extends React.Component {
       <SlideSection
         Widgets={Widgets}
         SectionSize={3}
-        Header={"More from " + this.props.Data.Name}
+        Header={'More from ' + this.props.Data.Name}
         Theme={{
           TextColor: Theme.Color.Black,
           BgColor: 'none',
@@ -195,10 +195,7 @@ const TemplateLayout = ({ TagSlug, TagData, CategorySlug, CategoryData }) => {
       TagSlug={TagSlug}
       TagData={TagData}
     >
-      <LearnSection
-        BaseUrl="/learn"
-        Category={CategoryData}
-      />
+      <LearnSection BaseUrl="/learn" Category={CategoryData} />
     </PageWrapper>
   );
 };

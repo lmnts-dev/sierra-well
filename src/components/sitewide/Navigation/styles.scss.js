@@ -32,6 +32,10 @@ NavigationStyle.Top = styled.div`
   align-items: center;
   z-index: 800;
   height: ${Root.Nav.Size};
+
+  &.scroll {
+    background-color: ${Theme.Color.White} !important;
+  }
 `;
 
 // The Container around the Logo

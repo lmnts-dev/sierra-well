@@ -32,7 +32,7 @@ const HorizontalContentStyle = styled.div`
 // The Slide Group Wrapper
 HorizontalContentStyle.Inner = styled.div`
   width: 100%;
-  padding: 0;
+  padding: calc(${Root.Nav.Size} * 2) 0 0 0;
 
   /* Padding on first slide */
   .slick-slide {
