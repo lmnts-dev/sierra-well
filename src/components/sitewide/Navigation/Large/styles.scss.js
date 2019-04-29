@@ -39,11 +39,14 @@ NavigationStyle.Top = styled.div`
   z-index: 999;
   height: ${Root.Nav.Size};
   position: relative;
+  background-color: rgba(255,255,255, 0);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+  transition: all .25s ease;
 
   &.scroll {
-    background-color: ${Theme.Color.White};
+    background-color: rgba(255,255,255, 1);
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.09);
-    --NavSize: 60px;
+    /* --NavSize: 60px; */
 
     &.nav-top {
       ul {

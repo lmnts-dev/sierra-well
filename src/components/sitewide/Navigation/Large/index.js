@@ -30,6 +30,35 @@ class NavigationLarge extends React.Component {
   constructor(props) {
     // Make our props accessible through this.props
     super(props);
+    // Base styles to change transition state for
+    // collapsing menu hero.
+    this.state = {
+      scrollClass: '',
+    };
+
+    // Bind base functions to change transition state for
+    // collapsing menu hero.
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  // Make sure we are listening for scroll once mounted.
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  // Remove listener when not mounted.
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  // Base functions to change transition state for
+  // navigation on scroll
+  handleScroll(event) {
+    if (window.scrollY === 0 && this.state.scrollClass === 'scroll') {
+      this.setState({ scrollClass: 'top' });
+    } else if (window.scrollY !== 0 && this.state.scrollClass !== 'scroll') {
+      this.setState({ scrollClass: 'scroll' });
+    }
   }
 
   render() {
@@ -38,7 +67,7 @@ class NavigationLarge extends React.Component {
 
     return (
       <NavigationStyle>
-        <NavigationStyle.Top className="nav-top scroll">
+        <NavigationStyle.Top className={'nav-top ' + this.state.scrollClass}>
           <NavigationStyle.Top.BrandingBlock>
             <Link to="/">
               <img src={logo} alt={Theme.Site.Title} height="30px" />
