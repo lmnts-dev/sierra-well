@@ -3,6 +3,26 @@ const path = require(`path`);
 const slash = require(`slash`);
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 
+// Slugify Helper
+
+function slugify(string) {
+  const a = 'àáäâãåăæçèéëêǵḧìíïîḿńǹñòóöôœṕŕßśșțùúüûǘẃẍÿź·/_,:;';
+  const b = 'aaaaaaaaceeeeghiiiimnnnoooooprssstuuuuuwxyz------';
+  const p = new RegExp(a.split('').join('|'), 'g');
+  return string
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+    .replace(/&/g, '-and-') // Replace & with ‘and’
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, ''); // Trim - from end of text
+}
+
+// Begin Exports
+
 exports.onCreateWebpackConfig = ({
   stage,
   getConfig,
@@ -52,6 +72,17 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+
+        allQuestionsJson {
+          edges {
+            node {
+              id
+              slug
+              category
+              tags
+            }
+          }
+        }
       }
     `
   ).then(result => {
@@ -60,7 +91,9 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Learn category page template.
-    const categoryTemplate = path.resolve(`src/templates/Learn/Category/index.js`);
+    const categoryTemplate = path.resolve(
+      `src/templates/Learn/Category/index.js`
+    );
 
     // Learn tag page template.
     const tagTemplate = path.resolve(`src/templates/Learn/Tag/index.js`);
@@ -69,7 +102,7 @@ exports.createPages = ({ graphql, actions }) => {
     _.each(result.data.allQuestionCategoriesJson.edges, edge => {
       // Gatsby uses Redux to manage its internal state.
       // Plugins and sites can use functions like "createPage"
-      // to interact with Gatsby. 
+      // to interact with Gatsby.
       // We are using 'lodash' above for the _.each function. Read more:
       // https://lodash.com/docs/4.17.11#forEach
 
@@ -96,8 +129,50 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(tagTemplate),
           context: {
             TagSlug: tag.Slug,
-            CategorySlug: CategorySlug
+            CategorySlug: CategorySlug,
           },
+        });
+      });
+
+      // Create our Question Pages
+      const questionTemplate = path.resolve(`src/templates/Question/index.js`);
+
+      // Create Base Category Level Pages
+      _.each(result.data.allQuestionsJson.edges, edge => {
+        // Gatsby uses Redux to manage its internal state.
+        // Plugins and sites can use functions like "createPage"
+        // to interact with Gatsby.
+        // We are using 'lodash' above for the _.each function. Read more:
+        // https://lodash.com/docs/4.17.11#forEach
+
+        // Use Gatsby's createPage() function. Read more:
+        // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/learn/${slugify(edge.node.category)}/${edge.node.slug}/`,
+          component: slash(questionTemplate),
+          context: {
+            Slug: edge.node.slug,
+          },
+        });
+
+        _.each(edge.node.tags, tag => {
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/learn/${slugify(edge.node.category)}/${slugify(tag)}/${
+              edge.node.slug
+            }/`,
+            component: slash(questionTemplate),
+            context: {
+              Slug: edge.node.slug,
+            },
+          });
         });
       });
     });

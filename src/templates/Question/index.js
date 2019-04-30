@@ -1,5 +1,5 @@
-// templates/Question.js:
-// This is the Question template of the website.
+// Index.js:
+// This is the home page of the website.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -7,26 +7,9 @@
 // Core
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from 'components/core/Layout';
 
-// Components
-import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
-
-// Hero Components
-import SimpleHero from 'components/library/Hero/SimpleHero';
-
-//// Section Components
-import SimpleSection from 'components/library/Section/SimpleSection';
-import LearnSection from 'components/library/Section/LearnSection';
-import SplitSection from 'components/library/Section/SplitSection';
-
-//// Misc. Components
-import Breadcrumb from 'components/library/Breadcrumb';
-import QuestionFooter from 'components/library/QuestionFooter';
-import SocialStrip from 'components/library/SocialStrip';
-
-// Elements
-import Block from 'components/library/Block';
+// Templates
+import QuestionTemplate from './layout';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -34,115 +17,95 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Post Details Snippet
-const PostDetails = ({ Author, Time }) => (
-  <span className="post-details">
-    Answered <time itemProp="datePublished">{Time}</time> by{' '}
-    <span itemProp="author">{Author}</span>
-  </span>
-);
-
 // The Question Template
-const QuestionTemplate = ({
-  BgQuery,
-  PageTheme,
-  Location,
-  CategorySlug,
-  AllCategories,
-  QuestionData,
-}) => (
-  <Layout
-    BgColor={PageTheme.Color.Background}
-    PrimaryColor={PageTheme.Color.Primary}
-    SecondaryColor={PageTheme.Color.Secondary}
-    TertiaryColor={PageTheme.Color.Tertiary}
-  >
-    {console.log(QuestionData)}
-    <SubLevelPage
-      BgColor={PageTheme.Color.Background}
-      PrimaryColor={PageTheme.Color.Primary}
-      SecondaryColor={PageTheme.Color.Secondary}
-      TertiaryColor={PageTheme.Color.Tertiary}
-    >
-      {/* Schema.org BlogPosting */}
-      {/* Read more: https://schema.org/BlogPosting */}
+const QuestionPage = props => {
+  let QuestionCategory = props.data.allQuestionsJson.edges[0].node.category;
+  let AllCategories = props.data.allQuestionCategoriesJson.edges;
 
-      <article itemScope itemType="http://schema.org/BlogPosting">
-        {/* ///////////// */}
-
-        <SimpleHero
-          Size="2"
-          BgQuery={BgQuery}
-          BgAlt={QuestionData.title}
-          TextColor={Theme.Color.White}
-          Tint="0.5"
-        >
-          <Block AlignItems="flex-start" Width={1} maxWidth={0.5}>
-            <Breadcrumb
-              to="/learn/medical/"
-              Label={QuestionData.category + ' Cannabis Questions'}
-              TextColor={Theme.Color.White}
+  return (
+    <>
+      {AllCategories.map((Category, index) => {
+        if (Category.node.Name == QuestionCategory) {
+          return (
+            <QuestionTemplate
+              PageTheme={Category.node.PageTheme}
+              BgQuery={props.data.imageTwo.childImageSharp.fluid}
+              Location={props.location.href}
+              AllCategories={AllCategories}
+              CategorySlug={Category.node.Slug}
+              QuestionData={props.data.allQuestionsJson.edges[0].node}
+              key={index}
             />
-            <h1 itemProp="name">{QuestionData.title}</h1>
-            <SocialStrip Location={Location} TextColor={Theme.Color.White} />
-          </Block>
-        </SimpleHero>
+          );
+        } else {
+          return null;
+        }
+      })}
+    </>
+  );
+};
 
-        {/* Begin page content. */}
-        {/* ///////////// */}
-        <SubLevelPageContent
-          BgColor={Theme.Color.Background}
-          TextColor={Theme.Color.White}
-          ItemProp="articleBody"
-        >
-          {/* ///////////// */}
+export default QuestionPage;
 
-          <SimpleSection
-            BgColor={Theme.Color.Snow}
-            TextColor={Theme.Color.Nightsky}
-          >
-            <Block Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-              <PostDetails Time={QuestionData.date} Author={QuestionData.author} />
-              <h3>{QuestionData.shortAnswer}</h3>
-              <p className="p-md">{QuestionData.longAnswer}</p>
-            </Block>
-          </SimpleSection>
+// GraphQL Queries
+/////////////////////////////////////////////////////////////////////
+export const query = graphql`
+  # query($Slug: String!) {
+  query($Slug: String!) {
+    imageTwo: file(relativePath: { eq: "placeholder_bg_4.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
 
-          {/* ///////////// */}
-        </SubLevelPageContent>
-        {/* End page content. */}
-        {/* ///////////// */}
-      </article>
+    allQuestionsJson(filter: { slug: { eq: $Slug } }) {
+      edges {
+        node {
+          id
+          slug
+          date
+          author
+          title
+          category
+          tags
+          shortAnswer
+          longAnswer
+        }
+      }
+    }
 
-      {/* The Related Categories. */}
-      <SubLevelPageContent
-        BgColor={Theme.Color.Snow}
-        TextColor={Theme.Color.Nightsky}
-      >
-        <LearnSection
-          Prefix="More from "
-          Categories={AllCategories}
-          Filter={QuestionData.category.toLowerCase()}
-        />
-        {console.log(QuestionData.category.toLowerCase())}
-      </SubLevelPageContent>
-
-      {/* The Question / Category / Tag footer. */}
-      <SubLevelPageContent
-        BgColor={Theme.Color.White}
-        TextColor={Theme.Color.Nightsky}
-      >
-        {/* ///////////// */}
-
-        <QuestionFooter />
-
-        {/* ///////////// */}
-      </SubLevelPageContent>
-    </SubLevelPage>
-  </Layout>
-);
-
-export default QuestionTemplate;
+    allQuestionCategoriesJson {
+      edges {
+        node {
+          id
+          Name
+          Icon
+          Headline
+          Slug
+          Tags {
+            Name
+            Icon
+            Slug
+          }
+          Breadcrumb {
+            Destination
+            Label
+          }
+          PageTheme {
+            Color {
+              Background
+              Primary
+              Secondary
+              Tertiary
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 //////////////////////////////////////////////////////////////////////
 // End Component
