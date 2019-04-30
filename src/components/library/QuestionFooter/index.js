@@ -35,6 +35,7 @@ const QuestionListings = props => (
     ColumnGap={0.25}
     BgColor={Theme.Color.White}
     TextColor={Theme.Color.Nightsky}
+    Gutter={[0, 1, 2, 1]}
   >
     <StaticQuery
       query={graphql`
@@ -97,7 +98,7 @@ const QuestionFooter = () => (
 
     <WidgetSection
       BgColor={Theme.Color.White}
-      Gutter={[1, 1, .15, 1]}
+      Gutter={[1, 1, 0.15, 1]}
       Widgets={[
         {
           // Begin WidgetContent

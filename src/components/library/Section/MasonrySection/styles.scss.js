@@ -23,6 +23,7 @@ const MasonrySectionStyle = styled.div`
   margin: 0;
   background: ${props => (props.BgColor ? props.BgColor : Theme.Color.Primary)};
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.White)};
+  overflow: visible;
 `;
 
 MasonrySectionStyle.Inner = styled(SectionInnerStyle)`
@@ -30,18 +31,47 @@ MasonrySectionStyle.Inner = styled(SectionInnerStyle)`
   flex-direction: row;
   justify-content: space-between;
   position: relative;
+  overflow: visible;
+
+  /* Array-based gutters utilizing root variable multiple. */
+  ${props =>
+    props.Gutter
+      ? 'padding-top: calc(' + Root.Size + ' * ' + props.Gutter[0] + ')'
+      : 'padding-top: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-right: calc(' + Root.Size + ' * ' + props.Gutter[1] + ')'
+      : null};
+  ${props =>
+    props.Gutter
+      ? 'padding-bottom: calc(' + Root.Size + ' * ' + props.Gutter[2] + ')'
+      : 'padding-bottom: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-left: calc(' +
+        Root.Grid.Gutter.Left +
+        ' + (' +
+        Root.Size +
+        ' * ' +
+        props.Gutter[3] +
+        '))'
+      : null};
 `;
 
 MasonrySectionStyle.Content = styled.div`
   width: 100%;
   position: relative;
   margin: 0 auto;
+  overflow: visible;
   max-width: ${Theme.Base.Grid.SiteWidth};
+
+  /* Performance fixes on Chrome & Safari */
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
 
+  /* Performance fixes on Chrome & Safari */
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
   -ms-perspective: 1000;

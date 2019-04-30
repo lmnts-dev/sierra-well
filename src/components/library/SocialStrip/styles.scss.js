@@ -25,9 +25,11 @@ export const SocialStripStyle = styled.div`
     margin-right: ${Theme.Base.Size.Sm};
     position: relative;
     font-size: calc(${Root.Size} / 2);
+    width: calc(${Root.Size} / 2);
+    height: calc(${Root.Size} / 2);
 
     span {
-      width: auto;
+      width: 100%;
       height: auto;
       font-size: calc(${Root.Size} / 2);
       i {

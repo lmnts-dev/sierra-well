@@ -91,7 +91,7 @@ const QuestionTemplate = ({ BgQuery, PageTheme, Location }) => (
           {/* ///////////// */}
 
           <SimpleSection
-            BgColor={Theme.Color.White}
+            BgColor={Theme.Color.Snow}
             TextColor={Theme.Color.Nightsky}
           >
             <Block Padding={[1, 0, 1, 0]} maxWidth={0.5}>
