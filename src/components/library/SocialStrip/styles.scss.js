@@ -23,9 +23,32 @@ export const SocialStripStyle = styled.div`
     color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     text-decoration: none;
     margin-right: calc(${Root.Size} / 4);
+    position: relative;
+
     i {
       color: ${props =>
         props.TextColor ? props.TextColor : Theme.Color.Black};
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: ${props =>
+        props.TextColor ? props.TextColor : Theme.Color.Black};
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.5);
+      transform-origin: center center;
+      opacity: 0;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0.1;
+      }
     }
   }
 `;
