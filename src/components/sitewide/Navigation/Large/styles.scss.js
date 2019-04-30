@@ -39,14 +39,31 @@ NavigationStyle.Top = styled.div`
   z-index: 999;
   height: ${Root.Nav.Size};
   position: relative;
-  background-color: rgba(255,255,255, 0);
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
-  transition: all .25s ease;
+
+  .btn {
+    transition: all 1s ease;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0%;
+    background-color: ${Theme.Color.Snow};
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    transform: translateY(-110%);
+    transition: all 1s ease;
+    z-index: -1;
+  }
 
   &.scroll {
-    background-color: rgba(255,255,255, 1);
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.09);
-    /* --NavSize: 60px; */
+    &:before {
+      background-color: ${Theme.Color.Snow};
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.09);
+      transform: translateY(0%);
+    }
 
     &.nav-top {
       ul {
@@ -58,7 +75,7 @@ NavigationStyle.Top = styled.div`
       }
 
       .btn {
-        background-color: ${Theme.Color.Nightsky};
+        background-color: ${Theme.Color.Primary};
         color: ${Theme.Color.White};
       }
     }

@@ -27,8 +27,8 @@ import { OrderMenuDesktop } from 'components/library/OrderMenu';
 
 const SublevelInnerLock = createGlobalStyle`
 .sublevel-inner {
-  min-height: calc(100vh - (${Root.Nav.Size})) !important;
-  height: calc(100vh - (${Root.Nav.Size})) !important;
+  min-height: calc(100vh) !important;
+  height: calc(100vh) !important;
 }
 `;
 

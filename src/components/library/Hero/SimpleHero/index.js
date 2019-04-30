@@ -34,7 +34,12 @@ const SimpleHero = ({
   Size,
   children,
 }) => (
-  <SimpleHeroStyle Background={Background} TextColor={TextColor} Tint={Tint} className={Tint ? "tint" : null}>
+  <SimpleHeroStyle
+    Background={Background}
+    TextColor={TextColor}
+    Tint={Tint}
+    className={Tint ? 'tint' : null}
+  >
     <HeroInner
       Size={Size ? Size : false}
       imgRight={imgRight ? imgRight : false}

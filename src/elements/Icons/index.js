@@ -27,8 +27,8 @@ const Icon = props => {
       );
     default:
       return (
-        <IconStyle className="ico">
-          <i className={'fas fa-' + props.Name} />
+        <IconStyle Color={props.Color} className="ico">
+          <i className={'fas fab fa-' + props.Name} />
         </IconStyle>
       );
   }

@@ -48,38 +48,38 @@ function Cascade(Keyframes, Duration, DelayBase, Increment) {
 
 export const FadeIn = css`
   opacity: 0;
-  ${Cascade(FadeInKeyFrames, 1, .25, 1)}
+  ${Cascade(FadeInKeyFrames, 1, 0.25, 1)}
   &:first-child {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 1.3)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 1.3)}
   }
   &:nth-child(2) {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 1.4)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 1.4)}
   }
   &:nth-child(3) {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 1.5)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 1.5)}
   }
   &:nth-child(4) {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 1.6)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 1.6)}
   }
   &:nth-child(5) {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 1.7)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 1.7)}
   }
   &:nth-child(6) {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 1.8)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 1.8)}
   }
   &:nth-child(7) {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 1.9)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 1.9)}
   }
   &:nth-child(8) {
     opacity: 0;
-    ${Cascade(FadeInKeyFrames, 1, .25, 2)}
+    ${Cascade(FadeInKeyFrames, 1, 0.25, 2)}
   }
 `;
 

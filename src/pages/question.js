@@ -23,6 +23,7 @@ import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
 import Breadcrumb from './../components/library/Breadcrumb';
+import SocialStrip from './../components/library/SocialStrip';
 import Btn from 'components/library/Btn/';
 import ImgQuery from 'components/core/ImgQuery';
 
@@ -45,7 +46,7 @@ const PageTheme = {
   },
 };
 
-const Index = props => (
+const QuestionTemplate = props => (
   <Layout
     BgColor={PageTheme.Color.Background}
     PrimaryColor={PageTheme.Color.Primary}
@@ -73,6 +74,10 @@ const Index = props => (
             TextColor={Theme.Color.White}
           />
           <h1>What are qualifying conditions for a medical cannabis card?</h1>
+          <SocialStrip
+            Location={props.location}
+            TextColor={Theme.Color.White}
+          />
         </Block>
       </SimpleHero>
 
@@ -214,7 +219,6 @@ const Index = props => (
         />
 
         {/* ///////////// */}
-
       </SubLevelPageContent>
       {/* End page content. */}
       {/* ///////////// */}
@@ -222,7 +226,7 @@ const Index = props => (
   </Layout>
 );
 
-export default Index;
+export default QuestionTemplate;
 
 // GraphQL Queries
 /////////////////////////////////////////////////////////////////////
