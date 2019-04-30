@@ -16,6 +16,9 @@ import { HeroInner } from './../../Hero';
 // Styles
 import SimpleHeroStyle from './styles.scss';
 
+// Components
+import ImgQuery from 'components/core/ImgQuery';
+
 // Constants
 import { Theme, Root } from 'constants/Theme';
 
@@ -32,6 +35,8 @@ const SimpleHero = ({
   TextColor,
   Tint,
   Size,
+  BgQuery,
+  BgAlt,
   children,
 }) => (
   <SimpleHeroStyle
@@ -51,6 +56,11 @@ const SimpleHero = ({
     >
       {children}
     </HeroInner>
+    {BgQuery ? (
+      <div className="section-img">
+        <ImgQuery query={BgQuery} alt={BgAlt} />
+      </div>
+    ) : null}
   </SimpleHeroStyle>
 );
 

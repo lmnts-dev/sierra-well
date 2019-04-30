@@ -12,7 +12,6 @@ import LearnCategoryTemplate from './layout';
 
 // Data
 import { graphql } from 'gatsby';
-import { QuestionsData } from 'data/questions';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

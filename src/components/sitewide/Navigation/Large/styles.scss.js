@@ -70,6 +70,9 @@ NavigationStyle.Top = styled.div`
         li {
           a {
             color: ${Theme.Color.Nightsky};
+            &:before {
+              background: ${Theme.Color.Nightsky};
+            }
           }
         }
       }
@@ -156,7 +159,7 @@ NavigationStyle.Top.TopLinkListWrapper = styled.div`
           transform: translate(-50%, 0%);
           width: 5px;
           height: 5px;
-          background: ${Theme.Color.Black};
+          background: ${Theme.Color.Nightsky};
           border-radius: 50%;
           opacity: 0;
           transition: all 0.25s ${Theme.Base.Transition.CssEase};

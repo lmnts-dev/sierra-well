@@ -26,6 +26,7 @@ const SimpleHeroStyle = styled.div`
   justify-self: flex-start;
   overflow: hidden;
 
+  /* Background Tint */
   ${props =>
     props.Tint
       ? `
@@ -46,12 +47,29 @@ const SimpleHeroStyle = styled.div`
   `
       : null}
 
+  /* Block Spacing */
   .block {
     &:first-child {
       padding-right: calc(${Root.Size} / 2);
     }
     &:second-child {
       padding-left: calc(${Root.Size} / 2);
+    }
+  }
+
+  /* Gatsby-image based background images. */
+  .section-img {
+    position: ${props => (props.FluidHeight ? 'relative' : 'absolute')};
+    width: ${props => (props.FluidHeight ? '100%' : 'auto')};
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    ${props => (props.BgTint ? 'opacity: ' + props.BgTint + ';' : null)}
+    img {
+      height: 100%;
     }
   }
 `;

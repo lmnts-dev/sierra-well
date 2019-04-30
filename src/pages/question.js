@@ -63,11 +63,12 @@ const QuestionTemplate = props => (
 
       <SimpleHero
         Size="2"
-        Background="url('https://source.unsplash.com/1600x900/?nature,water')"
+        BgQuery={props.data.imageTwo.childImageSharp.fluid}
+        BgAlt="What are qualifying conditions for a medical cannabis card?"
         TextColor={Theme.Color.White}
         Tint="0.5"
       >
-        <Block AlignItems="flex-start" Width={0.7}>
+        <Block AlignItems="flex-start" Width={1} maxWidth={0.5}>
           <Breadcrumb
             to="/learn/medical/"
             Label="Medical Cannabis Questions"
@@ -78,7 +79,6 @@ const QuestionTemplate = props => (
             Location={props.location.href}
             TextColor={Theme.Color.White}
           />
-          {console.log(props.location)}
         </Block>
       </SimpleHero>
 

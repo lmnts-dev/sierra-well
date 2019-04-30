@@ -14,16 +14,26 @@ import { Theme, Root } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 export const SocialStripStyle = styled.div`
-  display: inline-flex;
-  width: auto;
+  display: flex;
+  width: 100%;
   align-items: center;
   text-decoration: none;
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
   a {
     color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     text-decoration: none;
-    margin-right: calc(${Root.Size} / 4);
+    margin-right: ${Theme.Base.Size.Sm};
     position: relative;
+    font-size: calc(${Root.Size} / 2);
+
+    span {
+      width: auto;
+      height: auto;
+      font-size: calc(${Root.Size} / 2);
+      i {
+        font-size: calc(${Root.Size} / 2);
+      }
+    }
 
     i {
       color: ${props =>

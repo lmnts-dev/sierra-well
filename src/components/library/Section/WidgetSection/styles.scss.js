@@ -38,9 +38,28 @@ WidgetSection.Content = styled(SectionContentStyle)`
   margin: 0 auto;
   justify-content: space-between;
   align-items: stretch;
+  flex-wrap: wrap;
 
   .widget {
+    width: 25%;
     padding: calc(${Root.Size} / 6);
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+
+    @media (max-width: calc(${Theme.Base.Media.Width.Md} * 1.5)) {
+      width: 50%;
+      flex: unset;
+      &:nth-child(odd) {
+        padding-left: 0;
+      }
+      &:nth-child(even) {
+        padding-right: 0;
+      }
+    }
   }
 `;
 

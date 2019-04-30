@@ -67,6 +67,9 @@ SimpleSectionStyle.Inner = styled(SectionInnerStyle)`
     bottom: 0;
     overflow: hidden;
     ${props => (props.BgTint ? 'opacity: ' + props.BgTint + ';' : null)}
+    img {
+      height: 100%;
+    }
   }
 `;
 

@@ -20,7 +20,7 @@ import LinkList from 'components/core/LinkList/';
 
 // Constants
 import { Theme } from 'constants/Theme';
-import logo from '../../../../assets/images/brandmark.png';
+import logo from 'assets/images/brandmark.png';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

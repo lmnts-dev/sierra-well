@@ -29,7 +29,7 @@ import { graphql } from 'gatsby';
 //////////////////////////////////////////////////////////////////////
 
 // This component is to transform the
-// questions.js data into usable stuff for our
+// QuestionCategories.js  data into usable stuff for our
 // Widget components and SlideSections.
 class SlideSectionWithData extends React.Component {
   constructor(props) {
