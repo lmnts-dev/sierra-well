@@ -49,6 +49,7 @@ const QuestionTemplate = ({
   Location,
   CategorySlug,
   AllCategories,
+  QuestionData,
 }) => (
   <Layout
     BgColor={PageTheme.Color.Background}
@@ -56,6 +57,7 @@ const QuestionTemplate = ({
     SecondaryColor={PageTheme.Color.Secondary}
     TertiaryColor={PageTheme.Color.Tertiary}
   >
+    {console.log(QuestionData)}
     <SubLevelPage
       BgColor={PageTheme.Color.Background}
       PrimaryColor={PageTheme.Color.Primary}
@@ -71,19 +73,17 @@ const QuestionTemplate = ({
         <SimpleHero
           Size="2"
           BgQuery={BgQuery}
-          BgAlt="What are qualifying conditions for a medical cannabis card?"
+          BgAlt={QuestionData.title}
           TextColor={Theme.Color.White}
           Tint="0.5"
         >
           <Block AlignItems="flex-start" Width={1} maxWidth={0.5}>
             <Breadcrumb
               to="/learn/medical/"
-              Label="Medical Cannabis Questions"
+              Label={QuestionData.category + ' Cannabis Questions'}
               TextColor={Theme.Color.White}
             />
-            <h1 itemProp="name">
-              What are qualifying conditions for a medical cannabis card?
-            </h1>
+            <h1 itemProp="name">{QuestionData.title}</h1>
             <SocialStrip Location={Location} TextColor={Theme.Color.White} />
           </Block>
         </SimpleHero>
@@ -102,18 +102,9 @@ const QuestionTemplate = ({
             TextColor={Theme.Color.Nightsky}
           >
             <Block Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-              <PostDetails Time="12-23-19" Author="Wes McQuillen" />
-              <h3>
-                In order to qualify for a medical marijuana card, you must
-                suffer from one of the conditions listed and have a doctor’s
-                recommendation that marijuana will help relieve that condition.
-                The complete list of qualifying conditions can be found in the
-                Nevada Revised Statutes, Chapter 453A, Section 050.
-              </h3>
-              <p className="p-md">
-                Free delivery available within 15 miles of our Reno and Carson
-                City stores, Nevada addresses only.
-              </p>
+              <PostDetails Time={QuestionData.date} Author={QuestionData.author} />
+              <h3>{QuestionData.shortAnswer}</h3>
+              <p className="p-md">{QuestionData.longAnswer}</p>
             </Block>
           </SimpleSection>
 
@@ -131,8 +122,9 @@ const QuestionTemplate = ({
         <LearnSection
           Prefix="More from "
           Categories={AllCategories}
-          Filter={CategorySlug}
+          Filter={QuestionData.category.toLowerCase()}
         />
+        {console.log(QuestionData.category.toLowerCase())}
       </SubLevelPageContent>
 
       {/* The Question / Category / Tag footer. */}

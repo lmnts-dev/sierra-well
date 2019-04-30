@@ -28,26 +28,60 @@ const PageTheme = {
 };
 
 // The Question Template
-const QuestionPage = props => (
-  <QuestionTemplate
-    PageTheme={PageTheme}
-    BgQuery={props.data.imageTwo.childImageSharp.fluid}
-    Location={props.location.href}
-    AllCategories={props.data.allQuestionCategoriesJson.edges}
-    CategorySlug="medical"
-  />
-);
+const QuestionPage = props => {
+  let QuestionCategory = props.data.allQuestionsJson.edges[0].node.category;
+  let AllCategories = props.data.allQuestionCategoriesJson.edges;
+
+  return (
+    <>
+      {AllCategories.map((Category, index) => {
+        if (Category.node.Name == QuestionCategory) {
+          return (
+            <QuestionTemplate
+              PageTheme={Category.node.PageTheme}
+              BgQuery={props.data.imageTwo.childImageSharp.fluid}
+              Location={props.location.href}
+              AllCategories={AllCategories}
+              CategorySlug={Category.node.Slug}
+              QuestionData={props.data.allQuestionsJson.edges[0].node}
+              key={index}
+            />
+          );
+        } else {
+          return null;
+        }
+      })}
+    </>
+  );
+};
 
 export default QuestionPage;
 
 // GraphQL Queries
 /////////////////////////////////////////////////////////////////////
 export const query = graphql`
+  # query($Slug: String!) {
   query {
     imageTwo: file(relativePath: { eq: "placeholder_bg_4.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    allQuestionsJson(filter: { slug: { eq: "qualifying-conditions" } }) {
+      edges {
+        node {
+          id
+          slug
+          date
+          author
+          title
+          category
+          tags
+          shortAnswer
+          longAnswer
         }
       }
     }

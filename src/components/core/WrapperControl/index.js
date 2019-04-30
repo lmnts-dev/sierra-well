@@ -43,11 +43,11 @@ export const WrapperRelease = createGlobalStyle`
 
   .wrapper {
     @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
-      overflow-y: unset;
+      overflow-y: hidden;
       height: auto;
     }
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      overflow-y: scroll; /* has to be scroll, not auto */
+      overflow-y: hidden; /* has to be scroll, not auto */
       -webkit-overflow-scrolling: touch;
     }
   }
