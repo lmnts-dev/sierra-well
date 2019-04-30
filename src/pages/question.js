@@ -22,13 +22,13 @@ import WidgetSection from 'components/library/Section/WidgetSection';
 import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
-import Breadcrumb from './../components/library/Breadcrumb';
-import SocialStrip from './../components/library/SocialStrip';
+import Breadcrumb from 'components/library/Breadcrumb';
+import SocialStrip from 'components/library/SocialStrip';
 import Btn from 'components/library/Btn/';
 import ImgQuery from 'components/core/ImgQuery';
 
 // Elements
-import Block from './../components/library/Block';
+import Block from 'components/library/Block';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -75,9 +75,10 @@ const QuestionTemplate = props => (
           />
           <h1>What are qualifying conditions for a medical cannabis card?</h1>
           <SocialStrip
-            Location={props.location}
+            Location={props.location.href}
             TextColor={Theme.Color.White}
           />
+          {console.log(props.location)}
         </Block>
       </SimpleHero>
 

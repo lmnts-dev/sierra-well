@@ -19,7 +19,7 @@ import SocialStripStyle from './styles.scss';
 const SocialStrip = ({ TextColor, Location }) => (
   <SocialStripStyle TextColor={TextColor}>
     <a
-      href={'https://www.facebook.com/sharer.php?u=' + Location.href}
+      href={'https://www.facebook.com/sharer.php?u=' + Location}
       target="_blank"
       rel="nofollow noopener noreferrer"
     >
@@ -28,7 +28,7 @@ const SocialStrip = ({ TextColor, Location }) => (
     <a
       href={
         'https://twitter.com/intent/tweet?url=' +
-        Location.href +
+        Location +
         '&text=Test&via=Test&hashtags=Test'
       }
       target="_blank"
@@ -39,7 +39,7 @@ const SocialStrip = ({ TextColor, Location }) => (
     <a
       href={
         'https://www.linkedin.com/shareArticle?mini=true&url=' +
-        Location.href +
+        Location +
         '&title=Test&summary=Test&source=Test'
       }
       target="_blank"

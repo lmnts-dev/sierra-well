@@ -17,6 +17,7 @@ import SlideSection from 'components/library/Section/SlideSection';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
+import SocialStrip from 'components/library/SocialStrip';
 import Btn from 'components/library/Btn/';
 
 // Elements
@@ -122,6 +123,7 @@ const PageWrapper = ({
   CategorySlug,
   Category,
   CategoryTheme,
+  Location,
 }) => {
   return (
     <Layout
@@ -146,6 +148,10 @@ const PageWrapper = ({
               TextColor={CategoryTheme.Color.Secondary}
             />
             <h1 className="h2">Learn about Cannabis & {TagData.Name}. </h1>
+            <SocialStrip
+              Location={Location}
+              TextColor={CategoryTheme.Color.Secondary}
+            />
           </Block>
         </SimpleHero>
         {/* Begin page content. */}
@@ -186,7 +192,13 @@ const PageWrapper = ({
 // TemplateLayout Component to pass data where it needs to go for
 // the theming of the hero as well as the LearnSection and what
 // to display in those cards.
-const TemplateLayout = ({ TagSlug, TagData, CategorySlug, CategoryData }) => {
+const TemplateLayout = ({
+  TagSlug,
+  TagData,
+  CategorySlug,
+  CategoryData,
+  Location,
+}) => {
   return (
     <PageWrapper
       CategoryTheme={CategoryData.PageTheme}
@@ -194,6 +206,7 @@ const TemplateLayout = ({ TagSlug, TagData, CategorySlug, CategoryData }) => {
       CategorySlug={CategorySlug}
       TagSlug={TagSlug}
       TagData={TagData}
+      Location={Location}
     >
       <LearnSection BaseUrl="/learn" Category={CategoryData} />
     </PageWrapper>
@@ -213,13 +226,20 @@ const TemplateLayout = ({ TagSlug, TagData, CategorySlug, CategoryData }) => {
 // };
 
 // The Template itself. Where it all begins.
-const LearnTagTemplate = ({ TagSlug, TagData, CategorySlug, CategoryData }) => {
+const LearnTagTemplate = ({
+  TagSlug,
+  TagData,
+  CategorySlug,
+  CategoryData,
+  Location,
+}) => {
   return (
     <TemplateLayout
       TagSlug={TagSlug}
       TagData={TagData}
       CategorySlug={CategorySlug}
       CategoryData={CategoryData}
+      Location={Location}
     />
   );
 };

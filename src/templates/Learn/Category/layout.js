@@ -17,6 +17,7 @@ import SlideSection from 'components/library/Section/SlideSection';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
+import SocialStrip from 'components/library/SocialStrip';
 import Btn from 'components/library/Btn/';
 
 // Elements
@@ -115,7 +116,7 @@ const LearnSection = ({ Category }) => {
 };
 
 // PageWrapper component for page theming.
-const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
+const PageWrapper = ({ children, Data, Location, Category, CategoryTheme }) => {
   return (
     <Layout
       BgColor={CategoryTheme.Color.Background}
@@ -139,6 +140,10 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
               TextColor={CategoryTheme.Color.Secondary}
             />
             <h1 className="h2">{Category.Headline}</h1>
+            <SocialStrip
+              Location={Location}
+              TextColor={CategoryTheme.Color.Secondary}
+            />
           </Block>
         </SimpleHero>
         {/* Begin page content. */}
@@ -179,11 +184,12 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
 // TemplateLayout Component to pass data where it needs to go for
 // the theming of the hero as well as the LearnSection and what
 // to display in those cards.
-const TemplateLayout = ({ Category }) => {
+const TemplateLayout = ({ Category, Location }) => {
   return (
     <PageWrapper
       CategoryTheme={Category.node.PageTheme}
       Category={Category.node}
+      Location={Location}
     >
       <LearnSection Category={Category.node} />
     </PageWrapper>
@@ -203,11 +209,13 @@ const TemplateLayout = ({ Category }) => {
 // };
 
 // The Template itself. Where it all begins.
-const LearnCategoryTemplate = ({ Filter, Data }) => {
+const LearnCategoryTemplate = ({ Filter, Location, Data }) => {
   return (
     <>
       {Data.map((Category, index) => {
-        return <TemplateLayout key={index} Category={Category} />;
+        return (
+          <TemplateLayout key={index} Category={Category} Location={Location} />
+        );
       })}
     </>
   );

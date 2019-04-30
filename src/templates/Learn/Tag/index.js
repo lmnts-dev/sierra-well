@@ -16,10 +16,10 @@ import { graphql } from 'gatsby';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const LearnTagPage = ({ data, pageContext }) => {
+const LearnTagPage = props => {
   // Define our Slugs
-  let CategorySlug = pageContext.CategorySlug;
-  let TagSlug = pageContext.TagSlug;
+  let CategorySlug = props.pageContext.CategorySlug;
+  let TagSlug = props.pageContext.TagSlug;
 
   // Define our Data Objects
   let CategoryData = {};
@@ -27,7 +27,7 @@ const LearnTagPage = ({ data, pageContext }) => {
 
   return (
     <>
-      {data.allQuestionCategoriesJson.edges.map((Category, index) => {
+      {props.data.allQuestionCategoriesJson.edges.map((Category, index) => {
         // If Category's slug matches this page's context CategorySlug that
         // we specified in gatsby-node.js:
         if (Category.node.Slug == CategorySlug) {
@@ -40,7 +40,7 @@ const LearnTagPage = ({ data, pageContext }) => {
               {Category.node.Tags.map((Tag, i) => {
                 // If the tag slug matches this page's context TagSlug
                 // that we specified in gatsby-node.js.
-                if (Tag.Slug == pageContext.TagSlug) {
+                if (Tag.Slug == props.pageContext.TagSlug) {
                   // Define our correct Data Tag Object
                   let TagData = Tag;
 
@@ -51,6 +51,7 @@ const LearnTagPage = ({ data, pageContext }) => {
                       TagData={TagData}
                       CategorySlug={CategorySlug}
                       CategoryData={CategoryData}
+                      Location={props.location.href}
                     />
                   );
                 }

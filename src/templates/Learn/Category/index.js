@@ -17,8 +17,11 @@ import { QuestionsData } from 'data/questions';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const LearnCategoryPage = ({ data }) => (
-  <LearnCategoryTemplate Data={data.allQuestionCategoriesJson.edges} />
+const LearnCategoryPage = props => (
+  <LearnCategoryTemplate
+    Data={props.data.allQuestionCategoriesJson.edges}
+    Location={props.location.href}
+  />
 );
 
 export default LearnCategoryPage;
