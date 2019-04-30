@@ -48,8 +48,12 @@ const DefaultWidget = ({
     className="widget-content"
   >
     <Link to={Destination}>
-      <WidgetStyle.Subhead>{Subhead}</WidgetStyle.Subhead>
-      <WidgetStyle.Headline>{Headline}</WidgetStyle.Headline>
+      <WidgetStyle.Subhead className="widget-subheadline">
+        {Subhead}
+      </WidgetStyle.Subhead>
+      <WidgetStyle.Headline className="widget-headline">
+        {Headline}
+      </WidgetStyle.Headline>
       <Icon className="svg-carat" Name="carat" Color={IconColor} />
       <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
     </Link>

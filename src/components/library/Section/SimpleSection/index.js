@@ -28,14 +28,12 @@ const SimpleSection = ({
   BgQuery,
   BgAlt,
   BgTint,
-  PaddingY,
   FluidHeight,
   Gutter,
   children,
 }) => (
   <SimpleSectionStyle Style={Style} BgColor={BgColor} TextColor={TextColor}>
     <SimpleSectionStyle.Inner
-      Size={PaddingY}
       BgTint={BgTint}
       FluidHeight={FluidHeight}
       Gutter={Gutter}

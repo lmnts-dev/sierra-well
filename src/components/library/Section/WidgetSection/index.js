@@ -21,9 +21,9 @@ import WidgetSectionStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const WidgetSection = ({ BgColor, Widgets, Slider }) => (
+const WidgetSection = ({ BgColor, Widgets, Slider, Gutter }) => (
   <WidgetSectionStyle BgColor={BgColor}>
-    <WidgetSectionStyle.Inner>
+    <WidgetSectionStyle.Inner Gutter={Gutter}>
       <WidgetSectionStyle.Content className="widget-section">
         {/* Map our Widgets data. */}
         {Widgets.map((Widget, index) => {

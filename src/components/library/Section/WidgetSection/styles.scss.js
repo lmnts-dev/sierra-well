@@ -26,12 +26,34 @@ const WidgetSection = styled.div`
 `;
 
 WidgetSection.Inner = styled(SectionInnerStyle)`
-  padding-top: ${Root.Size};
-  padding-bottom: ${Root.Size};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 400px;
+
+  /* Array-based gutters utilizing root variable multiple. */
+  ${props =>
+    props.Gutter
+      ? 'padding-top: calc(' + Root.Size + ' * ' + props.Gutter[0] + ')'
+      : 'padding-top: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-right: calc(' + Root.Size + ' * ' + props.Gutter[1] + ')'
+      : null};
+  ${props =>
+    props.Gutter
+      ? 'padding-bottom: calc(' + Root.Size + ' * ' + props.Gutter[2] + ')'
+      : 'padding-bottom: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-left: calc(' +
+        Root.Grid.Gutter.Left +
+        ' + (' +
+        Root.Size +
+        ' * ' +
+        props.Gutter[3] +
+        '))'
+      : null};
 `;
 
 WidgetSection.Content = styled(SectionContentStyle)`

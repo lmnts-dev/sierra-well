@@ -17,11 +17,11 @@ import SimpleHero from 'components/library/Hero/SimpleHero';
 
 //// Section Components
 import SimpleSection from 'components/library/Section/SimpleSection';
-import WidgetSection from 'components/library/Section/WidgetSection';
 import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
+import QuestionFooter from 'components/library/QuestionFooter';
 import SocialStrip from 'components/library/SocialStrip';
 
 // Elements
@@ -111,120 +111,22 @@ const QuestionTemplate = ({ BgQuery, PageTheme, Location }) => (
           </SimpleSection>
 
           {/* ///////////// */}
-
-          {/* ///////////// */}
-
-          <WidgetSection
-            BgColor={Theme.Color.White}
-            Widgets={[
-              {
-                // Begin WidgetContent
-                Flex: 1,
-                WidgetContent: [
-                  {
-                    Destination: '/menu',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Nightsky,
-                        BgImage: '',
-                        Subhead: '',
-                        Headline: 'Menu',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.Primary,
-                        IconName: 'plus', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                ],
-                // End WidgetContent
-              },
-              {
-                // Begin WidgetContent
-                Flex: 1,
-                WidgetContent: [
-                  {
-                    Destination: '/locations',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Tahoe,
-                        BgImage: '',
-                        Subhead: '',
-                        Headline: 'Locations',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'map-marker-alt', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                ],
-                // End WidgetContent
-              },
-              {
-                // Begin WidgetContent
-                Flex: 1,
-                WidgetContent: [
-                  {
-                    Destination: '/learn',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Mint,
-                        BgImage: '',
-                        Subhead: '',
-                        Headline: 'Q&A',
-                        TextColor: Theme.Color.Nightsky,
-                        IconColor: Theme.Color.Nightsky,
-                        IconName: 'book-open', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                ],
-                // End WidgetContent
-              },
-              {
-                // Begin WidgetContent
-                Flex: 1,
-                WidgetContent: [
-                  {
-                    Destination: '/specials',
-                    Style: 'Generic',
-                    Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Primary,
-                        BgImage: '',
-                        Subhead: '',
-                        Headline: 'Specials',
-                        TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'star', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
-                        IconSize: '',
-                      },
-                    },
-                  },
-                ],
-                // End WidgetContent
-              },
-            ]}
-          />
-
-          {/* ///////////// */}
         </SubLevelPageContent>
         {/* End page content. */}
         {/* ///////////// */}
       </article>
+
+      {/* The Question / Category / Tag footer. */}
+      <SubLevelPageContent
+        BgColor={Theme.Color.White}
+        TextColor={Theme.Color.Nightsky}
+      >
+        {/* ///////////// */}
+
+        <QuestionFooter />
+
+        {/* ///////////// */}
+      </SubLevelPageContent>
     </SubLevelPage>
   </Layout>
 );

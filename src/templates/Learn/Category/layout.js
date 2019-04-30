@@ -18,6 +18,7 @@ import SlideSection from 'components/library/Section/SlideSection';
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
 import SocialStrip from 'components/library/SocialStrip';
+import QuestionFooter from 'components/library/QuestionFooter';
 import Btn from 'components/library/Btn/';
 
 // Elements
@@ -157,24 +158,21 @@ const PageWrapper = ({ children, Data, Location, Category, CategoryTheme }) => {
           {children}
 
           {/* ///////////// */}
-
-          {/* ///////////// */}
-
-          <SimpleSection
-            BgColor={Theme.Color.White}
-            TextColor={Theme.Color.Nightsky}
-            Style="centered"
-          >
-            <Block Style="centered" Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-              <h2>Not seeing your question?</h2>
-              <p className="p-md">
-                Chat with an expert now or sumbit your own question
-              </p>
-            </Block>
-          </SimpleSection>
-          {/* ///////////// */}
         </SubLevelPageContent>
         {/* End page content. */}
+
+        {/* The Question / Category / Tag footer. */}
+        <SubLevelPageContent
+          BgColor={Theme.Color.White}
+          TextColor={Theme.Color.Nightsky}
+        >
+          {/* ///////////// */}
+
+          <QuestionFooter />
+
+          {/* ///////////// */}
+        </SubLevelPageContent>
+
         {/* ///////////// */}
       </SubLevelPage>
     </Layout>
