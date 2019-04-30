@@ -45,8 +45,17 @@ export const SubLevelPage = ({
 );
 
 // The SubLevel Page Content
-export const SubLevelPageContent = ({ BgColor, TextColor, children }) => (
-  <SubLevelPageStyle.Content TextColor={TextColor} BgColor={BgColor}>
+export const SubLevelPageContent = ({
+  BgColor,
+  TextColor,
+  ItemProp,
+  children,
+}) => (
+  <SubLevelPageStyle.Content
+    TextColor={TextColor}
+    BgColor={BgColor}
+    itemProp={ItemProp}
+  >
     {children}
   </SubLevelPageStyle.Content>
 );

@@ -76,7 +76,7 @@ export const Typography = createGlobalStyle`
   /* Header Styles */
   h1, h2, h3, h4, h5, h6 {
     font-family: ${Font.Header};
-    line-height: 1.2;
+    line-height: 1.1;
     padding: 0;
     margin: 0;
     letter-spacing: -0.2px;

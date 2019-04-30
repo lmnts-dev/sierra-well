@@ -44,6 +44,9 @@ export const Palette = createGlobalStyle`
     color: ${Color.Black};
     background-color: ${Color.Background};
   }
+
+  ::-moz-selection { background: ${Color.Primary}; color: ${Color.White} }
+  ::selection { background: ${Color.Primary}; color: ${Color.White} }
 `;
 
 //////////////////////////////////////////////////////////////////////
