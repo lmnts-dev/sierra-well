@@ -22,7 +22,7 @@ export const SocialStripStyle = styled.div`
   a {
     color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     text-decoration: none;
-    margin-right: ${Theme.Base.Size.Sm};
+    margin-right: calc(${Theme.Base.Size.Md} * 0.8);
     position: relative;
     font-size: calc(${Root.Size} / 2);
     width: calc(${Root.Size} / 2);
@@ -49,7 +49,7 @@ export const SocialStripStyle = styled.div`
         props.TextColor ? props.TextColor : Theme.Color.Black};
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%) scale(1.5);
+      transform: translate(-50%, -50%) scale(1.8);
       transform-origin: center center;
       opacity: 0;
       border-radius: 50%;

@@ -14,6 +14,7 @@ import SimpleHero from 'components/library/Hero/SimpleHero';
 import WidgetSection from 'components/library/Section/WidgetSection';
 import SimpleSection from 'components/library/Section/SimpleSection';
 import SlideSection from 'components/library/Section/SlideSection';
+import QuestionListings from 'components/library/QuestionListings';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
@@ -56,12 +57,13 @@ class SlideSectionWithData extends React.Component {
     // Create empty Widgets array for us to loop through
     // later on.
     const Widgets = [];
+    let WidgetCount = 0; // This is to add an 'All' Widget.
 
     // Map our tags and create a new Widget object for
     // each tag for us to loop and display a Widget for in
     // the data structure that WidgetContainer likes.
     Tags.map((Tag, index) => {
-      Widgets[index] = {
+      Widgets[index + 1] = {
         Flex: 1,
         WidgetContent: [
           {
@@ -85,6 +87,30 @@ class SlideSectionWithData extends React.Component {
         ],
       };
     });
+
+    Widgets[0] = {
+      Flex: 1,
+      WidgetContent: [
+        {
+          Destination: BaseUrl + '/' + CategorySlug + '/',
+          Style: 'Generic',
+          Meta: {
+            Generic: {
+              BgColor: Theme.Color.Nightsky,
+              BgImage: '',
+              Subhead: '',
+              Headline: 'All ' + this.props.Data.Name + ' Questions',
+              TextColor: Theme.Color.White,
+              IconColor: Theme.Color.White,
+              IconName: this.props.Data.Icon, // FontAwesome Icon Name
+              TintColor: '',
+              TintOpacity: '',
+              IconSize: '',
+            },
+          },
+        },
+      ],
+    };
 
     return (
       <SlideSection
@@ -205,6 +231,7 @@ const TemplateLayout = ({
       TagData={TagData}
       Location={Location}
     >
+      <QuestionListings Gutter={[1, 1, 2, 1]} BgColor={Theme.Color.Snow} />
       <LearnSection BaseUrl="/learn" Category={CategoryData} />
     </PageWrapper>
   );

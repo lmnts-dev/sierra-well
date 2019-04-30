@@ -14,6 +14,7 @@ import SimpleHero from 'components/library/Hero/SimpleHero';
 import WidgetSection from 'components/library/Section/WidgetSection';
 import SimpleSection from 'components/library/Section/SimpleSection';
 import SlideSection from 'components/library/Section/SlideSection';
+import QuestionListings from 'components/library/QuestionListings';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
@@ -90,7 +91,7 @@ class SlideSectionWithData extends React.Component {
       <SlideSection
         Widgets={Widgets}
         SectionSize={3}
-        Header={this.props.Data.Name}
+        Header={this.props.Header ? this.props.Header : this.props.Data.Name}
         Theme={{
           TextColor: Theme.Color.Black,
           BgColor: 'none',
@@ -106,12 +107,11 @@ class SlideSectionWithData extends React.Component {
   }
 }
 
-// This component is to differentiate page content / SlideSections
-// depending on what 'Filter' is supplied.
+// This component is to differentiate page content / SlideSections.
 const LearnSection = ({ Category }) => {
   return (
-    <Block maxWidth="100%" Padding={[0, 0, 2, 0]}>
-      <SlideSectionWithData BaseUrl="learn" Data={Category} />
+    <Block maxWidth="100%" Padding={[0, 0, 0.5, 0]}>
+      <SlideSectionWithData Header="Related" BaseUrl="learn" Data={Category} />
     </Block>
   );
 };
@@ -190,6 +190,7 @@ const TemplateLayout = ({ Category, Location }) => {
       Location={Location}
     >
       <LearnSection Category={Category.node} />
+      <QuestionListings Gutter={[0, 1, 2, 1]} BgColor={Theme.Color.Snow} />
     </PageWrapper>
   );
 };

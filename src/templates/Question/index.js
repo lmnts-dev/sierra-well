@@ -1,5 +1,5 @@
-// Index.js:
-// This is the home page of the website.
+// templates/Question.js:
+// This is the Question template of the website.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -17,6 +17,7 @@ import SimpleHero from 'components/library/Hero/SimpleHero';
 
 //// Section Components
 import SimpleSection from 'components/library/Section/SimpleSection';
+import LearnSection from 'components/library/Section/LearnSection';
 import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
@@ -42,7 +43,13 @@ const PostDetails = ({ Author, Time }) => (
 );
 
 // The Question Template
-const QuestionTemplate = ({ BgQuery, PageTheme, Location }) => (
+const QuestionTemplate = ({
+  BgQuery,
+  PageTheme,
+  Location,
+  CategorySlug,
+  AllCategories,
+}) => (
   <Layout
     BgColor={PageTheme.Color.Background}
     PrimaryColor={PageTheme.Color.Primary}
@@ -115,6 +122,18 @@ const QuestionTemplate = ({ BgQuery, PageTheme, Location }) => (
         {/* End page content. */}
         {/* ///////////// */}
       </article>
+
+      {/* The Related Categories. */}
+      <SubLevelPageContent
+        BgColor={Theme.Color.Snow}
+        TextColor={Theme.Color.Nightsky}
+      >
+        <LearnSection
+          Prefix="More from "
+          Categories={AllCategories}
+          Filter={CategorySlug}
+        />
+      </SubLevelPageContent>
 
       {/* The Question / Category / Tag footer. */}
       <SubLevelPageContent

@@ -16,6 +16,7 @@ import MasonrySection from 'components/library/Section/MasonrySection';
 import Block from 'components/library/Block';
 import WidgetSection from 'components/library/Section/WidgetSection';
 import DefaultWidget from 'components/library/Widgets/Library/Default/';
+import QuestionListings from 'components/library/QuestionListings';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -23,59 +24,8 @@ import { Theme } from 'constants/Theme';
 // Styles
 import QuestionFooterStyle from './styles.scss';
 
-// Data
-import { StaticQuery, graphql } from 'gatsby';
-
 // Begin Component
 //////////////////////////////////////////////////////////////////////
-
-const QuestionListings = props => (
-  <MasonrySection
-    Columns={3}
-    ColumnGap={0.25}
-    BgColor={Theme.Color.White}
-    TextColor={Theme.Color.Nightsky}
-    Gutter={[0, 1, 2, 1]}
-  >
-    <StaticQuery
-      query={graphql`
-        query {
-          allQuestionsJson {
-            edges {
-              node {
-                id
-                slug
-                date
-                author
-                title
-                category
-                tags
-                shortAnswer
-                longAnswer
-              }
-            }
-          }
-        }
-      `}
-      render={data =>
-        data.allQuestionsJson.edges.map((Question, index) => {
-          return (
-            <DefaultWidget
-              BgColor={Theme.Color.PurpleHaze}
-              TextColor={Theme.Color.White}
-              Destination={Question.node.slug}
-              Subhead={Question.node.category}
-              Headline={Question.node.title}
-              IconName="rainbow"
-              IconColor={Theme.Color.White}
-              key={index}
-            />
-          );
-        })
-      }
-    />
-  </MasonrySection>
-);
 
 const QuestionFooter = () => (
   <>
@@ -105,7 +55,7 @@ const QuestionFooter = () => (
           Flex: 1,
           WidgetContent: [
             {
-              Destination: '/learn',
+              Destination: '/learn/all',
               Style: 'Generic',
               Meta: {
                 Generic: {
@@ -214,27 +164,6 @@ const QuestionFooter = () => (
 );
 
 export default QuestionFooter;
-
-// GraphQL Queries
-/////////////////////////////////////////////////////////////////////
-// export const query = graphql`
-//   query {
-//     allQuestionsJson {
-//       edges {
-//         node {
-//           id
-//           date
-//           author
-//           title
-//           category
-//           tags
-//           shortAnswer
-//           longAnswer
-//         }
-//       }
-//     }
-//   }
-// `;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

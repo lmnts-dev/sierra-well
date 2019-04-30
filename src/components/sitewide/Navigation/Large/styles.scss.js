@@ -54,7 +54,7 @@ NavigationStyle.Top = styled.div`
     background-color: ${Theme.Color.Snow};
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
     transform: translateY(-110%);
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     z-index: -1;
   }
 

@@ -11,6 +11,7 @@ import SimpleHero from 'components/library/Hero/SimpleHero';
 import WidgetSection from 'components/library/Section/WidgetSection';
 import SimpleSection from 'components/library/Section/SimpleSection';
 import SlideSection from 'components/library/Section/SlideSection';
+import LearnSection from 'components/library/Section/LearnSection';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
@@ -27,101 +28,6 @@ import { graphql } from 'gatsby';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
-
-// This component is to transform the
-// QuestionCategories.js  data into usable stuff for our
-// Widget components and SlideSections.
-class SlideSectionWithData extends React.Component {
-  constructor(props) {
-    // Make our props accessible through this.props
-    super(props);
-  }
-
-  render() {
-    // Get Root Directory Name
-    const BaseUrl = this.props.BaseUrl;
-
-    // Get our Category's themeing.
-    const BgColor = this.props.Data.PageTheme.Color.Background;
-    const TextColor = this.props.Data.PageTheme.Color.Secondary;
-
-    // Isolate Our Tags
-    const Tags = this.props.Data.Tags;
-
-    // Get our Category's Slug
-    const CategorySlug = this.props.Data.Slug;
-
-    // Create empty Widgets array for us to loop through
-    // later on.
-    const Widgets = [];
-
-    // Map our tags and create a new Widget object for
-    // each tag for us to loop and display a Widget for in
-    // the data structure that WidgetContainer likes.
-    Tags.map((Tag, index) => {
-      Widgets[index] = {
-        Flex: 1,
-        WidgetContent: [
-          {
-            Destination: '/' + BaseUrl + '/' + CategorySlug + '/' + Tag.Slug,
-            Style: 'Generic',
-            Meta: {
-              Generic: {
-                BgColor: BgColor,
-                BgImage: '',
-                Subhead: '',
-                Headline: Tag.Name,
-                TextColor: TextColor,
-                IconColor: TextColor,
-                IconName: Tag.Icon, // FontAwesome Icon Name
-                TintColor: '',
-                TintOpacity: '',
-                IconSize: '',
-              },
-            },
-          },
-        ],
-      };
-    });
-
-    return (
-      <SlideSection
-        Widgets={Widgets}
-        SectionSize={3}
-        Header={this.props.Data.Name}
-        Theme={{
-          TextColor: Theme.Color.Black,
-          BgColor: 'none',
-        }}
-        SliderSettings={{
-          slidesToShow: 4,
-          slidesToScroll: 2,
-          autoplay: false,
-          arrows: true,
-        }}
-      />
-    );
-  }
-}
-
-// This component is to differentiate page content / SlideSections
-// depending on what 'Filter' is supplied.
-const LearnSection = ({ Categories }) => {
-  return (
-    <Block maxWidth="100%" Padding={[0, 0, 2, 0]}>
-      {/* Loop through each of our categories and display a section. */}
-      {Categories.map((Category, index) => {
-        return (
-          <SlideSectionWithData
-            key={index}
-            BaseUrl="learn"
-            Data={Category.node}
-          />
-        );
-      })}
-    </Block>
-  );
-};
 
 // PageWrapper component for page theming.
 const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
@@ -190,7 +96,10 @@ const LearnTemplateAll = ({ data }) => {
   return (
     <PageWrapper>
       {/* Pass our categories GraphQL query to the LearnSection. */}
-      <LearnSection Categories={data.allQuestionCategoriesJson.edges} />
+      <LearnSection
+        Filter="all"
+        Categories={data.allQuestionCategoriesJson.edges}
+      />
     </PageWrapper>
   );
 };
@@ -231,5 +140,6 @@ export const query = graphql`
     }
   }
 `;
+
 //////////////////////////////////////////////////////////////////////
 // End Component

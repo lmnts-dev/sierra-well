@@ -33,6 +33,8 @@ const QuestionPage = props => (
     PageTheme={PageTheme}
     BgQuery={props.data.imageTwo.childImageSharp.fluid}
     Location={props.location.href}
+    AllCategories={props.data.allQuestionCategoriesJson.edges}
+    CategorySlug="medical"
   />
 );
 
@@ -46,6 +48,35 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    allQuestionCategoriesJson {
+      edges {
+        node {
+          id
+          Name
+          Icon
+          Headline
+          Slug
+          Tags {
+            Name
+            Icon
+            Slug
+          }
+          Breadcrumb {
+            Destination
+            Label
+          }
+          PageTheme {
+            Color {
+              Background
+              Primary
+              Secondary
+              Tertiary
+            }
+          }
         }
       }
     }
