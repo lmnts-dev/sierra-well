@@ -18,6 +18,11 @@ export const WrapperLock = createGlobalStyle`
 
   html, body {
     overflow: hidden;
+
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      overflow: auto; 
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   .wrapper {
@@ -25,8 +30,7 @@ export const WrapperLock = createGlobalStyle`
       overflow: hidden;
     }
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      overflow-y: scroll; /* has to be scroll, not auto */
-      -webkit-overflow-scrolling: touch;
+      overflow: hidden;
     }
   }
 

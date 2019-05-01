@@ -97,7 +97,6 @@ const ItemStyle = styled.li`
 
   &.focus {
     background-color: ${Theme.Color.Primary};
-    border-radius: ${Root.Radius} 0 0 0;
     overflow: hidden;
 
     a {

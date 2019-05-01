@@ -21,6 +21,7 @@ const Btn = ({
   Destination,
   IconClass,
   IconPosition,
+  IconFas,
   BgColor,
   TextColor,
   Size,
@@ -36,10 +37,10 @@ const Btn = ({
         BgColor={BgColor}
         TextColor={TextColor}
         Size={Size}
-        IconPosition={IconPosition ? IconPosition : 'right'}
+        IconPosition={IconPosition ? IconPosition : null}
       >
         <span>{Label}</span>
-        {IconClass ? <Icon Name={IconClass} /> : null}
+        {IconClass ? <Icon fas={IconFas} Name={IconClass} /> : null}
       </BtnStyle.Inner>
     </BtnStyle>
   );

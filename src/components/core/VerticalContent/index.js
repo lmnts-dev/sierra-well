@@ -27,16 +27,16 @@ const Widgets = [
     Flex: 1,
     WidgetContent: [
       {
-        Destination: '/learn/recreational/',
+        Destination: '/learn/all/',
         Style: 'Generic',
         Meta: {
           Generic: {
-            BgColor: Theme.Color.Mint,
+            BgColor: Theme.Color.Nightsky,
             BgImage: '',
             Subhead: '',
-            Headline: 'Out of State',
-            TextColor: Theme.Color.Black,
-            IconColor: Theme.Color.Black,
+            Headline: 'All Questions',
+            TextColor: Theme.Color.White,
+            IconColor: Theme.Color.White,
             IconName: 'leaf', // FontAwesome Icon Name
             TintColor: '',
             TintOpacity: '',
@@ -59,7 +59,7 @@ const Widgets = [
             BgColor: Theme.Color.Mint,
             BgImage: '',
             Subhead: '',
-            Headline: 'Growing',
+            Headline: 'Recreational',
             TextColor: Theme.Color.Black,
             IconColor: Theme.Color.Black,
             IconName: 'leaf', // FontAwesome Icon Name
@@ -77,16 +77,16 @@ const Widgets = [
     Flex: 1,
     WidgetContent: [
       {
-        Destination: '/learn/recreational/',
+        Destination: '/learn/medical/',
         Style: 'Generic',
         Meta: {
           Generic: {
-            BgColor: Theme.Color.Mint,
+            BgColor: Theme.Color.Tahoe,
             BgImage: '',
             Subhead: '',
-            Headline: 'Purchase',
-            TextColor: Theme.Color.Black,
-            IconColor: Theme.Color.Black,
+            Headline: 'Medical',
+            TextColor: Theme.Color.White,
+            IconColor: Theme.Color.White,
             IconName: 'leaf', // FontAwesome Icon Name
             TintColor: '',
             TintOpacity: '',
@@ -105,10 +105,6 @@ const WrapperRelease = createGlobalStyle`
     @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
       overflow: hidden;
     }
-    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      overflow-y: scroll !important; /* has to be scroll, not auto */
-      -webkit-overflow-scrolling: touch;
-    }
   }
 `;
 
@@ -121,7 +117,7 @@ const VerticalContent = ({ children }) => (
         <SlideSection
           Widgets={Widgets}
           SectionSize={7}
-          Header="Headline"
+          Header="Learn"
           Theme={{
             TextColor: Theme.Color.Black,
             BgColor: 'none',
@@ -136,7 +132,7 @@ const VerticalContent = ({ children }) => (
         <SlideSection
           Widgets={Widgets}
           SectionSize={7}
-          Header="Headline"
+          Header="Medical"
           Theme={{
             TextColor: Theme.Color.Black,
             BgColor: 'none',
@@ -151,7 +147,7 @@ const VerticalContent = ({ children }) => (
         <SlideSection
           Widgets={Widgets}
           SectionSize={7}
-          Header="Headline"
+          Header="Recreational"
           Theme={{
             TextColor: Theme.Color.Black,
             BgColor: 'none',
@@ -166,7 +162,7 @@ const VerticalContent = ({ children }) => (
         <SlideSection
           Widgets={Widgets}
           SectionSize={7}
-          Header="Headline"
+          Header="Industry"
           Theme={{
             TextColor: Theme.Color.Black,
             BgColor: 'none',

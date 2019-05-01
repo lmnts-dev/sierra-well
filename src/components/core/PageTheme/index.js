@@ -82,6 +82,13 @@ nav {
       /* Color */
       ${props =>
         props.TertiaryColor ? 'color: ' + props.TertiaryColor : null};
+
+        .ico {
+          i {
+            ${props =>
+              props.TertiaryColor ? 'color: ' + props.TertiaryColor : null};
+          }
+        }
             
       /* Hover */
       &:hover {

@@ -89,6 +89,9 @@ class NavigationLarge extends React.Component {
               Destination="/menu"
               BgColor={Theme.Color.Primary}
               TextColor={Theme.Color.White}
+              IconClass="plus"
+              IconFas
+              IconPosition="left"
             />
           </NavigationStyle.Top.CommunicationBlock>
         </NavigationStyle.Top>

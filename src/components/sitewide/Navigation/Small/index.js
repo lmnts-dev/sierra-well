@@ -70,34 +70,34 @@ class NavigationSmall extends PureComponent {
           <BottomNavigationStyle.Inner>
             <BottomNavigationStyle.List>
               <Item
-                Label="Menu"
-                className="focus"
-                Destination="/menu"
-                Icon="plus"
-              />
-              <Item
                 Label="Locations"
-                className="i active"
-                Destination="/locations"
+                Class="i"
+                Destination="/"
                 Icon="map-marker-alt"
               />
               <Item
                 Label="Specials"
-                className="i"
+                Class="i"
                 Destination="/specials"
                 Icon="star"
               />
               <Item
-                Label="Culture"
-                className="i"
-                Destination="/culture"
+                Label="Menu"
+                Class="focus"
+                Destination="/menu"
+                Icon="plus"
+              />
+              <Item
+                Label="Company"
+                Class="i"
+                Destination="/company"
                 Icon="theater-masks"
               />
               <Item
-                Label="Outreach"
-                className="i"
-                Destination="/outreach"
-                Icon="heart"
+                Label="Q&A"
+                Class="i"
+                Destination="/learn"
+                Icon="question"
               />
             </BottomNavigationStyle.List>
             <OrderMenuMobile />

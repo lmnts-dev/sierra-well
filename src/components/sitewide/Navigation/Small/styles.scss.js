@@ -29,7 +29,7 @@ export const BottomNavigationStyle = styled.nav`
   flex-direction: column;
   z-index: 700;
   transform: translateY(0);
-  transition: all ${Theme.Base.Transition.Duration} ease;
+  transition: all 1s ease;
 `;
 
 BottomNavigationStyle.Inner = styled.div`
@@ -110,8 +110,7 @@ TopNavigationStyle.Tools = styled.div`
       &.menu {
         span {
           background: rgba(0, 0, 0, 0);
-          transition: all ${Theme.Base.Transition.Duration}
-            ${Theme.Base.Transition.CssEase};
+          transition: all 1s ${Theme.Base.Transition.CssEase};
 
           figure {
             padding: 0;
