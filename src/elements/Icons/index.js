@@ -28,7 +28,7 @@ const Icon = props => {
       );
     case 'intercom':
       return (
-        <IconStyle className="ico">
+        <IconStyle className="ico ico-intercom">
           <Intercom />
         </IconStyle>
       );

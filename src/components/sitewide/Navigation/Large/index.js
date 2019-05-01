@@ -17,6 +17,7 @@ import NavigationStyle from './styles.scss';
 // Components
 import Btn from 'components/library/Btn/';
 import LinkList from 'components/core/LinkList/';
+import Icon from 'elements/Icons';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -84,6 +85,7 @@ class NavigationLarge extends React.Component {
           </NavigationStyle.Top.LinkListBlock>
 
           <NavigationStyle.Top.CommunicationBlock>
+            <Icon Name="intercom" />
             <Btn
               Label="View Our Menu"
               Destination="/menu"

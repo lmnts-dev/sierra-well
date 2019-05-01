@@ -99,7 +99,21 @@ nav {
             }
       }
     }
+
+    .ico-intercom {
+      ${props =>
+        /* Background */
+        props.SecondaryColor
+          ? 'background-color: ' + props.SecondaryColor
+          : null};
+        svg {
+          ${props =>
+            props.TertiaryColor ? 'fill: ' + props.TertiaryColor : null};
+        }
+    }
   }
+
+
 
   /* Bottom Navigation */
   .nav-bottom {

@@ -40,9 +40,17 @@ NavigationStyle.Top = styled.div`
   height: ${Root.Nav.Size};
   position: relative;
 
-  .btn {
+  .btn,
+  .ico-intercom {
     transition: all 1s ease;
     .btn-inner {
+      transition: all 1s ease;
+      i {
+        transition: all 1s ease;
+      }
+    }
+    svg,
+    .ico {
       transition: all 1s ease;
     }
   }
@@ -81,9 +89,27 @@ NavigationStyle.Top = styled.div`
       }
 
       .btn {
+        transition: all 1s ease;
         .btn-inner {
+          transition: all 1s ease;
           background-color: ${Theme.Color.Primary};
           color: ${Theme.Color.White};
+
+          .ico {
+            i {
+              color: ${Theme.Color.White};
+            }
+          }
+        }
+      }
+
+      .ico-intercom {
+        background-color: ${Theme.Color.Nightsky};
+        transition: all 1s ease;
+
+        svg {
+          transition: all 1s ease;
+          fill: ${Theme.Color.White};
         }
       }
     }
@@ -194,6 +220,26 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
   width: auto;
   flex-direction: row;
   padding: ${Theme.Base.Size.Sm};
+  align-items: center;
+
+  .ico-intercom {
+    display: inline-flex;
+    align-items: center;
+    margin-right: calc(${Root.Size} / 4);
+    height: ${Root.Button.Size};
+    width: ${Root.Button.Size};
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 0px rgba(${Theme.Color.Nightysky}, 0);
+    &:hover {
+      text-decoration: none;
+      box-shadow: 0px 0px 0px 6px rgba(93, 99, 118, 0.2);
+    }
+    svg {
+      width: calc(${Root.Button.Size} * 0.5);
+      height: calc(${Root.Button.Size} * 0.5);
+    }
+  }
 `;
 
 //// Bottom Level Navigation
