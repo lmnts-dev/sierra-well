@@ -7,7 +7,7 @@
 import React from 'react';
 
 // Styles
-import HorizontalContentStyle from 'components/core/HorizontalContent/styles.scss';
+import HorizontalContentStyle from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

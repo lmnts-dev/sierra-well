@@ -24,8 +24,63 @@ const HorizontalContentStyle = styled.div`
   padding-bottom: ${Root.Footer.Size};
   overflow: visible;
 
-  .slick-list {
-    overflow: visible;
+  .slick-slider {
+    .slick-list {
+      overflow: visible;
+    }
+
+    /* Arrows */
+    .slick-arrow {
+      top: calc((${Root.Size}) * -1);
+      transform: none;
+      right: 0;
+      left: unset;
+      width: calc(${Root.Size} * 0.75);
+      height: calc(${Root.Size} * 0.75);
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0);
+      z-index: 1500;
+
+      &.slick-prev {
+        transform: rotate(180deg);
+        right: calc(
+          ((${Root.Size} * 0.75) + (${Root.Size} * 0.25)) +
+            ${Root.Grid.Gutter.Right}
+        );
+      }
+
+      &.slick-next {
+        right: calc(${Root.Grid.Gutter.Right});
+      }
+
+      &.slick-disabled {
+        opacity: 0.4;
+        .ico {
+          opacity: 0.5;
+        }
+        &:hover {
+          background: rgba(0, 0, 0, 0);
+          border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .ico {
+        position: absolute;
+        left: 54%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:before {
+        content: '';
+      }
+    }
   }
 `;
 

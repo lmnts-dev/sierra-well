@@ -13,9 +13,45 @@ import { Base } from 'constants/styles/Base';
 // Components
 import SlideContainer from './../SlideContainer';
 import { WrapperLock } from './../../WrapperControl';
+import Icon from 'elements/Icons';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
+
+// The Slider Arrows
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style }}
+      onClick={onClick}
+      // These are eslint errors for accessibility below.
+      onKeyPress={onClick}
+      role="button"
+      tabIndex="0"
+    >
+      <Icon className="svg-carat" Name="carat" />
+    </div>
+  );
+}
+
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style }}
+      onClick={onClick}
+      // These are eslint errors for accessibility below.
+      onKeyPress={onClick}
+      role="button"
+      tabIndex="0"
+    >
+      <Icon className="svg-carat" Name="carat" />
+    </div>
+  );
+}
 
 // The SlideGroup Itself
 export class SlideGroup extends React.Component {
@@ -40,13 +76,16 @@ export class SlideGroup extends React.Component {
   }
 
   render() {
-    // Slick Settings
+    // React-Slick Settings
+    // Read more: https://react-slick.neostack.com/
     const settings = {
       dots: false,
       speed: 1500,
-      arrows: false,
+      arrows: true,
       slidesToShow: 1.15,
       infinite: false,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
       responsive: [
         {
           breakpoint: 1280,
