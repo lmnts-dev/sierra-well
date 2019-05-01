@@ -110,8 +110,6 @@ const QuestionCards = ({
                 CategoryFilter
               );
 
-              console.log(CategoryFilter);
-
               return (
                 <DefaultWidget
                   BgColor={filteredCategory.PageTheme.Color.Background}

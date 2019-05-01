@@ -78,6 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               id
               slug
+              coverImage
               category
               tags
             }
@@ -137,7 +138,6 @@ exports.createPages = ({ graphql, actions }) => {
       // Create our Question Pages
       const questionTemplate = path.resolve(`src/templates/Question/index.js`);
 
-      // Create Base Category Level Pages
       _.each(result.data.allQuestionsJson.edges, edge => {
         // Gatsby uses Redux to manage its internal state.
         // Plugins and sites can use functions like "createPage"
@@ -156,6 +156,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(questionTemplate),
           context: {
             Slug: edge.node.slug,
+            CoverImage: edge.node.coverImage,
           },
         });
 
@@ -171,6 +172,7 @@ exports.createPages = ({ graphql, actions }) => {
             component: slash(questionTemplate),
             context: {
               Slug: edge.node.slug,
+              CoverImage: edge.node.coverImage,
             },
           });
         });
