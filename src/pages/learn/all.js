@@ -8,10 +8,8 @@ import React from 'react';
 import Layout from 'components/core/Layout';
 import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
 import SimpleHero from 'components/library/Hero/SimpleHero';
-import WidgetSection from 'components/library/Section/WidgetSection';
-import SimpleSection from 'components/library/Section/SimpleSection';
-import SlideSection from 'components/library/Section/SlideSection';
 import LearnSection from 'components/library/Section/LearnSection';
+import QuestionFooter from 'components/library/QuestionFooter';
 
 //// Misc. Components
 import Breadcrumb from 'components/library/Breadcrumb';
@@ -68,23 +66,21 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
 
           {/* ///////////// */}
 
-          {/* ///////////// */}
-
-          <SimpleSection
-            BgColor={Theme.Color.White}
-            TextColor={Theme.Color.Nightsky}
-            Style="centered"
-          >
-            <Block Style="centered" Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-              <h2>Not seeing your question?</h2>
-              <p className="p-md">
-                Chat with an expert now or sumbit your own question
-              </p>
-            </Block>
-          </SimpleSection>
-          {/* ///////////// */}
         </SubLevelPageContent>
         {/* End page content. */}
+
+         {/* The Question / Category / Tag footer. */}
+         <SubLevelPageContent
+          BgColor={Theme.Color.White}
+          TextColor={Theme.Color.Nightsky}
+        >
+          {/* ///////////// */}
+
+          <QuestionFooter HideCategories />
+
+          {/* ///////////// */}
+        </SubLevelPageContent>
+        
         {/* ///////////// */}
       </SubLevelPage>
     </Layout>

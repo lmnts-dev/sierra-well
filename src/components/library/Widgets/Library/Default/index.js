@@ -21,8 +21,12 @@ import { Link } from 'gatsby';
 // Styles
 import WidgetStyle from './styles.scss';
 
+// Constants
+import { Theme, Root } from 'constants/Theme';
+
 // Components
 import Icon from 'elements/Icons';
+import ImgMatch from 'components/core/ImgMatch';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -38,11 +42,12 @@ const DefaultWidget = ({
   Headline,
   IconColor,
   IconName,
+  BgImageFile,
 }) => (
   <WidgetStyle
     BgColor={BgColor}
     BgImage={BgImage}
-    TextColor={TextColor}
+    TextColor={BgImageFile ? Theme.Color.White : TextColor}
     TintColor={TintColor}
     TintOpacity={TintOpacity}
     className="widget-content"
@@ -57,6 +62,7 @@ const DefaultWidget = ({
       <Icon className="svg-carat" Name="carat" Color={IconColor} />
       <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
     </Link>
+    {BgImageFile ? <ImgMatch src={BgImageFile} /> : null}
   </WidgetStyle>
 );
 

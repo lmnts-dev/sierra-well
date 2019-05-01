@@ -27,7 +27,7 @@ import QuestionFooterStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const QuestionFooter = ({ CategoryFilter, TagFilter }) => (
+const QuestionFooter = ({ CategoryFilter, TagFilter, HideCategories }) => (
   <>
     {/* ///////////// */}
 
@@ -46,112 +46,114 @@ const QuestionFooter = ({ CategoryFilter, TagFilter }) => (
 
     {/* ///////////// */}
 
-    <WidgetSection
-      BgColor={Theme.Color.White}
-      Gutter={[1, 1, 0.15, 1]}
-      Widgets={[
-        {
-          // Begin WidgetContent
-          Flex: 1,
-          WidgetContent: [
-            {
-              Destination: '/learn/all',
-              Style: 'Generic',
-              Meta: {
-                Generic: {
-                  BgColor: Theme.Color.Gunmetal,
-                  BgImage: '',
-                  Subhead: '',
-                  Headline: 'All Questions',
-                  TextColor: Theme.Color.White,
-                  IconColor: Theme.Color.White,
-                  IconName: 'rainbow', // FontAwesome Icon Name
-                  TintColor: '',
-                  TintOpacity: '',
-                  IconSize: '',
+    {HideCategories ? null : (
+      <WidgetSection
+        BgColor={Theme.Color.White}
+        Gutter={[1, 1, 0.15, 1]}
+        Widgets={[
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/learn/all',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: Theme.Color.Gunmetal,
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'All Questions',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'rainbow', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
                 },
               },
-            },
-          ],
-          // End WidgetContent
-        },
-        {
-          // Begin WidgetContent
-          Flex: 1,
-          WidgetContent: [
-            {
-              Destination: '/learn/recreational',
-              Style: 'Generic',
-              Meta: {
-                Generic: {
-                  BgColor: Theme.Color.Mint,
-                  BgImage: '',
-                  Subhead: '',
-                  Headline: 'Recreational',
-                  TextColor: Theme.Color.Nightsky,
-                  IconColor: Theme.Color.Nightsky,
-                  IconName: 'cannabis', // FontAwesome Icon Name
-                  TintColor: '',
-                  TintOpacity: '',
-                  IconSize: '',
+            ],
+            // End WidgetContent
+          },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/learn/recreational',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: Theme.Color.Mint,
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Recreational',
+                    TextColor: Theme.Color.Nightsky,
+                    IconColor: Theme.Color.Nightsky,
+                    IconName: 'cannabis', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
                 },
               },
-            },
-          ],
-          // End WidgetContent
-        },
-        {
-          // Begin WidgetContent
-          Flex: 1,
-          WidgetContent: [
-            {
-              Destination: '/learn/safety',
-              Style: 'Generic',
-              Meta: {
-                Generic: {
-                  BgColor: Theme.Color.Dank,
-                  BgImage: '',
-                  Subhead: '',
-                  Headline: 'Safety',
-                  TextColor: Theme.Color.Nightsky,
-                  IconColor: Theme.Color.Nightsky,
-                  IconName: 'book-open', // FontAwesome Icon Name
-                  TintColor: '',
-                  TintOpacity: '',
-                  IconSize: '',
+            ],
+            // End WidgetContent
+          },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/learn/safety',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: Theme.Color.Dank,
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Safety',
+                    TextColor: Theme.Color.Nightsky,
+                    IconColor: Theme.Color.Nightsky,
+                    IconName: 'book-open', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
                 },
               },
-            },
-          ],
-          // End WidgetContent
-        },
-        {
-          // Begin WidgetContent
-          Flex: 1,
-          WidgetContent: [
-            {
-              Destination: '/learn/industry',
-              Style: 'Generic',
-              Meta: {
-                Generic: {
-                  BgColor: Theme.Color.Sunset,
-                  BgImage: '',
-                  Subhead: '',
-                  Headline: 'Industry',
-                  TextColor: Theme.Color.White,
-                  IconColor: Theme.Color.White,
-                  IconName: 'star', // FontAwesome Icon Name
-                  TintColor: '',
-                  TintOpacity: '',
-                  IconSize: '',
+            ],
+            // End WidgetContent
+          },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/learn/industry',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: Theme.Color.Sunset,
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Industry',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'star', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
                 },
               },
-            },
-          ],
-          // End WidgetContent
-        },
-      ]}
-    />
+            ],
+            // End WidgetContent
+          },
+        ]}
+      />
+    )}
 
     {/* ///////////// */}
 

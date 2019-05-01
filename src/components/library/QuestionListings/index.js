@@ -67,6 +67,7 @@ const QuestionCards = ({
                 tags
                 shortAnswer
                 longAnswer
+                coverImage
               }
             }
           }
@@ -121,6 +122,9 @@ const QuestionCards = ({
                   Headline={Question.node.title}
                   IconName={filteredCategory.Icon}
                   IconColor={filteredCategory.PageTheme.Color.Primary}
+                  BgImageFile={Question.node.coverImage}
+                  TintColor={Theme.Color.Black}
+                  TintOpacity={0.6}
                   key={index}
                 />
               );
@@ -145,6 +149,9 @@ const QuestionCards = ({
                     Headline={Question.node.title}
                     IconName={filteredCategory.Icon}
                     IconColor={filteredCategory.PageTheme.Color.Primary}
+                    BgImageFile={Question.node.coverImage}
+                    TintColor={Theme.Color.Black}
+                    TintOpacity={0.6}
                     key={index}
                   />
                 );
@@ -174,6 +181,9 @@ const QuestionCards = ({
                   Headline={Question.node.title}
                   IconName={filteredCategory.Icon}
                   IconColor={filteredCategory.PageTheme.Color.Primary}
+                  BgImageFile={Question.node.coverImage}
+                  TintColor={Theme.Color.Black}
+                  TintOpacity={0.6}
                   key={index}
                 />
               );

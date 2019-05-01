@@ -14,7 +14,7 @@ import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
 
 // Hero Components
 import SimpleHero from 'components/library/Hero/SimpleHero';
-import HeroStrip from './../components/library/HeroStrip';
+import HeroStrip from 'components/library/HeroStrip';
 
 //// Section Components
 import SimpleSection from 'components/library/Section/SimpleSection';
@@ -22,12 +22,12 @@ import WidgetSection from 'components/library/Section/WidgetSection';
 import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
-import Breadcrumb from './../components/library/Breadcrumb';
+import Breadcrumb from 'components/library/Breadcrumb';
 import Btn from 'components/library/Btn/';
 import ImgQuery from 'components/core/ImgQuery';
 
 // Elements
-import Block from './../components/library/Block';
+import Block from 'components/library/Block';
 
 // Constants
 import { Theme } from 'constants/Theme';

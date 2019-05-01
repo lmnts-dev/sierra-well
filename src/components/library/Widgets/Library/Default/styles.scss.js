@@ -23,6 +23,7 @@ const WidgetStyle = styled.div`
   background-color: ${props =>
     props.BgColor ? props.BgColor : Theme.Color.White};
   position: relative;
+  z-index: 1;
   overflow: hidden;
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
@@ -45,6 +46,18 @@ const WidgetStyle = styled.div`
       );
   }};
 
+  /* For when using ImgMatch.js as background image: */
+  .img {
+    &.gatsby-image-wrapper {
+      position: absolute !important;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+
   /* Tint */
 
   ${props => {
@@ -58,6 +71,7 @@ const WidgetStyle = styled.div`
           top: 0;
           bottom: 0;
           right: 0;
+          z-index: 5;
           background-color:` +
         props.TintColor +
         `;
@@ -76,6 +90,8 @@ const WidgetStyle = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
+    position: relative;
+    z-index: 10;
     width: 100%;
     color: white;
     transform: scale(1.000000001);
