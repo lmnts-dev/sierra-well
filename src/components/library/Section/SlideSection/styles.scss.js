@@ -132,8 +132,39 @@ const SlideSectionStyle = styled.div`
 
 SlideSectionStyle.Inner = styled(SectionInnerStyle)`
   width: 100%;
-  padding-top: ${Root.Size};
   padding-bottom: 0;
+
+  /* Array-based gutters utilizing root variable multiple. */
+  ${props =>
+    props.Gutter
+      ? 'padding-top: calc(' + Root.Size + ' * ' + props.Gutter[0] + ')'
+      : 'padding-top: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-right: calc(' +
+        Root.Size +
+        ' * ' +
+        props.Gutter[1] +
+        ')'
+      : 'padding-right: ' + Root.Size};
+  ${props =>
+    props.Gutter
+      ? 'padding-bottom: calc(' + Root.Size + ' * ' + props.Gutter[2] + ')'
+      : 'padding-bottom: 0'};
+  ${props =>
+    props.Gutter
+      ? 'padding-left: calc(' +
+        Root.Grid.Gutter.Left +
+        ' + (' +
+        Root.Size +
+        ' * ' +
+        props.Gutter[3] +
+        '))'
+      : 'padding-left: calc(' +
+        Root.Grid.Gutter.Left +
+        ' + ' +
+        Root.Size +
+        ')'};
 `;
 
 SlideSectionStyle.Content = styled(SectionContentStyle)`

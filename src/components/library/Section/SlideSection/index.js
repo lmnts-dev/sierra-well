@@ -138,9 +138,10 @@ const SlideSection = ({
   Icon,
   ViewAll,
   Theme,
+  Gutter
 }) => (
   <SlideSectionStyle>
-    <SlideSectionStyle.Inner>
+    <SlideSectionStyle.Inner Gutter={Gutter}>
       <SlideSectionStyle.Content SectionSize={SectionSize}>
         <SlideSectionStyle.SectionHeader>
           <SlideSectionStyle.Headline TextColor={Theme.TextColor}>

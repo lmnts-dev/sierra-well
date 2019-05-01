@@ -66,9 +66,10 @@ const SimpleHeroStyle = styled.div`
     top: 0;
     bottom: 0;
     z-index: -1;
+    height: 100%;
     overflow: hidden;
     ${props => (props.BgTint ? 'opacity: ' + props.BgTint + ';' : null)}
-    img {
+    img, .img {
       height: 100%;
     }
   }
