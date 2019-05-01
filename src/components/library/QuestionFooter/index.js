@@ -8,6 +8,9 @@
 // Core
 import React from 'react';
 
+// Data
+import { StaticQuery, graphql } from 'gatsby';
+
 // Components
 import Icon from 'elements/Icons';
 import { Link } from 'gatsby';
@@ -180,6 +183,124 @@ const Widgets = [
   },
 ];
 
+const BrowseCategories = () => {
+  // Helper function to dissect the data into a usable map
+  function categoryWidgets(data) {
+    let widgetArray = data.map((category, index) => {
+      return {
+        Flex: 1,
+        WidgetContent: [
+          {
+            Destination: '/learn/' + category.node.Slug,
+            Style: 'Generic',
+            Meta: {
+              Generic: {
+                BgColor: category.node.PageTheme.Color.Background,
+                BgImage: '',
+                Subhead: '',
+                Headline: category.node.Name,
+                TextColor: category.node.PageTheme.Color.Primary,
+                IconColor: category.node.PageTheme.Color.Primary,
+                IconName: category.node.Icon, // FontAwesome Icon Name
+                TintColor: '',
+                TintOpacity: '',
+                IconSize: '',
+              },
+            },
+          },
+        ],
+      };
+    });
+
+    // Define our 'View All Widget'
+    let viewAll = {
+      Flex: 1,
+      WidgetContent: [
+        {
+          Destination: '/learn/all',
+          Style: 'Generic',
+          Meta: {
+            Generic: {
+              BgColor: Theme.Color.Nightsky,
+              BgImage: '',
+              Subhead: '',
+              Headline: 'All Categories',
+              TextColor: Theme.Color.White,
+              IconColor: Theme.Color.White,
+              IconName: 'question', // FontAwesome Icon Name
+              TintColor: '',
+              TintOpacity: '',
+              IconSize: '',
+            },
+          },
+        },
+      ],
+    };
+
+    // Add our 'View All Widget' to the beginning of the array with unshift().
+    widgetArray.unshift(viewAll);
+
+    // Return our new array.
+    return widgetArray;
+  }
+
+  // Return Slider with Categories
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allQuestionCategoriesJson {
+            edges {
+              node {
+                id
+                Name
+                Icon
+                Headline
+                Slug
+                Tags {
+                  Name
+                  Icon
+                  Slug
+                }
+                Breadcrumb {
+                  Destination
+                  Label
+                }
+                PageTheme {
+                  Color {
+                    Background
+                    Primary
+                    Secondary
+                    Tertiary
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <SlideSection
+          Widgets={categoryWidgets(data.allQuestionCategoriesJson.edges)}
+          SectionSize={6}
+          Header="Browse Categories"
+          Gutter={[0, 1, 1, 1]}
+          Theme={{
+            TextColor: Theme.Color.Slate,
+            BgColor: 'none',
+          }}
+          SliderSettings={{
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: false,
+            arrows: true,
+          }}
+        />
+      )}
+    />
+  );
+};
+
 const QuestionFooter = ({ CategoryFilter, TagFilter, HideCategories }) => (
   <>
     {/* ///////////// */}
@@ -199,24 +320,7 @@ const QuestionFooter = ({ CategoryFilter, TagFilter, HideCategories }) => (
 
     {/* ///////////// */}
 
-    {HideCategories ? null : (
-      <SlideSection
-        Widgets={Widgets}
-        SectionSize={6}
-        Header="All Categories"
-        Gutter={[0, 1, 1, 1]}
-        Theme={{
-          TextColor: Theme.Color.Slate,
-          BgColor: 'none',
-        }}
-        SliderSettings={{
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          autoplay: false,
-          arrows: true,
-        }}
-      />
-    )}
+    {HideCategories ? null : <BrowseCategories />}
 
     {/* ///////////// */}
 

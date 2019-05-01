@@ -34,7 +34,6 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-
 // Slugify Helper
 
 function slugify(string) {
@@ -52,7 +51,6 @@ function slugify(string) {
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, ''); // Trim - from end of text
 }
-
 
 // Post Details Snippet
 const PostDetails = ({ Author, Time }) => (
@@ -80,7 +78,6 @@ const TagList = ({ Tags, CategorySlug }) => {
       }
     });
 
-    console.log('crumbs');
     return crumbs;
   }
 
