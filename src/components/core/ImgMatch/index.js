@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import Img from 'gatsby-image/withIEPolyfill';
 
-const Image = ({ src, ...props }) => {
+const Image = ({ AltText, src, ...props }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { internal: { mediaType: { regex: "images/" } } }) {
@@ -25,7 +25,16 @@ const Image = ({ src, ...props }) => {
     [data, src]
   );
 
-  return <Img className="img" fluid={match.node.childImageSharp.fluid} {...props} />;
+  return (
+    <Img
+      className="img"
+      objectFit="cover"
+      objectPosition="50% 50%"
+      alt={AltText ? AltText : null}
+      fluid={match.node.childImageSharp.fluid}
+      {...props}
+    />
+  );
   // return <>{console.log(match.node.childImageSharp.fluid)}</>;
 };
 
