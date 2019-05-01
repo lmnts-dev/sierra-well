@@ -57,7 +57,6 @@ const QuestionTemplate = ({
     SecondaryColor={PageTheme.Color.Secondary}
     TertiaryColor={PageTheme.Color.Tertiary}
   >
-    {console.log(QuestionData)}
     <SubLevelPage
       BgColor={PageTheme.Color.Background}
       PrimaryColor={PageTheme.Color.Primary}
@@ -127,7 +126,6 @@ const QuestionTemplate = ({
           Categories={AllCategories}
           Filter={QuestionData.category.toLowerCase()}
         />
-        {console.log(QuestionData.category.toLowerCase())}
       </SubLevelPageContent>
 
       {/* The Question / Category / Tag footer. */}

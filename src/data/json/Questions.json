@@ -22,7 +22,6 @@
     "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "category": "Medical",
     "tags": [
-      "medical cards",
       "purchasing",
       "doctors",
       "patients",
@@ -38,7 +37,6 @@
     "title": "Xollis non nisi sed, faucibus commodo purus.",
     "category": "Medical",
     "tags": [
-      "medical cards",
       "purchasing",
       "doctors",
       "patients",
@@ -74,7 +72,8 @@
       "purchasing",
       "doctors",
       "patients",
-      "treatment"
+      "treatment",
+      "out of state"
     ],
     "shortAnswer": "In order to qualify for a medical marijuana card, you must suffer from one of the conditions listed and have a doctor’s recommendation that marijuana will help relieve that condition. The complete list of qualifying conditions can be found in the Nevada Revised Statutes, Chapter 453A, Section 050.",
     "longAnswer": "Lorem ipsum solor sit dit imet..."

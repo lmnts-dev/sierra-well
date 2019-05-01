@@ -25,7 +25,13 @@ import { StaticQuery, graphql } from 'gatsby';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const QuestionCards = ({ Filter, CategorySlug, AllCategories, TagSlug }) => {
+const QuestionCards = ({
+  CategoryFilter,
+  TagFilter,
+  CategorySlug,
+  AllCategories,
+  TagSlug,
+}) => {
   // Assign our strings to build our slugs.
   let CategorySlugString = CategorySlug ? '/' + CategorySlug : '';
   let TagSlugString = TagSlug ? '/' + TagSlug : '';
@@ -70,26 +76,51 @@ const QuestionCards = ({ Filter, CategorySlug, AllCategories, TagSlug }) => {
       render={data =>
         // Map the Question data we got.
         data.allQuestionsJson.edges.map((Question, index) => {
-          // If the Question's Category is the same as the Filter supplied.
-          if (Question.node.category == Filter) {
-            return (
-              <DefaultWidget
-                BgColor={Theme.Color.PurpleHaze}
-                TextColor={Theme.Color.White}
-                Destination={
-                  '/learn' + QuestionSlugString + '/' + Question.node.slug
-                }
-                Subhead={Question.node.category}
-                Headline={Question.node.title}
-                IconName="rainbow"
-                IconColor={Theme.Color.White}
-                key={index}
-              />
-            );
+          // If the Question's Category is the same as the Filter supplied:
+          if (Question.node.category == CategoryFilter) {
+            // If there isn't a TagFilter applied:
+            if (TagFilter == 'all') {
+              return (
+                <DefaultWidget
+                  BgColor={Theme.Color.PurpleHaze}
+                  TextColor={Theme.Color.White}
+                  Destination={
+                    '/learn' + QuestionSlugString + '/' + Question.node.slug
+                  }
+                  Subhead={Question.node.category}
+                  Headline={Question.node.title}
+                  IconName="rainbow"
+                  IconColor={Theme.Color.White}
+                  key={index}
+                />
+              );
+            } else {
+              // If there is a TagFilter applied, check the Tags Array
+              // to see if it includes our filter:
+              if (Question.node.tags.includes(TagFilter.toLowerCase())) {
+                return (
+                  <DefaultWidget
+                    BgColor={Theme.Color.PurpleHaze}
+                    TextColor={Theme.Color.White}
+                    Destination={
+                      '/learn' + QuestionSlugString + '/' + Question.node.slug
+                    }
+                    Subhead={Question.node.category}
+                    Headline={Question.node.title}
+                    IconName="rainbow"
+                    IconColor={Theme.Color.White}
+                    key={index}
+                  />
+                );
+              } else {
+                // If it doesn't match anything, return false. And cry.
+                return false;
+              }
+            }
           } else {
             // If we want to display all the Questions, let's make their
             // slug their root category.
-            if (Filter == 'all') {
+            if (CategoryFilter == 'all') {
               return (
                 <DefaultWidget
                   BgColor={Theme.Color.PurpleHaze}
@@ -108,7 +139,7 @@ const QuestionCards = ({ Filter, CategorySlug, AllCategories, TagSlug }) => {
                 />
               );
             } else {
-              // If nothing is supplied, don't return anything.
+              // If nothing is supplied, don't return anything. Also, cry.
               return null;
             }
           }
@@ -124,7 +155,8 @@ const QuestionListings = ({
   AllCategories,
   TagSlug,
   BgColor,
-  Filter,
+  CategoryFilter,
+  TagFilter,
 }) => (
   <MasonrySection
     Columns={3}
@@ -133,18 +165,22 @@ const QuestionListings = ({
     TextColor={Theme.Color.Nightsky}
     Gutter={Gutter ? Gutter : [0, 1, 2, 1]}
   >
-    {Filter ? (
+    {/* If the CategoryFilter is supplied */}
+    {CategoryFilter ? (
       <QuestionCards
         CategorySlug={CategorySlug}
         TagSlug={TagSlug ? TagSlug : null}
-        Filter={Filter}
+        CategoryFilter={CategoryFilter}
+        TagFilter={TagFilter ? TagFilter : 'all'}
         AllCategories={AllCategories}
       />
     ) : (
+      // If it isn't, revert to 'all'
       <QuestionCards
         CategorySlug={CategorySlug}
         TagSlug={TagSlug ? TagSlug : null}
-        Filter="all"
+        CategoryFilter="all"
+        TagFilter={TagFilter}
         AllCategories={AllCategories}
       />
     )}

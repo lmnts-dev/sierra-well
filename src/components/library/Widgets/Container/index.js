@@ -82,6 +82,7 @@ class WidgetType extends React.Component {
         // SideForecast
         // SideWidget
         // Default
+
         <WidgetContainerStyle.Inner>
           <WidgetSlider>
             {WidgetContent.map((Content, index) => {

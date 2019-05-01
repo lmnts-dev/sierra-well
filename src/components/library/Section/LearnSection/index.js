@@ -47,7 +47,7 @@ class SlideSectionWithData extends React.Component {
     // each tag for us to loop and display a Widget for in
     // the data structure that WidgetContainer likes.
     Tags.map((Tag, index) => {
-      Widgets[index] = {
+      Widgets[index + 1] = {
         Flex: 1,
         WidgetContent: [
           {
@@ -71,6 +71,30 @@ class SlideSectionWithData extends React.Component {
         ],
       };
     });
+
+    Widgets[0] = {
+      Flex: 1,
+      WidgetContent: [
+        {
+          Destination: BaseUrl + '/' + CategorySlug + '/',
+          Style: 'Generic',
+          Meta: {
+            Generic: {
+              BgColor: Theme.Color.Nightsky,
+              BgImage: '',
+              Subhead: '',
+              Headline: 'All ' + this.props.Data.Name + ' Questions',
+              TextColor: Theme.Color.White,
+              IconColor: Theme.Color.White,
+              IconName: this.props.Data.Icon, // FontAwesome Icon Name
+              TintColor: '',
+              TintOpacity: '',
+              IconSize: '',
+            },
+          },
+        },
+      ],
+    };
 
     return (
       <SlideSection

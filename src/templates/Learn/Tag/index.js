@@ -33,6 +33,7 @@ const LearnTagPage = props => {
         if (Category.node.Slug == CategorySlug) {
           // Define our correct Data Category Object
           let CategoryData = Category.node;
+          let CategoryName = Category.node.Name;
 
           // Then let's map that Category's tags.
           return (
@@ -49,6 +50,7 @@ const LearnTagPage = props => {
                       key={i}
                       TagSlug={Tag.Slug}
                       TagData={TagData}
+                      CategoryName={CategoryName}
                       CategorySlug={CategorySlug}
                       CategoryData={CategoryData}
                       Location={props.location.href}

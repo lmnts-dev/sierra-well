@@ -174,7 +174,9 @@ const PageWrapper = ({
               Label={Category.Name}
               TextColor={CategoryTheme.Color.Secondary}
             />
-            <h1 className="h2">Learn about Cannabis & {TagData.Name}. </h1>
+            <h1 className="h2">
+              Learn about Cannabis, {Category.Name}, & {TagData.Name}.{' '}
+            </h1>
             <SocialStrip
               Location={Location}
               TextColor={CategoryTheme.Color.Secondary}
@@ -221,6 +223,7 @@ const TemplateLayout = ({
   CategorySlug,
   CategoryData,
   Location,
+  CategoryName,
 }) => {
   return (
     <PageWrapper
@@ -231,23 +234,18 @@ const TemplateLayout = ({
       TagData={TagData}
       Location={Location}
     >
-      <QuestionListings Gutter={[1, 1, 2, 1]} BgColor={Theme.Color.Snow} />
+      <QuestionListings
+        CategorySlug={CategorySlug}
+        TagSlug={TagData.Slug}
+        TagFilter={TagData.Name}
+        CategoryFilter={CategoryName}
+        Gutter={[1, 1, 2, 1]}
+        BgColor={Theme.Color.Snow}
+      />
       <LearnSection BaseUrl="/learn" Category={CategoryData} />
     </PageWrapper>
   );
 };
-
-// const TemplateLayout = ({ Category }) => {
-//   return <>{console.log(Category.node)}</>;
-// };
-
-// const TemplateLayout = ({ Category, Data }) => {
-//   return (
-//     <PageWrapper Data={Data} Category={Category}>
-//       <LearnSection Data={Data} Category={Category} />
-//     </PageWrapper>
-//   );
-// };
 
 // The Template itself. Where it all begins.
 const LearnTagTemplate = ({
@@ -255,12 +253,14 @@ const LearnTagTemplate = ({
   TagData,
   CategorySlug,
   CategoryData,
+  CategoryName,
   Location,
 }) => {
   return (
     <TemplateLayout
       TagSlug={TagSlug}
       TagData={TagData}
+      CategoryName={CategoryName}
       CategorySlug={CategorySlug}
       CategoryData={CategoryData}
       Location={Location}

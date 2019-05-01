@@ -190,9 +190,9 @@ const TemplateLayout = ({ Category, Location }) => {
       Location={Location}
     >
       <LearnSection Category={Category.node} />
-      {console.log(Category.node.Name)}
       <QuestionListings
-        Filter={Category.node.Name}
+        CategoryFilter={Category.node.Name}
+        TagFilter="all"
         Gutter={[0, 1, 2, 1]}
         BgColor={Theme.Color.Snow}
         CategorySlug={Category.node.Slug}
@@ -200,18 +200,6 @@ const TemplateLayout = ({ Category, Location }) => {
     </PageWrapper>
   );
 };
-
-// const TemplateLayout = ({ Category }) => {
-//   return <>{console.log(Category.node)}</>;
-// };
-
-// const TemplateLayout = ({ Category, Data }) => {
-//   return (
-//     <PageWrapper Data={Data} Category={Category}>
-//       <LearnSection Data={Data} Category={Category} />
-//     </PageWrapper>
-//   );
-// };
 
 // The Template itself. Where it all begins.
 const LearnCategoryTemplate = ({ Filter, Location, Data }) => {
