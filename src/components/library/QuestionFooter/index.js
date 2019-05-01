@@ -27,7 +27,7 @@ import QuestionFooterStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const QuestionFooter = () => (
+const QuestionFooter = ({ Filter }) => (
   <>
     {/* ///////////// */}
 
@@ -157,7 +157,7 @@ const QuestionFooter = () => (
 
     {/* ///////////// */}
 
-    <QuestionListings />
+    <QuestionListings Filter={Filter} />
 
     {/* ///////////// */}
   </>

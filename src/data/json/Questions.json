@@ -16,10 +16,10 @@
     "longAnswer": "Lorem ipsum solor sit dit imet..."
   },
   {
-    "slug": "qualifying-conditions-1",
+    "slug": "consectetur-lorem-dum",
     "date": "2018-01-04T17:44:07.000Z",
     "author": "Wes McQuillen",
-    "title": "What are qualifying qualifying conditions conditions for a medical cannabis card?",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "category": "Medical",
     "tags": [
       "medical cards",
@@ -32,7 +32,72 @@
     "longAnswer": "Lorem ipsum solor sit dit imet..."
   },
   {
-    "slug": "qualifying-conditions-2",
+    "slug": "faucibus-commodo-pura",
+    "date": "2018-01-04T17:44:07.000Z",
+    "author": "Wes McQuillen",
+    "title": "Xollis non nisi sed, faucibus commodo purus.",
+    "category": "Medical",
+    "tags": [
+      "medical cards",
+      "purchasing",
+      "doctors",
+      "patients",
+      "treatment"
+    ],
+    "shortAnswer": "In order to qualify for a medical marijuana card, you must suffer from one of the conditions listed and have a doctor’s recommendation that marijuana will help relieve that condition. The complete list of qualifying conditions can be found in the Nevada Revised Statutes, Chapter 453A, Section 050.",
+    "longAnswer": "Lorem ipsum solor sit dit imet..."
+  },
+  {
+    "slug": "poseure-molesa-fara",
+    "date": "2018-01-04T17:44:07.000Z",
+    "author": "Wes McQuillen",
+    "title": "Jorem sit amet leo posuere molestie. Mauris elit met.",
+    "category": "Industry",
+    "tags": [
+      "medical cards",
+      "purchasing",
+      "doctors",
+      "patients",
+      "treatment"
+    ],
+    "shortAnswer": "In order to qualify for a medical marijuana card, you must suffer from one of the conditions listed and have a doctor’s recommendation that marijuana will help relieve that condition. The complete list of qualifying conditions can be found in the Nevada Revised Statutes, Chapter 453A, Section 050.",
+    "longAnswer": "Lorem ipsum solor sit dit imet..."
+  },
+  {
+    "slug": "ipsum-solor-dit-amet",
+    "date": "2018-01-04T17:44:07.000Z",
+    "author": "Wes McQuillen",
+    "title": "Lorem ipsum solor sit dit imet dolem.",
+    "category": "Recreational",
+    "tags": [
+      "medical cards",
+      "purchasing",
+      "doctors",
+      "patients",
+      "treatment"
+    ],
+    "shortAnswer": "In order to qualify for a medical marijuana card, you must suffer from one of the conditions listed and have a doctor’s recommendation that marijuana will help relieve that condition. The complete list of qualifying conditions can be found in the Nevada Revised Statutes, Chapter 453A, Section 050.",
+    "longAnswer": "Lorem ipsum solor sit dit imet..."
+  },
+  {
+    "slug": "vem-del-amel",
+    "date": "2018-01-04T17:44:07.000Z",
+    "author": "Wes McQuillen",
+    "title": "Con hollis jara vem del amel.",
+    "category": "Safety",
+    "tags": [
+      "medical cards",
+      "purchasing",
+      "doctors",
+      "patients",
+      "treatment"
+    ],
+    "shortAnswer": "In order to qualify for a medical marijuana card, you must suffer from one of the conditions listed and have a doctor’s recommendation that marijuana will help relieve that condition. The complete list of qualifying conditions can be found in the Nevada Revised Statutes, Chapter 453A, Section 050.",
+    "longAnswer": "Lorem ipsum solor sit dit imet..."
+  },
+  
+  {
+    "slug": "what-qualifying-conditions",
     "date": "2018-01-04T17:44:07.000Z",
     "author": "Wes McQuillen",
     "title": "What are qualifying conditions for a medical cannabis card?",
@@ -48,10 +113,10 @@
     "longAnswer": "Lorem ipsum solor sit dit imet..."
   },
   {
-    "slug": "qualifying-conditions-3",
+    "slug": "lorem-ipsum-dolor-sit-amet",
     "date": "2018-01-04T17:44:07.000Z",
     "author": "Wes McQuillen",
-    "title": "What are qualifying conditions qualifying conditions qualifying conditions for a medical cannabis card?",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "category": "Medical",
     "tags": [
       "medical cards",
@@ -64,10 +129,10 @@
     "longAnswer": "Lorem ipsum solor sit dit imet..."
   },
   {
-    "slug": "qualifying-conditions-4",
+    "slug": "xollis-non-nisi-sed",
     "date": "2018-01-04T17:44:07.000Z",
     "author": "Wes McQuillen",
-    "title": "What are qualifying conditions for a medical cannabis card?",
+    "title": "Xollis non nisi sed, faucibus commodo purus.",
     "category": "Medical",
     "tags": [
       "medical cards",
@@ -80,11 +145,43 @@
     "longAnswer": "Lorem ipsum solor sit dit imet..."
   },
   {
-    "slug": "qualifying-conditions-5",
+    "slug": "jorem-sit-amet-leo",
     "date": "2018-01-04T17:44:07.000Z",
     "author": "Wes McQuillen",
-    "title": "What are qualifying conditions qualifying conditions qualifying conditions for a medical cannabis card?",
-    "category": "Medical",
+    "title": "Jorem sit amet leo posuere molestie. Mauris elit met.",
+    "category": "Industry",
+    "tags": [
+      "medical cards",
+      "purchasing",
+      "doctors",
+      "patients",
+      "treatment"
+    ],
+    "shortAnswer": "In order to qualify for a medical marijuana card, you must suffer from one of the conditions listed and have a doctor’s recommendation that marijuana will help relieve that condition. The complete list of qualifying conditions can be found in the Nevada Revised Statutes, Chapter 453A, Section 050.",
+    "longAnswer": "Lorem ipsum solor sit dit imet..."
+  },
+  {
+    "slug": "lorem-ipsum-solor-sit",
+    "date": "2018-01-04T17:44:07.000Z",
+    "author": "Wes McQuillen",
+    "title": "Lorem ipsum solor sit dit imet dolem.",
+    "category": "Recreational",
+    "tags": [
+      "medical cards",
+      "purchasing",
+      "doctors",
+      "patients",
+      "treatment"
+    ],
+    "shortAnswer": "In order to qualify for a medical marijuana card, you must suffer from one of the conditions listed and have a doctor’s recommendation that marijuana will help relieve that condition. The complete list of qualifying conditions can be found in the Nevada Revised Statutes, Chapter 453A, Section 050.",
+    "longAnswer": "Lorem ipsum solor sit dit imet..."
+  },
+  {
+    "slug": "con-hollis-jara-vem-del",
+    "date": "2018-01-04T17:44:07.000Z",
+    "author": "Wes McQuillen",
+    "title": "Con hollis jara vem del amel.",
+    "category": "Safety",
     "tags": [
       "medical cards",
       "purchasing",

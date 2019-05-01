@@ -190,7 +190,13 @@ const TemplateLayout = ({ Category, Location }) => {
       Location={Location}
     >
       <LearnSection Category={Category.node} />
-      <QuestionListings Gutter={[0, 1, 2, 1]} BgColor={Theme.Color.Snow} />
+      {console.log(Category.node.Name)}
+      <QuestionListings
+        Filter={Category.node.Name}
+        Gutter={[0, 1, 2, 1]}
+        BgColor={Theme.Color.Snow}
+        CategorySlug={Category.node.Slug}
+      />
     </PageWrapper>
   );
 };

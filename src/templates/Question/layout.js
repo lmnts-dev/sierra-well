@@ -79,7 +79,7 @@ const QuestionTemplate = ({
         >
           <Block AlignItems="flex-start" Width={1} maxWidth={0.5}>
             <Breadcrumb
-              to="/learn/medical/"
+              to={'/learn/' + CategorySlug}
               Label={QuestionData.category + ' Cannabis Questions'}
               TextColor={Theme.Color.White}
             />
@@ -102,7 +102,10 @@ const QuestionTemplate = ({
             TextColor={Theme.Color.Nightsky}
           >
             <Block Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-              <PostDetails Time={QuestionData.date} Author={QuestionData.author} />
+              <PostDetails
+                Time={QuestionData.date}
+                Author={QuestionData.author}
+              />
               <h3>{QuestionData.shortAnswer}</h3>
               <p className="p-md">{QuestionData.longAnswer}</p>
             </Block>

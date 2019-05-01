@@ -79,6 +79,7 @@ MasonrySectionStyle.Content = styled.div`
 
   /* CSS Masonry */
   /* Read more: https://w3bits.com/css-masonry/ */
+  column-width: 33%;
   column-count: ${props => (props.Columns ? props.Columns : 3)};
   column-gap: ${props =>
     props.ColumnGap
@@ -90,6 +91,7 @@ MasonrySectionStyle.Content = styled.div`
     box-shadow: 0 10px 17px 0 rgba(6, 10, 92, 0.12);
     position: relative;
     overflow: hidden;
+    width: 100%;
     display: inline-block;
     margin-bottom: ${props =>
       props.ColumnGap
