@@ -33,9 +33,22 @@ const QuestionCards = ({
   TagSlug,
 }) => {
   // Assign our strings to build our slugs.
-  let CategorySlugString = CategorySlug ? '/' + CategorySlug : '';
-  let TagSlugString = TagSlug ? '/' + TagSlug : '';
-  let QuestionSlugString = CategorySlugString + TagSlugString;
+  const CategorySlugString = CategorySlug ? '/' + CategorySlug : '';
+  const TagSlugString = TagSlug ? '/' + TagSlug : '';
+  const QuestionSlugString = CategorySlugString + TagSlugString;
+
+  // Helper Function to match the CategoryFilter to the right Category
+  function categoryMatch(categoryData, categoryFilter) {
+    // See  if our categoryData matches our supplied categoryFilter:
+    let matchedCategory = categoryData.filter(
+      category => category.node.Name === categoryFilter
+    );
+
+    // If it does, return the matched Category.
+    if (matchedCategory) {
+      return matchedCategory[0].node;
+    }
+  }
 
   return (
     // Run the StaticQuery to get the data we need.
@@ -62,11 +75,20 @@ const QuestionCards = ({
             edges {
               node {
                 Name
+                Icon
                 Slug
                 Tags {
                   Name
                   Icon
                   Slug
+                }
+                PageTheme {
+                  Color {
+                    Background
+                    Primary
+                    Secondary
+                    Tertiary
+                  }
                 }
               }
             }
@@ -74,23 +96,33 @@ const QuestionCards = ({
         }
       `}
       render={data =>
+        // Create our PageTheme variables for each Widget.
+
         // Map the Question data we got.
         data.allQuestionsJson.edges.map((Question, index) => {
           // If the Question's Category is the same as the Filter supplied:
           if (Question.node.category == CategoryFilter) {
             // If there isn't a TagFilter applied:
             if (TagFilter == 'all') {
+              // Use our helper function above to find the right Category's Data.
+              let filteredCategory = categoryMatch(
+                data.allQuestionCategoriesJson.edges,
+                CategoryFilter
+              );
+
+              console.log(CategoryFilter);
+
               return (
                 <DefaultWidget
-                  BgColor={Theme.Color.PurpleHaze}
-                  TextColor={Theme.Color.White}
+                  BgColor={filteredCategory.PageTheme.Color.Background}
+                  TextColor={filteredCategory.PageTheme.Color.Primary}
                   Destination={
                     '/learn' + QuestionSlugString + '/' + Question.node.slug
                   }
                   Subhead={Question.node.category}
                   Headline={Question.node.title}
-                  IconName="rainbow"
-                  IconColor={Theme.Color.White}
+                  IconName={filteredCategory.Icon}
+                  IconColor={filteredCategory.PageTheme.Color.Primary}
                   key={index}
                 />
               );
@@ -98,17 +130,23 @@ const QuestionCards = ({
               // If there is a TagFilter applied, check the Tags Array
               // to see if it includes our filter:
               if (Question.node.tags.includes(TagFilter.toLowerCase())) {
+                // Use our helper function above to find the right Category's Data.
+                let filteredCategory = categoryMatch(
+                  data.allQuestionCategoriesJson.edges,
+                  CategoryFilter
+                );
+
                 return (
                   <DefaultWidget
-                    BgColor={Theme.Color.PurpleHaze}
-                    TextColor={Theme.Color.White}
+                    BgColor={filteredCategory.PageTheme.Color.Background}
+                    TextColor={filteredCategory.PageTheme.Color.Primary}
                     Destination={
                       '/learn' + QuestionSlugString + '/' + Question.node.slug
                     }
                     Subhead={Question.node.category}
                     Headline={Question.node.title}
-                    IconName="rainbow"
-                    IconColor={Theme.Color.White}
+                    IconName={filteredCategory.Icon}
+                    IconColor={filteredCategory.PageTheme.Color.Primary}
                     key={index}
                   />
                 );
@@ -121,20 +159,23 @@ const QuestionCards = ({
             // If we want to display all the Questions, let's make their
             // slug their root category.
             if (CategoryFilter == 'all') {
+              // Use our helper function to match the Category data.
+              let filteredCategory = categoryMatch(
+                data.allQuestionCategoriesJson.edges,
+                Question.node.category
+              );
+
               return (
                 <DefaultWidget
-                  BgColor={Theme.Color.PurpleHaze}
-                  TextColor={Theme.Color.White}
+                  BgColor={filteredCategory.PageTheme.Color.Background}
+                  TextColor={filteredCategory.PageTheme.Color.Primary}
                   Destination={
-                    '/learn/' +
-                    Question.node.category.toLowerCase() +
-                    '/' +
-                    Question.node.slug
+                    '/learn/' + filteredCategory.Slug + '/' + Question.node.slug
                   }
                   Subhead={Question.node.category}
                   Headline={Question.node.title}
-                  IconName="rainbow"
-                  IconColor={Theme.Color.White}
+                  IconName={filteredCategory.Icon}
+                  IconColor={filteredCategory.PageTheme.Color.Primary}
                   key={index}
                 />
               );
