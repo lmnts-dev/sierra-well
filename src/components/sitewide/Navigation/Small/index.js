@@ -72,7 +72,7 @@ class NavigationSmall extends PureComponent {
               <Item
                 Label="Locations"
                 Class="i"
-                Destination="/"
+                Destination="/locations"
                 Icon="map-marker-alt"
               />
               <Item
