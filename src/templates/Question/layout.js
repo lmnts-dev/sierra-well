@@ -21,7 +21,7 @@ import LearnSection from 'components/library/Section/LearnSection';
 import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
-import Breadcrumb from 'components/library/Breadcrumb';
+import Bread from 'components/library/Breadcrumb';
 import QuestionFooter from 'components/library/QuestionFooter';
 import SocialStrip from 'components/library/SocialStrip';
 
@@ -34,6 +34,26 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
+
+// Slugify Helper
+
+function slugify(string) {
+  const a = 'àáäâãåăæçèéëêǵḧìíïîḿńǹñòóöôœṕŕßśșțùúüûǘẃẍÿź·/_,:;';
+  const b = 'aaaaaaaaceeeeghiiiimnnnoooooprssstuuuuuwxyz------';
+  const p = new RegExp(a.split('').join('|'), 'g');
+  return string
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+    .replace(/&/g, '-and-') // Replace & with ‘and’
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, ''); // Trim - from end of text
+}
+
+
 // Post Details Snippet
 const PostDetails = ({ Author, Time }) => (
   <span className="post-details">
@@ -41,6 +61,38 @@ const PostDetails = ({ Author, Time }) => (
     <span itemProp="author">{Author}</span>
   </span>
 );
+
+// Breadcrumb Tag List
+const TagList = ({ Tags, CategorySlug }) => {
+  // Tag Crumb Function
+  function tagCrumbs(baseUrl, categorySlug, list) {
+    let crumbs = list.map((tag, index) => {
+      if (index == 0) {
+        return {
+          Destination: '/' + baseUrl + '/' + categorySlug,
+          Label: categorySlug + ' Cannabis Questions',
+        };
+      } else {
+        return {
+          Destination: '/' + baseUrl + '/' + categorySlug + '/' + slugify(tag),
+          Label: tag,
+        };
+      }
+    });
+
+    console.log('crumbs');
+    return crumbs;
+  }
+
+  return (
+    <>
+      <Bread
+        Crumbs={tagCrumbs('learn', CategorySlug, Tags)}
+        TextColor={Theme.Color.White}
+      />
+    </>
+  );
+};
 
 // The Question Template
 const QuestionTemplate = ({
@@ -77,11 +129,10 @@ const QuestionTemplate = ({
           Tint="0.5"
         >
           <Block AlignItems="flex-start" Width={1} maxWidth={0.5}>
-            <Breadcrumb
-              to={'/learn/' + CategorySlug}
-              Label={QuestionData.category + ' Cannabis Questions'}
-              TextColor={Theme.Color.White}
-            />
+            <TagList Tags={QuestionData.tags} CategorySlug={CategorySlug} />
+
+            {console.log(QuestionData.tags)}
+
             <h1 itemProp="name">{QuestionData.title}</h1>
             <SocialStrip Location={Location} TextColor={Theme.Color.White} />
           </Block>

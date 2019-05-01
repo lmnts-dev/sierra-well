@@ -32,7 +32,7 @@ const CrossWidget = ({}) => (
           TintOpacity=""
           Destination="/menu"
           Subhead=""
-          Headline="View Menu"
+          Headline="View Our Menu"
           IconColor={Theme.Color.Primary}
           IconName="plus"
         />

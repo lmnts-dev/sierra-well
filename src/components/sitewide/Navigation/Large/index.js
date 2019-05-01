@@ -85,7 +85,7 @@ class NavigationLarge extends React.Component {
 
           <NavigationStyle.Top.CommunicationBlock>
             <Btn
-              Label="View Menu"
+              Label="View Our Menu"
               Destination="/menu"
               BgColor={Theme.Color.Primary}
               TextColor={Theme.Color.White}

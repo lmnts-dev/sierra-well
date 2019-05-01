@@ -22,7 +22,7 @@ import WidgetSection from 'components/library/Section/WidgetSection';
 import SplitSection from 'components/library/Section/SplitSection';
 
 //// Misc. Components
-import Breadcrumb from 'components/library/Breadcrumb';
+import Bread from 'components/library/Breadcrumb';
 import Btn from 'components/library/Btn/';
 import ImgQuery from 'components/core/ImgQuery';
 
@@ -69,15 +69,19 @@ const Index = props => (
         TextColor={Theme.Color.White}
       >
         <Block AlignItems="flex-start" Width={0.5}>
-          <Breadcrumb
-            to="/specials"
-            Label="Specials"
+          <Bread
+            Crumbs={[
+              {
+                Destination: '/specials',
+                Label: 'Specials',
+              },
+            ]}
             TextColor={Theme.Color.White}
           />
           <h1>100% Free Delivery</h1>
           <p className="p-md">Any size order, no minimum required.</p>
           <Btn
-            Label="View Menu"
+            Label="View Our Menu"
             Destination="/menu"
             BgColor={Theme.Color.Primary}
             TextColor={Theme.Color.White}
@@ -144,7 +148,7 @@ const Index = props => (
               City stores, Nevada addresses only.
             </p>
             <Btn
-              Label="View Menu"
+              Label="View Our Menu"
               Destination="/menu"
               BgColor={Theme.Color.Primary}
               TextColor={Theme.Color.White}
@@ -245,7 +249,7 @@ const Index = props => (
               City stores, Nevada addresses only.
             </p>
             <Btn
-              Label="View Menu"
+              Label="View Our Menu"
               Destination="/menu"
               BgColor={Theme.Color.Primary}
               TextColor={Theme.Color.White}
@@ -290,7 +294,7 @@ const Index = props => (
               City stores, Nevada addresses only.
             </p>
             <Btn
-              Label="View Menu"
+              Label="View Our Menu"
               Destination="/menu"
               BgColor={Theme.Color.Primary}
               TextColor={Theme.Color.White}

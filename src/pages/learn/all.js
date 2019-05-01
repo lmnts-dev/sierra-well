@@ -12,7 +12,7 @@ import LearnSection from 'components/library/Section/LearnSection';
 import QuestionFooter from 'components/library/QuestionFooter';
 
 //// Misc. Components
-import Breadcrumb from 'components/library/Breadcrumb';
+import Bread from 'components/library/Breadcrumb';
 import Btn from 'components/library/Btn/';
 
 // Elements
@@ -46,9 +46,13 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
 
         <SimpleHero TextColor={Theme.Color.White}>
           <Block maxWidth={0.5}>
-            <Breadcrumb
-              to="/learn"
-              Label="Learn"
+            <Bread
+              Crumbs={[
+                {
+                  Destination: "/learn",
+                  Label: "Learn",
+                },
+              ]}
               TextColor={Theme.Color.White}
             />
             <h1 className="h2">You've got questions. We've got answers.</h1>
@@ -65,12 +69,11 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
           {children}
 
           {/* ///////////// */}
-
         </SubLevelPageContent>
         {/* End page content. */}
 
-         {/* The Question / Category / Tag footer. */}
-         <SubLevelPageContent
+        {/* The Question / Category / Tag footer. */}
+        <SubLevelPageContent
           BgColor={Theme.Color.White}
           TextColor={Theme.Color.Nightsky}
         >
@@ -80,7 +83,7 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
 
           {/* ///////////// */}
         </SubLevelPageContent>
-        
+
         {/* ///////////// */}
       </SubLevelPage>
     </Layout>

@@ -97,7 +97,7 @@ export const LocationsData = {
                         BgColor: Theme.Color.White,
                         BgImage: '',
                         Subhead: '',
-                        Headline: 'View Menu',
+                        Headline: 'View Our Menu',
                         TextColor: Theme.Color.Black,
                         IconColor: Theme.Color.Primary,
                         IconName: 'plus', // FontAwesome Icon Name
@@ -235,7 +235,7 @@ export const LocationsData = {
                         BgColor: Theme.Color.White,
                         BgImage: '',
                         Subhead: '',
-                        Headline: 'View Menu',
+                        Headline: 'View Our Menu',
                         TextColor: Theme.Color.Black,
                         IconColor: Theme.Color.Primary,
                         IconName: 'plus', // FontAwesome Icon Name

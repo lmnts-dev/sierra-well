@@ -1,4 +1,4 @@
-// BreadCrumb Component:
+// <Bread Crumbs=""> Component:
 // The breadcrumb component, typically used in Hero components.
 
 // Imports
@@ -16,16 +16,28 @@ import BreadCrumbStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const BreadCrumb = ({ to, Label, TextColor }) => (
-  <BreadCrumbStyle to={to}>
-    <BreadCrumbStyle.Label TextColor={TextColor}>
-      <Icon className="svg-carat" Name="carat" TextColor={TextColor} />
-      {Label}
-    </BreadCrumbStyle.Label>
+const Bread = ({ Crumbs, TextColor }) => (
+  <BreadCrumbStyle>
+    {Crumbs.map((crumb, index) => {
+      return (
+        <BreadCrumbStyle.Label
+          to={crumb.Destination}
+          key={index}
+          TextColor={TextColor}
+        >
+        {/* // Hide back button if nested item. */}
+          {index == 0 ? (
+            <Icon className="svg-carat" Name="carat" TextColor={TextColor} />
+          ) : null}
+
+          {crumb.Label}
+        </BreadCrumbStyle.Label>
+      );
+    })}
   </BreadCrumbStyle>
 );
 
-export default BreadCrumb;
+export default Bread;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

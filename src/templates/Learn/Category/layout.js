@@ -17,7 +17,7 @@ import SlideSection from 'components/library/Section/SlideSection';
 import QuestionListings from 'components/library/QuestionListings';
 
 //// Misc. Components
-import Breadcrumb from 'components/library/Breadcrumb';
+import Bread from 'components/library/Breadcrumb';
 import SocialStrip from 'components/library/SocialStrip';
 import QuestionFooter from 'components/library/QuestionFooter';
 import Btn from 'components/library/Btn/';
@@ -135,9 +135,13 @@ const PageWrapper = ({ children, Data, Location, Category, CategoryTheme }) => {
 
         <SimpleHero TextColor={CategoryTheme.Color.Secondary}>
           <Block maxWidth={0.5}>
-            <Breadcrumb
-              to={Category.Breadcrumb.Destination}
-              Label={Category.Breadcrumb.Label}
+            <Bread
+              Crumbs={[
+                {
+                  Destination: Category.Breadcrumb.Destination,
+                  Label: Category.Breadcrumb.Label,
+                },
+              ]}
               TextColor={CategoryTheme.Color.Secondary}
             />
             <h1 className="h2">{Category.Headline}</h1>

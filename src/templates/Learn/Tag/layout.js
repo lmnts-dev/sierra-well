@@ -17,7 +17,7 @@ import SlideSection from 'components/library/Section/SlideSection';
 import QuestionListings from 'components/library/QuestionListings';
 
 //// Misc. Components
-import Breadcrumb from 'components/library/Breadcrumb';
+import Bread from 'components/library/Breadcrumb';
 import SocialStrip from 'components/library/SocialStrip';
 import QuestionFooter from 'components/library/QuestionFooter';
 import Btn from 'components/library/Btn/';
@@ -169,9 +169,17 @@ const PageWrapper = ({
 
         <SimpleHero TextColor={CategoryTheme.Color.Secondary}>
           <Block maxWidth={0.5}>
-            <Breadcrumb
-              to={'learn/' + CategorySlug}
-              Label={Category.Name}
+            <Bread
+              Crumbs={[
+                {
+                  Destination: 'learn/' + CategorySlug,
+                  Label: Category.Name + ' Cannabis Questions',
+                },
+                {
+                  Destination: 'learn/' + CategorySlug + '/' + TagSlug,
+                  Label: TagData.Name,
+                },
+              ]}
               TextColor={CategoryTheme.Color.Secondary}
             />
             <h1 className="h2">
