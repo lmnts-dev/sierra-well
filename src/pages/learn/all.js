@@ -49,13 +49,21 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
             <Bread
               Crumbs={[
                 {
-                  Destination: "/learn",
-                  Label: "Learn",
+                  Destination: '/learn',
+                  Label: 'Learn',
                 },
               ]}
               TextColor={Theme.Color.White}
             />
             <h1 className="h2">You've got questions. We've got answers.</h1>
+            <Btn
+              IconClass="intercom"
+              Label="Ask a question"
+              BgColor={Theme.Color.Nightsky}
+              TextColor={Theme.Color.White}
+              Destination="/learn/all"
+              IconPosition="left"
+            />
           </Block>
         </SimpleHero>
         {/* Begin page content. */}

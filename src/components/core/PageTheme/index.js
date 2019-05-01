@@ -72,11 +72,12 @@ nav {
 
     /* Communication / Focus Block */
     .btn {
-      ${props =>
-        /* Background */
-        props.SecondaryColor
-          ? 'background-color: ' + props.SecondaryColor
-          : null};
+      .btn-inner {
+        ${props =>
+          /* Background */
+          props.SecondaryColor
+            ? 'background-color: ' + props.SecondaryColor
+            : null};
 
       /* Color */
       ${props =>
@@ -89,6 +90,7 @@ nav {
                   ? 'background-color: ' + props.SecondaryColor
                   : null};
             }
+      }
     }
   }
 

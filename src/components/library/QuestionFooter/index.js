@@ -21,6 +21,7 @@ import WidgetSection from 'components/library/Section/WidgetSection';
 import DefaultWidget from 'components/library/Widgets/Library/Default/';
 import QuestionListings from 'components/library/QuestionListings';
 import SlideSection from 'components/library/Section/SlideSection';
+import Btn from 'components/library/Btn';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -30,159 +31,8 @@ import QuestionFooterStyle from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
-const Widgets = [
-  {
-    // Begin WidgetContent
-    Flex: 1,
-    WidgetContent: [
-      {
-        Destination: '/learn/all/',
-        Style: 'Generic',
-        Meta: {
-          Generic: {
-            BgColor: Theme.Color.Nightsky,
-            BgImage: '',
-            Subhead: '',
-            Headline: 'All Questions',
-            TextColor: Theme.Color.White,
-            IconColor: Theme.Color.White,
-            IconName: 'question', // FontAwesome Icon Name
-            TintColor: '',
-            TintOpacity: '',
-            IconSize: '',
-          },
-        },
-      },
-    ],
-    // End WidgetContent
-  },
-  {
-    // Begin WidgetContent
-    Flex: 1,
-    WidgetContent: [
-      {
-        Destination: '/learn/recreational/',
-        Style: 'Generic',
-        Meta: {
-          Generic: {
-            BgColor: Theme.Color.Mint,
-            BgImage: '',
-            Subhead: '',
-            Headline: 'Recreational',
-            TextColor: Theme.Color.Black,
-            IconColor: Theme.Color.Black,
-            IconName: 'leaf', // FontAwesome Icon Name
-            TintColor: '',
-            TintOpacity: '',
-            IconSize: '',
-          },
-        },
-      },
-    ],
-    // End WidgetContent
-  },
-  {
-    // Begin WidgetContent
-    Flex: 1,
-    WidgetContent: [
-      {
-        Destination: '/learn/medical/',
-        Style: 'Generic',
-        Meta: {
-          Generic: {
-            BgColor: Theme.Color.Tahoe,
-            BgImage: '',
-            Subhead: '',
-            Headline: 'Medical',
-            TextColor: Theme.Color.White,
-            IconColor: Theme.Color.White,
-            IconName: 'leaf', // FontAwesome Icon Name
-            TintColor: '',
-            TintOpacity: '',
-            IconSize: '',
-          },
-        },
-      },
-    ],
-    // End WidgetContent
-  },
-  {
-    // Begin WidgetContent
-    Flex: 1,
-    WidgetContent: [
-      {
-        Destination: '/learn/safety/',
-        Style: 'Generic',
-        Meta: {
-          Generic: {
-            BgColor: Theme.Color.Dank,
-            BgImage: '',
-            Subhead: '',
-            Headline: 'Safety',
-            TextColor: Theme.Color.Black,
-            IconColor: Theme.Color.Black,
-            IconName: 'leaf', // FontAwesome Icon Name
-            TintColor: '',
-            TintOpacity: '',
-            IconSize: '',
-          },
-        },
-      },
-    ],
-    // End WidgetContent
-  },
-  {
-    // Begin WidgetContent
-    Flex: 1,
-    WidgetContent: [
-      {
-        Destination: '/learn/industry/',
-        Style: 'Generic',
-        Meta: {
-          Generic: {
-            BgColor: Theme.Color.Sunset,
-            BgImage: '',
-            Subhead: '',
-            Headline: 'Industry',
-            TextColor: Theme.Color.White,
-            IconColor: Theme.Color.White,
-            IconName: 'leaf', // FontAwesome Icon Name
-            TintColor: '',
-            TintOpacity: '',
-            IconSize: '',
-          },
-        },
-      },
-    ],
-    // End WidgetContent
-  },
-  {
-    // Begin WidgetContent
-    Flex: 1,
-    WidgetContent: [
-      {
-        Destination: '/learn/california/',
-        Style: 'Generic',
-        Meta: {
-          Generic: {
-            BgColor: Theme.Color.PurpleHaze,
-            BgImage: '',
-            Subhead: '',
-            Headline: 'California',
-            TextColor: Theme.Color.White,
-            IconColor: Theme.Color.White,
-            IconName: 'leaf', // FontAwesome Icon Name
-            TintColor: '',
-            TintOpacity: '',
-            IconSize: '',
-          },
-        },
-      },
-    ],
-    // End WidgetContent
-  },
-];
 
+// Create our Categories array.
 const BrowseCategories = () => {
   // Helper function to dissect the data into a usable map
   function categoryWidgets(data) {
@@ -301,6 +151,7 @@ const BrowseCategories = () => {
   );
 };
 
+// Return our footer.
 const QuestionFooter = ({ CategoryFilter, TagFilter, HideCategories }) => (
   <>
     {/* ///////////// */}
@@ -315,6 +166,14 @@ const QuestionFooter = ({ CategoryFilter, TagFilter, HideCategories }) => (
         <p className="p-md">
           Chat with an expert now or sumbit your own question
         </p>
+        <Btn
+          IconClass="intercom"
+          Label="Ask a question"
+          BgColor={Theme.Color.Primary}
+          TextColor={Theme.Color.White}
+          Destination="/learn/all"
+          IconPosition="left"
+        />
       </Block>
     </SimpleSection>
 

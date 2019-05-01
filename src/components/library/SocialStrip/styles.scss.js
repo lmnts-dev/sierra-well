@@ -19,6 +19,25 @@ export const SocialStripStyle = styled.div`
   align-items: center;
   text-decoration: none;
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+
+  /* Array-based margins utilizing root variable multiple. */
+  ${props =>
+    props.Margin
+      ? 'margin-top: calc(' + Root.Size + ' * ' + props.Margin[0] + ')'
+      : null};
+  ${props =>
+    props.Margin
+      ? 'margin-right: calc(' + Root.Size + ' * ' + props.Margin[1] + ')'
+      : null};
+  ${props =>
+    props.Margin
+      ? 'margin-bottom: calc(' + Root.Size + ' * ' + props.Margin[2] + ')'
+      : null};
+  ${props =>
+    props.Margin
+      ? 'margin-left: calc(' + Root.Size + ' * ' + props.Margin[3] + ')'
+      : null};
+
   a {
     color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     text-decoration: none;

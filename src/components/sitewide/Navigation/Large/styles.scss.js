@@ -42,6 +42,9 @@ NavigationStyle.Top = styled.div`
 
   .btn {
     transition: all 1s ease;
+    .btn-inner {
+      transition: all 1s ease;
+    }
   }
 
   &:before {
@@ -78,8 +81,10 @@ NavigationStyle.Top = styled.div`
       }
 
       .btn {
-        background-color: ${Theme.Color.Primary};
-        color: ${Theme.Color.White};
+        .btn-inner {
+          background-color: ${Theme.Color.Primary};
+          color: ${Theme.Color.White};
+        }
       }
     }
   }

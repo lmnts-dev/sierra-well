@@ -1,3 +1,6 @@
+// Dynamic query variables in GraphQl queries for Gatsby-Image
+// Learn more: https://github.com/gatsbyjs/gatsby/issues/10482#issuecomment-485349612
+
 import React, { useMemo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
@@ -35,7 +38,6 @@ const Image = ({ AltText, src, ...props }) => {
       {...props}
     />
   );
-  // return <>{console.log(match.node.childImageSharp.fluid)}</>;
 };
 
 export default Image;

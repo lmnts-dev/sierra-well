@@ -185,7 +185,16 @@ const PageWrapper = ({
             <h1 className="h2">
               Learn about Cannabis, {Category.Name}, & {TagData.Name}.{' '}
             </h1>
+            <Btn
+              IconClass="intercom"
+              Label="Ask a question"
+              BgColor={CategoryTheme.Color.Tertiary}
+              TextColor={CategoryTheme.Color.Primary}
+              Destination="/learn/all"
+              IconPosition="left"
+            />
             <SocialStrip
+              Margin={[0.5, 0, 0, 0]}
               Location={Location}
               TextColor={CategoryTheme.Color.Secondary}
             />
@@ -247,7 +256,7 @@ const TemplateLayout = ({
         TagSlug={TagData.Slug}
         TagFilter={TagData.Name}
         CategoryFilter={CategoryName}
-        Gutter={[1, 1, 2, 1]}
+        Gutter={[1, 1, 1, 1]}
         BgColor={Theme.Color.Snow}
       />
       <LearnSection BaseUrl="/learn" Category={CategoryData} />

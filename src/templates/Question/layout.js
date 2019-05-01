@@ -24,6 +24,7 @@ import SplitSection from 'components/library/Section/SplitSection';
 import Bread from 'components/library/Breadcrumb';
 import QuestionFooter from 'components/library/QuestionFooter';
 import SocialStrip from 'components/library/SocialStrip';
+import Btn from 'components/library/Btn';
 
 // Elements
 import Block from 'components/library/Block';
@@ -128,10 +129,12 @@ const QuestionTemplate = ({
           <Block AlignItems="flex-start" Width={1} maxWidth={0.5}>
             <TagList Tags={QuestionData.tags} CategorySlug={CategorySlug} />
 
-            {console.log(QuestionData.tags)}
-
             <h1 itemProp="name">{QuestionData.title}</h1>
-            <SocialStrip Location={Location} TextColor={Theme.Color.White} />
+            <SocialStrip
+              Margin={[0, 0, 0, 0]}
+              Location={Location}
+              TextColor={Theme.Color.White}
+            />
           </Block>
         </SimpleHero>
 

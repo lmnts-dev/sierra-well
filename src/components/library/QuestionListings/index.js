@@ -123,7 +123,11 @@ const QuestionCards = ({
                   IconName={filteredCategory.Icon}
                   IconColor={filteredCategory.PageTheme.Color.Primary}
                   BgImageFile={Question.node.coverImage}
-                  BgImageAltText={Question.node.category + ' & Cannabis | ' + Question.node.title}
+                  BgImageAltText={
+                    Question.node.category +
+                    ' & Cannabis | ' +
+                    Question.node.title
+                  }
                   TintColor={Theme.Color.Black}
                   TintOpacity={0.6}
                   key={index}
@@ -151,7 +155,11 @@ const QuestionCards = ({
                     IconName={filteredCategory.Icon}
                     IconColor={filteredCategory.PageTheme.Color.Primary}
                     BgImageFile={Question.node.coverImage}
-                    BgImageAltText={Question.node.category + ' & Cannabis | ' + Question.node.title}
+                    BgImageAltText={
+                      Question.node.category +
+                      ' & Cannabis | ' +
+                      Question.node.title
+                    }
                     TintColor={Theme.Color.Black}
                     TintOpacity={0.6}
                     key={index}
@@ -184,7 +192,11 @@ const QuestionCards = ({
                   IconName={filteredCategory.Icon}
                   IconColor={filteredCategory.PageTheme.Color.Primary}
                   BgImageFile={Question.node.coverImage}
-                  BgImageAltText={Question.node.category + ' & Cannabis | ' + Question.node.title}
+                  BgImageAltText={
+                    Question.node.category +
+                    ' & Cannabis | ' +
+                    Question.node.title
+                  }
                   TintColor={Theme.Color.Black}
                   TintOpacity={0.6}
                   key={index}

@@ -26,33 +26,23 @@ const Btn = ({
   Size,
   AddClass,
 }) => {
-  if (IconClass) {
-    return (
-      <BtnStyle
-        className={AddClass ? 'btn' + AddClass : 'btn'}
+  return (
+    <BtnStyle
+      className={AddClass ? 'btn' + AddClass : 'btn'}
+      to={Destination ? Destination : '/'}
+    >
+      <BtnStyle.Inner
+        className="btn-inner"
         BgColor={BgColor}
         TextColor={TextColor}
         Size={Size}
-        IconPosition={IconPosition ? IconPossition : 'right'}
-        to={Destination ? Destination : '/'}
+        IconPosition={IconPosition ? IconPosition : 'right'}
       >
         <span>{Label}</span>
-        <Icon Name={IconClass} />
-      </BtnStyle>
-    );
-  } else {
-    return (
-      <BtnStyle
-        className="btn"
-        BgColor={BgColor}
-        TextColor={TextColor}
-        Size={Size}
-        to={Destination ? Destination : '/'}
-      >
-        {Label}
-      </BtnStyle>
-    );
-  }
+        {IconClass ? <Icon Name={IconClass} /> : null}
+      </BtnStyle.Inner>
+    </BtnStyle>
+  );
 };
 
 export default Btn;

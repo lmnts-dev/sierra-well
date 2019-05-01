@@ -145,7 +145,16 @@ const PageWrapper = ({ children, Data, Location, Category, CategoryTheme }) => {
               TextColor={CategoryTheme.Color.Secondary}
             />
             <h1 className="h2">{Category.Headline}</h1>
+            <Btn
+              IconClass="intercom"
+              Label="Ask a question"
+              BgColor={CategoryTheme.Color.Tertiary}
+              TextColor={CategoryTheme.Color.Primary}
+              Destination="/learn/all"
+              IconPosition="left"
+            />
             <SocialStrip
+              Margin={[0.5, 0, 0, 0]}
               Location={Location}
               TextColor={CategoryTheme.Color.Secondary}
             />
@@ -197,7 +206,7 @@ const TemplateLayout = ({ Category, Location }) => {
       <QuestionListings
         CategoryFilter={Category.node.Name}
         TagFilter="all"
-        Gutter={[0, 1, 2, 1]}
+        Gutter={[0, 1, 1, 1]}
         BgColor={Theme.Color.Snow}
         CategorySlug={Category.node.Slug}
       />

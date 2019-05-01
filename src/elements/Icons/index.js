@@ -1,6 +1,6 @@
 // Icons Component:
-//
 // https://fontawesome.com/icons/
+// Add custom icons via 'case'.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -13,6 +13,7 @@ import IconStyle from './styles.scss';
 
 // Icon Files
 import Carat from './SVG/Carat';
+import Intercom from './SVG/Intercom';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -23,6 +24,12 @@ const Icon = props => {
       return (
         <IconStyle className="ico">
           <Carat />
+        </IconStyle>
+      );
+    case 'intercom':
+      return (
+        <IconStyle className="ico">
+          <Intercom />
         </IconStyle>
       );
     default:

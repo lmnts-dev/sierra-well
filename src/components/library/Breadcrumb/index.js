@@ -25,7 +25,7 @@ const Bread = ({ Crumbs, TextColor }) => (
           key={index}
           TextColor={TextColor}
         >
-        {/* // Hide back button if nested item. */}
+          {/* // Hide back button if nested item. */}
           {index == 0 ? (
             <Icon className="svg-carat" Name="carat" TextColor={TextColor} />
           ) : null}

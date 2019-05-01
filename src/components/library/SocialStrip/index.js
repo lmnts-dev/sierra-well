@@ -16,8 +16,8 @@ import SocialStripStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const SocialStrip = ({ TextColor, Location }) => (
-  <SocialStripStyle TextColor={TextColor}>
+const SocialStrip = ({ TextColor, Location, Margin }) => (
+  <SocialStripStyle Margin={Margin} TextColor={TextColor}>
     <a
       href={'https://www.facebook.com/sharer.php?u=' + Location}
       target="_blank"

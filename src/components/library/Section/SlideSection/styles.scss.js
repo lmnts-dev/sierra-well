@@ -141,11 +141,7 @@ SlideSectionStyle.Inner = styled(SectionInnerStyle)`
       : 'padding-top: ' + Root.Size};
   ${props =>
     props.Gutter
-      ? 'padding-right: calc(' +
-        Root.Size +
-        ' * ' +
-        props.Gutter[1] +
-        ')'
+      ? 'padding-right: calc(' + Root.Size + ' * ' + props.Gutter[1] + ')'
       : 'padding-right: ' + Root.Size};
   ${props =>
     props.Gutter

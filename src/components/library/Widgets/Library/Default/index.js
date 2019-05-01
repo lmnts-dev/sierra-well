@@ -43,7 +43,7 @@ const DefaultWidget = ({
   IconColor,
   IconName,
   BgImageFile,
-  BgImageAltText
+  BgImageAltText,
 }) => (
   <WidgetStyle
     BgColor={BgColor}
@@ -63,7 +63,9 @@ const DefaultWidget = ({
       <Icon className="svg-carat" Name="carat" Color={IconColor} />
       <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
     </Link>
-    {BgImageFile ? <ImgMatch src={BgImageFile} AltText={BgImageAltText} /> : null}
+    {BgImageFile ? (
+      <ImgMatch src={BgImageFile} AltText={BgImageAltText} />
+    ) : null}
   </WidgetStyle>
 );
 

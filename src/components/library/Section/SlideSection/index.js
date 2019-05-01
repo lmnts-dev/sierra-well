@@ -138,7 +138,7 @@ const SlideSection = ({
   Icon,
   ViewAll,
   Theme,
-  Gutter
+  Gutter,
 }) => (
   <SlideSectionStyle>
     <SlideSectionStyle.Inner Gutter={Gutter}>
