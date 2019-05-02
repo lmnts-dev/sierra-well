@@ -193,6 +193,7 @@ class MenuHero extends React.Component {
     const LocationData = this.props.LocationData;
     const NearbySlug = this.props.NearbySlug;
     const NearbyName = this.props.NearbyName;
+    const OrderContext = this.props.OrderContext;
 
     return (
       <MenuHeroStyle>
@@ -213,7 +214,7 @@ class MenuHero extends React.Component {
               <LocationList LocationData={LocationData} />
             </MenuHeroStyle.LocationSwitch>
             <h1 className="h2">
-              Order Cannabis Online from our <Link to={'/locations/' + LocationData.slug}>{LocationData.name}
+              Order cannabis {OrderContext ? OrderContext + ' ' : null}from our <Link to={'/locations/' + LocationData.slug}>{LocationData.name}
               {NearbyName ? null : ', ' + LocationData.geography.state} Dispensary</Link>
               {NearbyName
                 ? ' near ' +

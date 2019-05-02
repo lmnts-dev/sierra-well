@@ -108,6 +108,8 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////
+    
     // Learn category page template.
     const categoryTemplate = path.resolve(
       `src/templates/Learn/Category/index.js`
@@ -115,6 +117,8 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Learn tag page template.
     const tagTemplate = path.resolve(`src/templates/Learn/Tag/index.js`);
+
+    ////////////////////////////////////////////////////////////////////////////////////
 
     // Create Category Pages
     _.each(result.data.allQuestionCategoriesJson.edges, edge => {
@@ -152,6 +156,8 @@ exports.createPages = ({ graphql, actions }) => {
         });
       });
 
+      ////////////////////////////////////////////////////////////////////////////////////
+
       // Create our Question Pages
       const questionTemplate = path.resolve(`src/templates/Question/index.js`);
 
@@ -177,6 +183,8 @@ exports.createPages = ({ graphql, actions }) => {
           },
         });
 
+        ////////////////////////////////////////////////////////////////////////////////////
+
         //  Create our Tag Pages
         _.each(edge.node.tags, tag => {
           createPage({
@@ -195,6 +203,8 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
       });
+
+      ////////////////////////////////////////////////////////////////////////////////////
 
       // Create our Location Landing Pages
       const locationLandingTemplate = path.resolve(
@@ -217,6 +227,8 @@ exports.createPages = ({ graphql, actions }) => {
         // Use Gatsby's createPage() function. Read more:
         // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
 
+        ////////////////////////////////////////////////////////////////////////////////////
+
         // Create main landing pages.
         createPage({
           // Each page is required to have a `path` as well
@@ -232,7 +244,9 @@ exports.createPages = ({ graphql, actions }) => {
           },
         });
 
-        // Create main menu pages.
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        // Create main menu pages. with /locations/ root url
         createPage({
           // Each page is required to have a `path` as well
           // as a template component. The `context` is
@@ -244,8 +258,59 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(locationMenuTemplate),
           context: {
             Slug: edge.node.slug,
+            OrderContext: '',
           },
         });
+
+        // 'online' context
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/menu/online`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+            OrderContext: 'online',
+          },
+        });
+
+        // 'pick-up' context
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/menu/pick-up`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+            OrderContext: 'pick-up',
+          },
+        });
+
+        // 'delivery' context
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/menu/delivery`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+            OrderContext: 'delivery',
+          },
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////////
 
         // Create menu pages with /menu/ root url.
         createPage({
@@ -259,8 +324,59 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(locationMenuTemplate),
           context: {
             Slug: edge.node.slug,
+            OrderContext: '',
           },
         });
+
+        // 'online' context
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/menu/online/${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+            OrderContext: 'online',
+          },
+        });
+
+        // 'pick-up' context
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/menu/pick-up'${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+            OrderContext: 'pick-up',
+          },
+        });
+
+        // 'online' context
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/menu/delivery/${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+            OrderContext: 'delivery',
+          },
+        });
+        
+        ////////////////////////////////////////////////////////////////////////////////////
 
         // Create specials collection pages.
         createPage({
@@ -295,6 +411,8 @@ exports.createPages = ({ graphql, actions }) => {
         //   });
         // });
 
+        ////////////////////////////////////////////////////////////////////////////////////
+
         // Create our Nearby Location Pages:
         const locationNearbyMenuTemplate = path.resolve(
           `src/templates/Location/Menu/index.js`
@@ -310,7 +428,9 @@ exports.createPages = ({ graphql, actions }) => {
           // Use Gatsby's createPage() function. Read more:
           // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
 
-          // Create Nearby Menu Pages
+          ////////////////////////////////////////////////////////////////////////////////////
+
+          // Create Nearby Menu Pages with /locations/ root url
           createPage({
             // Each page is required to have a `path` as well
             // as a template component. The `context` is
@@ -324,10 +444,67 @@ exports.createPages = ({ graphql, actions }) => {
               Slug: edge.node.slug,
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
+              OrderContext: '',
             },
           });
 
-          // Create Menu Pages with root /menu/ url
+          // 'online' context
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/menu/online/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
+              OrderContext: 'online',
+            },
+          });
+
+          // 'delivery' context
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/menu/delivery/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
+              OrderContext: 'delivery',
+            },
+          });
+
+          // 'pick-up' context
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/menu/pick-up/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
+              OrderContext: 'pick-up',
+            },
+          });
+
+          ////////////////////////////////////////////////////////////////////////////////////
+
+          // Create Menu Pages with root /menu/ url 
           createPage({
             // Each page is required to have a `path` as well
             // as a template component. The `context` is
@@ -341,8 +518,65 @@ exports.createPages = ({ graphql, actions }) => {
               Slug: edge.node.slug,
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
+              OrderContext: '',
             },
           });
+
+          // 'online' context
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/menu/online/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
+              OrderContext: 'online',
+            },
+          });
+
+          // 'pickup' context
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/menu/pick-up/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
+              OrderContext: 'pick-up',
+            },
+          });
+
+          // 'delivery' context
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/menu/delivery/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
+              OrderContext: 'delivery',
+            },
+          });
+
+          ////////////////////////////////////////////////////////////////////////////////////
 
           // Create nearby specials pages.
           createPage({
@@ -360,6 +594,9 @@ exports.createPages = ({ graphql, actions }) => {
               NearbyName: nearby.name,
             },
           });
+
+          ////////////////////////////////////////////////////////////////////////////////////
+
         });
       });
     });

@@ -24,6 +24,7 @@ const LocationMenuPage = props => {
     return (
       <MenuTemplate
         NearbySlug={props.pageContext.NearbySlug}
+        OrderContext={props.pageContext.OrderContext}
         NearbyName={props.pageContext.NearbyName}
         LocationData={props.data.allLocationsJson.edges[0].node}
       />

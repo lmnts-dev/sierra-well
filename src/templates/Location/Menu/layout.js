@@ -33,7 +33,7 @@ const SublevelInnerLock = createGlobalStyle`
 `;
 
 // Large Device Content
-const LargeContent = ({ LocationData, NearbySlug, NearbyName }) => (
+const LargeContent = ({ LocationData, OrderContext, NearbySlug, NearbyName }) => (
   <SubLevelPage
     BgColor={Theme.Color.Nightsky}
     PrimaryColor={Theme.Color.White}
@@ -44,6 +44,7 @@ const LargeContent = ({ LocationData, NearbySlug, NearbyName }) => (
     <MenuHero
       NearbySlug={NearbySlug}
       NearbyName={NearbyName}
+      OrderContext={OrderContext}
       LocationData={LocationData}
     />
     <OrderMenuDesktop LocationData={LocationData} />
@@ -74,7 +75,7 @@ const SmallContent = ({ LocationData }) => (
 );
 
 // Render Page
-const MenuTemplate = ({ LocationData, NearbySlug, NearbyName }) => (
+const MenuTemplate = ({ LocationData, OrderContext, NearbySlug, NearbyName }) => (
   <Layout
     BgColor={Theme.Color.Nightsky}
     PrimaryColor={Theme.Color.White}
@@ -87,6 +88,7 @@ const MenuTemplate = ({ LocationData, NearbySlug, NearbyName }) => (
         NearbySlug={NearbySlug}
         NearbyName={NearbyName}
         LocationData={LocationData}
+        OrderContext={OrderContext}
       />
     </Device>
 
