@@ -235,7 +235,7 @@ class MenuHero extends React.Component {
               '/'
             }
             List={LocationData.nearby}
-            Label="Nearby"
+            Label="Delivering to"
             TextColor={Theme.Color.White}
             Padding={[1, 0, 0, 0]}
           />

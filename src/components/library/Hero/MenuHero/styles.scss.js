@@ -41,7 +41,7 @@ export const MenuHeroStyle = styled.div`
 `;
 
 MenuHeroStyle.LocationSwitch = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
   span {
     opacity: 0.3;
   }

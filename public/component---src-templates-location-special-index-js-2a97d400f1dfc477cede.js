@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{189:function(n,e,o){"use strict";o.r(e),o.d(e,"query",function(){return r});var t=o(0),a=o.n(t);e.default=function(n){return a.a.createElement("h1",null,"It's alive!",console.log(n.data.allLocationsJson.edges))};var r="3830140835"}}]);
+//# sourceMappingURL=component---src-templates-location-special-index-js-2a97d400f1dfc477cede.js.map

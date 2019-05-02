@@ -292,7 +292,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create our Nearby Location Pages:
         const locationNearbyMenuTemplate = path.resolve(
-          `src/templates/Location/Menu/Nearby/index.js`
+          `src/templates/Location/Menu/index.js`
         );
 
         _.each(edge.node.nearby, nearby => {

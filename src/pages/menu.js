@@ -7,11 +7,6 @@
 // Core
 import React from 'react';
 
-// Templates
-import MenuTemplate from 'templates/Menu';
-
-// Data
-import { MenuData } from 'data/menu';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
