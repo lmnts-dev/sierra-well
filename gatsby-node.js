@@ -96,6 +96,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               nearby {
                 slug
+                name
               }
             }
           }
@@ -222,7 +223,9 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/locations/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/`,
+          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/`,
           component: slash(locationLandingTemplate),
           context: {
             Slug: edge.node.slug,
@@ -250,7 +253,9 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/menu/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/`,
+          path: `/menu/${edge.node.geography.state.toLowerCase()}/${
+            edge.node.slug
+          }/`,
           component: slash(locationMenuTemplate),
           context: {
             Slug: edge.node.slug,
@@ -311,13 +316,14 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/${
-              nearby.slug
-            }/menu/`,
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/menu/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
               Slug: edge.node.slug,
               NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
             },
           });
 
@@ -327,13 +333,14 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/menu/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/${
-              nearby.slug
-            }/`,
+            path: `/menu/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
               Slug: edge.node.slug,
               NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
             },
           });
 
@@ -343,13 +350,14 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/${
-              nearby.slug
-            }/specials/`,
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/${nearby.slug}/specials/`,
             component: slash(locationSpecialTemplate),
             context: {
               Slug: edge.node.slug,
               NearbySlug: nearby.slug,
+              NearbyName: nearby.name,
             },
           });
         });

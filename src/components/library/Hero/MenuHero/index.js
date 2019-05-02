@@ -191,6 +191,8 @@ class MenuHero extends React.Component {
   // Render element.
   render() {
     const LocationData = this.props.LocationData;
+    const NearbySlug = this.props.NearbySlug;
+    const NearbyName = this.props.NearbyName;
 
     return (
       <MenuHeroStyle>
@@ -211,8 +213,15 @@ class MenuHero extends React.Component {
               <LocationList LocationData={LocationData} />
             </MenuHeroStyle.LocationSwitch>
             <h1 className="h2">
-              Order Cannabis Online from our {LocationData.name},{' '}
-              {LocationData.geography.state} Store.
+              Order Cannabis Online from our <Link to={'/locations/' + LocationData.slug}>{LocationData.name}
+              {NearbyName ? null : ', ' + LocationData.geography.state} Dispensary</Link>
+              {NearbyName
+                ? ' near ' +
+                  NearbyName +
+                  ', ' +
+                  LocationData.geography.state +
+                  '.'
+                : '.'}
             </h1>
             <Btn
               IconClass="map-marker-alt"

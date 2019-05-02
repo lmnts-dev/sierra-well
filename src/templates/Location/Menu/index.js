@@ -18,17 +18,22 @@ import MenuTemplate from './layout';
 //////////////////////////////////////////////////////////////////////
 
 const LocationMenuPage = props => {
-  // Define our Slugs
-  // let CategorySlug = props.pageContext.CategorySlug;
-  // let TagSlug = props.pageContext.TagSlug;
-
-  // Define our Data Objects
-  // let CategoryData = {};
-  // let TagData = {};
-
-  return (
-    <MenuTemplate LocationData={props.data.allLocationsJson.edges[0].node} />
-  );
+  if (props.pageContext.NearbySlug) {
+    // If it's a Nearby location:
+    // &This pageContext is passed from gatsby-node.js
+    return (
+      <MenuTemplate
+        NearbySlug={props.pageContext.NearbySlug}
+        NearbyName={props.pageContext.NearbyName}
+        LocationData={props.data.allLocationsJson.edges[0].node}
+      />
+    );
+  } else {
+    // If it isn't a Nearby location:
+    return (
+      <MenuTemplate LocationData={props.data.allLocationsJson.edges[0].node} />
+    );
+  }
 };
 
 export default LocationMenuPage;

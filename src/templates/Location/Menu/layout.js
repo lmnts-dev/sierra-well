@@ -33,7 +33,7 @@ const SublevelInnerLock = createGlobalStyle`
 `;
 
 // Large Device Content
-const LargeContent = ({ LocationData, State, City }) => (
+const LargeContent = ({ LocationData, NearbySlug, NearbyName }) => (
   <SubLevelPage
     BgColor={Theme.Color.Nightsky}
     PrimaryColor={Theme.Color.White}
@@ -41,7 +41,11 @@ const LargeContent = ({ LocationData, State, City }) => (
     TertiaryColor={Theme.Color.Nightsky}
   >
     <SublevelInnerLock />
-    <MenuHero LocationData={LocationData} />
+    <MenuHero
+      NearbySlug={NearbySlug}
+      NearbyName={NearbyName}
+      LocationData={LocationData}
+    />
     <OrderMenuDesktop LocationData={LocationData} />
   </SubLevelPage>
 );
@@ -70,7 +74,7 @@ const SmallContent = ({ LocationData }) => (
 );
 
 // Render Page
-const MenuTemplate = ({ LocationData }) => (
+const MenuTemplate = ({ LocationData, NearbySlug, NearbyName }) => (
   <Layout
     BgColor={Theme.Color.Nightsky}
     PrimaryColor={Theme.Color.White}
@@ -79,11 +83,19 @@ const MenuTemplate = ({ LocationData }) => (
   >
     {console.log(LocationData)}
     <Device Query="Desktop">
-      <LargeContent LocationData={LocationData} />
+      <LargeContent
+        NearbySlug={NearbySlug}
+        NearbyName={NearbyName}
+        LocationData={LocationData}
+      />
     </Device>
 
     <Device Query="Mobile">
-      <SmallContent LocationData={LocationData} />
+      <SmallContent
+        NearbySlug={NearbySlug}
+        NearbyName={NearbyName}
+        LocationData={LocationData}
+      />
     </Device>
   </Layout>
 );
