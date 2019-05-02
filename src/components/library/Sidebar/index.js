@@ -38,6 +38,15 @@ const Sidebar = ({
       <SidebarWidget
         BgColor={SecondaryColor}
         BgImage="none"
+        Headline="Reserve Spot"
+        TextColor={TertiaryColor}
+        IconColor={TertiaryColor}
+        IconName="users"
+        Destination="/"
+      />
+      <SidebarWidget
+        BgColor={SecondaryColor}
+        BgImage="none"
         Headline="Visit"
         TextColor={TertiaryColor}
         IconColor={TertiaryColor}

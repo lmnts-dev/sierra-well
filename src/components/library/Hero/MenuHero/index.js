@@ -19,6 +19,7 @@ import {
 
 // Components
 import MenuHeroPromotions from './MenuHeroPromotions';
+import Block from 'components/library/Block';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -43,7 +44,7 @@ class LocationList extends React.Component {
         {Cities.map((City, index) => (
           <Link
             activeClassName="active"
-            to={'/menu/' + State.Slug + '/' + City.Slug}
+            to={'/_menu/' + State.Slug + '/' + City.Slug}
             key={index}
           >
             {City.Name}
@@ -53,18 +54,6 @@ class LocationList extends React.Component {
     );
   }
 }
-
-// // Our list of locations in relation to the State.
-// const LocationList = ({ State }) => (
-//   <>
-//     <Link activeClassName="active" to="/">
-//       Hello
-//     </Link>
-//     <Link activeClassName="active" to="/">
-//       Hey {console.log(State)}
-//     </Link>
-//   </>
-// );
 
 // Sidebar location switching
 const SidebarLocation = ({ collapsedState, State }) => (
@@ -165,14 +154,17 @@ class MenuHero extends React.Component {
           maxHeight={this.state.maxHeight}
           opacity={this.state.opacity}
         >
-          <MenuHeroStyle.LocationSwitch>
-            <span>Show me</span>
+          <Block AlignItems="flex-start" Width={1} maxWidth={0.75}>
+            <MenuHeroStyle.LocationSwitch>
+              <span>Show me</span>
 
-            <LocationList State={State} />
-          </MenuHeroStyle.LocationSwitch>
-          <h1>
-            Order Cannabis Online near {City.Name}, {City.State}.
-          </h1>
+              <LocationList State={State} />
+            </MenuHeroStyle.LocationSwitch>
+            <h1 className="h2">
+              Order Cannabis Online from our {City.Name}, {City.State} Store
+              near Spanish Springs, Nevada.
+            </h1>
+          </Block>
         </HeroInnerTransition>
         <MenuHeroStyle.Tools>
           <MenuHeroStyle.ToolsInner>

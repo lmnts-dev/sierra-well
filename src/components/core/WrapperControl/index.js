@@ -42,17 +42,18 @@ export const WrapperLock = createGlobalStyle`
 // Release Wrapper Scroll
 export const WrapperRelease = createGlobalStyle`
   html, body {
-      overflow: unset;
+      overflow: auto;
   }
 
   .wrapper {
     @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
-      overflow-y: hidden;
+      overflow-y: visible;
       height: auto;
+      position: absolute;
     }
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      overflow-y: hidden; /* has to be scroll, not auto */
-      -webkit-overflow-scrolling: touch;
+      overflow-y: visible; /* has to be scroll, not auto */
+      position: absolute;
     }
   }
 `;

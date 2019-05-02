@@ -24,7 +24,6 @@ const SimpleHeroStyle = styled.div`
   color: ${props => (props.TextColor ? props.TextColor : 'inherit')};
   align-self: flex-start;
   justify-self: flex-start;
-  overflow: hidden;
 
   /* Background Tint */
   ${props =>

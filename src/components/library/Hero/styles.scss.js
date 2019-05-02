@@ -23,6 +23,7 @@ export const HeroInnerStyle = styled.div`
     ${Root.Size} * ${props => (props.Size ? props.Size : '2')}
   );
   position: relative;
+  overflow: hidden;
 
   .hero-img {
     pointer-events: none;

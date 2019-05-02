@@ -9,7 +9,7 @@
       "country": "united states"
     },
     "status": {
-      "delivery": true,
+      "delivery": "auto",
       "store": "auto"
     },
     "meta": {
@@ -47,23 +47,63 @@
     "nearby": [
       {
         "name": "Sparks",
-        "slug": "sparks"
+        "slug": "sparks",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       },
       {
         "name": "Spanish Springs",
-        "slug": "spanish-springs"
+        "slug": "spanish-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       },
       {
         "name": "Hidden Valley",
-        "slug": "hidden-valley"
+        "slug": "hidden-valley",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       },
       {
         "name": "North Valleys",
-        "slug": "north-valleys"
+        "slug": "north-valleys",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       },
       {
         "name": "Cold Springs",
-        "slug": "cold-springs"
+        "slug": "cold-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       }
     ],
     "about": {
@@ -87,7 +127,7 @@
       "country": "united states"
     },
     "status": {
-      "delivery": true,
+      "delivery": "auto",
       "store": "auto"
     },
     "meta": {
@@ -125,7 +165,15 @@
     "nearby": [
       {
         "name": "Gardnerville",
-        "slug": "gardnerville"
+        "slug": "gardnerville",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       },
       {
         "name": "Minden",
@@ -133,15 +181,275 @@
       },
       {
         "name": "South Lake Tahoe",
-        "slug": "south-lake-tahoe"
+        "slug": "south-lake-tahoe",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       },
       {
         "name": "Washoe Valley",
-        "slug": "washoe-valley"
+        "slug": "washoe-valley",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       },
       {
         "name": "Dayton",
-        "slug": "dayton"
+        "slug": "dayton",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      }
+    ],
+    "about": {
+      "PageTheme": {
+        "Color": {
+          "Background": "#5D6376",
+          "Primary": "#ffffff",
+          "Secondary": "#ffffff",
+          "Tertiary": "#000000"
+        }
+      }
+    }
+  },
+  {
+    "slug": "las-vegas",
+    "name": "Las Vegas",
+    "headline": "Reno’s first Cannabis dispensary — located in the heart of downtown.",
+    "geography": {
+      "city": "las vegas",
+      "state": "nevada",
+      "country": "united states"
+    },
+    "status": {
+      "delivery": "auto",
+      "store": "auto"
+    },
+    "meta": {
+      "reserveSpot": "https://kiosk.na1.qless.com/kiosk/app/home/10000000020",
+      "menu": "https://www.dutchie.com/embedded-menu/sierra-well-reno/menu?",
+      "maps": "https://www.google.com/maps/dir//Sierra+Wellness+Connection,+1605+East+2nd+Street+103,+Reno,+NV+89502/@39.5259903,-119.7987333,14.4z/data=!4m8!4m7!1m0!1m5!1m1!1s0x809940a98460569f:0xdd2dd58f8f328cb7!2m2!1d-119.7914115!2d39.5276409",
+      "menuTheme": {
+        "Color": {
+          "Background": "#000000",
+          "Primary": "#ffffff",
+          "Secondary": "#ffffff",
+          "Tertiary": "#000000"
+        }
+      }
+    },
+    "contactDetails": {
+      "location": {
+        "address": "1605 E 2nd St. #103",
+        "state": "Reno, NV 89502"
+      },
+      "phone": "+1-775-800-9355",
+      "hours": [
+        {
+          "days": "Mon - Sat",
+          "startTime": "09:00:00",
+          "endTime": "21:00:00"
+        },
+        {
+          "days": "Sunday",
+          "startTime": "10:00:00",
+          "endTime": "18:00:00"
+        }
+      ]
+    },
+    "nearby": [
+      {
+        "name": "Sparks",
+        "slug": "sparks",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Spanish Springs",
+        "slug": "spanish-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Hidden Valley",
+        "slug": "hidden-valley",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "North Valleys",
+        "slug": "north-valleys",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Cold Springs",
+        "slug": "cold-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      }
+    ],
+    "about": {
+      "PageTheme": {
+        "Color": {
+          "Background": "#5D6376",
+          "Primary": "#ffffff",
+          "Secondary": "#ffffff",
+          "Tertiary": "#000000"
+        }
+      }
+    }
+  },
+  {
+    "slug": "elko",
+    "name": "Elko",
+    "headline": "Reno’s first Cannabis dispensary — located in the heart of downtown.",
+    "geography": {
+      "city": "las vegas",
+      "state": "nevada",
+      "country": "united states"
+    },
+    "status": {
+      "delivery": "auto",
+      "store": "auto"
+    },
+    "meta": {
+      "reserveSpot": "https://kiosk.na1.qless.com/kiosk/app/home/10000000020",
+      "menu": "https://www.dutchie.com/embedded-menu/sierra-well-reno/menu?",
+      "maps": "https://www.google.com/maps/dir//Sierra+Wellness+Connection,+1605+East+2nd+Street+103,+Reno,+NV+89502/@39.5259903,-119.7987333,14.4z/data=!4m8!4m7!1m0!1m5!1m1!1s0x809940a98460569f:0xdd2dd58f8f328cb7!2m2!1d-119.7914115!2d39.5276409",
+      "menuTheme": {
+        "Color": {
+          "Background": "#000000",
+          "Primary": "#ffffff",
+          "Secondary": "#ffffff",
+          "Tertiary": "#000000"
+        }
+      }
+    },
+    "contactDetails": {
+      "location": {
+        "address": "1605 E 2nd St. #103",
+        "state": "Reno, NV 89502"
+      },
+      "phone": "+1-775-800-9355",
+      "hours": [
+        {
+          "days": "Mon - Sat",
+          "startTime": "09:00:00",
+          "endTime": "21:00:00"
+        },
+        {
+          "days": "Sunday",
+          "startTime": "10:00:00",
+          "endTime": "18:00:00"
+        }
+      ]
+    },
+    "nearby": [
+      {
+        "name": "Sparks",
+        "slug": "sparks",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Spanish Springs",
+        "slug": "spanish-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Hidden Valley",
+        "slug": "hidden-valley",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "North Valleys",
+        "slug": "north-valleys",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Cold Springs",
+        "slug": "cold-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
       }
     ],
     "about": {

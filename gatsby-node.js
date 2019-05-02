@@ -84,6 +84,22 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+
+        allLocationsJson {
+          edges {
+            node {
+              id
+              slug
+              geography {
+                city
+                state
+              }
+              nearby {
+                slug
+              }
+            }
+          }
+        }
       }
     `
   ).then(result => {
@@ -160,6 +176,7 @@ exports.createPages = ({ graphql, actions }) => {
           },
         });
 
+        //  Create our Tag Pages
         _.each(edge.node.tags, tag => {
           createPage({
             // Each page is required to have a `path` as well
@@ -173,6 +190,166 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               Slug: edge.node.slug,
               CoverImage: edge.node.coverImage,
+            },
+          });
+        });
+      });
+
+      // Create our Location Landing Pages
+      const locationLandingTemplate = path.resolve(
+        `src/templates/Location/Landing/index.js`
+      );
+      const locationMenuTemplate = path.resolve(
+        `src/templates/Location/Menu/index.js`
+      );
+      const locationSpecialTemplate = path.resolve(
+        `src/templates/Location/Special/index.js`
+      );
+
+      _.each(result.data.allLocationsJson.edges, edge => {
+        // Gatsby uses Redux to manage its internal state.
+        // Plugins and sites can use functions like "createPage"
+        // to interact with Gatsby.
+        // We are using 'lodash' above for the _.each function. Read more:
+        // https://lodash.com/docs/4.17.11#forEach
+
+        // Use Gatsby's createPage() function. Read more:
+        // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+
+        // Create main landing pages.
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/locations/${edge.node.geography.state}/${edge.node.slug}/`,
+          component: slash(locationLandingTemplate),
+          context: {
+            Slug: edge.node.slug,
+          },
+        });
+
+        // Create main menu pages.
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/locations/${edge.node.geography.state}/${
+            edge.node.slug
+          }/menu/`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+          },
+        });
+
+        // Create menu pages with /menu/ root url.
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/menu/${edge.node.geography.state}/${edge.node.slug}/`,
+          component: slash(locationMenuTemplate),
+          context: {
+            Slug: edge.node.slug,
+          },
+        });
+
+        // Create specials collection pages.
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/locations/${edge.node.geography.state}/${
+            edge.node.slug
+          }/specials/`,
+          component: slash(locationSpecialTemplate),
+          context: {
+            Slug: edge.node.slug,
+          },
+        });
+
+        // Hypothetical Specials Postings:
+        // _.each(result.data.allQuestionsJson.edges, special => {
+        //   // Create specials landing pages.
+        //   createPage({
+        //     // Each page is required to have a `path` as well
+        //     // as a template component. The `context` is
+        //     // optional but is often necessary so the template
+        //     // can query data specific to each page.
+        //     path: `/locations/${edge.node.geography.state}/${
+        //       edge.node.slug
+        //     }/specials/${special.node.slug}`,
+        //     component: slash(locationSpecialTemplate),
+        //     context: {
+        //       Slug: edge.node.slug,
+        //     },
+        //   });
+        // });
+
+        // Create our Nearby Location Pages:
+        const locationNearbyMenuTemplate = path.resolve(
+          `src/templates/Location/Menu/Nearby/index.js`
+        );
+
+        _.each(edge.node.nearby, nearby => {
+          // Gatsby uses Redux to manage its internal state.
+          // Plugins and sites can use functions like "createPage"
+          // to interact with Gatsby.
+          // We are using 'lodash' above for the _.each function. Read more:
+          // https://lodash.com/docs/4.17.11#forEach
+
+          // Use Gatsby's createPage() function. Read more:
+          // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+
+          // Create Nearby Menu Pages
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/locations/${edge.node.geography.state}/${edge.node.slug}/${
+              nearby.slug
+            }/menu/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+            },
+          });
+
+          // Create Menu Pages with root /menu/ url
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/menu/${edge.node.geography.state}/${edge.node.slug}/${
+              nearby.slug
+            }/menu/`,
+            component: slash(locationNearbyMenuTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
+            },
+          });
+
+          // Create nearby specials pages.
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/locations/${edge.node.geography.state}/${edge.node.slug}/${
+              nearby.slug
+            }/specials/`,
+            component: slash(locationSpecialTemplate),
+            context: {
+              Slug: edge.node.slug,
+              NearbySlug: nearby.slug,
             },
           });
         });

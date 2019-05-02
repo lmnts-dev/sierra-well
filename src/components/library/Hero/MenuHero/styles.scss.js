@@ -18,6 +18,10 @@ import { Theme, Root } from 'constants/Theme';
 export const MenuHeroStyle = styled.div`
   width: 100%;
   margin: ${Root.Nav.Size} 0 0 0;
+
+  h1 {
+    max-width:  ;
+  }
 `;
 
 MenuHeroStyle.LocationSwitch = styled.div`

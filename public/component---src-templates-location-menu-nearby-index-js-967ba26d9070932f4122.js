@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[27],{192:function(n,e,o){"use strict";o.r(e),o.d(e,"query",function(){return u});var a=o(0),t=o.n(a);e.default=function(n){return t.a.createElement("h1",null,"The menu is alive!",console.log(n.data.allLocationsJson.edges))};var u="3830140835"}}]);
+//# sourceMappingURL=component---src-templates-location-menu-nearby-index-js-967ba26d9070932f4122.js.map
