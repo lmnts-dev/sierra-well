@@ -58,6 +58,54 @@
         }
       },
       {
+        "name": "Downtown",
+        "slug": "downtown",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Caughlin Ranch",
+        "slug": "caughlin-ranch",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Juniper Ridge",
+        "slug": "juniper-ridge",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Northwest Reno",
+        "slug": "northwest-reno",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
         "name": "Spanish Springs",
         "slug": "spanish-springs",
         "pageTheme": {
@@ -96,6 +144,18 @@
       {
         "name": "Cold Springs",
         "slug": "cold-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Lemmon Valley",
+        "slug": "lemmon-valley",
         "pageTheme": {
           "Color": {
             "Background": "#000000",
@@ -206,6 +266,78 @@
       {
         "name": "Dayton",
         "slug": "dayton",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Mound House",
+        "slug": "mound-house",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Stagecoach",
+        "slug": "stagecoach",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Silver Springs",
+        "slug": "silver-springs",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Genoa",
+        "slug": "genoa",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Indian Hills",
+        "slug": "indian-hills",
+        "pageTheme": {
+          "Color": {
+            "Background": "#000000",
+            "Primary": "#ffffff",
+            "Secondary": "#ffffff",
+            "Tertiary": "#000000"
+          }
+        }
+      },
+      {
+        "name": "Incline Village",
+        "slug": "incline-village",
         "pageTheme": {
           "Color": {
             "Background": "#000000",
