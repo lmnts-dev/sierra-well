@@ -12,6 +12,7 @@ import React from 'react';
 
 // Data
 import { graphql } from 'gatsby';
+import MenuTemplate from './layout';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -26,10 +27,7 @@ const LocationMenuPage = props => {
   // let TagData = {};
 
   return (
-    <h1>
-      The menu is alive!
-      {console.log(props.data.allLocationsJson.edges)}
-    </h1>
+    <MenuTemplate LocationData={props.data.allLocationsJson.edges[0].node} />
   );
 };
 
@@ -69,6 +67,15 @@ export const query = graphql`
           }
           contactDetails {
             phone
+            location {
+              address
+              state
+            }
+            hours {
+              days
+              startTime
+              endTime
+            }
           }
           nearby {
             name

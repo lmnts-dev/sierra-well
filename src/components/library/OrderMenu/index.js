@@ -24,8 +24,8 @@ export const OrderMenuDesktop = ({ City }) => (
         <iframe
           className="dutchie-iframe-desktop"
           frameBorder="0"
-          title={'menu-' + City.Slug}
-          src={City.Menu.iFrame}
+          title="menu-example"
+          src="https://www.dutchie.com/embedded-menu/sierra-well-reno/menu?"
         />
       </MenuContainerDesktopStyle.Wrap>
     </MenuContainerDesktopStyle.Inner>

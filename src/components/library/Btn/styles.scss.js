@@ -21,6 +21,14 @@ const BtnStyle = styled(Link)`
   }
 `;
 
+export const BtnStyleExternal = styled.a`
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
 BtnStyle.Inner = styled.span`
   background-color: ${props =>
     props.BgColor ? props.BgColor : 'rgba(0,0,0,0)'};

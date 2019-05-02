@@ -18,7 +18,7 @@ import { MenuData } from 'data/menu';
 
 // Render Page
 const DefaultMenu = ({ data }) => (
-  <MenuTemplate State={MenuData.State[0]} City={MenuData.State[0].City[0]} />
+  <h1>Menu</h1>
 );
 
 export default DefaultMenu;

@@ -20,7 +20,23 @@ export const MenuHeroStyle = styled.div`
   margin: ${Root.Nav.Size} 0 0 0;
 
   h1 {
-    max-width:  ;
+    padding-top: calc(${Root.Size} / 5);
+    a {
+      text-decoration: none;
+      color: ${Theme.Color.Primary};
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .btn {
+    position: relative;
+    left: calc((${Theme.Base.Size.Md} * 0.5) * -1);
+    .btn-inner {
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
   }
 `;
 
@@ -83,9 +99,9 @@ MenuHeroStyle.ToolsInner = styled.div`
 // Base transition styles for collapsing MenuHero
 export const HeroInnerTransition = styled(HeroInnerStyle)`
   padding-bottom: ${props =>
-    props.paddingBottom ? props.paddingBottom : 'calc(' + Root.Size + '* 2)'};
+    props.paddingBottom ? props.paddingBottom : 'calc(' + Root.Size + '/ 6)'};
   padding-top: ${props =>
-    props.paddingTop ? props.paddingTop : 'calc(' + Root.Size + '* 2)'};
+    props.paddingTop ? props.paddingTop : 'calc(' + Root.Size + '* 1.5)'};
   max-height: ${props => (props.maxHeight ? props.maxHeight : '100vh')};
   opacity: ${props => (props.opacity ? props.opacity : '1')};
   overflow: hidden;

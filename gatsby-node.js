@@ -222,7 +222,7 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/locations/${edge.node.geography.state}/${edge.node.slug}/`,
+          path: `/locations/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/`,
           component: slash(locationLandingTemplate),
           context: {
             Slug: edge.node.slug,
@@ -235,7 +235,7 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/locations/${edge.node.geography.state}/${
+          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/menu/`,
           component: slash(locationMenuTemplate),
@@ -250,7 +250,7 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/menu/${edge.node.geography.state}/${edge.node.slug}/`,
+          path: `/menu/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/`,
           component: slash(locationMenuTemplate),
           context: {
             Slug: edge.node.slug,
@@ -263,7 +263,7 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/locations/${edge.node.geography.state}/${
+          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/specials/`,
           component: slash(locationSpecialTemplate),
@@ -280,7 +280,7 @@ exports.createPages = ({ graphql, actions }) => {
         //     // as a template component. The `context` is
         //     // optional but is often necessary so the template
         //     // can query data specific to each page.
-        //     path: `/locations/${edge.node.geography.state}/${
+        //     path: `/locations/${edge.node.geography.state.toLowerCase()}/${
         //       edge.node.slug
         //     }/specials/${special.node.slug}`,
         //     component: slash(locationSpecialTemplate),
@@ -311,7 +311,7 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/locations/${edge.node.geography.state}/${edge.node.slug}/${
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/${
               nearby.slug
             }/menu/`,
             component: slash(locationNearbyMenuTemplate),
@@ -327,9 +327,9 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/menu/${edge.node.geography.state}/${edge.node.slug}/${
+            path: `/menu/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/${
               nearby.slug
-            }/menu/`,
+            }/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
               Slug: edge.node.slug,
@@ -343,7 +343,7 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/locations/${edge.node.geography.state}/${edge.node.slug}/${
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${edge.node.slug}/${
               nearby.slug
             }/specials/`,
             component: slash(locationSpecialTemplate),

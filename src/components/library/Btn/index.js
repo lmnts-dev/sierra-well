@@ -11,7 +11,7 @@ import React from 'react';
 import Icon from 'elements/Icons';
 
 // Styles
-import BtnStyle from './styles.scss';
+import BtnStyle, { BtnStyleExternal } from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -26,24 +26,47 @@ const Btn = ({
   TextColor,
   Size,
   AddClass,
+  External,
 }) => {
-  return (
-    <BtnStyle
-      className={AddClass ? 'btn' + AddClass : 'btn'}
-      to={Destination ? Destination : '/'}
-    >
-      <BtnStyle.Inner
-        className="btn-inner"
-        BgColor={BgColor}
-        TextColor={TextColor}
-        Size={Size}
-        IconPosition={IconPosition ? IconPosition : null}
+  if (External) {
+    return (
+      <BtnStyleExternal
+        className={AddClass ? 'btn' + AddClass : 'btn'}
+        href={Destination ? Destination : '/'}
+        target="_blank"
+        rel="nofollow noreferrer"
       >
-        <span>{Label}</span>
-        {IconClass ? <Icon fas={IconFas} Name={IconClass} /> : null}
-      </BtnStyle.Inner>
-    </BtnStyle>
-  );
+        <BtnStyle.Inner
+          className="btn-inner"
+          BgColor={BgColor}
+          TextColor={TextColor}
+          Size={Size}
+          IconPosition={IconPosition ? IconPosition : null}
+        >
+          <span>{Label}</span>
+          {IconClass ? <Icon fas={IconFas} Name={IconClass} /> : null}
+        </BtnStyle.Inner>
+      </BtnStyleExternal>
+    );
+  } else {
+    return (
+      <BtnStyle
+        className={AddClass ? 'btn' + AddClass : 'btn'}
+        to={Destination ? Destination : '/'}
+      >
+        <BtnStyle.Inner
+          className="btn-inner"
+          BgColor={BgColor}
+          TextColor={TextColor}
+          Size={Size}
+          IconPosition={IconPosition ? IconPosition : null}
+        >
+          <span>{Label}</span>
+          {IconClass ? <Icon fas={IconFas} Name={IconClass} /> : null}
+        </BtnStyle.Inner>
+      </BtnStyle>
+    );
+  }
 };
 
 export default Btn;

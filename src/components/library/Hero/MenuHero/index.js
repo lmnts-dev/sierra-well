@@ -17,9 +17,14 @@ import {
   SidebarLocationStyle,
 } from './styles.scss';
 
+// Data
+import { StaticQuery, graphql } from 'gatsby';
+
 // Components
 import MenuHeroPromotions from './MenuHeroPromotions';
 import Block from 'components/library/Block';
+import SuggestionList from 'components/library/SuggestionList';
+import Btn from 'components/library/Btn/';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -36,29 +41,73 @@ class LocationList extends React.Component {
 
   // Render
   render() {
-    const Cities = this.props.State.City;
-    const State = this.props.State;
+    const currentLocation = this.props.LocationData.name;
 
     return (
-      <>
-        {Cities.map((City, index) => (
-          <Link
-            activeClassName="active"
-            to={'/_menu/' + State.Slug + '/' + City.Slug}
-            key={index}
-          >
-            {City.Name}
-          </Link>
-        ))}
-      </>
+      <StaticQuery
+        query={graphql`
+          query {
+            allLocationsJson {
+              edges {
+                node {
+                  id
+                  slug
+                  name
+                  geography {
+                    city
+                    state
+                    country
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <>
+            {data.allLocationsJson.edges.map((location, index) => {
+              if (location.node.name == currentLocation) {
+                return (
+                  <Link
+                    className="active"
+                    to={
+                      '/menu/' +
+                      location.node.geography.state.toLowerCase() +
+                      '/' +
+                      location.node.slug
+                    }
+                    key={index}
+                  >
+                    {location.node.name}
+                  </Link>
+                );
+              } else {
+                return (
+                  <Link
+                    to={
+                      '/menu/' +
+                      location.node.geography.state.toLowerCase() +
+                      '/' +
+                      location.node.slug
+                    }
+                    key={index}
+                  >
+                    {location.node.name}
+                  </Link>
+                );
+              }
+            })}
+          </>
+        )}
+      />
     );
   }
 }
 
 // Sidebar location switching
-const SidebarLocation = ({ collapsedState, State }) => (
+const SidebarLocation = ({ LocationData, collapsedState, State }) => (
   <SidebarLocationStyle collapsedState={collapsedState}>
-    <LocationList State={State} />
+    <LocationList LocationData={LocationData} />
   </SidebarLocationStyle>
 );
 
@@ -102,8 +151,8 @@ class MenuHero extends React.Component {
     // collapsing menu hero.
     this.state = {
       maxHeight: '100vh',
-      paddingTop: 'calc(' + Root.Size + '* 2)',
-      paddingBottom: 'calc(' + Root.Size + '* 2)',
+      paddingTop: 'calc(' + Root.Size + '* 1.5)',
+      paddingBottom: 'calc(' + Root.Size + '/ 6)',
       opacity: '1',
       collapsed: false,
     };
@@ -131,8 +180,8 @@ class MenuHero extends React.Component {
     else {
       this.setState({
         maxHeight: '100vh',
-        paddingTop: 'calc(' + Root.Size + '* 2)',
-        paddingBottom: 'calc(' + Root.Size + '* 2)',
+        paddingTop: 'calc(' + Root.Size + '* 1.5)',
+        paddingBottom: 'calc(' + Root.Size + '/ 6)',
         opacity: '1',
         collapsed: false,
       });
@@ -141,14 +190,15 @@ class MenuHero extends React.Component {
 
   // Render element.
   render() {
-    const City = this.props.City;
-    const State = this.props.State;
+    const LocationData = this.props.LocationData;
 
     return (
       <MenuHeroStyle>
-        <SidebarLocation State={State} collapsedState={this.state.collapsed} />
+        <SidebarLocation
+          LocationData={LocationData}
+          collapsedState={this.state.collapsed}
+        />
         <HeroInnerTransition
-          height={this.state.height}
           paddingTop={this.state.paddingTop}
           paddingBottom={this.state.paddingBottom}
           maxHeight={this.state.maxHeight}
@@ -158,13 +208,37 @@ class MenuHero extends React.Component {
             <MenuHeroStyle.LocationSwitch>
               <span>Show me</span>
 
-              <LocationList State={State} />
+              <LocationList LocationData={LocationData} />
             </MenuHeroStyle.LocationSwitch>
             <h1 className="h2">
-              Order Cannabis Online from our {City.Name}, {City.State} Store
-              near Spanish Springs, Nevada.
+              Order Cannabis Online from our {LocationData.name},{' '}
+              {LocationData.geography.state} Store.
             </h1>
+            <Btn
+              IconClass="map-marker-alt"
+              Label={LocationData.contactDetails.location.address}
+              BgColor="none"
+              TextColor={Theme.Color.White}
+              Destination={LocationData.meta.maps}
+              IconPosition="left"
+              External
+              IconFas
+            />
           </Block>
+          <SuggestionList
+            BaseUrl={
+              '/menu' +
+              '/' +
+              LocationData.geography.state.toLowerCase() +
+              '/' +
+              LocationData.slug +
+              '/'
+            }
+            List={LocationData.nearby}
+            Label="Nearby"
+            TextColor={Theme.Color.White}
+            Padding={[1, 0, 0, 0]}
+          />
         </HeroInnerTransition>
         <MenuHeroStyle.Tools>
           <MenuHeroStyle.ToolsInner>
