@@ -163,6 +163,7 @@ class MenuHero extends React.Component {
     // Bind base functions to change transition state for
     // collapsing menu hero.
     this.collapseHero = this.collapseHero.bind(this);
+    this.menuScrollCollapse = this.menuScrollCollapse.bind(this);
   }
 
   // Base functions to change transition state for
@@ -191,6 +192,25 @@ class MenuHero extends React.Component {
     }
   }
 
+  // Make sure we are listening for scroll once mounted.
+  componentDidMount() {
+    window.addEventListener('scroll', this.menuScrollCollapse());
+  }
+
+  // Remove listener when not mounted.
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.menuScrollCollapse());
+  }
+
+  // Base functions to change transition state for
+  // navigation on scroll
+  menuScrollCollapse(e) {
+    // Previous / Next Slide based on mouse scroll
+    if (e.deltaY != 0) {
+      this.collapseHero();
+    }
+  }
+
   // Render element.
   render() {
     const LocationData = this.props.LocationData;
@@ -202,105 +222,108 @@ class MenuHero extends React.Component {
       : '';
 
     return (
-      <MenuHeroStyle>
-        <SidebarLocation
-          LocationData={LocationData}
-          collapsedState={this.state.collapsed}
-        />
-        <HeroInnerTransition
-          paddingTop={this.state.paddingTop}
-          paddingBottom={this.state.paddingBottom}
-          maxHeight={this.state.maxHeight}
-          opacity={this.state.opacity}
-        >
-          <Block AlignItems="flex-start" Width={1} maxWidth={0.75}>
-            <MenuHeroStyle.LocationSwitch>
-              <span>Show me</span>
+      <div onWheel={e => this.menuScrollCollapse(e)}>
+        <MenuHeroStyle>
+          <SidebarLocation
+            LocationData={LocationData}
+            collapsedState={this.state.collapsed}
+          />
+          <HeroInnerTransition
+            paddingTop={this.state.paddingTop}
+            paddingBottom={this.state.paddingBottom}
+            maxHeight={this.state.maxHeight}
+            opacity={this.state.opacity}
+          >
+            <Block AlignItems="flex-start" Width={1} maxWidth={0.75}>
+              <MenuHeroStyle.LocationSwitch>
+                <span>Show me</span>
 
-              <LocationList
-                OrderContextSlug={OrderContextSlug}
-                LocationData={LocationData}
-              />
-            </MenuHeroStyle.LocationSwitch>
-            <h1 className="h2">
-              Order cannabis {OrderContext ? OrderContext + ' ' : null}from our{' '}
-              <Link to={'/locations/' + LocationData.slug}>
-                {LocationData.name}
-                {NearbyName ? null : ', ' + LocationData.geography.state}{' '}
-                Dispensary
-              </Link>
-              {NearbyName
-                ? ' near ' +
-                  NearbyName +
-                  ', ' +
-                  LocationData.geography.state +
-                  '.'
-                : '.'}
-            </h1>
-            <span
-              onClick={this.collapseHero.bind(this)}
-              // These are eslint errors for accessibility below.
-              onKeyPress={this.collapseHero.bind(this)}
-              role="button"
-              tabIndex="0"
-            >
+                <LocationList
+                  OrderContextSlug={OrderContextSlug}
+                  LocationData={LocationData}
+                />
+              </MenuHeroStyle.LocationSwitch>
+              <h1 className="h2">
+                Order cannabis {OrderContext ? OrderContext + ' ' : null}from
+                our{' '}
+                <Link to={'/locations/' + LocationData.slug}>
+                  {LocationData.name}
+                  {NearbyName ? null : ', ' + LocationData.geography.state}{' '}
+                  Dispensary
+                </Link>
+                {NearbyName
+                  ? ' near ' +
+                    NearbyName +
+                    ', ' +
+                    LocationData.geography.state +
+                    '.'
+                  : '.'}
+              </h1>
+              <span
+                onClick={this.collapseHero.bind(this)}
+                // These are eslint errors for accessibility below.
+                onKeyPress={this.collapseHero.bind(this)}
+                role="button"
+                tabIndex="0"
+              >
+                <Btn
+                  IconClass="expand"
+                  Label="Expand Menu"
+                  BgColor={Theme.Color.Primary}
+                  TextColor={Theme.Color.White}
+                  Destination={LocationData.meta.maps}
+                  IconPosition="left"
+                  Pseudo
+                  IconFas
+                />
+              </span>
+
               <Btn
-                IconClass="expand"
-                Label="Expand Menu"
-                BgColor={Theme.Color.Primary}
+                className="btn-address"
+                IconClass="map-marker-alt"
+                Label={LocationData.contactDetails.location.address}
+                BgColor={Theme.Color.Black}
                 TextColor={Theme.Color.White}
                 Destination={LocationData.meta.maps}
                 IconPosition="left"
-                Pseudo
+                External
                 IconFas
               />
-            </span>
-
-            <Btn
-              className="btn-address"
-              IconClass="map-marker-alt"
-              Label={LocationData.contactDetails.location.address}
-              BgColor={Theme.Color.Black}
+            </Block>
+            <SuggestionList
+              BaseUrl={
+                '/menu' +
+                '/' +
+                OrderContextSlug +
+                LocationData.geography.state.toLowerCase() +
+                '/' +
+                LocationData.slug +
+                '/'
+              }
+              List={LocationData.nearby}
+              Label="Delivering to"
               TextColor={Theme.Color.White}
-              Destination={LocationData.meta.maps}
-              IconPosition="left"
-              External
-              IconFas
+              GradientColor={Theme.Color.Nightsky}
+              Padding={[1, 0, 0, 0]}
             />
-          </Block>
-          <SuggestionList
-            BaseUrl={
-              '/menu' +
-              '/' +
-              OrderContextSlug +
-              LocationData.geography.state.toLowerCase() +
-              '/' +
-              LocationData.slug +
-              '/'
-            }
-            List={LocationData.nearby}
-            Label="Delivering to"
-            TextColor={Theme.Color.White}
-            GradientColor={Theme.Color.Nightsky}
-            Padding={[1, 0, 0, 0]}
-          />
-        </HeroInnerTransition>
-        <MenuHeroStyle.Tools>
-          <MenuHeroStyle.ToolsInner>
-            <div
-              onClick={this.collapseHero.bind(this)}
-              // These are eslint errors for accessibility below.
-              onKeyPress={this.collapseHero.bind(this)}
-              role="button"
-              tabIndex="0"
-              className="collapse-button"
-            >
-              <CollapseButton collapsedState={this.state.collapsed} />
-            </div>
-            <MenuHeroPromotions />
-          </MenuHeroStyle.ToolsInner>
-        </MenuHeroStyle.Tools>
-      </MenuHeroStyle>
+          </HeroInnerTransition>
+          <MenuHeroStyle.Tools>
+            <MenuHeroStyle.ToolsInner>
+              <div
+                onClick={this.collapseHero.bind(this)}
+                // These are eslint errors for accessibility below.
+                onKeyPress={this.collapseHero.bind(this)}
+                role="button"
+                tabIndex="0"
+                className="collapse-button"
+              >
+                <CollapseButton collapsedState={this.state.collapsed} />
+              </div>
+              <MenuHeroPromotions />
+            </MenuHeroStyle.ToolsInner>
+          </MenuHeroStyle.Tools>
+        </MenuHeroStyle>
+      </div>
     );
   }
 }
