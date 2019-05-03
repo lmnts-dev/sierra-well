@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Templates
-// import LearnTagTemplate from './layout';
+import LocationLandingTemplate from './layout';
 
 // Data
 import { graphql } from 'gatsby';
@@ -17,19 +17,11 @@ import { graphql } from 'gatsby';
 //////////////////////////////////////////////////////////////////////
 
 const LocationLandingPage = props => {
-  // Define our Slugs
-  // let CategorySlug = props.pageContext.CategorySlug;
-  // let TagSlug = props.pageContext.TagSlug;
-
-  // Define our Data Objects
-  // let CategoryData = {};
-  // let TagData = {};
-
   return (
-    <h1>
-      It's alive!
-      {console.log(props.data.allLocationsJson.edges)}
-    </h1>
+    <LocationLandingTemplate
+      LocationData={props.data.allLocationsJson.edges[0].node}
+      Location={props.location.href}
+    />
   );
 };
 
@@ -52,7 +44,6 @@ export const query = graphql`
           id
           slug
           name
-          headline
           geography {
             city
             state
@@ -69,12 +60,22 @@ export const query = graphql`
           }
           contactDetails {
             phone
+            location {
+              address
+              state
+            }
+            hours {
+              days
+              startTime
+              endTime
+            }
           }
           nearby {
             name
             slug
           }
           about {
+            headline
             PageTheme {
               Color {
                 Background

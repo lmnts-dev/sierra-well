@@ -134,7 +134,7 @@ const PageWrapper = ({ children, Data, Location, Category, CategoryTheme }) => {
         {/* ///////////// */}
 
         <SimpleHero TextColor={CategoryTheme.Color.Secondary}>
-          <Block maxWidth={0.5}>
+          <Block className="blocksky" maxWidth={0.75}>
             <Bread
               Crumbs={[
                 {

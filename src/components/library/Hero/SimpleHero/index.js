@@ -17,7 +17,7 @@ import { HeroInner } from './../../Hero';
 import SimpleHeroStyle from './styles.scss';
 
 // Components
-import ImgQuery from 'components/core/ImgQuery';
+import ImgMatch from 'components/core/ImgMatch';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -34,9 +34,11 @@ const SimpleHero = ({
   imgWidth,
   TextColor,
   Tint,
+  Padding,
   Size,
   BgQuery,
   BgAlt,
+  Flex,
   children,
 }) => (
   <SimpleHeroStyle
@@ -47,18 +49,20 @@ const SimpleHero = ({
   >
     <HeroInner
       Size={Size ? Size : false}
+      Padding={Padding}
       imgRight={imgRight ? imgRight : false}
       imgLeft={imgLeft ? imgLeft : false}
       imgBottom={imgBottom ? imgBottom : false}
       imgTop={imgTop ? imgTop : false}
       imgWidth={imgWidth ? imgWidth : false}
       className="inner"
+      Flex={Flex}
     >
       {children}
     </HeroInner>
     {BgQuery ? (
       <div className="section-img">
-        <ImgQuery query={BgQuery} alt={BgAlt} />
+        <ImgMatch src={BgQuery} AltText={BgAlt} />
       </div>
     ) : null}
   </SimpleHeroStyle>

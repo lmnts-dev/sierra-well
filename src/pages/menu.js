@@ -59,7 +59,6 @@ export const query = graphql`
           id
           slug
           name
-          headline
           geography {
             city
             state
@@ -91,6 +90,7 @@ export const query = graphql`
             slug
           }
           about {
+            headline
             PageTheme {
               Color {
                 Background

@@ -24,7 +24,7 @@ import SplitSection from 'components/library/Section/SplitSection';
 //// Misc. Components
 import Bread from 'components/library/Breadcrumb';
 import Btn from 'components/library/Btn/';
-import ImgQuery from 'components/core/ImgQuery';
+import ImgMatch from 'components/core/ImgMatch';
 
 // Elements
 import Block from 'components/library/Block';
@@ -88,8 +88,8 @@ const Index = props => (
           />
         </Block>
         <Block className="hero-img">
-          <ImgQuery
-            query={props.data.imageOne.childImageSharp.fluid}
+          <ImgMatch
+            src="placeholder_bg_4.jpg"
             alt="100% Free Delivery"
           />
         </Block>
@@ -158,7 +158,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.White}
-            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgQuery="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -185,7 +185,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.White}
-            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgQuery="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -215,7 +215,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.Snow}
-            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgQuery="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -233,7 +233,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.Snow}
-            BgQuery={props.data.imageTwo.childImageSharp.fluid}
+            BgQuery="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -281,7 +281,7 @@ const Index = props => (
 
         <SimpleSection
           BgColor={Theme.Color.Black}
-          BgQuery={props.data.imageTwo.childImageSharp.fluid}
+          BgQuery="placeholder_bg_4.jpg"
           BgTint={0.3}
           BgAlt="Our Awesome Alt Tag"
           TextColor={Theme.Color.White}
@@ -436,7 +436,7 @@ const Index = props => (
 
         <SimpleSection
           BgColor={Theme.Color.Snow}
-          BgQuery={props.data.imageTwo.childImageSharp.fluid}
+          BgQuery="placeholder_bg_4.jpg"
           BgAlt="Our Awesome Alt Tag"
           FluidHeight={true}
           Gutter={[0, 0, 0, 0]}
@@ -454,25 +454,7 @@ export default Index;
 
 // GraphQL Queries
 /////////////////////////////////////////////////////////////////////
-export const query = graphql`
-  query {
-    imageOne: file(relativePath: { eq: "hero-phone.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
 
-    imageTwo: file(relativePath: { eq: "placeholder_bg_4.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1280) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

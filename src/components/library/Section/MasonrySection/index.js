@@ -8,7 +8,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import ImgQuery from 'components/core/ImgQuery';
+import ImgMatch from 'components/core/ImgMatch';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -51,7 +51,7 @@ const MasonrySection = ({
       </MasonrySectionStyle.Content>
       {BgQuery ? (
         <div className="section-img">
-          <ImgQuery query={BgQuery} alt={BgAlt} />
+          <ImgMatch src={BgQuery} AltText={BgAlt} />
         </div>
       ) : null}
     </MasonrySectionStyle.Inner>

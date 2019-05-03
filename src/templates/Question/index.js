@@ -29,7 +29,7 @@ const QuestionPage = props => {
           return (
             <QuestionTemplate
               PageTheme={Category.node.PageTheme}
-              BgQuery={props.data.coverImage.childImageSharp.fluid}
+              BgQuery="placeholder_bg_4.jpg"
               Location={props.location.href}
               AllCategories={AllCategories}
               CategorySlug={Category.node.Slug}
@@ -50,14 +50,7 @@ export default QuestionPage;
 // GraphQL Queries
 /////////////////////////////////////////////////////////////////////
 export const query = graphql`
-  query($Slug: String!, $CoverImage: String!) {
-    coverImage: file(relativePath: { eq: $CoverImage }) {
-      childImageSharp {
-        fluid(maxWidth: 1280) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+  query($Slug: String!) {
 
     allQuestionsJson(filter: { slug: { eq: $Slug } }) {
       edges {

@@ -22,18 +22,27 @@ export const HeroInner = ({
   imgTop,
   imgWidth,
   Size,
+  Flex,
+  Padding,
   children,
 }) => (
   <HeroInnerStyle
     Size={Size ? Size : false}
+    Padding={Padding ? Padding : false}
     imgRight={imgRight ? imgRight : false}
     imgLeft={imgLeft ? imgLeft : false}
     imgBottom={imgBottom ? imgBottom : false}
     imgTop={imgTop ? imgTop : false}
     imgWidth={imgWidth ? imgWidth : false}
   >
-    <HeroContentStyle>{children}</HeroContentStyle>
+    <HeroContentStyle Flex={Flex}>{children}</HeroContentStyle>
   </HeroInnerStyle>
+);
+
+export const HeroContent = ({ children, Flex }) => (
+  <HeroContentStyle Flex={Flex} className="hero-content">
+    {children}
+  </HeroContentStyle>
 );
 
 //////////////////////////////////////////////////////////////////////

@@ -30,6 +30,7 @@ const SuggestionList = ({
   TextColor,
   GradientColor,
   Padding,
+  Affix,
 }) => (
   <SuggestionListStyle
     className="suggestion-list"
@@ -43,7 +44,9 @@ const SuggestionList = ({
           <Btn
             BgColor="none"
             Label={item.name}
-            Destination={BaseUrl + item.slug}
+            Destination={
+              Affix ? BaseUrl + item.slug + Affix : BaseUrl + item.slug
+            }
             TextColor={TextColor}
           />
         </li>

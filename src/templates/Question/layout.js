@@ -126,7 +126,7 @@ const QuestionTemplate = ({
           TextColor={Theme.Color.White}
           Tint="0.5"
         >
-          <Block AlignItems="flex-start" Width={1} maxWidth={0.5}>
+          <Block AlignItems="flex-start" Width={1} maxWidth={0.75}>
             <TagList Tags={QuestionData.tags} CategorySlug={CategorySlug} />
 
             <h1 itemProp="name">{QuestionData.title}</h1>

@@ -168,7 +168,7 @@ const PageWrapper = ({
         {/* ///////////// */}
 
         <SimpleHero TextColor={CategoryTheme.Color.Secondary}>
-          <Block maxWidth={0.5}>
+          <Block maxWidth={0.75}>
             <Bread
               Crumbs={[
                 {

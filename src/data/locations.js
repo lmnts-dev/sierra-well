@@ -62,7 +62,7 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
+                    Destination: '/locations/nevada/reno/',
                     Style: 'SideForecast',
                     Meta: {
                       SideForecast: {
@@ -200,7 +200,7 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/subpage',
+                    Destination: '/locations/nevada/carson-city/',
                     Style: 'SideForecast',
                     Meta: {
                       SideForecast: {

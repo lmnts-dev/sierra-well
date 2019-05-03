@@ -6,7 +6,7 @@
 
 // Core
 import React from 'react';
-import ImgQuery from 'components/core/ImgQuery';
+import ImgMatch from 'components/core/ImgMatch';
 
 // Styles
 import BlockStyle from './styles.scss';
@@ -46,7 +46,7 @@ const Block = ({
     {BgQuery ? (
       <div className="block-img-wrap">
         <div className="block-img">
-          <ImgQuery query={BgQuery} alt={BgAlt} />
+          <ImgMatch src={BgQuery} AltText={BgAlt} />
         </div>
       </div>
     ) : null}
