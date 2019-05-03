@@ -37,7 +37,9 @@ const SimpleHeroStyle = styled.div`
       right: 0;
       bottom: 0;
       top: 0;
-      background-color: rgba(0,0,0, 0.5);
+      background-color: rgba(0,0,0,` +
+        props.Tint +
+        `);
     }
     .inner {
       z-index: 500;

@@ -20,7 +20,7 @@ const LocationLandingPage = props => {
   return (
     <LocationLandingTemplate
       LocationData={props.data.allLocationsJson.edges[0].node}
-      Location={props.location.href}
+      Location={props.location}
     />
   );
 };

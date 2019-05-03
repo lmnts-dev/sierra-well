@@ -53,7 +53,7 @@ const Btn = ({
   if (External) {
     return (
       <BtnStyleExternal
-        className={AddClass ? 'btn' + AddClass : 'btn'}
+        className={AddClass ? 'btn ' + AddClass : 'btn'}
         href={Destination ? Destination : '/'}
         target="_blank"
         rel="nofollow noreferrer"
@@ -72,7 +72,7 @@ const Btn = ({
   } else {
     if (Pseudo) {
       return (
-        <BtnStylePseudo className={AddClass ? 'btn' + AddClass : 'btn'}>
+        <BtnStylePseudo className={AddClass ? 'btn ' + AddClass : 'btn'}>
           <BtnInner
             BgColor={BgColor}
             TextColor={TextColor}
@@ -87,7 +87,7 @@ const Btn = ({
     } else {
       return (
         <BtnStyle
-          className={AddClass ? 'btn' + AddClass : 'btn'}
+          className={AddClass ? 'btn ' + AddClass : 'btn'}
           to={Destination ? Destination : '/'}
         >
           <BtnInner

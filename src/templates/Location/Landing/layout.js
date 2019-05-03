@@ -22,6 +22,7 @@ import SocialStrip from 'components/library/SocialStrip';
 import QuestionFooter from 'components/library/QuestionFooter';
 import Btn from 'components/library/Btn/';
 import SuggestionList from 'components/library/SuggestionList';
+import PageTabs from 'components/library/PageTabs';
 
 // Elements
 import Block from 'components/library/Block';
@@ -110,6 +111,35 @@ const PageWrapper = ({ children, LocationData, Location }) => {
               TextColor={LocationTheme.Color.Primary}
             /> */}
           </Block>
+
+          <PageTabs
+            Location={Location}
+            BaseUrl={
+              '/locations' +
+              '/' +
+              LocationData.geography.state.toLowerCase() +
+              '/' +
+              LocationData.slug +
+              '/'
+            }
+            List={[
+              { name: 'About', slug: ''  },
+              { name: 'Specials', slug: 'specials' },
+              { name: 'Menu', slug: 'menu' },
+            ]}
+            TextColor={LocationTheme.Color.Primary}
+            Padding={[1.45, 0, 0, 0]}
+          />
+
+          {console.log(LocationData.nearby)}
+        </SimpleHero>
+
+        <SimpleHero
+          Padding={[0, 0, 0, 0]}
+          Flex="column"
+          TextColor={LocationTheme.Color.Primary}
+          Tint={0.05}
+        >
           <SuggestionList
             BaseUrl={
               '/locations' +
@@ -124,7 +154,7 @@ const PageWrapper = ({ children, LocationData, Location }) => {
             Label="Nearby"
             TextColor={LocationTheme.Color.Primary}
             GradientColor={LocationTheme.Color.Background}
-            Padding={[1, 0, 0, 0]}
+            Padding={[0, 0, 0, 0]}
           />
         </SimpleHero>
         {/* Begin page content. */}
@@ -151,7 +181,7 @@ const PageWrapper = ({ children, LocationData, Location }) => {
 const TemplateLayout = ({ LocationData, Location }) => {
   return (
     <PageWrapper LocationData={LocationData} Location={Location}>
-      {console.log(LocationData)}
+      {console.log(Location)}
 
       {/* ///////////// */}
 
