@@ -129,7 +129,6 @@ class CollapseButton extends React.Component {
       return (
         <CollapseButtonStyle>
           <i className="fas fa-expand" />
-          <span>Fullscreen Menu</span>
         </CollapseButtonStyle>
       );
     }
@@ -139,7 +138,6 @@ class CollapseButton extends React.Component {
       return (
         <CollapseButtonStyle>
           <i className="fas fa-compress" />
-          <span>Collapse Menu</span>
         </CollapseButtonStyle>
       );
     }
@@ -239,10 +237,30 @@ class MenuHero extends React.Component {
                   '.'
                 : '.'}
             </h1>
+            <span
+              onClick={this.collapseHero.bind(this)}
+              // These are eslint errors for accessibility below.
+              onKeyPress={this.collapseHero.bind(this)}
+              role="button"
+              tabIndex="0"
+            >
+              <Btn
+                IconClass="expand"
+                Label="Expand Menu"
+                BgColor={Theme.Color.Primary}
+                TextColor={Theme.Color.White}
+                Destination={LocationData.meta.maps}
+                IconPosition="left"
+                Pseudo
+                IconFas
+              />
+            </span>
+
             <Btn
+              className="btn-address"
               IconClass="map-marker-alt"
               Label={LocationData.contactDetails.location.address}
-              BgColor="none"
+              BgColor={Theme.Color.Black}
               TextColor={Theme.Color.White}
               Destination={LocationData.meta.maps}
               IconPosition="left"

@@ -82,6 +82,10 @@ export const SuggestionListStyle = styled.div`
       margin-right: calc(${Root.Size} / 4);
       font-size: 1.2rem;
 
+      &:first-child {
+        opacity: .3;
+      }
+
       .btn {
         position: relative;
         left: 0;

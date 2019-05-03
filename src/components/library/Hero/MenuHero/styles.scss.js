@@ -32,10 +32,22 @@ export const MenuHeroStyle = styled.div`
 
   .btn {
     position: relative;
-    left: calc((${Theme.Base.Size.Md} * 0.5) * -1);
+    margin-right: calc(${Root.Size} / 4);
+
     .btn-inner {
       font-size: 1.2rem;
-      opacity: 0.6;
+    }
+
+    &.btn-address {
+      .btn-inner {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .suggestion-list {
+    .btn {
+      margin-right: 0;
     }
   }
 `;
@@ -115,11 +127,11 @@ export const HeroInnerTransition = styled(HeroInnerStyle)`
 export const CollapseButtonStyle = styled.button`
   border: 0;
   outline: 0;
-  background: ${Theme.Color.White};
+  background: ${Theme.Color.Primary};
   align-self: stretch;
-  color: ${Theme.Color.Primary};
+  color: ${Theme.Color.White};
   font-weight: bold;
-  width: calc(${Root.Size} * 3.5);
+  width: calc(${Root.Size});
   cursor: pointer;
   font-size: 1.2rem;
   text-align: center;

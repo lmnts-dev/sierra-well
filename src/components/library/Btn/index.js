@@ -11,10 +11,31 @@ import React from 'react';
 import Icon from 'elements/Icons';
 
 // Styles
-import BtnStyle, { BtnStyleExternal } from './styles.scss';
+import BtnStyle, { BtnStyleExternal, BtnStylePseudo } from './styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
+
+const BtnInner = ({
+  BgColor,
+  TextColor,
+  Size,
+  IconPosition,
+  Label,
+  IconFas,
+  IconClass,
+}) => (
+  <BtnStyle.Inner
+    className="btn-inner"
+    BgColor={BgColor}
+    TextColor={TextColor}
+    Size={Size}
+    IconPosition={IconPosition ? IconPosition : null}
+  >
+    <span>{Label}</span>
+    {IconClass ? <Icon fas={IconFas} Name={IconClass} /> : null}
+  </BtnStyle.Inner>
+);
 
 const Btn = ({
   Label,
@@ -27,6 +48,7 @@ const Btn = ({
   Size,
   AddClass,
   External,
+  Pseudo,
 }) => {
   if (External) {
     return (
@@ -36,36 +58,50 @@ const Btn = ({
         target="_blank"
         rel="nofollow noreferrer"
       >
-        <BtnStyle.Inner
-          className="btn-inner"
+        <BtnInner
           BgColor={BgColor}
           TextColor={TextColor}
           Size={Size}
-          IconPosition={IconPosition ? IconPosition : null}
-        >
-          <span>{Label}</span>
-          {IconClass ? <Icon fas={IconFas} Name={IconClass} /> : null}
-        </BtnStyle.Inner>
+          IconPosition={IconPosition}
+          Label={Label}
+          IconFas={IconFas}
+          IconClass={IconClass}
+        />
       </BtnStyleExternal>
     );
   } else {
-    return (
-      <BtnStyle
-        className={AddClass ? 'btn' + AddClass : 'btn'}
-        to={Destination ? Destination : '/'}
-      >
-        <BtnStyle.Inner
-          className="btn-inner"
-          BgColor={BgColor}
-          TextColor={TextColor}
-          Size={Size}
-          IconPosition={IconPosition ? IconPosition : null}
+    if (Pseudo) {
+      return (
+        <BtnStylePseudo className={AddClass ? 'btn' + AddClass : 'btn'}>
+          <BtnInner
+            BgColor={BgColor}
+            TextColor={TextColor}
+            Size={Size}
+            IconPosition={IconPosition}
+            Label={Label}
+            IconFas={IconFas}
+            IconClass={IconClass}
+          />
+        </BtnStylePseudo>
+      );
+    } else {
+      return (
+        <BtnStyle
+          className={AddClass ? 'btn' + AddClass : 'btn'}
+          to={Destination ? Destination : '/'}
         >
-          <span>{Label}</span>
-          {IconClass ? <Icon fas={IconFas} Name={IconClass} /> : null}
-        </BtnStyle.Inner>
-      </BtnStyle>
-    );
+          <BtnInner
+            BgColor={BgColor}
+            TextColor={TextColor}
+            Size={Size}
+            IconPosition={IconPosition}
+            Label={Label}
+            IconFas={IconFas}
+            IconClass={IconClass}
+          />
+        </BtnStyle>
+      );
+    }
   }
 };
 
