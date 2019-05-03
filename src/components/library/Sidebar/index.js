@@ -33,7 +33,7 @@ const Sidebar = ({
         TextColor={Theme.Color.White}
         IconColor={Theme.Color.White}
         IconName="car"
-        Destination="/"
+        Destination="/menu/pick-up/nevada/reno/"
       />
       <SidebarWidget
         BgColor={SecondaryColor}

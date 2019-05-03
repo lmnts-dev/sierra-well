@@ -109,7 +109,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////
-    
+
     // Learn category page template.
     const categoryTemplate = path.resolve(
       `src/templates/Learn/Category/index.js`
@@ -350,7 +350,7 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/menu/pick-up'${edge.node.geography.state.toLowerCase()}/${
+          path: `/menu/pick-up/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/`,
           component: slash(locationMenuTemplate),

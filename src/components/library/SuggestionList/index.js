@@ -23,8 +23,19 @@ import { Theme, Root } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 // Our nearby locations component
-const SuggestionList = ({ List, Label, BaseUrl, TextColor, Padding }) => (
-  <SuggestionListStyle className="suggestion-list" Padding={Padding}>
+const SuggestionList = ({
+  List,
+  Label,
+  BaseUrl,
+  TextColor,
+  GradientColor,
+  Padding,
+}) => (
+  <SuggestionListStyle
+    className="suggestion-list"
+    GradientColor={GradientColor}
+    Padding={Padding}
+  >
     <ul>
       {Label ? <li>{Label}</li> : null}
       {List.map((item, index) => (

@@ -58,8 +58,8 @@
         }
       },
       {
-        "name": "Downtown",
-        "slug": "downtown",
+        "name": "Downtown Reno",
+        "slug": "downtown-reno",
         "pageTheme": {
           "Color": {
             "Background": "#000000",

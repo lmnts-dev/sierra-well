@@ -42,6 +42,9 @@ class LocationList extends React.Component {
   // Render
   render() {
     const currentLocation = this.props.LocationData.name;
+    const OrderContextSlug = this.props.OrderContextSlug
+      ? this.props.OrderContextSlug
+      : '';
 
     return (
       <StaticQuery
@@ -72,6 +75,7 @@ class LocationList extends React.Component {
                     className="active"
                     to={
                       '/menu/' +
+                      OrderContextSlug +
                       location.node.geography.state.toLowerCase() +
                       '/' +
                       location.node.slug
@@ -86,6 +90,7 @@ class LocationList extends React.Component {
                   <Link
                     to={
                       '/menu/' +
+                      OrderContextSlug +
                       location.node.geography.state.toLowerCase() +
                       '/' +
                       location.node.slug
@@ -194,6 +199,9 @@ class MenuHero extends React.Component {
     const NearbySlug = this.props.NearbySlug;
     const NearbyName = this.props.NearbyName;
     const OrderContext = this.props.OrderContext;
+    const OrderContextSlug = this.props.OrderContext
+      ? OrderContext.toLowerCase() + '/'
+      : '';
 
     return (
       <MenuHeroStyle>
@@ -211,11 +219,18 @@ class MenuHero extends React.Component {
             <MenuHeroStyle.LocationSwitch>
               <span>Show me</span>
 
-              <LocationList LocationData={LocationData} />
+              <LocationList
+                OrderContextSlug={OrderContextSlug}
+                LocationData={LocationData}
+              />
             </MenuHeroStyle.LocationSwitch>
             <h1 className="h2">
-              Order cannabis {OrderContext ? OrderContext + ' ' : null}from our <Link to={'/locations/' + LocationData.slug}>{LocationData.name}
-              {NearbyName ? null : ', ' + LocationData.geography.state} Dispensary</Link>
+              Order cannabis {OrderContext ? OrderContext + ' ' : null}from our{' '}
+              <Link to={'/locations/' + LocationData.slug}>
+                {LocationData.name}
+                {NearbyName ? null : ', ' + LocationData.geography.state}{' '}
+                Dispensary
+              </Link>
               {NearbyName
                 ? ' near ' +
                   NearbyName +
@@ -239,6 +254,7 @@ class MenuHero extends React.Component {
             BaseUrl={
               '/menu' +
               '/' +
+              OrderContextSlug +
               LocationData.geography.state.toLowerCase() +
               '/' +
               LocationData.slug +
@@ -247,6 +263,7 @@ class MenuHero extends React.Component {
             List={LocationData.nearby}
             Label="Delivering to"
             TextColor={Theme.Color.White}
+            GradientColor={Theme.Color.Nightsky}
             Padding={[1, 0, 0, 0]}
           />
         </HeroInnerTransition>

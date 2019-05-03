@@ -32,7 +32,10 @@ const LocationMenuPage = props => {
   } else {
     // If it isn't a Nearby location:
     return (
-      <MenuTemplate LocationData={props.data.allLocationsJson.edges[0].node} />
+      <MenuTemplate
+        OrderContext={props.pageContext.OrderContext}
+        LocationData={props.data.allLocationsJson.edges[0].node}
+      />
     );
   }
 };
