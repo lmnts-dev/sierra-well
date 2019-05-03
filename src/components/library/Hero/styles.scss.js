@@ -31,7 +31,7 @@ export const HeroInnerStyle = styled.div`
   ${props =>
     props.Padding
       ? 'padding-bottom: calc(' + Root.Size + ' * ' + props.Padding[2] + ')'
-      : 'padding-top: calc(' + Root.Size + ' * ' + '2)'};
+      : 'padding-bottom: calc(' + Root.Size + ' * ' + '2)'};
   ${props =>
     props.Padding
       ? 'padding-left: calc(' +
