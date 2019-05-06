@@ -46,17 +46,14 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
       LocationData={LocationData}
       Location={Location}
     >
-      {console.log(Location)}
 
       {/* ///////////// */}
 
-      <SimpleSection
-        BgColor={Theme.Color.Snow}
-        BgQuery="placeholder_bg_4.jpg"
-        BgAlt="Our Awesome Alt Tag"
-        FluidHeight={true}
-        Gutter={[0, 0, 0, 0]}
-      />
+      {/* ///////////// */}
+
+      <QuestionFooter HideCategories />
+
+      {/* ///////////// */}
 
       {/* ///////////// */}
     </LocationPageWrapper>

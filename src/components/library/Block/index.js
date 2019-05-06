@@ -27,6 +27,8 @@ const Block = ({
   BgTint,
   BgColor,
   TextColor,
+  JustifyContent,
+  Flex
 }) => (
   <BlockStyle
     className={className ? className + ' block' : 'block'}
@@ -35,9 +37,11 @@ const Block = ({
     Style={Style}
     Padding={Padding}
     AlignItems={AlignItems ? AlignItems : false}
+    JustifyContent={JustifyContent ? JustifyContent : false}
     BgTint={BgTint}
     BgColor={BgColor}
     TextColor={TextColor}
+    Flex={Flex}
   >
     {/* Block Content */}
     {children ? <div className="block-content">{children}</div> : null}

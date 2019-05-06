@@ -22,7 +22,7 @@ import {
 // The Content Wrapper
 const SlideSectionStyle = styled.div`
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
 
   /* Slick styles */
   .slick-slider {

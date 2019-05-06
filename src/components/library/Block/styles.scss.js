@@ -13,7 +13,7 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Styles
 export const BlockStyle = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => (props.Flex ? props.flex : 'column')};
   position: relative;
   flex-shrink: 1;
   ${props => (props.BgColor ? 'background: ' + props.BgColor + ';' : null)}
@@ -60,6 +60,11 @@ export const BlockStyle = styled.div`
     z-index: 2;
     margin: 0 auto;
     width: 100%;
+    ${props => (props.JustifyContent ? 'display:flex' : null)};
+    ${props =>
+      props.JustifyContent
+        ? 'justify-content: ' + props.JustifyContent + ';'
+        : null}
 
     p {
       max-width: 80%;

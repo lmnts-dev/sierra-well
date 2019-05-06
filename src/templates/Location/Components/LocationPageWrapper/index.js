@@ -11,6 +11,7 @@ import React from 'react';
 import Layout from 'components/core/Layout';
 import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
 import SimpleHero from 'components/library/Hero/SimpleHero';
+import AwardHours from 'components/library/AwardHours';
 import WidgetSection from 'components/library/Section/WidgetSection';
 import SimpleSection from 'components/library/Section/SimpleSection';
 import SlideSection from 'components/library/Section/SlideSection';
@@ -23,6 +24,7 @@ import QuestionFooter from 'components/library/QuestionFooter';
 import Btn from 'components/library/Btn/';
 import SuggestionList from 'components/library/SuggestionList';
 import PageTabs from 'components/library/PageTabs';
+import SimpleList from 'components/library/SimpleList';
 
 // Elements
 import Block from 'components/library/Block';
@@ -34,7 +36,12 @@ import { Theme } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 // LocationPageWrapper component for page theming.
-const LocationPageWrapper = ({ children, Headline, LocationData, Location }) => {
+const LocationPageWrapper = ({
+  children,
+  Headline,
+  LocationData,
+  Location,
+}) => {
   const LocationTheme = LocationData.about.PageTheme;
 
   return (
@@ -52,9 +59,11 @@ const LocationPageWrapper = ({ children, Headline, LocationData, Location }) => 
       >
         {/* ///////////// */}
 
+        {/* ///////////// */}
+
         <SimpleHero
-          Padding={[2, 0, 0, 0]}
-          Flex="column"
+          Padding={[2, 0, 1.45, 0]}
+          Flex="row"
           TextColor={LocationTheme.Color.Primary}
         >
           <Block maxWidth={0.5}>
@@ -111,7 +120,26 @@ const LocationPageWrapper = ({ children, Headline, LocationData, Location }) => 
               TextColor={LocationTheme.Color.Primary}
             /> */}
           </Block>
+          <Block Flex="row" maxWidth={0.5}>
+            <AwardHours
+              TextColor={LocationTheme.Color.Primary}
+              Hours={[
+                { Label: 'Mon - Sat', Data: '9am - 9pm' },
+                { Label: 'Sunday', Data: '10am - 6pm' },
+              ]}
+            />
+          </Block>
+        </SimpleHero>
 
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
+        <SimpleHero
+          Padding={[0, 0, 0, 0]}
+          Flex="column"
+          TextColor={LocationTheme.Color.Primary}
+        >
           <PageTabs
             Location={Location}
             BaseUrl={
@@ -123,16 +151,18 @@ const LocationPageWrapper = ({ children, Headline, LocationData, Location }) => 
               '/'
             }
             List={[
-              { name: 'About', slug: ''  },
+              { name: 'About', slug: '' },
               { name: 'Specials', slug: 'specials' },
               { name: 'Menu', slug: 'menu' },
             ]}
             TextColor={LocationTheme.Color.Primary}
-            Padding={[1.45, 0, 0, 0]}
+            Padding={[0, 0, 0, 0]}
           />
-
-          {console.log(LocationData.nearby)}
         </SimpleHero>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
 
         <SimpleHero
           Padding={[0, 0, 0, 0]}
@@ -157,7 +187,15 @@ const LocationPageWrapper = ({ children, Headline, LocationData, Location }) => 
             Padding={[0, 0, 0, 0]}
           />
         </SimpleHero>
+
+        {/* ///////////// */}
+
+        {/* ///////////// */}
+
         {/* Begin page content. */}
+
+        {/* ///////////// */}
+
         {/* ///////////// */}
         <SubLevelPageContent
           BgColor={Theme.Color.Background}
@@ -165,7 +203,11 @@ const LocationPageWrapper = ({ children, Headline, LocationData, Location }) => 
         >
           {/* ///////////// */}
 
+          {/* ///////////// */}
+
           {children}
+
+          {/* ///////////// */}
 
           {/* ///////////// */}
         </SubLevelPageContent>
@@ -174,6 +216,5 @@ const LocationPageWrapper = ({ children, Headline, LocationData, Location }) => 
     </Layout>
   );
 };
-
 
 export default LocationPageWrapper;
