@@ -39,12 +39,14 @@ const SimpleHero = ({
   BgQuery,
   BgAlt,
   Flex,
+  TintBorder,
   children,
 }) => (
   <SimpleHeroStyle
     Background={Background}
     TextColor={TextColor}
     Tint={Tint}
+    TintBorder={TintBorder}
     className={Tint ? 'tint' : null}
   >
     <HeroInner

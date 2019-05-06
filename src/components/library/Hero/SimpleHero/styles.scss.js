@@ -47,6 +47,23 @@ const SimpleHeroStyle = styled.div`
   }
   `
       : null}
+  
+  /* Background Tint */
+  ${props =>
+    props.TintBorder
+      ? `
+      &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;      
+      top: 0;
+      height: 1px;
+      z-index: 5;
+      background-color: rgba(0,0,0, 0.05);
+    }
+  `
+      : null}
 
   /* Block Spacing */
   .block {

@@ -79,8 +79,8 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
           <Block
             Padding={[1, 1, 1, 1]}
             Width={0.5}
-            BgColor={Theme.Color.White}
-            TextColor={Theme.Color.Nightsky}
+            BgColor={Theme.Color.Nightsky}
+            TextColor={Theme.Color.White}
           >
             <h2>Humans come first. Always.</h2>
             <Btn
@@ -101,8 +101,6 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
         </SplitSection>
 
         {/* ///////////// */}
-
-        <QuestionFooter />
 
         {/* ///////////// */}
 

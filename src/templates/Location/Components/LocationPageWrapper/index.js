@@ -168,7 +168,8 @@ const LocationPageWrapper = ({
           Padding={[0, 0, 0, 0]}
           Flex="column"
           TextColor={LocationTheme.Color.Primary}
-          Tint={0.05}
+          Tint={0}
+          TintBorder
         >
           <SuggestionList
             BaseUrl={
