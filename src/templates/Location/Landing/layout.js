@@ -8,24 +8,16 @@
 import React from 'react';
 
 // Components
-import Layout from 'components/core/Layout';
-import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
-import SimpleHero from 'components/library/Hero/SimpleHero';
-import WidgetSection from 'components/library/Section/WidgetSection';
 import SimpleSection from 'components/library/Section/SimpleSection';
-import SlideSection from 'components/library/Section/SlideSection';
-import QuestionListings from 'components/library/QuestionListings';
-
-//// Misc. Components
-import Bread from 'components/library/Breadcrumb';
-import SocialStrip from 'components/library/SocialStrip';
+import SplitSection from 'components/library/Section/SplitSection';
+import StickyScrollSection from 'components/library/Section/StickyScrollSection';
 import QuestionFooter from 'components/library/QuestionFooter';
-import Btn from 'components/library/Btn/';
-import SuggestionList from 'components/library/SuggestionList';
-import PageTabs from 'components/library/PageTabs';
-
-// Elements
 import Block from 'components/library/Block';
+import Btn from 'components/library/Btn';
+
+
+// Template Specific Components
+import LocationPageWrapper from '../Components/LocationPageWrapper';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -33,156 +25,27 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// PageWrapper component for page theming.
-const PageWrapper = ({ children, LocationData, Location }) => {
-  const LocationTheme = LocationData.about.PageTheme;
-
-  return (
-    <Layout
-      BgColor={LocationTheme.Color.Background}
-      PrimaryColor={LocationTheme.Color.Primary}
-      SecondaryColor={LocationTheme.Color.Secondary}
-      TertiaryColor={LocationTheme.Color.Tertiary}
-    >
-      <SubLevelPage
-        BgColor={LocationTheme.Color.Background}
-        PrimaryColor={LocationTheme.Color.Primary}
-        SecondaryColor={LocationTheme.Color.Secondary}
-        TertiaryColor={LocationTheme.Color.Tertiary}
-      >
-        {/* ///////////// */}
-
-        <SimpleHero
-          Padding={[2, 0, 0, 0]}
-          Flex="column"
-          TextColor={LocationTheme.Color.Primary}
-        >
-          <Block maxWidth={0.5}>
-            <Bread
-              Crumbs={[
-                {
-                  Destination: 'locations/',
-                  Label: 'Locations',
-                },
-                {
-                  Destination: 'locations/',
-                  Label: LocationData.geography.state,
-                },
-                {
-                  Destination:
-                    'locations/' +
-                    LocationData.geography.state.toLowerCase() +
-                    '/' +
-                    LocationData.slug,
-                  Label: LocationData.name,
-                },
-              ]}
-              TextColor={LocationTheme.Color.Primary}
-            />
-            <h1 className="h2">{LocationData.about.headline}</h1>
-            <Btn
-              IconClass="plus"
-              Label="View Menu"
-              BgColor={LocationTheme.Color.Primary}
-              TextColor={LocationTheme.Color.Tertiary}
-              Destination={
-                '/menu/' +
-                LocationData.geography.state.toLowerCase() +
-                '/' +
-                LocationData.slug
-              }
-              IconPosition="left"
-              IconFas
-            />
-            <Btn
-              className="btn-address"
-              IconClass="map-marker-alt"
-              Label={LocationData.contactDetails.location.address}
-              BgColor="none"
-              TextColor={LocationTheme.Color.Tertiary}
-              Destination={LocationData.meta.maps}
-              IconPosition="left"
-              External
-              IconFas
-            />
-            {/* <SocialStrip
-              Margin={[0.5, 0, 0, 0]}
-              Location={Location}
-              TextColor={LocationTheme.Color.Primary}
-            /> */}
-          </Block>
-
-          <PageTabs
-            Location={Location}
-            BaseUrl={
-              '/locations' +
-              '/' +
-              LocationData.geography.state.toLowerCase() +
-              '/' +
-              LocationData.slug +
-              '/'
-            }
-            List={[
-              { name: 'About', slug: ''  },
-              { name: 'Specials', slug: 'specials' },
-              { name: 'Menu', slug: 'menu' },
-            ]}
-            TextColor={LocationTheme.Color.Primary}
-            Padding={[1.45, 0, 0, 0]}
-          />
-
-          {console.log(LocationData.nearby)}
-        </SimpleHero>
-
-        <SimpleHero
-          Padding={[0, 0, 0, 0]}
-          Flex="column"
-          TextColor={LocationTheme.Color.Primary}
-          Tint={0.05}
-        >
-          <SuggestionList
-            BaseUrl={
-              '/locations' +
-              '/' +
-              LocationData.geography.state.toLowerCase() +
-              '/' +
-              LocationData.slug +
-              '/'
-            }
-            List={LocationData.nearby}
-            Affix="/menu"
-            Label="Nearby"
-            TextColor={LocationTheme.Color.Primary}
-            GradientColor={LocationTheme.Color.Background}
-            Padding={[0, 0, 0, 0]}
-          />
-        </SimpleHero>
-        {/* Begin page content. */}
-        {/* ///////////// */}
-        <SubLevelPageContent
-          BgColor={Theme.Color.Background}
-          TextColor={Theme.Color.Nightsky}
-        >
-          {/* ///////////// */}
-
-          {children}
-
-          {/* ///////////// */}
-        </SubLevelPageContent>
-        {/* End page content. */}
-      </SubLevelPage>
-    </Layout>
-  );
-};
-
 // TemplateLayout Component to pass data where it needs to go for
 // the theming of the hero as well as the LearnSection and what
 // to display in those cards.
-const TemplateLayout = ({ LocationData, Location }) => {
-  return (
-    <PageWrapper LocationData={LocationData} Location={Location}>
-      {console.log(Location)}
+const TemplateLayout = ({ LocationData, Location, Headline }) => {
+  // Build our automatic summary headline.
+  let SummaryHeadlineString =
+    LocationData.name +
+    "'s leading cannabis dispensary — where humans come first.";
 
+  // Check if a headline exists. If it does, display it. If it doesn't, use SummaryHeadlineString.
+  let SummaryHeadline =
+    LocationData.about.summary.headline != ''
+      ? LocationData.about.summary.headline
+      : SummaryHeadlineString;
+
+  return (
+    <LocationPageWrapper
+      Headline={Headline}
+      LocationData={LocationData}
+      Location={Location}
+    >
       {/* ///////////// */}
 
       <SimpleSection
@@ -194,7 +57,56 @@ const TemplateLayout = ({ LocationData, Location }) => {
       />
 
       {/* ///////////// */}
-    </PageWrapper>
+      
+      {/* ///////////// */}
+
+      <StickyScrollSection
+        BgColor={Theme.Color.White}
+        TextColor={Theme.Color.Nightsky}
+        Content={{
+          Subheadline: 'Sierra Well ' + LocationData.name,
+          Headline: SummaryHeadline,
+          Body: LocationData.about.summary.body,
+        }}
+        Gallery={LocationData.about.summary.gallery}
+      />
+
+      {/* ///////////// */}
+
+      {/* ///////////// */}
+
+      <SplitSection Flex="row-reverse">
+          <Block
+            Padding={[1, 1, 1, 1]}
+            Width={0.5}
+            BgColor={Theme.Color.White}
+            TextColor={Theme.Color.Nightsky}
+          >
+            <h2>Humans come first. Always.</h2>
+            <Btn
+              Label="Our Values"
+              Destination="/company"
+              BgColor={Theme.Color.Primary}
+              TextColor={Theme.Color.White}
+            />
+          </Block>
+
+          <Block
+            Style="centered"
+            BgColor={Theme.Color.White}
+            BgQuery="placeholder_bg_4.jpg"
+            BgAlt="Our Awesome Alt Tag"
+            Width={0.5}
+          />
+        </SplitSection>
+
+        {/* ///////////// */}
+
+        <QuestionFooter />
+
+        {/* ///////////// */}
+
+    </LocationPageWrapper>
   );
 };
 

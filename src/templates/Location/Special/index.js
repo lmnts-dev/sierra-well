@@ -1,5 +1,5 @@
-// templates/Location/Special/index.js:
-// This is the Location Special Landing page.
+// templates/Location/Landing/index.js:
+// This is the Location Landing page.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Templates
-// import LearnTagTemplate from './layout';
+import LocationLandingTemplate from './layout';
 
 // Data
 import { graphql } from 'gatsby';
@@ -16,24 +16,17 @@ import { graphql } from 'gatsby';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const LocationSpecialPage = props => {
-  // Define our Slugs
-  // let CategorySlug = props.pageContext.CategorySlug;
-  // let TagSlug = props.pageContext.TagSlug;
-
-  // Define our Data Objects
-  // let CategoryData = {};
-  // let TagData = {};
-
+const LocationLandingPage = props => {
   return (
-    <h1>
-      It's alive!
-      {console.log(props.data.allLocationsJson.edges)}
-    </h1>
+    <LocationLandingTemplate
+      LocationData={props.data.allLocationsJson.edges[0].node}
+      Location={props.location}
+      Headline={props.data.allLocationsJson.edges[0].node.about.headline}
+    />
   );
 };
 
-export default LocationSpecialPage;
+export default LocationLandingPage;
 
 // GraphQL Queries
 /////////////////////////////////////////////////////////////////////
@@ -68,6 +61,15 @@ export const query = graphql`
           }
           contactDetails {
             phone
+            location {
+              address
+              state
+            }
+            hours {
+              days
+              startTime
+              endTime
+            }
           }
           nearby {
             name

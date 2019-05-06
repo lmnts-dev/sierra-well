@@ -59,6 +59,10 @@ export const HeroInnerStyle = styled.div`
     ${props => (props.imgTop ? 'top: ' + props.imgTop : null)};
     ${props => (props.imgWidth ? 'width: ' + props.imgWidth : null)};
   }
+
+  .btn-secondary {
+    margin-left: calc(${Root.Size} / 4);
+  }
 `;
 
 export const HeroContentStyle = styled.div`

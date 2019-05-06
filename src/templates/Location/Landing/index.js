@@ -21,6 +21,7 @@ const LocationLandingPage = props => {
     <LocationLandingTemplate
       LocationData={props.data.allLocationsJson.edges[0].node}
       Location={props.location}
+      Headline={props.data.allLocationsJson.edges[0].node.about.headline}
     />
   );
 };
@@ -82,6 +83,14 @@ export const query = graphql`
                 Primary
                 Secondary
                 Tertiary
+              }
+            }
+            summary {
+              headline
+              body
+              gallery {
+                Src
+                Alt
               }
             }
           }

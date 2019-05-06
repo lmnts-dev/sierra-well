@@ -62,7 +62,7 @@ const SimpleHero = ({
     </HeroInner>
     {BgQuery ? (
       <div className="section-img">
-        <ImgMatch src={BgQuery} AltText={BgAlt} />
+        <ImgMatch src={BgQuery} AltText={BgAlt} className="hero-img" />
       </div>
     ) : null}
   </SimpleHeroStyle>

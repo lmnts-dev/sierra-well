@@ -29,7 +29,7 @@ const Sidebar = ({
       <SidebarWidget
         BgColor={Theme.Color.Primary}
         BgImage="none"
-        Headline="Delivery"
+        Headline="Delivery Available"
         TextColor={Theme.Color.White}
         IconColor={Theme.Color.White}
         IconName="car"
