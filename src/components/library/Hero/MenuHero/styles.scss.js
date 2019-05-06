@@ -50,6 +50,10 @@ export const MenuHeroStyle = styled.div`
       margin-right: 0;
     }
   }
+
+  .award-hours {
+    flex: .5;
+  }
 `;
 
 MenuHeroStyle.LocationSwitch = styled.div`

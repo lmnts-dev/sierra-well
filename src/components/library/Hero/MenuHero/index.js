@@ -28,6 +28,7 @@ import MenuHeroPromotions from './MenuHeroPromotions';
 import Block from 'components/library/Block';
 import SuggestionList from 'components/library/SuggestionList';
 import Btn from 'components/library/Btn/';
+import AwardHours from 'components/library/AwardHours';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -238,7 +239,7 @@ class MenuHero extends React.Component {
             opacity={this.state.opacity}
             className="hero-inner"
           >
-            <HeroContent Flex="column">
+            <HeroContent Flex="row">
               <Block AlignItems="flex-start" maxWidth={0.75}>
                 <MenuHeroStyle.LocationSwitch>
                   <span>Show me</span>
@@ -304,6 +305,17 @@ class MenuHero extends React.Component {
                   IconFas
                 />
               </Block>
+              <Block className="award-hours">
+                <AwardHours
+                  TextColor={Theme.Color.White}
+                  Hours={[
+                    { Label: 'Mon - Sat', Data: '9am - 9pm' },
+                    { Label: 'Sunday', Data: '10am - 6pm' },
+                  ]}
+                />
+              </Block>
+            </HeroContent>
+            <HeroContent Flex="row">
               <SuggestionList
                 BaseUrl={
                   '/menu' +
