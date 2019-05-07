@@ -85,6 +85,18 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
 
+        allSpecialsJson {
+          edges {
+            node {
+              id
+              slug
+              coverImage
+              category
+              tags
+            }
+          }
+        }
+
         allLocationsJson {
           edges {
             node {
@@ -206,6 +218,34 @@ exports.createPages = ({ graphql, actions }) => {
 
       ////////////////////////////////////////////////////////////////////////////////////
 
+      // Create our Specials Pages
+      const specialTemplate = path.resolve(`src/templates/Special/index.js`);
+
+      _.each(result.data.allSpecialsJson.edges, edge => {
+        // Gatsby uses Redux to manage its internal state.
+        // Plugins and sites can use functions like "createPage"
+        // to interact with Gatsby.
+        // We are using 'lodash' above for the _.each function. Read more:
+        // https://lodash.com/docs/4.17.11#forEach
+
+        // Use Gatsby's createPage() function. Read more:
+        // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/specials/${slugify(edge.node.category)}/${edge.node.slug}/`,
+          component: slash(specialTemplate),
+          context: {
+            Slug: edge.node.slug,
+            CoverImage: edge.node.coverImage,
+          },
+        });
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////
+
       // Create our Location Landing Pages
       const locationLandingTemplate = path.resolve(
         `src/templates/Location/Landing/index.js`
@@ -214,7 +254,7 @@ exports.createPages = ({ graphql, actions }) => {
         `src/templates/Location/Menu/index.js`
       );
       const locationSpecialTemplate = path.resolve(
-        `src/templates/Location/Special/index.js`
+        `src/templates/Location/Specials/index.js`
       );
 
       _.each(result.data.allLocationsJson.edges, edge => {
@@ -375,7 +415,7 @@ exports.createPages = ({ graphql, actions }) => {
             OrderContext: 'delivery',
           },
         });
-        
+
         ////////////////////////////////////////////////////////////////////////////////////
 
         // Create specials collection pages.
@@ -391,6 +431,36 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
           },
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        // Create our location-specifc Specials Pages
+        const specialTemplate = path.resolve(`src/templates/Special/index.js`);
+
+        _.each(result.data.allSpecialsJson.edges, special => {
+          // Gatsby uses Redux to manage its internal state.
+          // Plugins and sites can use functions like "createPage"
+          // to interact with Gatsby.
+          // We are using 'lodash' above for the _.each function. Read more:
+          // https://lodash.com/docs/4.17.11#forEach
+
+          // Use Gatsby's createPage() function. Read more:
+          // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+          createPage({
+            // Each page is required to have a `path` as well
+            // as a template component. The `context` is
+            // optional but is often necessary so the template
+            // can query data specific to each page.
+            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+              edge.node.slug
+            }/specials/${special.node.slug}/`,
+            component: slash(specialTemplate),
+            context: {
+              Slug: special.node.slug,
+              CoverImage: special.node.coverImage,
+            },
+          });
         });
 
         // Hypothetical Specials Postings:
@@ -504,7 +574,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           ////////////////////////////////////////////////////////////////////////////////////
 
-          // Create Menu Pages with root /menu/ url 
+          // Create Menu Pages with root /menu/ url
           createPage({
             // Each page is required to have a `path` as well
             // as a template component. The `context` is
@@ -595,8 +665,36 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
 
-          ////////////////////////////////////////////////////////////////////////////////////
+          const nearbySpecialTemplate = path.resolve(
+            `src/templates/Special/index.js`
+          );
 
+          _.each(result.data.allSpecialsJson.edges, special => {
+            // Gatsby uses Redux to manage its internal state.
+            // Plugins and sites can use functions like "createPage"
+            // to interact with Gatsby.
+            // We are using 'lodash' above for the _.each function. Read more:
+            // https://lodash.com/docs/4.17.11#forEach
+
+            // Use Gatsby's createPage() function. Read more:
+            // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+            createPage({
+              // Each page is required to have a `path` as well
+              // as a template component. The `context` is
+              // optional but is often necessary so the template
+              // can query data specific to each page.
+              path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+                edge.node.slug
+              }/${nearby.slug}/specials/${special.node.slug}/`,
+              component: slash(nearbySpecialTemplate),
+              context: {
+                Slug: special.node.slug,
+                CoverImage: special.node.coverImage,
+              },
+            });
+          });
+
+          ////////////////////////////////////////////////////////////////////////////////////
         });
       });
     });

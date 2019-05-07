@@ -39,6 +39,7 @@ NavigationStyle.Top = styled.div`
   z-index: 999;
   height: ${Root.Nav.Size};
   position: relative;
+  font-weight: bold;
 
   .btn,
   .ico-intercom {

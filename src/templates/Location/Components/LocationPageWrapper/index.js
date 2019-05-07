@@ -67,7 +67,7 @@ const LocationPageWrapper = ({
           TextColor={LocationTheme.Color.Primary}
         >
           <Block maxWidth={0.5}>
-            <Bread
+            {/* <Bread
               Crumbs={[
                 {
                   Destination: 'locations/',
@@ -87,7 +87,7 @@ const LocationPageWrapper = ({
                 },
               ]}
               TextColor={LocationTheme.Color.Primary}
-            />
+            /> */}
             <h1 className="h2">{LocationData.about.headline}</h1>
             <Btn
               IconClass="plus"
