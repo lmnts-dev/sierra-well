@@ -18,87 +18,69 @@ import { Theme } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 // The Question Template
-const QuestionPage = props => {
-  let QuestionCategory = props.data.allSpecialsJson.edges[0].node.category;
-  let AllCategories = props.data.allQuestionCategoriesJson.edges;
+const SpecialsArticlePage = props => {
 
   return (
-    <>
-      {AllCategories.map((Category, index) => {
-        if (Category.node.Name == QuestionCategory) {
-          return (
-            <QuestionTemplate
-              PageTheme={Category.node.PageTheme}
-              BgQuery="placeholder_bg_4.jpg"
-              Location={props.location.href}
-              AllCategories={AllCategories}
-              CategorySlug={Category.node.Slug}
-              QuestionData={props.data.allSpecialsJson.edges[0].node}
-              key={index}
-            />
-          );
-        } else {
-          return null;
-        }
-      })}
-    </>
+    <h1>
+      It's alive!
+    </h1>
   );
 };
 
-export default QuestionPage;
+export default SpecialsArticlePage;
 
 // GraphQL Queries
 /////////////////////////////////////////////////////////////////////
-export const query = graphql`
-  query($Slug: String!) {
+// export const query = graphql`
+//   query($Slug: String!) {
 
-    allSpecialsJson(filter: { slug: { eq: $Slug } }) {
-      edges {
-        node {
-          id
-          slug
-          coverImage
-          date
-          author
-          title
-          category
-          tags
-          shortAnswer
-          longAnswer
-        }
-      }
-    }
+//     allSpecialsJson(filter: { slug: { eq: $Slug } }) {
+//       edges {
+//         node {
+//           id
+//           slug
+//           coverImage
+//           date
+//           author
+//           title
+//           category
+//           tags
+//           shortAnswer
+//           longAnswer
+//         }
+//       }
+//     }
 
-    allQuestionCategoriesJson {
-      edges {
-        node {
-          id
-          Name
-          Icon
-          Headline
-          Slug
-          Tags {
-            Name
-            Icon
-            Slug
-          }
-          Breadcrumb {
-            Destination
-            Label
-          }
-          PageTheme {
-            Color {
-              Background
-              Primary
-              Secondary
-              Tertiary
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+//     allQuestionCategoriesJson {
+//       edges {
+//         node {
+//           id
+//           Name
+//           Icon
+//           Headline
+//           Slug
+//           Tags {
+//             Name
+//             Icon
+//             Slug
+//           }
+//           Breadcrumb {
+//             Destination
+//             Label
+//           }
+//           PageTheme {
+//             Color {
+//               Background
+//               Primary
+//               Secondary
+//               Tertiary
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

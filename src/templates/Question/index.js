@@ -51,7 +51,6 @@ export default QuestionPage;
 /////////////////////////////////////////////////////////////////////
 export const query = graphql`
   query($Slug: String!) {
-
     allQuestionsJson(filter: { slug: { eq: $Slug } }) {
       edges {
         node {

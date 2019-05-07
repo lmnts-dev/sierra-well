@@ -80,12 +80,12 @@ export const SuggestionListStyle = styled.div`
     li {
       display: inline-block;
       margin-right: calc(${Root.Size} / 4);
-      font-size: .8rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
 
       &:first-child {
-        opacity: .3;
+        opacity: 0.3;
       }
 
       .btn {
@@ -93,7 +93,7 @@ export const SuggestionListStyle = styled.div`
         left: 0;
         .btn-inner {
           height: calc(${Root.Button.Size} * 0.7);
-          font-size: .8rem;
+          font-size: 0.8rem;
           text-transform: uppercase;
           letter-spacing: 1px;
           font-weight: normal;

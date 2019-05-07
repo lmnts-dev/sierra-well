@@ -85,18 +85,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
 
-        allSpecialsJson {
-          edges {
-            node {
-              id
-              slug
-              coverImage
-              category
-              tags
-            }
-          }
-        }
-
         allLocationsJson {
           edges {
             node {
@@ -109,6 +97,18 @@ exports.createPages = ({ graphql, actions }) => {
               nearby {
                 slug
                 name
+              }
+            }
+          }
+        }
+
+        allPrismicSpecial {
+          edges {
+            node {
+              id
+              uid
+              data {
+                category
               }
             }
           }
@@ -221,7 +221,7 @@ exports.createPages = ({ graphql, actions }) => {
       // Create our Specials Pages
       const specialTemplate = path.resolve(`src/templates/Special/index.js`);
 
-      _.each(result.data.allSpecialsJson.edges, edge => {
+      _.each(result.data.allPrismicSpecial.edges, edge => {
         // Gatsby uses Redux to manage its internal state.
         // Plugins and sites can use functions like "createPage"
         // to interact with Gatsby.
@@ -235,11 +235,12 @@ exports.createPages = ({ graphql, actions }) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/specials/${slugify(edge.node.category)}/${edge.node.slug}/`,
+          path: `/specials/${slugify(edge.node.data.category)}/${
+            edge.node.uid
+          }/`,
           component: slash(specialTemplate),
           context: {
-            Slug: edge.node.slug,
-            CoverImage: edge.node.coverImage,
+            Id: edge.node.id,
           },
         });
       });
@@ -438,48 +439,17 @@ exports.createPages = ({ graphql, actions }) => {
         // Create our location-specifc Specials Pages
         const specialTemplate = path.resolve(`src/templates/Special/index.js`);
 
-        _.each(result.data.allSpecialsJson.edges, special => {
-          // Gatsby uses Redux to manage its internal state.
-          // Plugins and sites can use functions like "createPage"
-          // to interact with Gatsby.
-          // We are using 'lodash' above for the _.each function. Read more:
-          // https://lodash.com/docs/4.17.11#forEach
-
-          // Use Gatsby's createPage() function. Read more:
-          // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+        _.each(result.data.allPrismicSpecial.edges, special => {
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/locations/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
-            }/specials/${special.node.slug}/`,
+            }/specials/${special.node.uid}/`,
             component: slash(specialTemplate),
             context: {
-              Slug: special.node.slug,
-              CoverImage: special.node.coverImage,
+              Id: special.node.id,
             },
           });
         });
-
-        // Hypothetical Specials Postings:
-        // _.each(result.data.allQuestionsJson.edges, special => {
-        //   // Create specials landing pages.
-        //   createPage({
-        //     // Each page is required to have a `path` as well
-        //     // as a template component. The `context` is
-        //     // optional but is often necessary so the template
-        //     // can query data specific to each page.
-        //     path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-        //       edge.node.slug
-        //     }/specials/${special.node.slug}`,
-        //     component: slash(locationSpecialTemplate),
-        //     context: {
-        //       Slug: edge.node.slug,
-        //     },
-        //   });
-        // });
 
         ////////////////////////////////////////////////////////////////////////////////////
 
@@ -648,7 +618,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           ////////////////////////////////////////////////////////////////////////////////////
 
-          // Create nearby specials pages.
+          // Create nearby specials collection pages.
           createPage({
             // Each page is required to have a `path` as well
             // as a template component. The `context` is
@@ -665,31 +635,20 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
 
+          // Create nearby specials article pages.
+
           const nearbySpecialTemplate = path.resolve(
             `src/templates/Special/index.js`
           );
 
-          _.each(result.data.allSpecialsJson.edges, special => {
-            // Gatsby uses Redux to manage its internal state.
-            // Plugins and sites can use functions like "createPage"
-            // to interact with Gatsby.
-            // We are using 'lodash' above for the _.each function. Read more:
-            // https://lodash.com/docs/4.17.11#forEach
-
-            // Use Gatsby's createPage() function. Read more:
-            // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+          _.each(result.data.allPrismicSpecial.edges, special => {
             createPage({
-              // Each page is required to have a `path` as well
-              // as a template component. The `context` is
-              // optional but is often necessary so the template
-              // can query data specific to each page.
               path: `/locations/${edge.node.geography.state.toLowerCase()}/${
                 edge.node.slug
-              }/${nearby.slug}/specials/${special.node.slug}/`,
+              }/${nearby.slug}/specials/${special.node.uid}/`,
               component: slash(nearbySpecialTemplate),
               context: {
-                Slug: special.node.slug,
-                CoverImage: special.node.coverImage,
+                Id: special.node.id,
               },
             });
           });

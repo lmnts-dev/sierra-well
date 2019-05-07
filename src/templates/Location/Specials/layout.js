@@ -46,7 +46,6 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
       LocationData={LocationData}
       Location={Location}
     >
-
       {/* ///////////// */}
 
       {/* ///////////// */}

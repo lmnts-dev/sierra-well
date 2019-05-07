@@ -45,20 +45,17 @@ const PageTabs = ({
 
           // Helper function to match our locations.
           function matchPath(destination, currentLocation) {
-
             // If location & destination match:
             if (destination == currentLocation) {
               let className = 'active';
               return className;
             } else {
-
               // Check and see if our destination matches without the
               // last `/` of the url. I.e. `locations/reno vs locations/reno/`
               if (destination == currentLocation.slice(0, -1)) {
                 let className = 'active';
                 return className;
               } else {
-
                 // Then inactive:
                 let className = 'inactive';
                 return 'inactive';
@@ -76,13 +73,6 @@ const PageTabs = ({
                 Destination={DestinationPath}
                 TextColor={TextColor}
               />
-              {console.log('DestinationPath: ' + DestinationPath)}
-              {console.log('LocationPath: ' + LocationPath)}
-              {console.log('LocationPathWithSlash: ' + LocationPathWithSlash)}
-              {console.log(
-                'ClassName: ' +
-                  matchPath(DestinationPath, LocationPathWithSlash)
-              )}
             </li>
           );
         })}

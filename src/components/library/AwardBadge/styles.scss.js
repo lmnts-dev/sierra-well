@@ -33,13 +33,13 @@ export const AwardBadgeStyle = styled.div`
   }
 
   span {
-    margin-top: calc(${Theme.Base.Size.Sm} * .75);
-    padding-top: calc(${Theme.Base.Size.Sm} * .75);
+    margin-top: calc(${Theme.Base.Size.Sm} * 0.75);
+    padding-top: calc(${Theme.Base.Size.Sm} * 0.75);
     text-align: center;
     width: 100%;
     position: relative;
     font-weight: bold;
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1.3;
 
     &:before {
@@ -55,7 +55,7 @@ export const AwardBadgeStyle = styled.div`
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     left: 3%;
     right: 3%;

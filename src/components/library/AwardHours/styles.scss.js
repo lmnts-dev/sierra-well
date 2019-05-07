@@ -18,11 +18,12 @@ export const AwardHoursStyle = styled.div`
   justify-content: flex-end;
   align-items: stretch;
   flex: 1;
-  
+
   .simple-list {
     padding-left: calc(${Root.Size} / 2);
     margin-left: calc(${Root.Size} / 2);
-    border-left: 1px solid ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+    border-left: 1px solid
+      ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     display: flex;
     align-items: center;
     ul {
@@ -47,7 +48,7 @@ AwardHoursStyle.Item = styled.li`
   span {
     display: block;
     &:first-child {
-      opacity: .6;
+      opacity: 0.6;
       font-size: 1.2rem;
       padding-bottom: calc(${Theme.Base.Size.Sm} / 2);
     }

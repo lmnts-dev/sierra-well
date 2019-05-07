@@ -28,10 +28,7 @@ const AwardHours = ({ Hours, TextColor }) => (
       BgColor={Theme.Color.Primary}
       TextColor={Theme.Color.White}
     />
-    <SimpleList
-      TextColor={TextColor}
-      List={Hours}
-    />
+    <SimpleList TextColor={TextColor} List={Hours} />
   </AwardHoursStyle>
 );
 
@@ -39,4 +36,3 @@ export default AwardHours;
 
 //////////////////////////////////////////////////////////////////////
 // End Component
-

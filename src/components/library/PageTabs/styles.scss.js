@@ -91,7 +91,7 @@ export const PageTabsStyle = styled.div`
           font-weight: normal;
           padding: 0;
           box-shadow: none;
-          opacity: .6;
+          opacity: 0.6;
 
           &:hover {
             box-shadow: none;

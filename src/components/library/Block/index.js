@@ -28,7 +28,7 @@ const Block = ({
   BgColor,
   TextColor,
   JustifyContent,
-  Flex
+  Flex,
 }) => (
   <BlockStyle
     className={className ? className + ' block' : 'block'}

@@ -52,7 +52,7 @@ export const MenuHeroStyle = styled.div`
   }
 
   .award-hours {
-    flex: .5;
+    flex: 0.5;
   }
 `;
 
