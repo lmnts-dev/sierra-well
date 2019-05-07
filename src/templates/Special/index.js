@@ -20,67 +20,72 @@ import { Theme } from 'constants/Theme';
 // The Question Template
 const SpecialsArticlePage = props => {
 
+  const node = props.data.allPrismicSpecial.edges[0].node;
+
   return (
-    <h1>
-      It's alive!
-    </h1>
+    <>
+      <h1>{node.data.title.text}</h1>
+      {console.log(node.data)}
+    </>
   );
 };
 
 export default SpecialsArticlePage;
 
 // GraphQL Queries
-/////////////////////////////////////////////////////////////////////
-// export const query = graphql`
-//   query($Slug: String!) {
+// ///////////////////////////////////////////////////////////////////
+export const query = graphql`
+  query($Id: String!) {
+    allPrismicSpecial(filter: { id: { eq: $Id } }) {
+      edges {
+        node {
+          id
+          data {
+            title {
+              text
+            }
+            description
+            category
+            tags
+            color_background
+            color_primary
+            color_secondary
+            color_tertiary
+            elements {
+              ... on PrismicSpecialElementsHero {
+                slice_type
+                primary {
+                  body_text
+                  text_alignment
+                  background_color
+                  text_color
+                  tint_color
+                  tint_opacity
+                  breadcrumb
+                  cta_label
+                  cta_bg_color
+                  cta_text_color
+                  cta_destination
+                  padding
+                }
+              }
+              ... on PrismicSpecialElementsSimpleSection {
+                slice_type
+                primary {
+                  subheadline
+                  text_color
+                  background_color
+                  text_alignment
+                  padding
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
-//     allSpecialsJson(filter: { slug: { eq: $Slug } }) {
-//       edges {
-//         node {
-//           id
-//           slug
-//           coverImage
-//           date
-//           author
-//           title
-//           category
-//           tags
-//           shortAnswer
-//           longAnswer
-//         }
-//       }
-//     }
-
-//     allQuestionCategoriesJson {
-//       edges {
-//         node {
-//           id
-//           Name
-//           Icon
-//           Headline
-//           Slug
-//           Tags {
-//             Name
-//             Icon
-//             Slug
-//           }
-//           Breadcrumb {
-//             Destination
-//             Label
-//           }
-//           PageTheme {
-//             Color {
-//               Background
-//               Primary
-//               Secondary
-//               Tertiary
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-//////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////
 // End Component
