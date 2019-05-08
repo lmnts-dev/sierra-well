@@ -1,5 +1,6 @@
 // Castle.js
 // This is the page builder for Elements.
+// Future regex for matching {{ variables }} https://regex101.com/r/xgOodL/1
 
 // Core
 import React from 'react';
@@ -37,7 +38,7 @@ class CastleBuilder extends React.Component {
             case 'hero':
               return (
                 <CastleHero
-                  data={brick.primary}
+                  data={brick}
                   location={location}
                   key={index}
                 />

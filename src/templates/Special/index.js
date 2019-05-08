@@ -82,10 +82,6 @@ export const query = graphql`
                   text_color
                   tint_color
                   tint_opacity
-                  cta_label
-                  cta_bg_color
-                  cta_text_color
-                  cta_destination
                   padding
                   social_sharing
                   breadcrumb_url
@@ -100,6 +96,13 @@ export const query = graphql`
                       }
                     }
                   }
+                }
+                items {
+                  cta_label
+                  cta_destination
+                  cta_bg_color
+                  cta_text_color
+                  cta_icon
                 }
               }
               ... on PrismicSpecialElementsSimpleSection {

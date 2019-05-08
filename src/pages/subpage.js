@@ -88,7 +88,7 @@ const Index = props => (
           />
         </Block>
         <Block className="hero-img">
-          <ImgMatch src="placeholder_bg_4.jpg" alt="100% Free Delivery" />
+          <ImgMatch src="hero-phone.png" alt="100% Free Delivery" />
         </Block>
       </SimpleHero>
 
