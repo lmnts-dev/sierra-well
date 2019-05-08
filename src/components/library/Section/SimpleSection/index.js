@@ -25,7 +25,7 @@ const SimpleSection = ({
   BgColor,
   Style,
   TextColor,
-  BgQuery,
+  BgMatch,
   BgAlt,
   BgTint,
   FluidHeight,
@@ -44,9 +44,9 @@ const SimpleSection = ({
       >
         {children}
       </SimpleSectionStyle.Content>
-      {BgQuery ? (
+      {BgMatch ? (
         <div className="section-img">
-          <ImgMatch src={BgQuery} AltText={BgAlt} />
+          <ImgMatch src={BgMatch} AltText={BgAlt} />
         </div>
       ) : null}
     </SimpleSectionStyle.Inner>

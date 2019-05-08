@@ -18,6 +18,7 @@ import SimpleHeroStyle from './styles.scss';
 
 // Components
 import ImgMatch from 'components/core/ImgMatch';
+import ImgQuery from 'components/core/ImgQuery';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -36,6 +37,7 @@ const SimpleHero = ({
   Tint,
   Padding,
   Size,
+  BgMatch,
   BgQuery,
   BgAlt,
   Flex,
@@ -62,9 +64,14 @@ const SimpleHero = ({
     >
       {children}
     </HeroInner>
+    {BgMatch ? (
+      <div className="section-img">
+        <ImgMatch src={BgMatch} AltText={BgAlt} className="hero-img" />
+      </div>
+    ) : null}
     {BgQuery ? (
       <div className="section-img">
-        <ImgMatch src={BgQuery} AltText={BgAlt} className="hero-img" />
+        <ImgQuery src={BgQuery} AltText="Hero Alt" className="hero-img" />
       </div>
     ) : null}
   </SimpleHeroStyle>

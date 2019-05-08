@@ -51,7 +51,7 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
 
       <SimpleSection
         BgColor={Theme.Color.Snow}
-        BgQuery="placeholder_bg_4.jpg"
+        BgMatch="placeholder_bg_4.jpg"
         BgAlt="Our Awesome Alt Tag"
         FluidHeight={true}
         Gutter={[0, 0, 0, 0]}
@@ -95,7 +95,7 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
         <Block
           Style="centered"
           BgColor={Theme.Color.White}
-          BgQuery="placeholder_bg_4.jpg"
+          BgMatch="placeholder_bg_4.jpg"
           BgAlt="Our Awesome Alt Tag"
           Width={0.5}
         />

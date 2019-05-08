@@ -29,7 +29,7 @@ const QuestionPage = props => {
           return (
             <QuestionTemplate
               PageTheme={Category.node.PageTheme}
-              BgQuery="placeholder_bg_4.jpg"
+              BgMatch="placeholder_bg_4.jpg"
               Location={props.location.href}
               AllCategories={AllCategories}
               CategorySlug={Category.node.Slug}

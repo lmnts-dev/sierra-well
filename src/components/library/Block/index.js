@@ -22,7 +22,7 @@ const Block = ({
   Width,
   Padding,
   AlignItems,
-  BgQuery,
+  BgMatch,
   BgAlt,
   BgTint,
   BgColor,
@@ -47,10 +47,10 @@ const Block = ({
     {children ? <div className="block-content">{children}</div> : null}
 
     {/* For Background Images */}
-    {BgQuery ? (
+    {BgMatch ? (
       <div className="block-img-wrap">
         <div className="block-img">
-          <ImgMatch src={BgQuery} AltText={BgAlt} />
+          <ImgMatch src={BgMatch} AltText={BgAlt} />
         </div>
       </div>
     ) : null}

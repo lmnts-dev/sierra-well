@@ -10,18 +10,18 @@ import Img from 'gatsby-image/withIEPolyfill';
 
 const ImgQuery = ({
   data,
-  query,
-  alt,
-  imgClass,
+  src,
+  AltText,
+  className,
   objectFit,
   objectPosition,
 }) => (
   <Img
-    fluid={query}
+    fluid={src}
     objectFit={objectFit ? objectFit : 'cover'}
     objectPosition={objectPosition ? objectPosition : '50% 50%'}
-    alt={alt}
-    className={imgClass ? imgClass : 'img'}
+    AltText={AltText}
+    className={className ? className : 'img'}
     fadeIn={true}
   />
 );

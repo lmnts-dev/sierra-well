@@ -174,19 +174,7 @@ exports.createPages = ({ graphql, actions }) => {
       const questionTemplate = path.resolve(`src/templates/Question/index.js`);
 
       _.each(result.data.allQuestionsJson.edges, edge => {
-        // Gatsby uses Redux to manage its internal state.
-        // Plugins and sites can use functions like "createPage"
-        // to interact with Gatsby.
-        // We are using 'lodash' above for the _.each function. Read more:
-        // https://lodash.com/docs/4.17.11#forEach
-
-        // Use Gatsby's createPage() function. Read more:
-        // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/learn/${slugify(edge.node.category)}/${edge.node.slug}/`,
           component: slash(questionTemplate),
           context: {
@@ -200,10 +188,6 @@ exports.createPages = ({ graphql, actions }) => {
         //  Create our Tag Pages
         _.each(edge.node.tags, tag => {
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/learn/${slugify(edge.node.category)}/${slugify(tag)}/${
               edge.node.slug
             }/`,
@@ -222,19 +206,7 @@ exports.createPages = ({ graphql, actions }) => {
       const specialTemplate = path.resolve(`src/templates/Special/index.js`);
 
       _.each(result.data.allPrismicSpecial.edges, edge => {
-        // Gatsby uses Redux to manage its internal state.
-        // Plugins and sites can use functions like "createPage"
-        // to interact with Gatsby.
-        // We are using 'lodash' above for the _.each function. Read more:
-        // https://lodash.com/docs/4.17.11#forEach
-
-        // Use Gatsby's createPage() function. Read more:
-        // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/specials/${slugify(edge.node.data.category)}/${
             edge.node.uid
           }/`,
@@ -259,23 +231,10 @@ exports.createPages = ({ graphql, actions }) => {
       );
 
       _.each(result.data.allLocationsJson.edges, edge => {
-        // Gatsby uses Redux to manage its internal state.
-        // Plugins and sites can use functions like "createPage"
-        // to interact with Gatsby.
-        // We are using 'lodash' above for the _.each function. Read more:
-        // https://lodash.com/docs/4.17.11#forEach
-
-        // Use Gatsby's createPage() function. Read more:
-        // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
-
         ////////////////////////////////////////////////////////////////////////////////////
 
         // Create main landing pages.
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/`,
@@ -289,10 +248,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create main menu pages. with /locations/ root url
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/menu/`,
@@ -305,10 +260,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // 'online' context
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/menu/online`,
@@ -321,10 +272,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // 'pick-up' context
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/menu/pick-up`,
@@ -337,10 +284,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // 'delivery' context
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/menu/delivery`,
@@ -355,10 +298,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create menu pages with /menu/ root url.
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/menu/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/`,
@@ -371,10 +310,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // 'online' context
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/menu/online/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/`,
@@ -387,10 +322,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // 'pick-up' context
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/menu/pick-up/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/`,
@@ -403,10 +334,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // 'online' context
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/menu/delivery/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/`,
@@ -421,10 +348,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create specials collection pages.
         createPage({
-          // Each page is required to have a `path` as well
-          // as a template component. The `context` is
-          // optional but is often necessary so the template
-          // can query data specific to each page.
           path: `/locations/${edge.node.geography.state.toLowerCase()}/${
             edge.node.slug
           }/specials/`,
@@ -459,23 +382,10 @@ exports.createPages = ({ graphql, actions }) => {
         );
 
         _.each(edge.node.nearby, nearby => {
-          // Gatsby uses Redux to manage its internal state.
-          // Plugins and sites can use functions like "createPage"
-          // to interact with Gatsby.
-          // We are using 'lodash' above for the _.each function. Read more:
-          // https://lodash.com/docs/4.17.11#forEach
-
-          // Use Gatsby's createPage() function. Read more:
-          // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
-
           ////////////////////////////////////////////////////////////////////////////////////
 
           // Create Nearby Menu Pages with /locations/ root url
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/locations/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/menu/`,
@@ -490,10 +400,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // 'online' context
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/locations/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/menu/online/`,
@@ -508,10 +414,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // 'delivery' context
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/locations/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/menu/delivery/`,
@@ -526,10 +428,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // 'pick-up' context
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/locations/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/menu/pick-up/`,
@@ -546,10 +444,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // Create Menu Pages with root /menu/ url
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/menu/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/`,
@@ -564,10 +458,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // 'online' context
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/menu/online/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/`,
@@ -582,10 +472,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // 'pickup' context
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/menu/pick-up/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/`,
@@ -600,10 +486,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // 'delivery' context
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/menu/delivery/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/`,
@@ -620,10 +502,6 @@ exports.createPages = ({ graphql, actions }) => {
 
           // Create nearby specials collection pages.
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
             path: `/locations/${edge.node.geography.state.toLowerCase()}/${
               edge.node.slug
             }/${nearby.slug}/specials/`,

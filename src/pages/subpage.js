@@ -155,7 +155,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.White}
-            BgQuery="placeholder_bg_4.jpg"
+            BgMatch="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -182,7 +182,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.White}
-            BgQuery="placeholder_bg_4.jpg"
+            BgMatch="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -212,7 +212,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.Snow}
-            BgQuery="placeholder_bg_4.jpg"
+            BgMatch="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -230,7 +230,7 @@ const Index = props => (
           <Block
             Style="centered"
             BgColor={Theme.Color.Snow}
-            BgQuery="placeholder_bg_4.jpg"
+            BgMatch="placeholder_bg_4.jpg"
             BgAlt="Our Awesome Alt Tag"
             Width={0.5}
           />
@@ -278,7 +278,7 @@ const Index = props => (
 
         <SimpleSection
           BgColor={Theme.Color.Black}
-          BgQuery="placeholder_bg_4.jpg"
+          BgMatch="placeholder_bg_4.jpg"
           BgTint={0.3}
           BgAlt="Our Awesome Alt Tag"
           TextColor={Theme.Color.White}
@@ -433,7 +433,7 @@ const Index = props => (
 
         <SimpleSection
           BgColor={Theme.Color.Snow}
-          BgQuery="placeholder_bg_4.jpg"
+          BgMatch="placeholder_bg_4.jpg"
           BgAlt="Our Awesome Alt Tag"
           FluidHeight={true}
           Gutter={[0, 0, 0, 0]}

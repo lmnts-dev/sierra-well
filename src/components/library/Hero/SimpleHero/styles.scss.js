@@ -90,6 +90,9 @@ const SimpleHeroStyle = styled.div`
     img, .img {
       height: 100%;
     }
+    .hero-img, .gatsby-image-wrapper {
+      position: unset !important;
+    }
   }
 `;
 

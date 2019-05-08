@@ -11,20 +11,14 @@ import Layout from 'components/core/Layout';
 
 // Components
 import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
-
-// Hero Components
 import SimpleHero from 'components/library/Hero/SimpleHero';
-
-//// Section Components
-import SimpleSection from 'components/library/Section/SimpleSection';
-import LearnSection from 'components/library/Section/LearnSection';
-import SplitSection from 'components/library/Section/SplitSection';
-
-//// Misc. Components
-import Bread from 'components/library/Breadcrumb';
-import QuestionFooter from 'components/library/QuestionFooter';
 import SocialStrip from 'components/library/SocialStrip';
-import Btn from 'components/library/Btn';
+import WidgetSection from 'components/library/Section/WidgetSection';
+import Bread from 'components/library/Breadcrumb';
+import Btn from 'components/library/Btn/';
+
+// Castle.js by L&M
+import Castle from 'components/library/Castle';
 
 // Elements
 import Block from 'components/library/Block';
@@ -35,166 +29,212 @@ import { Theme } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Slugify Helper
+const DefaultTemplate = ({ node, data }) => (
+  <>
+    <SimpleHero
+      Padding={[4, 0, 4, 0]}
+      BgQuery={
+        node.cover_image.localFile
+          ? node.cover_image.localFile.childImageSharp.fluid
+          : false
+      }
+      Background={
+        node.color_background ? node.color_background : Theme.Color.Background
+      }
+      BgAlt={node.title.text ? node.title.text : 'Hero Image'}
+      TextColor={node.color_primary ? node.color_primary : Theme.Color.White}
+      Tint="0.5"
+    >
+      <Block AlignItems="flex-start" Width={1} maxWidth={0.75}>
+        <Bread
+          Crumbs={[{ Destination: '/specials', Label: 'Specials' }]}
+          TextColor={node.color_primary}
+        />
+        <h1>{node.title.text}</h1>
+        {node.description ? <p className="p-lg">{node.description} </p> : null}
+        <SocialStrip
+          Margin={[0.45, 0, 0, 0]}
+          Location={data.location.href}
+          TextColor={
+            node.color_primary ? node.color_primary : Theme.Color.White
+          }
+        />
+      </Block>
+    </SimpleHero>
 
-function slugify(string) {
-  const a = 'àáäâãåăæçèéëêǵḧìíïîḿńǹñòóöôœṕŕßśșțùúüûǘẃẍÿź·/_,:;';
-  const b = 'aaaaaaaaceeeeghiiiimnnnoooooprssstuuuuuwxyz------';
-  const p = new RegExp(a.split('').join('|'), 'g');
-  return string
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-    .replace(/&/g, '-and-') // Replace & with ‘and’
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-    .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-+$/, ''); // Trim - from end of text
-}
+    {/* ///////////// */}
 
-// Post Details Snippet
-const PostDetails = ({ Author, Time }) => (
-  <span className="post-details">
-    Answered <time itemProp="datePublished">{Time}</time> by{' '}
-    <span itemProp="author">{Author}</span>
-  </span>
+    <WidgetSection
+      BgColor={Theme.Color.White}
+      Widgets={[
+        {
+          // Begin WidgetContent
+          Flex: 1,
+          WidgetContent: [
+            {
+              Destination: '/menu',
+              Style: 'Generic',
+              Meta: {
+                Generic: {
+                  BgColor: Theme.Color.Nightsky,
+                  BgImage: '',
+                  Subhead: '',
+                  Headline: 'Menu',
+                  TextColor: Theme.Color.White,
+                  IconColor: Theme.Color.Primary,
+                  IconName: 'plus', // FontAwesome Icon Name
+                  TintColor: '',
+                  TintOpacity: '',
+                  IconSize: '',
+                },
+              },
+            },
+          ],
+          // End WidgetContent
+        },
+        {
+          // Begin WidgetContent
+          Flex: 1,
+          WidgetContent: [
+            {
+              Destination: '/locations',
+              Style: 'Generic',
+              Meta: {
+                Generic: {
+                  BgColor: Theme.Color.Tahoe,
+                  BgImage: '',
+                  Subhead: '',
+                  Headline: 'Locations',
+                  TextColor: Theme.Color.White,
+                  IconColor: Theme.Color.White,
+                  IconName: 'map-marker-alt', // FontAwesome Icon Name
+                  TintColor: '',
+                  TintOpacity: '',
+                  IconSize: '',
+                },
+              },
+            },
+          ],
+          // End WidgetContent
+        },
+        {
+          // Begin WidgetContent
+          Flex: 1,
+          WidgetContent: [
+            {
+              Destination: '/learn',
+              Style: 'Generic',
+              Meta: {
+                Generic: {
+                  BgColor: Theme.Color.Mint,
+                  BgImage: '',
+                  Subhead: '',
+                  Headline: 'Q&A',
+                  TextColor: Theme.Color.Nightsky,
+                  IconColor: Theme.Color.Nightsky,
+                  IconName: 'book-open', // FontAwesome Icon Name
+                  TintColor: '',
+                  TintOpacity: '',
+                  IconSize: '',
+                },
+              },
+            },
+          ],
+          // End WidgetContent
+        },
+        {
+          // Begin WidgetContent
+          Flex: 1,
+          WidgetContent: [
+            {
+              Destination: '/specials',
+              Style: 'Generic',
+              Meta: {
+                Generic: {
+                  BgColor: Theme.Color.Primary,
+                  BgImage: '',
+                  Subhead: '',
+                  Headline: 'Specials',
+                  TextColor: Theme.Color.White,
+                  IconColor: Theme.Color.White,
+                  IconName: 'star', // FontAwesome Icon Name
+                  TintColor: '',
+                  TintOpacity: '',
+                  IconSize: '',
+                },
+              },
+            },
+          ],
+          // End WidgetContent
+        },
+      ]}
+    />
+
+    {/* ///////////// */}
+  </>
 );
 
-// Breadcrumb Tag List
-const TagList = ({ Tags, CategorySlug }) => {
-  // Tag Crumb Function
-  function tagCrumbs(baseUrl, categorySlug, list) {
-    let crumbs = list.map((tag, index) => {
-      if (index == 0) {
-        return {
-          Destination: '/' + baseUrl + '/' + categorySlug,
-          Label: categorySlug + ' Cannabis Questions',
-        };
-      } else {
-        return {
-          Destination: '/' + baseUrl + '/' + categorySlug + '/' + slugify(tag),
-          Label: tag,
-        };
-      }
-    });
-
-    return crumbs;
-  }
-
-  return (
-    <>
-      <Bread
-        Crumbs={tagCrumbs('learn', CategorySlug, Tags)}
-        TextColor={Theme.Color.White}
-      />
-    </>
-  );
-};
-
 // The Question Template
-const QuestionTemplate = ({
-  BgQuery,
-  PageTheme,
-  Location,
-  CategorySlug,
-  AllCategories,
-  QuestionData,
-}) => (
+const SpecialArticleTemplate = ({ data, node, elements }) => (
   <Layout
-    BgColor={PageTheme.Color.Background}
-    PrimaryColor={PageTheme.Color.Primary}
-    SecondaryColor={PageTheme.Color.Secondary}
-    TertiaryColor={PageTheme.Color.Tertiary}
+    BgColor={
+      node.color_background ? node.color_background : Theme.Color.Background
+    }
+    PrimaryColor={
+      node.color_primary ? node.color_primary : Theme.Color.Nightsky
+    }
+    SecondaryColor={
+      node.color_secondary ? node.color_secondary : Theme.Color.Nightsky
+    }
+    TertiaryColor={
+      node.color_tertiary ? node.color_tertiary : Theme.Color.White
+    }
   >
     <SubLevelPage
-      BgColor={PageTheme.Color.Background}
-      PrimaryColor={PageTheme.Color.Primary}
-      SecondaryColor={PageTheme.Color.Secondary}
-      TertiaryColor={PageTheme.Color.Tertiary}
+      BgColor={
+        node.color_background ? node.color_background : Theme.Color.Background
+      }
+      PrimaryColor={
+        node.color_primary ? node.color_primary : Theme.Color.Nightsky
+      }
+      SecondaryColor={
+        node.color_secondary ? node.color_secondary : Theme.Color.Nightsky
+      }
+      TertiaryColor={
+        node.color_tertiary ? node.color_tertiary : Theme.Color.White
+      }
     >
       {/* Schema.org BlogPosting */}
       {/* Read more: https://schema.org/BlogPosting */}
 
-      <article itemScope itemType="http://schema.org/BlogPosting">
-        {/* ///////////// */}
-
-        <SimpleHero
-          Size="2"
-          BgQuery={BgQuery}
-          BgAlt={QuestionData.title}
-          TextColor={Theme.Color.White}
-          Tint="0.5"
-        >
-          <Block AlignItems="flex-start" Width={1} maxWidth={0.75}>
-            <TagList Tags={QuestionData.tags} CategorySlug={CategorySlug} />
-
-            <h1 itemProp="name">{QuestionData.title}</h1>
-            <SocialStrip
-              Margin={[0, 0, 0, 0]}
-              Location={Location}
-              TextColor={Theme.Color.White}
-            />
-          </Block>
-        </SimpleHero>
-
-        {/* Begin page content. */}
-        {/* ///////////// */}
-        <SubLevelPageContent
-          BgColor={Theme.Color.Background}
-          TextColor={Theme.Color.White}
-          ItemProp="articleBody"
-        >
-          {/* ///////////// */}
-
-          <SimpleSection
-            BgColor={Theme.Color.Snow}
-            TextColor={Theme.Color.Nightsky}
-          >
-            <Block Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-              <PostDetails
-                Time={QuestionData.date}
-                Author={QuestionData.author}
-              />
-              <h3>{QuestionData.shortAnswer}</h3>
-              <p className="p-md">{QuestionData.longAnswer}</p>
-            </Block>
-          </SimpleSection>
-
-          {/* ///////////// */}
-        </SubLevelPageContent>
-        {/* End page content. */}
-        {/* ///////////// */}
-      </article>
-
-      {/* The Related Categories. */}
+      {/* ///////////// */}
+      {/* Begin page content. */}
+      {/* ///////////// */}
       <SubLevelPageContent
-        BgColor={Theme.Color.Snow}
-        TextColor={Theme.Color.Nightsky}
-      >
-        <LearnSection
-          Prefix="More from "
-          Categories={AllCategories}
-          Filter={QuestionData.category.toLowerCase()}
-        />
-      </SubLevelPageContent>
-
-      {/* The Question / Category / Tag footer. */}
-      <SubLevelPageContent
-        BgColor={Theme.Color.White}
-        TextColor={Theme.Color.Nightsky}
+        BgColor={node.color_background}
+        TextColor={node.color_primary}
+        ItemProp="articleBody"
       >
         {/* ///////////// */}
 
-        <QuestionFooter />
+        {/* Check if elements exist. If so, run Castle. If not, display the default layout. */}
+        {elements ? (
+          <Castle Bricks={elements} Location={data.location.href} />
+        ) : (
+          <DefaultTemplate data={data} node={node} />
+        )}
+
+        {console.log(elements)}
 
         {/* ///////////// */}
       </SubLevelPageContent>
+      {/* End page content. */}
+      {/* ///////////// */}
     </SubLevelPage>
   </Layout>
 );
 
-export default QuestionTemplate;
+export default SpecialArticleTemplate;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

@@ -94,7 +94,7 @@ const TagList = ({ Tags, CategorySlug }) => {
 
 // The Question Template
 const QuestionTemplate = ({
-  BgQuery,
+  BgMatch,
   PageTheme,
   Location,
   CategorySlug,
@@ -121,7 +121,7 @@ const QuestionTemplate = ({
 
         <SimpleHero
           Size="2"
-          BgQuery={BgQuery}
+          BgMatch={BgMatch}
           BgAlt={QuestionData.title}
           TextColor={Theme.Color.White}
           Tint="0.5"
