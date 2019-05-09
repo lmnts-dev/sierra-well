@@ -27,37 +27,40 @@ import { Theme } from 'constants/Theme';
 // The CastleSimpleSection Component
 const CastleSimpleSection = ({ data, location }) => {
   const primaryData = data.primary;
-  const repeatableData = data.items;
+  const repeatableData = data.items.length > 0 ? data.items : 0;
+
+  const galleryImgQueries = data => {
+    if (data != 0) {
+      let queries = data.map((Query, index) => {
+        return {
+          Fluid: Query.src.localFile.childImageSharp.fluid
+            ? Query.src.localFile.childImageSharp.fluid
+            : false,
+          Alt: Query.src.alt,
+        };
+      });
+
+      return queries;
+    } else {
+      return 0;
+    }
+  };
 
   return (
     <CastleStickyGalleryStyle>
       <StickyScrollSection
-        BgColor={Theme.Color.White}
-        TextColor={Theme.Color.Nightsky}
+        BgColor={primaryData.background_color}
+        TextColor={primaryData.text_color}
         Content={{
-          Subheadline: 'Elements',
-          Headline: 'Hello Castle',
-          Body: 'Lorem ipsum solor sit dit imet...',
+          Subheadline: primaryData.subheadline,
+          Headline: primaryData.headline.text,
+          Body: primaryData.body_text,
         }}
-        Gallery={[
-          {
-            Src: 'placeholder_bg_3.jpg',
-            Alt: 'Lorem Ipsum',
-          },
-          {
-            Src: 'placeholder_bg_3.jpg',
-            Alt: 'Lorem Ipsum',
-          },
-          {
-            Src: 'placeholder_bg_3.jpg',
-            Alt: 'Lorem Ipsum',
-          },
-          {
-            Src: 'placeholder_bg_3.jpg',
-            Alt: 'Lorem Ipsum',
-          },
-        ]}
+        Flex={primaryData.direction == 'normal' ? 'row' : 'row-reverse'}
+        GalleryQueries={galleryImgQueries(repeatableData)}
       />
+      {console.log(galleryImgQueries(repeatableData))}
+      {/* {console.log(repeatableData)} */}
     </CastleStickyGalleryStyle>
   );
 };
@@ -85,36 +88,31 @@ export const query = graphql`
       elements {
         ... on PrismicSpecialElementsStickyGallery {
           slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicQuestionElementsStickyGalleryData on PrismicQuestion {
-    data {
-      elements {
-        ... on PrismicQuestionElementsStickyGallery {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicGenericPageElementsStickyGalleryData on PrismicGenericPage {
-    data {
-      elements {
-        ... on PrismicGenericPageElementsStickyGallery {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicLocationElementsStickyGalleryData on PrismicLocation {
-    data {
-      elements {
-        ... on PrismicLocationElementsStickyGallery {
-          slice_type
+          primary {
+            headline {
+              text
+            }
+            subheadline
+            direction
+            body_text
+            background_color
+            text_color
+          }
+          items {
+            src {
+              alt
+              copyright
+              url
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

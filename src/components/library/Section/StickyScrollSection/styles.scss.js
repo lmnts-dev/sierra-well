@@ -75,6 +75,7 @@ StickyScrollSectionStyle.Inner = styled(SectionInnerStyle)`
 
 StickyScrollSectionStyle.Content = styled(SectionContentStyle)`
   margin: 0 auto;
+  flex-direction: ${props => (props.Flex ? props.Flex : 'row')};
   justify-content: space-between;
   align-items: stretch;
   z-index: 2;

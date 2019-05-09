@@ -11,6 +11,7 @@ import styled from 'styled-components';
 
 // Components
 import ImgMatch from 'components/core/ImgMatch';
+import ImgQuery from 'components/core/ImgQuery';
 import Block from 'components/library/Block';
 
 // Constants
@@ -42,8 +43,9 @@ const StickyScrollSection = ({
   TextColor,
   Content,
   Gallery,
+  GalleryQueries,
   Gutter,
-  children,
+  Flex,
 }) => (
   <StickyScrollSectionStyle
     Style={Style}
@@ -52,18 +54,27 @@ const StickyScrollSection = ({
   >
     <ReleaseOverflow />
     <StickyScrollSectionStyle.Inner Gutter={Gutter}>
-      <StickyScrollSectionStyle.Content className="sticky-section">
+      <StickyScrollSectionStyle.Content Flex={Flex} className="sticky-section">
         <Block Padding={[0, 1, 0, 1]} className="sticky-block">
-          <span class="txt-caption">{Content.Subheadline}</span>
+          <span className="txt-caption">{Content.Subheadline}</span>
           <h2>{Content.Headline}</h2>
-          <p class="p-md">{Content.Body}</p>
+          <p className="p-md">{Content.Body}</p>
         </Block>
         <Block Padding={[0, 1, 0, 1]}>
           {Gallery
             ? Gallery.map((Img, index) => {
                 return (
-                  <div className="gallery-img">
+                  <div key="index" className="gallery-img">
                     <ImgMatch src={Img.Src} AltText={Img.Alt} />
+                  </div>
+                );
+              })
+            : null}
+          {GalleryQueries
+            ? GalleryQueries.map((query, index) => {
+                return (
+                  <div key="index" className="gallery-img">
+                    <ImgQuery src={query.Fluid} AltText={query.Alt} />
                   </div>
                 );
               })
