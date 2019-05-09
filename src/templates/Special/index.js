@@ -11,6 +11,9 @@ import { graphql } from 'gatsby';
 // Templates
 import SpecialArticleTemplate from './layout';
 
+// Load Castle Fragments
+import 'components/library/Castle';
+
 // Constants
 import { Theme } from 'constants/Theme';
 
@@ -43,6 +46,17 @@ export const query = graphql`
       edges {
         node {
           id
+
+          # Load our Castle Component data.
+          ...PrismicSpecialElementsHeroData
+          ...PrismicSpecialElementsFullSplitSectionData
+          ...PrismicSpecialElementsSimpleSectionData
+          ...PrismicSpecialElementsSplitSectionData
+          ...PrismicSpecialElementsStickyGalleryData
+          ...PrismicSpecialElementsSplitImageHeroData
+          ...PrismicSpecialElementsPromotionalStripData
+
+          # Load additional page data.
           data {
             title {
               text
@@ -66,56 +80,6 @@ export const query = graphql`
                   fluid(maxWidth: 1200) {
                     ...GatsbyImageSharpFluid
                   }
-                }
-              }
-            }
-            elements {
-              ... on PrismicSpecialElementsHero {
-                slice_type
-                primary {
-                  headline {
-                    text
-                  }
-                  body_text
-                  text_alignment
-                  background_color
-                  text_color
-                  tint_color
-                  tint_opacity
-                  padding
-                  social_sharing
-                  breadcrumb_url
-                  breadcrumb_label
-                  background_image {
-                    localFile {
-                      id
-                      childImageSharp {
-                        fluid(maxWidth: 1200) {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
-                    }
-                  }
-                }
-                items {
-                  cta_label
-                  cta_destination
-                  cta_bg_color
-                  cta_text_color
-                  cta_icon
-                }
-              }
-              ... on PrismicSpecialElementsSimpleSection {
-                slice_type
-                primary {
-                  headline {
-                    text
-                  }
-                  subheadline
-                  text_color
-                  background_color
-                  text_alignment
-                  padding
                 }
               }
             }
