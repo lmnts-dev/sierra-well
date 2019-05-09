@@ -1,0 +1,703 @@
+{
+  "Information": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "slug",
+        "placeholder": "unique-slug"
+      }
+    },
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name",
+        "placeholder": "Location name..."
+      }
+    },
+    "status_delivery": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Auto",
+          "Open",
+          "Closed"
+        ],
+        "default_value": "Auto",
+        "label": "Delivery Status ('auto' uses your store hours.)",
+        "placeholder": "Status..."
+      }
+    },
+    "status_store": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Auto",
+          "Open",
+          "Closed"
+        ],
+        "default_value": "Auto",
+        "label": "Store Status ('auto' uses your store hours.)",
+        "placeholder": "Store status..."
+      }
+    },
+    "geo_city": {
+      "type": "Text",
+      "config": {
+        "label": "City",
+        "placeholder": "City..."
+      }
+    },
+    "geo_state": {
+      "type": "Text",
+      "config": {
+        "label": "State",
+        "placeholder": "State..."
+      }
+    },
+    "geo_country": {
+      "type": "Text",
+      "config": {
+        "label": "Country",
+        "placeholder": "Country..."
+      }
+    },
+    "geo_location_address": {
+      "type": "Text",
+      "config": {
+        "label": "Address",
+        "placeholder": "123 S. Smith Street, #123"
+      }
+    },
+    "geo_location_state": {
+      "type": "Text",
+      "config": {
+        "label": "Address Line 2",
+        "placeholder": "Nowhere, KS 12345"
+      }
+    },
+    "hours": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "days": {
+            "type": "Text",
+            "config": {
+              "label": "Days",
+              "placeholder": "Mon - Sat, Sunday, etc..."
+            }
+          },
+          "start_time": {
+            "type": "Select",
+            "config": {
+              "options": [
+                "0:00:00",
+                "0:30:00",
+                "1:00:00",
+                "1:30:00",
+                "2:00:00",
+                "2:30:00",
+                "3:00:00",
+                "3:30:00",
+                "4:00:00",
+                "4:30:00",
+                "5:00:00",
+                "5:30:00",
+                "6:00:00",
+                "6:30:00",
+                "7:00:00",
+                "7:30:00",
+                "8:00:00",
+                "8:30:00",
+                "9:00:00",
+                "9:30:00",
+                "10:00:00",
+                "10:30:00",
+                "11:00:00",
+                "11:30:00",
+                "12:00:00",
+                "12:30:00",
+                "13:00:00",
+                "13:30:00",
+                "14:00:00",
+                "14:30:00",
+                "15:00:00",
+                "15:30:00",
+                "16:00:00",
+                "16:30:00",
+                "17:00:00",
+                "17:30:00",
+                "18:00:00",
+                "18:30:00",
+                "19:00:00",
+                "19:30:00",
+                "20:00:00",
+                "20:30:00",
+                "21:00:00",
+                "21:30:00",
+                "22:00:00",
+                "22:30:00",
+                "23:00:00",
+                "23:30:00",
+                "24:00:00"
+              ],
+              "label": "Start Time"
+            }
+          },
+          "end_time": {
+            "type": "Select",
+            "config": {
+              "options": [
+                "0:00:00",
+                "0:30:00",
+                "1:00:00",
+                "1:30:00",
+                "2:00:00",
+                "2:30:00",
+                "3:00:00",
+                "3:30:00",
+                "4:00:00",
+                "4:30:00",
+                "5:00:00",
+                "5:30:00",
+                "6:00:00",
+                "6:30:00",
+                "7:00:00",
+                "7:30:00",
+                "8:00:00",
+                "8:30:00",
+                "9:00:00",
+                "9:30:00",
+                "10:00:00",
+                "10:30:00",
+                "11:00:00",
+                "11:30:00",
+                "12:00:00",
+                "12:30:00",
+                "13:00:00",
+                "13:30:00",
+                "14:00:00",
+                "14:30:00",
+                "15:00:00",
+                "15:30:00",
+                "16:00:00",
+                "16:30:00",
+                "17:00:00",
+                "17:30:00",
+                "18:00:00",
+                "18:30:00",
+                "19:00:00",
+                "19:30:00",
+                "20:00:00",
+                "20:30:00",
+                "21:00:00",
+                "21:30:00",
+                "22:00:00",
+                "22:30:00",
+                "23:00:00",
+                "23:30:00",
+                "24:00:00"
+              ],
+              "label": "End Time"
+            }
+          }
+        },
+        "label": "Hours"
+      }
+    },
+    "meta_reserve_spot_link": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Reserve Spot Link",
+        "placeholder": "https://..."
+      }
+    },
+    "meta_menu": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Order Menu iFrame Url",
+        "placeholder": "https://..."
+      }
+    },
+    "meta_google_maps_url": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Google Maps Url",
+        "placeholder": "https://..."
+      }
+    },
+    "nearby_locations": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "nearby_name": {
+            "type": "Text",
+            "config": {
+              "label": "Name",
+              "placeholder": "Name..."
+            }
+          },
+          "nearby_slug": {
+            "type": "Text",
+            "config": {
+              "label": "Slug",
+              "placeholder": "unique-slug"
+            }
+          },
+          "color_background": {
+            "type": "Color",
+            "config": {
+              "label": "Background Color"
+            }
+          },
+          "color_primary": {
+            "type": "Color",
+            "config": {
+              "label": "Primary Color"
+            }
+          },
+          "color_secondary": {
+            "type": "Color",
+            "config": {
+              "label": "Secondary Color"
+            }
+          },
+          "color_tertiary": {
+            "type": "Color",
+            "config": {
+              "label": "Tertiary Color"
+            }
+          }
+        },
+        "label": "Nearby Locations"
+      }
+    }
+  },
+  "Styles": {
+    "about_headline": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Default Headline",
+        "placeholder": "Default headline..."
+      }
+    },
+    "color_background": {
+      "type": "Color",
+      "config": {
+        "label": "Background Color"
+      }
+    },
+    "color_primary": {
+      "type": "Color",
+      "config": {
+        "label": "Primary Color"
+      }
+    },
+    "color_secondary": {
+      "type": "Color",
+      "config": {
+        "label": "Secondary Color"
+      }
+    },
+    "color_tertiary": {
+      "type": "Color",
+      "config": {
+        "label": "Tertiary Color"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "choices": {
+          "full_split_section": {
+            "type": "Slice",
+            "fieldset": "Full Split Section",
+            "description": "Fullwidth 50%  split section with an image & text.",
+            "icon": "border_vertical",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {}
+          },
+          "hero": {
+            "type": "Slice",
+            "fieldset": "Hero",
+            "description": "Simple hero section",
+            "icon": "face",
+            "display": "grid",
+            "non-repeat": {
+              "headline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Headline",
+                  "placeholder": "Enter a headline..."
+                }
+              },
+              "body_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Body Text",
+                  "placeholder": "Enter some body text..."
+                }
+              },
+              "text_alignment": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "left",
+                    "center",
+                    "right"
+                  ],
+                  "default_value": "left",
+                  "label": "Text Alignment",
+                  "placeholder": "Select..."
+                }
+              },
+              "background_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Background Color"
+                }
+              },
+              "text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Text Color"
+                }
+              },
+              "tint_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Tint Color"
+                }
+              },
+              "tint_opacity": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "0",
+                    "0.1",
+                    "0.2",
+                    "0.3",
+                    "0.4",
+                    "0.5",
+                    "0.6",
+                    "0.7",
+                    "0.8",
+                    "0.9"
+                  ],
+                  "default_value": "0",
+                  "label": "Tint Opacity",
+                  "placeholder": "0"
+                }
+              },
+              "background_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1200,
+                    "height": 800
+                  },
+                  "thumbnails": [],
+                  "label": "Background Image"
+                }
+              },
+              "padding": {
+                "type": "Text",
+                "config": {
+                  "label": "Padding (Top, Right, Bottom, Left)",
+                  "placeholder": "0, 0, 0, 0"
+                }
+              },
+              "breadcrumb_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Breadcrumb Label",
+                  "placeholder": "Specials"
+                }
+              },
+              "breadcrumb_url": {
+                "type": "Text",
+                "config": {
+                  "label": "Breadcrumb Url",
+                  "placeholder": "/specials"
+                }
+              },
+              "social_sharing": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "default_value": "Yes",
+                  "label": "Enable Social Media Sharing?",
+                  "placeholder": "Select..."
+                }
+              }
+            },
+            "repeat": {
+              "cta_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Call To Action Button Label",
+                  "placeholder": "Enter a CTA Label..."
+                }
+              },
+              "cta_destination": {
+                "type": "Text",
+                "config": {
+                  "label": "CTA Destination",
+                  "placeholder": "/specials"
+                }
+              },
+              "cta_bg_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Call to Action Background Color"
+                }
+              },
+              "cta_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Call to Action Text Color"
+                }
+              },
+              "cta_icon": {
+                "type": "Text",
+                "config": {
+                  "label": "Call to Action FontAwesome Icon",
+                  "placeholder": "https://fontawesome.com/icons"
+                }
+              }
+            }
+          },
+          "promotional_strip": {
+            "type": "Slice",
+            "fieldset": "Promotional Strip",
+            "description": "A promotional strip with columns and a CTA.",
+            "icon": "view_week",
+            "display": "grid",
+            "non-repeat": {},
+            "repeat": {}
+          },
+          "simple_section": {
+            "type": "Slice",
+            "fieldset": "Simple Section",
+            "description": "Simple fullwidth section with a headline & body text.",
+            "icon": "crop_7_5",
+            "display": "list",
+            "non-repeat": {
+              "headline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Headline",
+                  "placeholder": "Enter a headline..."
+                }
+              },
+              "body_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink",
+                  "allowTargetBlank": true,
+                  "label": "Body Text",
+                  "placeholder": "Lorem ipsum solor sit dit imet..."
+                }
+              },
+              "subheadline": {
+                "type": "Text",
+                "config": {
+                  "label": "Subheadline",
+                  "placeholder": "(Optional) Enter a subheadline to go above the headline..."
+                }
+              },
+              "text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Text Color"
+                }
+              },
+              "background_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Background Color"
+                }
+              },
+              "text_alignment": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "center",
+                    "left",
+                    "right"
+                  ],
+                  "default_value": "center",
+                  "label": "Text Alignment",
+                  "placeholder": "Select..."
+                }
+              },
+              "cta_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Call to Action Label",
+                  "placeholder": "Enter a CTA Label..."
+                }
+              },
+              "cta_destination": {
+                "type": "Text",
+                "config": {
+                  "label": "Call to Action Destination",
+                  "placeholder": "Enter a destination..."
+                }
+              },
+              "cta_bg_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Call to Action Background Color"
+                }
+              },
+              "cta_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Call to Action Text Color"
+                }
+              },
+              "padding": {
+                "type": "Text",
+                "config": {
+                  "label": "Padding (Top, right, bottom, left)",
+                  "placeholder": "0, 0, 0, 0"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "simple_section1": {
+            "type": "Slice",
+            "fieldset": "Simple Section",
+            "description": "Simple fullwidth section with a headline & body text.",
+            "icon": "crop_7_5",
+            "display": "list",
+            "non-repeat": {
+              "headline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Headline",
+                  "placeholder": "Enter a headline..."
+                }
+              },
+              "body_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink",
+                  "allowTargetBlank": true,
+                  "label": "Body Text",
+                  "placeholder": "Lorem ipsum solor sit dit imet..."
+                }
+              },
+              "subheadline": {
+                "type": "Text",
+                "config": {
+                  "label": "Subheadline",
+                  "placeholder": "(Optional) Enter a subheadline to go above the headline..."
+                }
+              },
+              "text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Text Color"
+                }
+              },
+              "background_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Background Color"
+                }
+              },
+              "text_alignment": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "center",
+                    "left",
+                    "right"
+                  ],
+                  "default_value": "center",
+                  "label": "Text Alignment",
+                  "placeholder": "Select..."
+                }
+              },
+              "cta_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Call to Action Label",
+                  "placeholder": "Enter a CTA Label..."
+                }
+              },
+              "cta_destination": {
+                "type": "Text",
+                "config": {
+                  "label": "Call to Action Destination",
+                  "placeholder": "Enter a destination..."
+                }
+              },
+              "cta_bg_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Call to Action Background Color"
+                }
+              },
+              "cta_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Call to Action Text Color"
+                }
+              },
+              "padding": {
+                "type": "Text",
+                "config": {
+                  "label": "Padding (Top, right, bottom, left)",
+                  "placeholder": "0, 0, 0, 0"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "split_image_hero": {
+            "type": "Slice",
+            "fieldset": "Split Image Hero",
+            "description": "Hero with a side-by-side image & text.",
+            "icon": "flip",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {}
+          },
+          "split_section": {
+            "type": "Slice",
+            "fieldset": "Split Section",
+            "description": "Content-width split section with an image & text.",
+            "icon": "art_track",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {}
+          },
+          "sticky_gallery": {
+            "type": "Slice",
+            "fieldset": "Sticky Gallery",
+            "description": "A scrolling gallery with sticky content.",
+            "icon": "featured_play_list",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}
