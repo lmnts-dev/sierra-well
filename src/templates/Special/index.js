@@ -62,7 +62,6 @@ export const query = graphql`
               text
             }
             description
-            category
             tags
             color_background
             color_primary

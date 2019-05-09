@@ -107,9 +107,6 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               id
               uid
-              data {
-                category
-              }
             }
           }
         }
@@ -207,7 +204,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       _.each(result.data.allPrismicSpecial.edges, edge => {
         createPage({
-          path: `/specials/${slugify(edge.node.data.category)}/${
+          path: `/specials/${
             edge.node.uid
           }/`,
           component: slash(specialTemplate),
