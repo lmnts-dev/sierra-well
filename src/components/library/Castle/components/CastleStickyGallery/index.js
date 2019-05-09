@@ -58,9 +58,14 @@ const CastleSimpleSection = ({ data, location }) => {
         }}
         Flex={primaryData.direction == 'normal' ? 'row' : 'row-reverse'}
         GalleryQueries={galleryImgQueries(repeatableData)}
+        Button={{
+          Label: primaryData.cta_label,
+          BgColor: primaryData.cta_bg_color,
+          TextColor: primaryData.cta_text_color,
+          Destination: primaryData.cta_destination,
+          IconClass: primaryData.cta_icon,
+        }}
       />
-      {console.log(galleryImgQueries(repeatableData))}
-      {/* {console.log(repeatableData)} */}
     </CastleStickyGalleryStyle>
   );
 };
@@ -97,6 +102,11 @@ export const query = graphql`
             body_text
             background_color
             text_color
+            cta_label
+            cta_destination
+            cta_bg_color
+            cta_text_color
+            cta_icon
           }
           items {
             src {

@@ -13,6 +13,7 @@ import styled from 'styled-components';
 import ImgMatch from 'components/core/ImgMatch';
 import ImgQuery from 'components/core/ImgQuery';
 import Block from 'components/library/Block';
+import Btn from 'components/library/Btn';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -46,6 +47,7 @@ const StickyScrollSection = ({
   GalleryQueries,
   Gutter,
   Flex,
+  Button,
 }) => (
   <StickyScrollSectionStyle
     Style={Style}
@@ -59,6 +61,19 @@ const StickyScrollSection = ({
           <span className="txt-caption">{Content.Subheadline}</span>
           <h2>{Content.Headline}</h2>
           <p className="p-md">{Content.Body}</p>
+
+          {/* Check if a Btn exists, display if so. */}
+          {Button ? (
+            <Btn
+              Label={Button.Label}
+              BgColor={Button.BgColor}
+              TextColor={Button.TextColor}
+              Destination={Button.Destination}
+              IconPosition="left"
+              IconClass={Button.IconClass ? Button.IconClass : null}
+              IconFas
+            />
+          ) : null}
         </Block>
         <Block Padding={[0, 1, 0, 1]}>
           {Gallery
