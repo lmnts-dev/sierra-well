@@ -89,6 +89,36 @@ export const query = graphql`
       }
     }
   }
+
+  fragment PrismicQuestionElementsPromotionalStripData on PrismicQuestion {
+    data {
+      elements {
+        ... on PrismicQuestionElementsPromotionalStrip {
+          slice_type
+        }
+      }
+    }
+  }
+
+  fragment PrismicGenericPageElementsPromotionalStripData on PrismicGenericPage {
+    data {
+      elements {
+        ... on PrismicGenericPageElementsPromotionalStrip {
+          slice_type
+        }
+      }
+    }
+  }
+
+  fragment PrismicLocationElementsPromotionalStripData on PrismicLocation {
+    data {
+      elements {
+        ... on PrismicLocationElementsPromotionalStrip {
+          slice_type
+        }
+      }
+    }
+  }
 `;
 
 //////////////////////////////////////////////////////////////////////

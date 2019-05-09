@@ -95,6 +95,36 @@ export const query = graphql`
       }
     }
   }
+
+  fragment PrismicQuestionElementsSplitImageHeroData on PrismicQuestion {
+    data {
+      elements {
+        ... on PrismicQuestionElementsSplitImageHero {
+          slice_type
+        }
+      }
+    }
+  }
+
+  fragment PrismicGenericPageElementsSplitImageHeroData on PrismicGenericPage {
+    data {
+      elements {
+        ... on PrismicGenericPageElementsSplitImageHero {
+          slice_type
+        }
+      }
+    }
+  }
+
+  fragment PrismicLocationElementsSplitImageHeroData on PrismicLocation {
+    data {
+      elements {
+        ... on PrismicLocationElementsSplitImageHero {
+          slice_type
+        }
+      }
+    }
+  }
 `;
 
 //////////////////////////////////////////////////////////////////////
