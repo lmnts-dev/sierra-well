@@ -8,9 +8,10 @@
       }
     },
     "name": {
-      "type": "Text",
+      "type": "StructuredText",
       "config": {
-        "label": "Name",
+        "single": "heading1",
+        "label": "Location Name",
         "placeholder": "Location name..."
       }
     },
@@ -308,7 +309,7 @@
         "label": "Tertiary Color"
       }
     },
-    "body": {
+    "elements": {
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
