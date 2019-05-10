@@ -46,7 +46,7 @@ HeroStripStyle.Inner = styled(SectionContentStyle)`
       display: block;
       padding-bottom: 3px;
       &:first-child {
-        opacity: 0.4;
+        opacity: 0.6;
         font-size: calc(${Root.ViewWidthFontSize} * 1);
       }
       &:last-child {
@@ -62,7 +62,7 @@ HeroStripStyle.Inner = styled(SectionContentStyle)`
       top: 0;
       bottom: 0;
       width: 1px;
-      opacity: 0.09;
+      opacity: 0.15;
       background: ${props =>
         props.TextColor ? props.TextColor : Theme.Color.Black};
     }

@@ -87,13 +87,21 @@ StickyScrollSectionStyle.Content = styled(SectionContentStyle)`
   .block {
     .gallery-img {
       padding: 0 0 calc(${Root.Size} / 2) 0;
+
+      &:last-child {
+        padding: 0;
+      }
     }
 
     &.sticky-block {
       .block-content {
         position: sticky;
-        top: calc(${Root.Nav.Size} + ${Root.Size});
+        top: calc(${Root.Nav.Size});
         padding-bottom: ${Root.Size};
+        height: calc(100vh - ${Root.Nav.Size});
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   }

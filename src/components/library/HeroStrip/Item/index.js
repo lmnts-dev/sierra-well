@@ -16,14 +16,14 @@ import BreadCrumbStyle from './styles.scss';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const BreadCrumb = ({ to, Label, Color }) => (
-  <BreadCrumbStyle Color={Color} to={to}>
+const HeroStripItem = ({ to, Label, Color }) => (
+  <HeroStripItemStyle Color={Color} to={to}>
     <Icon className="svg-carat" Name="carat" Color={Color} />
     <span>{Label}</span>
-  </BreadCrumbStyle>
+  </HeroStripItemStyle>
 );
 
-export default BreadCrumb;
+export default HeroStripItem;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

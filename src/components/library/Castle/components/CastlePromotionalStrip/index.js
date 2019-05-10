@@ -27,36 +27,38 @@ import { Theme } from 'constants/Theme';
 // The CastleSplitSection Component
 const CastleSplitSection = ({ data, location }) => {
   const primaryData = data.primary;
-  const repeatableData = data.items;
+  const repeatableData = data.items.length > 0 ? data.items : 0;
+
+  // Function to create our Items map.
+  const promotionalItemsTransformer = data => {
+    if (data != 0) {
+      // Create a new map from Prismic Data.
+      let itemList = data.map((item, index) => {
+        return {
+          Caption: item.caption,
+          Label: item.label,
+          Destination: item.destination ? item.destination : null,
+        };
+      });
+
+      // Return new map.
+      return itemList;
+    } else {
+      // Else, don't return anything.
+      return null;
+    }
+  };
 
   return (
     <CastleSplitSectionStyle>
       <HeroStrip
-        BgColor={Theme.Color.White}
-        TextColor={Theme.Color.NightSky}
-        Items={[
-          {
-            Caption: 'Seniors',
-            Label: '5% off',
-          },
-          {
-            Caption: 'Senior Veterans',
-            Label: '15% off',
-          },
-          {
-            Caption: 'Veterans',
-            Label: '10% off',
-          },
-          {
-            Caption: 'Industry',
-            Label: '15% off',
-          },
-          {
-            Caption: 'More details',
-            Label: 'View all',
-            Destination: '/specials',
-          },
-        ]}
+        BgColor={
+          primaryData.bg_color ? primaryData.bg_color : Theme.Color.White
+        }
+        TextColor={
+          primaryData.text_color ? primaryData.text_color : Theme.Color.Nightsky
+        }
+        Items={promotionalItemsTransformer(repeatableData)}
       />
     </CastleSplitSectionStyle>
   );
@@ -85,36 +87,15 @@ export const query = graphql`
       elements {
         ... on PrismicSpecialElementsPromotionalStrip {
           slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicQuestionElementsPromotionalStripData on PrismicQuestion {
-    data {
-      elements {
-        ... on PrismicQuestionElementsPromotionalStrip {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicGenericPageElementsPromotionalStripData on PrismicGenericPage {
-    data {
-      elements {
-        ... on PrismicGenericPageElementsPromotionalStrip {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicLocationElementsPromotionalStripData on PrismicLocation {
-    data {
-      elements {
-        ... on PrismicLocationElementsPromotionalStrip {
-          slice_type
+          primary {
+            bg_color
+            text_color
+          }
+          items {
+            caption
+            label
+            destination
+          }
         }
       }
     }

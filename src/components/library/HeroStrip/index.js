@@ -20,7 +20,7 @@ import HeroStripStyle from './styles.scss';
 
 const HeroStrip = ({ Items, BgColor, TextColor }) => (
   <HeroStripStyle BgColor={BgColor} TextColor={TextColor}>
-    <HeroStripStyle.Inner>
+    <HeroStripStyle.Inner TextColor={TextColor}>
       {Items.map((Item, index) => {
         if (Item.Destination) {
           return (

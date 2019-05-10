@@ -29,8 +29,10 @@ const CastleSimpleSection = ({ data, location }) => {
   const primaryData = data.primary;
   const repeatableData = data.items.length > 0 ? data.items : 0;
 
-  const galleryImgQueries = data => {
+  // Function to create our GalleryQueries map.
+  const galleryImgQueriesTransformer = data => {
     if (data != 0) {
+      // Create a new map from Prismic Data.
       let queries = data.map((Query, index) => {
         return {
           Fluid: Query.src.localFile.childImageSharp.fluid
@@ -40,8 +42,10 @@ const CastleSimpleSection = ({ data, location }) => {
         };
       });
 
+      // Return new map.
       return queries;
     } else {
+      // Else, return 0.
       return 0;
     }
   };
@@ -57,7 +61,7 @@ const CastleSimpleSection = ({ data, location }) => {
           Body: primaryData.body_text,
         }}
         Flex={primaryData.direction == 'normal' ? 'row' : 'row-reverse'}
-        GalleryQueries={galleryImgQueries(repeatableData)}
+        GalleryQueries={galleryImgQueriesTransformer(repeatableData)}
         Button={{
           Label: primaryData.cta_label,
           BgColor: primaryData.cta_bg_color,

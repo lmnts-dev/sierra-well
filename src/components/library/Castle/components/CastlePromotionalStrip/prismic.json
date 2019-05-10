@@ -1,0 +1,46 @@
+{
+  "promotional_strip": {
+    "type": "Slice",
+    "fieldset": "Promotional Strip",
+    "description": "A promotional strip with columns and a CTA.",
+    "icon": "view_week",
+    "display": "grid",
+    "non-repeat": {
+      "bg_color": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color"
+        }
+      },
+      "text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Text Color"
+        }
+      }
+    },
+    "repeat": {
+      "caption": {
+        "type": "Text",
+        "config": {
+          "label": "Caption",
+          "placeholder": "eg. 'Veterans'"
+        }
+      },
+      "label": {
+        "type": "Text",
+        "config": {
+          "label": "Label",
+          "placeholder": "eg. '15% off'"
+        }
+      },
+      "destination": {
+        "type": "Text",
+        "config": {
+          "label": "Destination (Optional)",
+          "placeholder": "/specials/veterans"
+        }
+      }
+    }
+  }
+}
