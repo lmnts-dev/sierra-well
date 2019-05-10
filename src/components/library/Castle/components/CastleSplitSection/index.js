@@ -37,11 +37,10 @@ const CastleSplitSection = ({ data, location }) => {
         Gutter={[1, 0, 1, 1]}
         Flex={primaryData.direction == 'normal' ? 'row' : 'row-reverse'}
       >
-      {console.log(primaryData.direction)}
         <Block
           Style="centered"
           BgColor={primaryData.background_color}
-          BgQuery={primaryData.image.localFile.childImageSharp.fluid}
+          BgQuery={primaryData.image.localFile ? primaryData.image.localFile.childImageSharp.fluid : null}
           BgAlt={primaryData.image.alt}
           Width={0.5}
         />

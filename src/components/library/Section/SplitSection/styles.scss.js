@@ -26,7 +26,7 @@ const SplitSectionStyle = styled.div`
 SplitSectionStyle.Inner = styled.div`
   display: flex;
   flex-direction: ${props => (props.Flex ? props.Flex : 'row')};
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
 
   .block {

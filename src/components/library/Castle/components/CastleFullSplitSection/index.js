@@ -17,7 +17,7 @@ import SplitSection from 'components/library/Section/SplitSection';
 import Block from 'components/library/Block';
 
 // Style Overrides
-import CastleSplitSectionStyle from './styles.scss';
+import CastleFullSplitSectionStyle from './styles.scss';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -31,36 +31,51 @@ const CastleSplitSection = ({ data, location }) => {
   const repeatableData = data.items;
 
   return (
-    <CastleSplitSectionStyle>
-      <SplitSection Flex="row-reverse">
+    <CastleFullSplitSectionStyle>
+      <SplitSection
+        Flex={primaryData.direction == 'normal' ? 'row' : 'row-reverse'}
+      >
         <Block
-          Padding={[1, 1, 1, 1]}
+          Padding={[1, 1, 1, 2]}
           Width={0.5}
-          BgColor={Theme.Color.White}
-          TextColor={Theme.Color.Nightsky}
+          BgColor={primaryData.background_color}
+          TextColor={primaryData.text_color}
         >
-          <h2>Discretion is our first priority — so why not make it free?</h2>
-          <p className="p-md">
-            Free delivery available within 15 miles of our Reno and Carson City
-            stores, Nevada addresses only.
-          </p>
-          <Btn
-            Label="View Our Menu"
-            Destination="/menu"
-            BgColor={Theme.Color.Primary}
-            TextColor={Theme.Color.White}
-          />
+          <h2>{primaryData.headline.text}</h2>
+          <p className="p-md">{primaryData.body_text}</p>
+          {/* Check for CTA */}
+          {repeatableData[0].cta_destination != null
+            ? repeatableData.map((item, index) => {
+                return (
+                  <>
+                    <Btn
+                      Label={item.cta_label}
+                      BgColor={item.cta_bg_color}
+                      TextColor={item.cta_text_color}
+                      Destination={item.cta_destination}
+                      IconPosition={item.cta_icon ? 'left' : null}
+                      IconClass={item.cta_icon ? item.cta_icon : null}
+                      IconFas
+                    />
+                  </>
+                );
+              })
+            : null}
         </Block>
 
         <Block
           Style="centered"
-          BgColor={Theme.Color.White}
-          BgMatch="placeholder_bg_4.jpg"
-          BgAlt="Our Awesome Alt Tag"
+          BgColor={primaryData.background_color}
+          BgQuery={
+            primaryData.image.localFile
+              ? primaryData.image.localFile.childImageSharp.fluid
+              : null
+          }
+          BgAlt={primaryData.image.alt}
           Width={0.5}
         />
       </SplitSection>
-    </CastleSplitSectionStyle>
+    </CastleFullSplitSectionStyle>
   );
 };
 
@@ -87,36 +102,33 @@ export const query = graphql`
       elements {
         ... on PrismicSpecialElementsFullSplitSection {
           slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicQuestionElementsFullSplitSectionData on PrismicQuestion {
-    data {
-      elements {
-        ... on PrismicQuestionElementsFullSplitSection {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicGenericPageElementsFullSplitSectionData on PrismicGenericPage {
-    data {
-      elements {
-        ... on PrismicGenericPageElementsFullSplitSection {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicLocationElementsFullSplitSectionData on PrismicLocation {
-    data {
-      elements {
-        ... on PrismicLocationElementsFullSplitSection {
-          slice_type
+          primary {
+            headline {
+              text
+            }
+            body_text
+            background_color
+            text_color
+            direction
+            image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+          items {
+            cta_label
+            cta_destination
+            cta_bg_color
+            cta_text_color
+            cta_icon
+          }
         }
       }
     }

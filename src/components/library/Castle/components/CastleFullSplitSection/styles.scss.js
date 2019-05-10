@@ -15,6 +15,13 @@ import { Theme, Root } from 'constants/Theme';
 
 const CastleHeroStyle = styled.div`
   appearance: none;
+  
+  .block {
+    .block-content {
+      width: 100% !important;
+      align-items: stretch;
+    }
+  }
 
   .btn {
     margin-right: calc(${Root.Size} / 4);
