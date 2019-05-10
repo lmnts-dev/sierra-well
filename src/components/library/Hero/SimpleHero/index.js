@@ -41,6 +41,7 @@ const SimpleHero = ({
   BgQuery,
   BgAlt,
   Flex,
+  JustifyContent,
   TintBorder,
   children,
 }) => (
@@ -59,6 +60,7 @@ const SimpleHero = ({
       imgBottom={imgBottom ? imgBottom : false}
       imgTop={imgTop ? imgTop : false}
       imgWidth={imgWidth ? imgWidth : false}
+      JustifyContent={JustifyContent}
       className="inner"
       Flex={Flex}
     >

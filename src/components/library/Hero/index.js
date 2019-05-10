@@ -25,6 +25,7 @@ export const HeroInner = ({
   Flex,
   Padding,
   children,
+  JustifyContent,
 }) => (
   <HeroInnerStyle
     Size={Size ? Size : false}
@@ -35,7 +36,13 @@ export const HeroInner = ({
     imgTop={imgTop ? imgTop : false}
     imgWidth={imgWidth ? imgWidth : false}
   >
-    <HeroContentStyle Flex={Flex}>{children}</HeroContentStyle>
+    <HeroContentStyle
+      className="hero-content"
+      JustifyContent={JustifyContent}
+      Flex={Flex}
+    >
+      {children}
+    </HeroContentStyle>
   </HeroInnerStyle>
 );
 

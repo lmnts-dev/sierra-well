@@ -70,6 +70,7 @@ export const HeroContentStyle = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: ${props => (props.Flex ? props.Flex : 'row')};
+  justify-content: ${props => (props.JustifyContent ? props.JustifyContent : 'flex-start')};
   max-width: ${props => (props.FullWidth ? '100%' : Theme.Base.Grid.SiteWidth)};
 `;
 

@@ -38,8 +38,8 @@ SplitSectionStyle.Inner = styled.div`
       block is first depending on it's flex property: */
       width: ${props =>
         props.Flex
-          ? 'calc(50% - (' + Root.Grid.Gutter.Left + '/ 2))'
-          : 'calc(50% + (' + Root.Grid.Gutter.Left + '/ 2))'};
+          ? 'calc(50% + (' + Root.Grid.Gutter.Left + '/ 2))'
+          : 'calc(50% - (' + Root.Grid.Gutter.Left + '/ 2))'};
 
       /* Add left padding to first block if it's a text
       block depending on it's flex property: */

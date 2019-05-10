@@ -34,31 +34,64 @@ const CastleSplitSection = ({ data, location }) => {
   return (
     <CastleSplitSectionStyle>
       <SimpleHero
-        imgRight="0"
+        imgLeft={primaryData.direction == 'normal' ? null : '0'}
+        imgRight={primaryData.direction == 'normal' ? '0' : null}
         imgBottom="0"
         imgWidth="50%"
         Size="2"
-        Background={Theme.Color.Tahoe}
-        TextColor={Theme.Color.White}
+        className="simple-hero"
+        Background={primaryData.background_color}
+        JustifyContent={primaryData.direction == 'normal' ? null : 'flex-end'}
+        BgQuery={
+          primaryData.background_image.localFile
+            ? primaryData.background_image.localFile.childImageSharp.fluid
+            : false
+        }
+        TextColor={primaryData.text_color}
+        Tint={primaryData.tint_opacity}
       >
         <Block AlignItems="flex-start" Width={0.5}>
-          <Bread
-            Crumbs={[
-              {
-                Destination: '/specials',
-                Label: 'Specials',
-              },
-            ]}
-            TextColor={Theme.Color.White}
-          />
-          <h1>100% Free Delivery</h1>
-          <p className="p-md">Any size order, no minimum required.</p>
-          <Btn
-            Label="View Our Menu"
-            Destination="/menu"
-            BgColor={Theme.Color.Primary}
-            TextColor={Theme.Color.White}
-          />
+          {/* Check for Breadcrumbs */}
+          {primaryData.breadcrumb_url ? (
+            <Bread
+              Crumbs={[
+                {
+                  Destination: primaryData.breadcrumb_url,
+                  Label: primaryData.breadcrumb_label,
+                },
+              ]}
+              TextColor={primaryData.text_color}
+            />
+          ) : null}
+
+          {/* Check for Headline */}
+          <h1>
+            {primaryData.headline.text
+              ? primaryData.headline.text
+              : 'Enter a headline...'}
+          </h1>
+
+          {/* Check for Body Text */}
+          {primaryData.body_text ? (
+            <p className="p-lg">{primaryData.body_text} </p>
+          ) : null}
+
+          {/* Check for CTA */}
+          {repeatableData[0].cta_destination != null
+            ? repeatableData.map((item, index) => {
+                return (
+                  <Btn
+                    Label={item.cta_label}
+                    BgColor={item.cta_bg_color}
+                    TextColor={item.cta_text_color}
+                    Destination={item.cta_destination}
+                    IconPosition={item.cta_icon ? 'left' : null}
+                    IconClass={item.cta_icon ? item.cta_icon : null}
+                    IconFas
+                  />
+                );
+              })
+            : null}
         </Block>
         <Block className="hero-img">
           <ImgMatch src="hero-phone.png" alt="100% Free Delivery" />
@@ -91,36 +124,49 @@ export const query = graphql`
       elements {
         ... on PrismicSpecialElementsSplitImageHero {
           slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicQuestionElementsSplitImageHeroData on PrismicQuestion {
-    data {
-      elements {
-        ... on PrismicQuestionElementsSplitImageHero {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicGenericPageElementsSplitImageHeroData on PrismicGenericPage {
-    data {
-      elements {
-        ... on PrismicGenericPageElementsSplitImageHero {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicLocationElementsSplitImageHeroData on PrismicLocation {
-    data {
-      elements {
-        ... on PrismicLocationElementsSplitImageHero {
-          slice_type
+          primary {
+            headline {
+              text
+            }
+            image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            background_image {
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            body_text
+            background_color
+            text_color
+            direction
+            breadcrumb_label
+            breadcrumb_url
+            social_sharing
+            tint_color
+            tint_opacity
+            padding
+          }
+          items {
+            cta_label
+            cta_destination
+            cta_bg_color
+            cta_text_color
+            cta_icon
+          }
         }
       }
     }

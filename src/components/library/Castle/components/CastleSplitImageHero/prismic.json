@@ -1,0 +1,166 @@
+{
+  "split_image_hero": {
+    "type": "Slice",
+    "fieldset": "Split Image Hero",
+    "description": "Hero with a side-by-side image & text.",
+    "icon": "flip",
+    "display": "grid",
+    "non-repeat": {
+      "headline": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label": "Headline",
+          "placeholder": "Enter a headline..."
+        }
+      },
+      "body_text": {
+        "type": "Text",
+        "config": {
+          "label": "Body Text",
+          "placeholder": "Enter some body text..."
+        }
+      },
+      "background_color": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color"
+        }
+      },
+      "text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Text Color"
+        }
+      },
+      "direction": {
+        "type": "Select",
+        "config": {
+          "options": [
+            "normal",
+            "reverse"
+          ],
+          "default_value": "normal",
+          "label": "Direction",
+          "placeholder": "Select..."
+        }
+      },
+      "breadcrumb_label": {
+        "type": "Text",
+        "config": {
+          "label": "Breadcrumb Label",
+          "placeholder": "Specials"
+        }
+      },
+      "breadcrumb_url": {
+        "type": "Text",
+        "config": {
+          "label": "Breadcrumb Url",
+          "placeholder": "/specials"
+        }
+      },
+      "social_sharing": {
+        "type": "Select",
+        "config": {
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "default_value": "Yes",
+          "label": "Enable Social Media Sharing?",
+          "placeholder": "Select..."
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "constraint": {
+            "width": 1280,
+            "height": 1280
+          },
+          "thumbnails": [],
+          "label": "Image Overlay"
+        }
+      },
+      "tint_color": {
+        "type": "Color",
+        "config": {
+          "label": "Tint Color"
+        }
+      },
+      "tint_opacity": {
+        "type": "Select",
+        "config": {
+          "options": [
+            "0",
+            "0.1",
+            "0.2",
+            "0.3",
+            "0.4",
+            "0.5",
+            "0.6",
+            "0.7",
+            "0.8",
+            "0.9"
+          ],
+          "default_value": "0",
+          "label": "Tint Opacity",
+          "placeholder": "0"
+        }
+      },
+      "background_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {
+            "width": 1200,
+            "height": 800
+          },
+          "thumbnails": [],
+          "label": "Background Image"
+        }
+      },
+      "padding": {
+        "type": "Text",
+        "config": {
+          "label": "Padding (Top, Right, Bottom, Left)",
+          "placeholder": "0, 0, 0, 0"
+        }
+      }
+    },
+    "repeat": {
+      "cta_label": {
+        "type": "Text",
+        "config": {
+          "label": "Call To Action Button Label",
+          "placeholder": "Enter a CTA Label..."
+        }
+      },
+      "cta_destination": {
+        "type": "Text",
+        "config": {
+          "label": "CTA Destination",
+          "placeholder": "/specials"
+        }
+      },
+      "cta_bg_color": {
+        "type": "Color",
+        "config": {
+          "label": "Call to Action Background Color"
+        }
+      },
+      "cta_text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Call to Action Text Color"
+        }
+      },
+      "cta_icon": {
+        "type": "Text",
+        "config": {
+          "label": "Call to Action FontAwesome Icon",
+          "placeholder": "https://fontawesome.com/icons"
+        }
+      }
+    }
+  }
+}
