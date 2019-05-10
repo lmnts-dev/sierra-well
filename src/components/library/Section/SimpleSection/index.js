@@ -13,7 +13,6 @@ import ImgMatch from 'components/core/ImgMatch';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
-import { SectionContent } from './../../Section';
 
 // Styles
 import SimpleSectionStyle from './styles.scss';

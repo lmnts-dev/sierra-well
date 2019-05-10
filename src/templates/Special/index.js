@@ -31,7 +31,6 @@ const SpecialsArticlePage = props => {
         data={props}
         elements={node.data.elements}
       />
-      {console.log(node.data)}
     </>
   );
 };

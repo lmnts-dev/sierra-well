@@ -15,6 +15,13 @@ import { Theme, Root } from 'constants/Theme';
 
 const CastleSimpleSectionStyle = styled.div`
   appearance: none;
+
+  .cta-wrap {
+    display: flex;
+    .btn {
+      margin-right: calc(${Root.Size} / 4);
+    }
+  }
 `;
 
 export default CastleSimpleSectionStyle;

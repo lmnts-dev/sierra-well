@@ -40,7 +40,11 @@ const CastleSplitSection = ({ data, location }) => {
         <Block
           Style="centered"
           BgColor={primaryData.background_color}
-          BgQuery={primaryData.image.localFile ? primaryData.image.localFile.childImageSharp.fluid : null}
+          BgQuery={
+            primaryData.image.localFile
+              ? primaryData.image.localFile.childImageSharp.fluid
+              : null
+          }
           BgAlt={primaryData.image.alt}
           Width={0.5}
         />

@@ -188,7 +188,6 @@ const Head = ({
         })
       )}
     </script>
-
   </Helmet>
 );
 

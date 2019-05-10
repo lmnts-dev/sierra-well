@@ -70,6 +70,9 @@ SimpleSectionStyle.Inner = styled(SectionInnerStyle)`
     img {
       height: 100%;
     }
+    .img {
+      height: 100%;
+    }
   }
 `;
 

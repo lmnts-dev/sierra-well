@@ -32,25 +32,53 @@ const CastleSimpleSection = ({ data, location }) => {
   return (
     <CastleSimpleSectionStyle>
       <SimpleSection
-        BgColor={Theme.Color.Black}
+        BgColor={primaryData.background_color}
         BgMatch="placeholder_bg_4.jpg"
-        BgTint={0.3}
+        BgTint={primaryData.tint_opacity}
         BgAlt="Our Awesome Alt Tag"
-        TextColor={Theme.Color.White}
-        Style="centered"
+        TextColor={primaryData.text_color}
+        Style={primaryData.text_alignment}
       >
-        <Block Style="centered" Padding={[1, 0, 1, 0]} maxWidth={0.5}>
-          <h2>Discretion is our first priority — so why not make it free?</h2>
-          <p className="p-md">
-            Free delivery available within 15 miles of our Reno and Carson City
-            stores, Nevada addresses only.
-          </p>
-          <Btn
-            Label="View Our Menu"
-            Destination="/menu"
-            BgColor={Theme.Color.Primary}
-            TextColor={Theme.Color.White}
-          />
+        <Block
+          Style="centered"
+          Padding={
+            primaryData.padding
+              ? primaryData.padding.replace(/\s/g, '').split(',')
+              : null
+          }
+          maxWidth={0.5}
+        >
+          {/* Check for Headline */}
+          <h2>
+            {primaryData.headline.text
+              ? primaryData.headline.text
+              : 'Enter a headline...'}
+          </h2>
+
+          {/* Check for Body Text */}
+          {primaryData.body_text ? (
+            <p className="p-md">{primaryData.body_text} </p>
+          ) : null}
+
+          {/* Check for CTA */}
+          <div className="cta-wrap">
+            {repeatableData[0].cta_destination != null
+              ? repeatableData.map((item, index) => {
+                  return (
+                    <Btn
+                      Label={item.cta_label}
+                      BgColor={item.cta_bg_color}
+                      TextColor={item.cta_text_color}
+                      Destination={item.cta_destination}
+                      IconPosition={item.cta_icon ? 'left' : null}
+                      IconClass={item.cta_icon ? item.cta_icon : null}
+                      IconFas
+                      key={index}
+                    />
+                  );
+                })
+              : null}
+          </div>
         </Block>
       </SimpleSection>
     </CastleSimpleSectionStyle>
@@ -80,36 +108,37 @@ export const query = graphql`
       elements {
         ... on PrismicSpecialElementsSimpleSection {
           slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicQuestionElementsSimpleSectionData on PrismicQuestion {
-    data {
-      elements {
-        ... on PrismicQuestionElementsSimpleSection {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicGenericPageElementsSimpleSectionData on PrismicGenericPage {
-    data {
-      elements {
-        ... on PrismicGenericPageElementsSimpleSection {
-          slice_type
-        }
-      }
-    }
-  }
-
-  fragment PrismicLocationElementsSimpleSectionData on PrismicLocation {
-    data {
-      elements {
-        ... on PrismicLocationElementsSimpleSection {
-          slice_type
+          primary {
+            headline {
+              text
+            }
+            body_text
+            subheadline
+            text_color
+            background_color
+            text_alignment
+            padding
+            tint_color
+            tint_opacity
+            bg_image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+          items {
+            cta_label
+            cta_destination
+            cta_bg_color
+            cta_text_color
+            cta_icon
+          }
         }
       }
     }
