@@ -15,6 +15,10 @@ import { Theme, Root } from 'constants/Theme';
 
 const CastleSimpleSectionStyle = styled.div`
   appearance: none;
+
+  .btn {
+    margin-right: calc(${Root.Size} / 4);
+  }
 `;
 
 export default CastleSimpleSectionStyle;

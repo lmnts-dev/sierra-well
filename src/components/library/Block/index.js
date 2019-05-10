@@ -7,6 +7,7 @@
 // Core
 import React from 'react';
 import ImgMatch from 'components/core/ImgMatch';
+import ImgQuery from 'components/core/ImgQuery';
 
 // Styles
 import BlockStyle from './styles.scss';
@@ -23,6 +24,7 @@ const Block = ({
   Padding,
   AlignItems,
   BgMatch,
+  BgQuery,
   BgAlt,
   BgTint,
   BgColor,
@@ -51,6 +53,15 @@ const Block = ({
       <div className="block-img-wrap">
         <div className="block-img">
           <ImgMatch src={BgMatch} AltText={BgAlt} />
+        </div>
+      </div>
+    ) : null}
+
+    {/* For Background Images with ImgQuery */}
+    {BgQuery ? (
+      <div className="block-img-wrap">
+        <div className="block-img">
+          <ImgQuery src={BgQuery} AltText={BgAlt} />
         </div>
       </div>
     ) : null}

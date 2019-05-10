@@ -32,34 +32,45 @@ const CastleSplitSection = ({ data, location }) => {
   return (
     <CastleSplitSectionStyle>
       <SimpleSection
-        BgColor={Theme.Color.Snow}
-        TextColor={Theme.Color.Nightsky}
+        BgColor={primaryData.background_color}
+        TextColor={primaryData.text_color}
         Gutter={[1, 0, 1, 1]}
+        Flex={primaryData.direction == 'normal' ? 'row' : 'row-reverse'}
       >
+      {console.log(primaryData.direction)}
         <Block
           Style="centered"
-          BgColor={Theme.Color.Snow}
-          BgMatch="placeholder_bg_4.jpg"
-          BgAlt="Our Awesome Alt Tag"
+          BgColor={primaryData.background_color}
+          BgQuery={primaryData.image.localFile.childImageSharp.fluid}
+          BgAlt={primaryData.image.alt}
           Width={0.5}
         />
 
         <Block
-          Padding={[1, 1, 1, 1]}
+          Padding={[3, 1, 3, 1]}
           Width={0.5}
-          TextColor={Theme.Color.Nightsky}
+          TextColor={primaryData.text_color}
         >
-          <h2>Discretion is our first priority — so why not make it free?</h2>
-          <p className="p-md">
-            Free delivery available within 15 miles of our Reno and Carson City
-            stores, Nevada addresses only.
-          </p>
-          <Btn
-            Label="View Our Menu"
-            Destination="/menu"
-            BgColor={Theme.Color.Primary}
-            TextColor={Theme.Color.White}
-          />
+          <h2>{primaryData.headline.text}</h2>
+          <p className="p-md">{primaryData.body_text}</p>
+          {/* Check for CTA */}
+          {repeatableData[0].cta_destination != null
+            ? repeatableData.map((item, index) => {
+                return (
+                  <>
+                    <Btn
+                      Label={item.cta_label}
+                      BgColor={item.cta_bg_color}
+                      TextColor={item.cta_text_color}
+                      Destination={item.cta_destination}
+                      IconPosition={item.cta_icon ? 'left' : null}
+                      IconClass={item.cta_icon ? item.cta_icon : null}
+                      IconFas
+                    />
+                  </>
+                );
+              })
+            : null}
         </Block>
       </SimpleSection>
     </CastleSplitSectionStyle>
@@ -89,6 +100,33 @@ export const query = graphql`
       elements {
         ... on PrismicSpecialElementsSplitSection {
           slice_type
+          primary {
+            headline {
+              text
+            }
+            body_text
+            background_color
+            text_color
+            direction
+            image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+          items {
+            cta_label
+            cta_destination
+            cta_bg_color
+            cta_text_color
+            cta_icon
+          }
         }
       }
     }

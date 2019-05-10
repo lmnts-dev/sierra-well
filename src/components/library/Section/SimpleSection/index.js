@@ -30,6 +30,7 @@ const SimpleSection = ({
   BgTint,
   FluidHeight,
   Gutter,
+  Flex,
   children,
 }) => (
   <SimpleSectionStyle Style={Style} BgColor={BgColor} TextColor={TextColor}>
@@ -40,6 +41,7 @@ const SimpleSection = ({
     >
       <SimpleSectionStyle.Content
         FluidHeight={FluidHeight}
+        Flex={Flex}
         className="simple-section"
       >
         {children}

@@ -1,0 +1,103 @@
+{
+  "sticky_gallery": {
+    "type": "Slice",
+    "fieldset": "Sticky Gallery",
+    "description": "A scrolling gallery with sticky content.",
+    "icon": "featured_play_list",
+    "display": "grid",
+    "non-repeat": {
+      "headline": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1",
+          "label": "Headline",
+          "placeholder": "Headline"
+        }
+      },
+      "subheadline": {
+        "type": "Text",
+        "config": {
+          "label": "Subheadline",
+          "placeholder": "Subheadline"
+        }
+      },
+      "body_text": {
+        "type": "Text",
+        "config": {
+          "label": "Body Text",
+          "placeholder": "Lorem ipsum solor sit dit imet..."
+        }
+      },
+      "background_color": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color"
+        }
+      },
+      "text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Text Color"
+        }
+      },
+      "direction": {
+        "type": "Select",
+        "config": {
+          "options": [
+            "normal",
+            "reverse"
+          ],
+          "default_value": "normal",
+          "label": "Direction",
+          "placeholder": "Select..."
+        }
+      },
+      "cta_label": {
+        "type": "Text",
+        "config": {
+          "label": "Call To Action Button Label",
+          "placeholder": "Enter a CTA Label..."
+        }
+      },
+      "cta_destination": {
+        "type": "Text",
+        "config": {
+          "label": "CTA Destination",
+          "placeholder": "/specials"
+        }
+      },
+      "cta_bg_color": {
+        "type": "Color",
+        "config": {
+          "label": "Call to Action Background Color"
+        }
+      },
+      "cta_text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Call to Action Text Color"
+        }
+      },
+      "cta_icon": {
+        "type": "Text",
+        "config": {
+          "label": "Call to Action FontAwesome Icon",
+          "placeholder": "https://fontawesome.com/icons"
+        }
+      }
+    },
+    "repeat": {
+      "src": {
+        "type": "Image",
+        "config": {
+          "constraint": {
+            "width": 1280,
+            "height": 1280
+          },
+          "thumbnails": [],
+          "label": "Image"
+        }
+      }
+    }
+  }
+}

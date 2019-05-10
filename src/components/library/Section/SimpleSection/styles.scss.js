@@ -77,6 +77,7 @@ SimpleSectionStyle.Content = styled(SectionContentStyle)`
   margin: 0 auto;
   justify-content: space-between;
   align-items: stretch;
+  flex-direction: ${props => (props.Flex ? props.Flex : 'row')};
   z-index: 2;
   width: 100%;
 
