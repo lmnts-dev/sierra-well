@@ -32,6 +32,9 @@ export const PageThemeStyle = createGlobalStyle`
 /* Navigation */
 nav {
 
+  /******************************************/
+  /* Desktop  Navigation */
+
   /* Top Navigation */
   .nav-top {
 
@@ -143,6 +146,8 @@ nav {
     }
   }
 };
+
+
 
 /* Footer */
 footer {

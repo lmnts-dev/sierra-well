@@ -74,10 +74,44 @@ const MobileMenuTransform = createGlobalStyle`
 
 //// Small Device Content
 const SmallContent = ({ LocationData }) => (
-  <>
-    <MobileMenuTransform />
-    <VerticalContent LocationData={LocationData} />
-  </>
+  <div>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+    <h1>Mobile Menu!</h1>
+  </div>
 );
 
 // Render Page
@@ -92,6 +126,7 @@ const MenuTemplate = ({
     PrimaryColor={Theme.Color.White}
     SecondaryColor={Theme.Color.White}
     TertiaryColor={Theme.Color.Nightsky}
+    MenuLocationData={LocationData}
   >
     <Device Query="Desktop">
       <LargeContent

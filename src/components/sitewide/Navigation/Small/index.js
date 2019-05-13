@@ -71,8 +71,8 @@ class NavigationSmall extends PureComponent {
     return (
       <>
         {/* Top Navigation */}
-        <TopNavigationStyle className={'nav-top ' + this.state.scrollClass}>
-          <TopNavigationStyle.Inner className={this.state.scrollClass}>
+        <TopNavigationStyle className={'nav-top nav-top-mobile ' + this.state.scrollClass}>
+          <TopNavigationStyle.Inner className={'nav-top-mobile-inner ' + this.state.scrollClass}>
             <TopNavigationStyle.Branding>
               <Link to="/">
                 <img src={logo} alt={Theme.Site.Title} />

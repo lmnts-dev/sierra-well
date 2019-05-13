@@ -15,12 +15,42 @@ import { StaticQuery, graphql } from 'gatsby';
 import Head from 'components/core/Head';
 import PageTheme from 'components/core/PageTheme';
 
+// Constants
+import { Theme, Root } from 'constants/Theme';
+
 // Styles
 import { GlobalStyle } from 'constants/styles/Global';
 import SiteGrid from 'components/core/Layout/styles.scss';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
+
+// Mobile Menu Colors
+
+const MenuPageTheme = createGlobalStyle`
+  nav {
+    /* Top Navigation */
+    &.nav-mobile {
+      background-color: ${Theme.Color.Black};
+
+      i, span, .label {
+        color: Theme.Color.Slate;
+      }
+    }
+  }
+
+  .nav-top-mobile-inner {
+    &:before {
+      background-color: ${Theme.Color.Black};
+    }
+
+    &.scroll {
+      &:before {
+        background-color: ${Theme.Color.Black};
+      }
+    }
+  }
+`;
 
 const Layout = ({
   data,
@@ -29,8 +59,13 @@ const Layout = ({
   PrimaryColor,
   SecondaryColor,
   TertiaryColor,
+  MenuLocationData,
 }) => (
   <SiteGrid>
+    {MenuLocationData
+      ? console.log(MenuLocationData)
+      : console.log('not a menu page')}
+    {MenuLocationData ? <MenuPageTheme /> : null}
     <GlobalStyle />
     <PageTheme
       BgColor={BgColor}
