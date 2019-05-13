@@ -22,7 +22,7 @@ const Item = ({ Destination, Label, Class, Icon }) => (
   <ItemStyle className={Class}>
     <Link to={Destination} activeClassName="active">
       <i className={'fas fa-' + Icon} />
-      <span>{Label}</span>
+      <span className="label">{Label}</span>
     </Link>
   </ItemStyle>
 );

@@ -17,7 +17,7 @@ import { Theme, Root } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 export const MenuContainerMobileHeight =
-  '(100vh - ((' + Root.Nav.Size + ' * 2) + 6px))';
+  '(100vh - ((' + Root.Nav.Size + ' * 3) + 6px))';
 
 export const MenuContainerMobileStyle = styled.div`
   flex: 1;

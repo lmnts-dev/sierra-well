@@ -52,11 +52,21 @@ const ItemStyle = styled.li`
 
     i {
       font-size: 1.3rem;
+      margin-top: 0px;
       margin-bottom: 8px;
+      transition: all ${Theme.Base.Transition.Duration}
+        ${Theme.Base.Transition.CssEase};
     }
 
-    span {
+    .label {
       font-size: 0.7rem;
+      display: block;
+      text-align: center;
+      max-height: 100px;
+      overflow: hidden;
+      opacity: 1;
+      transition: all ${Theme.Base.Transition.Duration}
+        ${Theme.Base.Transition.CssEase};
     }
 
     &:before {

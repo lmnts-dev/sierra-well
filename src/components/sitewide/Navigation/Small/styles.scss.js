@@ -22,14 +22,25 @@ export const BottomNavigationStyle = styled.nav`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${Theme.Color.White};
+  background-color: ${Theme.Color.Snow};
   border-radius: ${Root.Radius};
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   z-index: 700;
   transform: translateY(0);
-  transition: all 1s ease;
+  transition: all .55s ease;
+
+  &.scroll {
+    i {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .label {
+      max-height: 0px;
+      opacity: 0;
+    }
+  }
 `;
 
 BottomNavigationStyle.Inner = styled.div`
@@ -39,6 +50,7 @@ BottomNavigationStyle.Inner = styled.div`
   flex-direction: column;
   min-height: ${Root.Nav.Size};
   position: relative;
+  transition: all .55s ease;
 `;
 
 BottomNavigationStyle.List = styled.ul`
