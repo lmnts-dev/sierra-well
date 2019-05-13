@@ -1,0 +1,137 @@
+{
+  "widget_row": {
+    "type": "Slice",
+    "fieldset": "Widget Row",
+    "description": "A simple row of default widgets.",
+    "icon": "widgets",
+    "display": "grid",
+    "non-repeat": {
+      "headline": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1",
+          "label": "Headline",
+          "placeholder": "Enter a headline..."
+        }
+      },
+      "section_size": {
+        "type": "Number",
+        "config": {
+          "label": "Section Size",
+          "placeholder": "Enter multiple: 1, 2, 3, 4, 5, 6..."
+        }
+      },
+      "text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Text Color"
+        }
+      },
+      "bg_color": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color"
+        }
+      },
+      "padding": {
+        "type": "Text",
+        "config": {
+          "label": "Padding",
+          "placeholder": "0, 0, 0, 0"
+        }
+      },
+      "widget_columns": {
+        "type": "Number",
+        "config": {
+          "label": "Widget Columns",
+          "placeholder": "Defaults to 4"
+        }
+      },
+      "autoplay": {
+        "type": "Select",
+        "config": {
+          "options": [
+            "Off",
+            "On"
+          ],
+          "default_value": "Off",
+          "label": "Autoplay Slider (if more widgets than columns)",
+          "placeholder": "Select..."
+        }
+      }
+    },
+    "repeat": {
+      "widget_background_image": {
+        "type": "Image",
+        "config": {
+          "constraint": {
+            "width": 800,
+            "height": 800
+          },
+          "thumbnails": [],
+          "label": "Widget Background Image (Optional)"
+        }
+      },
+      "widget_headline": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1",
+          "label": "Widget Headline",
+          "placeholder": "Widget headline..."
+        }
+      },
+      "widget_subheadline": {
+        "type": "Text",
+        "config": {
+          "label": "Widget Subheadline",
+          "placeholder": "Enter subheadline..."
+        }
+      },
+      "widget_icon_class": {
+        "type": "Text",
+        "config": {
+          "label": "Icon Class",
+          "placeholder": "www.fontawesome.com/icons"
+        }
+      },
+      "widget_text_color": {
+        "type": "Color",
+        "config": {
+          "label": "Text Color"
+        }
+      },
+      "widget_bg_color": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color"
+        }
+      },
+      "tint_color": {
+        "type": "Color",
+        "config": {
+          "label": "Tint Color (If Background Image)"
+        }
+      },
+      "tint_opacity": {
+        "type": "Select",
+        "config": {
+          "options": [
+            "0",
+            "0.1",
+            "0.2",
+            "0.3",
+            "0.4",
+            "0.5",
+            "0.6",
+            "0.7",
+            "0.8",
+            "0.9"
+          ],
+          "default_value": "0",
+          "label": "Tint Opacity  (If Background Image)",
+          "placeholder": "0"
+        }
+      }
+    }
+  }
+}

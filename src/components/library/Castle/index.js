@@ -19,6 +19,7 @@ import CastleSplitSection from './components/CastleSplitSection';
 import CastleSplitImageHero from './components/CastleSplitImageHero';
 import CastlePromotionalStrip from './components/CastlePromotionalStrip';
 import CastleStickyGallery from './components/CastleStickyGallery';
+import CastleWidgetRow from './components/CastleWidgetRow';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -90,6 +91,10 @@ class CastleBuilder extends React.Component {
                   location={location}
                   key={index}
                 />
+              );
+            case 'widget_row':
+              return (
+                <CastleWidgetRow data={brick} location={location} key={index} />
               );
           }
         })}

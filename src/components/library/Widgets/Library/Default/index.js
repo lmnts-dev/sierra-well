@@ -27,6 +27,7 @@ import { Theme, Root } from 'constants/Theme';
 // Components
 import Icon from 'elements/Icons';
 import ImgMatch from 'components/core/ImgMatch';
+import ImgQuery from 'components/core/ImgQuery';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -34,6 +35,7 @@ import ImgMatch from 'components/core/ImgMatch';
 const DefaultWidget = ({
   BgColor,
   BgImage,
+  BgQuery,
   TextColor,
   TintColor,
   TintOpacity,
@@ -66,6 +68,7 @@ const DefaultWidget = ({
     {BgImageFile ? (
       <ImgMatch src={BgImageFile} AltText={BgImageAltText} />
     ) : null}
+    {BgQuery ? <ImgQuery src={BgQuery} AltText={BgImageAltText} /> : null}
   </WidgetStyle>
 );
 

@@ -17,7 +17,10 @@ import { Theme, Root } from 'constants/Theme';
 const CrossWidgetStyle = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}));
+  height: calc(
+    (100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size})) -
+      (${Theme.Base.Size.Sm} * 2)
+  );
 `;
 
 CrossWidgetStyle.Inner = styled.div`
@@ -29,7 +32,10 @@ CrossWidgetStyle.Inner = styled.div`
   justify-items: stretch;
   grid-auto-flow: row;
   align-items: stretch;
-  width: calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}));
+  width: calc(
+    (100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size})) -
+      (${Theme.Base.Size.Sm} * 2)
+  );
   flex: 1;
 `;
 
