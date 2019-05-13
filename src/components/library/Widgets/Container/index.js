@@ -92,6 +92,7 @@ class WidgetType extends React.Component {
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
+                      BgQuery={Content.Meta.Generic.BgQuery}
                       TextColor={Content.Meta.Generic.TextColor}
                       TintColor={Content.Meta.Generic.TintColor}
                       TintOpacity={Content.Meta.Generic.TintOpacity}
@@ -137,6 +138,7 @@ class WidgetType extends React.Component {
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
+                      BgQuery={Content.Meta.Generic.BgQuery}
                       TextColor={Content.Meta.Generic.TextColor}
                       TintColor={Content.Meta.Generic.TintColor}
                       TintOpacity={Content.Meta.Generic.TintOpacity}
@@ -180,6 +182,7 @@ class WidgetType extends React.Component {
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
+                      BgQuery={Content.Meta.Generic.BgQuery}
                       TextColor={Content.Meta.Generic.TextColor}
                       TintColor={Content.Meta.Generic.TintColor}
                       TintOpacity={Content.Meta.Generic.TintOpacity}
@@ -197,6 +200,7 @@ class WidgetType extends React.Component {
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
+                      BgQuery={Content.Meta.Generic.BgQuery}
                       TextColor={Content.Meta.Generic.TextColor}
                       TintColor={Content.Meta.Generic.TintColor}
                       TintOpacity={Content.Meta.Generic.TintOpacity}

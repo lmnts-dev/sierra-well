@@ -25,115 +25,76 @@ const CastleWidgetRow = ({ data, location }) => {
   const primaryData = data.primary;
   const repeatableData = data.items.length > 0 ? data.items : 0;
 
+  // Function to create our Items map.
+  const widgetContentTransformer = data => {
+    if (data != 0) {
+      // Create a new map from Prismic Data.
+      let itemList = data.map((item, index) => {
+        return {
+          // Begin WidgetContent
+          Flex: 1,
+          WidgetContent: [
+            {
+              Destination: item.widget_destination,
+              Style: 'Generic',
+              Meta: {
+                Generic: {
+                  BgColor: item.widget_bg_color,
+                  BgQuery: item.widget_background_image.localFile
+                    ? item.widget_background_image.localFile.childImageSharp
+                        .fluid
+                    : false,
+                  Subhead: item.widget_subheadline,
+                  Headline: item.widget_headline.text,
+                  TextColor: item.widget_text_color,
+                  IconColor: item.widget_text_color,
+                  IconName: item.widget_icon_class, // FontAwesome Icon Name
+                  TintColor: item.widget_tint_color ? item.widget_tint_color : Theme.Color.Black,
+                  TintOpacity: item.widget_tint_opacity,
+                  IconSize: '',
+                },
+              },
+            },
+          ],
+          // End WidgetContent
+        };
+      });
+
+      // Return new map.
+      return itemList;
+    } else {
+      // Else, don't return anything.
+      return null;
+    }
+  };
+
   return (
     <CastleWidgetRowStyle>
       <SlideSection
-        Widgets={[
-          {
-            Destination: '/learn/all',
-            Style: 'Generic',
-            Meta: {
-              Generic: {
-                BgColor: Theme.Color.Nightsky,
-                BgImage: '',
-                Subhead: '',
-                Headline: 'All Categories',
-                TextColor: Theme.Color.White,
-                IconColor: Theme.Color.White,
-                IconName: 'question', // FontAwesome Icon Name
-                TintColor: '',
-                TintOpacity: '',
-                IconSize: '',
-              },
-            },
-          },
-          {
-            Destination: '/learn/all',
-            Style: 'Generic',
-            Meta: {
-              Generic: {
-                BgColor: Theme.Color.Nightsky,
-                BgImage: '',
-                Subhead: '',
-                Headline: 'All Categories',
-                TextColor: Theme.Color.White,
-                IconColor: Theme.Color.White,
-                IconName: 'question', // FontAwesome Icon Name
-                TintColor: '',
-                TintOpacity: '',
-                IconSize: '',
-              },
-            },
-          },
-          {
-            Destination: '/learn/all',
-            Style: 'Generic',
-            Meta: {
-              Generic: {
-                BgColor: Theme.Color.Nightsky,
-                BgQuery: '',
-                Subhead: '',
-                Headline: 'All Categories',
-                TextColor: Theme.Color.White,
-                IconColor: Theme.Color.White,
-                IconName: 'question', // FontAwesome Icon Name
-                TintColor: '',
-                TintOpacity: '',
-                IconSize: '',
-              },
-            },
-          },
-          {
-            Destination: '/learn/all',
-            Style: 'Generic',
-            Meta: {
-              Generic: {
-                BgColor: Theme.Color.Nightsky,
-                BgQuery: '',
-                Subhead: '',
-                Headline: 'All Categories',
-                TextColor: Theme.Color.White,
-                IconColor: Theme.Color.White,
-                IconName: 'question', // FontAwesome Icon Name
-                TintColor: '',
-                TintOpacity: '',
-                IconSize: '',
-              },
-            },
-          },
-          {
-            Destination: '/learn/all',
-            Style: 'Generic',
-            Meta: {
-              Generic: {
-                BgColor: Theme.Color.Nightsky,
-                BgQuery: '',
-                Subhead: '',
-                Headline: 'All Categories',
-                TextColor: Theme.Color.White,
-                IconColor: Theme.Color.White,
-                IconName: 'question', // FontAwesome Icon Name
-                TintColor: '',
-                TintOpacity: '',
-                IconSize: '',
-              },
-            },
-          },
-        ]}
-        SectionSize={6}
-        Header="Browse Categories"
-        Gutter={[0, 1, 1, 1]}
+        Widgets={widgetContentTransformer(repeatableData)}
+        SectionSize={primaryData.section_size}
+        Header={
+          primaryData.headline.text
+            ? primaryData.headline.text
+            : 'Keep Browsing'
+        }
+        Gutter={
+          primaryData.padding
+            ? primaryData.padding.replace(/\s/g, '').split(',')
+            : null
+        }
         Theme={{
-          TextColor: Theme.Color.Slate,
-          BgColor: 'none',
+          TextColor: primaryData.text_color,
+          BgColor: primaryData.bg_color,
         }}
         SliderSettings={{
           slidesToShow: 4,
           slidesToScroll: 1,
-          autoplay: false,
+          autoplay: primaryData.autoplay == 'On' ? true : false,
           arrows: true,
         }}
       />
+      {console.log(widgetContentTransformer(repeatableData))}
     </CastleWidgetRowStyle>
   );
 };
@@ -155,47 +116,50 @@ export default CastleWidgetRow;
 //
 // ///////////////////////////////////////////////////////////////////
 
-// export const query = graphql`
-//   fragment PrismicSpecialElementsStickyGalleryData on PrismicSpecial {
-//     data {
-//       elements {
-//         ... on PrismicSpecialElementsStickyGallery {
-//           slice_type
-//           primary {
-//             headline {
-//               text
-//             }
-//             subheadline
-//             direction
-//             body_text
-//             background_color
-//             text_color
-//             cta_label
-//             cta_destination
-//             cta_bg_color
-//             cta_text_color
-//             cta_icon
-//           }
-//           items {
-//             src {
-//               alt
-//               copyright
-//               url
-//               localFile {
-//                 id
-//                 childImageSharp {
-//                   fluid(maxWidth: 1200) {
-//                     ...GatsbyImageSharpFluid
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  fragment PrismicSpecialElementsWidgetRowData on PrismicSpecial {
+    data {
+      elements {
+        ... on PrismicSpecialElementsWidgetRow {
+          slice_type
+          primary {
+            headline {
+              text
+            }
+            section_size
+            text_color
+            bg_color
+            padding
+            autoplay
+          }
+          items {
+            widget_headline {
+              text
+            }
+            widget_background_image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            widget_destination
+            widget_subheadline
+            widget_icon_class
+            widget_text_color
+            widget_bg_color
+            widget_tint_color
+            widget_tint_opacity
+          }
+        }
+      }
+    }
+  }
+`;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

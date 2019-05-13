@@ -69,6 +69,7 @@ const CastleSplitSection = ({ data, location }) => {
                       IconPosition={item.cta_icon ? 'left' : null}
                       IconClass={item.cta_icon ? item.cta_icon : null}
                       IconFas
+                      key={index}
                     />
                   </>
                 );

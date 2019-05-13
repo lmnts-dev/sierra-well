@@ -54,6 +54,7 @@ export const query = graphql`
           ...PrismicSpecialElementsStickyGalleryData
           ...PrismicSpecialElementsSplitImageHeroData
           ...PrismicSpecialElementsPromotionalStripData
+          ...PrismicSpecialElementsWidgetRowData
 
           # Load additional page data.
           data {

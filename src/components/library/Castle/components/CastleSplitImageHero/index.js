@@ -38,7 +38,11 @@ const CastleSplitSection = ({ data, location }) => {
         imgRight={primaryData.direction == 'normal' ? '0' : null}
         imgBottom="0"
         imgWidth="50%"
-        Size="2"
+        Size={
+          primaryData.padding
+            ? primaryData.padding.replace(/\s/g, '').split(',')
+            : null
+        }
         className="simple-hero"
         Background={primaryData.background_color}
         JustifyContent={primaryData.direction == 'normal' ? null : 'flex-end'}
