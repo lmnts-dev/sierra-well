@@ -22,6 +22,7 @@ import Icon from 'elements/Icons';
 
 // Constants
 import { Theme } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Styles
 import SlideSectionStyle from './styles.scss';
@@ -109,6 +110,15 @@ class SectionSlider extends React.Component {
       arrows: arrows,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
+      responsive: [
+        {
+          breakpoint: Base.Media.Width.Md + 'px',
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     };
 
     return (

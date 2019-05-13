@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { createGlobalStyle } from 'styled-components';
 import { Root } from './../Theme';
+import { Base } from './Base';
 
 // Font.js:
 // This is the sitewide font reference.
@@ -14,8 +15,8 @@ export const Font = {
     Md: '1rem',
     Lg: '1rem',
     ViewWidth: {
-      Sm: '5.8vw',
-      Md: '5.2vw',
+      Sm: '4.8vw',
+      Md: '4.2vw',
       Lg: '1.2vw',
     },
     ViewHeight: {
@@ -84,10 +85,15 @@ export const Typography = createGlobalStyle`
 
   h1, .h1 {
     font-size: 4rem;
-    
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      font-size: 2rem;
+    }
   }
   h2, .h2 {
     font-size: 3rem;
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      font-size: 2rem;
+    }
   }
   h3, .h3 {
     font-size: 2.5rem;

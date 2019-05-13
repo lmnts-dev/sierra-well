@@ -7,8 +7,8 @@ export const Base = {
   // Core Base Measurement
   Size: {
     Lg: 60,
-    Md: 40,
-    Sm: 14,
+    Md: 25,
+    Sm: 8,
   },
 
   // Root Element Measurement
@@ -111,6 +111,6 @@ export const Base = {
 
   // Geometry
   Geometry: {
-    Radius: 10, // px
+    Radius: 15, // px
   },
 };

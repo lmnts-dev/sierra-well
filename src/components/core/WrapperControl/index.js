@@ -15,13 +15,16 @@ import { createGlobalStyle } from 'styled-components';
 
 // Lock Wrapper Scroll
 export const WrapperLock = createGlobalStyle`
-
   html, body {
     overflow: hidden;
 
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      overflow: auto; 
-      -webkit-overflow-scrolling: touch;
+      overflow-y: visible !important; 
+      overflow: visible;
+      
+      .wrapper {
+        overflow-y: hidden;
+      }
     }
   }
 
@@ -30,7 +33,8 @@ export const WrapperLock = createGlobalStyle`
       overflow: hidden;
     }
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      overflow: hidden;
+      overflow: hidden; 
+      overflow-y: hidden;
     }
   }
 
@@ -52,7 +56,7 @@ export const WrapperRelease = createGlobalStyle`
       position: absolute;
     }
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      overflow-y: visible; /* has to be scroll, not auto */
+      overflow-y: hidden;
       position: absolute;
     }
   }

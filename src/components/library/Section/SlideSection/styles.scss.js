@@ -175,6 +175,14 @@ SlideSectionStyle.Content = styled(SectionContentStyle)`
       props.SectionSize
         ? 'calc(' + Root.Size + '*' + props.SectionSize + ')'
         : 'calc(' + Root.Size + '* 3)'};
+
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      padding: calc(${Root.Size}) calc(${Root.Size} / 4);
+      height: ${props =>
+        props.SectionSize
+          ? 'calc((' + Root.Size + '* 3) * ' + props.SectionSize + ')'
+          : 'calc((' + Root.Size + '* 3) * 3)'};
+    }
   }
 `;
 

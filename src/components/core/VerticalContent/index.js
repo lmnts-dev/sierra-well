@@ -13,7 +13,7 @@ import SlideSection from 'components/library/Section/SlideSection';
 
 // Styles
 import { createGlobalStyle } from 'styled-components';
-import VerticalContentStyle from 'components/core/VerticalContent/styles.scss';
+import VerticalContentStyle from './styles.scss';
 
 // Assets
 import BgPlaceholder from '../../../assets/images/placeholder_bg.jpg';
@@ -99,19 +99,9 @@ const Widgets = [
   },
 ];
 
-// Lock Wrapper Scrolls
-const WrapperRelease = createGlobalStyle`
-  .wrapper {
-    @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
-      overflow: hidden;
-    }
-  }
-`;
-
 // The Content Itself
 const VerticalContent = ({ children }) => (
   <>
-    <WrapperRelease />
     <VerticalContentStyle>
       <VerticalContentStyle.Inner>
         <SlideSection

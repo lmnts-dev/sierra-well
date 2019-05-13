@@ -34,7 +34,7 @@ class NavigationLarge extends React.Component {
     // Base styles to change transition state for
     // collapsing menu hero.
     this.state = {
-      scrollClass: '',
+      scrollClass: 'top',
     };
 
     // Bind base functions to change transition state for

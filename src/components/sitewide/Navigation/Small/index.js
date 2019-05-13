@@ -30,14 +30,49 @@ import { MenuData } from 'data/menu';
 
 // The Large Device Navigation
 class NavigationSmall extends PureComponent {
+  constructor(props) {
+    // Make our props accessible through this.props
+    super(props);
+    // Base styles to change transition state for
+    // collapsing menu hero.
+    this.state = {
+      scrollClass: 'top',
+    };
+
+    // Bind base functions to change transition state for
+    // collapsing menu hero.
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  // Make sure we are listening for scroll once mounted.
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  // Remove listener when not mounted.
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  // Base functions to change transition state for
+  // navigation on scroll
+  handleScroll(event) {
+    console.log(window.scrollY);
+    if (window.scrollY === 0 && this.state.scrollClass === 'scroll') {
+      this.setState({ scrollClass: 'top' });
+    } else if (window.scrollY !== 0 && this.state.scrollClass !== 'scroll') {
+      this.setState({ scrollClass: 'scroll' });
+    }
+  }
+
   render() {
     const { location } = this.props;
 
     return (
       <>
         {/* Top Navigation */}
-        <TopNavigationStyle>
-          <TopNavigationStyle.Inner>
+        <TopNavigationStyle className={'nav-top ' + this.state.scrollClass}>
+          <TopNavigationStyle.Inner className={this.state.scrollClass}>
             <TopNavigationStyle.Branding>
               <Link to="/">
                 <img src={logo} alt={Theme.Site.Title} />
@@ -66,7 +101,9 @@ class NavigationSmall extends PureComponent {
         </TopNavigationStyle>
 
         {/* Bottom Navigation */}
-        <BottomNavigationStyle className="nav-mobile">
+        <BottomNavigationStyle
+          className={'nav-mobile ' + this.state.scrollClass}
+        >
           <BottomNavigationStyle.Inner>
             <BottomNavigationStyle.List>
               <Item

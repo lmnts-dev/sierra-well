@@ -14,6 +14,9 @@ import SlideSection from 'components/library/Section/SlideSection';
 // Style Overrides
 import CastleWidgetRowStyle from './styles.scss';
 
+// Elements
+import Block from 'components/library/Block';
+
 // Constants
 import { Theme } from 'constants/Theme';
 
@@ -49,7 +52,9 @@ const CastleWidgetRow = ({ data, location }) => {
                   TextColor: item.widget_text_color,
                   IconColor: item.widget_text_color,
                   IconName: item.widget_icon_class, // FontAwesome Icon Name
-                  TintColor: item.widget_tint_color ? item.widget_tint_color : Theme.Color.Black,
+                  TintColor: item.widget_tint_color
+                    ? item.widget_tint_color
+                    : Theme.Color.Black,
                   TintOpacity: item.widget_tint_opacity,
                   IconSize: '',
                 },
@@ -70,31 +75,32 @@ const CastleWidgetRow = ({ data, location }) => {
 
   return (
     <CastleWidgetRowStyle>
-      <SlideSection
-        Widgets={widgetContentTransformer(repeatableData)}
-        SectionSize={primaryData.section_size}
-        Header={
-          primaryData.headline.text
-            ? primaryData.headline.text
-            : 'Keep Browsing'
-        }
-        Gutter={
-          primaryData.padding
-            ? primaryData.padding.replace(/\s/g, '').split(',')
-            : null
-        }
-        Theme={{
-          TextColor: primaryData.text_color,
-          BgColor: primaryData.bg_color,
-        }}
-        SliderSettings={{
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          autoplay: primaryData.autoplay == 'On' ? true : false,
-          arrows: true,
-        }}
-      />
-      {console.log(widgetContentTransformer(repeatableData))}
+      <Block maxWidth="100%">
+        <SlideSection
+          Widgets={widgetContentTransformer(repeatableData)}
+          SectionSize={primaryData.section_size}
+          Header={
+            primaryData.headline.text
+              ? primaryData.headline.text
+              : 'Keep Browsing'
+          }
+          Gutter={
+            primaryData.padding
+              ? primaryData.padding.replace(/\s/g, '').split(',')
+              : null
+          }
+          Theme={{
+            TextColor: primaryData.text_color,
+            BgColor: primaryData.bg_color,
+          }}
+          SliderSettings={{
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: primaryData.autoplay == 'On' ? true : false,
+            arrows: true,
+          }}
+        />
+      </Block>
     </CastleWidgetRowStyle>
   );
 };

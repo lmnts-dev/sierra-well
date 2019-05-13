@@ -23,7 +23,7 @@ export const BottomNavigationStyle = styled.nav`
   left: 0;
   right: 0;
   background-color: ${Theme.Color.White};
-  border-radius: ${Root.Radius} ${Root.Radius} 0 0;
+  border-radius: ${Root.Radius};
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -76,6 +76,68 @@ TopNavigationStyle.Inner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: ${Root.Radius};
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0%;
+    background-color: ${Theme.Color.Snow};
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
+    transform: translateY(-110%);
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  &.scroll {
+    &:before {
+      background-color: ${Theme.Color.Snow};
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.09);
+      transform: translateY(0%);
+    }
+
+    &.nav-top {
+      ul {
+        li {
+          a {
+            color: ${Theme.Color.Nightsky};
+            &:before {
+              background: ${Theme.Color.Nightsky};
+            }
+          }
+        }
+      }
+
+      .btn {
+        transition: all 1s ease;
+        .btn-inner {
+          transition: all 1s ease;
+          background-color: ${Theme.Color.Primary};
+          color: ${Theme.Color.White};
+
+          .ico {
+            i {
+              color: ${Theme.Color.White};
+            }
+          }
+        }
+      }
+
+      .ico-intercom {
+        background-color: ${Theme.Color.Nightsky};
+        transition: all 1s ease;
+
+        svg {
+          transition: all 1s ease;
+          fill: ${Theme.Color.White};
+        }
+      }
+    }
+  }
 `;
 
 TopNavigationStyle.Tools = styled.div`

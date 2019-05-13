@@ -23,6 +23,10 @@ const SidebarStyle = styled.div`
   height: calc(100vh - ${Root.Nav.Size});
   display: flex;
   z-index: 555;
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: none;
+  }
 `;
 
 SidebarStyle.Inner = styled.div`
@@ -32,6 +36,10 @@ SidebarStyle.Inner = styled.div`
   justify-content: flex-end;
   padding: ${Theme.Base.Size.Sm};
   width: ${Root.Grid.Gutter.Left};
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: none;
+  }
 `;
 
 export default SidebarStyle;

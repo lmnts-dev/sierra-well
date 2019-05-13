@@ -14,6 +14,7 @@ import {
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -85,6 +86,11 @@ MasonrySectionStyle.Content = styled.div`
     props.ColumnGap
       ? ' calc(' + Root.Size + ' * ' + props.ColumnGap + ')'
       : 'calc(' + Root.Size + '* .25)'};
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    column-width: 100%;
+    column-count: 1;
+  }
 
   .widget-content {
     border-radius: ${Root.Radius};

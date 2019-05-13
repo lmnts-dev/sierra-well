@@ -23,12 +23,14 @@ const VerticalContentStyle = styled.div`
   padding-right: 0;
   padding-top: calc(${Root.Nav.Size} + ${Theme.Base.Size.Sm});
   padding-bottom: calc(${Root.Nav.Size} + ${Theme.Base.Size.Sm});
+  overflow: visible;
 `;
 
 // The Content Inner
 VerticalContentStyle.Inner = styled.div`
   width: 100%;
   padding: 0;
+  overflow: visible;
 
   .widget {
     ${FadeIn};
