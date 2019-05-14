@@ -83,6 +83,7 @@ export class SlideGroup extends React.Component {
       speed: 1500,
       arrows: true,
       slidesToShow: 1.15,
+      variableWidth: true,
       infinite: false,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
@@ -126,6 +127,7 @@ export class SlideGroup extends React.Component {
         <div onWheel={e => this.handleWheel(e)}>
           <Slider ref={c => (this.slider = c)} {...settings}>
             {/* Loop through our Slide Data */}
+            {console.log(SlidesData)}
             {SlidesData.map((Slide, index) => {
               // Pass our Slide Columns data to the Slide
               return <SlideContainer Columns={Slide.Columns} key={index} />;

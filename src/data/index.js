@@ -22,7 +22,7 @@ export const IndexData = {
     Slides: [
       // Begin Slides
       {
-        Name: 'home-slide-1',
+        Name: 'home-slides',
         Columns: [
           // Begin Columns
           {
@@ -221,16 +221,12 @@ export const IndexData = {
                 ],
                 // End WidgetContent
               },
+
               // End Widgets
             ],
           },
           // End Columns
-        ],
-      },
-      {
-        Name: 'home-slide-2',
-        Columns: [
-          // Begin Columns
+
           {
             Type: 'default',
             Widgets: [
@@ -602,10 +598,8 @@ export const IndexData = {
               // End Widgets
             ],
           },
-          // End Columns
         ],
       },
-      // End Slides
     ],
   },
 };
