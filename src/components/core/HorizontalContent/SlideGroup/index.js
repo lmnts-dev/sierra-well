@@ -10,8 +10,12 @@ import { Helmet } from 'react-helmet'; // For Slick Styles
 // import { Theme } from 'constants/Theme';
 import { Base } from 'constants/styles/Base';
 
+// Styles
+import HorizontalContentStyle from '../styles.scss';
+
 // Components
-import SlideContainer from './../SlideContainer';
+import SlideColumn from '../SlideColumn';
+import SlideTransformer from '../SlideTransformer';
 import { WrapperLock } from './../../WrapperControl';
 import Icon from 'elements/Icons';
 
@@ -80,29 +84,14 @@ export class SlideGroup extends React.Component {
     // Read more: https://react-slick.neostack.com/
     const settings = {
       dots: false,
-      speed: 1500,
+      speed: 1200,
       arrows: true,
-      slidesToShow: 1.15,
+      slidesToShow: 3,
+      slidesToScroll: 2,
       variableWidth: true,
       infinite: false,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
-      responsive: [
-        {
-          breakpoint: 1280,
-          settings: {
-            slidesToShow: 0.8,
-            slidesToScroll: 1.1,
-          },
-        },
-        {
-          breakpoint: 1025,
-          settings: {
-            slidesToShow: 0.5,
-            slidesToScroll: 1.5,
-          },
-        },
-      ],
     };
 
     // Slides Data
@@ -127,10 +116,18 @@ export class SlideGroup extends React.Component {
         <div onWheel={e => this.handleWheel(e)}>
           <Slider ref={c => (this.slider = c)} {...settings}>
             {/* Loop through our Slide Data */}
-            {console.log(SlidesData)}
-            {SlidesData.map((Slide, index) => {
-              // Pass our Slide Columns data to the Slide
-              return <SlideContainer Columns={Slide.Columns} key={index} />;
+            {/* Pass our Slide Columns data to the Slide */}
+            {SlidesData[0].Columns.map((Column, index) => {
+              // If our Column isn't a Divider
+              if (Column.Type != 'divider') {
+                // Pass our Widgets data to our Columns
+                return <SlideColumn key={index} Widgets={Column.Widgets} />;
+              }
+
+              // If our Column is a Divider
+              else {
+                return <SlideColumn key={index} Divider />;
+              }
             })}
           </Slider>
         </div>

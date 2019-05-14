@@ -120,7 +120,7 @@ HorizontalContentStyle.Inner = styled.div`
 `;
 
 // The Individual Slide Wrapper
-HorizontalContentStyle.Slide = styled.div`
+HorizontalContentStyle.SlideColumnContainer = styled.div`
   width: 100%;
   padding: 0;
   overflow: visible;
@@ -128,7 +128,7 @@ HorizontalContentStyle.Slide = styled.div`
 `;
 
 // The Individual Slide Inner
-HorizontalContentStyle.Slide.Inner = styled.div`
+HorizontalContentStyle.SlideColumnContainer.Inner = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -151,6 +151,10 @@ HorizontalContentStyle.Column = styled.div`
       : props.Divider
       ? Theme.Base.Size.Md
       : 'auto'};
+
+    .col-inner {
+      min-width: 350px;
+    }
 `;
 
 HorizontalContentStyle.Column.Inner = styled.div`

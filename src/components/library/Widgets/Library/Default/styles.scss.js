@@ -29,6 +29,7 @@ const WidgetStyle = styled.div`
     ${Theme.Base.Transition.CssEase};
   cursor: pointer;
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+  min-width: 100px;
 
   /* Background Images */
 

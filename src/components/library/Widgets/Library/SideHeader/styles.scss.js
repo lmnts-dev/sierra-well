@@ -23,6 +23,7 @@ const SideHeaderWidgetStyle = styled.div`
   background-color: none;
   position: relative;
   overflow: hidden;
+  max-width: 350px;
   cursor: crosshair;
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
