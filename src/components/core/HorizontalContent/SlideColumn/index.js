@@ -10,6 +10,10 @@ import WidgetContainer from 'components/library/Widgets/Container/';
 // Styles
 import HorizontalContentStyle from './../styles.scss';
 
+// Data Transformers
+import { defaultWidgetDataTransformer } from 'components/library/Widgets/Library/Default';
+import { sideHeaderWidgetDataTransformer } from 'components/library/Widgets/Library/SideHeader';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
@@ -24,7 +28,6 @@ class SlideColumn extends React.Component {
   render() {
     const Divider = this.props.Divider;
     const Widgets = this.props.Widgets;
-    const children = this.props.children;
 
     // If it's a Divider:
     if (Divider == true) {
@@ -49,8 +52,7 @@ class SlideColumn extends React.Component {
                   WidgetContent={Widget.WidgetContent}
                   Flex={Widget.Flex}
                   Width={Widget.Width}
-                >
-                </WidgetContainer>
+                />
               );
             })}
           </HorizontalContentStyle.Column.Inner>
@@ -61,3 +63,39 @@ class SlideColumn extends React.Component {
 }
 
 export default SlideColumn;
+
+// Transformer:
+// This is for taking Prismic data and transforming it into something that
+// this component would like to handle. The Transformer is typically used
+// in /template/ pages where a GraphQL query from Prismic (or any data) source
+// is involved.
+//////////////////////////////////////////////////////////////////////
+
+// Function to create our Columns Map
+export const columnDataTransformer = data => {
+  if (data) {
+    let columnMap = data.map((column, index) => {
+      switch (column.slice_type) {
+        case 'title_column':
+          return {
+            Type: column.slice_type,
+            Widgets: sideHeaderWidgetDataTransformer(column.primary),
+          };
+        case 'column':
+          return {
+            Type: column.slice_type,
+            Widgets: defaultWidgetDataTransformer(column.items),
+          };
+        case 'divider':
+          return {
+            Type: column.slice_type,
+            Widgets: defaultWidgetDataTransformer(column.items),
+          };
+      }
+    });
+
+    return columnMap;
+  } else {
+    return 'null';
+  }
+};

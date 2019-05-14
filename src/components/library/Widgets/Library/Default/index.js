@@ -1,19 +1,5 @@
 // Default Widget.js:
 
-// Example Usage:
-// <Widget
-// WidgetContent={WidgetContent}
-// BgImage="https://source.unsplash.com/1600x1200/?cannabis"
-// TintColor={Theme.Color.Black}
-// TintOpacity=".5"
-// Subhead="Subhead"
-// Headline="Headline"
-// TextColor={Theme.Color.White}
-// IconColor={Theme.Color.White}
-// IconName="graduation-cap"
-// Destination="/subpage"
-// />;
-
 // Core
 import React from 'react';
 import { Link } from 'gatsby';
@@ -73,3 +59,53 @@ const DefaultWidget = ({
 );
 
 export default DefaultWidget;
+
+// Transformer:
+// This is for taking Prismic data and transforming it into something that
+// this component would like to handle. The Transformer is typically used
+// in /template/ pages where a GraphQL query from Prismic (or any data) source
+// is involved.
+//////////////////////////////////////////////////////////////////////
+
+// Function to create the Default Widget Map inside the Columns Map.
+export const defaultWidgetDataTransformer = data => {
+  if (data) {
+    let widgetMap = data.map((widget, index) => {
+      return {
+        // Begin WidgetContent
+        Flex: widget.widget_height_fraction ? widget.widget_height_fraction : 1,
+        Width: widget.widget_width_multiple ? widget.widget_width_multiple : 6,
+        WidgetContent: [
+          {
+            Destination: widget.widget_destination,
+            Style: 'Generic',
+            Meta: {
+              Generic: {
+                BgColor: widget.widget_bg_color,
+                BgImage: '',
+                BgQuery: widget.widget_background_image.localFile
+                  ? widget.widget_background_image.localFile.childImageSharp
+                      .fluid
+                  : false,
+                Subhead: widget.widget_subheadline,
+                Headline: widget.widget_headline.text,
+                TextColor: widget.widget_text_color,
+                IconColor: widget.widget_text_color,
+                IconName: widget.widget_icon_class,
+                TintColor: widget.tint_color ? widget.tint_color : '',
+                TintOpacity: widget.tint_opacity ? widget.tint_opacity : '',
+                IconSize: '',
+              },
+            },
+          },
+        ],
+        // End WidgetContent
+      };
+    });
+
+    return widgetMap;
+  } else {
+    let widgetMap = [];
+    return widgetMap;
+  }
+};
