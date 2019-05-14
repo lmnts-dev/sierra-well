@@ -62,6 +62,15 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
+        allPrismicTopLevelPage {
+          edges {
+            node {
+              id
+              uid
+            }
+          }
+        }
+
         allQuestionCategoriesJson {
           edges {
             node {
@@ -116,6 +125,38 @@ exports.createPages = ({ graphql, actions }) => {
     if (result.errors) {
       throw result.errors;
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////
+
+    // Top Level Page template.
+    const topLevelPageTemplate = path.resolve(
+      `src/templates/TopLevelPage/index.js`
+    );
+
+    ////////////////////////////////////////////////////////////////////////////////////
+
+    // Create Top Level Pages
+    _.each(result.data.allPrismicTopLevelPage.edges, edge => {
+      // Gatsby uses Redux to manage its internal state.
+      // Plugins and sites can use functions like "createPage"
+      // to interact with Gatsby.
+      // We are using 'lodash' above for the _.each function. Read more:
+      // https://lodash.com/docs/4.17.11#forEach
+
+      // Use Gatsby's createPage() function. Read more:
+      // https://www.gatsbyjs.org/docs/creating-and-modifying-pages/
+      createPage({
+        // Each page is required to have a `path` as well
+        // as a template component. The `context` is
+        // optional but is often necessary so the template
+        // can query data specific to each page.
+        path: `/${edge.node.uid}/`,
+        component: slash(topLevelPageTemplate),
+        context: {
+          Id: edge.node.id,
+        },
+      });
+    });
 
     ////////////////////////////////////////////////////////////////////////////////////
 
@@ -204,9 +245,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       _.each(result.data.allPrismicSpecial.edges, edge => {
         createPage({
-          path: `/specials/${
-            edge.node.uid
-          }/`,
+          path: `/specials/${edge.node.uid}/`,
           component: slash(specialTemplate),
           context: {
             Id: edge.node.id,

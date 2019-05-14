@@ -18,16 +18,7 @@ const SlideContainer = ({ Columns }) => (
     {console.log('Columns:')}
     {console.log(Columns)}
     {/* Map our Columns data. */}
-    {/* <div style={{width: '100px'}}>
-      Slide
-    </div>
-    <div style={{width: '60px'}}>
-      Slide
-    </div>
-    <div style={{width: '400px'}}>
-      Slide
-    </div> */}
-    {/* {Columns.map((Column, index) => {
+    {Columns.map((Column, index) => {
       // If our Column isn't a Divider
       if (Column.Type != 'divider') {
         // Pass our Widgets data to our Columns
@@ -38,7 +29,7 @@ const SlideContainer = ({ Columns }) => (
       else {
         return <SlideColumn key={index} Divider />;
       }
-    })} */}
+    })}
   </>
 );
 

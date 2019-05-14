@@ -1,5 +1,5 @@
-// Index.js:
-// This is the home page of the website.
+// locations.js:
+// This is the Locations page of the website.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -7,42 +7,41 @@
 // Core
 import React from 'react';
 import Device from './../components/core/DeviceQuery';
-
-// Components
 import Layout from 'components/core/Layout';
-import HorizontalContent from 'components/core/HorizontalContent';
+
+// Mobile Components
 import VerticalContent from 'components/core/VerticalContent';
 
-// Constants
-import { Theme } from 'constants/Theme';
-import { Base } from 'constants/styles/Base';
+// Desktop Components
+import { HorizontalContent } from 'components/core/HorizontalContent';
+import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
+
+// Data
+import { CompanyData } from 'data/company';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Page Theme
-const PageTheme = {
-  Color: {
-    Background: 'Indigo',
-    Primary: 'Indigo',
-    Secondary: 'Cyan',
-    Tertiary: 'Indigo',
-  },
-};
-
 // Large Device Content
-const LargeContent = () => <HorizontalContent />;
+const LargeContent = () => (
+  <HorizontalContent>
+    <SlideGroup
+      className={CompanyData.SlideGroup.Name}
+      SlidesData={CompanyData.SlideGroup.Slides}
+    />
+  </HorizontalContent>
+);
 
 // Small Device Content
 const SmallContent = () => <VerticalContent />;
 
 // Render Page
-const Index = ({ data }) => (
+const Locationss = ({ data }) => (
   <Layout
-    BgColor={PageTheme.Color.Background}
-    PrimaryColor={PageTheme.Color.Primary}
-    SecondaryColor={PageTheme.Color.Secondary}
-    TertiaryColor={PageTheme.Color.Tertiary}
+    BgColor={CompanyData.PageTheme.Color.Background}
+    PrimaryColor={CompanyData.PageTheme.Color.Primary}
+    SecondaryColor={CompanyData.PageTheme.Color.Secondary}
+    TertiaryColor={CompanyData.PageTheme.Color.Tertiary}
   >
     <Device Query="Desktop">
       <LargeContent />
@@ -54,7 +53,7 @@ const Index = ({ data }) => (
   </Layout>
 );
 
-export default Index;
+export default Locationss;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

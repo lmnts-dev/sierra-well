@@ -2,6 +2,7 @@
 
 // Core
 import React from 'react';
+import { graphql } from 'gatsby';
 
 // Componentss
 import WidgetContainer from 'components/library/Widgets/Container/';

@@ -29,6 +29,7 @@ const LargeContent = () => (
       className={SpecialsData.SlideGroup.Name}
       SlidesData={SpecialsData.SlideGroup.Slides}
     />
+    {console.log(SpecialsData.SlideGroup.Slides)}
   </HorizontalContent>
 );
 
