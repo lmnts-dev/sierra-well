@@ -44,6 +44,10 @@ WidgetContainerStyle.Inner = styled.div`
     right: 0;
     bottom: 0;
 
+    .slick-track {
+      display: block !important;
+    }
+
     .slick-dots {
       bottom: ${Theme.Base.Size.Sm};
       left: ${Theme.Base.Size.Sm};

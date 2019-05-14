@@ -29,6 +29,10 @@ const HorizontalContentStyle = styled.div`
       overflow: visible;
     }
 
+    .slick-track {
+      display: flex;
+    }
+
     /* Arrows */
     .slick-arrow {
       top: calc((${Root.Size}) * -1);

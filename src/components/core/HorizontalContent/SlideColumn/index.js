@@ -49,7 +49,6 @@ class SlideColumn extends React.Component {
                   Flex={Widget.Flex}
                   Width={Widget.Width}
                 >
-                {console.log(Widget.Width)}
                 </WidgetContainer>
               );
             })}
