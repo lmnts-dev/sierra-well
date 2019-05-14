@@ -32,6 +32,7 @@ export const IndexData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 10,
                 WidgetContent: [
                   {
                     Destination: '/subpage',

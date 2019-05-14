@@ -262,8 +262,8 @@ class WidgetType extends React.Component {
   }
 }
 
-const WidgetContainer = ({ WidgetContent, Flex }) => (
-  <WidgetContainerStyle className="widget" Flex={Flex}>
+const WidgetContainer = ({ WidgetContent, Flex, Width }) => (
+  <WidgetContainerStyle className="widget" Flex={Flex} Width={Width}>
     <WidgetType WidgetContent={WidgetContent} />
   </WidgetContainerStyle>
 );

@@ -47,7 +47,10 @@ class SlideColumn extends React.Component {
                   key={index}
                   WidgetContent={Widget.WidgetContent}
                   Flex={Widget.Flex}
-                />
+                  Width={Widget.Width}
+                >
+                {console.log(Widget.Width)}
+                </WidgetContainer>
               );
             })}
           </HorizontalContentStyle.Column.Inner>
