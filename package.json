@@ -5,14 +5,14 @@
   "scripts": {
     "start": "npm run develop",
     "clean": "rimraf .cache public",
-    "develop": "npm run clean && gatsby develop",
+    "develop": "bash castle.sh && npm run clean && gatsby develop",
     "push": "npm run build && git add . && gitmoji -c && git push",
     "serve": "gatsby serve",
     "ssr": "npm run build && npm run serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
     "build:dir": "mkdirp ./public/icons/",
     "build:favicons": "node scripts/favicons",
-    "build": "npm run clean && npm run build:dir && npm run build:favicons && gatsby build",
+    "build": "bash bam.sh && npm run clean && npm run build:dir && npm run build:favicons && gatsby build",
     "test": "ava **/*.test.js --verbose"
   },
   "greenkeeper": {

@@ -1,4 +1,12 @@
-// Castle.js
+// ::::::::      :::      ::::::::  ::::::::::: :::        ::::::::::
+// :+:    :+:   :+: :+:   :+:    :+:     :+:     :+:        :+:
+// +:+         +:+   +:+  +:+            +:+     +:+        +:+
+// +#+        +#++:++#++: +#++:++#++     +#+     +#+        +#++:++#
+// +#+        +#+     +#+        +#+     +#+     +#+        +#+
+// #+#    #+# #+#     #+# #+#    #+#     #+#     #+#        #+#
+//  ########  ###     ###  ########      ###     ########## ##########
+//
+// Castle.js // By Peter Laxalt // www.laxaltandmciver.co
 // This is the page builder for Elements.
 // Future regex for matching {{ variables }} https://regex101.com/r/xgOodL/1
 

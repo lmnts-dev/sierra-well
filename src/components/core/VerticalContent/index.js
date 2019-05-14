@@ -100,73 +100,81 @@ const Widgets = [
 ];
 
 // The Content Itself
-const VerticalContent = ({ children }) => (
-  <>
-    <VerticalContentStyle>
-      <VerticalContentStyle.Inner>
-        <SlideSection
-          Widgets={Widgets}
-          SectionSize={7}
-          Header="Learn"
-          Theme={{
-            TextColor: Theme.Color.Black,
-            BgColor: 'none',
-          }}
-          SliderSettings={{
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            arrows: false,
-          }}
-        />
-        <SlideSection
-          Widgets={Widgets}
-          SectionSize={7}
-          Header="Medical"
-          Theme={{
-            TextColor: Theme.Color.Black,
-            BgColor: 'none',
-          }}
-          SliderSettings={{
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            arrows: false,
-          }}
-        />
-        <SlideSection
-          Widgets={Widgets}
-          SectionSize={7}
-          Header="Recreational"
-          Theme={{
-            TextColor: Theme.Color.Black,
-            BgColor: 'none',
-          }}
-          SliderSettings={{
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            arrows: false,
-          }}
-        />
-        <SlideSection
-          Widgets={Widgets}
-          SectionSize={7}
-          Header="Industry"
-          Theme={{
-            TextColor: Theme.Color.Black,
-            BgColor: 'none',
-          }}
-          SliderSettings={{
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            arrows: false,
-          }}
-        />
-      </VerticalContentStyle.Inner>
-    </VerticalContentStyle>
-  </>
-);
+const VerticalContent = ({ children }) => {
+  if (children) {
+    return (
+      <VerticalContentStyle>
+        <VerticalContentStyle.Inner>{children}</VerticalContentStyle.Inner>
+      </VerticalContentStyle>
+    );
+  } else {
+    return (
+      <VerticalContentStyle>
+        <VerticalContentStyle.Inner>
+          <SlideSection
+            Widgets={Widgets}
+            SectionSize={7}
+            Header="Learn"
+            Theme={{
+              TextColor: Theme.Color.Black,
+              BgColor: 'none',
+            }}
+            SliderSettings={{
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              arrows: false,
+            }}
+          />
+          <SlideSection
+            Widgets={Widgets}
+            SectionSize={7}
+            Header="Medical"
+            Theme={{
+              TextColor: Theme.Color.Black,
+              BgColor: 'none',
+            }}
+            SliderSettings={{
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              arrows: false,
+            }}
+          />
+          <SlideSection
+            Widgets={Widgets}
+            SectionSize={7}
+            Header="Recreational"
+            Theme={{
+              TextColor: Theme.Color.Black,
+              BgColor: 'none',
+            }}
+            SliderSettings={{
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              arrows: false,
+            }}
+          />
+          <SlideSection
+            Widgets={Widgets}
+            SectionSize={7}
+            Header="Industry"
+            Theme={{
+              TextColor: Theme.Color.Black,
+              BgColor: 'none',
+            }}
+            SliderSettings={{
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              arrows: false,
+            }}
+          />
+        </VerticalContentStyle.Inner>
+      </VerticalContentStyle>
+    );
+  }
+};
 
 export default VerticalContent;

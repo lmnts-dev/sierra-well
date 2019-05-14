@@ -43,10 +43,60 @@ export const query = graphql`
           id
           uid
           data {
+            ## Page Settings
             description
             page_title {
               text
             }
+            opengraph_image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+
+            ## Mobile Sections
+            body {
+              slice_type
+              primary {
+                section_headline {
+                  text
+                }
+                section_height_multiple
+                section_arrows
+                section_autoplay
+              }
+              items {
+                widget_background_image {
+                  alt
+                  localFile {
+                    id
+                    childImageSharp {
+                      fluid(maxWidth: 1200) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                }
+                widget_headline {
+                  text
+                }
+                widget_subheadline
+                widget_destination
+                widget_icon_class
+                widget_text_color
+                widget_bg_color
+                tint_color
+                tint_opacity
+              }
+            }
+
+            ## Desktop Sections
             dashboard_link {
               id
               ... on dashboardLink_2 {
@@ -108,17 +158,6 @@ export const query = graphql`
                         }
                       }
                     }
-                  }
-                }
-              }
-            }
-            opengraph_image {
-              alt
-              localFile {
-                id
-                childImageSharp {
-                  fluid(maxWidth: 1200) {
-                    ...GatsbyImageSharpFluid
                   }
                 }
               }

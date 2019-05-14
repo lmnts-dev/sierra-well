@@ -62,9 +62,6 @@ const Layout = ({
   MenuLocationData,
 }) => (
   <SiteGrid>
-    {MenuLocationData
-      ? console.log(MenuLocationData)
-      : console.log('not a menu page')}
     {MenuLocationData ? <MenuPageTheme /> : null}
     <GlobalStyle />
     <PageTheme
