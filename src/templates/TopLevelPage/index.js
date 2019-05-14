@@ -90,6 +90,17 @@ export const query = graphql`
                         }
                       }
 
+                      ... on PrismicDashboardBodyTitleColumn {
+                        slice_type
+                        primary {
+                          widget_headline {
+                            text
+                          }
+                          widget_intro_copy
+                          widget_body_copy
+                        }
+                      }
+
                       ... on PrismicDashboardBodyDivider {
                         slice_type
                         primary {
