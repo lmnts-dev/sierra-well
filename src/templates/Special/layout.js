@@ -224,7 +224,7 @@ const SpecialArticleTemplate = ({ data, node, elements }) => (
           <DefaultTemplate data={data} node={node} />
         )}
 
-        {console.log(elements)}
+        {/* {console.log(elements)} */}
 
         {/* ///////////// */}
       </SubLevelPageContent>

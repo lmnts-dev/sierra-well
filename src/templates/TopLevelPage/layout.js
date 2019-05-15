@@ -114,8 +114,8 @@ const SmallContent = ({ node, id }) => {
         );
       })}
 
-      {console.log(sections)}
-      {console.log(widgetContentTransformer(sections[0].items))}
+      {/* {console.log(sections)}
+      {console.log(widgetContentTransformer(sections[0].items))} */}
     </VerticalContent>
   );
 };

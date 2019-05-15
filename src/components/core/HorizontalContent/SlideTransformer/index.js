@@ -15,8 +15,8 @@ import SlideColumn from '../SlideColumn';
 // The Slide Itself
 const SlideContainer = ({ Columns }) => (
   <>
-    {console.log('Columns:')}
-    {console.log(Columns)}
+    {/* {console.log('Columns:')}
+    {console.log(Columns)} */}
     {/* Map our Columns data. */}
     {Columns.map((Column, index) => {
       // If our Column isn't a Divider

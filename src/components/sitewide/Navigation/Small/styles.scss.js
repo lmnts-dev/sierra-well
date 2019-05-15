@@ -29,7 +29,7 @@ export const BottomNavigationStyle = styled.nav`
   flex-direction: column;
   z-index: 700;
   transform: translateY(0);
-  transition: all .55s ease;
+  transition: all 0.55s ease;
 
   &.scroll {
     i {
@@ -50,7 +50,7 @@ BottomNavigationStyle.Inner = styled.div`
   flex-direction: column;
   min-height: ${Root.Nav.Size};
   position: relative;
-  transition: all .55s ease;
+  transition: all 0.55s ease;
 `;
 
 BottomNavigationStyle.List = styled.ul`

@@ -156,9 +156,9 @@ HorizontalContentStyle.Column = styled.div`
       ? Theme.Base.Size.Md
       : 'auto'};
 
-    .col-inner {
-      min-width: 250px;
-    }
+  .col-inner {
+    min-width: 250px;
+  }
 `;
 
 HorizontalContentStyle.Column.Inner = styled.div`

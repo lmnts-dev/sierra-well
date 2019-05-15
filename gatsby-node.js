@@ -260,7 +260,7 @@ exports.createPages = ({ graphql, actions }) => {
         `src/templates/Location/Landing/index.js`
       );
       const locationMenuTemplate = path.resolve(
-        `src/templates/Location/Landing/index.js`
+        `src/templates/Location/Menu/index.js`
       );
       const locationSpecialTemplate = path.resolve(
         `src/templates/Location/Landing/index.js`
