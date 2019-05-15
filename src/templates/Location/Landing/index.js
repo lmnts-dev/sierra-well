@@ -20,12 +20,17 @@ import { graphql } from 'gatsby';
 //////////////////////////////////////////////////////////////////////
 
 const LocationLandingPage = props => {
-  console.log(locationLandingTransformer(props.data));
   return (
     <LocationLandingTemplate
-      LocationData={props.data.allLocationsJson.edges[0].node}
+      LocationData={
+        locationLandingTransformer(props.data.allPrismicLocation.edges[0].node)
+          .edges.node
+      }
       Location={props.location}
-      Headline={props.data.allLocationsJson.edges[0].node.about.headline}
+      Headline={
+        locationLandingTransformer(props.data.allPrismicLocation.edges[0].node)
+          .edges.node.about.headline
+      }
     />
   );
 };
@@ -109,6 +114,9 @@ export const query = graphql`
           tags
           uid
           data {
+            name {
+              text
+            }
             status_delivery
             status_store
             geo_city

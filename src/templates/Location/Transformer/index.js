@@ -1,7 +1,7 @@
 // Transformer:
-// This is for taking Prismic data and transforming it into something that
+// This is for taking Prismic location.data and transforming it into something that
 // this component would like to handle. The Transformer is typically used
-// in /template/ pages where a GraphQL query from Prismic (or any data) source
+// in /template/ pages where a GraphQL query from Prismic (or any location.data) source
 // is involved.
 //////////////////////////////////////////////////////////////////////
 
@@ -15,61 +15,60 @@ import React from 'react';
 //////////////////////////////////////////////////////////////////////
 
 // Function to create our Columns Map
-export const locationLandingTransformer = data => {
-  if (data) {
+export const locationLandingTransformer = location => {
+  if (location) {
     let locationMap = {
       edges: {
         node: {
-          id: '',
-          slug: '',
-          name: '',
+          id: location.id,
+          slug: location.uid,
+          name: location.data.name.text,
           geography: {
-            city: '',
-            state: '',
-            country: '',
+            city: location.data.geo_city,
+            state: location.data.geo_state,
+            country: location.data.geo_country,
           },
           status: {
-            delivery: '',
-            store: '',
+            delivery: location.data.status_delivery,
+            store: location.data.status_store,
           },
           meta: {
-            reserveSpot: '',
-            menu: '',
-            maps: '',
+            reserveSpot: location.data.meta_reserve_spot_link,
+            menu: location.data.meta_menu,
+            maps: location.data.meta_google_maps_url,
           },
           contactDetails: {
-            phone: '',
+            phone: location.data,
             location: {
-              address: '',
-              state: '',
+              address: location.data.geo_location_address,
+              state: location.data.geo_location_state,
             },
-            hours: {
-              days: '',
-              startTime: '',
-              endTime: '',
-            },
+            hours: location.data.hours,
           },
-          nearby: {
-            name: '',
-            slug: '',
-          },
+          nearby: location.data.nearby_locations,
           about: {
-            headline: '',
+            headline: location.data.about_headline.text,
             PageTheme: {
               Color: {
-                Background: '',
-                Primary: '',
-                Secondary: '',
-                Tertiary: '',
+                Background: location.data.color_background,
+                Primary: location.data.color_primary,
+                Secondary: location.data.color_secondary,
+                Tertiary: location.data.color_tertiary,
               },
             },
             summary: {
-              headline: '',
-              body: '',
-              gallery: {
-                Src: '',
-                Alt: '',
-              },
+              headline: location.data.about_headline.text,
+              body: 'Lorem ipsum solor sit dit imet',
+              gallery: [
+                {
+                  Src: 'placeholder_bg_5.png',
+                  Alt: 'Where humans come first.',
+                },
+                {
+                  Src: 'placeholder_bg_5.png',
+                  Alt: 'Where humans come first.',
+                },
+              ],
             },
           },
         },

@@ -18,7 +18,6 @@ import MenuTemplate from './layout';
 //////////////////////////////////////////////////////////////////////
 
 const LocationMenuPage = props => {
-  console.log(locationLandingTransformer(props.data.allPrismicLocation));
 
   if (props.pageContext.NearbySlug) {
     // If it's a Nearby location:
@@ -28,7 +27,11 @@ const LocationMenuPage = props => {
         NearbySlug={props.pageContext.NearbySlug}
         OrderContext={props.pageContext.OrderContext}
         NearbyName={props.pageContext.NearbyName}
-        LocationData={props.data.allLocationsJson.edges[0].node}
+        LocationData={
+          locationLandingTransformer(
+            props.data.allPrismicLocation.edges[0].node
+          ).edges.node
+        }
       />
     );
   } else {
@@ -36,7 +39,11 @@ const LocationMenuPage = props => {
     return (
       <MenuTemplate
         OrderContext={props.pageContext.OrderContext}
-        LocationData={props.data.allLocationsJson.edges[0].node}
+        LocationData={
+          locationLandingTransformer(
+            props.data.allPrismicLocation.edges[0].node
+          ).edges.node
+        }
       />
     );
   }
@@ -113,6 +120,9 @@ export const query = graphql`
           tags
           uid
           data {
+            name {
+              text
+            }
             status_delivery
             status_store
             geo_city

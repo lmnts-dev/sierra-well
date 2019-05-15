@@ -38,14 +38,15 @@ const SuggestionList = ({
     Padding={Padding}
   >
     <ul>
+      {console.log(List)}
       {Label ? <li>{Label}</li> : null}
       {List.map((item, index) => (
         <li key={index}>
           <Btn
             BgColor="none"
-            Label={item.name}
+            Label={item.nearby_name}
             Destination={
-              Affix ? BaseUrl + item.slug + Affix : BaseUrl + item.slug
+              Affix ? BaseUrl + item.nearby_slug + Affix : BaseUrl + item.nearby_slug
             }
             TextColor={TextColor}
           />

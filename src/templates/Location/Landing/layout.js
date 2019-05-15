@@ -76,35 +76,6 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
 
       {/* ///////////// */}
 
-      <SplitSection Flex="row-reverse">
-        <Block
-          Padding={[1, 1, 1, 1]}
-          Width={0.5}
-          BgColor={Theme.Color.Nightsky}
-          TextColor={Theme.Color.White}
-        >
-          <h2>From Seed to Soul.</h2>
-          <Btn
-            Label="Our Values"
-            Destination="/company"
-            BgColor={Theme.Color.Primary}
-            TextColor={Theme.Color.White}
-          />
-        </Block>
-
-        <Block
-          Style="centered"
-          BgColor={Theme.Color.White}
-          BgMatch="placeholder_bg_4.jpg"
-          BgAlt="Our Awesome Alt Tag"
-          Width={0.5}
-        />
-      </SplitSection>
-
-      {/* ///////////// */}
-
-      {/* ///////////// */}
-
       <WidgetSection
         BgColor={Theme.Color.White}
         Widgets={[
