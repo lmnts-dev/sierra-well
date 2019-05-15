@@ -5,7 +5,6 @@
 // is involved.
 //////////////////////////////////////////////////////////////////////
 
-
 // Imports
 //////////////////////////////////////////////////////////////////////
 
@@ -18,66 +17,64 @@ import React from 'react';
 // Function to create our Columns Map
 export const locationLandingTransformer = data => {
   if (data) {
-    let locationMap = data.map((location, index) => {
-      return {
-        edges: {
-          node: {
-            id: '',
-            slug: '',
-            name: '',
-            geography: {
-              city: '',
+    let locationMap = {
+      edges: {
+        node: {
+          id: '',
+          slug: '',
+          name: '',
+          geography: {
+            city: '',
+            state: '',
+            country: '',
+          },
+          status: {
+            delivery: '',
+            store: '',
+          },
+          meta: {
+            reserveSpot: '',
+            menu: '',
+            maps: '',
+          },
+          contactDetails: {
+            phone: '',
+            location: {
+              address: '',
               state: '',
-              country: '',
             },
-            status: {
-              delivery: '',
-              store: '',
+            hours: {
+              days: '',
+              startTime: '',
+              endTime: '',
             },
-            meta: {
-              reserveSpot: '',
-              menu: '',
-              maps: '',
-            },
-            contactDetails: {
-              phone: '',
-              location: {
-                address: '',
-                state: '',
-              },
-              hours: {
-                days: '',
-                startTime: '',
-                endTime: '',
+          },
+          nearby: {
+            name: '',
+            slug: '',
+          },
+          about: {
+            headline: '',
+            PageTheme: {
+              Color: {
+                Background: '',
+                Primary: '',
+                Secondary: '',
+                Tertiary: '',
               },
             },
-            nearby: {
-              name: '',
-              slug: '',
-            },
-            about: {
+            summary: {
               headline: '',
-              PageTheme: {
-                Color: {
-                  Background: '',
-                  Primary: '',
-                  Secondary: '',
-                  Tertiary: '',
-                },
-              },
-              summary: {
-                headline: '',
-                body: '',
-                gallery: {
-                  Src: '',
-                  Alt: '',
-                },
+              body: '',
+              gallery: {
+                Src: '',
+                Alt: '',
               },
             },
           },
         },
-      };
-    });
+      },
+    };
 
     return locationMap;
   } else {

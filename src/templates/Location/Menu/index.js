@@ -1,5 +1,5 @@
-// templates/Location/Landing/index.js:
-// This is the Location Landing page.
+// templates/Location/Menu/index.js:
+// This is the Location Menu Landing page.
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -7,8 +7,8 @@
 // Core
 import React from 'react';
 
-// Templates
-// import LearnTagTemplate from './layout';
+// Transformers
+import { locationLandingTransformer } from 'templates/Location/Transformer';
 
 // Data
 import { graphql } from 'gatsby';
@@ -18,6 +18,8 @@ import MenuTemplate from './layout';
 //////////////////////////////////////////////////////////////////////
 
 const LocationMenuPage = props => {
+  console.log(locationLandingTransformer(props.data.allPrismicLocation));
+
   if (props.pageContext.NearbySlug) {
     // If it's a Nearby location:
     // &This pageContext is passed from gatsby-node.js
@@ -52,7 +54,7 @@ export default LocationMenuPage;
 // All GraphQL queries in Gatsby are run at build-time and
 // loaded as plain JSON files so have minimal client cost.
 export const query = graphql`
-  query($Slug: String!) {
+  query($Slug: String!, $Id: String!) {
     allLocationsJson(filter: { slug: { eq: $Slug } }) {
       edges {
         node {
@@ -99,6 +101,55 @@ export const query = graphql`
                 Tertiary
               }
             }
+          }
+        }
+      }
+    }
+
+    allPrismicLocation(filter: { id: { eq: $Id } }) {
+      edges {
+        node {
+          id
+          tags
+          uid
+          data {
+            status_delivery
+            status_store
+            geo_city
+            geo_state
+            geo_country
+            geo_location_address
+            geo_location_state
+            phone
+            hours {
+              days
+              start_time
+              end_time
+            }
+            meta_reserve_spot_link {
+              url
+            }
+            meta_menu {
+              url
+            }
+            meta_google_maps_url {
+              url
+            }
+            nearby_locations {
+              nearby_name
+              nearby_slug
+              color_background
+              color_primary
+              color_secondary
+              color_tertiary
+            }
+            about_headline {
+              text
+            }
+            color_background
+            color_primary
+            color_secondary
+            color_tertiary
           }
         }
       }

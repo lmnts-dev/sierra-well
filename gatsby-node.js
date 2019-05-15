@@ -62,15 +62,6 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allPrismicTopLevelPage {
-          edges {
-            node {
-              id
-              uid
-            }
-          }
-        }
-
         allQuestionCategoriesJson {
           edges {
             node {
@@ -111,7 +102,27 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
 
+        ## From Prismic:
+
         allPrismicSpecial {
+          edges {
+            node {
+              id
+              uid
+            }
+          }
+        }
+
+        allPrismicTopLevelPage {
+          edges {
+            node {
+              id
+              uid
+            }
+          }
+        }
+
+        allPrismicLocation {
           edges {
             node {
               id
@@ -277,6 +288,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(locationLandingTemplate),
           context: {
             Slug: edge.node.slug,
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -291,6 +303,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: '',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -303,6 +316,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: 'online',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -315,6 +329,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: 'pick-up',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -327,6 +342,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: 'delivery',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -341,6 +357,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: '',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -353,6 +370,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: 'online',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -365,6 +383,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: 'pick-up',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -377,6 +396,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.slug,
             OrderContext: 'delivery',
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -390,6 +410,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(locationSpecialTemplate),
           context: {
             Slug: edge.node.slug,
+            Id: 'Prismic__Location__XNROhRYAACIAehjo',
           },
         });
 
@@ -431,6 +452,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: '',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -445,6 +467,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: 'online',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -459,6 +482,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: 'delivery',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -473,6 +497,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: 'pick-up',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -489,6 +514,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: '',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -503,6 +529,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: 'online',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -517,6 +544,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: 'pick-up',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -531,6 +559,7 @@ exports.createPages = ({ graphql, actions }) => {
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
               OrderContext: 'delivery',
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
@@ -546,6 +575,7 @@ exports.createPages = ({ graphql, actions }) => {
               Slug: edge.node.slug,
               NearbySlug: nearby.slug,
               NearbyName: nearby.name,
+              Id: 'Prismic__Location__XNROhRYAACIAehjo',
             },
           });
 
