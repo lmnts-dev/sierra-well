@@ -127,6 +127,12 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               id
               uid
+              data {
+                geo_state
+                nearby_locations {
+                  nearby_slug
+                }
+              }
             }
           }
         }
@@ -277,18 +283,18 @@ exports.createPages = ({ graphql, actions }) => {
         `src/templates/Location/Landing/index.js`
       );
 
-      _.each(result.data.allLocationsJson.edges, edge => {
+      _.each(result.data.allPrismicLocation.edges, edge => {
         ////////////////////////////////////////////////////////////////////////////////////
 
         // Create main landing pages.
         createPage({
-          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/`,
           component: slash(locationLandingTemplate),
           context: {
-            Slug: edge.node.slug,
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Slug: edge.node.uid,
+            Id: edge.node.id,
           },
         });
 
@@ -296,53 +302,53 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create main menu pages. with /locations/ root url
         createPage({
-          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/menu/`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: '',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
         // 'online' context
         createPage({
-          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/menu/online`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: 'online',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
         // 'pick-up' context
         createPage({
-          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/menu/pick-up`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: 'pick-up',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
         // 'delivery' context
         createPage({
-          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/menu/delivery`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: 'delivery',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
@@ -350,53 +356,53 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create menu pages with /menu/ root url.
         createPage({
-          path: `/menu/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/menu/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: '',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
         // 'online' context
         createPage({
-          path: `/menu/online/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/menu/online/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: 'online',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
         // 'pick-up' context
         createPage({
-          path: `/menu/pick-up/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/menu/pick-up/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: 'pick-up',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
         // 'online' context
         createPage({
-          path: `/menu/delivery/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/menu/delivery/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/`,
           component: slash(locationMenuTemplate),
           context: {
-            Slug: edge.node.slug,
+            Slug: edge.node.uid,
             OrderContext: 'delivery',
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Id: edge.node.id,
           },
         });
 
@@ -404,13 +410,13 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create specials collection pages.
         createPage({
-          path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-            edge.node.slug
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
           }/specials/`,
           component: slash(locationSpecialTemplate),
           context: {
-            Slug: edge.node.slug,
-            Id: 'Prismic__Location__XNROhRYAACIAehjo',
+            Slug: edge.node.uid,
+            Id: edge.node.id,
           },
         });
 
@@ -421,7 +427,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         _.each(result.data.allPrismicSpecial.edges, special => {
           createPage({
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
+            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
               edge.node.slug
             }/specials/${special.node.uid}/`,
             component: slash(specialTemplate),
@@ -438,66 +444,66 @@ exports.createPages = ({ graphql, actions }) => {
           `src/templates/Location/Menu/index.js`
         );
 
-        _.each(edge.node.nearby, nearby => {
+        _.each(edge.node.data.nearby_locations, nearby => {
           ////////////////////////////////////////////////////////////////////////////////////
 
           // Create Nearby Menu Pages with /locations/ root url
           createPage({
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/menu/`,
+            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/menu/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: '',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
           // 'online' context
           createPage({
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/menu/online/`,
+            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/menu/online/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: 'online',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
           // 'delivery' context
           createPage({
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/menu/delivery/`,
+            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/menu/delivery/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: 'delivery',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
           // 'pick-up' context
           createPage({
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/menu/pick-up/`,
+            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/menu/pick-up/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: 'pick-up',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
@@ -505,61 +511,61 @@ exports.createPages = ({ graphql, actions }) => {
 
           // Create Menu Pages with root /menu/ url
           createPage({
-            path: `/menu/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/`,
+            path: `/menu/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: '',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
           // 'online' context
           createPage({
-            path: `/menu/online/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/`,
+            path: `/menu/online/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: 'online',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
           // 'pickup' context
           createPage({
-            path: `/menu/pick-up/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/`,
+            path: `/menu/pick-up/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: 'pick-up',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
           // 'delivery' context
           createPage({
-            path: `/menu/delivery/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/`,
+            path: `/menu/delivery/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/`,
             component: slash(locationNearbyMenuTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
               OrderContext: 'delivery',
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Id: edge.node.id,
             },
           });
 
@@ -567,15 +573,15 @@ exports.createPages = ({ graphql, actions }) => {
 
           // Create nearby specials collection pages.
           createPage({
-            path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-              edge.node.slug
-            }/${nearby.slug}/specials/`,
+            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/specials/`,
             component: slash(locationSpecialTemplate),
             context: {
-              Slug: edge.node.slug,
-              NearbySlug: nearby.slug,
-              NearbyName: nearby.name,
-              Id: 'Prismic__Location__XNROhRYAACIAehjo',
+              Slug: edge.node.uid,
+              NearbySlug: nearby.nearby_slug,
+              NearbyName: nearby.nearby_name,
+              Id: edge.node.id,
             },
           });
 
@@ -587,8 +593,8 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allPrismicSpecial.edges, special => {
             createPage({
-              path: `/locations/${edge.node.geography.state.toLowerCase()}/${
-                edge.node.slug
+              path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+                edge.node.uid
               }/${nearby.slug}/specials/${special.node.uid}/`,
               component: slash(nearbySpecialTemplate),
               context: {

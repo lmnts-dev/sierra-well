@@ -38,7 +38,6 @@ const SuggestionList = ({
     Padding={Padding}
   >
     <ul>
-      {console.log(List)}
       {Label ? <li>{Label}</li> : null}
       {List.map((item, index) => (
         <li key={index}>

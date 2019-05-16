@@ -62,7 +62,7 @@ const LocationPageWrapper = ({
         {/* ///////////// */}
 
         <SimpleHero
-          Padding={[2, 0, 1.45, 0]}
+          Padding={[3, 1, 1.45, 1]}
           Flex="row"
           TextColor={LocationTheme.Color.Primary}
         >
@@ -123,10 +123,12 @@ const LocationPageWrapper = ({
           <Block Flex="row" maxWidth={0.5}>
             <AwardHours
               TextColor={LocationTheme.Color.Primary}
-              Hours={[
-                { Label: 'Mon - Sat', Data: '9am - 9pm' },
-                { Label: 'Sunday', Data: '10am - 6pm' },
-              ]}
+              Hours={LocationData.contactDetails.hours.map((time, index) => {
+                return {
+                  Label: time.days,
+                  Data: time.start_time,
+                };
+              })}
             />
           </Block>
         </SimpleHero>
@@ -136,7 +138,7 @@ const LocationPageWrapper = ({
         {/* ///////////// */}
 
         <SimpleHero
-          Padding={[0, 0, 0, 0]}
+          Padding={[0, 1, 0, 1]}
           Flex="column"
           TextColor={LocationTheme.Color.Primary}
         >
@@ -165,7 +167,7 @@ const LocationPageWrapper = ({
         {/* ///////////// */}
 
         <SimpleHero
-          Padding={[0, 0, 0, 0]}
+          Padding={[0, 1, 0, 1]}
           Flex="column"
           TextColor={LocationTheme.Color.Primary}
           Tint={0}
