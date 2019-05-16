@@ -19,6 +19,8 @@ import { Theme, Root } from 'constants/Theme';
 export const SpecialListingsStyle = styled.div`
   appearance: none;
   position: relative;
+  background-color: ${props =>
+    props.BgColor ? props.BgColor : Theme.Color.White}
 
   &:before {
     content: '';
@@ -67,6 +69,17 @@ export const SpecialListingsStyle = styled.div`
         }
       }
     }
+  }
+
+  .hero-strip {
+    position: sticky;
+    top: ${Root.Nav.Size};
+    z-index: 400;
+    /* background-color: rgba(255, 255, 255, 0.1) !important;
+    span {
+      color: ${props =>
+        props.TextColor ? props.TextColor : Theme.Color.White} !important;      
+    } */
   }
 `;
 

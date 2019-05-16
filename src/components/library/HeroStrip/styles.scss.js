@@ -40,7 +40,7 @@ HeroStripStyle.Inner = styled(SectionContentStyle)`
     flex: 1;
     display: flex;
     justify-content: center;
-    padding: calc(${Root.Size} / 4) ${Root.Size};
+    padding: calc(${Root.Size} / 4) calc(${Root.Size} / 2);
 
     span {
       display: block;
