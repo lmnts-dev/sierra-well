@@ -84,8 +84,23 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        
 
         ## From Prismic:
+
+        allPrismicQuestion {
+          edges {
+            node {
+              uid
+              tags
+              data {
+                category {
+                  uid
+                }
+              }
+            }
+          }
+        }
 
         allPrismicSpecial {
           edges {
@@ -401,7 +416,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.uid,
             Id: edge.node.id,
-            Specials: true
+            Specials: true,
           },
         });
 
@@ -413,7 +428,7 @@ exports.createPages = ({ graphql, actions }) => {
         _.each(result.data.allPrismicSpecial.edges, special => {
           createPage({
             path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.slug
+              edge.node.uid
             }/specials/${special.node.uid}/`,
             component: slash(specialTemplate),
             context: {
@@ -580,7 +595,7 @@ exports.createPages = ({ graphql, actions }) => {
             createPage({
               path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
                 edge.node.uid
-              }/${nearby.slug}/specials/${special.node.uid}/`,
+              }/${nearby.nearby_slug}/specials/${special.node.uid}/`,
               component: slash(nearbySpecialTemplate),
               context: {
                 Id: special.node.id,
