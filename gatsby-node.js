@@ -85,23 +85,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
 
-        allLocationsJson {
-          edges {
-            node {
-              id
-              slug
-              geography {
-                city
-                state
-              }
-              nearby {
-                slug
-                name
-              }
-            }
-          }
-        }
-
         ## From Prismic:
 
         allPrismicSpecial {
@@ -418,6 +401,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             Slug: edge.node.uid,
             Id: edge.node.id,
+            Specials: true
           },
         });
 

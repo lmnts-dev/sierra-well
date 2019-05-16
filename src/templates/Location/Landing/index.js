@@ -23,7 +23,6 @@ import { graphql } from 'gatsby';
 //////////////////////////////////////////////////////////////////////
 
 const LocationLandingPage = props => {
-  console.log(props.data.allPrismicLocation.edges[0].node.data.elements)
   return (
     <LocationLandingTemplate
       LocationData={
@@ -32,6 +31,7 @@ const LocationLandingPage = props => {
       }
       elements={props.data.allPrismicLocation.edges[0].node.data.elements}
       Location={props.location}
+      SpecialsPage={props.pageContext.Specials}
       Headline={
         locationLandingTransformer(props.data.allPrismicLocation.edges[0].node)
           .edges.node.about.headline

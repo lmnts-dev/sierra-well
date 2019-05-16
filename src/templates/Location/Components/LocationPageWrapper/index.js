@@ -39,6 +39,7 @@ import { Theme } from 'constants/Theme';
 const LocationPageWrapper = ({
   children,
   Headline,
+  SpecialsPage,
   LocationData,
   Location,
 }) => {
@@ -88,7 +89,13 @@ const LocationPageWrapper = ({
               ]}
               TextColor={LocationTheme.Color.Primary}
             /> */}
-            <h1 className="h2">{LocationData.about.headline}</h1>
+            {SpecialsPage ? (
+              <h1 className="h2">
+                Cannabis specials & deals in {LocationData.geography.city}
+              </h1>
+            ) : (
+              <h1 className="h2">{LocationData.about.headline}</h1>
+            )}
             <Btn
               IconClass="plus"
               Label="View Menu"

@@ -8,13 +8,7 @@
 import React from 'react';
 
 // Components
-import SimpleSection from 'components/library/Section/SimpleSection';
-import SplitSection from 'components/library/Section/SplitSection';
-import WidgetSection from 'components/library/Section/WidgetSection';
-import StickyScrollSection from 'components/library/Section/StickyScrollSection';
-import QuestionFooter from 'components/library/QuestionFooter';
-import Block from 'components/library/Block';
-import Btn from 'components/library/Btn';
+import SpecialsListings from 'components/library/SpecialsListings';
 
 // Template Specific Components
 import LocationPageWrapper from '../Components/LocationPageWrapper';
@@ -31,7 +25,13 @@ import { Theme } from 'constants/Theme';
 // TemplateLayout Component to pass data where it needs to go for
 // the theming of the hero as well as the LearnSection and what
 // to display in those cards.
-const TemplateLayout = ({ LocationData, Location, Headline, elements }) => {
+const TemplateLayout = ({
+  LocationData,
+  Location,
+  Headline,
+  SpecialsPage,
+  elements,
+}) => {
   // Build our automatic summary headline.
   let SummaryHeadlineString =
     LocationData.name +
@@ -44,27 +44,51 @@ const TemplateLayout = ({ LocationData, Location, Headline, elements }) => {
       ? LocationData.about.summary.headline
       : SummaryHeadlineString;
 
-  return (
-    <LocationPageWrapper
-      Headline={Headline}
-      LocationData={LocationData}
-      Location={Location}
-    >
-      {/* Check if elements exist. If so, run Castle. If not, display nothing. */}
-      {elements ? <Castle Bricks={elements} Location={Location.href} /> : null}
+  if (SpecialsPage == true) {
+    return (
+      <LocationPageWrapper
+        Headline={Headline}
+        LocationData={LocationData}
+        Location={Location}
+        SpecialsPage={SpecialsPage}
+      >
+        <SpecialsListings />
 
-      {/* ///////////// */}
-    </LocationPageWrapper>
-  );
+        {/* ///////////// */}
+      </LocationPageWrapper>
+    );
+  } else {
+    return (
+      <LocationPageWrapper
+        Headline={Headline}
+        LocationData={LocationData}
+        Location={Location}
+        SpecialsPage={SpecialsPage}
+      >
+        {/* Check if elements exist. If so, run Castle. If not, display nothing. */}
+        {elements ? (
+          <Castle Bricks={elements} Location={Location.href} />
+        ) : null}
+
+        {/* ///////////// */}
+      </LocationPageWrapper>
+    );
+  }
 };
 
 // The Template itself. Where it all begins.
-const LocationLandingTemplate = ({ LocationData, Location, elements }) => {
+const LocationLandingTemplate = ({
+  LocationData,
+  Location,
+  elements,
+  SpecialsPage,
+}) => {
   return (
     <TemplateLayout
       LocationData={LocationData}
       Location={Location}
       elements={elements}
+      SpecialsPage={SpecialsPage}
     />
   );
 };
