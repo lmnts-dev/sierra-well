@@ -131,6 +131,7 @@ exports.createPages = ({ graphql, actions }) => {
                 geo_state
                 nearby_locations {
                   nearby_slug
+                  nearby_name
                 }
               }
             }

@@ -21,7 +21,7 @@ const LocationMenuPage = props => {
 
   if (props.pageContext.NearbySlug) {
     // If it's a Nearby location:
-    // &This pageContext is passed from gatsby-node.js
+    // This pageContext is passed from gatsby-node.js
     return (
       <MenuTemplate
         NearbySlug={props.pageContext.NearbySlug}

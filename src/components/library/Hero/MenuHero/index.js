@@ -54,16 +54,18 @@ class LocationList extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            allLocationsJson {
+            allPrismicLocation {
               edges {
                 node {
                   id
-                  slug
-                  name
-                  geography {
-                    city
-                    state
-                    country
+                  uid
+                  data {
+                    name {
+                      text
+                    }
+                    geo_state
+                    geo_city
+                    geo_country
                   }
                 }
               }
@@ -72,7 +74,7 @@ class LocationList extends React.Component {
         `}
         render={data => (
           <>
-            {data.allLocationsJson.edges.map((location, index) => {
+            {data.allPrismicLocation.edges.map((location, index) => {
               if (location.node.name == currentLocation) {
                 return (
                   <Link
@@ -80,13 +82,13 @@ class LocationList extends React.Component {
                     to={
                       '/menu/' +
                       OrderContextSlug +
-                      location.node.geography.state.toLowerCase() +
+                      location.node.data.geo_state.toLowerCase() +
                       '/' +
-                      location.node.slug
+                      location.node.uid
                     }
                     key={index}
                   >
-                    {location.node.name}
+                    {location.node.data.name.text}
                   </Link>
                 );
               } else {
@@ -95,13 +97,13 @@ class LocationList extends React.Component {
                     to={
                       '/menu/' +
                       OrderContextSlug +
-                      location.node.geography.state.toLowerCase() +
+                      location.node.data.geo_state.toLowerCase() +
                       '/' +
-                      location.node.slug
+                      location.node.uid
                     }
                     key={index}
                   >
-                    {location.node.name}
+                    {location.node.data.name.text}
                   </Link>
                 );
               }
@@ -196,25 +198,6 @@ class MenuHero extends React.Component {
     }
   }
 
-  // // Make sure we are listening for scroll once mounted.
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.menuScrollCollapse());
-  // }
-
-  // // Remove listener when not mounted.
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', this.menuScrollCollapse());
-  // }
-
-  // // Base functions to change transition state for
-  // // navigation on scroll
-  // menuScrollCollapse(e) {
-  //   // Previous / Next Slide based on mouse scroll
-  //   if (e.deltaY != 0) {
-  //     this.collapseHero();
-  //   }
-  // }
-
   // Render element.
   render() {
     const LocationData = this.props.LocationData;
@@ -308,10 +291,14 @@ class MenuHero extends React.Component {
               <Block className="award-hours">
                 <AwardHours
                   TextColor={Theme.Color.White}
-                  Hours={[
-                    { Label: 'Mon - Sat', Data: '9am - 9pm' },
-                    { Label: 'Sunday', Data: '10am - 6pm' },
-                  ]}
+                  Hours={LocationData.contactDetails.hours.map(
+                    (time, index) => {
+                      return {
+                        Label: time.days,
+                        Data: time.start_time,
+                      };
+                    }
+                  )}
                 />
               </Block>
             </HeroContent>
