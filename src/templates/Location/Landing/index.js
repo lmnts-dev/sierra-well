@@ -13,6 +13,9 @@ import LocationLandingTemplate from './layout';
 // Transformers
 import { locationLandingTransformer } from 'templates/Location/Transformer';
 
+// Load Castle Fragments
+import 'components/library/Castle';
+
 // Data
 import { graphql } from 'gatsby';
 
@@ -20,12 +23,14 @@ import { graphql } from 'gatsby';
 //////////////////////////////////////////////////////////////////////
 
 const LocationLandingPage = props => {
+  console.log(props.data.allPrismicLocation.edges[0].node.data.elements)
   return (
     <LocationLandingTemplate
       LocationData={
         locationLandingTransformer(props.data.allPrismicLocation.edges[0].node)
           .edges.node
       }
+      elements={props.data.allPrismicLocation.edges[0].node.data.elements}
       Location={props.location}
       Headline={
         locationLandingTransformer(props.data.allPrismicLocation.edges[0].node)
@@ -47,72 +52,24 @@ export default LocationLandingPage;
 // All GraphQL queries in Gatsby are run at build-time and
 // loaded as plain JSON files so have minimal client cost.
 export const query = graphql`
-  query($Slug: String!, $Id: String!) {
-    allLocationsJson(filter: { slug: { eq: $Slug } }) {
-      edges {
-        node {
-          id
-          slug
-          name
-          geography {
-            city
-            state
-            country
-          }
-          status {
-            delivery
-            store
-          }
-          meta {
-            reserveSpot
-            menu
-            maps
-          }
-          contactDetails {
-            phone
-            location {
-              address
-              state
-            }
-            hours {
-              days
-              startTime
-              endTime
-            }
-          }
-          nearby {
-            name
-            slug
-          }
-          about {
-            headline
-            PageTheme {
-              Color {
-                Background
-                Primary
-                Secondary
-                Tertiary
-              }
-            }
-            summary {
-              headline
-              body
-              gallery {
-                Src
-                Alt
-              }
-            }
-          }
-        }
-      }
-    }
-
+  query($Id: String!) {
     allPrismicLocation(filter: { id: { eq: $Id } }) {
       edges {
         node {
           id
           tags
           uid
+
+          # Load our Castle Component data.
+          # ...PrismicLocationElementsHeroData
+          # ...PrismicLocationElementsFullSplitSectionData
+          # ...PrismicLocationElementsSimpleSectionData
+          ...PrismicLocationElementsSplitSectionData
+          ...PrismicLocationElementsStickyGalleryData
+          # ...PrismicLocationElementsSplitImageHeroData
+          # ...PrismicLocationElementsPromotionalStripData
+          ...PrismicLocationElementsWidgetRowData
+
           data {
             name {
               text

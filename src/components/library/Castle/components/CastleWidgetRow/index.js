@@ -165,6 +165,49 @@ export const query = graphql`
       }
     }
   }
+
+  fragment PrismicLocationElementsWidgetRowData on PrismicLocation {
+    data {
+      elements {
+        ... on PrismicLocationElementsWidgetRow {
+          slice_type
+          primary {
+            headline {
+              text
+            }
+            section_size
+            text_color
+            bg_color
+            padding
+            autoplay
+          }
+          items {
+            widget_headline {
+              text
+            }
+            widget_background_image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            widget_destination
+            widget_subheadline
+            widget_icon_class
+            widget_text_color
+            widget_bg_color
+            widget_tint_color
+            widget_tint_opacity
+          }
+        }
+      }
+    }
+  }
 `;
 
 //////////////////////////////////////////////////////////////////////

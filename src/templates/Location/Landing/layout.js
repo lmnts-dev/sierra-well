@@ -19,6 +19,9 @@ import Btn from 'components/library/Btn';
 // Template Specific Components
 import LocationPageWrapper from '../Components/LocationPageWrapper';
 
+// Castle.js by L&M
+import Castle from 'components/library/Castle';
+
 // Constants
 import { Theme } from 'constants/Theme';
 
@@ -28,7 +31,7 @@ import { Theme } from 'constants/Theme';
 // TemplateLayout Component to pass data where it needs to go for
 // the theming of the hero as well as the LearnSection and what
 // to display in those cards.
-const TemplateLayout = ({ LocationData, Location, Headline }) => {
+const TemplateLayout = ({ LocationData, Location, Headline, elements }) => {
   // Build our automatic summary headline.
   let SummaryHeadlineString =
     LocationData.name +
@@ -59,130 +62,8 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
 
       {/* ///////////// */}
 
-      {/* ///////////// */}
-
-      <StickyScrollSection
-        BgColor={Theme.Color.White}
-        TextColor={Theme.Color.Nightsky}
-        Content={{
-          Subheadline: 'Sierra Well ' + LocationData.name,
-          Headline: SummaryHeadline,
-          Body: LocationData.about.summary.body,
-        }}
-        Gallery={LocationData.about.summary.gallery}
-      />
-
-      {/* ///////////// */}
-
-      {/* ///////////// */}
-
-      <WidgetSection
-        BgColor={Theme.Color.White}
-        Widgets={[
-          {
-            // Begin WidgetContent
-            Flex: 1,
-            WidgetContent: [
-              {
-                Destination: '/menu',
-                Style: 'Generic',
-                Meta: {
-                  Generic: {
-                    BgColor: Theme.Color.Nightsky,
-                    BgImage: '',
-                    Subhead: '',
-                    Headline: 'Menu',
-                    TextColor: Theme.Color.White,
-                    IconColor: Theme.Color.Primary,
-                    IconName: 'plus', // FontAwesome Icon Name
-                    TintColor: '',
-                    TintOpacity: '',
-                    IconSize: '',
-                  },
-                },
-              },
-            ],
-            // End WidgetContent
-          },
-          {
-            // Begin WidgetContent
-            Flex: 1,
-            WidgetContent: [
-              {
-                Destination: '/locations',
-                Style: 'Generic',
-                Meta: {
-                  Generic: {
-                    BgColor: Theme.Color.Tahoe,
-                    BgImage: '',
-                    Subhead: '',
-                    Headline: 'Locations',
-                    TextColor: Theme.Color.White,
-                    IconColor: Theme.Color.White,
-                    IconName: 'map-marker-alt', // FontAwesome Icon Name
-                    TintColor: '',
-                    TintOpacity: '',
-                    IconSize: '',
-                  },
-                },
-              },
-            ],
-            // End WidgetContent
-          },
-          {
-            // Begin WidgetContent
-            Flex: 1,
-            WidgetContent: [
-              {
-                Destination: '/learn',
-                Style: 'Generic',
-                Meta: {
-                  Generic: {
-                    BgColor: Theme.Color.Mint,
-                    BgImage: '',
-                    Subhead: '',
-                    Headline: 'Q&A',
-                    TextColor: Theme.Color.Nightsky,
-                    IconColor: Theme.Color.Nightsky,
-                    IconName: 'book-open', // FontAwesome Icon Name
-                    TintColor: '',
-                    TintOpacity: '',
-                    IconSize: '',
-                  },
-                },
-              },
-            ],
-            // End WidgetContent
-          },
-          {
-            // Begin WidgetContent
-            Flex: 1,
-            WidgetContent: [
-              {
-                Destination: '/specials',
-                Style: 'Generic',
-                Meta: {
-                  Generic: {
-                    BgColor: Theme.Color.Primary,
-                    BgImage: '',
-                    Subhead: '',
-                    Headline: 'Specials',
-                    TextColor: Theme.Color.White,
-                    IconColor: Theme.Color.White,
-                    IconName: 'star', // FontAwesome Icon Name
-                    TintColor: '',
-                    TintOpacity: '',
-                    IconSize: '',
-                  },
-                },
-              },
-            ],
-            // End WidgetContent
-          },
-        ]}
-      />
-
-      {/* ///////////// */}
+      {/* Check if elements exist. If so, run Castle. If not, display nothing. */}
+      {elements ? <Castle Bricks={elements} Location={Location.href} /> : null}
 
       {/* ///////////// */}
     </LocationPageWrapper>
@@ -190,8 +71,14 @@ const TemplateLayout = ({ LocationData, Location, Headline }) => {
 };
 
 // The Template itself. Where it all begins.
-const LocationLandingTemplate = ({ LocationData, Location }) => {
-  return <TemplateLayout LocationData={LocationData} Location={Location} />;
+const LocationLandingTemplate = ({ LocationData, Location, elements }) => {
+  return (
+    <TemplateLayout
+      LocationData={LocationData}
+      Location={Location}
+      elements={elements}
+    />
+  );
 };
 
 export default LocationLandingTemplate;
