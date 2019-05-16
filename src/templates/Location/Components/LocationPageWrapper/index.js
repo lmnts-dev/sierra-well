@@ -91,7 +91,8 @@ const LocationPageWrapper = ({
             /> */}
             {SpecialsPage ? (
               <h1 className="h2">
-                Cannabis specials & deals in {LocationData.geography.city}
+                Cannabis specials & deals in {LocationData.geography.city},{' '}
+                {LocationData.geography.state}.
               </h1>
             ) : (
               <h1 className="h2">{LocationData.about.headline}</h1>

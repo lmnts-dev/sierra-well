@@ -82,6 +82,11 @@ export const query = graphql`
             geo_location_address
             geo_location_state
             phone
+            featured_specials {
+              label
+              caption
+              destination
+            }
             hours {
               days
               start_time

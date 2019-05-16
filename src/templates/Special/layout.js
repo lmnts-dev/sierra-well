@@ -51,6 +51,7 @@ const DefaultTemplate = ({ node, data }) => (
           TextColor={node.color_primary}
         />
         <h1>{node.title.text}</h1>
+        {console.log(node.title.text)}
         {node.description ? <p className="p-lg">{node.description} </p> : null}
         <SocialStrip
           Margin={[0.45, 0, 0, 0]}

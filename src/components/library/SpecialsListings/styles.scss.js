@@ -1,4 +1,4 @@
-// <HeroStrip> Styles:
+// <SpecialListingsStyle> Styles:
 
 // Imports
 //////////////////////////////////////////////////////////////////////
@@ -16,78 +16,53 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-export const HeroStripStyle = styled.div`
-  padding-top: calc(${Root.Size} / 4);
-  padding-bottom: calc(${Root.Size} / 4);
-  padding-left: calc(${Root.Grid.Gutter.Left});
-  background: ${props => (props.BgColor ? props.BgColor : Theme.Color.White)};
-  color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+export const SpecialListingsStyle = styled.div`
+  appearance: none;
+  position: relative;
 
-  a {
-    color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: ${Theme.Color.Black};
+    opacity: 0.1;
   }
-`;
 
-HeroStripStyle.Inner = styled(SectionContentStyle)`
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  .masonry-section {
+    .widget-content {
+      z-index: 100;
 
-  .hero-strip-item {
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: calc(${Root.Size} / 4) ${Root.Size};
-
-    span {
-      display: block;
-      padding-bottom: 3px;
       &:first-child {
-        opacity: 0.4;
-        font-size: calc(${Root.ViewWidthFontSize} * 1);
+        column-span: all !important;
+        display: block;
       }
-      &:last-child {
-        font-weight: bold;
-        font-size: calc(${Root.ViewWidthFontSize} * 1.3);
-      }
-    }
 
-    &:before {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      opacity: 0.09;
-      background: ${props =>
-        props.TextColor ? props.TextColor : Theme.Color.Black};
-    }
+      .tag {
+        text-transform: capitalize;
+        display: inline-block;
+        font-size: 1rem;
+        margin-right: calc(${Root.Size} / 6);
+        position: relative;
 
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
-      padding-left: ${Root.Size};
-
-      &:before {
-        display: none;
-      }
-    }
-
-    &.focus {
-      a {
-        &:hover {
-          text-decoration: none;
+        &:before {
+          content: '';
+          position: absolute;
+          right: calc(((${Root.Size} / 6) / 1.7) * -1);
+          top: 50%;
+          transform: translateY() (-50%);
+          width: 2px;
+          height: 2px;
+          border-radius: 50%;
+          background-color: ${Theme.Color.White};
         }
-        span {
-          &:last-child {
-            color: ${Theme.Color.Primary};
+
+        &:last-child {
+          margin-right: 0;
+          &:before {
+            display: none;
           }
         }
       }
@@ -95,5 +70,5 @@ HeroStripStyle.Inner = styled(SectionContentStyle)`
   }
 `;
 
-export default HeroStripStyle;
+export default SpecialListingsStyle;
 //////////////////////////////////////////////////////////////////////

@@ -58,19 +58,9 @@ export const locationLandingTransformer = location => {
             },
             summary: {
               headline: location.data.about_headline.text,
-              body: 'Lorem ipsum solor sit dit imet',
-              gallery: [
-                {
-                  Src: 'placeholder_bg_5.png',
-                  Alt: 'Where humans come first.',
-                },
-                {
-                  Src: 'placeholder_bg_5.png',
-                  Alt: 'Where humans come first.',
-                },
-              ],
             },
           },
+          featuredSpecials: location.data.featured_specials,
         },
       },
     };

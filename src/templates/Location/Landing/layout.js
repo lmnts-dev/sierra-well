@@ -52,8 +52,12 @@ const TemplateLayout = ({
         Location={Location}
         SpecialsPage={SpecialsPage}
       >
-        <SpecialsListings />
-
+        <SpecialsListings
+          BgColor={LocationData.about.PageTheme.Color.Background}
+          TextColor={LocationData.about.PageTheme.Color.Primary}
+          LocationData={LocationData}
+          PageLocation={Location}
+        />
         {/* ///////////// */}
       </LocationPageWrapper>
     );
