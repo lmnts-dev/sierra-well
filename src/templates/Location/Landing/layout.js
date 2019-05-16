@@ -50,18 +50,6 @@ const TemplateLayout = ({ LocationData, Location, Headline, elements }) => {
       LocationData={LocationData}
       Location={Location}
     >
-      {/* ///////////// */}
-
-      <SimpleSection
-        BgColor={Theme.Color.Snow}
-        BgMatch="placeholder_bg_4.jpg"
-        BgAlt="Our Awesome Alt Tag"
-        FluidHeight={true}
-        Gutter={[0, 0, 0, 0]}
-      />
-
-      {/* ///////////// */}
-
       {/* Check if elements exist. If so, run Castle. If not, display nothing. */}
       {elements ? <Castle Bricks={elements} Location={Location.href} /> : null}
 

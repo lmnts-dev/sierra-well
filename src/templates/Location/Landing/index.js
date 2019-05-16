@@ -61,13 +61,13 @@ export const query = graphql`
           uid
 
           # Load our Castle Component data.
-          # ...PrismicLocationElementsHeroData
-          # ...PrismicLocationElementsFullSplitSectionData
-          # ...PrismicLocationElementsSimpleSectionData
+          ...PrismicLocationElementsHeroData
+          ...PrismicLocationElementsFullSplitSectionData
+          ...PrismicLocationElementsSimpleSectionData
           ...PrismicLocationElementsSplitSectionData
           ...PrismicLocationElementsStickyGalleryData
-          # ...PrismicLocationElementsSplitImageHeroData
-          # ...PrismicLocationElementsPromotionalStripData
+          ...PrismicLocationElementsSplitImageHeroData
+          ...PrismicLocationElementsPromotionalStripData
           ...PrismicLocationElementsWidgetRowData
 
           data {

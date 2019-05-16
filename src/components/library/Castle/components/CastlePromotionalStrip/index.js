@@ -100,6 +100,25 @@ export const query = graphql`
       }
     }
   }
+
+  fragment PrismicLocationElementsPromotionalStripData on PrismicLocation {
+    data {
+      elements {
+        ... on PrismicLocationElementsPromotionalStrip {
+          slice_type
+          primary {
+            bg_color
+            text_color
+          }
+          items {
+            caption
+            label
+            destination
+          }
+        }
+      }
+    }
+  }
 `;
 
 //////////////////////////////////////////////////////////////////////

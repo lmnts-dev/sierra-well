@@ -175,6 +175,59 @@ export const query = graphql`
       }
     }
   }
+
+  fragment PrismicLocationElementsSplitImageHeroData on PrismicLocation {
+    data {
+      elements {
+        ... on PrismicLocationElementsSplitImageHero {
+          slice_type
+          primary {
+            headline {
+              text
+            }
+            image {
+              alt
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            background_image {
+              localFile {
+                id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            body_text
+            background_color
+            text_color
+            direction
+            breadcrumb_label
+            breadcrumb_url
+            social_sharing
+            tint_color
+            tint_opacity
+            padding
+          }
+          items {
+            cta_label
+            cta_destination
+            cta_bg_color
+            cta_text_color
+            cta_icon
+          }
+        }
+      }
+    }
+  }
 `;
 
 //////////////////////////////////////////////////////////////////////
