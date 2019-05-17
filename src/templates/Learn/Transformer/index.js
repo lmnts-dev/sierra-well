@@ -39,7 +39,7 @@ export const categoryDataTransformer = categories => {
       return {
         node: {
           id: category.node.id,
-          Name: category.node.data.name.text,
+          Name: category.node.data.name ? category.node.data.name.text : '',
           Icon: category.node.data.icon,
           Headline: category.node.data.headline,
           Slug: category.node.uid,

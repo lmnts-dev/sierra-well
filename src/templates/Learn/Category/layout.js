@@ -203,8 +203,10 @@ const TemplateLayout = ({ Category, Location }) => {
       Location={Location}
     >
       <LearnSection Category={Category.node} />
+      {console.log("CategoryFilter:")}
+      {console.log(Category.node.Slug)}
       <QuestionListings
-        CategoryFilter={Category.node.Name}
+        CategoryFilter={Category.node.Slug}
         TagFilter="all"
         Gutter={[0, 1, 1, 1]}
         BgColor={Theme.Color.Snow}

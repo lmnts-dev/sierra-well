@@ -23,6 +23,9 @@ import QuestionListings from 'components/library/QuestionListings';
 import SlideSection from 'components/library/Section/SlideSection';
 import Btn from 'components/library/Btn';
 
+// Transformers
+import { categoryDataTransformer } from 'templates/Learn/Transformer';
+
 // Constants
 import { Theme } from 'constants/Theme';
 
@@ -127,26 +130,59 @@ const BrowseCategories = () => {
               }
             }
           }
+
+          ## Prismic Sourcing
+
+          allPrismicQuestionCategory {
+            edges {
+              node {
+                id
+                uid
+                data {
+                  name {
+                    text
+                  }
+                  icon
+                  headline
+                  color_background
+                  color_primary
+                  color_secondary
+                  color_tertiary
+                  tags {
+                    tag_name
+                    tag_slug
+                    tag_icon
+                  }
+                }
+              }
+            }
+          }
         }
       `}
-      render={data => (
-        <SlideSection
-          Widgets={categoryWidgets(data.allQuestionCategoriesJson.edges)}
-          SectionSize={6}
-          Header="Browse Categories"
-          Gutter={[0, 1, 1, 1]}
-          Theme={{
-            TextColor: Theme.Color.Slate,
-            BgColor: 'none',
-          }}
-          SliderSettings={{
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            autoplay: false,
-            arrows: true,
-          }}
-        />
-      )}
+      render={data => {
+        const categoryMap = categoryDataTransformer(
+          data.allPrismicQuestionCategory.edges
+        );
+
+        return (
+          <SlideSection
+            Widgets={categoryWidgets(categoryMap)}
+            SectionSize={6}
+            Header="Browse Categories"
+            Gutter={[0, 1, 1, 1]}
+            Theme={{
+              TextColor: Theme.Color.Slate,
+              BgColor: 'none',
+            }}
+            SliderSettings={{
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              autoplay: false,
+              arrows: true,
+            }}
+          />
+        );
+      }}
     />
   );
 };

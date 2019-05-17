@@ -10,6 +10,9 @@ import React from 'react';
 // Templates
 import LearnCategoryTemplate from './layout';
 
+// Transformers
+import { categoryDataTransformer } from 'templates/Learn/Transformer';
+
 // Data
 import { graphql } from 'gatsby';
 
@@ -20,7 +23,16 @@ const LearnCategoryPage = props => (
   <LearnCategoryTemplate
     Data={props.data.allQuestionCategoriesJson.edges}
     Location={props.location.href}
-  />
+  >
+    {console.log('Source:')}
+    {console.log(props.data.allPrismicQuestionCategory.edges)}
+    {console.log('Goal Categories:')}
+    {console.log(props.data.allQuestionCategoriesJson.edges)}
+    {console.log('categoryDataTransformer:')}
+    {console.log(
+      categoryDataTransformer(props.data.allPrismicQuestionCategory.edges)
+    )}
+  </LearnCategoryTemplate>
 );
 
 export default LearnCategoryPage;
@@ -59,6 +71,33 @@ export const query = graphql`
               Primary
               Secondary
               Tertiary
+            }
+          }
+        }
+      }
+    }
+
+    ## Prismic Data
+
+    allPrismicQuestionCategory {
+      edges {
+        node {
+          id
+          uid
+          data {
+            name {
+              text
+            }
+            icon
+            headline
+            color_background
+            color_primary
+            color_secondary
+            color_tertiary
+            tags {
+              tag_name
+              tag_slug
+              tag_icon
             }
           }
         }

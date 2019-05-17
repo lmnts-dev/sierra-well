@@ -63,7 +63,7 @@
     "Name": "Recreational",
     "Icon": "cannabis",
     "Headline": "What would you like to know about Recreational Cannabis?",
-    "Slug": "recreational",
+    "Slug": "recreational-cannabis",
     "Breadcrumb": {
       "Destination": "/learn/all/",
       "Label": "All Questions"
@@ -123,7 +123,7 @@
     "Name": "Safety",
     "Icon": "lock",
     "Headline": "What would you like to know about Cannabis Safety?",
-    "Slug": "safety",
+    "Slug": "cannabis-safety",
     "Breadcrumb": {
       "Destination": "/learn/all/",
       "Label": "All Questions"
@@ -182,7 +182,7 @@
   {
     "Name": "Industry",
     "Icon": "lock",
-    "Slug": "industry",
+    "Slug": "cannabis-industry",
     "Breadcrumb": {
       "Destination": "/learn/all/",
       "Label": "All Questions"
@@ -238,66 +238,5 @@
         "Slug": "studies"
       }
     ]
-  },
-  {
-    "Name": "California",
-    "Icon": "lock",
-    "Slug": "california",
-    "Breadcrumb": {
-      "Destination": "/learn/all/",
-      "Label": "All Questions"
-    },
-    "Headline": "What would you like to know about the Cannabis Industry in California?",
-    "PageTheme": {
-      "Color": {
-        "Background": "#0D1632",
-        "Primary": "#ffffff",
-        "Secondary": "#ffffff",
-        "Tertiary": "#000000"
-      }
-    },
-    "Tags": [
-      {
-        "Name": "Job Opportunities",
-        "Icon": "user",
-        "Slug": "job-opportunities"
-      },
-      {
-        "Name": "Accomodation",
-        "Icon": "lock",
-        "Slug": "accomodation"
-      },
-      {
-        "Name": "Nevada",
-        "Icon": "briefcase-medical",
-        "Slug": "nevada"
-      },
-      {
-        "Name": "Growers",
-        "Icon": "cannabis",
-        "Slug": "growers"
-      },
-      {
-        "Name": "Doctors",
-        "Icon": "briefcase-medical",
-        "Slug": "doctors"
-      },
-      {
-        "Name": "Patients",
-        "Icon": "money-bill-wave",
-        "Slug": "patients"
-      },
-      {
-        "Name": "Treatment",
-        "Icon": "seedling",
-        "Slug": "treatment"
-      },
-      {
-        "Name": "Studies",
-        "Icon": "heart",
-        "Slug": "studies"
-      }
-    ]
   }
-  
 ]

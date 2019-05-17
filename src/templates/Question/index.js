@@ -45,18 +45,7 @@ const QuestionPage = props => {
                 props.data.allPrismicQuestion.edges[0].node
               )}
               key={index}
-            >
-              {console.log('Source:')}
-              {console.log(props.data.allPrismicQuestionCategory.edges)}
-              {console.log('Goal Categories:')}
-              {console.log(props.data.allQuestionCategoriesJson.edges)}
-              {console.log('categoryDataTransformer:')}
-              {console.log(
-                categoryDataTransformer(
-                  props.data.allPrismicQuestionCategory.edges
-                )
-              )}
-            </QuestionTemplate>
+            />
           );
         } else {
           return null;
