@@ -38,7 +38,13 @@ export const SpecialListingsStyle = styled.div`
       z-index: 100;
 
       &:first-child {
-        column-span: all !important;
+        width: 100%;
+        flex: 100%;
+        display: block;
+      }
+      &:nth-child(2) {
+        width: 100%;
+        flex: 100%;
         display: block;
       }
 

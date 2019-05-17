@@ -203,8 +203,8 @@ const TemplateLayout = ({ Category, Location }) => {
       Location={Location}
     >
       <LearnSection Category={Category.node} />
-      {console.log("CategoryFilter:")}
-      {console.log(Category.node.Slug)}
+      {/* {console.log("CategoryFilter:")}
+      {console.log(Category.node.Slug)} */}
       <QuestionListings
         CategoryFilter={Category.node.Slug}
         TagFilter="all"

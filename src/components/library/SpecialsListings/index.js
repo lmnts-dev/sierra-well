@@ -121,7 +121,7 @@ const SpecialCards = ({ PageLocation }) => {
               TintOpacity={Special.node.data.cover_image.localFile ? 0.6 : null}
               key={index}
             >
-              {console.log(tagList)}
+              {/* {console.log(tagList)} */}
             </DefaultWidget>
           );
         })
@@ -175,7 +175,7 @@ const SpecialListings = ({
         TextColor={TextColor ? TextColor : Theme.Color.Nightsky}
         Gutter={Gutter ? Gutter : [1, 1, 2, 1]}
       >
-        {console.log(LocationData.featuredSpecials.length)}
+        {/* {console.log(LocationData.featuredSpecials.length)} */}
         <SpecialCards PageLocation={PageLocation} />
       </MasonrySection>
     </SpecialListingsStyle>

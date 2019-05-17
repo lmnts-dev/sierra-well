@@ -4,7 +4,7 @@
   "author": "Peter Laxalt <pete@laxaltandmciver.co>",
   "scripts": {
     "start": "npm run develop",
-    "clean": "rimraf public",
+    "clean": "rimraf .cache public",
     "develop": "bash castle.sh && npm run clean && gatsby develop",
     "push": "npm run build && git add . && gitmoji -c && git push",
     "serve": "gatsby serve",

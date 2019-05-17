@@ -24,14 +24,14 @@ const LearnCategoryPage = props => (
     Data={props.data.allQuestionCategoriesJson.edges}
     Location={props.location.href}
   >
-    {console.log('Source:')}
+    {/* {console.log('Source:')}
     {console.log(props.data.allPrismicQuestionCategory.edges)}
     {console.log('Goal Categories:')}
     {console.log(props.data.allQuestionCategoriesJson.edges)}
     {console.log('categoryDataTransformer:')}
     {console.log(
       categoryDataTransformer(props.data.allPrismicQuestionCategory.edges)
-    )}
+    )} */}
   </LearnCategoryTemplate>
 );
 

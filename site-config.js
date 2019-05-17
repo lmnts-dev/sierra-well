@@ -8,8 +8,8 @@
 const path = require('path');
 
 module.exports = {
-  siteTitle: `Sierra Well | Patient Friendly. Knowledgeable. Discreet.`,
-  siteTitleShort: `Sierra Well`,
+  siteTitle: `Be. | A new kind of Cannabis Store.`,
+  siteTitleShort: `Be.`,
   siteDescription: `Dedicated to making medical and recreational marijuana approachable. Our dispensary locations in Northern Nevada provide exceptional service and quality medicinal cannabis to the Reno, Sparks, and Carson City areas.`,
   siteBaseKeywords: `medical, cannabis, marijuana, dispensary, reno, sparks, carson city, gardnerville, tahoe, service, quality, recreational, pot, weed`,
   siteUrl: `https://reverent-noyce-352111.netlify.com`,

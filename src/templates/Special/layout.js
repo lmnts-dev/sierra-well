@@ -32,7 +32,7 @@ import { Theme } from 'constants/Theme';
 const DefaultTemplate = ({ node, data }) => (
   <>
     <SimpleHero
-      Padding={[4, 0, 4, 0]}
+      Padding={[4, 1, 4, 1]}
       BgQuery={
         node.cover_image.localFile
           ? node.cover_image.localFile.childImageSharp.fluid
@@ -51,7 +51,7 @@ const DefaultTemplate = ({ node, data }) => (
           TextColor={node.color_primary}
         />
         <h1>{node.title.text}</h1>
-        {console.log(node.title.text)}
+        {/* {console.log(node.title.text)} */}
         {node.description ? <p className="p-lg">{node.description} </p> : null}
         <SocialStrip
           Margin={[0.45, 0, 0, 0]}

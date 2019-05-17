@@ -31,7 +31,9 @@ export const questionDataTransformer = question => {
             author: questionPost.node.data.author
               ? questionPost.node.data.author.document[0].data.name.text
               : 'Sierra Well',
-            coverImage: 'placeholder_bg_4.jpg',
+            coverImage: questionPost.node.data.cover_image.localFile
+              ? questionPost.node.data.cover_image.localFile.childImageSharp.fluid
+              : false,
             title: questionPost.node.data.title.text
               ? questionPost.node.data.title.text
               : '',
@@ -62,7 +64,9 @@ export const questionDataTransformer = question => {
         author: question.data.author
           ? question.data.author.document[0].data.name.text
           : 'Sierra Well',
-        coverImage: 'placeholder_bg_4.jpg',
+        coverImage: question.data.cover_image.localFile
+          ? question.data.cover_image.localFile.childImageSharp.fluid
+          : false,
         title: question.data.title.text ? question.data.title.text : '',
         category: question.data.category ? question.data.category.uid : '',
         tags: question.tags ? question.tags : '',

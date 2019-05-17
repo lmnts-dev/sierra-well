@@ -11,7 +11,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const Color = {
   // Core Colors
-  Primary: '#40DA33',
+  Primary: '#ed652b',
   Secondary: '#5D6376',
   Background: '#F2F3F3',
 
@@ -25,7 +25,7 @@ export const Color = {
   White: '#ffffff',
 
   // Main Palette
-  Leaf: '#40DA33',
+  Leaf: '#ed652b',
   Mint: '#9DF096',
   Tahoe: '#2984FD',
   Sunset: '#FC6376',

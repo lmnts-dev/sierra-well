@@ -75,37 +75,39 @@ class LocationList extends React.Component {
         render={data => (
           <>
             {data.allPrismicLocation.edges.map((location, index) => {
-              if (location.node.name == currentLocation) {
-                return (
-                  <Link
-                    className="active"
-                    to={
-                      '/menu/' +
-                      OrderContextSlug +
-                      location.node.data.geo_state.toLowerCase() +
-                      '/' +
-                      location.node.uid
-                    }
-                    key={index}
-                  >
-                    {location.node.data.name.text}
-                  </Link>
-                );
-              } else {
-                return (
-                  <Link
-                    to={
-                      '/menu/' +
-                      OrderContextSlug +
-                      location.node.data.geo_state.toLowerCase() +
-                      '/' +
-                      location.node.uid
-                    }
-                    key={index}
-                  >
-                    {location.node.data.name.text}
-                  </Link>
-                );
+              if (location.node.uid != '___location-registration') {
+                if (location.node.name == currentLocation) {
+                  return (
+                    <Link
+                      className="active"
+                      to={
+                        '/menu/' +
+                        OrderContextSlug +
+                        location.node.data.geo_state.toLowerCase() +
+                        '/' +
+                        location.node.uid
+                      }
+                      key={index}
+                    >
+                      {location.node.data.name.text}
+                    </Link>
+                  );
+                } else {
+                  return (
+                    <Link
+                      to={
+                        '/menu/' +
+                        OrderContextSlug +
+                        location.node.data.geo_state.toLowerCase() +
+                        '/' +
+                        location.node.uid
+                      }
+                      key={index}
+                    >
+                      {location.node.data.name.text}
+                    </Link>
+                  );
+                }
               }
             })}
           </>

@@ -182,30 +182,38 @@ exports.createPages = ({ graphql, actions }) => {
     const questionTemplate = path.resolve(`src/templates/Question/index.js`);
 
     _.each(result.data.allPrismicQuestion.edges, edge => {
+      const questionPath = `/learn/${
+        edge.node.data.category
+          ? edge.node.data.category.uid
+          : 'cannabis-questions'
+      }/${edge.node.uid}/`;
+
       createPage({
-        path: `/learn/${edge.node.uid}/`,
+        path: questionPath,
         component: slash(questionTemplate),
         context: {
           Id: edge.node.id,
-          Slug: 'faucibus-commodo-pura',
         },
       });
 
       ////////////////////////////////////////////////////////////////////////////////////
 
-      //  Create our Tag Pages
-      // _.each(edge.node.tags, tag => {
-      //   createPage({
-      //     path: `/learn/${slugify(edge.node.category)}/${slugify(tag)}/${
-      //       edge.node.slug
-      //     }/`,
-      //     component: slash(questionTemplate),
-      //     context: {
-      //       Slug: edge.node.slug,
-      //       CoverImage: edge.node.coverImage,
-      //     },
-      //   });
-      // });
+      //  Create our Tagged Question Pages
+      _.each(edge.node.tags, tag => {
+        const taggedQuestionPath = `/learn/${
+          edge.node.data.category
+            ? edge.node.data.category.uid
+            : 'cannabis-questions'
+        }/${slugify(tag)}/${edge.node.uid}/`;
+
+        createPage({
+          path: taggedQuestionPath,
+          component: slash(questionTemplate),
+          context: {
+            Id: edge.node.id,
+          },
+        });
+      });
     });
 
     ////////////////////////////////////////////////////////////////////////////////////
@@ -214,33 +222,33 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create our Question Pages
 
-    _.each(result.data.allQuestionsJson.edges, edge => {
-      createPage({
-        path: `/learn/${slugify(edge.node.category)}/${edge.node.slug}/`,
-        component: slash(questionTemplate),
-        context: {
-          Id: 'Prismic__Question__XN3BWBEAACYAm_Jo',
-          Slug: edge.node.slug,
-        },
-      });
+    // _.each(result.data.allQuestionsJson.edges, edge => {
+    //   createPage({
+    //     path: `/learn/${slugify(edge.node.category)}/${edge.node.slug}/`,
+    //     component: slash(questionTemplate),
+    //     context: {
+    //       Id: 'Prismic__Question__XN3BWBEAACYAm_Jo',
+    //       Slug: edge.node.slug,
+    //     },
+    //   });
 
-      ////////////////////////////////////////////////////////////////////////////////////
+    //   ////////////////////////////////////////////////////////////////////////////////////
 
-      //  Create our Tagged Question Pages
-      _.each(edge.node.tags, tag => {
-        createPage({
-          path: `/learn/${slugify(edge.node.category)}/${slugify(tag)}/${
-            edge.node.slug
-          }/`,
-          component: slash(questionTemplate),
-          context: {
-            Id: 'Prismic__Question__XN3BWBEAACYAm_Jo',
-            Slug: edge.node.slug,
-            CoverImage: edge.node.coverImage,
-          },
-        });
-      });
-    });
+    //   //  Create our Tagged Question Pages
+    //   _.each(edge.node.tags, tag => {
+    //     createPage({
+    //       path: `/learn/${slugify(edge.node.category)}/${slugify(tag)}/${
+    //         edge.node.slug
+    //       }/`,
+    //       component: slash(questionTemplate),
+    //       context: {
+    //         Id: 'Prismic__Question__XN3BWBEAACYAm_Jo',
+    //         Slug: edge.node.slug,
+    //         CoverImage: edge.node.coverImage,
+    //       },
+    //     });
+    //   });
+    // });
 
     ////////////////////////////////////////////////////////////////////////////////////
 

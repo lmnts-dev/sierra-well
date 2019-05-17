@@ -46,8 +46,8 @@ const LargeContent = ({
     TertiaryColor={Theme.Color.Nightsky}
   >
     <SublevelInnerLock />
-    {console.log("NearbyName:")}
-    {console.log(NearbyName)}
+    {/* {console.log("NearbyName:")}
+    {console.log(NearbyName)} */}
     <MenuHero
       NearbySlug={NearbySlug}
       NearbyName={NearbyName}

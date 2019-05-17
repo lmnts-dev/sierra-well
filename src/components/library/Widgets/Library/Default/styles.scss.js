@@ -29,8 +29,7 @@ const WidgetStyle = styled.div`
     ${Theme.Base.Transition.CssEase};
   cursor: pointer;
   color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
-  min-width: 100px;
-
+  min-width: 100px
   /* Background Images */
 
   ${props => {
@@ -65,9 +64,10 @@ const WidgetStyle = styled.div`
     if (props.TintColor || props.TintOpacity)
       return (
         `
-        &:before {
-          content: '';
+        .tint {
           position: absolute;
+          margin: 0;
+          padding: 0;
           left: 0;
           top: 0;
           bottom: 0;
@@ -79,7 +79,7 @@ const WidgetStyle = styled.div`
           opacity:` +
         props.TintOpacity +
         `;
-          transition: all ${Theme.Base.Transition.Duration}
+          transition: opacity ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
         }
     `
@@ -99,7 +99,7 @@ const WidgetStyle = styled.div`
     position: relative;
     padding: ${Root.ViewWidthPadding};
     color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
-    text-decoration: none;
+    text-decoration: none
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
   }
@@ -109,10 +109,14 @@ const WidgetStyle = styled.div`
     position: absolute;
     right: ${Root.ViewWidthPadding};
     top: ${Root.ViewWidthPadding};
-    transform: translateX(0%);
+    transform: translateX(0%) translateZ(0);
     fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
+  }
+
+  /* The Widget Icon */
+
   }
 
   /* Hover Styles */
@@ -129,21 +133,21 @@ const WidgetStyle = styled.div`
 
       /* The Carat Icon */
       svg {
-        transform: translateX(50%);
+        transform: translateX(50%) translateZ(0);
         fill: ${Theme.Color.White};
       }
 
       /* The Widget Icon */
       .fas {
         color: ${Theme.Color.White};
-        transform: scale(1.3);
+        transform: scale(1.3) translateZ(0);
       }
 
       /* Tint */
       ${props => {
         if (props.TintColor || props.TintOpacity)
           return `
-        &:before {
+        .tint {
           opacity: 1
         }
     `;

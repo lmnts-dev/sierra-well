@@ -29,7 +29,7 @@ export const BreadCrumb = styled.div`
       content: '';
       position: absolute;
       top: 50%;
-      left: calc((${Theme.Base.Size.Sm} / 2) * -1);
+      left: calc((${Theme.Base.Size.Sm}) * -1);
       transform: translateY(-50%);
       width: 2px;
       height: 2px;
@@ -63,7 +63,7 @@ BreadCrumb.Label = styled(Link)`
   display: inline-flex;
   width: auto;
   align-items: center;
-  margin-left: calc(${Theme.Base.Size.Sm});
+  margin-left: calc(${Theme.Base.Size.Sm} * 1.75);
   position: relative;
   text-transform: capitalize;
 

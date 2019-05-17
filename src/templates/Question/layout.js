@@ -57,14 +57,16 @@ function slugify(string) {
 const PostDetails = ({ Author, Time }) => (
   <span className="post-details">
     Answered <time itemProp="datePublished">{Time}</time> by{' '}
-    <span itemProp="author">{Author}</span>
+    <span className="post-author" itemProp="author">
+      {Author}
+    </span>
   </span>
 );
 
 // Breadcrumb Tag List
-const TagList = ({ Tags, CategorySlug }) => {
+const TagList = ({ Tags, CategorySlug, CategoryName, TextColor }) => {
   // Tag Crumb Function
-  function tagCrumbs(baseUrl, categorySlug, list) {
+  function tagCrumbs(baseUrl, categorySlug, categoryName, list) {
     let crumbs = list.map((tag, index) => {
       if (index == 0) {
         return {
@@ -85,8 +87,8 @@ const TagList = ({ Tags, CategorySlug }) => {
   return (
     <>
       <Bread
-        Crumbs={tagCrumbs('learn', CategorySlug, Tags)}
-        TextColor={Theme.Color.White}
+        Crumbs={tagCrumbs('learn', CategorySlug, CategoryName, Tags)}
+        TextColor={TextColor ? TextColor : Theme.Color.White}
       />
     </>
   );
@@ -94,12 +96,13 @@ const TagList = ({ Tags, CategorySlug }) => {
 
 // The Question Template
 const QuestionTemplate = ({
-  BgMatch,
+  BgQuery,
   PageTheme,
   Location,
   CategorySlug,
   AllCategories,
   QuestionData,
+  CategoryName,
 }) => (
   <Layout
     BgColor={PageTheme.Color.Background}
@@ -121,19 +124,24 @@ const QuestionTemplate = ({
 
         <SimpleHero
           Size="2"
-          BgMatch={BgMatch}
+          BgQuery={BgQuery}
           BgAlt={QuestionData.title}
-          TextColor={Theme.Color.White}
-          Tint="0.5"
+          TextColor={BgQuery ? Theme.Color.White : PageTheme.Color.Primary}
+          Tint={BgQuery ? 0.5 : 0}
         >
           <Block AlignItems="flex-start" Width={1} maxWidth={0.75}>
-            <TagList Tags={QuestionData.tags} CategorySlug={CategorySlug} />
+            <TagList
+              Tags={QuestionData.tags}
+              CategorySlug={CategorySlug}
+              CategoryName={CategoryName}
+              TextColor={BgQuery ? Theme.Color.White : PageTheme.Color.Primary}
+            />
 
             <h1 itemProp="name">{QuestionData.title}</h1>
             <SocialStrip
               Margin={[0, 0, 0, 0]}
               Location={Location}
-              TextColor={Theme.Color.White}
+              TextColor={BgQuery ? Theme.Color.White : PageTheme.Color.Primary}
             />
           </Block>
         </SimpleHero>

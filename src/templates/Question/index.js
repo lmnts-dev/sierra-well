@@ -37,10 +37,15 @@ const QuestionPage = props => {
           return (
             <QuestionTemplate
               PageTheme={Category.node.PageTheme}
-              BgMatch="placeholder_bg_4.jpg"
+              BgQuery={
+                questionDataTransformer(
+                  props.data.allPrismicQuestion.edges[0].node
+                ).coverImage
+              }
               Location={props.location.href}
               AllCategories={AllCategories}
               CategorySlug={Category.node.Slug}
+              CategoryName={Category.node.Name}
               QuestionData={questionDataTransformer(
                 props.data.allPrismicQuestion.edges[0].node
               )}
@@ -60,54 +65,7 @@ export default QuestionPage;
 // GraphQL Queries
 /////////////////////////////////////////////////////////////////////
 export const query = graphql`
-  query($Slug: String!, $Id: String!) {
-    allQuestionsJson(filter: { slug: { eq: $Slug } }) {
-      edges {
-        node {
-          id
-          slug
-          coverImage
-          date
-          author
-          title
-          category
-          tags
-          shortAnswer
-          longAnswer
-        }
-      }
-    }
-
-    allQuestionCategoriesJson {
-      edges {
-        node {
-          id
-          Name
-          Icon
-          Headline
-          Slug
-          Tags {
-            Name
-            Icon
-            Slug
-          }
-          Breadcrumb {
-            Destination
-            Label
-          }
-          PageTheme {
-            Color {
-              Background
-              Primary
-              Secondary
-              Tertiary
-            }
-          }
-        }
-      }
-    }
-
-    ## Prismic Sourcing
+  query($Id: String!) {
 
     allPrismicQuestionCategory {
       edges {
@@ -168,6 +126,11 @@ export const query = graphql`
               alt
               localFile {
                 id
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
           }

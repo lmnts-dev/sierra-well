@@ -36,6 +36,12 @@ SubLevelPageStyle.Content = styled.div`
   flex: 1;
   background: ${props => (props.BgColor ? props.BgColor : 'none')};
   color: ${props => (props.TextColor ? props.TextColor : 'inherit')};
+
+  .post-details  {
+    opacity: .4;
+    display: block;
+    margin-bottom: calc(${Root.Size} / 4);
+  }
 `;
 
 export default SubLevelPageStyle;

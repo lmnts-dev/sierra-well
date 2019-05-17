@@ -44,13 +44,17 @@ const LinkList = ({ ActiveClass }) => (
       // Convert these to usable elements
       return (
         <ul className="linklist">
-          {MainNavigation[0].map((link, index) => (
-            <li key={index}>
-              <Link to={link.slug} activeClassName={ActiveClass}>
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {MainNavigation[0].map((link, index) => {
+            if (link.slug != '/___registration') {
+              return (
+                <li key={index}>
+                  <Link to={link.slug} activeClassName={ActiveClass}>
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            }
+          })}
         </ul>
       );
     }}

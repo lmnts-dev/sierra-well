@@ -66,21 +66,21 @@ MasonrySectionStyle.Content = styled.div`
   overflow: visible;
   max-width: ${Theme.Base.Grid.SiteWidth};
 
-  /* Performance fixes on Chrome & Safari */
+  /* Performance fixes on Chrome & Safari
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
 
   /* Performance fixes on Chrome & Safari */
-  -webkit-perspective: 1000;
+  /* -webkit-perspective: 1000;
   -moz-perspective: 1000;
   -ms-perspective: 1000;
-  perspective: 1000;
+  perspective: 1000; */
 
   /* CSS Masonry */
   /* Read more: https://w3bits.com/css-masonry/ */
-  column-width: 33%;
+  /* column-width: 33%;
   column-count: ${props => (props.Columns ? props.Columns : 3)};
   column-gap: ${props =>
     props.ColumnGap
@@ -90,15 +90,23 @@ MasonrySectionStyle.Content = styled.div`
   @media (max-width: ${Base.Media.Width.Md + 'px'}) {
     column-width: 100%;
     column-count: 1;
-  }
+  } */
+
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
   .widget-content {
     border-radius: ${Root.Radius};
     box-shadow: 0 10px 17px 0 rgba(6, 10, 92, 0.12);
     position: relative;
     overflow: hidden;
-    width: 100%;
-    display: inline-block;
+    flex: 30%;
+    margin: calc(${Root.Size} / 5);
+    width: 30%;
+    display: flex;
+    color: ${Theme.Color.White};
     margin-bottom: ${props =>
       props.ColumnGap
         ? ' calc(' + Root.Size + ' * ' + props.ColumnGap + ')'
@@ -106,6 +114,22 @@ MasonrySectionStyle.Content = styled.div`
 
     .widget-headline {
       margin-bottom: calc(${Root.Size} * 2);
+    }
+
+    a, i {
+      color: ${Theme.Color.White};
+    }
+    
+    svg {
+      fill: ${Theme.Color.White};
+    }
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    .widget-content {
+      flex: auto;
+      margin: calc(${Root.Size} / 5) 0;
+      width: 100%;
     }
   }
 `;

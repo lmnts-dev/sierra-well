@@ -145,6 +145,11 @@ const QuestionCards = ({
                     alt
                     localFile {
                       id
+                      childImageSharp {
+                        fluid(maxWidth: 1200) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
                     }
                   }
                 }
@@ -162,11 +167,11 @@ const QuestionCards = ({
           data.allPrismicQuestion.edges
         );
 
-        console.log('categoryMap');
-        console.log(categoryMap);
+        // console.log('categoryMap');
+        // console.log(categoryMap);
 
-        console.log('questionsMap');
-        console.log(questionsMap);
+        // console.log('questionsMap');
+        // console.log(questionsMap);
 
         // Create our PageTheme variables for each Widget.
 
@@ -178,8 +183,8 @@ const QuestionCards = ({
                 ? Question.node.category
                 : 'none';
 
-              console.log('QuestionCategory');
-              console.log(QuestionCategory);
+              // console.log('QuestionCategory');
+              // console.log(QuestionCategory);
 
               // return <h1>Masonry</h1>;
               // If the Question's Category is the same as the Filter supplied:
@@ -199,11 +204,15 @@ const QuestionCards = ({
                       Destination={
                         '/learn' + QuestionSlugString + '/' + Question.node.slug
                       }
-                      Subhead={QuestionCategory}
+                      Subhead={filteredCategory.Name}
                       Headline={Question.node.title}
                       IconName={filteredCategory.Icon}
                       IconColor={filteredCategory.PageTheme.Color.Primary}
-                      BgImageFile={Question.node.coverImage}
+                      BgQuery={
+                        Question.node.coverImage
+                          ? Question.node.coverImage
+                          : false
+                      }
                       BgImageAltText={
                         QuestionCategory +
                         ' & Cannabis | ' +
@@ -234,11 +243,15 @@ const QuestionCards = ({
                           '/' +
                           Question.node.slug
                         }
-                        Subhead={QuestionCategory}
+                        Subhead={filteredCategory.Name}
                         Headline={Question.node.title}
                         IconName={filteredCategory.Icon}
                         IconColor={filteredCategory.PageTheme.Color.Primary}
-                        BgImageFile={Question.node.coverImage}
+                        BgQuery={
+                          Question.node.coverImage
+                            ? Question.node.coverImage
+                            : false
+                        }
                         BgImageAltText={
                           QuestionCategory +
                           ' & Cannabis | ' +
@@ -264,10 +277,10 @@ const QuestionCards = ({
                     QuestionCategory
                   );
 
-                  console.log('all filteredCategory');
-                  console.log(filteredCategory);
-                  console.log('Question');
-                  console.log(Question);
+                  // console.log('all filteredCategory');
+                  // console.log(filteredCategory);
+                  // console.log('Question');
+                  // console.log(Question);
 
                   if (filteredCategory) {
                     return (
@@ -280,11 +293,15 @@ const QuestionCards = ({
                           '/' +
                           Question.node.slug
                         }
-                        Subhead={QuestionCategory}
+                        Subhead={filteredCategory.Name}
                         Headline={Question.node.title}
                         IconName={filteredCategory.Icon}
                         IconColor={filteredCategory.PageTheme.Color.Primary}
-                        BgImageFile={Question.node.coverImage}
+                        BgQuery={
+                          Question.node.coverImage
+                            ? Question.node.coverImage
+                            : false
+                        }
                         BgImageAltText={
                           QuestionCategory +
                           ' & Cannabis | ' +
@@ -301,11 +318,15 @@ const QuestionCards = ({
                         BgColor={Theme.Color.Black}
                         TextColor={Theme.Color.Whitee}
                         Destination={'/learn/' + Question.node.slug}
-                        Subhead={QuestionCategory}
+                        Subhead="Cannabis Questions"
                         Headline={Question.node.title}
                         IconName="question"
                         IconColor={Theme.Color.White}
-                        BgImageFile={Question.node.coverImage}
+                        BgQuery={
+                          Question.node.coverImage
+                            ? Question.node.coverImage
+                            : false
+                        }
                         BgImageAltText={'Cannabis Q&A | ' + Question.node.title}
                         TintColor={Theme.Color.Black}
                         TintOpacity={0.6}
@@ -343,8 +364,8 @@ const QuestionListings = ({
     Gutter={Gutter ? Gutter : [0, 1, 2, 1]}
   >
     {/* If the CategoryFilter is supplied */}
-    {console.log('CategoryFilter Passed:')}
-    {console.log(CategoryFilter)}
+    {/* {console.log('CategoryFilter Passed:')}
+    {console.log(CategoryFilter)} */}
 
     {CategoryFilter ? (
       <QuestionCards

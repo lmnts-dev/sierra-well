@@ -41,6 +41,8 @@ const DefaultWidget = ({
     TintOpacity={TintOpacity}
     className="widget-content"
   >
+    {TintColor || TintOpacity ? <figure className="tint" /> : null}
+
     <Link to={Destination}>
       <WidgetStyle.Subhead className="widget-subheadline">
         {Subhead}
