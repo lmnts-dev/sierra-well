@@ -17,19 +17,17 @@ import BreadCrumbStyle from './styles.scss';
 //////////////////////////////////////////////////////////////////////
 
 const Bread = ({ Crumbs, TextColor }) => (
-  <BreadCrumbStyle>
+  <BreadCrumbStyle TextColor={TextColor}>
     {Crumbs.map((crumb, index) => {
       return (
         <BreadCrumbStyle.Label
           to={crumb.Destination}
           key={index}
-          TextColor={TextColor}
         >
           {/* // Hide back button if nested item. */}
           {index == 0 ? (
             <Icon className="svg-carat" Name="carat" TextColor={TextColor} />
           ) : null}
-
           {crumb.Label}
         </BreadCrumbStyle.Label>
       );
