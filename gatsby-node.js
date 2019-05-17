@@ -73,18 +73,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
 
-        allQuestionsJson {
-          edges {
-            node {
-              id
-              slug
-              coverImage
-              category
-              tags
-            }
-          }
-        }
-
         ## From Prismic:
 
         allPrismicSpecial {
@@ -135,6 +123,20 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+
+        allPrismicQuestionCategory {
+          edges {
+            node {
+              id
+              uid
+              data {
+                tags {
+                  tag_slug
+                }
+              }
+            }
+          }
+        }
       }
     `
   ).then(result => {
@@ -151,7 +153,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     ////////////////////////////////////////////////////////////////////////////////////
 
-    // Create Top Level Pages
+    // Create Prismic Top Level Pages
     _.each(result.data.allPrismicTopLevelPage.edges, edge => {
       // Gatsby uses Redux to manage its internal state.
       // Plugins and sites can use functions like "createPage"
@@ -175,6 +177,344 @@ exports.createPages = ({ graphql, actions }) => {
     });
 
     ////////////////////////////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////////////////////////////////////
+
+    // Create our Prismic Location Landing Pages
+    const locationLandingTemplate = path.resolve(
+      `src/templates/Location/Landing/index.js`
+    );
+    const locationMenuTemplate = path.resolve(
+      `src/templates/Location/Menu/index.js`
+    );
+    const locationSpecialTemplate = path.resolve(
+      `src/templates/Location/Landing/index.js`
+    );
+
+    _.each(result.data.allPrismicLocation.edges, edge => {
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      // Create main landing pages.
+      createPage({
+        path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/`,
+        component: slash(locationLandingTemplate),
+        context: {
+          Slug: edge.node.uid,
+          Id: edge.node.id,
+        },
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      // Create main menu pages. with /locations/ root url
+      createPage({
+        path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/menu/`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: '',
+          Id: edge.node.id,
+        },
+      });
+
+      // 'online' context
+      createPage({
+        path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/menu/online`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: 'online',
+          Id: edge.node.id,
+        },
+      });
+
+      // 'pick-up' context
+      createPage({
+        path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/menu/pick-up`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: 'pick-up',
+          Id: edge.node.id,
+        },
+      });
+
+      // 'delivery' context
+      createPage({
+        path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/menu/delivery`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: 'delivery',
+          Id: edge.node.id,
+        },
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      // Create menu pages with /menu/ root url.
+      createPage({
+        path: `/menu/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: '',
+          Id: edge.node.id,
+        },
+      });
+
+      // 'online' context
+      createPage({
+        path: `/menu/online/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: 'online',
+          Id: edge.node.id,
+        },
+      });
+
+      // 'pick-up' context
+      createPage({
+        path: `/menu/pick-up/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: 'pick-up',
+          Id: edge.node.id,
+        },
+      });
+
+      // 'online' context
+      createPage({
+        path: `/menu/delivery/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/`,
+        component: slash(locationMenuTemplate),
+        context: {
+          Slug: edge.node.uid,
+          OrderContext: 'delivery',
+          Id: edge.node.id,
+        },
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      // Create specials collection pages.
+      createPage({
+        path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+          edge.node.uid
+        }/specials/`,
+        component: slash(locationSpecialTemplate),
+        context: {
+          Slug: edge.node.uid,
+          Id: edge.node.id,
+          Specials: true,
+        },
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      // Create our location-specifc Specials Pages
+      const specialTemplate = path.resolve(`src/templates/Special/index.js`);
+
+      _.each(result.data.allPrismicSpecial.edges, special => {
+        createPage({
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/specials/${special.node.uid}/`,
+          component: slash(specialTemplate),
+          context: {
+            Id: special.node.id,
+          },
+        });
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      // Create our Nearby Location Pages:
+      const locationNearbyMenuTemplate = path.resolve(
+        `src/templates/Location/Menu/index.js`
+      );
+
+      _.each(edge.node.data.nearby_locations, nearby => {
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        // Create Nearby Menu Pages with /locations/ root url
+        createPage({
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/menu/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: '',
+            Id: edge.node.id,
+          },
+        });
+
+        // 'online' context
+        createPage({
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/menu/online/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: 'online',
+            Id: edge.node.id,
+          },
+        });
+
+        // 'delivery' context
+        createPage({
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/menu/delivery/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: 'delivery',
+            Id: edge.node.id,
+          },
+        });
+
+        // 'pick-up' context
+        createPage({
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/menu/pick-up/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: 'pick-up',
+            Id: edge.node.id,
+          },
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        // Create Menu Pages with root /menu/ url
+        createPage({
+          path: `/menu/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: '',
+            Id: edge.node.id,
+          },
+        });
+
+        // 'online' context
+        createPage({
+          path: `/menu/online/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: 'online',
+            Id: edge.node.id,
+          },
+        });
+
+        // 'pickup' context
+        createPage({
+          path: `/menu/pick-up/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: 'pick-up',
+            Id: edge.node.id,
+          },
+        });
+
+        // 'delivery' context
+        createPage({
+          path: `/menu/delivery/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/`,
+          component: slash(locationNearbyMenuTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            OrderContext: 'delivery',
+            Id: edge.node.id,
+          },
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        // Create nearby specials collection pages.
+        createPage({
+          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+            edge.node.uid
+          }/${nearby.nearby_slug}/specials/`,
+          component: slash(locationSpecialTemplate),
+          context: {
+            Slug: edge.node.uid,
+            NearbySlug: nearby.nearby_slug,
+            NearbyName: nearby.nearby_name,
+            Id: edge.node.id,
+          },
+        });
+
+        // Create nearby specials article pages.
+
+        const nearbySpecialTemplate = path.resolve(
+          `src/templates/Special/index.js`
+        );
+
+        _.each(result.data.allPrismicSpecial.edges, special => {
+          createPage({
+            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
+              edge.node.uid
+            }/${nearby.nearby_slug}/specials/${special.node.uid}/`,
+            component: slash(nearbySpecialTemplate),
+            context: {
+              Id: special.node.id,
+            },
+          });
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////////
+      });
+    });
 
     ////////////////////////////////////////////////////////////////////////////////////
 
@@ -220,38 +560,6 @@ exports.createPages = ({ graphql, actions }) => {
 
     ////////////////////////////////////////////////////////////////////////////////////
 
-    // Create our Question Pages
-
-    // _.each(result.data.allQuestionsJson.edges, edge => {
-    //   createPage({
-    //     path: `/learn/${slugify(edge.node.category)}/${edge.node.slug}/`,
-    //     component: slash(questionTemplate),
-    //     context: {
-    //       Id: 'Prismic__Question__XN3BWBEAACYAm_Jo',
-    //       Slug: edge.node.slug,
-    //     },
-    //   });
-
-    //   ////////////////////////////////////////////////////////////////////////////////////
-
-    //   //  Create our Tagged Question Pages
-    //   _.each(edge.node.tags, tag => {
-    //     createPage({
-    //       path: `/learn/${slugify(edge.node.category)}/${slugify(tag)}/${
-    //         edge.node.slug
-    //       }/`,
-    //       component: slash(questionTemplate),
-    //       context: {
-    //         Id: 'Prismic__Question__XN3BWBEAACYAm_Jo',
-    //         Slug: edge.node.slug,
-    //         CoverImage: edge.node.coverImage,
-    //       },
-    //     });
-    //   });
-    // });
-
-    ////////////////////////////////////////////////////////////////////////////////////
-
     // Learn category page template.
     const categoryTemplate = path.resolve(
       `src/templates/Learn/Category/index.js`
@@ -262,8 +570,8 @@ exports.createPages = ({ graphql, actions }) => {
 
     ////////////////////////////////////////////////////////////////////////////////////
 
-    // Create Category Pages
-    _.each(result.data.allQuestionCategoriesJson.edges, edge => {
+    // Create Prismic Category Pages
+    _.each(result.data.allPrismicQuestionCategory.edges, edge => {
       // Gatsby uses Redux to manage its internal state.
       // Plugins and sites can use functions like "createPage"
       // to interact with Gatsby.
@@ -277,379 +585,43 @@ exports.createPages = ({ graphql, actions }) => {
         // as a template component. The `context` is
         // optional but is often necessary so the template
         // can query data specific to each page.
-        path: `/learn/${edge.node.Slug}/`,
+        path: `/learn/${edge.node.uid}/`,
         component: slash(categoryTemplate),
         context: {
-          Slug: edge.node.Slug,
+          Id: edge.node.id,
         },
       });
 
       // Create Tag Pages
-      const CategorySlug = edge.node.Slug;
+      const CategorySlug = edge.node.uid;
 
-      _.each(edge.node.Tags, tag => {
+      _.each(edge.node.data.tags, tag => {
         createPage({
-          path: `/learn/${CategorySlug}/${tag.Slug}/`,
+          path: `/learn/${CategorySlug}/${tag.tag_slug}/`,
           component: slash(tagTemplate),
           context: {
-            TagSlug: tag.Slug,
+            TagSlug: tag.tag_slug,
             CategorySlug: CategorySlug,
           },
         });
       });
+    });
 
-      ////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////
 
-      // Create our Specials Pages
-      const specialTemplate = path.resolve(`src/templates/Special/index.js`);
+    // Create our Specials Pages
+    const specialTemplate = path.resolve(`src/templates/Special/index.js`);
 
-      _.each(result.data.allPrismicSpecial.edges, edge => {
-        createPage({
-          path: `/specials/${edge.node.uid}/`,
-          component: slash(specialTemplate),
-          context: {
-            Id: edge.node.id,
-          },
-        });
-      });
-
-      ////////////////////////////////////////////////////////////////////////////////////
-
-      // Create our Location Landing Pages
-      const locationLandingTemplate = path.resolve(
-        `src/templates/Location/Landing/index.js`
-      );
-      const locationMenuTemplate = path.resolve(
-        `src/templates/Location/Menu/index.js`
-      );
-      const locationSpecialTemplate = path.resolve(
-        `src/templates/Location/Landing/index.js`
-      );
-
-      _.each(result.data.allPrismicLocation.edges, edge => {
-        ////////////////////////////////////////////////////////////////////////////////////
-
-        // Create main landing pages.
-        createPage({
-          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/`,
-          component: slash(locationLandingTemplate),
-          context: {
-            Slug: edge.node.uid,
-            Id: edge.node.id,
-          },
-        });
-
-        ////////////////////////////////////////////////////////////////////////////////////
-
-        // Create main menu pages. with /locations/ root url
-        createPage({
-          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/menu/`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: '',
-            Id: edge.node.id,
-          },
-        });
-
-        // 'online' context
-        createPage({
-          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/menu/online`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: 'online',
-            Id: edge.node.id,
-          },
-        });
-
-        // 'pick-up' context
-        createPage({
-          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/menu/pick-up`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: 'pick-up',
-            Id: edge.node.id,
-          },
-        });
-
-        // 'delivery' context
-        createPage({
-          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/menu/delivery`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: 'delivery',
-            Id: edge.node.id,
-          },
-        });
-
-        ////////////////////////////////////////////////////////////////////////////////////
-
-        // Create menu pages with /menu/ root url.
-        createPage({
-          path: `/menu/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: '',
-            Id: edge.node.id,
-          },
-        });
-
-        // 'online' context
-        createPage({
-          path: `/menu/online/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: 'online',
-            Id: edge.node.id,
-          },
-        });
-
-        // 'pick-up' context
-        createPage({
-          path: `/menu/pick-up/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: 'pick-up',
-            Id: edge.node.id,
-          },
-        });
-
-        // 'online' context
-        createPage({
-          path: `/menu/delivery/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/`,
-          component: slash(locationMenuTemplate),
-          context: {
-            Slug: edge.node.uid,
-            OrderContext: 'delivery',
-            Id: edge.node.id,
-          },
-        });
-
-        ////////////////////////////////////////////////////////////////////////////////////
-
-        // Create specials collection pages.
-        createPage({
-          path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-            edge.node.uid
-          }/specials/`,
-          component: slash(locationSpecialTemplate),
-          context: {
-            Slug: edge.node.uid,
-            Id: edge.node.id,
-            Specials: true,
-          },
-        });
-
-        ////////////////////////////////////////////////////////////////////////////////////
-
-        // Create our location-specifc Specials Pages
-        const specialTemplate = path.resolve(`src/templates/Special/index.js`);
-
-        _.each(result.data.allPrismicSpecial.edges, special => {
-          createPage({
-            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/specials/${special.node.uid}/`,
-            component: slash(specialTemplate),
-            context: {
-              Id: special.node.id,
-            },
-          });
-        });
-
-        ////////////////////////////////////////////////////////////////////////////////////
-
-        // Create our Nearby Location Pages:
-        const locationNearbyMenuTemplate = path.resolve(
-          `src/templates/Location/Menu/index.js`
-        );
-
-        _.each(edge.node.data.nearby_locations, nearby => {
-          ////////////////////////////////////////////////////////////////////////////////////
-
-          // Create Nearby Menu Pages with /locations/ root url
-          createPage({
-            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/menu/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: '',
-              Id: edge.node.id,
-            },
-          });
-
-          // 'online' context
-          createPage({
-            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/menu/online/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: 'online',
-              Id: edge.node.id,
-            },
-          });
-
-          // 'delivery' context
-          createPage({
-            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/menu/delivery/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: 'delivery',
-              Id: edge.node.id,
-            },
-          });
-
-          // 'pick-up' context
-          createPage({
-            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/menu/pick-up/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: 'pick-up',
-              Id: edge.node.id,
-            },
-          });
-
-          ////////////////////////////////////////////////////////////////////////////////////
-
-          // Create Menu Pages with root /menu/ url
-          createPage({
-            path: `/menu/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: '',
-              Id: edge.node.id,
-            },
-          });
-
-          // 'online' context
-          createPage({
-            path: `/menu/online/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: 'online',
-              Id: edge.node.id,
-            },
-          });
-
-          // 'pickup' context
-          createPage({
-            path: `/menu/pick-up/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: 'pick-up',
-              Id: edge.node.id,
-            },
-          });
-
-          // 'delivery' context
-          createPage({
-            path: `/menu/delivery/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/`,
-            component: slash(locationNearbyMenuTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              OrderContext: 'delivery',
-              Id: edge.node.id,
-            },
-          });
-
-          ////////////////////////////////////////////////////////////////////////////////////
-
-          // Create nearby specials collection pages.
-          createPage({
-            path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-              edge.node.uid
-            }/${nearby.nearby_slug}/specials/`,
-            component: slash(locationSpecialTemplate),
-            context: {
-              Slug: edge.node.uid,
-              NearbySlug: nearby.nearby_slug,
-              NearbyName: nearby.nearby_name,
-              Id: edge.node.id,
-            },
-          });
-
-          // Create nearby specials article pages.
-
-          const nearbySpecialTemplate = path.resolve(
-            `src/templates/Special/index.js`
-          );
-
-          _.each(result.data.allPrismicSpecial.edges, special => {
-            createPage({
-              path: `/locations/${edge.node.data.geo_state.toLowerCase()}/${
-                edge.node.uid
-              }/${nearby.nearby_slug}/specials/${special.node.uid}/`,
-              component: slash(nearbySpecialTemplate),
-              context: {
-                Id: special.node.id,
-              },
-            });
-          });
-
-          ////////////////////////////////////////////////////////////////////////////////////
-        });
+    _.each(result.data.allPrismicSpecial.edges, edge => {
+      createPage({
+        path: `/specials/${edge.node.uid}/`,
+        component: slash(specialTemplate),
+        context: {
+          Id: edge.node.id,
+        },
       });
     });
+
+    ////////////////////////////////////////////////////////////////////////////////////
   });
 };

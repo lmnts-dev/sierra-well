@@ -7,8 +7,8 @@ import { Base } from './Base';
 // This is the sitewide font reference.
 
 export const Font = {
-  Header: `-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
-  Body: `AkzidenzGroteskBE-Regular, -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+  Header: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Body: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   Code: `"SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace`,
   Size: {
     Sm: '1rem',
@@ -97,6 +97,9 @@ export const Typography = createGlobalStyle`
   }
   h3, .h3 {
     font-size: 2.5rem;
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      font-size: 1.5rem;
+    }
   }
   h4, .h4 {
     font-size: 2rem;

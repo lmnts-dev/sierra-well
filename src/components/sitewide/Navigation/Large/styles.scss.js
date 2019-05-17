@@ -25,6 +25,13 @@ const NavigationStyle = styled.nav`
   left: 0;
   width: 100%;
   z-index: 999;
+
+  .brandmark {
+    fill: ${Theme.Color.Nightsky};
+    transition: all 1s ease;
+    transform: scale(0.6);
+    transform-origin: center center;
+  }
 `;
 
 //// Top Level Navigation
@@ -71,6 +78,10 @@ NavigationStyle.Top = styled.div`
   }
 
   &.scroll {
+    .brandmark {
+      fill: ${Theme.Color.Nightsky};
+    }
+
     &:before {
       background-color: ${Theme.Color.Snow};
       box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.09);

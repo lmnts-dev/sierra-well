@@ -38,6 +38,11 @@ nav {
   /* Top Navigation */
   .nav-top {
 
+    /* Brandmark */
+    .brandmark {
+      fill: ${props => props.SecondaryColor};
+    }
+
     /* Linklist */
     .linklist {
       li {

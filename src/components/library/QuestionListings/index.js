@@ -61,28 +61,6 @@ const QuestionCards = ({
     <StaticQuery
       query={graphql`
         query {
-          allQuestionCategoriesJson {
-            edges {
-              node {
-                Name
-                Icon
-                Slug
-                Tags {
-                  Name
-                  Icon
-                  Slug
-                }
-                PageTheme {
-                  Color {
-                    Background
-                    Primary
-                    Secondary
-                    Tertiary
-                  }
-                }
-              }
-            }
-          }
 
           ## Prismic Sourcing
 

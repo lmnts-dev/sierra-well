@@ -102,37 +102,6 @@ const BrowseCategories = () => {
     <StaticQuery
       query={graphql`
         query {
-          allQuestionCategoriesJson {
-            edges {
-              node {
-                id
-                Name
-                Icon
-                Headline
-                Slug
-                Tags {
-                  Name
-                  Icon
-                  Slug
-                }
-                Breadcrumb {
-                  Destination
-                  Label
-                }
-                PageTheme {
-                  Color {
-                    Background
-                    Primary
-                    Secondary
-                    Tertiary
-                  }
-                }
-              }
-            }
-          }
-
-          ## Prismic Sourcing
-
           allPrismicQuestionCategory {
             edges {
               node {

@@ -10,6 +10,9 @@ import React from 'react';
 // Templates
 import LearnTagTemplate from './layout';
 
+// Transformers
+import { categoryDataTransformer } from 'templates/Learn/Transformer';
+
 // Data
 import { graphql } from 'gatsby';
 
@@ -20,6 +23,9 @@ const LearnTagPage = props => {
   // Define our Slugs
   let CategorySlug = props.pageContext.CategorySlug;
   let TagSlug = props.pageContext.TagSlug;
+  let TransformedCategories = categoryDataTransformer(
+    props.data.allPrismicQuestionCategory.edges
+  );
 
   // Define our Data Objects
   let CategoryData = {};
@@ -27,7 +33,7 @@ const LearnTagPage = props => {
 
   return (
     <>
-      {props.data.allQuestionCategoriesJson.edges.map((Category, index) => {
+      {TransformedCategories.map((Category, index) => {
         // If Category's slug matches this page's context CategorySlug that
         // we specified in gatsby-node.js:
         if (Category.node.Slug == CategorySlug) {
@@ -79,29 +85,25 @@ export default LearnTagPage;
 // loaded as plain JSON files so have minimal client cost.
 export const tagQuery = graphql`
   query {
-    allQuestionCategoriesJson {
+    allPrismicQuestionCategory {
       edges {
         node {
           id
-          Name
-          Icon
-          Headline
-          Slug
-          Tags {
-            Name
-            Icon
-            Slug
-          }
-          Breadcrumb {
-            Destination
-            Label
-          }
-          PageTheme {
-            Color {
-              Background
-              Primary
-              Secondary
-              Tertiary
+          uid
+          data {
+            name {
+              text
+            }
+            icon
+            headline
+            color_background
+            color_primary
+            color_secondary
+            color_tertiary
+            tags {
+              tag_name
+              tag_slug
+              tag_icon
             }
           }
         }

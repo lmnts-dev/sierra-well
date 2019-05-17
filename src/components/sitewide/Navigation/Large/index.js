@@ -17,6 +17,7 @@ import NavigationStyle from './styles.scss';
 // Components
 import Btn from 'components/library/Btn/';
 import LinkList from 'components/core/LinkList/';
+import Brandmark from 'components/core/Branding/Brandmark';
 import Icon from 'elements/Icons';
 
 // Constants
@@ -71,7 +72,7 @@ class NavigationLarge extends React.Component {
         <NavigationStyle.Top className={'nav-top ' + this.state.scrollClass}>
           <NavigationStyle.Top.BrandingBlock>
             <Link to="/">
-              <img src={logo} alt={Theme.Site.Title} height="30px" />
+              <Brandmark />
             </Link>
           </NavigationStyle.Top.BrandingBlock>
 
