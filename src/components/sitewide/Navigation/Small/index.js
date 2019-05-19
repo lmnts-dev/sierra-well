@@ -17,6 +17,7 @@ import { BottomNavigationStyle, TopNavigationStyle } from './styles.scss';
 // Components
 import Item from './Item';
 import { OrderMenuMobile } from './../../../library/OrderMenu';
+import Brandmark from 'components/core/Branding/Brandmark';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -78,18 +79,18 @@ class NavigationSmall extends PureComponent {
           >
             <TopNavigationStyle.Branding>
               <Link to="/">
-                <img src={logo} alt={Theme.Site.Title} />
+                <Brandmark />
               </Link>
             </TopNavigationStyle.Branding>
             <TopNavigationStyle.Tools>
               <ul>
                 <li>
-                  <span>
+                  <span className="menu-tool">
                     <i className="fas fa-comment-alt" />
                   </span>
                 </li>
                 <li>
-                  <span>
+                  <span className="menu-tool">
                     <i className="fas fa-phone" />
                   </span>
                 </li>

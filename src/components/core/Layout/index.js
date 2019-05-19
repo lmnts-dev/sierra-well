@@ -33,13 +33,24 @@ const MenuPageTheme = createGlobalStyle`
     &.nav-mobile {
       background-color: ${Theme.Color.Black};
 
-      i, span, .label {
-        color: Theme.Color.Slate;
-      }
     }
   }
 
   .nav-top-mobile-inner {
+
+    /* Brandmark */
+    .brandmark {
+      fill: ${Theme.Color.White};
+    }
+
+    .menu-tool {
+      background: ${Theme.Color.White};
+      
+      i {
+        color: ${Theme.Color.Black};
+      }
+    }
+
     &:before {
       background-color: ${Theme.Color.Black};
     }
@@ -47,6 +58,9 @@ const MenuPageTheme = createGlobalStyle`
     &.scroll {
       &:before {
         background-color: ${Theme.Color.Black};
+      }
+      .brandmark {
+        fill: ${Theme.Color.White};
       }
     }
   }

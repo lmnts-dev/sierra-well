@@ -90,6 +90,17 @@ TopNavigationStyle.Inner = styled.div`
   align-items: stretch;
   position: relative;
 
+  /* Brandmark */
+  a {
+    display: flex;
+  }
+
+  .brandmark {
+    fill: ${Theme.Color.Nightsky};
+    width: calc(${Root.Size} * 2);
+    transition: all 0.5s ease;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -106,13 +117,17 @@ TopNavigationStyle.Inner = styled.div`
   }
 
   &.scroll {
+    .brandmark {
+      fill: ${Theme.Color.Nightsky};
+    }
+
     &:before {
       background-color: ${Theme.Color.Snow};
       box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.09);
       transform: translateY(0%);
     }
 
-    &.nav-top {
+    .nav-top {
       ul {
         li {
           a {
@@ -158,6 +173,7 @@ TopNavigationStyle.Tools = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-right: calc(${Root.Size} / 2);
 
   ul {
     display: flex;
@@ -171,17 +187,24 @@ TopNavigationStyle.Tools = styled.div`
       cursor: pointer;
 
       span {
-        width: ${Theme.Base.Size.Md};
-        height: ${Theme.Base.Size.Md};
-        background: ${Theme.Color.Black};
+        width: calc(${Theme.Base.Size.Lg} * 0.6);
+        height: calc(${Theme.Base.Size.Lg} * 0.6);
+        background: ${Theme.Color.Nightsky};
         color: ${Theme.Color.White};
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        transition: all 0.5s ease;
+
+        i {
+          transition: all 0.5s ease;
+        }
       }
 
       &.menu {
+        display: none;
+
         span {
           background: rgba(0, 0, 0, 0);
           transition: all 1s ${Theme.Base.Transition.CssEase};

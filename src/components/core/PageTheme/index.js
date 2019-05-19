@@ -27,21 +27,24 @@ export const PageThemeStyle = createGlobalStyle`
 };
   /* Color */
   ${props => (props.SecondaryColor ? 'color: ' + props.SecondaryColor : null)};
+
+  /* Brandmark */
+  .nav-top {
+    .brandmark {
+      fill: ${props =>
+        props.SecondaryColor ? props.SecondaryColor : Theme.Color.Nightsky};
+    }
+  }
 };
 
 /* Navigation */
 nav {
-
+    
   /******************************************/
   /* Desktop  Navigation */
-
+  
   /* Top Navigation */
   .nav-top {
-
-    /* Brandmark */
-    .brandmark {
-      fill: ${props => props.SecondaryColor};
-    }
 
     /* Linklist */
     .linklist {
@@ -202,7 +205,9 @@ const PageTheme = ({
     PrimaryColor={PrimaryColor}
     SecondaryColor={SecondaryColor}
     TertiaryColor={TertiaryColor}
-  />
+  >
+    {console.log('theme active')}
+  </PageThemeStyle>
 );
 
 export default PageTheme;

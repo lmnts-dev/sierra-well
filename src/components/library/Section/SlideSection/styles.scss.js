@@ -197,7 +197,7 @@ SlideSectionStyle.Headline = styled.div`
   display: flex;
   font-weight: 800;
   font-size: 1.5rem;
-  color: ${props => (props.TextColor ? props.TextColor : null)}
+  color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Nightsky)}
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
   i {
