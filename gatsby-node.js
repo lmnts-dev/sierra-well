@@ -538,7 +538,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       ////////////////////////////////////////////////////////////////////////////////////
 
-      //  Create our Tagged Question Pages
+      //  Create our Question Pages with Tagged URL's
       _.each(edge.node.tags, tag => {
         const taggedQuestionPath = `/learn/${
           edge.node.data.category
@@ -554,6 +554,46 @@ exports.createPages = ({ graphql, actions }) => {
           },
         });
       });
+
+      ////////////////////////////////////////////////////////////////////////////////////
+
+      // Create Prismic Tag Pages from our Question Posts
+
+      const postTagTemplate = path.resolve(`src/templates/Learn/Tag/index.js`);
+
+      _.each(edge.node.tags, tag => {
+        // If there's a category specified:
+        if (edge.node.data.category != null) {
+          let tagPath = `/learn/${edge.node.data.category.uid + '/'}${slugify(
+            tag
+          ) + '/'}`;
+
+          createPage({
+            path: tagPath,
+            component: slash(postTagTemplate),
+            context: {
+              TagName: tag,
+              TagSlug: slugify(tag),
+              CategorySlug: edge.node.data.category.uid,
+            },
+          });
+        }
+        // If there is no category specified, fallback to the default template:
+        else {
+          let tagPath = `/learn/${'cannabis-questions/'}${slugify(tag) + '/'}`;
+          createPage({
+            path: tagPath,
+            component: slash(postTagTemplate),
+            context: {
+              TagName: tag,
+              TagSlug: slugify(tag),
+              CategorySlug: 'medical',
+            },
+          });
+        }
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////
     });
 
     ////////////////////////////////////////////////////////////////////////////////////
@@ -592,7 +632,8 @@ exports.createPages = ({ graphql, actions }) => {
         },
       });
 
-      // Create Tag Pages
+      // Create Prismic Featured Tag Pages
+      // * These tags are specified from the Category first, not the post.
       const CategorySlug = edge.node.uid;
 
       _.each(edge.node.data.tags, tag => {
@@ -600,6 +641,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/learn/${CategorySlug}/${tag.tag_slug}/`,
           component: slash(tagTemplate),
           context: {
+            TagName: tag.tag_name,
             TagSlug: tag.tag_slug,
             CategorySlug: CategorySlug,
           },

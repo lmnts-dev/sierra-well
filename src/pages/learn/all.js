@@ -18,6 +18,9 @@ import Btn from 'components/library/Btn/';
 // Elements
 import Block from 'components/library/Block';
 
+// Transformers
+import { categoryDataTransformer } from 'templates/Learn/Transformer';
+
 // Constants
 import { Theme } from 'constants/Theme';
 
@@ -29,6 +32,11 @@ import { graphql } from 'gatsby';
 
 // PageWrapper component for page theming.
 const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
+  // Transform our Prismic data into our initial structure.
+  let TransformedCategories = categoryDataTransformer(
+    props.data.allPrismicQuestionCategory.edges
+  );
+
   return (
     <Layout
       BgColor={Theme.Color.Gunmetal}

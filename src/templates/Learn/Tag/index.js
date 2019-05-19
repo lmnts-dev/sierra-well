@@ -20,16 +20,16 @@ import { graphql } from 'gatsby';
 //////////////////////////////////////////////////////////////////////
 
 const LearnTagPage = props => {
-  // Define our Slugs
   let CategorySlug = props.pageContext.CategorySlug;
-  let TagSlug = props.pageContext.TagSlug;
+  let PageContextTagSlug = props.pageContext.TagSlug
+    ? props.pageContext.TagSlug
+    : 'more';
+  let PageContextTagName = props.pageContext.TagName
+    ? props.pageContext.TagName
+    : 'More';
   let TransformedCategories = categoryDataTransformer(
     props.data.allPrismicQuestionCategory.edges
   );
-
-  // Define our Data Objects
-  let CategoryData = {};
-  let TagData = {};
 
   return (
     <>
@@ -40,32 +40,60 @@ const LearnTagPage = props => {
           // Define our correct Data Category Object
           let CategoryData = Category.node;
           let CategoryName = Category.node.Name;
+          let CategoryTagList = Category.node.Tags.map((tag, index) => {
+            return tag.Slug;
+          });
 
-          // Then let's map that Category's tags.
-          return (
-            <div key={index}>
-              {Category.node.Tags.map((Tag, i) => {
-                // If the tag slug matches this page's context TagSlug
-                // that we specified in gatsby-node.js.
-                if (Tag.Slug == props.pageContext.TagSlug) {
-                  // Define our correct Data Tag Object
-                  let TagData = Tag;
+          // Let's first see if the list of Category's Featured tags actually
+          // contains the PageContextTagSlug passed from gatsby-node.js
+          if (CategoryTagList.includes(PageContextTagSlug)) {
+            // Then let's map and match that Category's tag information to
+            // assign the right naming and icon for the tag.
+            return (
+              <div key={index}>
+                {Category.node.Tags.map((Tag, i) => {
+                  // If the tag slug matches this page's context PageContextTagSlug
+                  // that we specified in gatsby-node.js.
+                  if (Tag.Slug == PageContextTagSlug) {
+                    // Define our correct Data Tag Object
+                    let TagData = Tag;
 
-                  return (
-                    <LearnTagTemplate
-                      key={i}
-                      TagSlug={Tag.Slug}
-                      TagData={TagData}
-                      CategoryName={CategoryName}
-                      CategorySlug={CategorySlug}
-                      CategoryData={CategoryData}
-                      Location={props.location.href}
-                    />
-                  );
-                }
-              })}
-            </div>
-          );
+                    return (
+                      <LearnTagTemplate
+                        key={i}
+                        TagSlug={Tag.Slug}
+                        TagData={TagData}
+                        CategoryName={CategoryName}
+                        CategorySlug={CategorySlug}
+                        CategoryData={CategoryData}
+                        Location={props.location.href}
+                      />
+                    );
+                  }
+                })}
+              </div>
+            );
+          }
+          // If it isn't in the featured tags, let's make a Tag array based off
+          // the data we've got.
+          else {
+            let TagData = {
+              Name: PageContextTagName,
+              Icon: CategoryData.Icon,
+              Slug: PageContextTagSlug,
+            };
+
+            return (
+              <LearnTagTemplate
+                TagSlug={PageContextTagSlug}
+                TagData={TagData}
+                CategoryName={CategoryName}
+                CategorySlug={CategorySlug}
+                CategoryData={CategoryData}
+                Location={props.location.href}
+              />
+            );
+          }
         }
       })}
     </>
