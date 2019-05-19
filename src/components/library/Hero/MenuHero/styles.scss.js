@@ -57,7 +57,18 @@ export const MenuHeroStyle = styled.div`
 `;
 
 MenuHeroStyle.LocationSwitch = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: none;
+  white-space: nowrap;
+  overflow-x: auto;
+
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
+
   span {
     opacity: 0.3;
   }
@@ -168,7 +179,7 @@ export const SidebarLocationStyle = styled.div`
   transition: all 0.25s ease;
   z-index: 800;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding-left: ${Theme.Base.Size.Sm};
 
   a {
