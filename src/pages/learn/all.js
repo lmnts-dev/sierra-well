@@ -32,11 +32,6 @@ import { graphql } from 'gatsby';
 
 // PageWrapper component for page theming.
 const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
-  // Transform our Prismic data into our initial structure.
-  let TransformedCategories = categoryDataTransformer(
-    props.data.allPrismicQuestionCategory.edges
-  );
-
   return (
     <Layout
       BgColor={Theme.Color.Gunmetal}
@@ -108,13 +103,15 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
 
 // The Template itself. Where it all begins.
 const LearnTemplateAll = ({ data }) => {
+  // Transform our Prismic data into our initial structure.
+  let TransformedCategories = categoryDataTransformer(
+    data.allPrismicQuestionCategory.edges
+  );
+
   return (
     <PageWrapper>
       {/* Pass our categories GraphQL query to the LearnSection. */}
-      <LearnSection
-        Filter="all"
-        Categories={data.allQuestionCategoriesJson.edges}
-      />
+      <LearnSection Filter="all" Categories={TransformedCategories} />
     </PageWrapper>
   );
 };
@@ -125,29 +122,27 @@ export default LearnTemplateAll;
 /////////////////////////////////////////////////////////////////////
 export const query = graphql`
   query {
-    allQuestionCategoriesJson {
+    allPrismicQuestionCategory(
+      sort: { fields: [data___name___text], order: ASC }
+    ) {
       edges {
         node {
           id
-          Name
-          Icon
-          Headline
-          Slug
-          Tags {
-            Name
-            Icon
-            Slug
-          }
-          Breadcrumb {
-            Destination
-            Label
-          }
-          PageTheme {
-            Color {
-              Background
-              Primary
-              Secondary
-              Tertiary
+          uid
+          data {
+            name {
+              text
+            }
+            icon
+            headline
+            color_background
+            color_primary
+            color_secondary
+            color_tertiary
+            tags {
+              tag_name
+              tag_slug
+              tag_icon
             }
           }
         }
