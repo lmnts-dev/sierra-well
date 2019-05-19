@@ -156,7 +156,7 @@ const SlideSection = ({
         <SlideSectionStyle.SectionHeader>
           <SlideSectionStyle.Headline TextColor={Theme.TextColor}>
             {Icon ? <i className={'fas fa-' + Icon} /> : null}
-            <h2>{Header}</h2>
+            {Header ? <h2>{Header}</h2> : null}
           </SlideSectionStyle.Headline>
           {ViewAll ? (
             <SlideSectionStyle.CallToAction>

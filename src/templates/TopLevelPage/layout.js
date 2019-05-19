@@ -34,6 +34,7 @@ const LargeContent = ({ node, id }) => {
         className={id}
         SlidesData={[{ Name: id, Columns: columnDataTransformer(columns) }]}
       />
+      {console.log(columnDataTransformer(columns))}
     </HorizontalContent>
   );
 };
@@ -110,7 +111,12 @@ const SmallContent = ({ node, id }) => {
                 section.primary.section_autoplay == 'Yes' ? true : false,
               arrows: section.primary.section_arrows == 'Yes' ? true : false,
             }}
-          />
+          >
+            {console.log("widgetContentTransformer(section.items):")}
+            {console.log(widgetContentTransformer(section.items))}
+            {console.log("sections:")}
+            {console.log(sections)}
+          </SlideSection>
         );
       })}
 

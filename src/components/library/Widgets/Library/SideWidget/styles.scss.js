@@ -17,7 +17,6 @@ import { Theme, Root } from 'constants/Theme';
 const SideWidgetStyle = styled.div`
   flex: 1;
   display: flex;
-  max-width: 350px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

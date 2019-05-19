@@ -157,6 +157,34 @@ export const query = graphql`
                           type
                         }
                       }
+
+                      ... on PrismicDashboardBodyTitleWidget {
+                        slice_type
+                        primary {
+                          widget_headline {
+                            text
+                          }
+                          widget_subheadline
+                          widget_destination
+                          widget_width_multiple
+                          widget_icon_class
+                          widget_text_color
+                          widget_bg_color
+                          tint_color
+                          tint_opacity
+                          widget_background_image {
+                            alt
+                            localFile {
+                              id
+                              childImageSharp {
+                                fluid(maxWidth: 1200) {
+                                  ...GatsbyImageSharpFluid
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }

@@ -15,9 +15,7 @@ import { Theme } from 'constants/Theme';
 import FooterSmallStyle from './styles.scss';
 
 const FooterSmall = ({ Location, Routes }) => (
-  <FooterSmallStyle location={Location} routes={Routes}>
-    Small Footer
-  </FooterSmallStyle>
+  <FooterSmallStyle location={Location} routes={Routes} />
 );
 
 export default FooterSmall;

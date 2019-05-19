@@ -13,6 +13,7 @@ import HorizontalContentStyle from './../styles.scss';
 // Data Transformers
 import { defaultWidgetDataTransformer } from 'components/library/Widgets/Library/Default';
 import { sideHeaderWidgetDataTransformer } from 'components/library/Widgets/Library/SideHeader';
+import { sideWidgetDataTransformer } from 'components/library/Widgets/Library/SideWidget';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -73,6 +74,9 @@ export default SlideColumn;
 
 // Function to create our Columns Map
 export const columnDataTransformer = data => {
+  console.log('columnDataTransformer:');
+  console.log(data);
+
   if (data) {
     let columnMap = data.map((column, index) => {
       switch (column.slice_type) {
@@ -80,6 +84,11 @@ export const columnDataTransformer = data => {
           return {
             Type: column.slice_type,
             Widgets: sideHeaderWidgetDataTransformer(column.primary),
+          };
+        case 'title_widget':
+          return {
+            Type: column.slice_type,
+            Widgets: sideWidgetDataTransformer(column.primary),
           };
         case 'column':
           return {
