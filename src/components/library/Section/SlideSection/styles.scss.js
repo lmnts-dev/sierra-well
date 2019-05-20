@@ -53,9 +53,19 @@ const SlideSectionStyle = styled.div`
       z-index: 400;
       background: rgba(0, 0, 0, 0);
 
+      @media (max-width: calc(${Theme.Base.Media.Width.Md})) {
+        top: calc((${Root.Size} * 1.8) * -1);
+        width: calc(${Root.Size} * 1.5);
+        height: calc(${Root.Size} * 1.5);
+      }
+
       &.slick-prev {
         transform: rotate(180deg);
         right: calc((${Root.Size} * 0.75) + (${Root.Size} * 0.25));
+
+        @media (max-width: calc(${Theme.Base.Media.Width.Md})) {
+          right: calc((${Root.Size} * 1.5) + (${Root.Size} * 0.25));
+        }
       }
 
       &.slick-next {
@@ -97,6 +107,10 @@ const SlideSectionStyle = styled.div`
       width: auto;
       padding: 0;
       margin: 0;
+
+      @media (max-width: calc(${Theme.Base.Media.Width.Md})) {
+        bottom: calc((${Root.Size} * .3) * -1);
+      }
 
       li {
         margin: 0;
@@ -161,6 +175,11 @@ SlideSectionStyle.Inner = styled(SectionInnerStyle)`
         ' + ' +
         Root.Size +
         ')'};
+
+  @media (max-width: calc(${Theme.Base.Media.Width.Md})) {
+    padding-left: ${Root.Grid.Gutter.Left};
+    padding-right: ${Root.Grid.Gutter.Right};
+  }
 `;
 
 SlideSectionStyle.Content = styled(SectionContentStyle)`
@@ -177,7 +196,7 @@ SlideSectionStyle.Content = styled(SectionContentStyle)`
         : 'calc(' + Root.Size + '* 3)'};
 
     @media (max-width: ${Base.Media.Width.Md + 'px'}) {
-      padding: calc(${Root.Size}) calc(${Root.Size} / 4);
+      padding: calc(${Root.Size} / 3) calc(${Root.Size} / 4);
       height: ${props =>
         props.SectionSize
           ? 'calc((' + Root.Size + '* 3) * ' + props.SectionSize + ')'

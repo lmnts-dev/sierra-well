@@ -96,6 +96,10 @@ export const IndexData = {
           },
 
           {
+            Type: 'divider',
+          },
+
+          {
             Type: 'default',
             Widgets: [
               // Begin Widgets
@@ -113,7 +117,9 @@ export const IndexData = {
               // End Widgets
             ],
           },
-
+          {
+            Type: 'divider',
+          },
           {
             Type: 'default',
             Widgets: [

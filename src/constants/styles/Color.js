@@ -13,7 +13,7 @@ export const Color = {
   // Core Colors
   Primary: '#ed652b',
   Secondary: '#5D6376',
-  Background: '#F2F3F3',
+  Background: '#FFFFFF',
 
   // Grayscale Palette
   Black: '#000000',

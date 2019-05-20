@@ -223,7 +223,7 @@ const SmallContent = ({
     {/* {console.log("NearbyName:")}
     {console.log(NearbyName)} */}
 
-    {/* <OrderMenuMobile LocationData={LocationData} /> */}
+    <OrderMenuMobile LocationData={LocationData} />
   </SubLevelPage>
 );
 

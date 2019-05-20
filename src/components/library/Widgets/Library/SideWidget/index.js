@@ -35,6 +35,7 @@ const SideWidget = ({
     TintOpacity={TintOpacity}
     className="widget-content"
   >
+    {TintColor || TintOpacity ? <figure className="tint" /> : null}
     <Link to={Destination}>
       <SideWidgetStyle.Header>{Header}</SideWidgetStyle.Header>
       <Icon className="svg-carat" Name="carat" Color={IconColor} />
@@ -46,7 +47,9 @@ const SideWidget = ({
         Color={IconColor}
       />
     </Link>
-    {BgQuery ? <ImgQuery src={BgQuery} AltText={BgImageAltText} /> : null}
+    {BgQuery ? <ImgQuery src={BgQuery} AltText={Header} /> : null}
+    {console.log('BgQuery:')}
+    {console.log(BgQuery)}
   </SideWidgetStyle>
 );
 

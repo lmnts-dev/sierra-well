@@ -72,6 +72,8 @@ MobileMenuHeroStyle.LocationSwitch = styled.div`
   position: relative;
   width: 100%;
   max-width: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
 
   &:before {
     content: '';
@@ -100,6 +102,7 @@ MobileMenuHeroStyle.LocationSwitch = styled.div`
     overflow-x: auto;
     overflow-y: visible;
     touch-action: pan-x;
+    -webkit-backface-visibility: hidden;
     -webkit-overflow-scrolling: touch;
     padding-bottom: calc(${Root.Size} / 4);
     /* height: calc(${Root.Size} * 2); */

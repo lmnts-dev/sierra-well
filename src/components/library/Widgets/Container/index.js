@@ -228,6 +228,7 @@ class WidgetType extends React.Component {
                     <SideWidget
                       BgColor={Content.Meta.SideWidget.BgColor}
                       BgImage={Content.Meta.SideWidget.BgImage}
+                      BgQuery={Content.Meta.SideWidget.BgQuery}
                       TextColor={Content.Meta.SideWidget.TextColor}
                       TintColor={Content.Meta.SideWidget.TintColor}
                       TintOpacity={Content.Meta.SideWidget.TintOpacity}

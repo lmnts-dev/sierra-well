@@ -45,26 +45,40 @@ const SideWidgetStyle = styled.div`
       );
   }};
 
+  /* For when using ImgMatch.js as background image: */
+  .img {
+    &.gatsby-image-wrapper {
+      position: absolute !important;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+
   /* Tint */
 
   ${props => {
     if (props.TintColor || props.TintOpacity)
       return (
         `
-        &:before {
-          content: '';
+        .tint {
           position: absolute;
+          margin: 0;
+          padding: 0;
           left: 0;
           top: 0;
           bottom: 0;
           right: 0;
+          z-index: 5;
           background-color:` +
         props.TintColor +
         `;
           opacity:` +
         props.TintOpacity +
         `;
-          transition: all ${Theme.Base.Transition.Duration}
+          transition: opacity ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
         }
     `
@@ -78,6 +92,7 @@ const SideWidgetStyle = styled.div`
     justify-content: flex-end;
     position: relative;
     flex: 1;
+    z-index: 5;
     width: 100%;
     color: white;
     transform: scale(1.000000001);

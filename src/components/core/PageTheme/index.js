@@ -26,13 +26,13 @@ export const PageThemeStyle = createGlobalStyle`
   Theme.Base.Transition.CssEase
 };
   /* Color */
-  ${props => (props.SecondaryColor ? 'color: ' + props.SecondaryColor : null)};
+  ${props => (props.PrimaryColor ? 'color: ' + props.PrimaryColor : null)};
 
   /* Brandmark */
   .nav-top {
     .brandmark {
       fill: ${props =>
-        props.SecondaryColor ? props.SecondaryColor : Theme.Color.Nightsky};
+        props.PrimaryColor ? props.PrimaryColor : Theme.Color.Nightsky};
     }
   }
 };
@@ -53,24 +53,22 @@ nav {
         a {
           /* Color */
           ${props =>
-            props.SecondaryColor ? 'color: ' + props.SecondaryColor : null};
+            props.PrimaryColor ? 'color: ' + props.PrimaryColor : null};
 
           /* Opacity */
-          ${props => (props.SecondaryColor ? 'opacity: 1' : null)};
+          ${props => (props.PrimaryColor ? 'opacity: 1' : null)};
           
           /* Pseudo Elements */ 
 
 
           &:before {
             ${props =>
-              props.SecondaryColor
-                ? 'background: ' + props.SecondaryColor
-                : null};
+              props.PrimaryColor ? 'background: ' + props.PrimaryColor : null};
           }
 
           /* Hover */
           &:hover {
-            ${props => (props.SecondaryColor ? 'opacity: 1' : null)};
+            ${props => (props.PrimaryColor ? 'opacity: 1' : null)};
           }
 
           /* Active */
@@ -86,26 +84,24 @@ nav {
       .btn-inner {
         ${props =>
           /* Background */
-          props.SecondaryColor
-            ? 'background-color: ' + props.SecondaryColor
+          props.PrimaryColor
+            ? 'background-color: ' + props.PrimaryColor
             : null};
 
       /* Color */
-      ${props =>
-        props.TertiaryColor ? 'color: ' + props.TertiaryColor : null};
+      ${props => (props.BgColor ? 'color: ' + props.BgColor : null)};
 
         .ico {
           i {
-            ${props =>
-              props.TertiaryColor ? 'color: ' + props.TertiaryColor : null};
+            ${props => (props.BgColor ? 'color: ' + props.BgColor : null)};
           }
         }
             
       /* Hover */
       &:hover {
               ${props =>
-                props.SecondaryColor
-                  ? 'background-color: ' + props.SecondaryColor
+                props.PrimaryColor
+                  ? 'background-color: ' + props.PrimaryColor
                   : null};
             }
       }
@@ -114,12 +110,9 @@ nav {
     .ico-intercom {
       ${props =>
         /* Background */
-        props.SecondaryColor
-          ? 'background-color: ' + props.SecondaryColor
-          : null};
+        props.PrimaryColor ? 'background-color: ' + props.PrimaryColor : null};
         svg {
-          ${props =>
-            props.TertiaryColor ? 'fill: ' + props.TertiaryColor : null};
+          ${props => (props.BgColor ? 'fill: ' + props.BgColor : null)};
         }
     }
   }

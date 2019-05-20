@@ -39,7 +39,7 @@ export const LocationsData = {
                         Header: 'Come in',
                         IntroCopy: 'Conveniently located and discreet.',
                         BodyCopy:
-                          'Providing exceptional service and quality medicinal and recreational cannabis in Nevada to Reno, Sparks, Carson City, Lake Tahoe, and surrounding areas.',
+                          'Providing exceptional service and quality medicinal and recreational cannabis across 13 states and 63 locations.',
                         TextColor: Theme.Color.Nightsky,
                       },
                     },

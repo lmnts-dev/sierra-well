@@ -15,8 +15,8 @@ export const Font = {
     Md: '1rem',
     Lg: '1rem',
     ViewWidth: {
-      Sm: '4.8vw',
-      Md: '4.2vw',
+      Sm: '6.8vw',
+      Md: '5.2vw',
       Lg: '1.2vw',
     },
     ViewHeight: {
@@ -111,8 +111,5 @@ export const Typography = createGlobalStyle`
     font-size: 1.5rem;
   }
 
-  /* Block Content Styles */
-  .block {
-    h1, h2, h3, h4, h5, h6, p { padding-bottom: calc(var(--Size) / 3.5); }
-  }
+  h1, h2, h3, h4, h5, h6, p { padding-bottom: calc(var(--Size) / 3.5); }
 `;

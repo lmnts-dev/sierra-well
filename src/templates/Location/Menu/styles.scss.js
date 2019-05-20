@@ -26,6 +26,13 @@ const MenuTemplateStyle = styled.div`
   }
 
   .widget-section {
+    .widget-subheadline {
+      font-size: 1rem;
+    }
+    .widget-headline {
+      font-size: 1rem;
+    }
+
     i {
       font-size: 2rem;
     }

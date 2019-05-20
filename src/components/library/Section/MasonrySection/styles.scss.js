@@ -57,6 +57,11 @@ MasonrySectionStyle.Inner = styled(SectionInnerStyle)`
         props.Gutter[3] +
         '))'
       : null};
+
+  @media (max-width: calc(${Theme.Base.Media.Width.Md})) {
+    padding-left: ${Root.Grid.Gutter.Left};
+    padding-right: ${Root.Grid.Gutter.Right};
+  }
 `;
 
 MasonrySectionStyle.Content = styled.div`

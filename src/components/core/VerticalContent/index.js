@@ -113,7 +113,7 @@ const VerticalContent = ({ children }) => {
         <VerticalContentStyle.Inner>
           <SlideSection
             Widgets={Widgets}
-            SectionSize={7}
+            SectionSize={4}
             Header="Learn"
             Theme={{
               TextColor: Theme.Color.Black,
@@ -128,7 +128,7 @@ const VerticalContent = ({ children }) => {
           />
           <SlideSection
             Widgets={Widgets}
-            SectionSize={7}
+            SectionSize={4}
             Header="Medical"
             Theme={{
               TextColor: Theme.Color.Black,
@@ -143,7 +143,7 @@ const VerticalContent = ({ children }) => {
           />
           <SlideSection
             Widgets={Widgets}
-            SectionSize={7}
+            SectionSize={4}
             Header="Recreational"
             Theme={{
               TextColor: Theme.Color.Black,
@@ -158,7 +158,7 @@ const VerticalContent = ({ children }) => {
           />
           <SlideSection
             Widgets={Widgets}
-            SectionSize={7}
+            SectionSize={4}
             Header="Industry"
             Theme={{
               TextColor: Theme.Color.Black,
