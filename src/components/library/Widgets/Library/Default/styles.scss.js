@@ -95,6 +95,7 @@ const WidgetStyle = styled.div`
     z-index: 10;
     width: 100%;
     color: white;
+    z-index: 1;
     transform: scale(1.000000001);
     position: relative;
     padding: ${Root.ViewWidthPadding};

@@ -62,13 +62,13 @@ export const LocationsData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/locations/nevada/reno/',
+                    Destination: '/locations/arizona/phoenix/',
                     Style: 'SideForecast',
                     Meta: {
                       SideForecast: {
                         BgColor: Theme.Color.Slate,
                         BgImage: '',
-                        Location: 'Reno',
+                        Location: 'Phoenix',
                         TextColor: Theme.Color.White,
                         TintColor: '',
                         TintOpacity: '',
@@ -166,6 +166,696 @@ export const LocationsData = {
                 WidgetContent: [
                   {
                     Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/locations/nevada/carson-city/',
+                    Style: 'SideForecast',
+                    Meta: {
+                      SideForecast: {
+                        BgColor: Theme.Color.Gunmetal,
+                        BgImage: '',
+                        Location: 'Carson City',
+                        TextColor: Theme.Color.White,
+                        TintColor: '',
+                        TintOpacity: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.White,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'View Our Menu',
+                        TextColor: Theme.Color.Black,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/locations/nevada/carson-city/',
+                    Style: 'SideForecast',
+                    Meta: {
+                      SideForecast: {
+                        BgColor: Theme.Color.Gunmetal,
+                        BgImage: '',
+                        Location: 'Carson City',
+                        TextColor: Theme.Color.White,
+                        TintColor: '',
+                        TintOpacity: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.White,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'View Our Menu',
+                        TextColor: Theme.Color.Black,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/locations/nevada/carson-city/',
+                    Style: 'SideForecast',
+                    Meta: {
+                      SideForecast: {
+                        BgColor: Theme.Color.Gunmetal,
+                        BgImage: '',
+                        Location: 'Carson City',
+                        TextColor: Theme.Color.White,
+                        TintColor: '',
+                        TintOpacity: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.White,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'View Our Menu',
+                        TextColor: Theme.Color.Black,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/locations/nevada/carson-city/',
+                    Style: 'SideForecast',
+                    Meta: {
+                      SideForecast: {
+                        BgColor: Theme.Color.Gunmetal,
+                        BgImage: '',
+                        Location: 'Carson City',
+                        TextColor: Theme.Color.White,
+                        TintColor: '',
+                        TintOpacity: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.White,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'View Our Menu',
+                        TextColor: Theme.Color.Black,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Our Store',
+                        Headline: 'Open',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'store-alt', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'divider',
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/locations/nevada/carson-city/',
+                    Style: 'SideForecast',
+                    Meta: {
+                      SideForecast: {
+                        BgColor: Theme.Color.Gunmetal,
+                        BgImage: '',
+                        Location: 'Carson City',
+                        TextColor: Theme.Color.White,
+                        TintColor: '',
+                        TintOpacity: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              // End Widgets
+            ],
+          },
+          {
+            Type: 'default',
+            Widgets: [
+              // Begin Widgets
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.White,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'View Our Menu',
+                        TextColor: Theme.Color.Black,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/subpage',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Nightsky,
+                        BgImage: '',
+                        Subhead: '',
+                        Headline: 'Book an appointment',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'clock', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
+                    Style: 'Generic',
+                    Meta: {
+                      Generic: {
+                        BgColor: Theme.Color.Primary,
+                        BgImage: '',
+                        Subhead: 'Delivery Status',
+                        Headline: 'Available',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'car', // FontAwesome Icon Name
+                        TintColor: '',
+                        TintOpacity: '',
+                        IconSize: '',
+                      },
+                    },
+                  },
+                ],
+                // End WidgetContent
+              },
+              {
+                // Begin WidgetContent
+                Flex: 1,
+                WidgetContent: [
+                  {
+                    Destination: '/menu',
                     Style: 'Generic',
                     Meta: {
                       Generic: {

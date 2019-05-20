@@ -10,6 +10,9 @@ import React from 'react';
 // Templates
 // import LearnTagTemplate from './layout';
 
+// Transformers
+import { locationLandingTransformer } from 'templates/Location/Transformer';
+
 // Data
 import { graphql } from 'gatsby';
 import MenuTemplate from 'templates/Location/Menu/layout';
@@ -26,7 +29,11 @@ const MainMenuPage = props => {
         NearbySlug={props.pageContext.NearbySlug}
         OrderContext={props.pageContext.OrderContext}
         NearbyName={props.pageContext.NearbyName}
-        LocationData={props.data.allLocationsJson.edges[0].node}
+        LocationData={
+          locationLandingTransformer(
+            props.data.allPrismicLocation.edges[0].node
+          ).edges.node
+        }
       />
     );
   } else {
@@ -34,7 +41,11 @@ const MainMenuPage = props => {
     return (
       <MenuTemplate
         OrderContext={props.pageContext.OrderContext}
-        LocationData={props.data.allLocationsJson.edges[0].node}
+        LocationData={
+          locationLandingTransformer(
+            props.data.allPrismicLocation.edges[0].node
+          ).edges.node
+        }
       />
     );
   }
@@ -53,52 +64,53 @@ export default MainMenuPage;
 // loaded as plain JSON files so have minimal client cost.
 export const query = graphql`
   query {
-    allLocationsJson(filter: { slug: { eq: "reno" } }) {
+    allPrismicLocation(filter: { uid: { eq: "brooklyn" } }) {
       edges {
         node {
           id
-          slug
-          name
-          geography {
-            city
-            state
-            country
-          }
-          status {
-            delivery
-            store
-          }
-          meta {
-            reserveSpot
-            menu
-            maps
-          }
-          contactDetails {
-            phone
-            location {
-              address
-              state
+          tags
+          uid
+          data {
+            name {
+              text
             }
+            status_delivery
+            status_store
+            geo_city
+            geo_state
+            geo_country
+            geo_location_address
+            geo_location_state
+            phone
             hours {
               days
-              startTime
-              endTime
+              start_time
+              end_time
             }
-          }
-          nearby {
-            name
-            slug
-          }
-          about {
-            headline
-            PageTheme {
-              Color {
-                Background
-                Primary
-                Secondary
-                Tertiary
-              }
+            meta_reserve_spot_link {
+              url
             }
+            meta_menu {
+              url
+            }
+            meta_google_maps_url {
+              url
+            }
+            nearby_locations {
+              nearby_name
+              nearby_slug
+              color_background
+              color_primary
+              color_secondary
+              color_tertiary
+            }
+            about_headline {
+              text
+            }
+            color_background
+            color_primary
+            color_secondary
+            color_tertiary
           }
         }
       }

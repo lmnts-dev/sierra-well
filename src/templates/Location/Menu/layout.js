@@ -20,7 +20,10 @@ import VerticalContent from 'components/core/VerticalContent';
 import { MenuContainerMobileHeight } from 'components/library/OrderMenu/styles.scss';
 import { SubLevelPageContent, SubLevelPage } from 'templates/SubLevelPage';
 import MenuHero from 'components/library/Hero/MenuHero';
-import { OrderMenuDesktop } from 'components/library/OrderMenu';
+import {
+  OrderMenuDesktop,
+  OrderMenuMobile,
+} from 'components/library/OrderMenu';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -75,45 +78,29 @@ const MobileMenuTransform = createGlobalStyle`
 `;
 
 //// Small Device Content
-const SmallContent = ({ LocationData }) => (
-  <div>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-    <h1>Mobile Menu!</h1>
-  </div>
+const SmallContent = ({
+  LocationData,
+  OrderContext,
+  NearbySlug,
+  NearbyName,
+}) => (
+  <SubLevelPage
+    BgColor={Theme.Color.Nightsky}
+    PrimaryColor={Theme.Color.White}
+    SecondaryColor={Theme.Color.White}
+    TertiaryColor={Theme.Color.Nightsky}
+  >
+    <SublevelInnerLock />
+    {/* {console.log("NearbyName:")}
+    {console.log(NearbyName)} */}
+    <MenuHero
+      NearbySlug={NearbySlug}
+      NearbyName={NearbyName}
+      OrderContext={OrderContext}
+      LocationData={LocationData}
+    />
+    {/* <OrderMenuMobile LocationData={LocationData} /> */}
+  </SubLevelPage>
 );
 
 // Render Page
@@ -144,6 +131,7 @@ const MenuTemplate = ({
         NearbySlug={NearbySlug}
         NearbyName={NearbyName}
         LocationData={LocationData}
+        OrderContext={OrderContext}
       />
     </Device>
   </Layout>

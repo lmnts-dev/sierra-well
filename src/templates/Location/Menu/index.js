@@ -18,7 +18,6 @@ import MenuTemplate from './layout';
 //////////////////////////////////////////////////////////////////////
 
 const LocationMenuPage = props => {
-
   if (props.pageContext.NearbySlug) {
     // If it's a Nearby location:
     // This pageContext is passed from gatsby-node.js
@@ -61,58 +60,7 @@ export default LocationMenuPage;
 // All GraphQL queries in Gatsby are run at build-time and
 // loaded as plain JSON files so have minimal client cost.
 export const query = graphql`
-  query($Slug: String!, $Id: String!) {
-    allLocationsJson(filter: { slug: { eq: $Slug } }) {
-      edges {
-        node {
-          id
-          slug
-          name
-          geography {
-            city
-            state
-            country
-          }
-          status {
-            delivery
-            store
-          }
-          meta {
-            reserveSpot
-            menu
-            maps
-          }
-          contactDetails {
-            phone
-            location {
-              address
-              state
-            }
-            hours {
-              days
-              startTime
-              endTime
-            }
-          }
-          nearby {
-            name
-            slug
-          }
-          about {
-            headline
-            PageTheme {
-              Color {
-                Background
-                Primary
-                Secondary
-                Tertiary
-              }
-            }
-          }
-        }
-      }
-    }
-
+  query($Id: String!) {
     allPrismicLocation(filter: { id: { eq: $Id } }) {
       edges {
         node {

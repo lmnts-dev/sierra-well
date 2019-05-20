@@ -150,8 +150,8 @@ const SlideSection = ({
   Theme,
   Gutter,
 }) => (
-  <SlideSectionStyle>
-    <SlideSectionStyle.Inner Gutter={Gutter}>
+  <SlideSectionStyle className="slide-section">
+    <SlideSectionStyle.Inner Gutter={Gutter} className="slide-section-inner">
       <SlideSectionStyle.Content SectionSize={SectionSize}>
         <SlideSectionStyle.SectionHeader>
           <SlideSectionStyle.Headline TextColor={Theme.TextColor}>

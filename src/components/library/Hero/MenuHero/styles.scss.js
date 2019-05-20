@@ -11,6 +11,10 @@ import { HeroInnerStyle } from './../../Hero/styles.scss';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
+
+// Helpers
+import hexToRGB from 'helpers/hexToRGB';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -49,6 +53,11 @@ export const MenuHeroStyle = styled.div`
     .btn {
       margin-right: 0;
     }
+    ul {
+      @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+        padding-left: ${Root.Grid.Gutter.Left};
+      }
+    }
   }
 
   .award-hours {
@@ -64,13 +73,27 @@ MenuHeroStyle.LocationSwitch = styled.div`
   word-wrap: none;
   white-space: nowrap;
   overflow-x: auto;
+  overflow-y: visible;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  height: calc(${Root.Size} * 2);
 
-  ::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 0 !important;
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    padding-left: ${Root.Grid.Gutter.Left};
   }
 
   span {
     opacity: 0.3;
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      margin-right: calc(${Root.Size} / 4);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
   }
 
   span,
@@ -89,6 +112,17 @@ MenuHeroStyle.LocationSwitch = styled.div`
 
     &.active {
       color: ${Theme.Color.Primary};
+    }
+
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      background-color: ${hexToRGB(Theme.Color.White, 0.05)};
+      padding: calc(${Root.Size} / 1.5);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      line-height: 0;
+      border-radius: 999px;
     }
   }
 `;
@@ -119,6 +153,10 @@ MenuHeroStyle.ToolsInner = styled.div`
     align-items: center;
     justify-content: flex-start;
   }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: none;
+  }
 `;
 
 ///////////////////////////////////////////////////////
@@ -133,6 +171,10 @@ export const HeroInnerTransition = styled(HeroInnerStyle)`
   opacity: ${props => (props.opacity ? props.opacity : '1')};
   overflow: hidden;
   transition: all 0.25s ease;
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    padding-left: 0;
+  }
 `;
 
 ///////////////////////////////////////////////////////

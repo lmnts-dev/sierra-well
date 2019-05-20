@@ -101,7 +101,7 @@ const SmallContent = ({ node, id }) => {
             }
             Header={section.primary.section_headline.text}
             Theme={{
-              TextColor: Theme.Color.Black,
+              TextColor: Theme.Color.Nightsky,
               BgColor: 'none',
             }}
             SliderSettings={{
@@ -111,12 +111,7 @@ const SmallContent = ({ node, id }) => {
                 section.primary.section_autoplay == 'Yes' ? true : false,
               arrows: section.primary.section_arrows == 'Yes' ? true : false,
             }}
-          >
-            {console.log("widgetContentTransformer(section.items):")}
-            {console.log(widgetContentTransformer(section.items))}
-            {console.log("sections:")}
-            {console.log(sections)}
-          </SlideSection>
+          />
         );
       })}
 

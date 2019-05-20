@@ -31,6 +31,7 @@ export const MenuContainerMobileStyle = styled.div`
   left: 0;
   right: 0;
   top: 100%;
+  transform: translateZ(0);
 `;
 
 MenuContainerMobileStyle.Inner = styled.div`
@@ -46,6 +47,7 @@ MenuContainerMobileStyle.Inner = styled.div`
     top: 0;
     width: 100%;
     height: 100%;
+    transform: translateZ(0);
   }
 `;
 
@@ -57,6 +59,7 @@ export const MenuContainerDesktopStyle = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
 `;
 
 MenuContainerDesktopStyle.Inner = styled(SubLevelInnerStyle)`
@@ -82,6 +85,7 @@ MenuContainerDesktopStyle.Wrap = styled.div`
     top: 0;
     width: 100%;
     height: 100%;
+    transform: translateZ(0);
   }
 `;
 

@@ -9,6 +9,7 @@ import { Link } from 'gatsby';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Helpers
 import hexToRGB from 'helpers/hexToRGB';
@@ -75,6 +76,8 @@ export const SuggestionListStyle = styled.div`
     word-wrap: none;
     white-space: nowrap;
     overflow-x: auto;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
     padding: calc(${Root.Size} / 4) 0;
 
     li {
@@ -82,10 +85,15 @@ export const SuggestionListStyle = styled.div`
       margin-right: calc(${Root.Size} / 4);
       font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1px;      
+
+      @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+        letter-spacing: 0.3px;
+      }
 
       &:first-child {
         opacity: 0.3;
+        font-weight: normal;
       }
 
       .btn {
@@ -96,7 +104,7 @@ export const SuggestionListStyle = styled.div`
           font-size: 0.8rem;
           text-transform: uppercase;
           letter-spacing: 1px;
-          font-weight: normal;
+          font-weight: bold;
           padding: 0 calc(${Root.Size} / 4);
         }
       }
