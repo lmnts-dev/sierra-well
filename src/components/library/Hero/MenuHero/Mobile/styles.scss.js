@@ -216,6 +216,10 @@ MobileMenuHeroStyle.Inner = styled(HeroInnerStyle)`
         .widget {
           padding-top: 0;
 
+          .widget-inner {
+            box-shadow: 0 10px 17px 0 rgba(0, 0, 0, 0.12);
+          }
+
           .widget-headline,
           .widget-subheadline {
             font-size: 1.7rem;

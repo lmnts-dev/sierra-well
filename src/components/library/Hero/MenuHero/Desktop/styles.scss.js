@@ -24,7 +24,7 @@ export const MenuHeroStyle = styled.div`
   margin: ${Root.Nav.Size} 0 0 0;
 
   h1 {
-    padding-top: calc(${Root.Size} / 5);
+    /* padding-top: calc(${Root.Size} / 5); */
     a {
       text-decoration: none;
       color: ${Theme.Color.Primary};
@@ -76,7 +76,8 @@ MenuHeroStyle.LocationSwitch = styled.div`
   overflow-y: visible;
   touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
-  height: calc(${Root.Size} * 2);
+  height: auto;
+  padding-bottom: 5px;
 
   &::-webkit-scrollbar {
     width: 0 !important;

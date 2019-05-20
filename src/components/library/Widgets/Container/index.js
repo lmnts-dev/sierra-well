@@ -83,7 +83,7 @@ class WidgetType extends React.Component {
         // SideWidget
         // Default
 
-        <WidgetContainerStyle.Inner>
+        <WidgetContainerStyle.Inner className="widget-inner">
           <WidgetSlider>
             {WidgetContent.map((Content, index) => {
               switch (Content.Style) {
@@ -179,7 +179,10 @@ class WidgetType extends React.Component {
                 return <CrossWidget key={index} />;
               case 'Article':
                 return (
-                  <WidgetContainerStyle.Inner key={index}>
+                  <WidgetContainerStyle.Inner
+                    className="widget-inner"
+                    key={index}
+                  >
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
@@ -197,7 +200,10 @@ class WidgetType extends React.Component {
                 );
               case 'Generic':
                 return (
-                  <WidgetContainerStyle.Inner key={index}>
+                  <WidgetContainerStyle.Inner
+                    className="widget-inner"
+                    key={index}
+                  >
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
                       BgImage={Content.Meta.Generic.BgImage}
@@ -215,7 +221,10 @@ class WidgetType extends React.Component {
                 );
               case 'SideWidget':
                 return (
-                  <WidgetContainerStyle.Inner key={index}>
+                  <WidgetContainerStyle.Inner
+                    className="widget-inner"
+                    key={index}
+                  >
                     <SideWidget
                       BgColor={Content.Meta.SideWidget.BgColor}
                       BgImage={Content.Meta.SideWidget.BgImage}
@@ -232,7 +241,10 @@ class WidgetType extends React.Component {
                 );
               case 'SideForecast':
                 return (
-                  <WidgetContainerStyle.Inner key={index}>
+                  <WidgetContainerStyle.Inner
+                    className="widget-inner"
+                    key={index}
+                  >
                     <SideForecast
                       BgColor={Content.Meta.SideForecast.BgColor}
                       BgImage={Content.Meta.SideForecast.BgImage}

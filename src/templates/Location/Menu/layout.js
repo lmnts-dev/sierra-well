@@ -12,6 +12,7 @@ import { createGlobalStyle } from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Mobile Components
 import VerticalContent from 'components/core/VerticalContent';
@@ -24,6 +25,13 @@ import {
   OrderMenuDesktop,
   OrderMenuMobile,
 } from 'components/library/OrderMenu';
+import WidgetSection from 'components/library/Section/WidgetSection';
+
+// Styles
+import MenuTemplateStyle from './styles.scss';
+
+// Helpers
+import hexToRGB from 'helpers/hexToRGB';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -32,6 +40,10 @@ const SublevelInnerLock = createGlobalStyle`
 .sublevel-inner {
   min-height: calc(100vh) !important;
   height: calc(100vh) !important;
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    height: auto !important;
+  }
 }
 `;
 
@@ -90,15 +102,127 @@ const SmallContent = ({
     SecondaryColor={Theme.Color.White}
     TertiaryColor={Theme.Color.Nightsky}
   >
-    <SublevelInnerLock />
+    <MenuTemplateStyle>
+      <MenuHero
+        NearbySlug={NearbySlug}
+        NearbyName={NearbyName}
+        OrderContext={OrderContext}
+        LocationData={LocationData}
+      />
+      {/* ///////////// */}
+
+      <WidgetSection
+        BgColor={Theme.Color.Nightsky}
+        Gutter={[1, 0, 10, 0]}
+        Widgets={[
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/menu',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: hexToRGB(Theme.Color.White, 0.05),
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Delivery',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'car', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
+                },
+              },
+            ],
+            // End WidgetContent
+          },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/locations',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: hexToRGB(Theme.Color.White, 0.05),
+                    BgImage: '',
+                    Subhead: '775-800-WELL',
+                    Headline: 'Call Anytime',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'phone', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
+                },
+              },
+            ],
+            // End WidgetContent
+          },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/learn',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: hexToRGB(Theme.Color.White, 0.05),
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Visit Us',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'map-marker-alt', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
+                },
+              },
+            ],
+            // End WidgetContent
+          },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/specials',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: hexToRGB(Theme.Color.White, 0.05),
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Open Chat',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'comment-alt', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
+                },
+              },
+            ],
+            // End WidgetContent
+          },
+        ]}
+      />
+
+      {/* ///////////// */}
+    </MenuTemplateStyle>
     {/* {console.log("NearbyName:")}
     {console.log(NearbyName)} */}
-    <MenuHero
-      NearbySlug={NearbySlug}
-      NearbyName={NearbyName}
-      OrderContext={OrderContext}
-      LocationData={LocationData}
-    />
+
     {/* <OrderMenuMobile LocationData={LocationData} /> */}
   </SubLevelPage>
 );

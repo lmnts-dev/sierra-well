@@ -29,7 +29,7 @@ WidgetSection.Inner = styled(SectionInnerStyle)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 400px;
+  min-height: 400px;
 
   /* Array-based gutters utilizing root variable multiple. */
   ${props =>
@@ -75,6 +75,8 @@ WidgetSection.Content = styled(SectionContentStyle)`
     @media (max-width: calc(${Theme.Base.Media.Width.Md} * 1.5)) {
       width: 50%;
       flex: unset;
+      min-height: 150px;
+
       &:nth-child(odd) {
         padding-left: 0;
       }

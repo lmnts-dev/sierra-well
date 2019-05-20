@@ -27,6 +27,7 @@ import Btn from 'components/library/Btn/';
 import SlideSection from 'components/library/Section/SlideSection';
 import LocationList from 'components/library/Hero/MenuHero/LocationList';
 
+
 // Constants
 import { Theme, Root } from 'constants/Theme';
 
@@ -51,7 +52,7 @@ const MenuWidgets = HeadlineString => {
               Subhead: '',
               Headline: HeadlineString ? HeadlineString : 'Headline not found',
               TextColor: Theme.Color.White,
-              IconColor: Theme.Color.White,
+              IconColor: Theme.Color.Mint,
               IconName: 'plus',
               TintColor: '',
               TintOpacity: '',
