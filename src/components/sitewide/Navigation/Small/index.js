@@ -123,7 +123,7 @@ class NavigationSmall extends PureComponent {
                 Icon="star"
               />
               <Item
-                Label="Menu"
+                Label="Order"
                 Class="focus"
                 Destination="/menu"
                 Icon="plus"

@@ -31,6 +31,10 @@ export const BottomNavigationStyle = styled.nav`
   transform: translateY(0);
   transition: all 0.55s ease;
 
+  .label {
+    font-weight: bold;
+  }
+
   &.scroll {
     i {
       margin-top: 8px;
@@ -39,6 +43,7 @@ export const BottomNavigationStyle = styled.nav`
     .label {
       max-height: 0px;
       opacity: 0;
+      line-height: 1.2;
     }
   }
 `;

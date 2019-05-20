@@ -26,7 +26,7 @@ const FooterLarge = ({ Location, Routes }) => (
           <span role="img" aria-label="Heart">
             ️❤️️
           </span>
-          in Nevada
+          in Reno, NV & Brooklyn, NYC
         </span>
       </FooterLargeStyle.Inner>
     </FooterLargeStyle.Section>
