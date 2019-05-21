@@ -15,6 +15,7 @@ import ScrollArea from './styles.scss';
 
 //
 import { UserAgentProvider, UserAgent } from '@quentin-sommer/react-useragent';
+import { Agent } from 'https';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -37,6 +38,7 @@ class ScrollWrapper extends React.Component {
     };
   }
 
+  // Check for Window and User Agent.
   userAgentCheck = () => {
     if (typeof window !== 'undefined') {
       this.userAgent = window.navigator.userAgent;
@@ -65,12 +67,8 @@ class ScrollWrapper extends React.Component {
     return (
       <UserAgentProvider ua={this.userAgentCheck()}>
         <ScrollArea className="wrapper" onScroll={this.handleScroll}>
-          <UserAgent chrome>
-            <h1>Hello Chrome!</h1>
-          </UserAgent>
-          <UserAgent safari>
-            <h1>Hello Safari!</h1>
-          </UserAgent>
+          <BodyLock />
+          {children}
         </ScrollArea>
       </UserAgentProvider>
     );

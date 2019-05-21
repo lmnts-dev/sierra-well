@@ -141,7 +141,7 @@ class NavigationSmall extends PureComponent {
                 Icon="question"
               />
             </BottomNavigationStyle.List>
-            <OrderMenuMobile />
+            {/* <OrderMenuMobile /> */}
           </BottomNavigationStyle.Inner>
         </BottomNavigationStyle>
       </>

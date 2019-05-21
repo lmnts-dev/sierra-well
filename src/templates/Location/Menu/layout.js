@@ -220,10 +220,7 @@ const SmallContent = ({
 
       {/* ///////////// */}
     </MenuTemplateStyle>
-    {/* {console.log("NearbyName:")}
-    {console.log(NearbyName)} */}
 
-    <OrderMenuMobile LocationData={LocationData} />
   </SubLevelPage>
 );
 

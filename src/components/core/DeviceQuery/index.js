@@ -9,8 +9,22 @@ import React from 'react';
 // Styles
 import DeviceQuery from './styles.scss';
 
+import { UserAgentProvider, UserAgent } from '@quentin-sommer/react-useragent';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
+
+const MobileQuery = ({ children }) => (
+  <UserAgent mobile>
+    <DeviceQuery.Mobile>{children}</DeviceQuery.Mobile>
+  </UserAgent>
+);
+
+const DesktopQuery = ({ children }) => (
+  <UserAgent computer>
+    <DeviceQuery.Desktop>{children}</DeviceQuery.Desktop>
+  </UserAgent>
+);
 
 class Device extends React.Component {
   constructor(props) {
@@ -21,11 +35,11 @@ class Device extends React.Component {
     const Query = this.props.Query;
 
     if (Query == 'Mobile') {
-      return <DeviceQuery.Mobile>{this.props.children}</DeviceQuery.Mobile>;
+      return <MobileQuery>{this.props.children}</MobileQuery>;
     }
 
     if (Query == 'Desktop') {
-      return <DeviceQuery.Desktop>{this.props.children}</DeviceQuery.Desktop>;
+      return <DesktopQuery>{this.props.children}</DesktopQuery>;
     }
   }
 }
