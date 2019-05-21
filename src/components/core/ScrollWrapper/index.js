@@ -13,12 +13,13 @@ import styled, { createGlobalStyle } from 'styled-components';
 // Styles
 import ScrollArea from './styles.scss';
 
+//
+import { UserAgentProvider, UserAgent } from '@quentin-sommer/react-useragent';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
 // Lock Body Scroll
-// Why? : Because it jumps on page transitions. Emulating the <body> tag using
-// a scroll wrapper gives us much more flexibility in our content and transitions.
 const BodyLock = createGlobalStyle`
   body {
     height: 100vh;
@@ -35,6 +36,14 @@ class ScrollWrapper extends React.Component {
       pagetop: true,
     };
   }
+
+  userAgentCheck = () => {
+    if (typeof window !== 'undefined') {
+      this.userAgent = window.navigator.userAgent;
+    }
+
+    return this.userAgent;
+  };
 
   // Handle Navigation Scroll for Sticky Nav
   handleScroll = e => {
@@ -54,12 +63,16 @@ class ScrollWrapper extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <>
-        <BodyLock />
+      <UserAgentProvider ua={this.userAgentCheck()}>
         <ScrollArea className="wrapper" onScroll={this.handleScroll}>
-          {children}
+          <UserAgent chrome>
+            <h1>Hello Chrome!</h1>
+          </UserAgent>
+          <UserAgent safari>
+            <h1>Hello Safari!</h1>
+          </UserAgent>
         </ScrollArea>
-      </>
+      </UserAgentProvider>
     );
   }
 }
