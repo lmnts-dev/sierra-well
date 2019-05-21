@@ -18,6 +18,18 @@ import ImgQuery from 'components/core/ImgQuery';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
+const WidgetInnerWrapper = ({ children, Destination }) => {
+  if (Destination) {
+    return (
+      <Link className="widget-inner-wrapper" to={Destination}>
+        {children}
+      </Link>
+    );
+  } else {
+    return <span className="widget-inner-wrapper">{children}</span>;
+  }
+};
+
 const DefaultWidget = ({
   BgColor,
   BgImage,
@@ -32,6 +44,7 @@ const DefaultWidget = ({
   IconName,
   BgImageFile,
   BgImageAltText,
+  CallToAction,
 }) => (
   <WidgetStyle
     BgColor={BgColor}
@@ -43,7 +56,7 @@ const DefaultWidget = ({
   >
     {TintColor || TintOpacity ? <figure className="tint" /> : null}
 
-    <Link to={Destination}>
+    <WidgetInnerWrapper Destination={Destination}>
       <WidgetStyle.Subhead className="widget-subheadline">
         {Subhead}
       </WidgetStyle.Subhead>
@@ -52,7 +65,8 @@ const DefaultWidget = ({
       </WidgetStyle.Headline>
       <Icon className="svg-carat" Name="carat" Color={IconColor} />
       <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
-    </Link>
+      {CallToAction ? <span class="cta-btn">{CallToAction}</span> : null}
+    </WidgetInnerWrapper>
     {BgImageFile ? (
       <ImgMatch src={BgImageFile} AltText={BgImageAltText} />
     ) : null}

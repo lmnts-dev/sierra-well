@@ -87,7 +87,7 @@ const WidgetStyle = styled.div`
   }};
 
   /* Links */
-  a {
+  .widget-inner-wrapper {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -95,7 +95,6 @@ const WidgetStyle = styled.div`
     z-index: 10;
     width: 100%;
     color: white;
-    z-index: 5;
     transform: scale(1.000000001);
     position: relative;
     padding: ${Root.ViewWidthPadding};
@@ -103,6 +102,16 @@ const WidgetStyle = styled.div`
     text-decoration: none
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
+  }
+
+  .btn {
+    position: absolute;
+    flex: unset;
+    width: unset;
+    display: block;
+    flex-direction: unset;
+    left: ${Root.ViewWidthPadding};
+    bottom: ${Root.ViewWidthPadding};
   }
 
   /* The Carat Icon */

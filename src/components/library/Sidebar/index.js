@@ -62,7 +62,7 @@ const Sidebar = ({
         IconName="comment-alt"
         Destination="/culture"
       />
-      <SidebarWidget
+      {/* <SidebarWidget
         BgColor={SecondaryColor}
         BgImage="none"
         Headline="Phone"
@@ -70,7 +70,7 @@ const Sidebar = ({
         IconColor={TertiaryColor}
         IconName="phone"
         Destination="/contact"
-      />
+      /> */}
     </SidebarStyle.Inner>
   </SidebarStyle>
 );

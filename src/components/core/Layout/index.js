@@ -78,6 +78,7 @@ const Layout = ({
   <SiteGrid>
     {MenuLocationData ? <MenuPageTheme /> : null}
     <GlobalStyle />
+    <div id="content-overlay" />
     <PageTheme
       BgColor={BgColor}
       PrimaryColor={PrimaryColor}

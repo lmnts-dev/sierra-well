@@ -27,7 +27,6 @@ import Btn from 'components/library/Btn/';
 import SlideSection from 'components/library/Section/SlideSection';
 import LocationList from 'components/library/Hero/MenuHero/LocationList';
 
-
 // Constants
 import { Theme, Root } from 'constants/Theme';
 
@@ -37,17 +36,18 @@ import hexToRGB from 'helpers/hexToRGB';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const MenuWidgets = HeadlineString => {
+const MenuWidgets = ({ HeadlineString, LocationData }) => {
   let WidgetMap = [
     {
       // Begin WidgetContent
       Flex: 1,
       WidgetContent: [
         {
-          Destination: '/specials',
-          Style: 'Generic',
+          Destination: '',
+          Style: 'MenuWidget',
           Meta: {
-            Generic: {
+            MenuWidget: {
+              LocationData: '',
               BgColor: hexToRGB(Theme.Color.White, 0.05),
               Subhead: '',
               Headline: HeadlineString ? HeadlineString : 'Headline not found',
@@ -57,6 +57,7 @@ const MenuWidgets = HeadlineString => {
               TintColor: '',
               TintOpacity: '',
               IconSize: '',
+              CallToAction: '',
             },
           },
         },
@@ -288,7 +289,10 @@ class MenuHeroMobile extends React.Component {
             </HeroContent>
             <HeroContent Flex="row">
               <SlideSection
-                Widgets={MenuWidgets(MenuHeadline)}
+                Widgets={MenuWidgets({
+                  HeadlineString: MenuHeadline,
+                  LocationData: LocationData,
+                })}
                 SectionSize={5}
                 Theme={{
                   TextColor: Theme.Color.Black,
@@ -300,6 +304,7 @@ class MenuHeroMobile extends React.Component {
                   // autoplay: true,
                   autoplay: false,
                   arrows: false,
+                  useTransform: false,
                 }}
               />
             </HeroContent>

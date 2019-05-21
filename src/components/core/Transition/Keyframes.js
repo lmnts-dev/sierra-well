@@ -15,6 +15,17 @@ import { Base } from 'constants/styles/Base';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
+// Slide Up
+export const SlideUpKeyframes = keyframes`
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+`;
+
 // Fade In
 export const FadeInKeyFrames = keyframes`
   0% {

@@ -14,6 +14,7 @@ import WidgetContainerStyle from './styles.scss';
 import ArticleWidget from '../Library/Article';
 import CrossWidget from '../Library/Cross';
 import DefaultWidget from '../Library/Default';
+import MenuWidget from '../Library/MenuWidget';
 import SideHeaderWidget from '../Library/SideHeader';
 import SideForecast from '../Library/SideForecast';
 import SideWidget from '../Library/SideWidget';
@@ -101,6 +102,7 @@ class WidgetType extends React.Component {
                       Headline={Content.Meta.Generic.Headline}
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
+                      CallToAction={Content.Meta.Generic.CallToAction}
                       key={index}
                     />
                   );
@@ -118,6 +120,24 @@ class WidgetType extends React.Component {
                       Header={Content.Meta.SideWidget.Header}
                       IconName={Content.Meta.SideWidget.IconName}
                       IconColor={Content.Meta.SideWidget.IconColor}
+                      key={index}
+                    />
+                  );
+                case 'MenuWidget':
+                  return (
+                    <MenuWidget
+                      BgColor={Content.Meta.MenuWidget.BgColor}
+                      BgImage={Content.Meta.MenuWidget.BgImage}
+                      BgQuery={Content.Meta.MenuWidget.BgQuery}
+                      TextColor={Content.Meta.MenuWidget.TextColor}
+                      TintColor={Content.Meta.MenuWidget.TintColor}
+                      TintOpacity={Content.Meta.MenuWidget.TintOpacity}
+                      Destination={Content.Destination}
+                      Subhead={Content.Meta.MenuWidget.Subhead}
+                      Headline={Content.Meta.MenuWidget.Headline}
+                      IconName={Content.Meta.MenuWidget.IconName}
+                      IconColor={Content.Meta.MenuWidget.IconColor}
+                      CallToAction={Content.Meta.MenuWidget.CallToAction}
                       key={index}
                     />
                   );
@@ -148,6 +168,7 @@ class WidgetType extends React.Component {
                       Headline={Content.Meta.Generic.Headline}
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
+                      CallToAction={Content.Meta.Generic.CallToAction}
                       key={index}
                     />
                   );
@@ -216,6 +237,30 @@ class WidgetType extends React.Component {
                       Headline={Content.Meta.Generic.Headline}
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
+                      CallToAction={Content.Meta.Generic.CallToAction}
+                    />
+                  </WidgetContainerStyle.Inner>
+                );
+              case 'MenuWidget':
+                return (
+                  <WidgetContainerStyle.Inner
+                    className="widget-inner"
+                    key={index}
+                  >
+                    <MenuWidget
+                      BgColor={Content.Meta.MenuWidget.BgColor}
+                      BgImage={Content.Meta.MenuWidget.BgImage}
+                      BgQuery={Content.Meta.MenuWidget.BgQuery}
+                      TextColor={Content.Meta.MenuWidget.TextColor}
+                      TintColor={Content.Meta.MenuWidget.TintColor}
+                      TintOpacity={Content.Meta.MenuWidget.TintOpacity}
+                      Destination={Content.Destination}
+                      Subhead={Content.Meta.MenuWidget.Subhead}
+                      Headline={Content.Meta.MenuWidget.Headline}
+                      IconName={Content.Meta.MenuWidget.IconName}
+                      IconColor={Content.Meta.MenuWidget.IconColor}
+                      CallToAction={Content.Meta.MenuWidget.CallToAction}
+                      key={index}
                     />
                   </WidgetContainerStyle.Inner>
                 );

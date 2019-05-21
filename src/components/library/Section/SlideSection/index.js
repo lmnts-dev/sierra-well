@@ -92,9 +92,14 @@ class SectionSlider extends React.Component {
     const autoplay = this.props.SliderSettings.autoplay
       ? this.props.SliderSettings.autoplay
       : false;
+    const useTransform = this.props.SliderSettings.useTransform
+      ? this.props.SliderSettings.useTransform
+      : true;
     const arrows = this.props.SliderSettings.arrows
       ? this.props.SliderSettings.arrows
       : false;
+
+    console.log(useTransform);
 
     // Pass into Slick Settings.
     const settings = {
@@ -110,6 +115,7 @@ class SectionSlider extends React.Component {
       arrows: arrows,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
+      useTransform: useTransform,
       responsive: [
         {
           breakpoint: Base.Media.Width.Md + 'px',

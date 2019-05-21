@@ -16,6 +16,7 @@ import { Base } from 'constants/styles/Base';
 
 // Mobile Components
 import VerticalContent from 'components/core/VerticalContent';
+import WidgetSection from 'components/library/Section/WidgetSection';
 
 // Desktop Components
 import { MenuContainerMobileHeight } from 'components/library/OrderMenu/styles.scss';
@@ -25,7 +26,6 @@ import {
   OrderMenuDesktop,
   OrderMenuMobile,
 } from 'components/library/OrderMenu';
-import WidgetSection from 'components/library/Section/WidgetSection';
 
 // Styles
 import MenuTemplateStyle from './styles.scss';
@@ -219,8 +219,8 @@ const SmallContent = ({
       />
 
       {/* ///////////// */}
-    </MenuTemplateStyle>
 
+    </MenuTemplateStyle>
   </SubLevelPage>
 );
 
