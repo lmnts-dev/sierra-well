@@ -69,6 +69,8 @@ class ScrollWrapper extends React.Component {
         <ScrollArea className="wrapper" onScroll={this.handleScroll}>
           <BodyLock />
           {children}
+          {console.log("this.userAgent:")}
+          {console.log(this.userAgent)}
         </ScrollArea>
       </UserAgentProvider>
     );

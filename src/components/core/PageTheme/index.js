@@ -34,6 +34,14 @@ export const PageThemeStyle = createGlobalStyle`
       fill: ${props =>
         props.PrimaryColor ? props.PrimaryColor : Theme.Color.Nightsky};
     }
+
+    .menu-burger {
+      figure {
+        background: ${props =>
+          props.PrimaryColor ? props.PrimaryColor : Theme.Color.Nightsky};
+        transform: scaleX(1);
+      }
+    }
   }
 };
 
