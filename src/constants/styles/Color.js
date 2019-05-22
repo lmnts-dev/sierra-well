@@ -17,7 +17,8 @@ export const Color = {
 
   // Grayscale Palette
   Black: '#000000',
-  Nightsky: '#262222',
+  Nightsky: '#151313',
+  Warmsky: '#7A7070',
   Gunmetal: '#5D6376',
   Slate: '#AEB9C4',
   Gray: '#CCD0D6',
@@ -28,6 +29,7 @@ export const Color = {
   Leaf: '#ed652b',
   Mint: '#9DF096',
   Tahoe: '#2984FD',
+  Sky: '#A5D3FF',
   Sunset: '#FC6376',
   Dank: '#F8E71C',
   Flower: '#E17E00',

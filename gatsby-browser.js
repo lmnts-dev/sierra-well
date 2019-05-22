@@ -1,13 +1,36 @@
 import React from 'react';
 import AppProvider from 'store/provider';
 import WrapPageElementWithTransition from 'helpers/wrapPageElement';
+import { UserAgentProvider, UserAgent } from '@quentin-sommer/react-useragent';
 
 import { transitionDelay } from 'components/core/Transition/Transition.js';
 
 // React Context in Browser
 export const wrapRootElement = ({ element }) => {
-  return <AppProvider>{element}</AppProvider>;
-  s;
+  // Check for Window and User Agent.
+  const userAgentCheck = () => {
+    if (typeof window !== 'undefined') {
+      let userAgent = window.navigator.userAgent;
+      return userAgent;
+    } else {
+      let userAgent = 'Nothing';
+      return userAgent;
+    }
+  };
+
+  console.log('gatsby-browser.js user agent:');
+  console.log(userAgentCheck());
+
+  // Check if window exists or not.
+  if (typeof window !== 'undefined') {
+    return (
+      <UserAgentProvider ua={userAgentCheck()}>
+        <AppProvider>{element}</AppProvider>
+      </UserAgentProvider>
+    );
+  } else {
+    return <AppProvider>{element}</AppProvider>;
+  }
 };
 
 // export const shouldUpdateScroll = ({

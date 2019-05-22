@@ -17,7 +17,7 @@ import SlideSection from 'components/library/Section/SlideSection';
 import SpecialsListings from 'components/library/SpecialsListings';
 
 // Styles
-import TopLevelPageStyles from './styles.scss'
+import TopLevelPageStyles from './styles.scss';
 
 // Data Transfomers
 import { columnDataTransformer } from 'components/core/HorizontalContent/SlideColumn';

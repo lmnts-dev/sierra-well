@@ -9,7 +9,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 // Templates
-import HomeTemplate from 'templates/Home/';
+import HomeTemplate from 'templates/TopLevelPage/Home/';
 
 // Transformers
 import { locationLandingTransformer } from 'templates/Location/Transformer';

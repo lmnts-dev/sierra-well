@@ -14,17 +14,29 @@ import { UserAgentProvider, UserAgent } from '@quentin-sommer/react-useragent';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const MobileQuery = ({ children }) => (
-  <UserAgent mobile>
-    <DeviceQuery.Mobile>{children}</DeviceQuery.Mobile>
-  </UserAgent>
-);
+const MobileQuery = ({ children }) => {
+  if (typeof window !== 'undefined') {
+    return (
+      <UserAgent mobile android ios tablet>
+        <DeviceQuery.Mobile>{children}</DeviceQuery.Mobile>
+      </UserAgent>
+    );
+  } else {
+    return <DeviceQuery.Mobile>{children}</DeviceQuery.Mobile>;
+  }
+};
 
-const DesktopQuery = ({ children }) => (
-  <UserAgent computer>
-    <DeviceQuery.Desktop>{children}</DeviceQuery.Desktop>
-  </UserAgent>
-);
+const DesktopQuery = ({ children }) => {
+  if (typeof window !== 'undefined') {
+    return (
+      <UserAgent computer>
+        <DeviceQuery.Desktop>{children}</DeviceQuery.Desktop>
+      </UserAgent>
+    );
+  } else {
+    return <DeviceQuery.Desktop>{children}</DeviceQuery.Desktop>;
+  }
+};
 
 class Device extends React.Component {
   constructor(props) {

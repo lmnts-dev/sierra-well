@@ -24,7 +24,7 @@ const ItemStyle = styled.li`
   justify-content: center;
 
   a {
-    flex: 1;
+    flex: 1; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +32,7 @@ const ItemStyle = styled.li`
     padding: 10px;
     width: 100%;
     position: relative;
-    color: ${Theme.Color.Gunmetal};
+    color: ${Theme.Color.Warmsky};
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
 

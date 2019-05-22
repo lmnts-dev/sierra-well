@@ -33,33 +33,6 @@ const BodyLock = createGlobalStyle`
 class ScrollWrapper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mountedUserAgent: 'nothing',
-    };
-
-    // Bind userAgentState state.
-    this.userAgentCheck = this.userAgentCheck.bind(this);
-  }
-
-  // Check for Window and User Agent.
-  userAgentCheck = () => {
-    if (typeof window !== 'undefined') {
-      this.userAgent = window.navigator.userAgent;
-    }
-
-    return this.userAgent;
-  };
-
-  componentDidMount() {
-    console.log('componentDidMount() { this.userAgentCheck() }:');
-    console.log(this.userAgentCheck());
-
-    this.setState({
-      mountedUserAgent: this.userAgentCheck(),
-    });
-
-    console.log('this.state.mountedUserAgent:');
-    console.log(this.state.mountedUserAgent);
   }
 
   // Handle Navigation Scroll for Sticky Nav
@@ -79,19 +52,11 @@ class ScrollWrapper extends React.Component {
   // Render component.
   render() {
     const { children } = this.props;
-
-    console.log('rendered this.state.mountedUserAgent:');
-    console.log(this.state.mountedUserAgent);
-
     return (
-      <UserAgentProvider ua={this.userAgentCheck()}>
-        <ScrollArea className="wrapper" onScroll={this.handleScroll}>
-          <BodyLock />
-          {children}
-          {console.log('this.userAgent:')}
-          {console.log(this.userAgent)}
-        </ScrollArea>
-      </UserAgentProvider>
+      <ScrollArea className="wrapper" onScroll={this.handleScroll}>
+        <BodyLock />
+        {children}
+      </ScrollArea>
     );
   }
 }
