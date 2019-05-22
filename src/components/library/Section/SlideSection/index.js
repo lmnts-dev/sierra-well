@@ -95,6 +95,9 @@ class SectionSlider extends React.Component {
     const useTransform = this.props.SliderSettings.useTransform
       ? this.props.SliderSettings.useTransform
       : true;
+    const infinite = this.props.SliderSettings.infinite
+      ? this.props.SliderSettings.infinite
+      : false;
     const arrows = this.props.SliderSettings.arrows
       ? this.props.SliderSettings.arrows
       : false;
@@ -110,7 +113,7 @@ class SectionSlider extends React.Component {
       slidesToShow: slidesToShow,
       slidesToScroll: slidesToScroll,
       autoplay: autoplay,
-      infinite: false,
+      infinite: infinite,
       draggable: true,
       arrows: arrows,
       nextArrow: <NextArrow />,

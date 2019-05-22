@@ -6,54 +6,95 @@
 
 // Core
 import React from 'react';
-import Device from './../components/core/DeviceQuery';
-import Layout from 'components/core/Layout';
+import { graphql } from 'gatsby';
 
-// Mobile Components
-import VerticalContent from 'components/core/VerticalContent';
+// Templates
+import HomeTemplate from 'templates/Home/';
 
-// Desktop Components
-import { HorizontalContent } from 'components/core/HorizontalContent';
-import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
-
-// Data
-import { IndexData } from 'data/index';
+// Transformers
+import { locationLandingTransformer } from 'templates/Location/Transformer';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-// Large Device Content
-const LargeContent = () => (
-  <HorizontalContent>
-    <SlideGroup
-      className={IndexData.SlideGroup.Name}
-      SlidesData={IndexData.SlideGroup.Slides}
-    />
-  </HorizontalContent>
-);
-
-// Small Device Content
-const SmallContent = () => <VerticalContent />;
-
 // Render Page
-const Index = ({ data }) => (
-  <Layout
-    BgColor={IndexData.PageTheme.Color.Background}
-    PrimaryColor={IndexData.PageTheme.Color.Primary}
-    SecondaryColor={IndexData.PageTheme.Color.Secondary}
-    TertiaryColor={IndexData.PageTheme.Color.Tertiary}
-  >
-    <Device Query="Desktop">
-      <LargeContent />
-    </Device>
-
-    <Device Query="Mobile">
-      <SmallContent />
-    </Device>
-  </Layout>
+const HomePage = props => (
+  <HomeTemplate
+    LocationData={
+      locationLandingTransformer(props.data.allPrismicLocation.edges[0].node)
+        .edges.node
+    }
+  />
 );
 
-export default Index;
+export default HomePage;
+
+// GraphQL Queries
+/////////////////////////////////////////////////////////////////////
+
+// The post template's GraphQL query. Notice the slug
+// variable which is passed in. We set this on the page
+// context in gatsby-node.js.
+//
+// All GraphQL queries in Gatsby are run at build-time and
+// loaded as plain JSON files so have minimal client cost.
+export const query = graphql`
+  query {
+    allPrismicLocation(
+      filter: { id: { eq: "Prismic__Location__XOGaFxEAACcArO9b" } }
+    ) {
+      edges {
+        node {
+          id
+          tags
+          uid
+          data {
+            name {
+              text
+            }
+            status_delivery
+            status_store
+            geo_city
+            geo_state
+            geo_country
+            geo_location_address
+            geo_location_state
+            phone
+            hours {
+              days
+              start_time
+              end_time
+            }
+            meta_reserve_spot_link {
+              url
+            }
+            meta_menu {
+              url
+            }
+            meta_google_maps_url {
+              url
+            }
+            nearby_locations {
+              nearby_name
+              nearby_slug
+              color_background
+              color_primary
+              color_secondary
+              color_tertiary
+            }
+            about_headline {
+              text
+            }
+            color_background
+            color_primary
+            color_secondary
+            color_tertiary
+          }
+        }
+      }
+    }
+  }
+`;
 
 //////////////////////////////////////////////////////////////////////
 // End Component

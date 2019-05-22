@@ -114,7 +114,7 @@ const VerticalContent = ({ children }) => {
           <SlideSection
             Widgets={Widgets}
             SectionSize={4}
-            Header="Learn"
+            Header="Latest"
             Theme={{
               TextColor: Theme.Color.Black,
               BgColor: 'none',

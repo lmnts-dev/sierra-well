@@ -68,6 +68,7 @@ class MenuOverlayToggle extends React.Component {
           onKeyPress={this.toggleOverlay.bind(this)}
           role="button"
           tabIndex="0"
+          className="overlay-toggle"
         >
           {this.props.children}
         </span>

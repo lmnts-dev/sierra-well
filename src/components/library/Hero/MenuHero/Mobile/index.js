@@ -32,6 +32,7 @@ import { Theme, Root } from 'constants/Theme';
 
 // Helpers
 import hexToRGB from 'helpers/hexToRGB';
+import TimeString from 'helpers/timeString';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -52,7 +53,7 @@ const MenuWidgets = ({ HeadlineString, LocationData }) => {
               Subhead: '',
               Headline: HeadlineString ? HeadlineString : 'Headline not found',
               TextColor: Theme.Color.White,
-              IconColor: Theme.Color.Mint,
+              IconColor: Theme.Color.Primary,
               IconName: 'plus',
               TintColor: '',
               TintOpacity: '',
@@ -208,62 +209,6 @@ class MenuHeroMobile extends React.Component {
     //   {NearbyName ? null : ', ' + LocationData.geography.state} Dispensary
     // </Link>
 
-    // Time Strings
-
-    let objToday = new Date(),
-      weekday = new Array(
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ),
-      dayOfWeek = weekday[objToday.getDay()],
-      domEnder = (function() {
-        var a = objToday;
-        if (/1/.test(parseInt((a + '').charAt(0)))) return 'th';
-        a = parseInt((a + '').charAt(1));
-        return 1 == a ? 'st' : 2 == a ? 'nd' : 3 == a ? 'rd' : 'th';
-      })(),
-      dayOfMonth =
-        today + (objToday.getDate() < 10)
-          ? '0' + objToday.getDate() + domEnder
-          : objToday.getDate() + domEnder,
-      months = new Array(
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-      ),
-      curMonth = months[objToday.getMonth()],
-      curYear = objToday.getFullYear(),
-      curHour =
-        objToday.getHours() > 12
-          ? objToday.getHours() - 12
-          : objToday.getHours() < 10
-          ? '0' + objToday.getHours()
-          : objToday.getHours(),
-      curMinute =
-        objToday.getMinutes() < 10
-          ? '0' + objToday.getMinutes()
-          : objToday.getMinutes(),
-      curSeconds =
-        objToday.getSeconds() < 10
-          ? '0' + objToday.getSeconds()
-          : objToday.getSeconds(),
-      curMeridiem = objToday.getHours() > 12 ? 'PM' : 'AM';
-    let today = dayOfWeek + ', ' + curMonth + ' ' + dayOfMonth;
-
     // Render Menu
     return (
       <Device Query="Mobile">
@@ -278,7 +223,7 @@ class MenuHeroMobile extends React.Component {
             <HeroContent Flex="row">
               <MobileMenuHeroStyle.LocationSwitch>
                 <div className="location-switch-inner">
-                  <span className="label">{today}</span>
+                  <span className="label">{TimeString()}</span>
 
                   <LocationList
                     OrderContextSlug={OrderContextSlug}

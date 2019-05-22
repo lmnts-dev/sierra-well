@@ -15,6 +15,7 @@ import Icon from 'elements/Icons';
 import ImgMatch from 'components/core/ImgMatch';
 import ImgQuery from 'components/core/ImgQuery';
 import MenuOverlayToggle from 'components/library/ContentOverlay/Menu';
+import Btn from 'components/library/Btn/';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -51,6 +52,15 @@ const MenuWidget = ({
         <WidgetStyle.Headline className="widget-headline">
           {Headline}
         </WidgetStyle.Headline>
+        <Btn
+          IconClass="expand"
+          Label="View Menu"
+          BgColor={IconColor}
+          TextColor={Theme.Color.White}
+          IconPosition="left"
+          Pseudo
+          IconFas
+        />
         <Icon className="svg-carat" Name="carat" Color={IconColor} />
         <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
         {CallToAction ? <span class="cta-btn">{CallToAction}</span> : null}

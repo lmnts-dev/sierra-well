@@ -68,9 +68,9 @@ const DefaultWidget = ({
       {CallToAction ? <span class="cta-btn">{CallToAction}</span> : null}
     </WidgetInnerWrapper>
     {BgImageFile ? (
-      <ImgMatch src={BgImageFile} AltText={BgImageAltText} />
+      <ImgMatch src={BgImageFile} AltText={Headline} />
     ) : null}
-    {BgQuery ? <ImgQuery src={BgQuery} AltText={BgImageAltText} /> : null}
+    {BgQuery ? <ImgQuery src={BgQuery} AltText={Headline} /> : null}
   </WidgetStyle>
 );
 

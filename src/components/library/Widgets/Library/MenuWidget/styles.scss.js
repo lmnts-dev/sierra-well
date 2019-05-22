@@ -102,16 +102,29 @@ const WidgetStyle = styled.div`
     text-decoration: none
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
+
+      .overlay-toggle {
+        flex: 1;
+        position: relative;
+      }
   }
 
   .btn {
-    position: absolute;
-    flex: unset;
-    width: unset;
+    position: absolute !important;
     display: block;
     flex-direction: unset;
-    left: ${Root.ViewWidthPadding};
-    bottom: ${Root.ViewWidthPadding};
+    left: calc(${Root.Size} * .4);
+    bottom: calc(${Root.Size} * .4);
+    
+    .btn-inner {
+      font-size: 1rem;
+    }
+
+    .ico {
+      i {
+        font-size: 1.2rem;
+      }
+    }
   }
 
   /* The Carat Icon */

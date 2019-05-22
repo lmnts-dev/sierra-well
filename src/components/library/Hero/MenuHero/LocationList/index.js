@@ -23,10 +23,8 @@ class LocationList extends React.Component {
 
   // Render
   render() {
-    const currentLocation = this.props.LocationData.name;
-    const OrderContextSlug = this.props.OrderContextSlug
-      ? this.props.OrderContextSlug
-      : '';
+    const currentLocation = 'Brooklyn';
+    const OrderContextSlug = '';
 
     return (
       <StaticQuery
