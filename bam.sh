@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-head -70 .bam
+head -70 .bam 

@@ -73,22 +73,6 @@ const LargeContent = ({
   </SubLevelPage>
 );
 
-// Small Device Options
-
-//// Mobile Menu
-const MobileMenuTransform = createGlobalStyle`
-  .nav-mobile {
-    border-radius: var(--Radius) var(--Radius) 0 0;
-    transform: translateY(calc(0px - ${MenuContainerMobileHeight}));
-
-    li {
-      a {
-        padding: 10px !important;
-      }
-    }
-  }
-`;
-
 //// Small Device Content
 const SmallContent = ({
   LocationData,

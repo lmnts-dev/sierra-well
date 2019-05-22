@@ -43,6 +43,13 @@ const MenuPageTheme = createGlobalStyle`
       fill: ${Theme.Color.White};
     }
 
+    .menu-burger {
+      figure {
+        background: ${Theme.Color.White};
+        transform: scaleX(1);
+      }
+    }
+
     .menu-tool {
       background: ${Theme.Color.White};
       
@@ -61,6 +68,12 @@ const MenuPageTheme = createGlobalStyle`
       }
       .brandmark {
         fill: ${Theme.Color.White};
+      }
+      .menu-burger {
+        figure {
+          background: ${Theme.Color.White};
+          transform: scaleX(1);
+        }
       }
     }
   }
