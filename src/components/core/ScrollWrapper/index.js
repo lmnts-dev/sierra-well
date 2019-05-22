@@ -34,8 +34,11 @@ class ScrollWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pagetop: true,
+      mountedUserAgent: 'nothing',
     };
+
+    // Bind userAgentState state.
+    this.userAgentCheck = this.userAgentCheck.bind(this);
   }
 
   // Check for Window and User Agent.
@@ -46,6 +49,18 @@ class ScrollWrapper extends React.Component {
 
     return this.userAgent;
   };
+
+  componentDidMount() {
+    console.log('componentDidMount() { this.userAgentCheck() }:');
+    console.log(this.userAgentCheck());
+
+    this.setState({
+      mountedUserAgent: this.userAgentCheck(),
+    });
+
+    console.log('this.state.mountedUserAgent:');
+    console.log(this.state.mountedUserAgent);
+  }
 
   // Handle Navigation Scroll for Sticky Nav
   handleScroll = e => {
@@ -64,6 +79,10 @@ class ScrollWrapper extends React.Component {
   // Render component.
   render() {
     const { children } = this.props;
+
+    console.log('rendered this.state.mountedUserAgent:');
+    console.log(this.state.mountedUserAgent);
+
     return (
       <UserAgentProvider ua={this.userAgentCheck()}>
         <ScrollArea className="wrapper" onScroll={this.handleScroll}>

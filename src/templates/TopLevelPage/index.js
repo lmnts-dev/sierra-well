@@ -99,7 +99,7 @@ export const query = graphql`
             ## Desktop Sections
             dashboard_link {
               id
-              ... on dashboardLink_2 {
+              ... on PrismicTopLevelPageDataDashboard_link {
                 id
                 document {
                   id

@@ -41,7 +41,7 @@ export default HomePage;
 export const query = graphql`
   query {
     allPrismicLocation(
-      filter: { id: { eq: "Prismic__Location__XOGaFxEAACcArO9b" } }
+      filter: { uid: { eq: "brooklyn" } }
     ) {
       edges {
         node {
