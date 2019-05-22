@@ -35,7 +35,7 @@ const PageWrapper = ({ children, Data, Category, CategoryTheme }) => {
   return (
     <Layout
       BgColor={Theme.Color.Gunmetal}
-      PrimaryColor={Theme.Color.Gunmetal}
+      PrimaryColor={Theme.Color.White}
       SecondaryColor={Theme.Color.White}
       TertiaryColor={Theme.Color.Nightsky}
     >

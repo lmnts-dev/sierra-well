@@ -24,6 +24,7 @@ export const BottomNavigationStyle = styled.nav`
   right: 0;
   background-color: ${Theme.Color.Snow};
   border-radius: ${Root.Radius};
+  overflow: hidden;
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -100,6 +101,32 @@ TopNavigationStyle.Inner = styled.div`
     display: flex;
   }
 
+  .menu-burger {
+    width: calc(${Root.Size} * 1.2);
+    height: 100%;
+    margin-right: calc(${Root.Size} / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: calc(${Root.Size} / 3) 0;
+
+    figure {
+      height: 1px;
+      transform: scaleX(1);
+      background: ${Theme.Color.Nightsky};
+      margin: 0;
+      padding: 0;
+      transform-origin: left center;
+      transition: all 0.5s ease;
+      &:nth-child(2) {
+        transform: scaleX(0.6);
+      }
+      &:nth-child(3) {
+        transform: scaleX(0.4);
+      }
+    }
+  }
+
   .brandmark {
     fill: ${Theme.Color.Nightsky};
     width: calc(${Root.Size} * 2);
@@ -122,6 +149,12 @@ TopNavigationStyle.Inner = styled.div`
   }
 
   &.scroll {
+    .menu-burger {
+      figure {
+        background: ${Theme.Color.Nightsky};
+        transform: scaleX(1);
+      }
+    }
     .brandmark {
       fill: ${Theme.Color.Nightsky};
     }

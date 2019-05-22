@@ -41,15 +41,15 @@ const Widgets = [
         Style: 'Generic',
         Meta: {
           Generic: {
-            BgColor: Theme.Color.Nightsky,
-            BgImage: '',
+            BgColor: Theme.Color.Black,
+            BgImageFile: 'placeholder_bg_2.jpg',
             Subhead: '',
-            Headline: 'All Questions',
+            Headline: 'Ask us anything.',
             TextColor: Theme.Color.White,
             IconColor: Theme.Color.White,
-            IconName: 'leaf', // FontAwesome Icon Name
-            TintColor: '',
-            TintOpacity: '',
+            IconName: 'question', // FontAwesome Icon Name
+            TintColor: Theme.Color.Black,
+            TintOpacity: '0.6',
             IconSize: '',
           },
         },
@@ -66,12 +66,12 @@ const Widgets = [
         Style: 'Generic',
         Meta: {
           Generic: {
-            BgColor: Theme.Color.Mint,
-            BgImage: '',
+            BgColor: Theme.Color.Primary,
+            BgImageFile: '',
             Subhead: '',
             Headline: 'Recreational',
-            TextColor: Theme.Color.Black,
-            IconColor: Theme.Color.Black,
+            TextColor: Theme.Color.White,
+            IconColor: Theme.Color.White,
             IconName: 'leaf', // FontAwesome Icon Name
             TintColor: '',
             TintOpacity: '',
@@ -131,7 +131,7 @@ const HomePageMobile = ({ LocationData }) => (
         SliderSettings={{
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: true,
+          autoplay: false,
           arrows: false,
         }}
       />
@@ -146,7 +146,7 @@ const HomePageMobile = ({ LocationData }) => (
         SliderSettings={{
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: true,
+          autoplay: false,
           arrows: false,
         }}
       />
@@ -161,7 +161,7 @@ const HomePageMobile = ({ LocationData }) => (
         SliderSettings={{
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: true,
+          autoplay: false,
           arrows: false,
         }}
       />
@@ -177,7 +177,7 @@ const HomePageMobile = ({ LocationData }) => (
         SliderSettings={{
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: true,
+          autoplay: false,
           arrows: false,
         }}
       />

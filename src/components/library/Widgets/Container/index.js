@@ -158,7 +158,7 @@ class WidgetType extends React.Component {
                   return (
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
-                      BgImage={Content.Meta.Generic.BgImage}
+                      BgImageFile={Content.Meta.Generic.BgImageFile}
                       BgQuery={Content.Meta.Generic.BgQuery}
                       TextColor={Content.Meta.Generic.TextColor}
                       TintColor={Content.Meta.Generic.TintColor}
@@ -227,7 +227,7 @@ class WidgetType extends React.Component {
                   >
                     <DefaultWidget
                       BgColor={Content.Meta.Generic.BgColor}
-                      BgImage={Content.Meta.Generic.BgImage}
+                      BgImageFile={Content.Meta.Generic.BgImageFile}
                       BgQuery={Content.Meta.Generic.BgQuery}
                       TextColor={Content.Meta.Generic.TextColor}
                       TintColor={Content.Meta.Generic.TintColor}

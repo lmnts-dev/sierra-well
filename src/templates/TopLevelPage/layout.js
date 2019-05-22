@@ -14,6 +14,10 @@ import { HorizontalContent } from 'components/core/HorizontalContent';
 import VerticalContent from 'components/core/VerticalContent';
 import SlideGroup from 'components/core/HorizontalContent/SlideGroup';
 import SlideSection from 'components/library/Section/SlideSection';
+import SpecialsListings from 'components/library/SpecialsListings';
+
+// Styles
+import TopLevelPageStyles from './styles.scss'
 
 // Data Transfomers
 import { columnDataTransformer } from 'components/core/HorizontalContent/SlideColumn';
@@ -34,7 +38,6 @@ const LargeContent = ({ node, id }) => {
         className={id}
         SlidesData={[{ Name: id, Columns: columnDataTransformer(columns) }]}
       />
-      {console.log(columnDataTransformer(columns))}
     </HorizontalContent>
   );
 };
@@ -115,6 +118,12 @@ const SmallContent = ({ node, id }) => {
         );
       })}
 
+      <SpecialsListings
+        BgColor={Theme.Color.White}
+        TextColor={Theme.Color.Nightsky}
+        PageLocation="/"
+        Header="All Specials"
+      />
       {/* {console.log(sections)}
       {console.log(widgetContentTransformer(sections[0].items))} */}
     </VerticalContent>
@@ -142,7 +151,9 @@ const TopLevelPageTemplate = ({ data, node, id, elements }) => (
     </Device>
 
     <Device Query="Mobile">
-      <SmallContent node={node} id={id} />
+      <TopLevelPageStyles>
+        <SmallContent node={node} id={id} />
+      </TopLevelPageStyles>
     </Device>
   </Layout>
 );

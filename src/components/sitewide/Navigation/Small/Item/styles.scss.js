@@ -60,6 +60,7 @@ const ItemStyle = styled.li`
 
     .label {
       font-size: 0.7rem;
+      line-height: 1.3;
       display: block;
       text-align: center;
       max-height: 100px;
@@ -108,7 +109,7 @@ const ItemStyle = styled.li`
   &.focus {
     background-color: ${Theme.Color.Primary};
     overflow: hidden;
-    border-radius: ${Root.Radius};
+    border-radius: ${Root.Radius} ${Root.Radius} 0 0;
 
     a {
       color: ${Theme.Color.White};

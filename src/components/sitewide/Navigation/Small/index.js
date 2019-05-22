@@ -78,6 +78,11 @@ class NavigationSmall extends PureComponent {
             className={'nav-top-mobile-inner ' + this.state.scrollClass}
           >
             <TopNavigationStyle.Branding>
+              <span className="menu-burger">
+                <figure />
+                <figure />
+                <figure />
+              </span>
               <Link to="/">
                 <Brandmark />
               </Link>

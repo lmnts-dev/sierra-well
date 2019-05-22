@@ -136,6 +136,7 @@ const SpecialListings = ({
   TextColor,
   LocationData,
   PageLocation,
+  Header,
 }) => {
   // Function to create our Promotional Items map.
   const promotionalItemsTransformer = data => {
@@ -158,22 +159,36 @@ const SpecialListings = ({
   };
 
   return (
-    <SpecialListingsStyle BgColor={BgColor} TextColor={TextColor}>
-      {LocationData.featuredSpecials.length > 0 ? (
-        <HeroStrip
-          BgColor={Theme.Color.White}
-          TextColor={Theme.Color.Nightsky}
-          Items={promotionalItemsTransformer(LocationData.featuredSpecials)}
-        />
+    <SpecialListingsStyle
+      className="specials-listings"
+      BgColor={BgColor}
+      TextColor={TextColor}
+    >
+      <ReleaseOverflow />
+      {LocationData ? (
+        LocationData.featuredSpecials.length > 0 ? (
+          <HeroStrip
+            BgColor={Theme.Color.White}
+            TextColor={Theme.Color.Nightsky}
+            Items={promotionalItemsTransformer(LocationData.featuredSpecials)}
+          />
+        ) : null
       ) : null}
 
-      <ReleaseOverflow />
+      {Header ? (
+        <SpecialListingsStyle.SectionHeader>
+          <SpecialListingsStyle.Headline TextColor={TextColor}>
+            <h2>{Header}</h2>
+          </SpecialListingsStyle.Headline>
+        </SpecialListingsStyle.SectionHeader>
+      ) : null}
+
       <MasonrySection
         Columns={3}
         ColumnGap={0.25}
         BgColor={BgColor ? BgColor : Theme.Color.White}
         TextColor={TextColor ? TextColor : Theme.Color.Nightsky}
-        Gutter={Gutter ? Gutter : [1, 1, 2, 1]}
+        Gutter={Gutter ? Gutter : [.5, 1, 2, 1]}
       >
         {/* {console.log(LocationData.featuredSpecials.length)} */}
         <SpecialCards PageLocation={PageLocation} />

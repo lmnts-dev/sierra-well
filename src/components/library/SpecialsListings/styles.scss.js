@@ -89,5 +89,29 @@ export const SpecialListingsStyle = styled.div`
   }
 `;
 
+SpecialListingsStyle.SectionHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: calc(${Root.Size} / 6);
+  padding-left: ${Root.Grid.Gutter.Left};
+  padding-right: ${Root.Grid.Gutter.Right};
+
+  h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: ${Root.Size};
+  }
+`;
+
+SpecialListingsStyle.Headline = styled.div`
+  display: flex;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Nightsky)}
+  transition: all ${Theme.Base.Transition.Duration}
+    ${Theme.Base.Transition.CssEase};
+`;
+
 export default SpecialListingsStyle;
 //////////////////////////////////////////////////////////////////////

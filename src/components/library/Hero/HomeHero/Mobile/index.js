@@ -52,7 +52,7 @@ const MenuWidgets = ({ LocationData }) => {
               Subhead: 'A new kind of Cannabis Store.',
               Headline: 'View our menu →',
               TextColor: Theme.Color.White,
-              IconColor: Theme.Color.Mint,
+              IconColor: Theme.Color.Primary,
               IconName: 'plus',
               TintColor: Theme.Color.Black,
               TintOpacity: '0.6',
@@ -74,12 +74,12 @@ const MenuWidgets = ({ LocationData }) => {
           Style: 'Generic',
           Meta: {
             Generic: {
-              BgColor: Theme.Color.Mint,
+              BgColor: Theme.Color.Nightsky,
               Subhead: 'No minimums. Ever.',
               Headline:
                 "100% Free Delivery. Because we don't like putting pants on either.",
-              TextColor: Theme.Color.Nightsky,
-              IconColor: Theme.Color.Nightsky,
+              TextColor: Theme.Color.White,
+              IconColor: Theme.Color.White,
               IconName: 'car',
               TintColor: '',
               TintOpacity: '',
