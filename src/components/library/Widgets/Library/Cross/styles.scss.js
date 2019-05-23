@@ -19,7 +19,7 @@ const CrossWidgetStyle = styled.div`
   flex-direction: column;
   height: calc(
     (100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size})) -
-      (${Theme.Base.Size.Sm} * 2)
+      ((${Root.Size} / 6) * 2)
   );
 `;
 
@@ -34,7 +34,7 @@ CrossWidgetStyle.Inner = styled.div`
   align-items: stretch;
   width: calc(
     (100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size})) -
-      (${Theme.Base.Size.Sm} * 2)
+      ((${Root.Size} / 6) * 2)
   );
   flex: 1;
 `;

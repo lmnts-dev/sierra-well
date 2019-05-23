@@ -8,7 +8,7 @@ export const Base = {
   Size: {
     Lg: 60,
     Md: 25,
-    Sm: 8,
+    Sm: 25,
   },
 
   // Root Element Measurement

@@ -40,7 +40,7 @@ FooterLargeStyle.Section = styled.div`
   flex-direction: row;
   align-items: center;
   height: ${Root.Footer.Size};
-  padding: 0 ${Theme.Base.Size.Sm} 0 0;
+  padding: 0 calc(${Root.Size} / 6) 0 0;
   justify-content: space-between;
   flex: 1;
 `;
@@ -60,7 +60,7 @@ FooterLargeStyle.Inner = styled.div`
 
     /* Lock in Copyright text with Sidebar component */
     &.copyright {
-      padding-left: ${Theme.Base.Size.Sm};
+      padding-left: calc(${Root.Size} / 6);
       position: ${props =>
         props.routes.includes(props.location) ? 'unset' : 'fixed'};
       opacity: ${props => (props.routes.includes(props.location) ? '1' : '.6')};

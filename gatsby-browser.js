@@ -18,6 +18,7 @@ export const wrapRootElement = ({ element }) => {
     }
   };
 
+
   // Check if window exists or not.
   if (typeof window !== 'undefined') {
     return (

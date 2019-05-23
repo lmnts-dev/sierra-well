@@ -73,7 +73,7 @@ AwardHoursStyle.Item = styled.li`
     &:first-child {
       opacity: 0.6;
       font-size: 1.2rem;
-      padding-bottom: calc(${Theme.Base.Size.Sm} / 2);
+      padding-bottom: calc((${Root.Size} / 2) / 2);
       @media (max-width: ${Base.Media.Width.Md + 'px'}) {
         font-size: 0.5rem;
       }

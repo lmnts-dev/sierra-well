@@ -22,7 +22,7 @@ const SidebarWidgetStyle = styled.div`
   flex-direction: column;
   position: relative;
   opacity: 0;
-  margin-top: ${Theme.Base.Size.Sm};
+  margin-top: calc(${Root.Size} / 5);
   animation-fill-mode: forwards;
   ${FadeIn};
 `;
@@ -99,7 +99,7 @@ SidebarWidgetStyle.Inner = styled.div`
     color: white;
     transform: scale(1.000000001);
     position: relative;
-    padding: ${Theme.Base.Size.Sm};
+    padding: calc(${Root.Size} / 5);
     color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     text-decoration: none;
     transition: all ${Theme.Base.Transition.Duration}
@@ -109,8 +109,8 @@ SidebarWidgetStyle.Inner = styled.div`
   /* The Carat Icon */
   svg {
     position: absolute;
-    right: ${Theme.Base.Size.Sm};
-    top: ${Theme.Base.Size.Sm};
+    right: calc(${Root.Size} / 5);
+    top: calc(${Root.Size} / 5);
     fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     transform: translateX(0%);
     transition: all ${Theme.Base.Transition.Duration}
@@ -166,8 +166,8 @@ SidebarWidgetStyle.Headline = styled.div`
 
 SidebarWidgetStyle.Icon = styled.i`
   position: absolute;
-  right: ${Theme.Base.Size.Sm};
-  top: ${Theme.Base.Size.Sm};
+  right: calc(${Root.Size} / 5);
+  top: calc(${Root.Size} / 5);
   font-size: 1.2rem;
   transform: scale(1.4);
   transform-origin: top right;

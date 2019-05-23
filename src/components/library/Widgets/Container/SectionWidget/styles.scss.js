@@ -49,8 +49,8 @@ SectionWidgetContainerStyle.Inner = styled.div`
     bottom: 0;
 
     .slick-dots {
-      bottom: ${Theme.Base.Size.Sm};
-      left: ${Theme.Base.Size.Sm};
+      bottom: calc(${Root.Size} / 2);
+      left: calc(${Root.Size} / 2);
       width: auto;
       padding: 0;
       margin: 0;

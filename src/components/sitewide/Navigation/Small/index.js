@@ -18,6 +18,7 @@ import { BottomNavigationStyle, TopNavigationStyle } from './styles.scss';
 import Item from './Item';
 import { OrderMenuMobile } from './../../../library/OrderMenu';
 import Brandmark from 'components/core/Branding/Brandmark';
+import HamburgerOverlayToggle from 'components/library/ContentOverlay/Hamburger';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -74,11 +75,11 @@ class NavigationSmall extends PureComponent {
             className={'nav-top-mobile-inner ' + this.state.scrollClass}
           >
             <TopNavigationStyle.Branding>
-              <span className="menu-burger">
+              <HamburgerOverlayToggle>
                 <figure />
                 <figure />
                 <figure />
-              </span>
+              </HamburgerOverlayToggle>
               <Link to="/">
                 <Brandmark />
               </Link>

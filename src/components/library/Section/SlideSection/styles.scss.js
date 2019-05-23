@@ -26,8 +26,8 @@ const SlideSectionStyle = styled.div`
 
   /* Slick styles */
   .slick-slider {
-    padding-bottom: ${Theme.Base.Size.Sm};
-    margin-bottom: ${Theme.Base.Size.Sm};
+    padding-bottom: calc(${Root.Size} / 2);
+    margin-bottom: calc(${Root.Size} / 2);
 
     .slick-slide {
       &:first-child {
@@ -220,7 +220,7 @@ SlideSectionStyle.Headline = styled.div`
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};
   i {
-    margin-right: ${Theme.Base.Size.Sm};
+    margin-right: calc(${Root.Size} / 2);
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
   }

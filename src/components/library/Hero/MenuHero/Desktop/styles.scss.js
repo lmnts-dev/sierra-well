@@ -224,7 +224,7 @@ export const SidebarLocationStyle = styled.div`
   z-index: 800;
   font-weight: bold;
   font-size: 1rem;
-  padding-left: ${Theme.Base.Size.Sm};
+  padding-left: calc(${Root.Size} / 4);
   width: ${Root.Grid.Gutter.Left};
 
   &:after {
@@ -262,8 +262,8 @@ export const SidebarLocationStyle = styled.div`
   a {
     display: block;
     color: ${Theme.Color.White};
-    margin: ${Theme.Base.Size.Sm} 0;
-    padding-right: calc(${Theme.Base.Size.Sm} * 2.25);
+    margin: calc(${Root.Size} / 4) 0;
+    padding-right: calc((${Root.Size} / 4) * 2.25);
     cursor: pointer;
     position: relative;
 
@@ -276,7 +276,7 @@ export const SidebarLocationStyle = styled.div`
     }
 
     &:before {
-      right: calc(${Theme.Base.Size.Sm} / 2);
+      right: calc((${Root.Size} / 4) / 2);
       width: 4px;
       height: 4px;
       border-radius: 50%;

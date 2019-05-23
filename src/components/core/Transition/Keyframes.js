@@ -15,6 +15,17 @@ import { Base } from 'constants/styles/Base';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
+// Slide to Right
+export const SlideToRightKeyframes = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+`;
+
 // Slide Up
 export const SlideUpKeyframes = keyframes`
   0% {
@@ -34,6 +45,28 @@ export const FadeInKeyFrames = keyframes`
 
   100% {
     opacity: 1;
+  }
+`;
+
+// Fade In to 60% Opacity
+export const FadeIn60KeyFrames = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .6;
+  }
+`;
+
+// Fade In to 60% Opacity
+export const FadeIn75KeyFrames = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .75;
   }
 `;
 

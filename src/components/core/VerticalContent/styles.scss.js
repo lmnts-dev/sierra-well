@@ -21,7 +21,7 @@ const VerticalContentStyle = styled.div`
   width: 100%;
   padding-left: 0;
   padding-right: 0;
-  padding-top: calc(${Root.Nav.Size} + ${Theme.Base.Size.Sm});
+  padding-top: calc(${Root.Nav.Size} + (${Root.Size} / 6));
   padding-bottom: calc(${Root.Nav.Size} + (${Root.Size} * 3));
   overflow: visible;
 `;

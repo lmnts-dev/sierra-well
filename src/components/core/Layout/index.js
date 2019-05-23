@@ -92,6 +92,7 @@ const Layout = ({
     {MenuLocationData ? <MenuPageTheme /> : null}
     <GlobalStyle />
     <div id="content-overlay" />
+    <div id="hamburger-overlay" />
     <PageTheme
       BgColor={BgColor}
       PrimaryColor={PrimaryColor}

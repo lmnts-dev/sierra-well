@@ -30,16 +30,16 @@ class Forecast extends React.Component {
     forecast: [],
   };
 
-  componentDidMount() {
-    axios
-      .get(
-        'https://api.darksky.net/forecast/20fcdf5192dab046a8b9303c6f6d2667/37.8267,-122.4233'
-      )
-      .then(res => {
-        const forecast = res.data;
-        this.setState({ forecast });
-      });
-  }
+  // componentDidMount() {
+  //   axios
+  //     .get(
+  //       'https://api.darksky.net/forecast/20fcdf5192dab046a8b9303c6f6d2667/37.8267,-122.4233'
+  //     )
+  //     .then(res => {
+  //       const forecast = res.data;
+  //       this.setState({ forecast });
+  //     });
+  // }
 
   render() {
     return (

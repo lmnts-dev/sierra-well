@@ -12,6 +12,9 @@ import { Theme, Root } from 'constants/Theme';
 // Keyframe
 import { FadeIn } from 'components/core/Transition/Keyframes';
 
+// Helpers
+import hexToRGB from 'helpers/hexToRGB';
+
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
@@ -24,12 +27,12 @@ const NavigationStyle = styled.nav`
   right: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 800;
 
   .brandmark {
     fill: ${Theme.Color.Nightsky};
     transition: all 1s ease;
-    transform: scale(0.6);
+    transform: scale(0.8);
     transform-origin: center center;
   }
 `;
@@ -43,7 +46,7 @@ NavigationStyle.Top = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  z-index: 800;
   height: ${Root.Nav.Size};
   position: relative;
   font-weight: bold;
@@ -78,6 +81,23 @@ NavigationStyle.Top = styled.div`
   }
 
   &.scroll {
+    .menu-burger {
+      &:before {
+        background: ${hexToRGB(Theme.Color.Nightsky, 0.1)};
+      }
+
+      figure {
+        transform: scaleX(1);
+        background: ${Theme.Color.Nightsky};
+        &:nth-child(2) {
+          transform: scaleX(1);
+        }
+        &:nth-child(3) {
+          transform: scaleX(1);
+        }
+      }h
+    }
+
     .brandmark {
       fill: ${Theme.Color.Nightsky};
     }
@@ -133,17 +153,80 @@ NavigationStyle.Top.BrandingBlock = styled.div`
   display: flex;
   width: ${Root.Grid.Gutter.Left};
   flex-direction: row;
-  padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0 calc(${Root.Size} / 6) 0 calc(${Root.Size} / 6);
   a {
     height: ${Root.Nav.Size};
     display: flex;
     flex-direction: column;
     justify-content: center;
     line-height: 0;
-    width: 100%;
-    img {
+    flex: 1;
+    svg {
       width: 100%;
       height: auto;
+    }
+  }
+
+  .menu-burger {
+    width: calc(${Root.Size} * 1.2);
+    height: calc(${Root.Nav.Size} / 2);
+    flex: 0.5;
+    margin-right: calc(${Root.Size} / 6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: calc(${Root.Size} / 6) 0;
+    /* background: blue; */
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      transform-origin: center center;
+      opacity: 0;
+      transition: all 0.5s ease;
+      width: 100%;
+      height: 100%;
+      background: ${hexToRGB(Theme.Color.Nightsky, 0.1)};
+      border-radius: calc(${Root.Radius} / 4);
+    }
+
+    figure {
+      height: 2px;
+      transform: scaleX(1);
+      background: ${Theme.Color.Nightsky};
+      margin: 0;
+      padding: 0;
+      transform-origin: left center;
+      transition: all 0.5s ease;
+      &:nth-child(2) {
+        transform: scaleX(0.6);
+      }
+      &:nth-child(3) {
+        transform: scaleX(0.4);
+      }
+    }
+
+    &:hover {
+      &:before {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+      figure {
+        transform: scaleX(1);
+        &:nth-child(2) {
+          transform: scaleX(1);
+        }
+        &:nth-child(3) {
+          transform: scaleX(1);
+        }
+      }
     }
   }
 `;
@@ -231,7 +314,7 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
   display: flex;
   width: auto;
   flex-direction: row;
-  padding: ${Theme.Base.Size.Sm};
+  padding: calc(${Root.Size} / 6);
   align-items: center;
 
   .ico-intercom {
@@ -260,7 +343,7 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
 // className: `nav-sub`
 NavigationStyle.Bottom = styled.div`
   width: 100%;
-  padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Grid.Gutter.Left};
+  padding: 0 calc(${Root.Size} / 6) 0 ${Root.Grid.Gutter.Left};
   opacity: ${props => (props.routes.includes(props.location) ? '1' : '0')};
   pointer-events: ${props =>
     props.routes.includes(props.location) ? 'auto' : 'none'};

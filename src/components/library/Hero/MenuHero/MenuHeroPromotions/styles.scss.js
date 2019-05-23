@@ -38,7 +38,7 @@ const PromotionSliderStyle = styled.div`
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: ${Theme.Base.Size.Sm};
+      left: calc(${Root.Size} / 8);
       bottom: unset;
       text-align: left;
       width: auto;
@@ -95,7 +95,7 @@ PromotionSliderStyle.Slide = styled.div`
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Size};
+  padding: 0 calc(${Root.Size} / 8) 0 ${Root.Size};
   font-size: 1.2rem;
 
   span {
@@ -110,7 +110,7 @@ PromotionSliderStyle.Slide = styled.div`
     display: flex !important;
     align-items: center;
     width: 100%;
-    padding: 0 ${Theme.Base.Size.Sm};
+    padding: 0 calc(${Root.Size} / 8);
   }
 
   .promo-button {
@@ -123,8 +123,8 @@ PromotionSliderStyle.Slide = styled.div`
     a {
       display: inline-block;
       border-radius: 999px;
-      padding: calc(${Theme.Base.Size.Sm} * 0.75) ${Theme.Base.Size.Md}
-        calc(${Theme.Base.Size.Sm} * 0.75) ${Theme.Base.Size.Sm};
+      padding: calc(calc(${Root.Size} / 8) * 0.75) ${Theme.Base.Size.Md}
+        calc(calc(${Root.Size} / 8) * 0.75) calc(${Root.Size} / 8);
       color: ${Theme.Color.White};
       position: relative;
       z-index: 400;
@@ -141,7 +141,7 @@ PromotionSliderStyle.Slide = styled.div`
         font-size: 12px;
         position: absolute;
         top: 50%;
-        right: calc(${Theme.Base.Size.Sm} * 1.2);
+        right: calc(calc(${Root.Size} / 8) * 1.2);
       }
     }
   }

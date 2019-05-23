@@ -104,12 +104,12 @@ HorizontalContentStyle.Inner = styled.div`
       }
       .col {
         &:first-child {
-          padding-left: ${Theme.Base.Size.Sm};
+          padding-left: calc(${Root.Size} / 4);
         }
       }
     }
     &:first-child {
-      padding: 0 0 0 ${Theme.Base.Size.Sm};
+      padding: 0 0 0 calc(${Root.Size} / 4);
       .col {
         &:first-child {
           padding-left: 0;
@@ -138,13 +138,14 @@ HorizontalContentStyle.SlideColumnContainer.Inner = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   overflow: visible;
-  padding-bottom: ${Theme.Base.Size.Sm};
+  padding-bottom: calc(${Root.Size} / 6);
   height: calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}));
 `;
 
 // The Column Wrapper
 HorizontalContentStyle.Column = styled.div`
-  padding: ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm} ${Theme.Base.Size.Sm} 0;
+  padding: calc(${Root.Size} / 6) calc((${Root.Size} / 6) / 2)
+    calc(${Root.Size} / 6) calc((${Root.Size} / 6) / 1.5);
   height: calc(100vh - (${Root.Nav.Size} * 2 + ${Root.Footer.Size}));
   display: flex;
   flex-direction: column;
@@ -178,12 +179,13 @@ HorizontalContentStyle.Column.Inner = styled.div`
     if (props.Divider)
       return `
         width: ${Theme.Base.Size.Md};
+        padding-right: 0;
+        
         &:before {
           content: '';
           position: absolute;
           top: 0;
           bottom: 0;
-          // left: calc(50% - ${Base.Size.Sm / 2 + 'px'});
           left: 50%;
           width: 1px;
           opacity: .05;

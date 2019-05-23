@@ -34,7 +34,7 @@ SidebarStyle.Inner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: ${Theme.Base.Size.Sm};
+  padding: ${Root.Grid.Gutter.Right};
   width: ${Root.Grid.Gutter.Left};
 
   @media (max-width: ${Base.Media.Width.Md + 'px'}) {

@@ -43,7 +43,7 @@ NavigationStyle.Top.BrandingBlock = styled.div`
   display: flex;
   width: ${Root.Grid.Gutter.Left};
   flex-direction: row;
-  padding: 0 ${Theme.Base.Size.Sm} 0 ${Theme.Base.Size.Sm};
+  padding: 0 calc(${Root.Size} / 6) 0 calc(${Root.Size} / 6);
   a {
     height: ${Root.Nav.Size};
     display: flex;
@@ -122,7 +122,7 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
   display: flex;
   width: auto;
   flex-direction: row;
-  padding: ${Theme.Base.Size.Sm};
+  padding: calc(${Root.Size} / 6);
 `;
 
 //// Bottom Level Navigation
@@ -131,7 +131,7 @@ NavigationStyle.Top.CommunicationBlock = styled.div`
 // className: `nav-sub`
 NavigationStyle.Bottom = styled.div`
   width: 100%;
-  padding: 0 ${Theme.Base.Size.Sm} 0 ${Root.Grid.Gutter.Left};
+  padding: 0 calc(${Root.Size} / 6) 0 ${Root.Grid.Gutter.Left};
   opacity: ${props => (props.routes.includes(props.location) ? '1' : '0')};
   pointer-events: ${props =>
     props.routes.includes(props.location) ? 'auto' : 'none'};

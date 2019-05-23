@@ -129,7 +129,7 @@ StickyScrollSectionStyle.Content = styled(SectionContentStyle)`
     font-weight: bold;
     color: ${Theme.Color.Slate};
     display: block;
-    margin-bottom: calc(${Theme.Base.Size.Sm});
+    margin-bottom: calc(${Root.Size} /  4);
   }
 `;
 

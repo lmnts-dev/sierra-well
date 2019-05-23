@@ -19,6 +19,7 @@ import Btn from 'components/library/Btn/';
 import LinkList from 'components/core/LinkList/';
 import Brandmark from 'components/core/Branding/Brandmark';
 import Icon from 'elements/Icons';
+import HamburgerOverlayToggle from 'components/library/ContentOverlay/Hamburger';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -71,6 +72,11 @@ class NavigationLarge extends React.Component {
       <NavigationStyle>
         <NavigationStyle.Top className={'nav-top ' + this.state.scrollClass}>
           <NavigationStyle.Top.BrandingBlock>
+            <HamburgerOverlayToggle>
+              <figure />
+              <figure />
+              <figure />
+            </HamburgerOverlayToggle>
             <Link to="/">
               <Brandmark />
             </Link>

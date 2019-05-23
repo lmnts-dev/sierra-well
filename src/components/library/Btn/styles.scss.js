@@ -83,8 +83,8 @@ BtnStyle.Inner = styled.span`
     margin-left: 5px;
     line-height: 0;
     flex: 1;
-    height: ${Theme.Base.Size.Sm};
-    width: ${Theme.Base.Size.Sm};
+    height: calc(${Root.Size} / 4);
+    width: calc(${Root.Size} / 4);
     display: flex;
     position: absolute;
     top: 50%;

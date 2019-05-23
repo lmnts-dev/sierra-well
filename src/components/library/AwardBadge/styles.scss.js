@@ -27,7 +27,7 @@ export const AwardBadgeStyle = styled.div`
   box-shadow: 0 0px 8px 0 rgba(6, 10, 92, 0.12);
   position: relative;
   text-align: center;
-  padding: ${Theme.Base.Size.Sm};
+  padding: calc(${Root.Size} / 2);
 
   @media (max-width: ${Base.Media.Width.Md + 'px'}) {
     width: calc(${Root.Size} * 4);
@@ -39,8 +39,8 @@ export const AwardBadgeStyle = styled.div`
   }
 
   span {
-    margin-top: calc(${Theme.Base.Size.Sm} * 0.75);
-    padding-top: calc(${Theme.Base.Size.Sm} * 0.75);
+    margin-top: calc((${Root.Size} / 6) * 0.75);
+    padding-top: calc((${Root.Size} / 6) * 0.75);
     text-align: center;
     width: 100%;
     position: relative;
