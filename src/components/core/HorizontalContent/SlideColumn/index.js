@@ -51,6 +51,7 @@ class SlideColumn extends React.Component {
                 <WidgetContainer
                   key={index}
                   WidgetContent={Widget.WidgetContent}
+                  Dots={Widget.Dots}
                   Flex={Widget.Flex}
                   Width={Widget.Width}
                 />

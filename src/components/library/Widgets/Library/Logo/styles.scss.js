@@ -115,7 +115,8 @@ const WidgetStyle = styled.div`
   }
 
   /* The Carat Icon */
-  svg {
+  .ico {
+    svg {
     position: absolute;
     right: ${Root.ViewWidthPadding};
     top: ${Root.ViewWidthPadding};
@@ -123,11 +124,19 @@ const WidgetStyle = styled.div`
     fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     transition: all ${Theme.Base.Transition.Duration}
       ${Theme.Base.Transition.CssEase};
+    }
   }
 
-  /* The Widget Icon */
+  /* The Brandmark */
 
+  .brandmark {
+    width: 60%;
+    margin-bottom: calc(${Root.ViewWidthPadding} / 2);
+    fill: ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
+    transition: all ${Theme.Base.Transition.Duration}
+      ${Theme.Base.Transition.CssEase};
   }
+
 
   /* Hover Styles */
   @media (min-width: ${Theme.Base.Media.Width.Md}) {
@@ -142,15 +151,24 @@ const WidgetStyle = styled.div`
       }
 
       /* The Carat Icon */
-      svg {
+      .ico {
+        svg {
         transform: translateX(50%) translateZ(0);
         fill: ${Theme.Color.White};
+        }
       }
 
       /* The Widget Icon */
       .fas {
         color: ${Theme.Color.White};
         transform: scale(1.3) translateZ(0);
+      }
+
+      /* The Brandmark */
+      .brandmark {
+        fill: ${Theme.Color.White};
+        transition: all ${Theme.Base.Transition.Duration}
+          ${Theme.Base.Transition.CssEase};
       }
 
       /* Tint */
@@ -167,14 +185,14 @@ const WidgetStyle = styled.div`
 `;
 
 WidgetStyle.Subhead = styled.div`
-  font-size: ${Root.ViewWidthFontSize};
+  font-size: calc(${Root.ViewWidthFontSize} * 2);
   line-height: 1.2;
   padding-right: 20px;
 `;
 
 WidgetStyle.Headline = styled.div`
-  font-size: ${Root.ViewWidthFontSize};
-  line-height: 1.2;
+  font-size: calc(${Root.ViewWidthFontSize} * 1.2);
+  line-height: 1.5;
   font-weight: bold;
   padding-right: 20px;
 `;
@@ -183,7 +201,7 @@ WidgetStyle.Icon = styled.i`
   position: absolute;
   right: ${Root.ViewWidthPadding};
   bottom: ${Root.ViewWidthPadding};
-  font-size: ${Root.IconSize};
+  font-size: calc(${Root.IconSize} * 1);
   transform: scale(1.000000001);
   transition: all ${Theme.Base.Transition.Duration}
     ${Theme.Base.Transition.CssEase};

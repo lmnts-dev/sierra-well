@@ -73,6 +73,7 @@ MobileLocationsHeroStyle.LocationSwitch = styled.div`
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  -webkit-transform: translate3d(0,0,0);
   -webkit-backface-visibility: hidden;
 
   &:before {
@@ -102,6 +103,7 @@ MobileLocationsHeroStyle.LocationSwitch = styled.div`
     overflow-x: auto;
     overflow-y: visible;
     touch-action: pan-x;
+    -webkit-transform: translate3d(0,0,0);
     -webkit-backface-visibility: hidden;
     -webkit-overflow-scrolling: touch;
     padding-bottom: calc(${Root.Size} / 4);
@@ -231,8 +233,10 @@ MobileLocationsHeroStyle.Inner = styled(HeroInnerStyle)`
 
         .slick-slide {
           &:first-child {
-            svg {
-              display: none;
+            ico {
+              svg {
+                display: none;
+              }
             }
           }
         }

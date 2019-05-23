@@ -41,10 +41,10 @@ export const IndexData = {
                       LogoWidget: {
                         BgColor: Theme.Color.Nightsky,
                         Subhead: 'A new kind of Cannabis Store.',
-                        Headline: 'View our menu →',
+                        Headline: '',
                         TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.Primary,
-                        IconName: 'plus',
+                        IconColor: Theme.Color.White,
+                        IconName: 'cannabis',
                         TintColor: Theme.Color.Black,
                         TintOpacity: '0.6',
                         IconSize: '',
@@ -59,16 +59,16 @@ export const IndexData = {
                     Meta: {
                       LogoWidget: {
                         BgColor: Theme.Color.Primary,
-                        Subhead: 'A new kind of Cannabis Store.',
-                        Headline: 'View our menu →',
+                        Subhead: 'Happy.',
+                        Headline: '',
                         TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.Primary,
-                        IconName: 'plus',
+                        IconColor: Theme.Color.White,
+                        IconName: 'smile-wink',
                         TintColor: Theme.Color.Black,
                         TintOpacity: '0.6',
                         IconSize: '',
                         CallToAction: '',
-                        BgImageFile: 'be2.png',
+                        BgImageFile: 'placeholder_bg_2.jpg',
                       },
                     },
                   },
@@ -78,14 +78,52 @@ export const IndexData = {
                     Meta: {
                       LogoWidget: {
                         BgColor: Theme.Color.Primary,
-                        Subhead: 'A new kind of Cannabis Store.',
-                        Headline: 'View our menu →',
+                        Subhead: 'Healthy.',
+                        Headline: '',
                         TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.Primary,
-                        IconName: 'plus',
+                        IconColor: Theme.Color.White,
+                        IconName: 'heart',
                         TintColor: Theme.Color.Black,
                         TintOpacity: '0.6',
                         BgImageFile: 'be5.png',
+                        IconSize: '',
+                        CallToAction: '',
+                      },
+                    },
+                  },
+                  {
+                    Destination: '/subpage',
+                    Style: 'LogoWidget',
+                    Meta: {
+                      LogoWidget: {
+                        BgColor: Theme.Color.Primary,
+                        Subhead: 'Creative.',
+                        Headline: '',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'music',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
+                        BgImageFile: 'be8.png',
+                        IconSize: '',
+                        CallToAction: '',
+                      },
+                    },
+                  },
+                  {
+                    Destination: '/subpage',
+                    Style: 'LogoWidget',
+                    Meta: {
+                      LogoWidget: {
+                        BgColor: Theme.Color.Primary,
+                        Subhead: 'Brave.',
+                        Headline: '',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
+                        IconName: 'plus',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
+                        BgImageFile: 'be9.png',
                         IconSize: '',
                         CallToAction: '',
                       },
@@ -172,7 +210,6 @@ export const IndexData = {
                         TintOpacity: '0.6',
                         BgImageFile: 'be12.png',
                         IconSize: '',
-                        
                       },
                     },
                   },
@@ -399,10 +436,11 @@ export const IndexData = {
               {
                 // Begin WidgetContent
                 Flex: 2,
+                Width: 5,
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Gunmetal,
@@ -413,8 +451,9 @@ export const IndexData = {
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
                         IconName: 'plus', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.7',
+                        BgImageFile: 'be13.png',
                         IconSize: '',
                       },
                     },
@@ -432,22 +471,23 @@ export const IndexData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 5,
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'Generic',
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder3,
                         Subhead: 'Reviews',
                         Headline:
                           '“Sierra Well went above and beyond to make sure my husband and I found exactly what we needed.”',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
                         IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
+                        BgImageFile: 'be7.png',
                         IconSize: '',
                       },
                     },
@@ -458,15 +498,15 @@ export const IndexData = {
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder2,
                         Subhead: 'Reviews',
                         Headline:
                           '“Sierra Well went above and beyond to make sure my husband and I found exactly what we needed.”',
-                        TextColor: Theme.Color.Black,
-                        IconColor: Theme.Color.Black,
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.White,
                         IconName: 'tree', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
+                        BgImageFile: 'be15.png',
                         IconSize: '',
                       },
                     },
@@ -477,15 +517,15 @@ export const IndexData = {
                     Meta: {
                       Generic: {
                         BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder,
                         Subhead: 'Reviews',
                         Headline:
                           '“Sierra Well went above and beyond to make sure my husband and I found exactly what we needed.”',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
                         IconName: 'rocket', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
+                        BgImageFile: 'be17.png',
                         IconSize: '',
                       },
                     },
@@ -504,13 +544,14 @@ export const IndexData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 4,
                 WidgetContent: [
                   {
                     Destination: '/locations',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
-                        BgColor: Theme.Color.Tahoe,
+                        BgColor: Theme.Color.Sky,
                         BgImage: '',
                         Subhead: '',
                         Headline: 'Locations',
@@ -531,11 +572,11 @@ export const IndexData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/culture',
+                    Destination: '/company',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
-                        BgColor: Theme.Color.Indigo,
+                        BgColor: Theme.Color.Nightsky,
                         BgImage: '',
                         Subhead: '',
                         Headline: 'Culture',
@@ -556,14 +597,14 @@ export const IndexData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/outreach',
+                    Destination: '/learn',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
-                        BgColor: Theme.Color.Sunset,
+                        BgColor: Theme.Color.Gunmetal,
                         BgImage: '',
                         Subhead: '',
-                        Headline: 'Outreach',
+                        Headline: 'Questions',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
                         IconName: 'heart', // FontAwesome Icon Name

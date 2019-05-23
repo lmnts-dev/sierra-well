@@ -54,6 +54,7 @@ const SideWidgetStyle = styled.div`
       top: 0;
       bottom: 0;
       z-index: 2;
+      height: 100%;
     }
   }
 
@@ -142,7 +143,7 @@ const SideWidgetStyle = styled.div`
       ${props => {
         if (props.TintColor || props.TintOpacity)
           return `
-        &:before {
+        .tint {
           opacity: 1
         }
     `;

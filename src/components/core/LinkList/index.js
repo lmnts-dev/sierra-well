@@ -48,7 +48,7 @@ const LinkList = ({ ActiveClass }) => (
             if (link.slug != '/___registration') {
               return (
                 <li key={index}>
-                  <Link to={link.slug} activeClassName={ActiveClass}>
+                  <Link to={link.slug} activeClassName="active">
                     {link.label}
                   </Link>
                 </li>

@@ -84,7 +84,7 @@ export const Base = {
     Padding: {
       Sm: '4.5', // vw
       Md: '4.5', // vw
-      Lg: '1.5', // vw
+      Lg: '1.2', // vw
     },
   },
 

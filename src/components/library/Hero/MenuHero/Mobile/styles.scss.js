@@ -104,6 +104,7 @@ MobileMenuHeroStyle.LocationSwitch = styled.div`
     touch-action: pan-x;
     -webkit-backface-visibility: hidden;
     -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0,0,0);
     padding-bottom: calc(${Root.Size} / 4);
     /* height: calc(${Root.Size} * 2); */
     &::-webkit-scrollbar {
@@ -231,8 +232,10 @@ MobileMenuHeroStyle.Inner = styled(HeroInnerStyle)`
 
         .slick-slide {
           &:first-child {
-            svg {
-              display: none;
+            ico {
+              svg {
+                display: none;
+              }
             }
           }
         }

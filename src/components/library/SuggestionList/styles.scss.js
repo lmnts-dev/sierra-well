@@ -78,6 +78,8 @@ export const SuggestionListStyle = styled.div`
     overflow-x: auto;
     touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
     padding: calc(${Root.Size} / 4) 0;
 
     li {

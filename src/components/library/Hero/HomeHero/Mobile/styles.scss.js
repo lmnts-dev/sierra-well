@@ -71,8 +71,9 @@ export const MobileHomeHeroStyle = styled.div`
 MobileHomeHeroStyle.LocationSwitch = styled.div`
   position: relative;
   width: 100%;
-  max-width: 100%;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0,0,0);
   -webkit-backface-visibility: hidden;
 
   &:before {
@@ -104,6 +105,7 @@ MobileHomeHeroStyle.LocationSwitch = styled.div`
     touch-action: pan-x;
     -webkit-backface-visibility: hidden;
     -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0,0,0);
     padding-bottom: calc(${Root.Size} / 4);
     /* height: calc(${Root.Size} * 2); */
     &::-webkit-scrollbar {
@@ -231,8 +233,10 @@ MobileHomeHeroStyle.Inner = styled(HeroInnerStyle)`
 
         .slick-slide {
           &:first-child {
-            svg {
-              display: none;
+            .ico {
+              svg {
+                display: none;
+              }
             }
           }
         }

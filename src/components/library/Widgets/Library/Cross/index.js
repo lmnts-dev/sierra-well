@@ -45,7 +45,7 @@ const CrossWidget = ({}) => (
           TextColor={Theme.Color.White}
           TintColor=""
           TintOpacity=""
-          Destination="/subpage"
+          Destination="/company"
           Subhead="We've reinvented Cannabis Retail."
           Headline="Learn more."
           IconColor={Theme.Color.White}
@@ -60,7 +60,7 @@ const CrossWidget = ({}) => (
           TextColor={Theme.Color.Nightsky}
           TintColor=""
           TintOpacity=""
-          Destination="/subpage"
+          Destination="/company"
           Subhead="Outreach"
           Headline="How we raised $5,000 for the Children’s Leukemia Foundation."
           IconColor={Theme.Color.Nightsky}
@@ -75,7 +75,7 @@ const CrossWidget = ({}) => (
           TextColor={Theme.Color.White}
           TintColor=""
           TintOpacity=""
-          Destination="/subpage"
+          Destination="/menu/"
           Subhead="No minimums."
           Headline="100% Free Delivery."
           IconColor={Theme.Color.White}

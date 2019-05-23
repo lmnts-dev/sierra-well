@@ -32,6 +32,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 5,
                 WidgetContent: [
                   {
                     Destination: '/learn/all',
@@ -66,6 +67,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 5,
                 WidgetContent: [
                   {
                     Destination: '/learn/medical',
@@ -97,6 +99,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/medical/medical-cards',
@@ -122,6 +125,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/medical/purchasing',
@@ -147,6 +151,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/medical/dosage',
@@ -172,6 +177,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/medical',
@@ -207,6 +213,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 5,
                 WidgetContent: [
                   {
                     Destination: '/learn/recreational',
@@ -239,6 +246,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/recreational/out-of-state',
@@ -264,6 +272,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/recreational/growing',
@@ -289,6 +298,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/recreational/purchasing',
@@ -314,6 +324,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/subpage',
@@ -343,13 +354,6 @@ export const LearnData = {
             Type: 'divider',
           },
 
-          // End Columns
-        ],
-      },
-      {
-        Name: 'learn-slides-2',
-        Columns: [
-          // Begin Columns
           {
             Type: 'default',
             Widgets: [
@@ -357,6 +361,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 5,
                 WidgetContent: [
                   {
                     Destination: '/learn/safety',
@@ -388,6 +393,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/safety/medical-cards',
@@ -413,6 +419,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/safety/purchasing',
@@ -438,6 +445,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/safety/dosage',
@@ -463,6 +471,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/safety',
@@ -498,6 +507,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 5,
                 WidgetContent: [
                   {
                     Destination: '/learn/industry',
@@ -529,6 +539,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/industry/out-of-state',
@@ -554,6 +565,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/industry/growing',
@@ -579,6 +591,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/industry/purchasing',
@@ -604,6 +617,7 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 3,
                 WidgetContent: [
                   {
                     Destination: '/learn/industry/',
@@ -639,13 +653,14 @@ export const LearnData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
+                Width: 4,
                 WidgetContent: [
                   {
                     Destination: '/locations',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
-                        BgColor: Theme.Color.Tahoe,
+                        BgColor: Theme.Color.Sky,
                         BgImage: '',
                         Subhead: '',
                         Headline: 'Locations',
@@ -666,11 +681,11 @@ export const LearnData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/culture',
+                    Destination: '/company',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
-                        BgColor: Theme.Color.Indigo,
+                        BgColor: Theme.Color.Nightsky,
                         BgImage: '',
                         Subhead: '',
                         Headline: 'Culture',
@@ -691,14 +706,14 @@ export const LearnData = {
                 Flex: 1,
                 WidgetContent: [
                   {
-                    Destination: '/outreach',
+                    Destination: '/learn',
                     Style: 'Generic',
                     Meta: {
                       Generic: {
-                        BgColor: Theme.Color.Sunset,
+                        BgColor: Theme.Color.Gunmetal,
                         BgImage: '',
                         Subhead: '',
-                        Headline: 'Outreach',
+                        Headline: 'Questions',
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
                         IconName: 'heart', // FontAwesome Icon Name
@@ -739,9 +754,11 @@ export const LearnData = {
               // End Widgets
             ],
           },
+
           // End Columns
         ],
       },
+
       // End Slides
     ],
   },

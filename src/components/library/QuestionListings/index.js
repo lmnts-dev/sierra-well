@@ -21,7 +21,7 @@ import { questionDataTransformer } from 'templates/Question/Transformer';
 import { categoryDataTransformer } from 'templates/Learn/Transformer';
 
 // Styles
-import QuestionListingsStyle from './styles.scss';
+import QuestionListingsStyles from './styles.scss';
 
 // Data
 import { StaticQuery, graphql } from 'gatsby';
@@ -330,39 +330,49 @@ const QuestionListings = ({
   AllCategories,
   TagSlug,
   BgColor,
+  TextColor,
   CategoryFilter,
   TagFilter,
+  Header,
 }) => (
-  <MasonrySection
-    Columns={3}
-    ColumnGap={0.25}
-    BgColor={BgColor ? BgColor : Theme.Color.White}
-    TextColor={Theme.Color.Nightsky}
-    Gutter={Gutter ? Gutter : [0, 1, 2, 1]}
-  >
-    {/* If the CategoryFilter is supplied */}
-    {/* {console.log('CategoryFilter Passed:')}
+  <QuestionListingsStyles>
+    {Header ? (
+      <QuestionListingsStyles.Header TextColor={TextColor}>
+        <h2>{Header}</h2>
+      </QuestionListingsStyles.Header>
+    ) : null}
+
+    <MasonrySection
+      Columns={3}
+      ColumnGap={0.25}
+      BgColor={BgColor ? BgColor : Theme.Color.White}
+      TextColor={Theme.Color.Nightsky}
+      Gutter={Gutter ? Gutter : [0, 1, 2, 1]}
+    >
+      {/* If the CategoryFilter is supplied */}
+      {/* {console.log('CategoryFilter Passed:')}
     {console.log(CategoryFilter)} */}
 
-    {CategoryFilter ? (
-      <QuestionCards
-        CategorySlug={CategorySlug}
-        TagSlug={TagSlug ? TagSlug : null}
-        CategoryFilter={CategoryFilter}
-        TagFilter={TagFilter ? TagFilter : 'all'}
-        AllCategories={AllCategories}
-      />
-    ) : (
-      // If it isn't, revert to 'all'
-      <QuestionCards
-        CategorySlug={CategorySlug}
-        TagSlug={TagSlug ? TagSlug : null}
-        CategoryFilter="all"
-        TagFilter={TagFilter}
-        AllCategories={AllCategories}
-      />
-    )}
-  </MasonrySection>
+      {CategoryFilter ? (
+        <QuestionCards
+          CategorySlug={CategorySlug}
+          TagSlug={TagSlug ? TagSlug : null}
+          CategoryFilter={CategoryFilter}
+          TagFilter={TagFilter ? TagFilter : 'all'}
+          AllCategories={AllCategories}
+        />
+      ) : (
+        // If it isn't, revert to 'all'
+        <QuestionCards
+          CategorySlug={CategorySlug}
+          TagSlug={TagSlug ? TagSlug : null}
+          CategoryFilter="all"
+          TagFilter={TagFilter}
+          AllCategories={AllCategories}
+        />
+      )}
+    </MasonrySection>
+  </QuestionListingsStyles>
 );
 
 export default QuestionListings;

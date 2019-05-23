@@ -50,8 +50,8 @@ WidgetContainerStyle.Inner = styled.div`
     }
 
     .slick-dots {
-      bottom: ${Theme.Base.Size.Sm};
-      left: ${Theme.Base.Size.Sm};
+      bottom: ${Root.ViewWidthPadding};
+      left: ${Root.ViewWidthPadding};
       width: auto;
       padding: 0;
       margin: 0;
@@ -79,7 +79,7 @@ WidgetContainerStyle.Inner = styled.div`
             transform: translate(-50%, -50%);
             width: 7px;
             height: 7px;
-            border: 1px solid ${Theme.Color.Black};
+            border: 1px solid ${Theme.Color.White};
             border-radius: 50%;
           }
         }

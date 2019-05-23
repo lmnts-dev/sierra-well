@@ -45,6 +45,7 @@ const DefaultWidget = ({
   BgImageFile,
   BgImageAltText,
   CallToAction,
+  HideCarat,
 }) => (
   <WidgetStyle
     BgColor={BgColor}
@@ -52,6 +53,7 @@ const DefaultWidget = ({
     TextColor={BgImageFile ? Theme.Color.White : TextColor}
     TintColor={TintColor}
     TintOpacity={TintOpacity}
+    HideCarat={HideCarat}
     className="widget-content"
   >
     {TintColor || TintOpacity ? <figure className="tint" /> : null}
@@ -63,7 +65,9 @@ const DefaultWidget = ({
       <WidgetStyle.Headline className="widget-headline">
         {Headline}
       </WidgetStyle.Headline>
-      <Icon className="svg-carat" Name="carat" Color={IconColor} />
+      {HideCarat ? null : (
+        <Icon className="svg-carat" Name="carat" Color={IconColor} />
+      )}
       <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
       {CallToAction ? <span class="cta-btn">{CallToAction}</span> : null}
     </WidgetInnerWrapper>

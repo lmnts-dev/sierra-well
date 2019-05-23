@@ -16,9 +16,15 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-export const SpecialsListingsStyle = styled.div`
+export const QuestionListingsStyles = styled.div`
   appearance: none;
 `;
 
-export default SpecialsListingsStyle;
+QuestionListingsStyles.Header = styled.div`
+  padding-left: ${Root.Grid.Gutter.Left};
+  padding-right: ${Root.Grid.Gutter.Right};
+  color: ${props => (props.TextColor ? props.TextColor : Theme.Color.Nightsky)};
+`;
+
+export default QuestionListingsStyles;
 //////////////////////////////////////////////////////////////////////

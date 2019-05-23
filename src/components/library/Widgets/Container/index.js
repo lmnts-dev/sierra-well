@@ -35,7 +35,7 @@ class WidgetSlider extends React.Component {
   render() {
     // Slick Settings
     const settings = {
-      dots: true,
+      dots: this.props.Dots ? this.props.Dots : true,
       speed: 1500,
       arrows: false,
       autoplaySpeed: 4000,
@@ -86,7 +86,7 @@ class WidgetType extends React.Component {
         // Default
 
         <WidgetContainerStyle.Inner className="widget-inner">
-          <WidgetSlider>
+          <WidgetSlider Dots={this.props.Dots}>
             {WidgetContent.map((Content, index) => {
               switch (Content.Style) {
                 case 'Article':
@@ -121,6 +121,7 @@ class WidgetType extends React.Component {
                       Header={Content.Meta.SideWidget.Header}
                       IconName={Content.Meta.SideWidget.IconName}
                       IconColor={Content.Meta.SideWidget.IconColor}
+                      BgImageFile={Content.Meta.SideWidget.BgImageFile}
                       key={index}
                     />
                   );
@@ -170,6 +171,7 @@ class WidgetType extends React.Component {
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
                       CallToAction={Content.Meta.Generic.CallToAction}
+                      HideCarat={Content.Meta.Generic.HideCarat}
                       key={index}
                     />
                   );
@@ -257,6 +259,7 @@ class WidgetType extends React.Component {
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
                       CallToAction={Content.Meta.Generic.CallToAction}
+                      HideCarat={Content.Meta.Generic.HideCarat}
                     />
                   </WidgetContainerStyle.Inner>
                 );
@@ -322,6 +325,7 @@ class WidgetType extends React.Component {
                       Subhead={Content.Meta.SideWidget.Subhead}
                       Header={Content.Meta.SideWidget.Header}
                       IconName={Content.Meta.SideWidget.IconName}
+                      BgImageFile={Content.Meta.SideWidget.BgImageFile}
                       IconColor={Content.Meta.SideWidget.IconColor}
                     />
                   </WidgetContainerStyle.Inner>
@@ -362,9 +366,9 @@ class WidgetType extends React.Component {
   }
 }
 
-const WidgetContainer = ({ WidgetContent, Flex, Width }) => (
+const WidgetContainer = ({ WidgetContent, Flex, Dots, Width }) => (
   <WidgetContainerStyle className="widget" Flex={Flex} Width={Width}>
-    <WidgetType WidgetContent={WidgetContent} />
+    <WidgetType Dots={Dots} WidgetContent={WidgetContent} />
   </WidgetContainerStyle>
 );
 

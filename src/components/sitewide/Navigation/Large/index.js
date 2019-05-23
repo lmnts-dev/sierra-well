@@ -81,7 +81,7 @@ class NavigationLarge extends React.Component {
               location={Location}
               routes={Routes}
             >
-              <LinkList ActiveclassName="active" />
+              <LinkList />
             </NavigationStyle.Top.TopLinkListWrapper>
           </NavigationStyle.Top.LinkListBlock>
 

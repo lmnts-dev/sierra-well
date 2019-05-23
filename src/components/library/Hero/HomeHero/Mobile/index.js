@@ -45,21 +45,75 @@ const MenuWidgets = ({ LocationData }) => {
       WidgetContent: [
         {
           Destination: '/menu',
-          Style: 'Generic',
+          Style: 'LogoWidget',
           Meta: {
-            Generic: {
+            LogoWidget: {
               LocationData: '',
               BgColor: Theme.Color.Nightsky,
               Subhead: 'A new kind of Cannabis Store.',
-              Headline: 'View our menu →',
+              Headline: '',
               TextColor: Theme.Color.White,
-              IconColor: Theme.Color.Primary,
+              IconColor: Theme.Color.White,
               IconName: 'plus',
               TintColor: Theme.Color.Black,
               TintOpacity: '0.6',
               IconSize: '',
               CallToAction: '',
               BgImageFile: 'placeholder_bg_5.png',
+            },
+          },
+        },
+      ],
+      // End WidgetContent
+    },
+    {
+      // Begin WidgetContent
+      Flex: 1,
+      WidgetContent: [
+        {
+          Destination: '/menu',
+          Style: 'LogoWidget',
+          Meta: {
+            LogoWidget: {
+              LocationData: '',
+              BgColor: Theme.Color.Nightsky,
+              Subhead: 'Happy.',
+              Headline: '',
+              TextColor: Theme.Color.White,
+              IconColor: Theme.Color.White,
+              IconName: 'smile-wink',
+              TintColor: Theme.Color.Black,
+              TintOpacity: '0.6',
+              IconSize: '',
+              CallToAction: '',
+              BgImageFile: 'placeholder_bg_2.jpg',
+            },
+          },
+        },
+      ],
+      // End WidgetContent
+    },
+    {
+      // Begin WidgetContent
+      Flex: 1,
+      WidgetContent: [
+        {
+          Destination: '/menu',
+          Style: 'LogoWidget',
+          Meta: {
+            LogoWidget: {
+              LocationData: '',
+              BgColor: Theme.Color.Nightsky,
+              Subhead: 'Healthy.',
+              Headline: '',
+              TextColor: Theme.Color.White,
+              IconColor: Theme.Color.White,
+              IconName: 'smile-wink',
+              TintColor: Theme.Color.Black,
+              TintOpacity: '0.6',
+              IconSize: '',
+              CallToAction: '',
+              BgImageFile: 'be5.png',
             },
           },
         },

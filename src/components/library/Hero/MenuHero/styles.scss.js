@@ -76,6 +76,7 @@ MenuHeroStyle.LocationSwitch = styled.div`
   overflow-y: visible;
   touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
+  -webkit-backface-visibility: hidden;
   height: calc(${Root.Size} * 2);
 
   &::-webkit-scrollbar {

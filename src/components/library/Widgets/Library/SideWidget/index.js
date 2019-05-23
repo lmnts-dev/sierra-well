@@ -10,6 +10,7 @@ import SideWidgetStyle from './styles.scss';
 // Components
 import Icon from 'elements/Icons';
 import ImgQuery from 'components/core/ImgQuery';
+import ImgMatch from 'components/core/ImgMatch';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -17,7 +18,7 @@ import ImgQuery from 'components/core/ImgQuery';
 const SideWidget = ({
   BgColor,
   BgQuery,
-  BgImage,
+  BgImageFile,
   Header,
   Subhead,
   TextColor,
@@ -29,7 +30,6 @@ const SideWidget = ({
 }) => (
   <SideWidgetStyle
     BgColor={BgColor}
-    BgImage={BgImage}
     TextColor={TextColor}
     TintColor={TintColor}
     TintOpacity={TintOpacity}
@@ -47,6 +47,7 @@ const SideWidget = ({
         Color={IconColor}
       />
     </Link>
+    {BgImageFile ? <ImgMatch src={BgImageFile} AltText={Header} /> : null}
     {BgQuery ? <ImgQuery src={BgQuery} AltText={Header} /> : null}
   </SideWidgetStyle>
 );

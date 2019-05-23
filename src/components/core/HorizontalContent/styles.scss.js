@@ -157,7 +157,7 @@ HorizontalContentStyle.Column = styled.div`
       : 'auto'};
 
   .col-inner {
-    min-width: 250px;
+    min-width: 150px;
   }
 `;
 

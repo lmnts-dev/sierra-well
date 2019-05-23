@@ -26,7 +26,7 @@ class LocationList extends React.Component {
 
   // Render
   render() {
-    const currentLocation = 'brooklyn';
+    const currentLocation = '';
     const OrderContextSlug = '';
 
     return (
