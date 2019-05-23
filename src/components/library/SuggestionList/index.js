@@ -45,7 +45,9 @@ const SuggestionList = ({
             BgColor="none"
             Label={item.nearby_name}
             Destination={
-              Affix ? BaseUrl + item.nearby_slug + Affix : BaseUrl + item.nearby_slug
+              Affix
+                ? BaseUrl + item.nearby_slug + Affix
+                : BaseUrl + item.nearby_slug
             }
             TextColor={TextColor}
           />

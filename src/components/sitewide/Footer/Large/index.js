@@ -19,7 +19,7 @@ const FooterLarge = ({ Location, Routes }) => (
     <FooterLargeStyle.Section>
       <FooterLargeStyle.Inner location={Location} routes={Routes}>
         <span className="copyright">
-          © {new Date().getFullYear()} Sierra Well
+          © {new Date().getFullYear()} Be. Cannabis Stores
         </span>
         <span>
           Made with

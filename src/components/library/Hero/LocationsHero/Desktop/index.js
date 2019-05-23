@@ -23,6 +23,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 // Helpers
 import { HeroContent } from './../../../Hero';
+import slugify from 'helpers/Slugify';
 
 // Components
 import MenuHeroPromotions from '../MenuHeroPromotions';
@@ -220,7 +221,7 @@ class MenuHeroDesktop extends React.Component {
                   <Link
                     to={
                       '/locations/' +
-                      LocationData.geography.state.toLowerCase() +
+                      slugify(LocationData.geography.state.toLowerCase()) +
                       '/' +
                       LocationData.slug
                     }
@@ -290,7 +291,7 @@ class MenuHeroDesktop extends React.Component {
                   '/menu' +
                   '/' +
                   OrderContextSlug +
-                  LocationData.geography.state.toLowerCase() +
+                  slugify(LocationData.geography.state.toLowerCase()) +
                   '/' +
                   LocationData.slug +
                   '/'

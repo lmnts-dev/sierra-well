@@ -26,11 +26,17 @@ import SuggestionList from 'components/library/SuggestionList';
 import PageTabs from 'components/library/PageTabs';
 import SimpleList from 'components/library/SimpleList';
 
+// Styles
+import LocationPageWrapperStyles from './styles.scss';
+
 // Elements
 import Block from 'components/library/Block';
 
 // Constants
 import { Theme } from 'constants/Theme';
+
+// Helpers
+import slugify from 'helpers/Slugify';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -61,14 +67,14 @@ const LocationPageWrapper = ({
         {/* ///////////// */}
 
         {/* ///////////// */}
-
-        <SimpleHero
-          Padding={[3, 1, 1.45, 1]}
-          Flex="row"
-          TextColor={LocationTheme.Color.Primary}
-        >
-          <Block maxWidth={0.5}>
-            {/* <Bread
+        <LocationPageWrapperStyles>
+          <SimpleHero
+            Padding={[3, 1, 1.45, 1]}
+            Flex="row"
+            TextColor={LocationTheme.Color.Primary}
+          >
+            <Block maxWidth={0.5}>
+              {/* <Bread
               Crumbs={[
                 {
                   Destination: 'locations/',
@@ -81,7 +87,7 @@ const LocationPageWrapper = ({
                 {
                   Destination:
                     'locations/' +
-                    LocationData.geography.state.toLowerCase() +
+                    slugify(LocationData.geography.state.toLowerCase()) +
                     '/' +
                     LocationData.slug,
                   Label: LocationData.name,
@@ -89,115 +95,117 @@ const LocationPageWrapper = ({
               ]}
               TextColor={LocationTheme.Color.Primary}
             /> */}
-            {SpecialsPage ? (
-              <h1 className="h2">
-                Cannabis specials & deals in {LocationData.geography.city},{' '}
-                {LocationData.geography.state}.
-              </h1>
-            ) : (
-              <h1 className="h2">{LocationData.about.headline}</h1>
-            )}
-            <Btn
-              IconClass="plus"
-              Label="View Menu"
-              BgColor={LocationTheme.Color.Primary}
-              TextColor={LocationTheme.Color.Tertiary}
-              Destination={
-                '/menu/' +
-                LocationData.geography.state.toLowerCase() +
-                '/' +
-                LocationData.slug
-              }
-              IconPosition="left"
-              IconFas
-            />
-            <Btn
-              AddClass="btn-secondary"
-              IconClass="map-marker-alt"
-              Label={LocationData.contactDetails.location.address}
-              BgColor="none"
-              TextColor={LocationTheme.Color.Tertiary}
-              Destination={LocationData.meta.maps}
-              IconPosition="left"
-              External
-              IconFas
-            />
-            {/* <SocialStrip
+              {SpecialsPage ? (
+                <h1 className="h2">
+                  Cannabis specials & deals in {LocationData.geography.city},{' '}
+                  {LocationData.geography.state}.
+                </h1>
+              ) : (
+                <h1 className="h2">{LocationData.about.headline}</h1>
+              )}
+              <Btn
+                IconClass="plus"
+                Label="View Menu"
+                BgColor={LocationTheme.Color.Primary}
+                TextColor={LocationTheme.Color.Background}
+                Destination={
+                  '/menu/' +
+                  slugify(LocationData.geography.state.toLowerCase()) +
+                  '/' +
+                  LocationData.slug
+                }
+                IconPosition="left"
+                IconFas
+              />
+              <Btn
+                AddClass="btn-secondary"
+                IconClass="map-marker-alt"
+                Label={LocationData.contactDetails.location.address}
+                BgColor="none"
+                TextColor={LocationTheme.Color.Tertiary}
+                Destination={LocationData.meta.maps}
+                IconPosition="left"
+                External
+                IconFas
+              />
+              {/* <SocialStrip
               Margin={[0.5, 0, 0, 0]}
               Location={Location}
               TextColor={LocationTheme.Color.Primary}
             /> */}
-          </Block>
-          <Block Flex="row" maxWidth={0.5}>
-            <AwardHours
+            </Block>
+            <Block Flex="row" maxWidth={0.5}>
+              <AwardHours
+                TextColor={LocationTheme.Color.Primary}
+                Hours={LocationData.contactDetails.hours.map((time, index) => {
+                  return {
+                    Label: time.days,
+                    Data: time.start_time,
+                  };
+                })}
+              />
+            </Block>
+          </SimpleHero>
+
+          {/* ///////////// */}
+
+          {/* ///////////// */}
+
+          <SimpleHero
+            Padding={[0, 1, 0, 1]}
+            Flex="column"
+            TextColor={LocationTheme.Color.Primary}
+            className="page-tab-wrapper"
+          >
+            <PageTabs
+              Location={Location}
+              BaseUrl={
+                '/locations' +
+                '/' +
+                slugify(LocationData.geography.state.toLowerCase()) +
+                '/' +
+                LocationData.slug +
+                '/'
+              }
+              List={[
+                { name: 'About', slug: '' },
+                { name: 'Specials', slug: 'specials' },
+                { name: 'Menu', slug: 'menu' },
+              ]}
               TextColor={LocationTheme.Color.Primary}
-              Hours={LocationData.contactDetails.hours.map((time, index) => {
-                return {
-                  Label: time.days,
-                  Data: time.start_time,
-                };
-              })}
+              Padding={[0, 0, 0, 0]}
             />
-          </Block>
-        </SimpleHero>
+          </SimpleHero>
 
-        {/* ///////////// */}
+          {/* ///////////// */}
 
-        {/* ///////////// */}
+          {/* ///////////// */}
 
-        <SimpleHero
-          Padding={[0, 1, 0, 1]}
-          Flex="column"
-          TextColor={LocationTheme.Color.Primary}
-        >
-          <PageTabs
-            Location={Location}
-            BaseUrl={
-              '/locations' +
-              '/' +
-              LocationData.geography.state.toLowerCase() +
-              '/' +
-              LocationData.slug +
-              '/'
-            }
-            List={[
-              { name: 'About', slug: '' },
-              { name: 'Specials', slug: 'specials' },
-              { name: 'Menu', slug: 'menu' },
-            ]}
+          <SimpleHero
+            Padding={[0, 1, 0, 1]}
+            Flex="column"
             TextColor={LocationTheme.Color.Primary}
-            Padding={[0, 0, 0, 0]}
-          />
-        </SimpleHero>
-
-        {/* ///////////// */}
-
-        {/* ///////////// */}
-
-        <SimpleHero
-          Padding={[0, 1, 0, 1]}
-          Flex="column"
-          TextColor={LocationTheme.Color.Primary}
-          Tint={0}
-          TintBorder
-        >
-          <SuggestionList
-            BaseUrl={
-              '/locations' +
-              '/' +
-              LocationData.geography.state.toLowerCase() +
-              '/' +
-              LocationData.slug +
-              '/'
-            }
-            List={LocationData.nearby}
-            Affix="/menu"
-            Label="Nearby"
-            TextColor={LocationTheme.Color.Primary}
-            GradientColor={LocationTheme.Color.Background}
-            Padding={[0, 0, 0, 0]}
-          />
-        </SimpleHero>
+            Tint={0}
+            TintBorder
+          >
+            <SuggestionList
+              BaseUrl={
+                '/locations' +
+                '/' +
+                slugify(LocationData.geography.state.toLowerCase()) +
+                '/' +
+                LocationData.slug +
+                '/'
+              }
+              List={LocationData.nearby}
+              Affix="/menu"
+              Label="View Menu"
+              TextColor={LocationTheme.Color.Primary}
+              GradientColor={LocationTheme.Color.Background}
+              Padding={[0, 0, 0, 0]}
+            />
+          </SimpleHero>
+        </LocationPageWrapperStyles>
 
         {/* ///////////// */}
 

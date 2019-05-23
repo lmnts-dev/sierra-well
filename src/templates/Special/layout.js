@@ -16,12 +16,16 @@ import SocialStrip from 'components/library/SocialStrip';
 import WidgetSection from 'components/library/Section/WidgetSection';
 import Bread from 'components/library/Breadcrumb';
 import Btn from 'components/library/Btn/';
+import SpecialsListings from 'components/library/SpecialsListings';
 
 // Castle.js by L&M
 import Castle from 'components/library/Castle';
 
 // Elements
 import Block from 'components/library/Block';
+
+// Styles
+import SpecialsPageStyles from './styles.scss';
 
 // Constants
 import { Theme } from 'constants/Theme';
@@ -30,7 +34,7 @@ import { Theme } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 const DefaultTemplate = ({ node, data }) => (
-  <>
+  <SpecialsPageStyles>
     <SimpleHero
       Padding={[4, 1, 4, 1]}
       BgQuery={
@@ -171,8 +175,15 @@ const DefaultTemplate = ({ node, data }) => (
       ]}
     />
 
+    <SpecialsListings
+      BgColor={Theme.Color.White}
+      TextColor={Theme.Color.Nightsky}
+      PageLocation="/specials"
+      Header="More Specials"
+    />
+
     {/* ///////////// */}
-  </>
+  </SpecialsPageStyles>
 );
 
 // The Question Template

@@ -9,6 +9,7 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -62,6 +63,11 @@ export const HeroInnerStyle = styled.div`
 
   .btn-secondary {
     margin-left: calc(${Root.Size} / 4);
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    padding-left: calc(${Root.Grid.Gutter.Left} + ${Root.Size});
+    padding-right: calc(${Root.Grid.Gutter.Right} + ${Root.Size});
   }
 `;
 

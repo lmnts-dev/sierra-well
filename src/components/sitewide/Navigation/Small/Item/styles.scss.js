@@ -24,7 +24,7 @@ const ItemStyle = styled.li`
   justify-content: center;
 
   a {
-    flex: 1; 
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;

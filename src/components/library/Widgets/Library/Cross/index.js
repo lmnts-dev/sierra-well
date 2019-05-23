@@ -46,10 +46,10 @@ const CrossWidget = ({}) => (
           TintColor=""
           TintOpacity=""
           Destination="/subpage"
-          Subhead=""
-          Headline="Speak to a Real Human"
+          Subhead="We've reinvented Cannabis Retail."
+          Headline="Learn more."
           IconColor={Theme.Color.White}
-          IconName="comment-alt"
+          IconName="cannabis"
         />
       </WidgetContainerStyle.Inner>
 
@@ -76,7 +76,7 @@ const CrossWidget = ({}) => (
           TintColor=""
           TintOpacity=""
           Destination="/subpage"
-          Subhead=""
+          Subhead="No minimums."
           Headline="100% Free Delivery."
           IconColor={Theme.Color.White}
           IconName="car"
@@ -105,8 +105,8 @@ const CrossWidget = ({}) => (
           TextColor={Theme.Color.White}
           TintColor=""
           TintOpacity=""
-          Destination="/subpage"
-          Subhead="2018"
+          Destination="/company"
+          Subhead="Leafly 2018"
           Headline="Voted Best Boutique Dispensary"
           IconColor={Theme.Color.White}
           IconName="trophy"
@@ -120,9 +120,9 @@ const CrossWidget = ({}) => (
           TextColor={Theme.Color.White}
           TintColor=""
           TintOpacity=""
-          Destination="/subpage"
-          Subhead="Delivery Available"
-          Headline="Reno, NV"
+          Destination="/learn"
+          Subhead="Questions?"
+          Headline="We've got answers."
           IconColor={Theme.Color.White}
           IconName="map-marker-alt"
         />
@@ -135,11 +135,11 @@ const CrossWidget = ({}) => (
           TextColor={Theme.Color.White}
           TintColor=""
           TintOpacity=""
-          Destination="/subpage"
-          Subhead="May 16th"
-          Headline="Fundraiser for Ronald McDonald House"
+          Destination="/company"
+          Subhead="Values"
+          Headline="Discover a new type of Cannabis Store."
           IconColor={Theme.Color.White}
-          IconName="calendar"
+          IconName="heart"
         />
       </WidgetContainerStyle.Inner>
 
@@ -148,11 +148,12 @@ const CrossWidget = ({}) => (
           BgColor={Theme.Color.Gunmetal}
           BgImage=""
           TextColor={Theme.Color.White}
-          TintColor=""
-          TintOpacity=""
-          Destination="/subpage"
-          Subhead="Delivery Available"
-          Headline="Carson City, NV"
+          TintColor={Theme.Color.Black}
+          TintOpacity="0.6"
+          BgImageFile="be14.png"
+          Destination="/locations"
+          Subhead="63 locations"
+          Headline="View our locations"
           IconColor={Theme.Color.White}
           IconName="map-marker-alt"
         />

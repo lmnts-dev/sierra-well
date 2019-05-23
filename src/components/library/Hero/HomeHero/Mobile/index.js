@@ -32,6 +32,7 @@ import { Theme, Root } from 'constants/Theme';
 // Helpers
 import hexToRGB from 'helpers/hexToRGB';
 import TimeString from 'helpers/timeString';
+import slugify from 'helpers/Slugify';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -77,6 +78,7 @@ const MenuWidgets = ({ LocationData }) => {
               BgColor: Theme.Color.Nightsky,
               Subhead: 'No minimums. Ever.',
               Headline:
+                // eslint-disable-next-line
                 "100% Free Delivery. Because we don't like putting pants on either.",
               TextColor: Theme.Color.White,
               IconColor: Theme.Color.White,
@@ -170,7 +172,7 @@ class HomeHeroMobile extends React.Component {
                 BaseUrl={
                   '/menu' +
                   '/' +
-                  LocationData.geography.state.toLowerCase() +
+                  slugify(LocationData.geography.state.toLowerCase()) +
                   '/' +
                   LocationData.slug +
                   '/'

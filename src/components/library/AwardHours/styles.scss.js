@@ -9,6 +9,7 @@ import { Link } from 'gatsby';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -26,9 +27,31 @@ export const AwardHoursStyle = styled.div`
       ${props => (props.TextColor ? props.TextColor : Theme.Color.Black)};
     display: flex;
     align-items: center;
+
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      border-left: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
     ul {
       justify-content: center;
+
+      @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+
+        li {
+          margin-right: calc(${Root.Size} / 2);
+          font-size: 0.6rem;
+        }
+      }
     }
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    flex-direction: row-reverse;
   }
 `;
 
@@ -51,10 +74,16 @@ AwardHoursStyle.Item = styled.li`
       opacity: 0.6;
       font-size: 1.2rem;
       padding-bottom: calc(${Theme.Base.Size.Sm} / 2);
+      @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+        font-size: 0.5rem;
+      }
     }
     &:last-child {
       font-weight: bold;
       font-size: 1.5rem;
+      @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+        font-size: 0.5rem;
+      }
     }
   }
 `;

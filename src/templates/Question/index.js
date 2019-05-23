@@ -66,7 +66,6 @@ export default QuestionPage;
 /////////////////////////////////////////////////////////////////////
 export const query = graphql`
   query($Id: String!) {
-
     allPrismicQuestionCategory {
       edges {
         node {

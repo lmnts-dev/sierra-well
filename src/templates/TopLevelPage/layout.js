@@ -121,8 +121,8 @@ const SmallContent = ({ node, id }) => {
       <SpecialsListings
         BgColor={Theme.Color.White}
         TextColor={Theme.Color.Nightsky}
-        PageLocation="/"
-        Header="All Specials"
+        PageLocation="/specials"
+        Header="Latest Specials"
       />
       {/* {console.log(sections)}
       {console.log(widgetContentTransformer(sections[0].items))} */}

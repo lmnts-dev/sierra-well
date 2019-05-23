@@ -20,7 +20,11 @@ import { Theme, Root } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 const AwardHours = ({ Text, TextColor, BgColor }) => (
-  <AwardBadgeStyle TextColor={TextColor} BgColor={BgColor}>
+  <AwardBadgeStyle
+    className="award-badge"
+    TextColor={TextColor}
+    BgColor={BgColor}
+  >
     <ImgMatch src="logos/leafly.png" AltText="Leafly" />
     <span>{Text}</span>
   </AwardBadgeStyle>

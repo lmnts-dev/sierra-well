@@ -37,10 +37,14 @@ SubLevelPageStyle.Content = styled.div`
   background: ${props => (props.BgColor ? props.BgColor : 'none')};
   color: ${props => (props.TextColor ? props.TextColor : 'inherit')};
 
-  .post-details  {
-    opacity: .4;
+  .post-details {
+    opacity: 0.4;
     display: block;
     margin-bottom: calc(${Root.Size} / 4);
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    padding-bottom: calc(${Root.Nav.Size} + ${Root.Size});
   }
 `;
 

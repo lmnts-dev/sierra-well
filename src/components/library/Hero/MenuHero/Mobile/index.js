@@ -33,6 +33,7 @@ import { Theme, Root } from 'constants/Theme';
 // Helpers
 import hexToRGB from 'helpers/hexToRGB';
 import TimeString from 'helpers/timeString';
+import slugify from 'helpers/Slugify';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -77,6 +78,7 @@ const MenuWidgets = ({ HeadlineString, LocationData }) => {
               BgColor: Theme.Color.Mint,
               Subhead: 'No minimums. Ever.',
               Headline:
+                // eslint-disable-next-line
                 "100% Free Delivery. Because we don't like putting pants on either.",
               TextColor: Theme.Color.Nightsky,
               IconColor: Theme.Color.Nightsky,
@@ -179,8 +181,7 @@ class MenuHeroMobile extends React.Component {
       : '';
 
     // Build correct  string for menus:
-    console.log('OrderContext:');
-    console.log(OrderContext);
+
     let OrderContextString = OrderContext ? ' ' + OrderContext : '';
     let NearbyContextString = NearbyName
       ? ''
@@ -200,7 +201,7 @@ class MenuHeroMobile extends React.Component {
     // <Link
     //   to={
     //     '/locations/' +
-    //     LocationData.geography.state.toLowerCase() +
+    //     slugify(LocationData.geography.state.toLowerCase()) +
     //     '/' +
     //     LocationData.slug
     //   }
@@ -259,7 +260,7 @@ class MenuHeroMobile extends React.Component {
                   '/menu' +
                   '/' +
                   OrderContextSlug +
-                  LocationData.geography.state.toLowerCase() +
+                  slugify(LocationData.geography.state.toLowerCase()) +
                   '/' +
                   LocationData.slug +
                   '/'
@@ -289,7 +290,7 @@ export default MenuHeroMobile;
 //     <Link
 //       to={
 //         '/locations/' +
-//         LocationData.geography.state.toLowerCase() +
+//         slugify(LocationData.geography.state.toLowerCase()) +
 //         '/' +
 //         LocationData.slug
 //       }

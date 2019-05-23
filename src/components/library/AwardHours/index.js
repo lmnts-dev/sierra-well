@@ -21,7 +21,7 @@ import { Theme, Root } from 'constants/Theme';
 //////////////////////////////////////////////////////////////////////
 
 const AwardHours = ({ Hours, TextColor }) => (
-  <AwardHoursStyle TextColor={TextColor}>
+  <AwardHoursStyle className="award-hours" TextColor={TextColor}>
     <AwardBadge
       Logo="leafly"
       Text="2018 Voted Best Boutique Dispensary"

@@ -14,6 +14,7 @@ import WidgetContainerStyle from './styles.scss';
 import ArticleWidget from '../Library/Article';
 import CrossWidget from '../Library/Cross';
 import DefaultWidget from '../Library/Default';
+import LogoWidget from '../Library/Logo';
 import MenuWidget from '../Library/MenuWidget';
 import SideHeaderWidget from '../Library/SideHeader';
 import SideForecast from '../Library/SideForecast';
@@ -172,6 +173,24 @@ class WidgetType extends React.Component {
                       key={index}
                     />
                   );
+                case 'LogoWidget':
+                  return (
+                    <LogoWidget
+                      BgColor={Content.Meta.LogoWidget.BgColor}
+                      BgImageFile={Content.Meta.LogoWidget.BgImageFile}
+                      BgQuery={Content.Meta.LogoWidget.BgQuery}
+                      TextColor={Content.Meta.LogoWidget.TextColor}
+                      TintColor={Content.Meta.LogoWidget.TintColor}
+                      TintOpacity={Content.Meta.LogoWidget.TintOpacity}
+                      Destination={Content.Destination}
+                      Subhead={Content.Meta.LogoWidget.Subhead}
+                      Headline={Content.Meta.LogoWidget.Headline}
+                      IconName={Content.Meta.LogoWidget.IconName}
+                      IconColor={Content.Meta.LogoWidget.IconColor}
+                      CallToAction={Content.Meta.LogoWidget.CallToAction}
+                      key={index}
+                    />
+                  );
               }
             })}
           </WidgetSlider>
@@ -238,6 +257,28 @@ class WidgetType extends React.Component {
                       IconName={Content.Meta.Generic.IconName}
                       IconColor={Content.Meta.Generic.IconColor}
                       CallToAction={Content.Meta.Generic.CallToAction}
+                    />
+                  </WidgetContainerStyle.Inner>
+                );
+              case 'LogoWidget':
+                return (
+                  <WidgetContainerStyle.Inner
+                    className="widget-inner"
+                    key={index}
+                  >
+                    <LogoWidget
+                      BgColor={Content.Meta.LogoWidget.BgColor}
+                      BgImageFile={Content.Meta.LogoWidget.BgImageFile}
+                      BgQuery={Content.Meta.LogoWidget.BgQuery}
+                      TextColor={Content.Meta.LogoWidget.TextColor}
+                      TintColor={Content.Meta.LogoWidget.TintColor}
+                      TintOpacity={Content.Meta.LogoWidget.TintOpacity}
+                      Destination={Content.Destination}
+                      Subhead={Content.Meta.LogoWidget.Subhead}
+                      Headline={Content.Meta.LogoWidget.Headline}
+                      IconName={Content.Meta.LogoWidget.IconName}
+                      IconColor={Content.Meta.LogoWidget.IconColor}
+                      CallToAction={Content.Meta.LogoWidget.CallToAction}
                     />
                   </WidgetContainerStyle.Inner>
                 );

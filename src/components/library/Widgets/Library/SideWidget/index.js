@@ -48,8 +48,6 @@ const SideWidget = ({
       />
     </Link>
     {BgQuery ? <ImgQuery src={BgQuery} AltText={Header} /> : null}
-    {console.log('BgQuery:')}
-    {console.log(BgQuery)}
   </SideWidgetStyle>
 );
 

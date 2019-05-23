@@ -219,11 +219,45 @@ export const SidebarLocationStyle = styled.div`
   position: fixed;
   top: ${Root.Nav.Size};
   opacity: ${props => (props.collapsedState == true ? '1' : '0')};
+  pointer-events: ${props => (props.collapsedState == true ? 'all' : 'none')};
   transition: all 0.25s ease;
   z-index: 800;
   font-weight: bold;
   font-size: 1rem;
   padding-left: ${Theme.Base.Size.Sm};
+  width: ${Root.Grid.Gutter.Left};
+
+  &:after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(${Root.Size} / 4);
+    z-index: 5;
+    background-image: linear-gradient(
+      180deg,
+      ${hexToRGB(Theme.Color.Nightsky, 1)},
+      ${hexToRGB(Theme.Color.Nightsky, 0.000001)}
+    );
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: ${Root.Size};
+    z-index: 5;
+    background-image: linear-gradient(
+      0deg,
+      ${hexToRGB(Theme.Color.Nightsky, 1)},
+      ${hexToRGB(Theme.Color.Nightsky, 0.000001)}
+    );
+  }
 
   a {
     display: block;
@@ -261,6 +295,14 @@ export const SidebarLocationStyle = styled.div`
         border: 1px solid ${Theme.Color.Primary};
       }
     }
+  }
+
+  .inner-list {
+    max-height: calc(
+      100vh - (${Root.Nav.Size} + (${Root.Grid.Gutter.Left} * 4))
+    );
+    overflow: auto;
+    padding-bottom: calc(${Root.Size} * 2.25);
   }
 `;
 

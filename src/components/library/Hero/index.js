@@ -35,6 +35,7 @@ export const HeroInner = ({
     imgBottom={imgBottom ? imgBottom : false}
     imgTop={imgTop ? imgTop : false}
     imgWidth={imgWidth ? imgWidth : false}
+    className="hero-inner"
   >
     <HeroContentStyle
       className="hero-content"

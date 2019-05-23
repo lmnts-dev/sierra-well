@@ -18,9 +18,6 @@ export const wrapRootElement = ({ element }) => {
     }
   };
 
-  console.log('gatsby-browser.js user agent:');
-  console.log(userAgentCheck());
-
   // Check if window exists or not.
   if (typeof window !== 'undefined') {
     return (

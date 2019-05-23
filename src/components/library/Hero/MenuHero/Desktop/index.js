@@ -36,13 +36,19 @@ import WidgetSection from 'components/library/Section/WidgetSection';
 // Constants
 import { Theme, Root } from 'constants/Theme';
 
+// Helpers
+import TimeString from 'helpers/timeString';
+import slugify from 'helpers/Slugify';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
 // Sidebar location switching
 const SidebarLocation = ({ LocationData, collapsedState, State }) => (
   <SidebarLocationStyle collapsedState={collapsedState}>
-    <LocationList LocationData={LocationData} />
+    <div className="inner-list">
+      <LocationList LocationData={LocationData} />
+    </div>
   </SidebarLocationStyle>
 );
 
@@ -132,64 +138,7 @@ class MenuHeroDesktop extends React.Component {
       ? OrderContext.toLowerCase() + '/'
       : '';
 
-    // Time Strings
-
-    let objToday = new Date(),
-      weekday = new Array(
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ),
-      dayOfWeek = weekday[objToday.getDay()],
-      domEnder = (function() {
-        var a = objToday;
-        if (/1/.test(parseInt((a + '').charAt(0)))) return 'th';
-        a = parseInt((a + '').charAt(1));
-        return 1 == a ? 'st' : 2 == a ? 'nd' : 3 == a ? 'rd' : 'th';
-      })(),
-      dayOfMonth =
-        today + (objToday.getDate() < 10)
-          ? '0' + objToday.getDate() + domEnder
-          : objToday.getDate() + domEnder,
-      months = new Array(
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-      ),
-      curMonth = months[objToday.getMonth()],
-      curYear = objToday.getFullYear(),
-      curHour =
-        objToday.getHours() > 12
-          ? objToday.getHours() - 12
-          : objToday.getHours() < 10
-          ? '0' + objToday.getHours()
-          : objToday.getHours(),
-      curMinute =
-        objToday.getMinutes() < 10
-          ? '0' + objToday.getMinutes()
-          : objToday.getMinutes(),
-      curSeconds =
-        objToday.getSeconds() < 10
-          ? '0' + objToday.getSeconds()
-          : objToday.getSeconds(),
-      curMeridiem = objToday.getHours() > 12 ? 'PM' : 'AM';
-    let today = dayOfWeek + ', ' + curMonth + ' ' + dayOfMonth;
-
     // Render Menu
-
     return (
       <Device Query="Desktop">
         <MenuHeroStyle>
@@ -207,7 +156,7 @@ class MenuHeroDesktop extends React.Component {
             <HeroContent Flex="row">
               <Block AlignItems="flex-start" maxWidth={0.75}>
                 <MenuHeroStyle.LocationSwitch>
-                  <span className="label">{today}</span>
+                  <span className="label">{TimeString()}</span>
 
                   <LocationList
                     OrderContextSlug={OrderContextSlug}
@@ -220,7 +169,7 @@ class MenuHeroDesktop extends React.Component {
                   <Link
                     to={
                       '/locations/' +
-                      LocationData.geography.state.toLowerCase() +
+                      slugify(LocationData.geography.state.toLowerCase()) +
                       '/' +
                       LocationData.slug
                     }
@@ -290,7 +239,7 @@ class MenuHeroDesktop extends React.Component {
                   '/menu' +
                   '/' +
                   OrderContextSlug +
-                  LocationData.geography.state.toLowerCase() +
+                  slugify(LocationData.geography.state.toLowerCase()) +
                   '/' +
                   LocationData.slug +
                   '/'

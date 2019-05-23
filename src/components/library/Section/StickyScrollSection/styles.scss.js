@@ -14,6 +14,7 @@ import {
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -30,6 +31,10 @@ StickyScrollSectionStyle.Inner = styled(SectionInnerStyle)`
   flex-direction: row;
   justify-content: space-between;
   position: relative;
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    flex-direction: column;
+  }
 
   /* Array-based gutters utilizing root variable multiple. */
   ${props =>
@@ -57,6 +62,10 @@ StickyScrollSectionStyle.Inner = styled(SectionInnerStyle)`
         ')'
       : null};
 
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    padding: 0;
+  }
+
   /* Gatsby-image based background images. */
   .section-img {
     position: ${props => (props.FluidHeight ? 'relative' : 'absolute')};
@@ -81,6 +90,10 @@ StickyScrollSectionStyle.Content = styled(SectionContentStyle)`
   z-index: 2;
   width: 100%;
 
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    flex-direction: column;
+  }
+
   /* Hide this section for fluid height of image. */
   display: ${props => (props.FluidHeight ? 'none' : 'flex')};
 
@@ -102,6 +115,11 @@ StickyScrollSectionStyle.Content = styled(SectionContentStyle)`
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+          padding-top: calc(${Root.Size} * 2);
+          height: auto;
+        }
       }
     }
   }

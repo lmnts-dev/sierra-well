@@ -96,7 +96,7 @@ const SpecialCards = ({ PageLocation }) => {
             <DefaultWidget
               BgColor={Special.node.data.color_background}
               TextColor={Special.node.data.color_primary}
-              Destination={PageLocation.pathname + '/' + Special.node.uid}
+              Destination={PageLocation + '/' + Special.node.uid}
               Subhead={styledTagList}
               Headline={Special.node.data.title.text}
               IconName={Special.node.data.icon}
@@ -188,7 +188,7 @@ const SpecialListings = ({
         ColumnGap={0.25}
         BgColor={BgColor ? BgColor : Theme.Color.White}
         TextColor={TextColor ? TextColor : Theme.Color.Nightsky}
-        Gutter={Gutter ? Gutter : [.5, 1, 2, 1]}
+        Gutter={Gutter ? Gutter : [0.5, 1, 2, 1]}
       >
         {/* {console.log(LocationData.featuredSpecials.length)} */}
         <SpecialCards PageLocation={PageLocation} />

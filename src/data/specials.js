@@ -39,7 +39,8 @@ export const SpecialsData = {
                     Meta: {
                       SideHeader: {
                         Header: 'Specials',
-                        IntroCopy: 'Our philosophy has been patient-first since day one.',
+                        IntroCopy:
+                          'Our philosophy has been patient-first since day one.',
                         BodyCopy:
                           'We have ongoing Specials and rewards programs for all customers.',
                         TextColor: Theme.Color.Nightsky,
@@ -249,7 +250,7 @@ export const SpecialsData = {
                     },
                   },
                 ],
-              // End WidgetContent
+                // End WidgetContent
               },
             ],
           },

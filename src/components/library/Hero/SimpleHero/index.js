@@ -50,7 +50,7 @@ const SimpleHero = ({
     TextColor={TextColor}
     Tint={Tint}
     TintBorder={TintBorder}
-    className={Tint ? 'tint' : null}
+    className={Tint ? 'simple-hero tint' : 'simple-hero'}
   >
     <HeroInner
       Size={Size ? Size : false}

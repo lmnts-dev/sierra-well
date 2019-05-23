@@ -21,10 +21,6 @@ import Brandmark from 'components/core/Branding/Brandmark';
 
 // Constants
 import { Theme } from 'constants/Theme';
-import logo from '../../../../assets/images/brandmark.png';
-
-// Data
-import { MenuData } from 'data/menu';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////

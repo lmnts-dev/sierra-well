@@ -40,9 +40,7 @@ export default LocationsPage;
 // loaded as plain JSON files so have minimal client cost.
 export const query = graphql`
   query {
-    allPrismicLocation(
-      filter: { uid: { eq: "brooklyn" } }
-    ) {
+    allPrismicLocation(filter: { uid: { eq: "brooklyn" } }) {
       edges {
         node {
           id

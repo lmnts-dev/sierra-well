@@ -34,8 +34,6 @@ const MenuHero = ({ LocationData, NearbySlug, NearbyName, OrderContext }) => (
       OrderContext={OrderContext}
       LocationData={LocationData}
     />
-    {console.log('OrderContext from MenuHero:')}
-    {console.log(OrderContext)}
   </>
 );
 

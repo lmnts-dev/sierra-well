@@ -56,7 +56,7 @@ const TemplateLayout = ({
           BgColor={LocationData.about.PageTheme.Color.Background}
           TextColor={LocationData.about.PageTheme.Color.Primary}
           LocationData={LocationData}
-          PageLocation={Location}
+          PageLocation={Location.href}
         />
         {/* ///////////// */}
       </LocationPageWrapper>

@@ -102,8 +102,6 @@ class SectionSlider extends React.Component {
       ? this.props.SliderSettings.arrows
       : false;
 
-    console.log(useTransform);
-
     // Pass into Slick Settings.
     const settings = {
       dots: true,

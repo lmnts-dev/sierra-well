@@ -32,6 +32,7 @@ import MenuTemplateStyle from './styles.scss';
 
 // Helpers
 import hexToRGB from 'helpers/hexToRGB';
+import slugify from 'helpers/Slugify';
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -199,11 +200,64 @@ const SmallContent = ({
             ],
             // End WidgetContent
           },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination: '/specials',
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: hexToRGB(Theme.Color.White, 0.05),
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Reserve a Spot',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'user', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
+                },
+              },
+            ],
+            // End WidgetContent
+          },
+          {
+            // Begin WidgetContent
+            Flex: 1,
+            WidgetContent: [
+              {
+                Destination:
+                  '/locations/' +
+                  slugify(LocationData.geography.state.toLowerCase()) +
+                  '/' +
+                  LocationData.slug,
+                Style: 'Generic',
+                Meta: {
+                  Generic: {
+                    BgColor: hexToRGB(Theme.Color.White, 0.05),
+                    BgImage: '',
+                    Subhead: '',
+                    Headline: 'Learn more',
+                    TextColor: Theme.Color.White,
+                    IconColor: Theme.Color.White,
+                    IconName: 'lightbulb', // FontAwesome Icon Name
+                    TintColor: '',
+                    TintOpacity: '',
+                    IconSize: '',
+                  },
+                },
+              },
+            ],
+            // End WidgetContent
+          },
         ]}
       />
 
       {/* ///////////// */}
-
     </MenuTemplateStyle>
   </SubLevelPage>
 );

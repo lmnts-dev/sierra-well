@@ -19,7 +19,12 @@ import { Theme, Root } from 'constants/Theme';
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-const LocationsHero = ({ LocationData, NearbySlug, NearbyName, OrderContext }) => (
+const LocationsHero = ({
+  LocationData,
+  NearbySlug,
+  NearbyName,
+  OrderContext,
+}) => (
   <>
     <LocationsHeroMobile LocationData={LocationData} />
   </>

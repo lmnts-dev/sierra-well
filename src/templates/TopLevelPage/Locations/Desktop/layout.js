@@ -219,7 +219,6 @@ const SmallContent = ({
       />
 
       {/* ///////////// */}
-
     </MenuTemplateStyle>
   </SubLevelPage>
 );

@@ -67,9 +67,7 @@ const DefaultWidget = ({
       <WidgetStyle.Icon className={'fas fa-' + IconName} Color={IconColor} />
       {CallToAction ? <span class="cta-btn">{CallToAction}</span> : null}
     </WidgetInnerWrapper>
-    {BgImageFile ? (
-      <ImgMatch src={BgImageFile} AltText={Headline} />
-    ) : null}
+    {BgImageFile ? <ImgMatch src={BgImageFile} AltText={Headline} /> : null}
     {BgQuery ? <ImgQuery src={BgQuery} AltText={Headline} /> : null}
   </WidgetStyle>
 );

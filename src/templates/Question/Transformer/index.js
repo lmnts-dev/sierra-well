@@ -32,7 +32,8 @@ export const questionDataTransformer = question => {
               ? questionPost.node.data.author.document[0].data.name.text
               : 'Sierra Well',
             coverImage: questionPost.node.data.cover_image.localFile
-              ? questionPost.node.data.cover_image.localFile.childImageSharp.fluid
+              ? questionPost.node.data.cover_image.localFile.childImageSharp
+                  .fluid
               : false,
             title: questionPost.node.data.title.text
               ? questionPost.node.data.title.text

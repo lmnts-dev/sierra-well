@@ -114,7 +114,7 @@ const MenuOverlayStyle = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
       i {
         font-size: 1.7rem;
         line-height: 0;

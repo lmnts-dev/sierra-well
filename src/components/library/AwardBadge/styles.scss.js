@@ -9,6 +9,7 @@ import { Link } from 'gatsby';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -28,6 +29,11 @@ export const AwardBadgeStyle = styled.div`
   text-align: center;
   padding: ${Theme.Base.Size.Sm};
 
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    width: calc(${Root.Size} * 4);
+    height: calc(${Root.Size} * 4);
+  }
+
   .img {
     width: 50%;
   }
@@ -41,6 +47,13 @@ export const AwardBadgeStyle = styled.div`
     font-weight: bold;
     font-size: 0.9rem;
     line-height: 1.3;
+
+    @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+      font-size: 0.4rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      width: 80%;
+    }
 
     &:before {
       content: '';

@@ -206,9 +206,7 @@ const PageTheme = ({
     PrimaryColor={PrimaryColor}
     SecondaryColor={SecondaryColor}
     TertiaryColor={TertiaryColor}
-  >
-    {console.log('theme active')}
-  </PageThemeStyle>
+  />
 );
 
 export default PageTheme;

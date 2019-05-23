@@ -85,7 +85,7 @@ export const SuggestionListStyle = styled.div`
       margin-right: calc(${Root.Size} / 4);
       font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 1px;      
+      letter-spacing: 1px;
 
       @media (max-width: ${Base.Media.Width.Md + 'px'}) {
         letter-spacing: 0.3px;

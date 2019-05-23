@@ -24,21 +24,21 @@ const DeviceQuery = styled.div`
 `;
 
 DeviceQuery.Mobile = styled(DeviceQuery)`
-  @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
+  /* @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
     display: none;
   }
   @media (max-width: ${Base.Media.Width.Md + 'px'}) {
     display: block;
-  }
+  } */
 `;
 
 DeviceQuery.Desktop = styled(DeviceQuery)`
-  @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
+  /* @media (min-width: ${Base.Media.Width.Md + 1 + 'px'}) {
     display: block;
   }
   @media (max-width: ${Base.Media.Width.Md + 'px'}) {
     display: none;
-  }
+  } */
 `;
 
 export default DeviceQuery;

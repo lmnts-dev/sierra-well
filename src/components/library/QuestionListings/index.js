@@ -61,7 +61,6 @@ const QuestionCards = ({
     <StaticQuery
       query={graphql`
         query {
-
           ## Prismic Sourcing
 
           allPrismicQuestionCategory {

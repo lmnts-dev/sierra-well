@@ -11,6 +11,9 @@ import { Link } from 'gatsby';
 // Data
 import { StaticQuery, graphql } from 'gatsby';
 
+// Helpers
+import slugify from 'helpers/Slugify';
+
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
@@ -23,7 +26,7 @@ class LocationList extends React.Component {
 
   // Render
   render() {
-    const currentLocation = 'Brooklyn';
+    const currentLocation = 'brooklyn';
     const OrderContextSlug = '';
 
     return (
@@ -54,14 +57,14 @@ class LocationList extends React.Component {
           <>
             {data.allPrismicLocation.edges.map((location, index) => {
               if (location.node.uid != '___location-registration') {
-                if (location.node.name == currentLocation) {
+                if (location.node.uid == currentLocation) {
                   return (
                     <Link
                       className="active"
                       to={
                         '/menu/' +
                         OrderContextSlug +
-                        location.node.data.geo_state.toLowerCase() +
+                        slugify(location.node.data.geo_state.toLowerCase()) +
                         '/' +
                         location.node.uid
                       }
@@ -76,7 +79,7 @@ class LocationList extends React.Component {
                       to={
                         '/menu/' +
                         OrderContextSlug +
-                        location.node.data.geo_state.toLowerCase() +
+                        slugify(location.node.data.geo_state.toLowerCase()) +
                         '/' +
                         location.node.uid
                       }

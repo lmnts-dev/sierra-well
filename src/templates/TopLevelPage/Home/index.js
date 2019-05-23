@@ -46,15 +46,12 @@ const HomeTemplate = ({ LocationData }) => (
     </Device>
 
     <Device Query="Mobile">
-      <HomePageMobile
-        LocationData={LocationData}
-      />
+      <HomePageMobile LocationData={LocationData} />
     </Device>
   </Layout>
 );
 
 export default HomeTemplate;
-
 
 //////////////////////////////////////////////////////////////////////
 // End Component

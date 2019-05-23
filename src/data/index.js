@@ -32,59 +32,62 @@ export const IndexData = {
               {
                 // Begin WidgetContent
                 Flex: 1,
-                Width: 10,
+                Width: 7,
                 WidgetContent: [
                   {
                     Destination: '/subpage',
-                    Style: 'Article',
+                    Style: 'LogoWidget',
                     Meta: {
-                      Generic: {
-                        BgColor: 'black',
-                        BgImage: BgPlaceholder,
-                        Subhead: 'Subhead',
-                        Headline: 'Article',
+                      LogoWidget: {
+                        BgColor: Theme.Color.Nightsky,
+                        Subhead: 'A new kind of Cannabis Store.',
+                        Headline: 'View our menu →',
                         TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'robot', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
                         IconSize: '',
+                        CallToAction: '',
+                        BgImageFile: 'be27.png',
                       },
                     },
                   },
                   {
                     Destination: '/subpage',
-                    Style: 'Generic',
+                    Style: 'LogoWidget',
                     Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Dank,
-                        BgImage: '',
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 1',
-                        TextColor: Theme.Color.Black,
-                        IconColor: Theme.Color.Black,
-                        IconName: 'tree', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
+                      LogoWidget: {
+                        BgColor: Theme.Color.Primary,
+                        Subhead: 'A new kind of Cannabis Store.',
+                        Headline: 'View our menu →',
+                        TextColor: Theme.Color.White,
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
                         IconSize: '',
+                        CallToAction: '',
+                        BgImageFile: 'be2.png',
                       },
                     },
                   },
                   {
                     Destination: '/subpage',
-                    Style: 'Generic',
+                    Style: 'LogoWidget',
                     Meta: {
-                      Generic: {
-                        BgColor: Theme.Color.Black,
-                        BgImage: BgPlaceholder,
-                        Subhead: 'Subhead',
-                        Headline: 'Generic 2',
+                      LogoWidget: {
+                        BgColor: Theme.Color.Primary,
+                        Subhead: 'A new kind of Cannabis Store.',
+                        Headline: 'View our menu →',
                         TextColor: Theme.Color.White,
-                        IconColor: Theme.Color.White,
-                        IconName: 'rocket', // FontAwesome Icon Name
-                        TintColor: '#000000',
-                        TintOpacity: '.4',
+                        IconColor: Theme.Color.Primary,
+                        IconName: 'plus',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
+                        BgImageFile: 'be5.png',
                         IconSize: '',
+                        CallToAction: '',
                       },
                     },
                   },
@@ -165,9 +168,11 @@ export const IndexData = {
                         TextColor: Theme.Color.White,
                         IconColor: Theme.Color.White,
                         IconName: 'clock', // FontAwesome Icon Name
-                        TintColor: '',
-                        TintOpacity: '',
+                        TintColor: Theme.Color.Black,
+                        TintOpacity: '0.6',
+                        BgImageFile: 'be12.png',
                         IconSize: '',
+                        
                       },
                     },
                   },

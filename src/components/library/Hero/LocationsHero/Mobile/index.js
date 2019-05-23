@@ -18,13 +18,14 @@ import { StaticQuery, graphql } from 'gatsby';
 
 // Helpers
 import { HeroContent, HeroInner } from './../../../Hero';
+import slugify from 'helpers/Slugify';
 
 // Components
 import Block from 'components/library/Block';
 import SuggestionList from 'components/library/SuggestionList';
 import Btn from 'components/library/Btn/';
 import SlideSection from 'components/library/Section/SlideSection';
-import LocationList from 'components/library/Hero/MenuHero/LocationList';
+import LocationList from 'components/library/Hero/LocationsHero/LocationList';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
@@ -76,8 +77,7 @@ const MenuWidgets = ({ LocationData }) => {
             Generic: {
               BgColor: Theme.Color.White,
               Subhead: 'Hello Miami.',
-              Headline:
-                "Now serving Miami & the South Beach area.",
+              Headline: 'Now serving Miami & the South Beach area.',
               TextColor: Theme.Color.Nightsky,
               IconColor: Theme.Color.Nightsky,
               IconName: 'umbrella-beach',
@@ -170,7 +170,7 @@ class LocationsHeroMobile extends React.Component {
                 BaseUrl={
                   '/menu' +
                   '/' +
-                  LocationData.geography.state.toLowerCase() +
+                  slugify(LocationData.geography.state.toLowerCase()) +
                   '/' +
                   LocationData.slug +
                   '/'

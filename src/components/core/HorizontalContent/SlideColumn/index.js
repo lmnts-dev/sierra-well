@@ -74,8 +74,8 @@ export default SlideColumn;
 
 // Function to create our Columns Map
 export const columnDataTransformer = data => {
-  console.log('columnDataTransformer:');
-  console.log(data);
+  // console.log('columnDataTransformer:');
+  // console.log(data);
 
   if (data) {
     let columnMap = data.map((column, index) => {
