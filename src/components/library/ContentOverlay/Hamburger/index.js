@@ -46,6 +46,18 @@ class HamburgerOverlayToggle extends React.Component {
     this.toggleOverlay = this.toggleOverlay.bind(this);
   }
 
+  componentDidMount() {
+    this.state = {
+      overlayVisible: true,
+    };
+  }
+
+  componentWillUnmount() {
+    this.state = {
+      overlayVisible: false,
+    };
+  }
+
   // Base functions to change transition state for the Overlay.
   toggleOverlay() {
     // If currently hidden...

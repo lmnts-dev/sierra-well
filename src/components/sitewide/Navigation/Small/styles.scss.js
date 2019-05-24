@@ -9,6 +9,7 @@ import styled from 'styled-components';
 // Constants
 import { Theme, Root } from 'constants/Theme';
 import { MenuContainerMobileHeight } from 'components/library/OrderMenu/styles.scss';
+import { Base } from 'constants/styles/Base';
 
 // Keyframe
 import { FadeIn } from 'components/core/Transition/Keyframes';
@@ -26,7 +27,7 @@ export const BottomNavigationStyle = styled.nav`
   border-radius: ${Root.Radius};
   overflow: hidden;
   box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
-  display: flex;
+  display: none;
   flex-direction: column;
   z-index: 700;
   transform: translateY(0);
@@ -46,6 +47,10 @@ export const BottomNavigationStyle = styled.nav`
       opacity: 0;
       line-height: 1.2;
     }
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: flex;
   }
 `;
 
@@ -85,8 +90,12 @@ export const TopNavigationStyle = styled.div`
   right: 0;
   overflow: visible;
   z-index: 700;
-  display: flex;
+  display: none;
   flex-direction: column;
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: flex;
+  }
 `;
 
 TopNavigationStyle.Inner = styled.div`

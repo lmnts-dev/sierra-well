@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 // Constants
 import { Theme, Root } from 'constants/Theme';
+import { Base } from 'constants/styles/Base';
 
 // Keyframe
 import { FadeIn } from 'components/core/Transition/Keyframes';
@@ -34,6 +35,10 @@ const NavigationStyle = styled.nav`
     transition: all 1s ease;
     transform: scale(0.8);
     transform-origin: center center;
+  }
+
+  @media (max-width: ${Base.Media.Width.Md + 'px'}) {
+    display: none;
   }
 `;
 

@@ -60,19 +60,15 @@ class Navigation extends PureComponent {
             <>
               {/* Render our Navigation baased on Device Size*/}
 
-              <Device Query="Mobile">
-                <NavigationSmall
-                  Location={location.pathname}
-                  Routes={TopLevelRoutes}
-                />
-              </Device>
+              <NavigationSmall
+                Location={location.pathname}
+                Routes={TopLevelRoutes}
+              />
 
-              <Device Query="Desktop">
-                <NavigationLarge
-                  Location={location.pathname}
-                  Routes={TopLevelRoutes}
-                />
-              </Device>
+              <NavigationLarge
+                Location={location.pathname}
+                Routes={TopLevelRoutes}
+              />
             </>
           );
         }}
