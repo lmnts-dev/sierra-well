@@ -24,7 +24,7 @@ const Sidebar = ({
   SecondaryColor,
   TertiaryColor,
 }) => (
-  <SidebarStyle>
+  <SidebarStyle className="sidebar">
     <SidebarStyle.Inner>
       <SidebarWidget
         BgColor={Theme.Color.Primary}
