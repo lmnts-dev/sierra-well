@@ -68,10 +68,6 @@ export const query = graphql`
             color_secondary
             color_tertiary
             cover_image {
-              dimensions {
-                width
-                height
-              }
               url
               localFile {
                 id

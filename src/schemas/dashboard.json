@@ -1,0 +1,272 @@
+{
+  "Main" : {
+    "dashboard_name" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Dashboard Name",
+        "placeholder" : "Name your dashboard..."
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "choices" : {
+          "column" : {
+            "type" : "Slice",
+            "fieldset" : "Column",
+            "description" : "Column of widgets",
+            "icon" : "more_vert",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : {
+              "widget_background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 800,
+                    "height" : 800
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Widget Background Image (Optional)"
+                }
+              },
+              "widget_headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "Widget Headline",
+                  "placeholder" : "Widget headline..."
+                }
+              },
+              "widget_subheadline" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Widget Subheadline",
+                  "placeholder" : "Enter subheadline..."
+                }
+              },
+              "widget_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Widget Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "widget_style" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "Default", "SideHeader", "Custom" ],
+                  "default_value" : "Default",
+                  "label" : "Widget Style",
+                  "placeholder" : "Select Style..."
+                }
+              },
+              "custom_widget" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "label" : "If 'Custom Widget':",
+                  "placeholder" : "Select custom widget"
+                }
+              },
+              "widget_width_multiple" : {
+                "type" : "Number",
+                "config" : {
+                  "label" : "Widget Width Multiple",
+                  "placeholder" : "Defaults to 6"
+                }
+              },
+              "widget_height_fraction" : {
+                "type" : "Number",
+                "config" : {
+                  "label" : "Widget Height Fraction",
+                  "placeholder" : "Defaults to 1"
+                }
+              },
+              "widget_icon_class" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Icon Class",
+                  "placeholder" : "www.fontawesome.com/icons"
+                }
+              },
+              "widget_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "widget_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "tint_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Tint Color (If Background Image)"
+                }
+              },
+              "tint_opacity" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9" ],
+                  "default_value" : "0",
+                  "label" : "Tint Opacity  (If Background Image)",
+                  "placeholder" : "0"
+                }
+              }
+            }
+          },
+          "divider" : {
+            "type" : "Slice",
+            "fieldset" : "Divider",
+            "description" : "Divider between columns",
+            "icon" : "border_vertical",
+            "display" : "list",
+            "non-repeat" : {
+              "type" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "Default" ],
+                  "default_value" : "Default",
+                  "label" : "Type",
+                  "placeholder" : "Select divider type..."
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "title_column" : {
+            "type" : "Slice",
+            "fieldset" : "Title Column",
+            "description" : "A vertical title column",
+            "icon" : "chrome_reader_mode",
+            "display" : "list",
+            "non-repeat" : {
+              "widget_headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "Headline",
+                  "placeholder" : "Enter headline..."
+                }
+              },
+              "widget_intro_copy" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Intro Copy",
+                  "placeholder" : "Introduction lorem ipsum solor sit dit imet..."
+                }
+              },
+              "widget_body_copy" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Body Copy",
+                  "placeholder" : "Body copy lorem ipsum solor sit dit imet..."
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "cta_column" : {
+            "type" : "Slice",
+            "fieldset" : "CTA Column",
+            "description" : "A vertical call to action column.",
+            "icon" : "call_made",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : { }
+          },
+          "title_widget" : {
+            "type" : "Slice",
+            "fieldset" : "Title Widget",
+            "description" : "Title column with destination and background",
+            "icon" : "flip",
+            "display" : "grid",
+            "non-repeat" : {
+              "widget_background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 800,
+                    "height" : 800
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Widget Background Image (Optional)"
+                }
+              },
+              "widget_headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "Widget Headline",
+                  "placeholder" : "Widget headline..."
+                }
+              },
+              "widget_subheadline" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Widget Subheadline",
+                  "placeholder" : "Enter subheadline..."
+                }
+              },
+              "widget_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Widget Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "widget_width_multiple" : {
+                "type" : "Number",
+                "config" : {
+                  "label" : "Widget Width Multiple",
+                  "placeholder" : "Defaults to 6"
+                }
+              },
+              "widget_icon_class" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Icon Class",
+                  "placeholder" : "www.fontawesome.com/icons"
+                }
+              },
+              "widget_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "widget_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "tint_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Tint Color (If Background Image)"
+                }
+              },
+              "tint_opacity" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9" ],
+                  "default_value" : "0",
+                  "label" : "Tint Opacity  (If Background Image)",
+                  "placeholder" : "0"
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,136 +1,149 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "Slug",
-        "placeholder" : "unique-page-slug"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Slug",
+        "placeholder": "unique-page-slug"
       }
     },
-    "page_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Page Title",
-        "placeholder" : "Enter a page title..."
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Page Title",
+        "placeholder": "Enter a page title..."
       }
     },
-    "description" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Description",
-        "placeholder" : "Enter a page description..."
+    "description": {
+      "type": "Text",
+      "config": {
+        "label": "Description",
+        "placeholder": "Enter a page description..."
       }
     },
-    "dashboard" : {
-      "type" : "Link",
-      "config" : {
-        "select" : "document",
-        "customtypes" : [ "dashboard" ],
-        "label" : "Desktop Dashboard",
-        "placeholder" : "Select a dashboard to display for desktop..."
+    "dashboard": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": [
+          "dashboard"
+        ],
+        "label": "Desktop Dashboard",
+        "placeholder": "Select a dashboard to display for desktop..."
       }
     },
-    "opengraph_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : {
-          "width" : 1600,
-          "height" : 1200
+    "opengraph_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1600,
+          "height": 1200
         },
-        "thumbnails" : [ ],
-        "label" : "Opengraph Image"
+        "thumbnails": [],
+        "label": "Opengraph Image"
       }
     }
   },
-  "Mobile Sections" : {
-    "body" : {
-      "type" : "Slices",
-      "fieldset" : "Slice zone",
-      "config" : {
-        "choices" : {
-          "slide_section" : {
-            "type" : "Slice",
-            "fieldset" : "Slide Section",
-            "description" : "A slider of widgets",
-            "icon" : "widgets",
-            "display" : "grid",
-            "non-repeat" : {
-              "section_headline" : {
-                "type" : "StructuredText",
-                "config" : {
-                  "single" : "heading1",
-                  "label" : "Section Headline",
-                  "placeholder" : "Enter a section title..."
+  "Mobile Sections": {
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "choices": {
+          "slide_section": {
+            "type": "Slice",
+            "fieldset": "Slide Section",
+            "description": "A slider of widgets",
+            "icon": "widgets",
+            "display": "grid",
+            "non-repeat": {
+              "section_headline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "Section Headline",
+                  "placeholder": "Enter a section title..."
                 }
               },
-              "section_height_multiple" : {
-                "type" : "Number",
-                "config" : {
-                  "label" : "Section Height Multiple",
-                  "placeholder" : "Defaults to 5"
+              "section_height_multiple": {
+                "type": "Number",
+                "config": {
+                  "label": "Section Height Multiple",
+                  "placeholder": "Defaults to 5"
                 }
               }
             },
-            "repeat" : {
-              "widget_background_image" : {
-                "type" : "Image",
-                "config" : {
-                  "constraint" : {
-                    "width" : 800,
-                    "height" : 800
+            "repeat": {
+              "widget_background_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 800,
+                    "height": 800
                   },
-                  "thumbnails" : [ ],
-                  "label" : "Widget Background Image (Optional)"
+                  "thumbnails": [],
+                  "label": "Widget Background Image (Optional)"
                 }
               },
-              "widget_headline" : {
-                "type" : "StructuredText",
-                "config" : {
-                  "single" : "heading1",
-                  "label" : "Widget Headline",
-                  "placeholder" : "Widget headline..."
+              "widget_headline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "Widget Headline",
+                  "placeholder": "Widget headline..."
                 }
               },
-              "widget_subheadline" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Widget Subheadline",
-                  "placeholder" : "Enter subheadline..."
+              "widget_subheadline": {
+                "type": "Text",
+                "config": {
+                  "label": "Widget Subheadline",
+                  "placeholder": "Enter subheadline..."
                 }
               },
-              "widget_icon_class" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Icon Class",
-                  "placeholder" : "www.fontawesome.com/icons"
+              "widget_icon_class": {
+                "type": "Text",
+                "config": {
+                  "label": "Icon Class",
+                  "placeholder": "www.fontawesome.com/icons"
                 }
               },
-              "widget_text_color" : {
-                "type" : "Color",
-                "config" : {
-                  "label" : "Text Color"
+              "widget_text_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Text Color"
                 }
               },
-              "widget_bg_color" : {
-                "type" : "Color",
-                "config" : {
-                  "label" : "Background Color"
+              "widget_bg_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Background Color"
                 }
               },
-              "tint_color" : {
-                "type" : "Color",
-                "config" : {
-                  "label" : "Tint Color (If Background Image)"
+              "tint_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Tint Color (If Background Image)"
                 }
               },
-              "tint_opacity" : {
-                "type" : "Select",
-                "config" : {
-                  "options" : [ "0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9" ],
-                  "default_value" : "0",
-                  "label" : "Tint Opacity  (If Background Image)",
-                  "placeholder" : "0"
+              "tint_opacity": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "0",
+                    "0.1",
+                    "0.2",
+                    "0.3",
+                    "0.4",
+                    "0.5",
+                    "0.6",
+                    "0.7",
+                    "0.8",
+                    "0.9"
+                  ],
+                  "default_value": "0",
+                  "label": "Tint Opacity  (If Background Image)",
+                  "placeholder": "0"
                 }
               }
             }

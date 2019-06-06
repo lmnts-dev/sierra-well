@@ -1,0 +1,933 @@
+{
+  "Settings" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "Slug (/unique_url_here)",
+        "placeholder" : "unique_url_here"
+      }
+    },
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label" : "Question",
+        "placeholder" : "Page title"
+      }
+    },
+    "short_answer" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Short Answer",
+        "placeholder" : "Enter short answer here.."
+      }
+    },
+    "date" : {
+      "type" : "Timestamp",
+      "config" : {
+        "label" : "Date"
+      }
+    },
+    "category" : {
+      "type" : "Link",
+      "config" : {
+        "select" : "document",
+        "customtypes" : [ "question_category" ],
+        "label" : "Category",
+        "placeholder" : "Select a category..."
+      }
+    },
+    "author" : {
+      "type" : "Link",
+      "config" : {
+        "select" : "document",
+        "customtypes" : [ "person" ],
+        "label" : "Author",
+        "placeholder" : "Select an author..."
+      }
+    },
+    "cover_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 1800,
+          "height" : 1200
+        },
+        "thumbnails" : [ ],
+        "label" : "Cover Image"
+      }
+    }
+  },
+  "Long Answer" : {
+    "long_answer" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Long Answer (or add even more using slices below)",
+        "placeholder" : "Enter question answer here..."
+      }
+    },
+    "elements" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "choices" : {
+          "full_split_section" : {
+            "type" : "Slice",
+            "fieldset" : "Full Split Section",
+            "description" : "Fullwidth 50%  split section with an image & text.",
+            "icon" : "border_vertical",
+            "display" : "grid",
+            "non-repeat" : {
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label" : "Headline",
+                  "placeholder" : "Enter a headline..."
+                }
+              },
+              "body_text" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Body Text",
+                  "placeholder" : "Enter some body text..."
+                }
+              },
+              "background_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "direction" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "normal", "reverse" ],
+                  "default_value" : "normal",
+                  "label" : "Direction",
+                  "placeholder" : "Select..."
+                }
+              },
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1280,
+                    "height" : 1280
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              }
+            },
+            "repeat" : {
+              "cta_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call To Action Button Label",
+                  "placeholder" : "Enter a CTA Label..."
+                }
+              },
+              "cta_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "CTA Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "cta_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Background Color"
+                }
+              },
+              "cta_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Text Color"
+                }
+              },
+              "cta_icon" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call to Action FontAwesome Icon",
+                  "placeholder" : "https://fontawesome.com/icons"
+                }
+              }
+            }
+          },
+          "hero" : {
+            "type" : "Slice",
+            "fieldset" : "Hero",
+            "description" : "Simple hero section",
+            "icon" : "face",
+            "display" : "grid",
+            "non-repeat" : {
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label" : "Headline",
+                  "placeholder" : "Enter a headline..."
+                }
+              },
+              "body_text" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Body Text",
+                  "placeholder" : "Enter some body text..."
+                }
+              },
+              "text_alignment" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "left", "center", "right" ],
+                  "default_value" : "left",
+                  "label" : "Text Alignment",
+                  "placeholder" : "Select..."
+                }
+              },
+              "background_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "tint_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Tint Color"
+                }
+              },
+              "tint_opacity" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9" ],
+                  "default_value" : "0",
+                  "label" : "Tint Opacity",
+                  "placeholder" : "0"
+                }
+              },
+              "background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1200,
+                    "height" : 800
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Background Image"
+                }
+              },
+              "padding" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Padding (Top, Right, Bottom, Left)",
+                  "placeholder" : "0, 0, 0, 0"
+                }
+              },
+              "breadcrumb_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Breadcrumb Label",
+                  "placeholder" : "Specials"
+                }
+              },
+              "breadcrumb_url" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Breadcrumb Url",
+                  "placeholder" : "/specials"
+                }
+              },
+              "social_sharing" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "Yes", "No" ],
+                  "default_value" : "Yes",
+                  "label" : "Enable Social Media Sharing?",
+                  "placeholder" : "Select..."
+                }
+              }
+            },
+            "repeat" : {
+              "cta_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call To Action Button Label",
+                  "placeholder" : "Enter a CTA Label..."
+                }
+              },
+              "cta_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "CTA Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "cta_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Background Color"
+                }
+              },
+              "cta_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Text Color"
+                }
+              },
+              "cta_icon" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call to Action FontAwesome Icon",
+                  "placeholder" : "https://fontawesome.com/icons"
+                }
+              }
+            }
+          },
+          "promotional_strip" : {
+            "type" : "Slice",
+            "fieldset" : "Promotional Strip",
+            "description" : "A promotional strip with columns and a CTA.",
+            "icon" : "view_week",
+            "display" : "grid",
+            "non-repeat" : {
+              "bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              }
+            },
+            "repeat" : {
+              "caption" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Caption",
+                  "placeholder" : "eg. 'Veterans'"
+                }
+              },
+              "label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Label",
+                  "placeholder" : "eg. '15% off'"
+                }
+              },
+              "destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Destination (Optional)",
+                  "placeholder" : "/specials/veterans"
+                }
+              }
+            }
+          },
+          "simple_section" : {
+            "type" : "Slice",
+            "fieldset" : "Simple Section",
+            "description" : "Simple fullwidth section with a headline & body text.",
+            "icon" : "crop_7_5",
+            "display" : "grid",
+            "non-repeat" : {
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label" : "Headline",
+                  "placeholder" : "Enter a headline..."
+                }
+              },
+              "body_text" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Body Text",
+                  "placeholder" : "Lorem ipsum solor sit dit imet..."
+                }
+              },
+              "subheadline" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Subheadline",
+                  "placeholder" : "(Optional) Enter a subheadline to go above the headline..."
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "background_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "text_alignment" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "center", "left", "right" ],
+                  "default_value" : "center",
+                  "label" : "Text Alignment",
+                  "placeholder" : "Select..."
+                }
+              },
+              "padding" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Padding (Top, right, bottom, left)",
+                  "placeholder" : "0, 0, 0, 0"
+                }
+              },
+              "tint_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Tint Color"
+                }
+              },
+              "tint_opacity" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9" ],
+                  "default_value" : "0",
+                  "label" : "Tint Opacity",
+                  "placeholder" : "0"
+                }
+              },
+              "bg_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1280,
+                    "height" : 1280
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Background Image"
+                }
+              }
+            },
+            "repeat" : {
+              "cta_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call To Action Button Label",
+                  "placeholder" : "Enter a CTA Label..."
+                }
+              },
+              "cta_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "CTA Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "cta_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Background Color"
+                }
+              },
+              "cta_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Text Color"
+                }
+              },
+              "cta_icon" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call to Action FontAwesome Icon",
+                  "placeholder" : "https://fontawesome.com/icons"
+                }
+              }
+            }
+          },
+          "split_image_hero" : {
+            "type" : "Slice",
+            "fieldset" : "Split Image Hero",
+            "description" : "Hero with a side-by-side image & text.",
+            "icon" : "flip",
+            "display" : "grid",
+            "non-repeat" : {
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label" : "Headline",
+                  "placeholder" : "Enter a headline..."
+                }
+              },
+              "body_text" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Body Text",
+                  "placeholder" : "Enter some body text..."
+                }
+              },
+              "background_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "direction" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "normal", "reverse" ],
+                  "default_value" : "normal",
+                  "label" : "Direction",
+                  "placeholder" : "Select..."
+                }
+              },
+              "breadcrumb_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Breadcrumb Label",
+                  "placeholder" : "Specials"
+                }
+              },
+              "breadcrumb_url" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Breadcrumb Url",
+                  "placeholder" : "/specials"
+                }
+              },
+              "social_sharing" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "Yes", "No" ],
+                  "default_value" : "Yes",
+                  "label" : "Enable Social Media Sharing?",
+                  "placeholder" : "Select..."
+                }
+              },
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1280,
+                    "height" : 1280
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Image Overlay"
+                }
+              },
+              "tint_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Tint Color"
+                }
+              },
+              "tint_opacity" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9" ],
+                  "default_value" : "0",
+                  "label" : "Tint Opacity",
+                  "placeholder" : "0"
+                }
+              },
+              "background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1200,
+                    "height" : 800
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Background Image"
+                }
+              },
+              "padding" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Padding (Top, Right, Bottom, Left)",
+                  "placeholder" : "0, 0, 0, 0"
+                }
+              }
+            },
+            "repeat" : {
+              "cta_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call To Action Button Label",
+                  "placeholder" : "Enter a CTA Label..."
+                }
+              },
+              "cta_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "CTA Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "cta_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Background Color"
+                }
+              },
+              "cta_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Text Color"
+                }
+              },
+              "cta_icon" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call to Action FontAwesome Icon",
+                  "placeholder" : "https://fontawesome.com/icons"
+                }
+              }
+            }
+          },
+          "split_section" : {
+            "type" : "Slice",
+            "fieldset" : "Split Section",
+            "description" : "Split Section",
+            "icon" : "face",
+            "display" : "grid",
+            "non-repeat" : {
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label" : "Headline",
+                  "placeholder" : "Enter a headline..."
+                }
+              },
+              "body_text" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Body Text",
+                  "placeholder" : "Enter some body text..."
+                }
+              },
+              "background_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "direction" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "normal", "reverse" ],
+                  "default_value" : "normal",
+                  "label" : "Direction",
+                  "placeholder" : "Select..."
+                }
+              },
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1280,
+                    "height" : 1280
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              }
+            },
+            "repeat" : {
+              "cta_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call To Action Button Label",
+                  "placeholder" : "Enter a CTA Label..."
+                }
+              },
+              "cta_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "CTA Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "cta_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Background Color"
+                }
+              },
+              "cta_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Text Color"
+                }
+              },
+              "cta_icon" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call to Action FontAwesome Icon",
+                  "placeholder" : "https://fontawesome.com/icons"
+                }
+              }
+            }
+          },
+          "sticky_gallery" : {
+            "type" : "Slice",
+            "fieldset" : "Sticky Gallery",
+            "description" : "A scrolling gallery with sticky content.",
+            "icon" : "featured_play_list",
+            "display" : "grid",
+            "non-repeat" : {
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "Headline",
+                  "placeholder" : "Headline"
+                }
+              },
+              "subheadline" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Subheadline",
+                  "placeholder" : "Subheadline"
+                }
+              },
+              "body_text" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Body Text",
+                  "placeholder" : "Lorem ipsum solor sit dit imet..."
+                }
+              },
+              "background_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "direction" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "normal", "reverse" ],
+                  "default_value" : "normal",
+                  "label" : "Direction",
+                  "placeholder" : "Select..."
+                }
+              },
+              "cta_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call To Action Button Label",
+                  "placeholder" : "Enter a CTA Label..."
+                }
+              },
+              "cta_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "CTA Destination",
+                  "placeholder" : "/specials"
+                }
+              },
+              "cta_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Background Color"
+                }
+              },
+              "cta_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Call to Action Text Color"
+                }
+              },
+              "cta_icon" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Call to Action FontAwesome Icon",
+                  "placeholder" : "https://fontawesome.com/icons"
+                }
+              }
+            },
+            "repeat" : {
+              "src" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1280,
+                    "height" : 1280
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              }
+            }
+          },
+          "widget_row" : {
+            "type" : "Slice",
+            "fieldset" : "Widget Row",
+            "description" : "A simple row of default widgets.",
+            "icon" : "widgets",
+            "display" : "grid",
+            "non-repeat" : {
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "Headline",
+                  "placeholder" : "Enter a headline..."
+                }
+              },
+              "section_size" : {
+                "type" : "Number",
+                "config" : {
+                  "label" : "Section Size",
+                  "placeholder" : "Enter multiple: 1, 2, 3, 4, 5, 6..."
+                }
+              },
+              "text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "padding" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Padding",
+                  "placeholder" : "0, 0, 0, 0"
+                }
+              },
+              "widget_columns" : {
+                "type" : "Number",
+                "config" : {
+                  "label" : "Widget Columns",
+                  "placeholder" : "Defaults to 4"
+                }
+              },
+              "autoplay" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "Off", "On" ],
+                  "default_value" : "Off",
+                  "label" : "Autoplay Slider (if more widgets than columns)",
+                  "placeholder" : "Select..."
+                }
+              }
+            },
+            "repeat" : {
+              "widget_background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 800,
+                    "height" : 800
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Widget Background Image (Optional)"
+                }
+              },
+              "widget_headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1",
+                  "label" : "Widget Headline",
+                  "placeholder" : "Widget headline..."
+                }
+              },
+              "widget_subheadline" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Widget Subheadline",
+                  "placeholder" : "Enter subheadline..."
+                }
+              },
+              "widget_destination" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Widget Destination",
+                  "placeholder" : "i.e. /specials"
+                }
+              },
+              "widget_icon_class" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Icon Class",
+                  "placeholder" : "www.fontawesome.com/icons"
+                }
+              },
+              "widget_text_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Text Color"
+                }
+              },
+              "widget_bg_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              },
+              "widget_tint_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Tint Color (If Background Image)"
+                }
+              },
+              "widget_tint_opacity" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9" ],
+                  "default_value" : "0",
+                  "label" : "Tint Opacity  (If Background Image)",
+                  "placeholder" : "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

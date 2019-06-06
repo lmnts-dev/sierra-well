@@ -1,0 +1,57 @@
+{
+  "Main" : {
+    "module_name" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Module Name",
+        "placeholder" : "Sitewide Navigation"
+      }
+    },
+    "main" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "label" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Label",
+              "placeholder" : "E.g. Team, News..."
+            }
+          },
+          "slug" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Slug",
+              "placeholder" : "/url/to/page"
+            }
+          }
+        },
+        "label" : "Main Menu"
+      }
+    }
+  },
+  "Footer" : {
+    "footer" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "label" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Label",
+              "placeholder" : "E.g. Home, Menu, Locations..."
+            }
+          },
+          "slug" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Slug",
+              "placeholder" : "/url/to/page"
+            }
+          }
+        },
+        "label" : "Footer"
+      }
+    }
+  }
+}

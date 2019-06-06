@@ -1,0 +1,64 @@
+{
+  "Main" : {
+    "site_title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Site Title",
+        "placeholder" : "Sierra Well"
+      }
+    },
+    "description" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Description",
+        "placeholder" : "300 characters max..."
+      }
+    },
+    "email" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Email",
+        "placeholder" : "contact@sierrawell.com"
+      }
+    },
+    "keywords" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Keywords",
+        "placeholder" : "Dogs, cats, hamsters..."
+      }
+    },
+    "facebook" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Facebook",
+        "placeholder" : "/sierra-well"
+      }
+    },
+    "instagram" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Instagram",
+        "placeholder" : "sierrawellness"
+      }
+    },
+    "twitter" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Twitter",
+        "placeholder" : "sierrawellness"
+      }
+    },
+    "opengraph_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 800,
+          "height" : 600
+        },
+        "thumbnails" : [ ],
+        "label" : "Opengraph Image"
+      }
+    }
+  }
+}

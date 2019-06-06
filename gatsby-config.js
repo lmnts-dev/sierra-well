@@ -65,7 +65,7 @@ module.exports = {
       },
     },
 
-    // So we can load our JSON data via 
+    // So we can load our JSON data via
     // GraphQL nodes so we can run createPages() in
     // gatsby-node.js
     {
@@ -83,6 +83,17 @@ module.exports = {
         repositoryName: `sierrawell`,
         accessToken: `MC5YSW02TGhFQUFNQ2phVFdl.ElB277-9KO-_ve-_ve-_vTZu77-9X--_ve-_vS0e77-9Zu-_ve-_ve-_ve-_ve-_vSYs77-9Rw4wUh4o`,
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          dashboard: require('./src/schemas/dashboard.json'),
+          location: require('./src/schemas/location.json'),
+          navigation: require('./src/schemas/navigation.json'),
+          person: require('./src/schemas/person.json'),
+          question: require('./src/schemas/question.json'),
+          question_category: require('./src/schemas/question_category.json'),
+          settings: require('./src/schemas/settings.json'),
+          special: require('./src/schemas/special.json'),
+          top_level_page: require('./src/schemas/top_level_page.json'),
+        },
       },
     },
 

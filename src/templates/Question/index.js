@@ -107,11 +107,9 @@ export const query = graphql`
             author {
               id
               document {
-                id
                 ... on PrismicPerson {
                   data {
                     name {
-                      html
                       text
                     }
                   }
