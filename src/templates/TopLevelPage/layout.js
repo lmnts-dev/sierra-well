@@ -30,7 +30,7 @@ import { Theme } from 'constants/Theme';
 
 // Large Device Content
 const LargeContent = ({ node, id }) => {
-  const columns = node.dashboard_link.document[0].data.body;
+  const columns = node.data.dashboard_link.document[0].data.body;
 
   return (
     <HorizontalContent>
