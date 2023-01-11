@@ -38,7 +38,7 @@
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-plugin-webpack-size": "^0.0.3",
     "gatsby-source-prismic": "^2.3.0-previews.9",
-    "gatsby-transformer-remark": "^2.2.5",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.1.13",
     "intersection-observer": "^0.5.1",
     "react-helmet": "^5.2.0",
